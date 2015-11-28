@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: learning | Strongly Emergent]]></title>
+  <link href="http://stronglyemergent.com//blog/categories/learning/atom.xml" rel="self"/>
+  <link href="http://stronglyemergent.com//"/>
+  <updated>2015-11-28T03:31:05-08:00</updated>
+  <id>http://stronglyemergent.com//</id>
+  <author>
+    <name><![CDATA[Strongly Emergent Systems]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[It Only Looks Easy]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/it-only-looks-easy/"/>
+    <updated>2010-12-07T23:01:34-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/it-only-looks-easy</id>
+    <content type="html"><![CDATA[<p>The Internal Revenue service has, as government agencies go, a pretty simple directive.  Here is the tax code, which we can consider to be a big lump of business logic.  Here are people&rsquo;s statements of how much money they made and how much money they owe.  Using those two, make sure that people stated both halves accurately.</p>
+
+<p>It won&rsquo;t surprise you to learn that that isn&rsquo;t actually a simple task.</p>
+
+<p>I do expect it to surprise you that it&rsquo;s even more complicated than that.  Here&rsquo;s something that betrays the complication, one little directive from <a href="http://www.irs.gov/publications/p17/ch12.html">IRS Publication 17, Chapter 12</a>: &ldquo;If you receive a bribe, include it in your income.&rdquo;</p>
+
+<p>Yes, the IRS has to tax you on illegal income.  No, the IRS isn&rsquo;t allowed to fully care that it&rsquo;s illegal income - otherwise the whole agency is a walking 5th Amendment violation, something that <a href="http://www.irs.gov/businesses/small/article/0,,id=106500,00.html">people frequently get on their case about</a>. I am not the world&rsquo;s biggest fan of the IRS - but I think that their position is a great illustration of how complicated systems work.  Systems get complicated easily, and the ongoing task of &ldquo;civilization&rdquo; is to make complex systems manageable.  This is difficult, and <a href="http://www.shirky.com/weblog/2010/04/the-collapse-of-complex-business-models/">the difficulty scales up unpleasantly late in the game</a>. It&rsquo;s still worth thinking about.</p>
+
+<p>My favorite exposé of this, especially in light of the California elections, is Steve Yegge&rsquo;s <a href="http://steve-yegge.blogspot.com/2009/04/have-you-ever-legalized-marijuana.html">Have You Ever Legalized Marijuana?</a> He barely scratches the surface, but he very effectively demonstrates that legalizing marijuana, no matter how much you like the idea, is a huge and complicated thing.</p>
+
+<p>Taming complex systems is never easy - but that&rsquo;s pretty much how we get advances in civilization. So we need to be good at it.  I&rsquo;m always happy to see evidence of this happening, especially when it&rsquo;s in entertaining form.  Pac-Man comes to mind.  Pac-Man is a great example of a complex system in this context - and a recent blogulator has <a href="http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior">given us all a fascinating look at the internals</a>. This is the sort of thing I love reading, because it shows how aspects of ordinary life that we don&rsquo;t always look at directly, are full of complexity and reward investigation.</p>
+
+<p>Unfortunately, that complexity also means endless debate.  Even when there is an authoritative answer to a complex question, someone whose salary depends on that answer not being understood, will probably be able to prevent people from understanding it.  The long version of this is in <a href="http://cscs.umich.edu/~crshalizi/weblog/523.html">Cosma Shalizi&rsquo;s authoritative takedown of <em>The Bell Curve</em> tomfoolery</a>, and the short version is in The Onion&rsquo;s <a href="http://www.theonion.com/articles/new-study-finds-blacks-more-likely,18552/">&ldquo;New Study Finds Blacks More Likely.&rdquo;</a></p>
+
+<p>This is part of why simplicity and elegance are hard.  We are surrounded with complex systems, and synthesizing something simple and useful requires taming complexity - which is a tremendous challenge.  Fortunately for us hackers, that&rsquo;s usually where the interesting problems are.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Shelve It]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/dont-shelve-it/"/>
+    <updated>2010-08-03T23:01:19-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/dont-shelve-it</id>
+    <content type="html"><![CDATA[<p>Every time I read a Paul Graham essay, I find something new and relevant to my life as a coder and Computer Person.
+This time, it was in <a href="http://www.paulgraham.com/road.html">The Other Road Ahead</a>:</p>
+
+<blockquote><p>If I&rsquo;d had to wait a year for the next [chance to implement my ideas], I would have shelved most of these ideas, for a while at least.
+The thing about ideas, though, is that they lead to more ideas.
+Have you ever noticed that when you sit down to write something, half the ideas that end up in it are ones you thought of while writing it?
+The same thing happens with software.
+Working to implement one idea gives you more ideas.
+So shelving an idea costs you not only that delay in implementing it, but also all the ideas that implementing it would have led to.
+In fact, shelving an idea probably even inhibits new ideas: as you start to think of some new feature, you catch sight of the shelf and think &ldquo;but I already have a lot of new things I want to do for the next release.&rdquo;</p></blockquote>
+
+<p>I bowed my head when I read that, because that has happened to me and <em>is</em> happening to me.
+I am beseiged with ideas, they are always there, and my only regret in life is that the choices I make always prevent me from chasing some ideas - force me to choose a subset.
+And lately, I&rsquo;ve been giving in to that effect of inhibition - of deferring a thing, saying &ldquo;I&rsquo;ll code that eventually,&rdquo; &ldquo;I&rsquo;ll write that eventually,&rdquo; &ldquo;I&rsquo;ll play that eventually.&rdquo;  This only works up to a point, and then it becomes toxic.
+I can reject it, though - and so can you.</p>
+
+<p>We all have opportunity costs to deal with, and some are much harsher than others.
+I am still a student, and even though there are paths that I can&rsquo;t take, I have no excuse for not grabbing hard on the opportunities that I do have.
+One opportunity that I have is the opportunity to write here, the way I originally planned - and that opportunity, I must seize.</p>
+
+<p>I&rsquo;ll leave off with a quick link, a story that also pressed this internal button: <a href="http://blog.rootein.com/2010/04/for-gods-sake-follow-your-dreams.html">&ldquo;For God&rsquo;s Sake, Follow Your Dreams&rdquo;</a> - there are certainly things to disagree with, there, but I like the urgency of it, and the way that the dialogue explores how we can fall short.
+I often dwell on my own failures - there have been plenty!
+And I was complaining about it to a dear friend, dwelling especially on easily avoidable failures.
+&ldquo;Brighid,&rdquo; he reminded me, &ldquo;if you couldn&rsquo;t avoid them, they wouldn&rsquo;t be failure.
+Since you <em>can</em> see them, use that as a starting place to avoid them in the future.&rdquo;
+So here&rsquo;s to seeing our failures, and if not avoiding them, then learning from them.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Creating And Refining]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/creating-and-refining/"/>
+    <updated>2010-03-25T23:01:17-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/creating-and-refining</id>
+    <content type="html"><![CDATA[<p>One of my ongoing questions is whether I need to be more of a system administrator or more of a developer.
+The differences between them make for an interesting thought exercise - not the differences in activity, but the difference in the mental demands that the job makes.
+Right now, I picture them as part of the same spectrum, but at different points on it.
+Similar to the <a href="http://stronglyemergent.com/blog/2010/textbook-overview-2/">dilemma of teaching</a>, with its tension between reference material and narrative, there&rsquo;s a tension between creative activity and refining activity.</p>
+
+<p>The fundamental posture of system administration is conservative: we have a system that&rsquo;s working, and priority one is to make sure that it keeps working.
+We of course want to improve it, but that&rsquo;s what we have test networks and deployment procedures for, and sometimes keeping everything moving so smoothly that it&rsquo;s invisible to end users takes up more than 40 hours a week.
+We think about wires that might break, hard drives that might fail, email that might disappear into the yawning maw of /dev/null, ACLs that might expose data to the wrong people, and in general about a million things that could go wrong.</p>
+
+<p>This is not to say that developers don&rsquo;t think about that - but the fundamental posture of developers is creative.
+While maintenance programming is a real thing and a noble pursuit if it&rsquo;s what you&rsquo;re called to, more often we crave the luxury of starting from scratch.
+Necessarily, that means that our programs will spend a lot of time in a state of &ldquo;not working yet,&rdquo; and that&rsquo;s okay.
+We are a lot more likely to deliberately break something on our way to a solution that we&rsquo;re satisfied with.
+While we spend time debugging and engineering robustness, which require thinking about how things could fail, it&rsquo;s much more pleasant for your average developer to think about the awesome things this program will do when it&rsquo;s working right.</p>
+
+<p>I feel called to both of these courses: the shared activity of finding a way to make a system work is very, very satisfying to me.
+It is a puzzle-solving activity - what can I fiddle with to get this to come together elegantly?
+How does this system actually work?
+What do I need this system to do?
+These are questions that it&rsquo;s interesting to investigate and answer.</p>
+
+<p>My biggest disappointment with my college is related to this - my college is interested in teaching sysadmins, and not at all interested in cultivating hackers and developers.
+I&rsquo;m very sad about that because there&rsquo;s an important part of me that school doesn&rsquo;t care about.
+Fortunately, the huge corpus of hacker lore on the Internet is one big playground for someone who&rsquo;s inclined to self-education.
+<a href="http://stackoverflow.com/">Stack Overflow</a>, for example, has been very good to me, and the Internet in general is my textbook.
+So I take comfort in knowing that no matter which path I give more of my time to, the ability to efficiently soak up the professional lore from the Internet will stay useful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pitfalls of IT: This Job Would Be Great If It Weren't For The Customers]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/"/>
+    <updated>2010-03-23T23:01:12-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers</id>
+    <content type="html"><![CDATA[<p>The trend that most worries me as I go through school isn&rsquo;t technical: it&rsquo;s social and cultural.
+That trend is contempt for the users.</p>
+
+<p>The school environment that produces IT professionals is like the farm-league system in professional sports: it mimics the environment that the participants, ideally, grow into.
+The way that IT is taught and learned closely mirrors the way that it&rsquo;s practiced.
+That&rsquo;s why it worries me so much that there is a tolerance for a culture of IT that&rsquo;s predicated on contempt for ordinary users.
+That contempt is absolutely toxic to the relationship between IT professionals - a service profession! - and the users being served.
+Even if you&rsquo;re someone like a data-center technician or a high-level system administrator, you and the phone support technicians need to keep in mind that you are dealing with actual people and their actual problems.
+Compassion is a requirement of the job.
+I believe that if you don&rsquo;t want to actually help people, you shouldn&rsquo;t be in IT.</p>
+
+<p>My biggest source of satisfaction, when I&rsquo;m wearing my IT hat, is <em>making a difference</em> in someone&rsquo;s day.
+I feel good about my profession and my work when I help people overcome their problems, and when I can share the joy that I feel over having wonderful tools available to me through computers.
+Of course I have to keep in mind the inherent trade-off in specializing in IT.
+It&rsquo;s a specialization, which means that not everyone knows what I do.
+I do know more about computers.
+I am, in fact, an expert.
+But that&rsquo;s not the whole picture.
+I am also a teacher: my expertise is no good if I&rsquo;m not sharing it and helping people thereby.
+It is not a scarce thing that I have to hoard and protect from the barbarians.
+It must be put to use in helping people - that&rsquo;s when it becomes valuable.
+Like nearly any other feature a human can have, expertise becomes toxic when it is not an end in itself, but a means to playing tribal power games and to vanity.</p>
+
+<p><a href="http://steve-yegge.blogspot.com/">Steve Yegge</a>, a coder I admire, <a href="http://sites.google.com/site/steveyegge2/really-no-big-deal">has a great story from his father</a> about how service professionals affect the lives of those around them.
+His father wrote about his experiences in the hospital, and concluded with words that I believe in IT can learn from:</p>
+
+<blockquote><p>Within each step of these medical processes and procedures, the medical personnel that touch the lives of the patients, do so for only very brief periods of time - sometimes as little as a few minutes.
+But, these patients are not simply cogs in the machinery of this well-oiled machine.
+They hurt and are tired and are very often frightened.
+Take care that you treat them with dignity and respect for their condition.
+Because, this really is a big deal.</p></blockquote>
+
+<p>I think that we can definitely learn from that - and that learning must be a holistic part of our learning, our teaching, and our practice as IT professionals.
+Making jokes that are only funny if you assume that users are deaf, mute, and stupid isn&rsquo;t any more acceptable than sexist, racist, or other humor that&rsquo;s predicated on some other group&rsquo;s inferiority.
+We must retain the humility to anticipate that users come to our IT structures not with our priorities, but with their own, and be willing to meet them halfway, not to dismiss them or to think that they only cause trouble.
+Creating and running an IT infrastructure is a vast <em>collaboration</em> with users, and poisoning the well of that relationship not only damages your personal career in IT, it damages the prestige and the ability to do good works of the entire field</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sharpening My Saw: emacs]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/sharpening-my-saw-emacs/"/>
+    <updated>2010-03-11T22:01:13-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/sharpening-my-saw-emacs</id>
+    <content type="html"><![CDATA[<p>I recently re-read <a href="http://www.codinghorror.com/blog/2009/03/sharpening-the-saw.html">Jeff Atwood&rsquo;s post about sharpening your saw</a>.
+It has me thinking about my personal work habits and my toolkit.
+I&rsquo;m going to be writing about parts of my workflow from time to time, and exploring options.
+Today, the saw in question is emacs.</p>
+
+<p>I started using emacs about six months ago, and it&rsquo;s gotten to the point where I can&rsquo;t imagine getting programming <em>work</em> done without it.
+I didn&rsquo;t realize how much time I was using moving my hands around until I started using a program that&rsquo;s got a monomania about keeping your fingers near the home keys.
+At this point I have an unconditional love for emacs and I plan to be using it for the rest of my life as a Computer Person.
+<a href="http://steve-yegge.blogspot.com/">Steve Yegge</a> can tell you at great length why emacs is so great, but the main thing that makes me happy is this: I can grow with emacs.
+Right now, I&rsquo;m getting some pretty good mileage out of it.
+As I get better at the craft, I&rsquo;ll be able to get even more out of emacs - and because it embeds one of the best domain languages out there, the upper limit of how much I can get out of emacs is so far away it might as well be measured in light years.
+The local maximum of efficiency with emacs is a very, very big peak - and because getting there requires that I actively optimize emacs to myself, it&rsquo;s a peak unique to me, which makes it all the higher.</p>
+
+<p>One symptom of this is that it&rsquo;s gotten into my life in a variety of ways.
+I try to control Firefox by emacs keystrokes sometimes and I have to stop myself.
+It has definitely heightened my tendency to do everything from my keyboard instead of reaching for the mouse (my intermittent wrist issues only encourage this pattern).
+That&rsquo;s definitely an interesting phenomenon when a tool produces it, and it&rsquo;s worth looking into further.</p>
+
+<p>One of the most important things to remember about this saw-sharpening, though, is that it&rsquo;s about <em>your</em> saw.
+Professionals in a given field tend to converge around a constellation of tools, but each has their own favorite for their own reason.
+So if you&rsquo;re reading this, that means you - and that means that you have an obligation not to stick with a tool that&rsquo;s not well-suited to you.</p>
+
+<p>Finally, as long as we&rsquo;re talking about straight text editors, I&rsquo;m going to encourage those of you who do work in Windows towards <a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a>.
+It&rsquo;s just the best notepad replacement you can get in Windows.
+Even if you only use it for syntax highlighting, tabbed multiple-file handling, and regular expression searching, it is a beautiful shining gift from the open-source world and will make your life better.</p>
+]]></content>
+  </entry>
+  
+</feed>

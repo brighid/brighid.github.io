@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: san francisco | Strongly Emergent]]></title>
+  <link href="http://stronglyemergent.com//blog/categories/san-francisco/atom.xml" rel="self"/>
+  <link href="http://stronglyemergent.com//"/>
+  <updated>2015-11-28T03:31:05-08:00</updated>
+  <id>http://stronglyemergent.com//</id>
+  <author>
+    <name><![CDATA[Strongly Emergent Systems]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Real Thing That Exists]]></title>
+    <link href="http://stronglyemergent.com//blog/2013/a-real-thing-that-exists/"/>
+    <updated>2013-05-31T13:01:00-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2013/a-real-thing-that-exists</id>
+    <content type="html"><![CDATA[<p>An Afro-Celtic fusion cusine food truck named &ldquo;ÉireTrea.&rdquo; Oh, San Francisco. &hearts;</p>
+]]></content>
+  </entry>
+  
+</feed>

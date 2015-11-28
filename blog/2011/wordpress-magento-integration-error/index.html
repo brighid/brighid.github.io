@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>WordPress-Magento Integration Error - Strongly Emergent</title>
+  <meta name="author" content="Strongly Emergent Systems">
+
+  
+  <meta name="description" content="This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="atom.xml" rel="alternate" title="Strongly Emergent" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24040277-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Strongly Emergent</a></h1>
+  
+    <h2>What comes from combining humans, computers, and narrative</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stronglyemergent.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">WordPress-Magento Integration Error</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-14T06:57:38-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come up with anything. I think it&rsquo;s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
+
+<p>So: you&rsquo;re running a Magento site, and you&rsquo;re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site. You might end up in a nasty situation where the integration settings page in Magento is telling you that &ldquo;Your blog URL (site address) matches your install URL (WordPress address). Please change your blog route or move WordPress to a different sub-directory&rdquo; and that that&rsquo;s a problem. It is. Things will 404 as long as that&rsquo;s true. However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you&rsquo;ll find to help</a> on the FishPig site is deeply obscure.</p>
+
+<p>[<img src="/images/mangeto-fishpig-error.jpg" alt="An error that can happen when trying to integrate Magento and WordPress" />]</p>
+
+<p><em>The problem might look like this.</em></p>
+
+<p>The basic problem is one of terminology. WordPress is designed to play well with others, and to be highly configurable. So it cares about two URLs (URIs if you&rsquo;re picky).  It cares about &ldquo;the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)&rdquo;, and it cares about &ldquo;the public URL that I will respond to.&rdquo;  In the database, these are &lsquo;siteurl&rsquo; and &lsquo;home&rsquo;, respectively, in the wp_options table. It can be tricky to disentangle these two URLs, but for many WordPress installs, setting them both to the same URL is good enough and gets everything working.</p>
+
+<p>However, that&rsquo;s not the case when you need to integrate a WordPress blog into Magento. For the FishPig plugin&rsquo;s &ldquo;fully integrated&rdquo; level of operation - which is good stuff, the best way to run that plugin - the WordPress PHP files need to live in the same site as the Magento files (when using Apache, they need to both be in the tree that starts at the site&rsquo;s DocumentRoot), and, contrary to the usual WordPress setup, the &lsquo;siteurl&rsquo; and &lsquo;home&rsquo; values <em>must not</em> be set to the same URL.  This is where we run into problems. The WordPress control panel refers to the &lsquo;siteurl&rsquo; value as the &ldquo;WordPress address (URL)&rdquo; and the &lsquo;home&rsquo; value as &ldquo;Site address (URL)&rdquo;.  The FishPig plugin&rsquo;s error messages, as seen above, will tell you that they can&rsquo;t be the same, and will tell you that the &lsquo;home&rsquo;/&ldquo;Site address&rdquo; value has to match the &ldquo;blog route&rdquo; variable" in Magento. However, you have to fill in the third part of the syllogism yourself, and remember to set the &lsquo;siteurl&rsquo;/&ldquo;WordPress address&rdquo; to the same value as the &ldquo;WordPress path&rdquo; variable in Magento.</p>
+
+<p>The final puzzle-piece is URL rewriting - most WordPress installs try to do a little .htaccess magic, and it can be tricky to keep it straight. If it&rsquo;s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you&rsquo;ve got to move down a layer and throw queries directly at the database to figure out what&rsquo;s going on.</p>
+
+<p>I imagine that this is obvious if you know WordPress better than I do, and it probably seemed obvious to the FishPig folks. However, if you&rsquo;re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Strongly Emergent Systems</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-14T06:57:38-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/google/'>google</a>, <a class='category' href='/blog/categories/magento/'>magento</a>, <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/a-recommendation-i-cant-get-from-linkedin/" title="Previous Post: A Recommendation I Can't Get From LinkedIn">&laquo; A Recommendation I Can't Get From LinkedIn</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/locating-design-in-latitude-find-my-friends-and-yelp/" title="Next Post: Locating Design in Latitude, Find My Friends, and Yelp">Locating Design in Latitude, Find My Friends, and Yelp &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/two-traps/">Two Traps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/brighid">@brighid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'brighid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Strongly Emergent Systems -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

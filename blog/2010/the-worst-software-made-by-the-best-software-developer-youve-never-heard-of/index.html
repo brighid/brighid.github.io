@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Worst Software Made By The Best Software Developer You've Never Heard Of - Strongly Emergent</title>
+  <meta name="author" content="Strongly Emergent Systems">
+
+  
+  <meta name="description" content="My last post, about the lessons that Wizards of the Coast has for software developers, had many oversimplifications.
+One of them is this: Wizards of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stronglyemergent.com//blog/2010/the-worst-software-made-by-the-best-software-developer-youve-never-heard-of/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="atom.xml" rel="alternate" title="Strongly Emergent" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24040277-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Strongly Emergent</a></h1>
+  
+    <h2>What comes from combining humans, computers, and narrative</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stronglyemergent.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">The Worst Software Made by the Best Software Developer You've Never Heard Of</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-12T22:01:40-08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>My last post, about the lessons that Wizards of the Coast has for software developers, had many oversimplifications.
+One of them is this: Wizards of the Coast actually is a software developer.
+They have an online version of their product (clearly labeled as &ldquo;Magic: The Gathering Online&rdquo;) that they develop in-house.
+MTGO is pretty terrible.
+It&rsquo;s a passable program that spent years being a crappy program.
+It was a perfect example of how monopolies produce shitty products.
+It&rsquo;s still the only remotely serious product in its specific market (part of how the monopoly exists is that they can offer value-adds that no one else can).</p>
+
+<p>This shouldn&rsquo;t be surprising, though.
+One thing that makes it unsurprising is that, as Nathan Bowers likes to say, <a href="http://uxhero.com/ux-theory/quality-is-fractal/">Quality Is Fractal</a>.
+Look at the <a href="http://www.magicthegathering.com/">Magic: The Gathering web site</a>.
+It survives and thrives because there&rsquo;s good content in there, but in many ways it&rsquo;s a design trainwreck.
+Similarly, you could look at Magic itself.
+Another thing that I omitted in the last post is Magic&rsquo;s bugs.
+Magic&rsquo;s creators are making a game that is played by humans against humans, so the game needs to be fair.
+To that end, Wizards maintains a list of banned and restricted cards that have to be treated differently so that the game remains fair.
+The game contains over 10,000 cards as of this writing, and a bit over 100 have ever been on the banned/restricted list (which grows and shrinks over time).
+Any card that creates enough problems to go on the list can be considered roughly equivalent to a showstopper bug in your average software program - and making it onto the list means that the &ldquo;bug&rdquo; made it into the wild instead of being caught during QA.
+So despite Magic&rsquo;s impressive QA operation, bugs still get by them.</p>
+
+<p>Making complex products - like Magic or a piece of software - isn&rsquo;t easy.
+We have a whole industry built on top of our tradition of telling other people how to do things, and still the complexity of the world stymies us.
+To our great benefit, we&rsquo;ve advanced to the point where we can actually solve some problems by throwing lots of computing resources at them.
+Other problems, however, still need a lot of human thought and creativity put into them before they&rsquo;re soluble, and the best that we can hope for is that we can add computing resources that will let us most efficiently allocate our human thought and creativity.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Strongly Emergent Systems</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-12T22:01:40-08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/magic/'>magic</a>, <a class='category' href='/blog/categories/programming/'>programming</a>, <a class='category' href='/blog/categories/qa/'>qa</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/the-best-software-developer-youve-never-heard-of/" title="Previous Post: The Best Software Developer You've Never Heard Of">&laquo; The Best Software Developer You've Never Heard Of</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/the-price-of-specialization/" title="Next Post: The Price Of Specialization">The Price Of Specialization &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/two-traps/">Two Traps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/brighid">@brighid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'brighid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Strongly Emergent Systems -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

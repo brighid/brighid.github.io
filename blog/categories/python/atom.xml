@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | Strongly Emergent]]></title>
+  <link href="http://stronglyemergent.com//blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://stronglyemergent.com//"/>
+  <updated>2015-11-28T03:31:05-08:00</updated>
+  <id>http://stronglyemergent.com//</id>
+  <author>
+    <name><![CDATA[Strongly Emergent Systems]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Challenged]]></title>
+    <link href="http://stronglyemergent.com//blog/2013/challenged/"/>
+    <updated>2013-03-07T15:17:00-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2013/challenged</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m hunting for a new job right now: that&rsquo;s always a tricky thing, and it&rsquo;s easy for it to make me nervous. I&rsquo;m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world - I taught myself Python and then fell in love with Emacs Lisp, especially its overlap with Common Lisp; I&rsquo;m proficient with both of those and speak JavaScript at the high-school Spanish level. I&rsquo;m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of a serious project, and can run basic SQL queries. <a href="https://github.com/brighid/">I have a GitHub profile</a> that I&rsquo;m gradually adding code to, and this blog where I&rsquo;m getting back into the habit of article-length writing. I am, in other words, an engineer entirely capable of finding their own ass with both hands.</p>
+
+<p>&ldquo;That&rsquo;s nice,&rdquo; said my management-track pal. &ldquo;What do you want to <em>do</em>? Where do you want to work in particular &mdash; what kind of work do you want to do &mdash; what are you doing to do for them?&rdquo;</p>
+
+<p>That takes some more thought. I&rsquo;m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can&rsquo;t say something as facile as &ldquo;I want a Lisp job!&rdquo;; similarly, while I identify with Bay Area startup culture pretty strongly, &ldquo;I want to work at a startup!&rdquo; isn&rsquo;t going to cut it either. Those are <em>features</em> I want a job to have, not the job itself.</p>
+
+<p>So in response to my friend&rsquo;s challenge, here are three specific jobs I&rsquo;d like to do.</p>
+
+<ul>
+<li><p>Work on the Unix toolchain for Apple: new releases of OS X <a href="http://apple.blogoverflow.com/2012/07/interesting-new-unix-commandsbinaries-in-os-x-mountain-lion/">show up with new terminal utilities</a>, and the intersection of Unix beard and Apple fan makes this a job I&rsquo;d love to do.</p></li>
+<li><p>Work on the API team at Stripe or Square: these are two of my favorite startups, and I think that payments are a hugely important place to apply the lever of technology. Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone&rsquo;s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that. I&rsquo;d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible - the intersection of mission and language-diversity makes this a job I&rsquo;d love to do.</p></li>
+<li><p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay&rsquo;s other transit agencies. &ldquo;Which transit vehicles are where, and where will they be next?&rdquo; is a question that people want answers to so badly that they more or less <em>inflicted</em> an API on MUNI. I&rsquo;m a cyclist and a public transit rider; I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I&rsquo;d love to do.</p></li>
+</ul>
+
+
+<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to &ldquo;software engineering jobs in the Bay Area.&rdquo; I&rsquo;m going to keep looking, but I&rsquo;m grateful to my friend for pushing me towards this exercise. Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Generating vCards In Python]]></title>
+    <link href="http://stronglyemergent.com//blog/2011/generating-vcards-in-python/"/>
+    <updated>2011-05-02T08:21:10-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2011/generating-vcards-in-python</id>
+    <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.  Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.  My personal address book is nowhere near that big and I&rsquo;m not about to use it for testing - so I turned to Python.  <a href="http://en.wikipedia.org/wiki/VCard">The vCard format</a> is pretty much a special kind of text file, so it&rsquo;s easy to create new vCards, and a vCard can contain multiple contacts by just concatenating contacts.</p>
+
+<p>I didn&rsquo;t find exactly what I needed already in existence, so I wrote up a basic script to do it, and in case anyone else needs it, here it is.  It is released under the Apache Software License 2.0, and I hope you find it useful.</p>
+
+<p>`</p>
+
+<pre><code>#!/usr/bin/python
+
+"""Generates an abitrary number of valid .vcf vCard contacts based on the
+parameters set at the beginning of the file. See also:
+http://softwareas.com/vcard-for-developers
+http://en.wikipedia.org/wiki/VCard
+"""
+
+import random, sys
+
+################################## Parameters ##################################
+
+# We'll use this data no matter what the user tells us.
+
+# What fields shall be populated?
+target_fields = {"Name":True,
+                 "FullName":True,
+                 "Organization":True,
+                 "Address":True,
+                 "Title":True,
+                 "Phone":True,
+                 "Email":True,}
+
+# Data that we'll use to populate the cards' fields.
+first_names = ["Alice", "Bob", "Carol", "David", "Elena", "Farquahd", "Gretel",
+               "Hans", "Iris", "Junichi", "Khalisha", "Lee", "Mina", "Nassif",
+               "Oba", "Prudha", "Hida", "Kaiu", "Aaron", "Sangamon",
+               "Ferdinand", "Sanjay", "Asok"]
+last_names = ["Smith", "Jones", "Smythe", "Jorgenson", "Kim", "Luxury-Yacht",
+              "Throatwarbler-Mangrove", "Cooper", "Black", "Ahmedinejad",
+              "al-Tikriti", "al-Bagram", "von Trapp", "von der Wallenheim",
+              "Gamgee", "Proudfoot", "Brewer", "Kagehiro", "Ng",
+              "Nguyen", "Salzmann", "Bear", "Powers","Kusanagi", "Dengo",
+              "Mukherjee","Balaam"]
+
+# Street numbers will be generated at random.  All addresses are
+# situated in Anytown, CA, ZIP 12345, United States of America.
+
+streets = ["Paper Street", "Fictional Lane", "Placid Avenue", "Blank Road",
+           "Suspicious Parkway"]
+
+orgs = ["Monty Python's Flying Circus", "Golden Egg Bonus Company, LLC",
+        "Dewey Cheatham &amp; Howe, Tax and Family Law", "Improv Everywhere",
+        "Owl-Stretching Enthusiasts' Club", "International R. Mutt Fan Club",
+        "Paper Street Soap Company", "River City Pool Table Company",
+        "Desert Bus Runs", "Impossibilities Inc", "The X-Men"]
+
+titles = ["Mercenary", "Chief Tomfoolery Engineer", "Nonsense Supervisor",
+          "Skylark", "Isn't It About Time For Lunch", "Famous Author",
+          "Fictional Person", "Space Traveller", "Architect",
+          "International Person Of Mystery", "Sith Lord", "Sith Apprentice",
+          "Sith Intern", "Archaeologist", "Scout", "Heavy", "Sniper"]
+
+# Phone numbers will be generated in the form 555-NNNN.
+# Email addresses will be generated in the form  firstname.lastname@example.com
+
+################################## Actions ###################################
+
+class CardFiller:
+    """A class whose instances take the basic dataset we're working with,
+    shuffle it, and grind through generating VCard entries based on it. """
+    def __init__(self, first_names, last_names, streets, orgs, titles):
+        self.first_names = first_names
+        self.last_names = last_names
+        self.streets = streets
+        self.orgs = orgs
+        self.titles = titles
+
+    def prepare(self):
+        for lst in [self.first_names, self.last_names,
+                    self.streets, self.orgs, self.titles]:
+            random.shuffle(lst)
+
+    def fill_card(self, target_fields, position):
+        """Takes data and fills in fields, then creates a list of formatted
+        lines that can be written into a .vcf file. Takes a position argument
+        that it basically interprets as modulo the length of the list."""
+        new_card = ["BEGIN:VCARD", "VERSION:2.1",]
+        # Fill the Name field.
+        if "Name" in target_fields:
+            namefield = "N:"
+            namefield += str(self.last_names[position % len(self.last_names)])
+            namefield +=";"
+            namefield += str(self.first_names[position % len(self.first_names)])
+            new_card.append(namefield)
+        if "FullName" in target_fields:
+            fnamefield = "FN:"
+            fnamefield += str(self.first_names[position % len(self.first_names)])
+            fnamefield += " "
+            fnamefield += str(self.last_names[position % len(self.last_names)])
+            new_card.append(fnamefield)
+        if "Organization" in target_fields:
+            orgfield = "ORG:"
+            orgfield += str(self.orgs[position % len(self.orgs)])
+            new_card.append(orgfield)
+        if "Title" in target_fields:
+            titlefield = "TITLE:"
+            titlefield += str(self.titles[position % len(self.titles)])
+            new_card.append(titlefield)
+        if "Phone" in target_fields:
+            phonefield = "TEL;WORK;VOICE:("
+            phonefield += str(random.randrange(100,999))
+            phonefield += ") 555-"
+            phonefield += "%04d" % random.randrange(0,9999)
+            new_card.append(phonefield)
+        if "Address" in target_fields:
+            addrfield = "ADR;WORK:;;"
+            addrfield += str(random.randrange(1,18234))
+            addrfield += " "
+            addrfield += str(self.streets[position % len(self.streets)])
+            addrfield += ";Anytown;CA;12345;United States of America"
+            new_card.append(addrfield)
+        if "Email" in target_fields:
+            emailfield = "EMAIL;PREF;INTERNET:"
+            emailfield += str.lower(self.first_names[position % len(self.first_names)])
+            emailfield += str.lower(self.last_names[position % len(self.last_names)])
+            emailfield += "@example.com"
+            new_card.append(emailfield)
+        new_card.append("REV:%d" % random.randrange(100,500))
+        new_card.append("END:VCARD")
+        return new_card
+
+
+def rolodex_engine(card_limit, target_fields):
+    """Iterates over a range to generate a list of strings that can be
+    sent to file or to stdout and which constitute a valid vcard file.
+    Most programs that read vcards can accept a file that contains
+    multiple vcards - all you have to do is concatenate them."""
+    card_engine = CardFiller(first_names, last_names, streets, orgs, titles)
+    card_engine.prepare()
+    rolodex = []
+    for i in range(1, card_limit+1):
+        new_card = card_engine.fill_card(target_fields, i)
+        for line in new_card:
+            rolodex.append(line)
+    return rolodex
+
+################################### Execution ##################################
+
+if __name__ == '__main__':
+    """Run a variety of sanity checks regarding the arguments to the
+    script.  If there are no command-line arguments, give the user a
+    hint. If the arguments are weird, quit and ask them to try
+    again. User input and the filesystem: two pain-in-the-butt parts
+    of software engineering."""
+    # Sanity checks.
+    if len(sys.argv) != 3:
+        print "This script requires exactly two arguments: \n",
+        print "* The number of vCards to generate \n",
+        print  "* The name of the file to store them in. \n"
+        sys.exit()
+    if type(sys.argv[2]) != type("string"):
+        print "The first argument must be a number, the second a name."
+        sys.exit()
+    try:
+        int(sys.argv[1])
+    except ValueError:
+        print "The first argument must be a number, the second a name."
+        sys.exit()
+    if int(sys.argv[1]) &gt; 2**16:
+        print "Try generating less than 65,000 cards."
+        sys.exit()
+    if len(sys.argv[2]) &gt; 128:
+        print "Try a shorter filename."
+        sys.exit()
+    card_limit = int(sys.argv[1])
+    card_export_file = sys.argv[2]
+    # Writing to disk.
+    try:
+        with open("./%s" % card_export_file, "r") as rolodex_file:
+            print "A file with that name already exists."
+            sys.exit()
+    except IOError, ioerr_msg:
+        try:
+            with open("./%s" % card_export_file, "w") as rolodex_file:
+                rolodex = rolodex_engine(card_limit, target_fields)
+                for c in rolodex:
+                    rolodex_file.write(c)
+                    rolodex_file.write("\n")
+        except IOError, ioerr_msg:
+            print "The script couldn't create a file for the vcards."
+            print "The specific problem was '%s'" % ioerr_msg
+</code></pre>
+
+<p>`</p>
+
+<p>Writing this was basically like doing sit-ups in Python - not really challenging, but demanded, like all serious tasks, that you sit down and devote time and concentration to it. After that, results come easily.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pylons Field Scheduler: Planning]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning/"/>
+    <updated>2010-03-14T23:01:10-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning</id>
+    <content type="html"><![CDATA[<p>I&rsquo;d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
+I&rsquo;m jazzed about that: having another form for that data is going to be useful for me.
+With that in hand, I&rsquo;m starting on another Pylons project.
+This may evolve into my project for the Pylons course that I&rsquo;m trying to get my school to approve, but I&rsquo;m going to do it even if I don&rsquo;t get the class approved, because it&rsquo;s interesting and if I do it well it&rsquo;ll be useful to someone I care about.</p>
+
+<p>This is a trivial project overall, but that&rsquo;s what you do as part of the learning curve.
+This project will create a web site for scheduling the use of sports fields.
+Users will be able to visit the site and easily see what&rsquo;s currently scheduled and create requests for field usage.
+Fields will show up as available at a given time, booked, or request-pending.
+Requests go to field coordinators, who resolve conflicts and approve requests for field usage.
+They should be able to do this as quickly as possible - current mechanism envisions that field requests generate an email to the coordinator or coordinators, who can click on a generated link in the URL and approve the request just by that click.
+Non-response is the same as declining approval.
+So the coordinators have a bit of a workload, but that&rsquo;s what it means to be a coordinator anyhow.</p>
+
+<p>Expect more posts to show up with notes towards this project.
+I&rsquo;ve got a catchy name for it, too.
+&ldquo;Field Availability and Scheduling Tool.&rdquo;
+FAST - that&rsquo;s a good acronym, not worsened by the number of projects that have already used it.</p>
+
+<p>What I&rsquo;ll be trying to consciously think of during this project is data structures.
+What do I need to provide?
+What kind of database structure is best for sitting under this, even if I&rsquo;m only going to interact with it through SQLAlchemy?
+How can I keep the system open to further use with minimal overhead?</p>
+
+<p>My ambition - we&rsquo;ll see if I can actually pull it off - is to follow this up with an app that creates a schedule for students and teachers given a set of constraints (working on <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem">3SAT problems</a>, basically, and trying to figure out what the difficulty class of this one is).
+After that, I&rsquo;d like to write a recommendation engine.
+Neither of these are trivial projects, and there&rsquo;s a pretty good chance that I won&rsquo;t get them done before graduation.
+That&rsquo;s okay.
+The journey is the important thing; and if I make it through the journey to get them working (nevermind working at a high level of optimization), I&rsquo;ll be willing to call myself pretty handy with Python.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Summer of Python 2010]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/summer-of-python-2010/"/>
+    <updated>2010-03-10T14:54:13-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/summer-of-python-2010</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m watching the <a href="http://socghop.appspot.com/">2010 Google Summer of Code</a> page pretty closely.
+Ever since I found out that it existed, last year, I&rsquo;ve wanted to go for it, and my progress with Python has picked up again recently.
+My school schedule has currently changed in such a way that I have nearly three hours of quiet, uninterrupted time that it&rsquo;s easy to spend in front of a terminal session.
+It will not surprise the coders in the audience to learn that this has done wonders for my productivity.
+I&rsquo;m making progress on my current Pylons project and researching contributors to the Summer of Code, considering projects that I could contribute to.</p>
+
+<p>One thing that I like a great deal about the program is that it emphasizes a couple of virtues that our current economic arrangement has nearly downsized out of existence: community contribution and mentorship.
+I love that it connects students to their professional community, that it gives them - us, I hope! - a place to start, someplace to begin a career doing what they love.
+I have heard the complaint far too many times - and made it far too many times - to be unsympathetic to &ldquo;how do I get into this business, it seems like there&rsquo;s no room at all for a beginner.&rdquo;
+With the squeezing-out of apprenticeships and other transitions from student to professional, it&rsquo;s definitely harder for a lot of us to get into careers doing what we love.
+I&rsquo;m sad about that, and I think that it&rsquo;s a major bug in the current way that we run our affairs.</p>
+
+<p>But it&rsquo;s fixable.</p>
+
+<p>I particularly like the Google SOC fix because it also encourages community contribution, giving of oneself in order to make the community better.
+Sure, there&rsquo;s a selfish angle - but I think that productive selfishness like this can get a whole lot done, and it&rsquo;s pretty easy to encourage people to do it.
+Cautiously and prudently directed, selfishness can accomplish very positive things, especially when your definition of selfishness is as broad as mine.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The OS We're All Running]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/the-os-were-all-running/"/>
+    <updated>2010-03-05T14:05:16-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/the-os-were-all-running</id>
+    <content type="html"><![CDATA[<p>Core Security Labs, in <a href="http://www.darkreading.com/story/showArticle.jhtml?articleID=223101626">an announcement to the press at the 2010 RSA Security conference</a>, has released a tool that makes it easier to perform attacks on users of the social network Twitter.
+Recently, a subspecies of phishing attacks has arisen, called &ldquo;spearphishing,&rdquo; and it&rsquo;s this type of attack that the Core Security Labs tool facilitates.
+Most phishing attacks, in which the attacker impersonates a legitimate organization and persuades the victim to give the attacker their credentials, are spammed out, sent to everyone available.
+Spearphishing attacks are targeted to smaller groups, to organizations or individuals, and are often more effective because they are tailored to decieve that group specifically by including persuasive details related to the group or person.
+As social networks continue to grow in popularity, the information that people share publicly on such networks enable spearphishing attacks.</p>
+
+<p>The CSL tool specifically uses Twitter to perform spearphishing attacks.
+A CSL researcher, Pedro Varangot, said that their tool is a framework that can be extended to use other social networks in the attack.
+The attack tool framework is built on the open-source programming language Python, a favorite language for projects in the open-source world.
+The researchers have not discovered any new software vulnerability - they&rsquo;ve just found another vector by which to deliver phishing attacks, which are basically social attacks instead of technical attacks.</p>
+
+<p>These attacks are very relevant because they affect Windows users, Mac users, and Linux users.
+Phishing attacks try to fool the user much more than they try to fool the computer.
+That means that no matter what operating system you use, you&rsquo;re vulnerable to phishing attacks because you&rsquo;re still using a human brain.
+Most phishing attacks, to IT people, look ludicrously simple to avoid - but there are a lot of them, and the attacker has the advantage that they only need to succeed once to win big.
+We defenders need to succeed all of the time just to keep a status quo that&rsquo;s favorable to us.</p>
+
+<p>Further, this illustrates one of Linux&rsquo;s major roles in the security world: many major security tools, especially penetration-testing tools like the CSL tool and the Metasploit framework (which some of us saw in action at the RSA conference) are built on Linux.
+Linux&rsquo;s modification-friendliness means that it&rsquo;s a superior platform for performing attacks.
+It&rsquo;s easier to modify Linux into an attack platform than it is to twist Windows into that role.
+Regardless of platform, though, it&rsquo;s very important for us as IT people to keep in mind that we&rsquo;ve progressed in security to the point where we humans are the weakest part of the security fence - and so there are more and more attacks that target the weaknesses in human brains instead of in software.
+Going forward as IT professionals, all of us will need to be educators about those weakness - and about how to compensate for them.</p>
+
+<p>At least until we have clients and IT users who are not human, which will bring its own set of problems.</p>
+]]></content>
+  </entry>
+  
+</feed>

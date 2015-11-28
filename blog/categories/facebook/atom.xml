@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: facebook | Strongly Emergent]]></title>
+  <link href="http://stronglyemergent.com//blog/categories/facebook/atom.xml" rel="self"/>
+  <link href="http://stronglyemergent.com//"/>
+  <updated>2015-11-28T03:31:05-08:00</updated>
+  <id>http://stronglyemergent.com//</id>
+  <author>
+    <name><![CDATA[Strongly Emergent Systems]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Facebook Gap]]></title>
+    <link href="http://stronglyemergent.com//blog/2010/facebook-gap/"/>
+    <updated>2010-02-25T22:01:45-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2010/facebook-gap</id>
+    <content type="html"><![CDATA[<p>Recently, ReadWriteWeb, a group journalism blog about creating Web content, had a problem.
+Before I tell you what the problem is, let me show you their response.
+<a href="http://www.readwriteweb.com/archives/facebook_wants_to_be_your_one_true_login.php">One blog post had the problem</a>.
+They found it necessary to add the following announcement to it.</p>
+
+<blockquote><p><em>Dear visitors from Google.</em>
+This site is not Facebook.
+This is a website called ReadWriteWeb that reports on news about Facebook and other Internet services.
+You can however click here and become a Fan of ReadWriteWeb on Facebook, to receive our updates and learn more about the Internet.
+To access Facebook right now, click here.
+For future reference, type &ldquo;facebook.com&rdquo; into your browser address bar or enter &ldquo;facebook&rdquo; into Google and click on the first result.
+We recommend that you then save Facebook as a bookmark in your browser.</p></blockquote>
+
+<p>Who needs that?</p>
+
+<ul>
+<li>Comment#3: ok cool now can I get to facebook</li>
+<li>Comment#5: The new facebook sucks> NOW LET ME IN.</li>
+<li>Comment#6: when can we log in?</li>
+<li>Comment#7: I WANT THE OLD FAFEBOOK BACK THIS SHIT IS WACK!!!!!</li>
+<li>Comment#8: just want to get on facebook</li>
+<li>Comment#9: please give me back the old facebook login this is crazy&hellip;&hellip;&hellip;&hellip;&hellip;..</li>
+<li>Comment#11: I just want to sign in&hellip;&hellip;&hellip;&hellip;</li>
+<li>Comment#14: wtf is this bullshttttttttttt all about. can i get n plzzzzzzzzz</li>
+<li>Comment#15: What is going on? You are totally confusing me. Knock-knock. Anybody there? Let me in. Katherine</li>
+<li>Comment#17: All I want to do is log in, this sucks!!!!!!!!!!!!!!!!!1</li>
+</ul>
+
+
+<p>It goes on in that vein for a while.
+I hope that if you&rsquo;ve read Monday and Wednesday&rsquo;s posts, that you won&rsquo;t say &ldquo;oh for pity&rsquo;s sake, how stupid can users get?&rdquo; and instead look more closely at the matter.
+In this case, our best guess at what happened is this: RWW posted their article about Facebook.
+Google News considers RWW to be a news source - and in <a href="http://www.google.com/search?q=obama">searches where there are a lot of news results</a> in addition to web results, Google adds News results above the web results.
+It clearly labels them as &ldquo;News results for <strong>Whatever</strong>&rdquo; - but they are still the top results.
+And when your article with the words &ldquo;Facebook&rdquo; and &ldquo;login&rdquo; in the title is the top result for people who search for &ldquo;facebook login,&rdquo; a lot of them will click on it.
+You can see the comments they leave when they make the pretty rational assumption that if they Google for &ldquo;facebook login&rdquo; and click on the first result, they will be able to log in to Facebook there.</p>
+
+<p>But if you&rsquo;re reading this, that message that RWW posted probably baffled you.
+It baffled <em>them</em> - at first <a href="http://www.readwriteweb.com/archives/how_google_failed_internet_meme.php">they thought the comments were a joke</a>.
+You probably thought something like &ldquo;how in the heck could people possibly think that this site is Facebook?&rdquo;
+And that gap is exactly the gap in our perception as IT professionals that I&rsquo;ve been talking about this week.
+We as a community are great - really, really great! - at making tools for other IT professionals, for prosumers, for people who engage with computers for their own sake.
+But we still have big problems making tools for everyone else, and that&rsquo;s basically why Apple kicks our butt again and again.</p>
+
+<p>The discussion about this has died down a bit, especially compared to the talk about Buzz and the iPad, but it&rsquo;s lively enough.
+It spawned lots of good talking points.
+<a href="http://funkatron.com/site/comments/were-the-stupid-ones-facebook-google-and-our-failure-as-developers/">Ed Finkler claims that</a>:</p>
+
+<blockquote><p>[most computer users] do not give a rat&rsquo;s ass about how computers work.
+They want to accomplish certain tasks, and will do this in the way that is most sensible and direct for them.
+And the way they end up accomplishing these tasks within the multitasking window motif is typically not the way <em>I</em> would do it.</p></blockquote>
+
+<p>Over at Quiet Babylonian, <a href="http://quietbabylon.posterous.com/i-have-some-opinions-about-the-rww-facebook-l">Tim Maly opines</a> that
+&ldquo;If you are an interface designer, a brand manager or a security expert, your reaction to this incident should be one of deep humility.&rdquo;
+I&rsquo;m definitely with them.
+We gatekeepers, wizards, and Wise Women of the computer world should definitely be more aware of who is using the computers and the network, and why and how.
+The posts that I just linked to are a great start.</p>
+
+<p>I&rsquo;d be remiss, though, if I didn&rsquo;t mention counterpoints.
+&ldquo;It is okay to expect people to invest a little time to learn how stuff works and to retain an adequate portion of that education,&rdquo; barks <a href="http://philcrissman.com/2010/02/16/no-were-not-the-stupid-ones">Phil Crissman</a>.
+I don&rsquo;t think that he&rsquo;s entirely right, but I definitely agree that one should reasonably expect people, once education has reached them, to stay reached.
+He also points out very coherently that <a href="http://philcrissman.com/2010/02/17/why-its-not-a-google-failure">asking Google to solve the problem is asking too much</a>.
+There too I agree with him.
+This is not a technical problem.
+This is a problem with the interface between humans and machines, and it&rsquo;s on the human side.
+That&rsquo;s why I care about this as a student: I want to make sure that I and all my fellow students know that you can&rsquo;t implement technical solutions to everything.
+People matter - and the way that people think is very unlike the way machines think.
+You need to take human factors into account, early, fundamentally, earnestly.</p>
+
+<p>That&rsquo;s the message of this whole week of posts, really: your technical skills exist in service to the goal of bringing together human effort and technical tools.
+If you simply add power to the tools and make them capable of more things, you haven&rsquo;t done useful work yet: you must ensure that the tools are useful to humans and usable by humans.
+Especially by humans who aren&rsquo;t you.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Strongly Emergent</title>
+  <meta name="author" content="Strongly Emergent Systems">
+
+  
+  <meta name="description" content="System administration is about making hard decisions. This just amounts to saying that it&rsquo;s knowledge work. More specifically, it&rsquo;s about &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stronglyemergent.com//posts/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="atom.xml" rel="alternate" title="Strongly Emergent" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24040277-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Strongly Emergent</a></h1>
+  
+    <h2>What comes from combining humans, computers, and narrative</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stronglyemergent.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">I'll Build My Own Phone OS! With Blackjack! And Hookers!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-15T23:01:41-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>System administration is about making hard decisions.</p>
+
+<p>This just amounts to saying that it&rsquo;s knowledge work.  More specifically, it&rsquo;s about making annoying, difficult decisions about computers and networks.  What parts of the system are trustworthy, and what can enter the system that I shouldn&rsquo;t trust?  What does the current state of the system tell me about what&rsquo;s likely to break?  What looks urgent but can be safely ignored? What is the tradeoff curve of time and money that solutions to my current problem offer?  System administration requires a specific body of technical knowledge and experience to answer questions like that.  That&rsquo;s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.  The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we&rsquo;re going to need that for the whole of the foreseeable future.</p>
+
+<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don&rsquo;t have the expertise necessary to make good decisions in the given area.  I believe that the open source movement consistently blurs together those kinds of people.</p>
+
+<p>Now, I should make it clear up front that I love the open source community.  I am writing this post on a machine whose OS descends from open-source BSD, sending it to a machine that runs an open-source web server on another open-source OS, I spend umpty-ump hours a day staring at emacs, and my plans for the future include contributing both code and dollars to the open-source movement. I acknowledge that the world would be tremendously impoverished if open-source software either stopped existing or never had existed, and I want a future in which more of the world runs on open-source software.  I feel the same way about open-source software that I feel about America: its flaws frustrate me mostly because it could be <strong>so awesome</strong> if they were solved.</p>
+
+<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you&rsquo;re willing to scale a learning curve.  That&rsquo;s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.  That&rsquo;s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.  The other bargain that software can offer is that basic functionality can be yours quickly, and who knows whether Great Power is available or not.  Often it isn&rsquo;t.</p>
+
+<p>People don&rsquo;t take that second bargain because they&rsquo;re stupid.  They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they&rsquo;ve been burned before in the process of trying to use the Great Power of complicated tools.  I&rsquo;m fine with that: not everyone should be obliged to be a sysadmin.  As both a sysadmin and a developer, it&rsquo;s my job to make hard decisions that save other people from making hard decisions for just this reason.  If I just pass along hard decisions, then I probably haven&rsquo;t done well by the users.  The problem isn&rsquo;t even the hard decisions, really - it&rsquo;s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
+
+<p>Yes, a computer is a complicated general-purpose tool.  It is built of a huge assembly of spectacularly fiddly little parts, both physical and logical.  It is a wonder of the modern age -but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.  Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you&rsquo;re probably a developer, a sysadmin, or an enthusiast.  More likely, you sat down at a computer because you have a task that you want to do.  You want to send email, play Farmville, or do your taxes.  You want to use the tools to do that task, not to fiddle with the tools themselves.</p>
+
+<p>Software for a general audience is a failure if it asks everyone to be their own sysadmin. <a href="http://www.amazon.com/gp/product/0789723107?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0789723107">Whole books have been written about this.</a> And this is where we, finally, arrive at iOS, Android, and the title of this post.  The extent to which Android has become a <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/StartMyOwn">Build My Own</a> OS bothers me.  Android is a good OS - but it is at its worst when it asks people to become the sysadmins of their own phones.  The promise of Great Power in phone form is compelling, and there&rsquo;s a chunk of the market that needs it badly (hello, mobile system administration!).  But that&rsquo;s not the whole market - and that&rsquo;s why iOS, which offers a different bargain, is doing so well.</p>
+
+<p>Not everyone wants to make hard decisions about their computer - and they shouldn&rsquo;t have those decisions forced onto them unless and until it&rsquo;s absolutely necessary.  I think that part of why desktop OSes have gotten away with doing as much of that as they have is that they can take advantage of the existing number of people who have some expertise and are willing to be free support for their friends, family, and neighbor.  A bigger part, though, is that you can walk away from a desktop computer that&rsquo;s giving you issues.  Press &ldquo;cancel&rdquo; until whatever it is goes away. That&rsquo;s much less of an option with a phone - if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.  If it starts making your life harder instead of easier, you have to deal with that all of the time.</p>
+
+<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users' hands.  The iPhone and descendants have made Apple several zillion dollars. Here also we have the Blackberry, which prospered by offering a phone that could do email, and delivering on that promise very well.  And here finally we have the Android OS, which promises to be like an iPhone only &ldquo;more open&rdquo; and with multitasking and on other carriers.  Unfortunately, the tradeoff there is that to a significant extent, Android devices ask you to make harder decisions, and to have to sysadmin your phone.</p>
+
+<p>Android is offering a different bargain.  There are a lot of times the Android bargain sounds really good to me: I&rsquo;ve already made that bargain a lot of times, and it doesn&rsquo;t frighten me.  But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android&rsquo;s promises (for example, bundled un-removable applications and UI badness).  When we developers think of Apple, we probably don&rsquo;t think of them with great fondness because of their iron-fisted control over the App Store. But Apple hasn&rsquo;t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.  Android, on the other hand - sometimes you can barely tell what it&rsquo;s promising, and its identity is fragmented and conflicting.</p>
+
+<p>The future is getting brighter, though.  Android devices are getting better at not forcing users to make hard decisions they didn&rsquo;t sign up for.  iOS devices are getting <a href="http://www.apple.com/ipad">magical</a>.  Everyone else is gradually catching up with those two, because the hard decisions in question are getting easier as we as a society learn how to cope with them.  Of course there will always be more and newer hard decisions - but that&rsquo;s what your sysadmins are here for.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/everyone-turns-into-microsoft/">Everyone Turns Into Microsoft</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-12T23:01:23-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Nothing lasts forever, and everything is a trade-off.</p>
+
+<p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">&ldquo;The Other Road Ahead,&rdquo;</a> noted a risk of relying on software that other people control:</p>
+
+<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun. If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS. And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
+
+<p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening. Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
+
+<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.  The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.  They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.  Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
+
+<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.  However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.  Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.  So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
+
+<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.  They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.  This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.  Eventually, there will be something new.  Hostfiles were supplanted by DNS.  Yahoo was replaced by Google in search.  Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm. Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
+
+<p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft. I admire Microsoft&rsquo;s commitment to backward compatibility.  Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>. It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.  But nothing lasts forever, and everything is a trade-off. Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
+
+<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.  Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from. That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
+
+<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.  I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/the-many-forms-of-not-getting-it/">The Many Forms of Not Getting It</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-10T23:01:22-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>People are <a href="http://en.wikipedia.org/wiki/Craigslist_controversies_and_illegal_activities_by_users">suing Craigslist</a> again, and again I have to hide my face in my hands.  Suing Craigslist because people post problematic material there is like the kids in <em>Scream</em> suing AT&T; because the killer used a telephone.</p>
+
+<p>I have to wonder what the plaintiffs' thought process is, considering how long Craigslist has been working on foiling the people who try to cheat its system in a variety of ways.  A <a href="http://www.wired.com/entertainment/theweb/magazine/17-09/ff_craigslist?currentPage=all">Wired article from this time last year</a> is a far more educational look at the matter.  Craigslist is an astonishing <em>rara avis</em> in the business world - not just a company with a commitment to not being evil that makes Google look like pikers, but with a business model that gives them a proper interest in being good stewards of their classified-ad content.</p>
+
+<p>I haven&rsquo;t yet seen an accusation against Craigslist that seemed to be remotely grounded in fact - they&rsquo;re a great example of how successful Silicon Valley businesses seem to be lightning rods for nuisance lawsuits.  Generally libertarianism is for prats, but I can&rsquo;t blame startup folks for finding it appealing in the face of an appalling level of Not Getting It from the establishment business world and certain segments of the general public.  No-one likes being beholden to fools.</p>
+
+<p>That said, you have to keep in mind that generally power makes fools out of people.  This is part of why I respect Craigslist: they&rsquo;ve taken big steps to avoid becoming idiots with power.  The difference between them and the established business world is sharp.  Look at <a href="http://www.lettersofnote.com/2010/08/tiger-oil-memos.html">these memoranda from a 1970s executive</a>, for example - anyone who&rsquo;s worked in the business world probably recognizes that that attitude hasn&rsquo;t gone away at all.</p>
+
+<p>Those memoranda lead to another point, too: people are rarely as foolish as they are when they&rsquo;re seeking complete control over others.  Complete control over pretty much anything, especially other people, is a chimera, and in pursuing it, you will only harm yourself and others.  Craigslist accepts that there are limits to that control, and in that acceptance, show that they&rsquo;re smarter than pretty much anyone suing them.</p>
+
+<p>Lawsuits actually make another good example of this: what is a suit but an attempt to control - change - another&rsquo;s behavior?  Yet part of the reason lawsuits are so difficult is that rarely do the plaintiffs understand what produced the behavior they seek to change.  It&rsquo;s not an easy task - usually the defendants don&rsquo;t understand what they&rsquo;re doing either, they just understand that someone is trying to <em>make</em> them change, and so they resist coercion with all their might, no matter whether the change is good for them or not.  A cease-and-desist letter can quite reliably turn respectable businesspeople into petulant children screaming the adult equivalent of &ldquo;<em>you can&rsquo;t MAKE me do anything!</em>&rdquo;</p>
+
+<p>So pursuing control with a blunt instrument like a lawsuit is inefficient - and so is using a blunt instrument like a law or a word-filtering software utility.  What do we have that can do the job? Human social constructs and cultural constructs - and it&rsquo;s not a coincidence that part of why Craigslist works well is that it has welcomed those as ways to control its community, and accepted that it can&rsquo;t completely control the social and cultural norms around its site.  Craigslist has cultivated a community, invested in creating a trustworthy community, and is reaping its just rewards for a long-term investment in human decency.</p>
+
+<p>The lesson here for sysadmins and developers is this: programmatic limits on human behavior have harsh diminishing-returns curves.  You need to know when it&rsquo;s not worth your effort to implement more programmatic control, and at that point turn to social and cultural measures.  Social and cultural measures remove some control from the owners of a system, but can reward them with a better system.  You also need to know whether you want to work for someone who insists on chasing complete control of a system they own - they may not all be as bad as the &lsquo;70s executive, but they&rsquo;re definitely out there.  I hope that when you and I find them, we have enough control over our own lives to walk away instead of uselessly burning resources trying to control the uncontrollable.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/able-to-build-this-in-a-cave/">Able to Build This in a Cave</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-06T14:00:02-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I read James Tabor&rsquo;s <a href="http://www.amazon.com/gp/product/1400067677?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1400067677">Blind Descent</a>, an account of cavers attempting to find the deepest place on Earth.
+It&rsquo;s a flawed book, and falls to the level of being a bit forgettable, but it does contain an interesting study in leadership.</p>
+
+<p>The book&rsquo;s central figures are the American spelunker Bill Stone and the Ukranian hydrogeologist Alexander Klimchouk.
+Stone is a figure driven by urgency, and while the book examines how he has been portrayed as both a bold explorer in the mold of Hilary and a controlling, domineering expedition leader in the mold of Cortez, it&rsquo;s indisputable that he is an individualist.
+He welcomes others and works well with them, but his passion for caving and exploration is deeply personal and linked to a sense of time running out.
+He explores because he must.
+Meanwhile, Klimchouk is convinced that only &ldquo;a big society of united people&rdquo; can reach the most profound achievements in caving.
+Stone has led virtually all of the caving expeditions he has been on.
+Klimchouk is content to take a role elsewhere than at the peak of the hierarchy.
+Klimchouk regards the task of caving as something that demands the efforts of a community - he is a team-builder.</p>
+
+<p>This of course oversimplifies - but it illustrates that these two leadership styles exist.
+I think that for most human endeavors, we should prefer the team-building style.
+Stone, in his more brusque moments, reminds me of nothing so much as a reality-TV montage.</p>
+
+<p>The &ldquo;I&rsquo;m not here to make friends!&rdquo; attitude has become a cliché because it so strongly indicates a belief that others have nothing to offer - or worse, that working with others is a zero-sum game.
+But it&rsquo;s not.
+To the contrary, our friends <a href="http://blogs.hbr.org/bregman/2010/07/why-friends-matter-at-work-and.html">are our most valuable resource</a>.
+In business and in other areas of our lives, we flourish in direct proportion to our ability to make friends.
+This is disguised by the many different needs we have regarding friendship: I don&rsquo;t need the same types of friends that my brother does, and neither of us needs the same type of friends that our parents do.
+But we all do need companionship, support, and connections.</p>
+
+<p>In the IT world, I actually see this most clearly in Steve Jobs.
+Steve Jobs seems to be almost a caricature of the urgency-driven, individualistic personality - and certainly almost all accounts portray him as an extremely demanding person.
+And yet, Jobs is a team-builder.
+At both Pixar and Apple, Jobs has assembled a team that reliably produces amazing things.
+But it should be obvious that Jobs' individual work is not what created <em>Up</em> or the iPhone.
+Jobs is not an animator, a programmer, or a hardware tinkerer.
+Jobs is a visionary - and he has that crucial team-building skill of bringing together groups that can accomplish far more than the sum of individual creators' efforts.
+The astonishing accomplishments of Apple and Pixar demonstrate the power that can spring from a team-building style of leadership.</p>
+
+<p>Of course, that&rsquo;s not a huge revelation - the synergy that comes from working in teams is an advantage about as old as human society.
+What we must be aware of, complementing our knowledge of that synergy, is of attempts to fake it.
+The shallow, insincere corporate team-building exercise is another cliché of modern society - and that comes from attempts at control.
+Complete control is a chimera.
+It is unattainable, and attempts to attain it will only end in wasted resources and frustration.
+So take a lesson from the cavers, and build teams that will attain your objectives.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/dont-shelve-it/">Don't Shelve It</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-03T23:01:19-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Every time I read a Paul Graham essay, I find something new and relevant to my life as a coder and Computer Person.
+This time, it was in <a href="http://www.paulgraham.com/road.html">The Other Road Ahead</a>:</p>
+
+<blockquote><p>If I&rsquo;d had to wait a year for the next [chance to implement my ideas], I would have shelved most of these ideas, for a while at least.
+The thing about ideas, though, is that they lead to more ideas.
+Have you ever noticed that when you sit down to write something, half the ideas that end up in it are ones you thought of while writing it?
+The same thing happens with software.
+Working to implement one idea gives you more ideas.
+So shelving an idea costs you not only that delay in implementing it, but also all the ideas that implementing it would have led to.
+In fact, shelving an idea probably even inhibits new ideas: as you start to think of some new feature, you catch sight of the shelf and think &ldquo;but I already have a lot of new things I want to do for the next release.&rdquo;</p></blockquote>
+
+<p>I bowed my head when I read that, because that has happened to me and <em>is</em> happening to me.
+I am beseiged with ideas, they are always there, and my only regret in life is that the choices I make always prevent me from chasing some ideas - force me to choose a subset.
+And lately, I&rsquo;ve been giving in to that effect of inhibition - of deferring a thing, saying &ldquo;I&rsquo;ll code that eventually,&rdquo; &ldquo;I&rsquo;ll write that eventually,&rdquo; &ldquo;I&rsquo;ll play that eventually.&rdquo;  This only works up to a point, and then it becomes toxic.
+I can reject it, though - and so can you.</p>
+
+<p>We all have opportunity costs to deal with, and some are much harsher than others.
+I am still a student, and even though there are paths that I can&rsquo;t take, I have no excuse for not grabbing hard on the opportunities that I do have.
+One opportunity that I have is the opportunity to write here, the way I originally planned - and that opportunity, I must seize.</p>
+
+<p>I&rsquo;ll leave off with a quick link, a story that also pressed this internal button: <a href="http://blog.rootein.com/2010/04/for-gods-sake-follow-your-dreams.html">&ldquo;For God&rsquo;s Sake, Follow Your Dreams&rdquo;</a> - there are certainly things to disagree with, there, but I like the urgency of it, and the way that the dialogue explores how we can fall short.
+I often dwell on my own failures - there have been plenty!
+And I was complaining about it to a dear friend, dwelling especially on easily avoidable failures.
+&ldquo;Brighid,&rdquo; he reminded me, &ldquo;if you couldn&rsquo;t avoid them, they wouldn&rsquo;t be failure.
+Since you <em>can</em> see them, use that as a starting place to avoid them in the future.&rdquo;
+So here&rsquo;s to seeing our failures, and if not avoiding them, then learning from them.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/creating-and-refining/">Creating and Refining</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-25T23:01:17-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One of my ongoing questions is whether I need to be more of a system administrator or more of a developer.
+The differences between them make for an interesting thought exercise - not the differences in activity, but the difference in the mental demands that the job makes.
+Right now, I picture them as part of the same spectrum, but at different points on it.
+Similar to the <a href="http://stronglyemergent.com/blog/2010/textbook-overview-2/">dilemma of teaching</a>, with its tension between reference material and narrative, there&rsquo;s a tension between creative activity and refining activity.</p>
+
+<p>The fundamental posture of system administration is conservative: we have a system that&rsquo;s working, and priority one is to make sure that it keeps working.
+We of course want to improve it, but that&rsquo;s what we have test networks and deployment procedures for, and sometimes keeping everything moving so smoothly that it&rsquo;s invisible to end users takes up more than 40 hours a week.
+We think about wires that might break, hard drives that might fail, email that might disappear into the yawning maw of /dev/null, ACLs that might expose data to the wrong people, and in general about a million things that could go wrong.</p>
+
+<p>This is not to say that developers don&rsquo;t think about that - but the fundamental posture of developers is creative.
+While maintenance programming is a real thing and a noble pursuit if it&rsquo;s what you&rsquo;re called to, more often we crave the luxury of starting from scratch.
+Necessarily, that means that our programs will spend a lot of time in a state of &ldquo;not working yet,&rdquo; and that&rsquo;s okay.
+We are a lot more likely to deliberately break something on our way to a solution that we&rsquo;re satisfied with.
+While we spend time debugging and engineering robustness, which require thinking about how things could fail, it&rsquo;s much more pleasant for your average developer to think about the awesome things this program will do when it&rsquo;s working right.</p>
+
+<p>I feel called to both of these courses: the shared activity of finding a way to make a system work is very, very satisfying to me.
+It is a puzzle-solving activity - what can I fiddle with to get this to come together elegantly?
+How does this system actually work?
+What do I need this system to do?
+These are questions that it&rsquo;s interesting to investigate and answer.</p>
+
+<p>My biggest disappointment with my college is related to this - my college is interested in teaching sysadmins, and not at all interested in cultivating hackers and developers.
+I&rsquo;m very sad about that because there&rsquo;s an important part of me that school doesn&rsquo;t care about.
+Fortunately, the huge corpus of hacker lore on the Internet is one big playground for someone who&rsquo;s inclined to self-education.
+<a href="http://stackoverflow.com/">Stack Overflow</a>, for example, has been very good to me, and the Internet in general is my textbook.
+So I take comfort in knowing that no matter which path I give more of my time to, the ability to efficiently soak up the professional lore from the Internet will stay useful.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/">Pitfalls of IT: This Job Would Be Great if It Weren't for the Customers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-23T23:01:12-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The trend that most worries me as I go through school isn&rsquo;t technical: it&rsquo;s social and cultural.
+That trend is contempt for the users.</p>
+
+<p>The school environment that produces IT professionals is like the farm-league system in professional sports: it mimics the environment that the participants, ideally, grow into.
+The way that IT is taught and learned closely mirrors the way that it&rsquo;s practiced.
+That&rsquo;s why it worries me so much that there is a tolerance for a culture of IT that&rsquo;s predicated on contempt for ordinary users.
+That contempt is absolutely toxic to the relationship between IT professionals - a service profession! - and the users being served.
+Even if you&rsquo;re someone like a data-center technician or a high-level system administrator, you and the phone support technicians need to keep in mind that you are dealing with actual people and their actual problems.
+Compassion is a requirement of the job.
+I believe that if you don&rsquo;t want to actually help people, you shouldn&rsquo;t be in IT.</p>
+
+<p>My biggest source of satisfaction, when I&rsquo;m wearing my IT hat, is <em>making a difference</em> in someone&rsquo;s day.
+I feel good about my profession and my work when I help people overcome their problems, and when I can share the joy that I feel over having wonderful tools available to me through computers.
+Of course I have to keep in mind the inherent trade-off in specializing in IT.
+It&rsquo;s a specialization, which means that not everyone knows what I do.
+I do know more about computers.
+I am, in fact, an expert.
+But that&rsquo;s not the whole picture.
+I am also a teacher: my expertise is no good if I&rsquo;m not sharing it and helping people thereby.
+It is not a scarce thing that I have to hoard and protect from the barbarians.
+It must be put to use in helping people - that&rsquo;s when it becomes valuable.
+Like nearly any other feature a human can have, expertise becomes toxic when it is not an end in itself, but a means to playing tribal power games and to vanity.</p>
+
+<p><a href="http://steve-yegge.blogspot.com/">Steve Yegge</a>, a coder I admire, <a href="http://sites.google.com/site/steveyegge2/really-no-big-deal">has a great story from his father</a> about how service professionals affect the lives of those around them.
+His father wrote about his experiences in the hospital, and concluded with words that I believe in IT can learn from:</p>
+
+<blockquote><p>Within each step of these medical processes and procedures, the medical personnel that touch the lives of the patients, do so for only very brief periods of time - sometimes as little as a few minutes.
+But, these patients are not simply cogs in the machinery of this well-oiled machine.
+They hurt and are tired and are very often frightened.
+Take care that you treat them with dignity and respect for their condition.
+Because, this really is a big deal.</p></blockquote>
+
+<p>I think that we can definitely learn from that - and that learning must be a holistic part of our learning, our teaching, and our practice as IT professionals.
+Making jokes that are only funny if you assume that users are deaf, mute, and stupid isn&rsquo;t any more acceptable than sexist, racist, or other humor that&rsquo;s predicated on some other group&rsquo;s inferiority.
+We must retain the humility to anticipate that users come to our IT structures not with our priorities, but with their own, and be willing to meet them halfway, not to dismiss them or to think that they only cause trouble.
+Creating and running an IT infrastructure is a vast <em>collaboration</em> with users, and poisoning the well of that relationship not only damages your personal career in IT, it damages the prestige and the ability to do good works of the entire field</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/sharpening-my-saw-version-control/">Sharpening My Saw: Version Control</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-16T23:01:10-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There are several software components that are pretty universally found on the toolbelts of professional programmers.
+For example, it&rsquo;s normal to have a favorite IDE/text editor.
+It doesn&rsquo;t entirely matter whether you like the visphere, Eclipse, Visual Studio, or emacs - it matters that you&rsquo;ve put some thought into mastering a serious tool that enables high-level work.
+As a programmer, there isn&rsquo;t really an alternative: other things held equal, someone who&rsquo;s spent the time to get good at (for example) Eclipse will be more productive than you if you haven&rsquo;t gotten good at such a tool.
+The things on the toolbelt are all like that, they make massively increased productivity possible.</p>
+
+<p>Such a tool is version control.
+By now we&rsquo;re all used to saving documents.
+Version control is like the superpowers version of saving a document: you save the way it was at a specific time, in a continuum of ways it was, and the system nearly coerces you into leaving behind a reason for <em>why</em> you saved it at that time and in that state.</p>
+
+<p><em>Distributed</em> version control - the current flagbearers are <a href="http://git-scm.com/">Git</a>, <a href="http://mercurial.selenic.com/">Mercurial</a>, and <a href="http://bazaar.canonical.com/en/">Bazaar</a> - ups the ante even further by making it much easier for lots of people to work on a project at once and still have that superpower saving.
+The difference that the toolkit makes is even more important in group contexts: there are a lot of big projects that we rely on, invisibly, in just using the Internet and living our lives, that would be <strong>impossible</strong> without version control.</p>
+
+<p>I&rsquo;m using Git and Mercurial now, gaining proficiency with them, and I&rsquo;ve used a bit of Subversion, a non-distributed version control system.
+Part of my mission for 2010 is to assemble a toolbelt.
+Right now, it&rsquo;s looking like it&rsquo;ll be emacs, Mercurial, FogBugz, Firefox/Firebug, SysInternals' ProcMon/ProcExp/Autoruns, Stack Overflow (and its siblings), bash and a little PowerShell, Ethereal/Wireshark, and by the way, yes, the toolbelt gets crowded.
+That&rsquo;s part of why learning to use it well is so important: all of those tools <em>matter</em> to your productivity as a programmer.
+I should note that the sysadmin side of my brain is going to end up using a lot of those tools, too.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/pylons-field-scheduler-planning/">Pylons Field Scheduler: Planning</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-14T23:01:10-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
+I&rsquo;m jazzed about that: having another form for that data is going to be useful for me.
+With that in hand, I&rsquo;m starting on another Pylons project.
+This may evolve into my project for the Pylons course that I&rsquo;m trying to get my school to approve, but I&rsquo;m going to do it even if I don&rsquo;t get the class approved, because it&rsquo;s interesting and if I do it well it&rsquo;ll be useful to someone I care about.</p>
+
+<p>This is a trivial project overall, but that&rsquo;s what you do as part of the learning curve.
+This project will create a web site for scheduling the use of sports fields.
+Users will be able to visit the site and easily see what&rsquo;s currently scheduled and create requests for field usage.
+Fields will show up as available at a given time, booked, or request-pending.
+Requests go to field coordinators, who resolve conflicts and approve requests for field usage.
+They should be able to do this as quickly as possible - current mechanism envisions that field requests generate an email to the coordinator or coordinators, who can click on a generated link in the URL and approve the request just by that click.
+Non-response is the same as declining approval.
+So the coordinators have a bit of a workload, but that&rsquo;s what it means to be a coordinator anyhow.</p>
+
+<p>Expect more posts to show up with notes towards this project.
+I&rsquo;ve got a catchy name for it, too.
+&ldquo;Field Availability and Scheduling Tool.&rdquo;
+FAST - that&rsquo;s a good acronym, not worsened by the number of projects that have already used it.</p>
+
+<p>What I&rsquo;ll be trying to consciously think of during this project is data structures.
+What do I need to provide?
+What kind of database structure is best for sitting under this, even if I&rsquo;m only going to interact with it through SQLAlchemy?
+How can I keep the system open to further use with minimal overhead?</p>
+
+<p>My ambition - we&rsquo;ll see if I can actually pull it off - is to follow this up with an app that creates a schedule for students and teachers given a set of constraints (working on <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem">3SAT problems</a>, basically, and trying to figure out what the difficulty class of this one is).
+After that, I&rsquo;d like to write a recommendation engine.
+Neither of these are trivial projects, and there&rsquo;s a pretty good chance that I won&rsquo;t get them done before graduation.
+That&rsquo;s okay.
+The journey is the important thing; and if I make it through the journey to get them working (nevermind working at a high level of optimization), I&rsquo;ll be willing to call myself pretty handy with Python.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/sharpening-my-saw-emacs/">Sharpening My Saw: Emacs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-11T22:01:13-08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently re-read <a href="http://www.codinghorror.com/blog/2009/03/sharpening-the-saw.html">Jeff Atwood&rsquo;s post about sharpening your saw</a>.
+It has me thinking about my personal work habits and my toolkit.
+I&rsquo;m going to be writing about parts of my workflow from time to time, and exploring options.
+Today, the saw in question is emacs.</p>
+
+<p>I started using emacs about six months ago, and it&rsquo;s gotten to the point where I can&rsquo;t imagine getting programming <em>work</em> done without it.
+I didn&rsquo;t realize how much time I was using moving my hands around until I started using a program that&rsquo;s got a monomania about keeping your fingers near the home keys.
+At this point I have an unconditional love for emacs and I plan to be using it for the rest of my life as a Computer Person.
+<a href="http://steve-yegge.blogspot.com/">Steve Yegge</a> can tell you at great length why emacs is so great, but the main thing that makes me happy is this: I can grow with emacs.
+Right now, I&rsquo;m getting some pretty good mileage out of it.
+As I get better at the craft, I&rsquo;ll be able to get even more out of emacs - and because it embeds one of the best domain languages out there, the upper limit of how much I can get out of emacs is so far away it might as well be measured in light years.
+The local maximum of efficiency with emacs is a very, very big peak - and because getting there requires that I actively optimize emacs to myself, it&rsquo;s a peak unique to me, which makes it all the higher.</p>
+
+<p>One symptom of this is that it&rsquo;s gotten into my life in a variety of ways.
+I try to control Firefox by emacs keystrokes sometimes and I have to stop myself.
+It has definitely heightened my tendency to do everything from my keyboard instead of reaching for the mouse (my intermittent wrist issues only encourage this pattern).
+That&rsquo;s definitely an interesting phenomenon when a tool produces it, and it&rsquo;s worth looking into further.</p>
+
+<p>One of the most important things to remember about this saw-sharpening, though, is that it&rsquo;s about <em>your</em> saw.
+Professionals in a given field tend to converge around a constellation of tools, but each has their own favorite for their own reason.
+So if you&rsquo;re reading this, that means you - and that means that you have an obligation not to stick with a tool that&rsquo;s not well-suited to you.</p>
+
+<p>Finally, as long as we&rsquo;re talking about straight text editors, I&rsquo;m going to encourage those of you who do work in Windows towards <a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a>.
+It&rsquo;s just the best notepad replacement you can get in Windows.
+Even if you only use it for syntax highlighting, tabbed multiple-file handling, and regular expression searching, it is a beautiful shining gift from the open-source world and will make your life better.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="5">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="3">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/two-traps/">Two Traps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/brighid">@brighid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'brighid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Strongly Emergent Systems -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

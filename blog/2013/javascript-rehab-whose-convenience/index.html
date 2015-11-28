@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Rehab: Whose Convenience Are We Talking About Here? - Strongly Emergent</title>
+  <meta name="author" content="Strongly Emergent Systems">
+
+  
+  <meta name="description" content="Here&rsquo;s an antipattern that I see way too often: &ldquo;please enable JavaScript for this site.&rdquo; There are several levels of badness with &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="atom.xml" rel="alternate" title="Strongly Emergent" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24040277-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Strongly Emergent</a></h1>
+  
+    <h2>What comes from combining humans, computers, and narrative</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stronglyemergent.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">JavaScript Rehab: Whose Convenience Are We Talking About Here?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-05T08:04:00-08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Here&rsquo;s an antipattern that I see way too often: &ldquo;please enable JavaScript for this site.&rdquo; There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
+
+<p>JavaScript is actually pretty great: <a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>). You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
+
+<p><strong>That&rsquo;s the problem!</strong></p>
+
+<p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it. <em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit. In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
+
+<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
+
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right. This is deeply not the case. It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition! &ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness (or an admission that some pointy-haired boss is in charge).</p>
+
+<p>There are many things you can only do in JavaScript. Having JavaScript in your toolkit, as a web developer, is indispensable. But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it. If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
+
+<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives. I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information. If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
+
+<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit. I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Strongly Emergent Systems</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-05T08:04:00-08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript-rehab/'>javascript rehab</a>, <a class='category' href='/blog/categories/rage/'>rage</a>, <a class='category' href='/blog/categories/ux/'>ux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/program-or-paradigm/" title="Previous Post: Program Or Paradigm?">&laquo; Program Or Paradigm?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/the-bittersweet-rise-of-tumblr/" title="Next Post: The Bittersweet Rise Of Tumblr">The Bittersweet Rise Of Tumblr &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/two-traps/">Two Traps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/brighid">@brighid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'brighid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Strongly Emergent Systems -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

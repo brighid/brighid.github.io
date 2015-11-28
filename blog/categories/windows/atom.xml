@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: windows | Strongly Emergent]]></title>
+  <link href="http://stronglyemergent.com//blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://stronglyemergent.com//"/>
+  <updated>2015-11-28T03:31:05-08:00</updated>
+  <id>http://stronglyemergent.com//</id>
+  <author>
+    <name><![CDATA[Strongly Emergent Systems]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Growing Up With Windows XP]]></title>
+    <link href="http://stronglyemergent.com//blog/2009/growing-up-with-windows-xp/"/>
+    <updated>2009-12-31T16:01:14-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2009/growing-up-with-windows-xp</id>
+    <content type="html"><![CDATA[<p>The first time that I built a computer for myself was in 1998.
+It barely worked, and it was built on a particularly unreliable generation of hard drives, so it died before too long.
+I scrounged a few parts from it and built a new computer at the beginning of 2002.
+That was where I brought Windows XP into my house for the first time.
+It didn&rsquo;t feel like a huge upgrade from Windows 2000, and I wasn&rsquo;t a fan of Luna.
+To this day, one of the first things I do when I install XP is to get rid of Luna and go back to the Windows 2000 visual scheme because it doesn&rsquo;t get in the way (we&rsquo;ll see if Windows 7 makes its chrome worthwhile).</p>
+
+<p>In nearly a decade since then, I&rsquo;ve been using Windows XP nearly every day, gradually learning how Microsoft thinks by looking at what it produced, learning how other people think by seeing what problems they run into, and learning how I think by seeing what I need to fight to accomplish with Windows and what I can accomplish without thinking about it.
+Windows XP is a comfortable, well-worn part of my computing experience, at this point.
+I grew up thinking that &ldquo;Macintosh&rdquo; and &ldquo;computer&rdquo; were synonymous, and the Linux Movement has my heart, but I still use XP every day, and its patterns of thought have influenced mine.</p>
+
+<p>This is why I worry about Windows XP.
+Before 1998, I was using computers and the Internet - and making every bit as much of an idiot of myself as you&rsquo;d expect from someone telling you they were on Usenet through their AOL subscription at the age of 13 - but I wasn&rsquo;t doing conscious practice, I wasn&rsquo;t actively learning very much.
+I was learning to treat computers as familiar, knowable, and safe, which was very valuable, but I wasn&rsquo;t learning <em>how they worked.</em> The experience of using a debugger on the OS8 computer that my family kept in the back room taught me pretty much one thing that&rsquo;s stuck with me: beneath the shiny part of a computer&rsquo;s interface, there is a universe that we can reach into and experience in a different way.
+That experience is a big part of why I want to be a developer.</p>
+
+<p>I want to be a developer the way the average teenager with a guitar wants to be a rock star, which is probably unhealthy.
+I&rsquo;ve mellowed out since I was an actual teenager with a keyboard, and now I&rsquo;m actually working on that goal instead of just fantasizing about the rewards of achieving it.
+I can think of a task and have some idea of how a program would get there, visualize the broad pattern of big chunks of source code to do it.
+That&rsquo;s progress, that&rsquo;s a bit of growing up.
+Growing up, to me, also requires that I leave behind Windows XP.
+I like XP, but as it lurches towards its end-of-support date, dying, like Windows 98 and Internet Explorer 6, a protracted, get-on-with-it, curtain-clutching <em>Tristan und Isolde</em> kind of death, I need to face facts.</p>
+
+<p>There are people arguing that the desktop OS overall should have a less prominent role in the future - that the browser is doing most things that people did on the desktop in a way that makes them more productive.
+Considering that I rely on Firefox plugins and that I have installed multiple browsers specifically to use as gmail clients, I can&rsquo;t argue very hard against that.
+Windows 7 is here, too, and soon I&rsquo;ll be grabbing a copy of that and getting my hands dirty.
+Lovely thought.
+As well, there&rsquo;s always the allure of going back to Macs: I&rsquo;m not the first to point out that Apple is a maniacally intense, highly talented design firms that happens to make computers (the iPhone is a handheld computer that happens to contain a phone).
+I could hop over to Linux: I&rsquo;ve already got a bit of a start on a Unix beard, and for a year and more I&rsquo;ve been using an old desktop as an improvised server and development box.
+I&rsquo;m using emacs, for pity&rsquo;s sakes.
+I should do something else.</p>
+
+<p>I still can&rsquo;t quite get myself to give up XP.
+But I need to.
+I grew into being a serious Computer Person with Windows XP - and now I need to pass from apprentice to journeyman, and Windows XP needs a well-deserved rest.
+I&rsquo;ll move away from it.
+A year from now, it&rsquo;ll be easier to focus on the things I hated about it - the twenty damn things that needed doing before an install was usable, for example - but not yet.
+Right now, Windows XP has achieved the highest calling of a tool: it has become invisible, I am doing my tasks instead of using the tool.
+This distinction will always earn it a friendly memory in the future, regardless of what I end up using to do my day-to-day work.</p>
+]]></content>
+  </entry>
+  
+</feed>

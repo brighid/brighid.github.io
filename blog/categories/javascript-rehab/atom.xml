@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript rehab | Strongly Emergent]]></title>
+  <link href="http://stronglyemergent.com//blog/categories/javascript-rehab/atom.xml" rel="self"/>
+  <link href="http://stronglyemergent.com//"/>
+  <updated>2015-11-28T03:31:05-08:00</updated>
+  <id>http://stronglyemergent.com//</id>
+  <author>
+    <name><![CDATA[Strongly Emergent Systems]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Rehab: GardenWeb]]></title>
+    <link href="http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb/"/>
+    <updated>2013-03-24T09:15:00-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb</id>
+    <content type="html"><![CDATA[<p>Today&rsquo;s JavaScript Rehab patient is the GardenWeb forum. I&rsquo;m going to use
+<a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a>
+as an example. At the time of writing, here&rsquo;s what it looks like:</p>
+
+<p><img class="center" src="/images/screenshot_gardenweb.png" title="&ldquo;A screenshot of a thread on the GardenWeb forum.&rdquo;" ></p>
+
+<p>My problem with this starts with their <code>&lt;noscript&gt;</code> block: it says &ldquo;JavaScript must be enabled for the correct page display&rdquo; and that&rsquo;s a bad sign. It indicates that the people who wrote this code have grasped the wrong end of the stick. If your page does not display correctly without JavaScript, you have already failed. You might need to adjust your definition of &ldquo;correctly&rdquo; &mdash; for example, it&rsquo;s difficult to define what it&rsquo;s &ldquo;correct&rdquo; for Google Maps to do without JavaScript. But it&rsquo;s not difficult for this site: it&rsquo;s a dang discussion forum. Its purpose is to <em>display text.</em> This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich&rsquo;s eye.</p>
+
+<p>I end up saying this a lot in the JavaScript Rehab context: if you can&rsquo;t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong> also your keyboard should be taken away.</p>
+
+<p>I won&rsquo;t get too exercised over the clumsy prose of the message (<em>&ldquo;for the correct page display&rdquo;</em>? Ugh.): it just merits mentioning that if you&rsquo;re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers. What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner&rsquo;s attention to detail. A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it&rsquo;s not like they just didn&rsquo;t have time to get around to it (and judging by how often I see <code>cgi-bin</code> in their URLs, I&rsquo;m betting that there&rsquo;s a strong continuity between the 1995 version of the site and the 2013 version).</p>
+
+<p>What really gets me cranky, though, is that by and large the site <em>does</em> &ldquo;the correct page display&rdquo; without JavaScript enabled. What it <em>doesn&rsquo;t</em> correctly display is advertising. In the screenshot above, a little poking at the page source reveals that the big blank space on the right is intended as space for advertising. So what the message at the top of the page is actually saying, is &ldquo;we&rsquo;re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.&rdquo; Fuck that.</p>
+
+<p>GardenWeb, you are JavaScript addicts. Go to rehab.</p>
+
+<p><br>
+<br></p>
+
+<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a> &mdash; please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-whose-convenience/">the first JavaScript Rehab post</a> to see why I get so cranky about JavaScript.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Rehab: Whose Convenience Are We Talking About Here?]]></title>
+    <link href="http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience/"/>
+    <updated>2013-03-05T08:04:00-08:00</updated>
+    <id>http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s an antipattern that I see way too often: &ldquo;please enable JavaScript for this site.&rdquo; There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
+
+<p>JavaScript is actually pretty great: <a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>). You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
+
+<p><strong>That&rsquo;s the problem!</strong></p>
+
+<p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it. <em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit. In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
+
+<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
+
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right. This is deeply not the case. It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition! &ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness (or an admission that some pointy-haired boss is in charge).</p>
+
+<p>There are many things you can only do in JavaScript. Having JavaScript in your toolkit, as a web developer, is indispensable. But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it. If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
+
+<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives. I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information. If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
+
+<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit. I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
+]]></content>
+  </entry>
+  
+</feed>

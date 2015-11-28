@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Rehab: GardenWeb - Strongly Emergent</title>
+  <meta name="author" content="Strongly Emergent Systems">
+
+  
+  <meta name="description" content="Today&rsquo;s JavaScript Rehab patient is the GardenWeb forum. I&rsquo;m going to use
+a thread about cleaning grout
+as an example. At the time of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="atom.xml" rel="alternate" title="Strongly Emergent" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24040277-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Strongly Emergent</a></h1>
+  
+    <h2>What comes from combining humans, computers, and narrative</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stronglyemergent.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">JavaScript Rehab: GardenWeb</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T09:15:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Today&rsquo;s JavaScript Rehab patient is the GardenWeb forum. I&rsquo;m going to use
+<a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a>
+as an example. At the time of writing, here&rsquo;s what it looks like:</p>
+
+<p><img class="center" src="/images/screenshot_gardenweb.png" title="&#34;A screenshot of a thread on the GardenWeb forum.&#34;" alt="&#34;A screenshot of a thread on the GardenWeb forum.&#34;"></p>
+
+<p>My problem with this starts with their <code>&lt;noscript&gt;</code> block: it says &ldquo;JavaScript must be enabled for the correct page display&rdquo; and that&rsquo;s a bad sign. It indicates that the people who wrote this code have grasped the wrong end of the stick. If your page does not display correctly without JavaScript, you have already failed. You might need to adjust your definition of &ldquo;correctly&rdquo; &mdash; for example, it&rsquo;s difficult to define what it&rsquo;s &ldquo;correct&rdquo; for Google Maps to do without JavaScript. But it&rsquo;s not difficult for this site: it&rsquo;s a dang discussion forum. Its purpose is to <em>display text.</em> This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich&rsquo;s eye.</p>
+
+<p>I end up saying this a lot in the JavaScript Rehab context: if you can&rsquo;t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong> also your keyboard should be taken away.</p>
+
+<p>I won&rsquo;t get too exercised over the clumsy prose of the message (<em>&ldquo;for the correct page display&rdquo;</em>? Ugh.): it just merits mentioning that if you&rsquo;re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers. What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner&rsquo;s attention to detail. A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it&rsquo;s not like they just didn&rsquo;t have time to get around to it (and judging by how often I see <code>cgi-bin</code> in their URLs, I&rsquo;m betting that there&rsquo;s a strong continuity between the 1995 version of the site and the 2013 version).</p>
+
+<p>What really gets me cranky, though, is that by and large the site <em>does</em> &ldquo;the correct page display&rdquo; without JavaScript enabled. What it <em>doesn&rsquo;t</em> correctly display is advertising. In the screenshot above, a little poking at the page source reveals that the big blank space on the right is intended as space for advertising. So what the message at the top of the page is actually saying, is &ldquo;we&rsquo;re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.&rdquo; Fuck that.</p>
+
+<p>GardenWeb, you are JavaScript addicts. Go to rehab.</p>
+
+<p><br>
+<br></p>
+
+<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a> &mdash; please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-whose-convenience/">the first JavaScript Rehab post</a> to see why I get so cranky about JavaScript.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Strongly Emergent Systems</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T09:15:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript-rehab/'>javascript rehab</a>, <a class='category' href='/blog/categories/rage/'>rage</a>, <a class='category' href='/blog/categories/ux/'>ux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/weekend-project-affiliate-dot-el/" title="Previous Post: Weekend project: affiliate.el">&laquo; Weekend project: affiliate.el</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/stories-mattering/" title="Next Post: Stories Mattering">Stories Mattering &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/two-traps/">Two Traps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/brighid">@brighid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'brighid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Strongly Emergent Systems -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
