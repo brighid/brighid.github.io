@@ -9,8 +9,8 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="Last night I took a notion into my head and wound up spending a solid few hours with Ruby. I&rsquo;m
-happy with how that went! There&rsquo;s some &hellip;">
+  <meta name="description" content="Last night I took a notion into my head and wound up spending a solid few hours with Ruby.
+I&rsquo;m happy with how that went! There&rsquo;s some &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,55 +103,117 @@ happy with how that went! There&rsquo;s some &hellip;">
   </header>
 
 
-<div class="entry-content"><p>Last night I took a notion into my head and wound up spending a solid few hours with Ruby. I&rsquo;m
-happy with how that went! There&rsquo;s some first-time-with-a-new-language friction, but nothing out of
-the ordinary. Here&rsquo;s what I came up with, and afterwards, why I chose that and what I think it
-shows that I accomplished that.</p>
+<div class="entry-content"><p>Last night I took a notion into my head and wound up spending a solid few hours with Ruby.
+I&rsquo;m happy with how that went! There&rsquo;s some first-time-with-a-new-language friction, but nothing out of the ordinary.
+Here&rsquo;s what I came up with, and afterwards, why I chose that and what I think it shows that I accomplished that.</p>
 
-<div><script src='https://gist.github.com/5788557.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
+<p><noscript><pre>require &#39;cgi&#39;
+require &#39;json&#39;
+require &#39;net/http&#39;
+require &#39;uri&#39;</p>
 
+<p>module Jekyll
+  class MusicLink &lt; Liquid::Tag</p>
 
-<p>This creates a new Liquid tag, <code>{% music %}</code>, which can be inserted in page
-templates. I added it to my <code>footer.html</code> after the byline, timestamp, and categories. The tag
-checks whether the post&rsquo;s YAML front-matter has data for a musician and a track name. If the post
-has that data, the plugin attempts to create a link to the iTunes Store for the given track. With
-<code>makeItunesTarget()</code> it puts together a URL that is a query to the
-<a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands
-off the response to the standard library&rsquo;s JSON parser, and with <code>makeAnchorFromItunesData()</code> it
-takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the
-tag&rsquo;s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it&rsquo;ll be
-inserted). Finally, there&rsquo;s a convenience function, <code>getMusic()</code>, that just composes the previous
-three.</p>
+<pre><code>def initialize(tag_name, contents, tokens)
+  super
+  @contents = contents
+end
 
-<p>Part of why this worked well is that it&rsquo;s another project with limited scope: I had a specific
-objective in mind, so I was able to keep moving gradually towards it. However, that limited scope
-was a way of making progress towards the broad goal of &ldquo;learn Ruby&rdquo; and also took on the
-medium-scope goal of &ldquo;learn the iTunes Store Search API.&rdquo; As a practical matter, learning to work
-with other people&rsquo;s APIs, whether they&rsquo;re libraries, services, or daemons, is an important skill
-for a working programmer; toy projects that include cultivating that skill are good uses of my
-time. Learning new languages is also a career-long thing: for all the talk of Lisp being &ldquo;the
-hundred-year language,&rdquo; no-one now working as a programmer will be programming in just one language
-for the rest of their days. There are shell scripts and libraries and wrappers: there is a
-fragmented world that despite the friction of fragmentation, would not actually be better-served by
-a language monoculture. In addition, there are plenty of exciting things out there whose roots are
-in Ruby, so I was enthusiastic about picking up a smattering of Ruby.</p>
+def render(context)
+  @affiliateCode = &amp;#39;secret&amp;#39; # Fill in yours!
+  page = context.environments.first[&amp;#39;page&amp;#39;]
+  if page[&amp;#39;music-artist&amp;#39;] &amp;amp;&amp;amp; page[&amp;#39;music-track&amp;#39;]
+    music_url, music_string = getMusic(page[&amp;#39;music-artist&amp;#39;], page[&amp;#39;music-track&amp;#39;])
+    return %(&amp;lt;span class=&amp;#39;music-box&amp;#39;&amp;gt;Music: &amp;lt;a class=&amp;#39;music-link&amp;#39; href=&amp;quot;#{music_url}&amp;quot;&amp;gt;#{music_string}&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;)
+  else
+    return %()
+  end
+end
 
-<p>I&rsquo;m definitely fond of Ruby so far. Part of this is because I&rsquo;m getting to the point where I&rsquo;m
-seeing parallels with other languages and able to make good guesses about how a new language will
-behave. I was able to guess from reading source &ldquo;oh okay, Ruby is one of the languages where the
-return value of a function, if not explicit, is the value of the last statement evaluated in its
-body,&rdquo; was pleasantly surprised that it has the same tuple-packing return-multiple-values feature
-as Python, and noticed &ldquo;oh hey neat, there&rsquo;s a Scheme-like <code>function!()</code> naming convention for
-functions that mutate their parameters.&rdquo; So that&rsquo;s all good stuff.</p>
+def makeItunesTarget(artist, track)
+  iTunesURL = URI(&amp;quot;https://itunes.apple.com/search&amp;quot;)
+  iTunesParams = {
+    :country =&amp;gt; &amp;quot;us&amp;quot;, :media =&amp;gt; &amp;quot;music&amp;quot;,
+    :limit =&amp;gt; &amp;quot;5&amp;quot;, :entity =&amp;gt; &amp;quot;musicTrack&amp;quot;,
+    :term =&amp;gt; artist + &amp;quot; &amp;quot; + track,
+  }
+  iTunesURL.query = URI.encode_www_form(iTunesParams)
+  return iTunesURL
+end
 
-<p>Part of choosing Ruby, too, is that I&rsquo;m currently blogulating via Octopress, which is built on
-Ruby. Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that
-I&rsquo;ve chosen it, I want to have a grasp of how it works. That means learning Ruby and
-tinkering&mdash;which I&rsquo;m looking forward to.</p>
+def getFromItunes(iTunesURL)
+  http = Net::HTTP.new(iTunesURL.host, iTunesURL.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-<p>As a supplemental note, if this stuff sounds to you like a good attitude for a programmer to have,
-you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</a>.</p>
+  request = Net::HTTP::Get.new(iTunesURL.request_uri)
+  response = http.request(request)
+  if response.code == &amp;quot;200&amp;quot;
+    jsonResponse = JSON.load(response.body)
+    if jsonResponse[&amp;#39;resultCount&amp;#39;] == 0
+      jsonResponse = false
+    end
+  else
+    jsonResponse = false
+  end
+  return jsonResponse
+end
+
+def makeAnchorFromItunesData(iTunesJSON)
+  unless iTunesJSON
+    return iTunesJSON, iTunesJSON
+  end
+
+  primaryResult = iTunesJSON[&amp;#39;results&amp;#39;].first
+  if @affiliateCode
+    urlRegex = /(https:\/\/itunes\.apple\.com\/[^?]+\?[^&amp;amp;]+).+/
+    urlReplacement = &amp;#39;\1\2&amp;amp;partnerId=30&amp;amp;siteID=&amp;#39; + @affiliateCode
+    affiliatedTrackUrl= primaryResult[&amp;#39;trackViewUrl&amp;#39;].sub(urlRegex, urlReplacement)
+    primaryResult[&amp;#39;trackViewUrl&amp;#39;] = affiliatedTrackUrl
+  end
+
+  anchorURL = primaryResult[&amp;#39;trackViewUrl&amp;#39;]
+  anchorString = CGI.escapeHTML(&amp;quot;%s - %s&amp;quot; % [primaryResult[&amp;#39;artistName&amp;#39;], primaryResult[&amp;#39;trackName&amp;#39;]])
+  return anchorURL, anchorString
+end
+
+def getMusic(artist_name, track_name)
+  music_url, music_string = makeAnchorFromItunesData(getFromItunes(makeItunesTarget(artist_name, track_name)))
+  return music_url, music_string
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>Liquid::Template.register_tag(&#39;music&#39;, Jekyll::MusicLink)
+</pre></noscript><script src="https://gist.github.com/brighid/c3d19f2c6749fbec30ed.js?file=itms_music_link.rb"> </script></p>
+
+<p>This creates a new Liquid tag, <code>{% music %}</code>, which can be inserted in page templates.
+I added it to my <code>footer.html</code> after the byline, timestamp, and categories.
+The tag checks whether the post&rsquo;s YAML front-matter has data for a musician and a track name.
+If the post has that data, the plugin attempts to create a link to the iTunes Store for the given track.
+With <code>makeItunesTarget()</code> it puts together a URL that is a query to the <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands off the response to the standard library&rsquo;s JSON parser, and with <code>makeAnchorFromItunesData()</code> it takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the tag&rsquo;s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it&rsquo;ll be inserted).
+Finally, there&rsquo;s a convenience function, <code>getMusic()</code>, that just composes the previous three.</p>
+
+<p>Part of why this worked well is that it&rsquo;s another project with limited scope: I had a specific objective in mind, so I was able to keep moving gradually towards it.
+However, that limited scope was a way of making progress towards the broad goal of &ldquo;learn Ruby&rdquo; and also took on the medium-scope goal of &ldquo;learn the iTunes Store Search API.&rdquo;
+As a practical matter, learning to work with other people&rsquo;s APIs, whether they&rsquo;re libraries, services, or daemons, is an important skill for a working programmer; toy projects that include cultivating that skill are good uses of my time.
+Learning new languages is also a career-long thing: for all the talk of Lisp being &ldquo;the hundred-year language,&rdquo; no-one now working as a programmer will be programming in just one language for the rest of their days.
+There are shell scripts and libraries and wrappers: there is a fragmented world that despite the friction of fragmentation, would not actually be better-served by a language monoculture.
+In addition, there are plenty of exciting things out there whose roots are in Ruby, so I was enthusiastic about picking up a smattering of Ruby.</p>
+
+<p>I&rsquo;m definitely fond of Ruby so far.
+Part of this is because I&rsquo;m getting to the point where I&rsquo;m seeing parallels with other languages and able to make good guesses about how a new language will behave.
+I was able to guess from reading source &ldquo;oh okay, Ruby is one of the languages where the return value of a function, if not explicit, is the value of the last statement evaluated in its body,&rdquo; was pleasantly surprised that it has the same tuple-packing return-multiple-values feature as Python, and noticed &ldquo;oh hey neat, there&rsquo;s a Scheme-like <code>function!()</code> naming convention for functions that mutate their parameters.&rdquo;
+So that&rsquo;s all good stuff.</p>
+
+<p>Part of choosing Ruby, too, is that I&rsquo;m currently blogulating via Octopress, which is built on Ruby.
+Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that I&rsquo;ve chosen it, I want to have a grasp of how it works.
+That means learning Ruby and tinkering&mdash;which I&rsquo;m looking forward to.</p>
+
+<p>As a supplemental note, if this stuff sounds to you like a good attitude for a programmer to have, you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</a>.</p>
 </div>
 
 
@@ -198,7 +260,7 @@ you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</
         <a class="basic-alignment left" href="/blog/2013/dont-let-survivorship-bias-lie-to-you/" title="Previous Post: Don't Let Survivorship Bias Lie To You">&laquo; Don't Let Survivorship Bias Lie To You</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/the-prisoner-of-zend-duh/" title="Next Post: The Prisoner Of Zend, Duh">The Prisoner Of Zend, Duh &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/the-prisoner-of-zend-dot-php/" title="Next Post: The Prisoner Of Zend.php">The Prisoner Of Zend.php &raquo;</a>
       
     </p>
   </footer>
@@ -225,7 +287,7 @@ you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</
       </li>
     
       <li class="post">
-        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
       </li>
     
       <li class="post">
@@ -276,7 +338,7 @@ you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Strongly Emergent Systems -
+  Copyright &copy; 2016 - Strongly Emergent Systems -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

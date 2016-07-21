@@ -4,7 +4,7 @@
   <title><![CDATA[Category: learning | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/learning/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2015-11-28T03:31:05-08:00</updated>
+  <updated>2016-07-20T17:15:07-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,21 +18,41 @@
     <link href="http://stronglyemergent.com//blog/2010/it-only-looks-easy/"/>
     <updated>2010-12-07T23:01:34-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/it-only-looks-easy</id>
-    <content type="html"><![CDATA[<p>The Internal Revenue service has, as government agencies go, a pretty simple directive.  Here is the tax code, which we can consider to be a big lump of business logic.  Here are people&rsquo;s statements of how much money they made and how much money they owe.  Using those two, make sure that people stated both halves accurately.</p>
+    <content type="html"><![CDATA[<p>The Internal Revenue service has, as government agencies go, a pretty simple directive.
+Here is the tax code, which we can consider to be a big lump of business logic.
+Here are people&rsquo;s statements of how much money they made and how much money they owe.
+Using those two, make sure that people stated both halves accurately.</p>
 
 <p>It won&rsquo;t surprise you to learn that that isn&rsquo;t actually a simple task.</p>
 
-<p>I do expect it to surprise you that it&rsquo;s even more complicated than that.  Here&rsquo;s something that betrays the complication, one little directive from <a href="http://www.irs.gov/publications/p17/ch12.html">IRS Publication 17, Chapter 12</a>: &ldquo;If you receive a bribe, include it in your income.&rdquo;</p>
+<p>I do expect it to surprise you that it&rsquo;s even more complicated than that.
+Here&rsquo;s something that betrays the complication, one little directive from <a href="http://www.irs.gov/publications/p17/ch12.html">IRS Publication 17, Chapter 12</a>:
+&ldquo;If you receive a bribe, include it in your income.&rdquo;</p>
 
-<p>Yes, the IRS has to tax you on illegal income.  No, the IRS isn&rsquo;t allowed to fully care that it&rsquo;s illegal income - otherwise the whole agency is a walking 5th Amendment violation, something that <a href="http://www.irs.gov/businesses/small/article/0,,id=106500,00.html">people frequently get on their case about</a>. I am not the world&rsquo;s biggest fan of the IRS - but I think that their position is a great illustration of how complicated systems work.  Systems get complicated easily, and the ongoing task of &ldquo;civilization&rdquo; is to make complex systems manageable.  This is difficult, and <a href="http://www.shirky.com/weblog/2010/04/the-collapse-of-complex-business-models/">the difficulty scales up unpleasantly late in the game</a>. It&rsquo;s still worth thinking about.</p>
+<p>Yes, the IRS has to tax you on illegal income.
+No, the IRS isn&rsquo;t allowed to fully care that it&rsquo;s illegal income - otherwise the whole agency is a walking 5th Amendment violation, something that <a href="http://www.irs.gov/businesses/small/article/0,,id=106500,00.html">people frequently get on their case about</a>.
+I am not the world&rsquo;s biggest fan of the IRS - but I think that their position is a great illustration of how complicated systems work.
+Systems get complicated easily, and the ongoing task of &ldquo;civilization&rdquo; is to make complex systems manageable.
+This is difficult, and <a href="http://www.shirky.com/weblog/2010/04/the-collapse-of-complex-business-models/">the difficulty scales up unpleasantly late in the game</a>.
+It&rsquo;s still worth thinking about.</p>
 
-<p>My favorite exposé of this, especially in light of the California elections, is Steve Yegge&rsquo;s <a href="http://steve-yegge.blogspot.com/2009/04/have-you-ever-legalized-marijuana.html">Have You Ever Legalized Marijuana?</a> He barely scratches the surface, but he very effectively demonstrates that legalizing marijuana, no matter how much you like the idea, is a huge and complicated thing.</p>
+<p>My favorite exposé of this, especially in light of the California elections, is Steve Yegge&rsquo;s <a href="http://steve-yegge.blogspot.com/2009/04/have-you-ever-legalized-marijuana.html">Have You Ever Legalized Marijuana?</a>
+He barely scratches the surface, but he very effectively demonstrates that legalizing marijuana, no matter how much you like the idea, is a huge and complicated thing.</p>
 
-<p>Taming complex systems is never easy - but that&rsquo;s pretty much how we get advances in civilization. So we need to be good at it.  I&rsquo;m always happy to see evidence of this happening, especially when it&rsquo;s in entertaining form.  Pac-Man comes to mind.  Pac-Man is a great example of a complex system in this context - and a recent blogulator has <a href="http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior">given us all a fascinating look at the internals</a>. This is the sort of thing I love reading, because it shows how aspects of ordinary life that we don&rsquo;t always look at directly, are full of complexity and reward investigation.</p>
+<p>Taming complex systems is never easy - but that&rsquo;s pretty much how we get advances in civilization.
+So we need to be good at it.
+I&rsquo;m always happy to see evidence of this happening, especially when it&rsquo;s in entertaining form.
+Pac-Man comes to mind.
+Pac-Man is a great example of a complex system in this context - and a recent blogulator has <a href="http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior">given us all a fascinating look at the internals</a>.
+This is the sort of thing I love reading, because it shows how aspects of ordinary life that we don&rsquo;t always look at directly, are full of complexity and reward investigation.</p>
 
-<p>Unfortunately, that complexity also means endless debate.  Even when there is an authoritative answer to a complex question, someone whose salary depends on that answer not being understood, will probably be able to prevent people from understanding it.  The long version of this is in <a href="http://cscs.umich.edu/~crshalizi/weblog/523.html">Cosma Shalizi&rsquo;s authoritative takedown of <em>The Bell Curve</em> tomfoolery</a>, and the short version is in The Onion&rsquo;s <a href="http://www.theonion.com/articles/new-study-finds-blacks-more-likely,18552/">&ldquo;New Study Finds Blacks More Likely.&rdquo;</a></p>
+<p>Unfortunately, that complexity also means endless debate.
+Even when there is an authoritative answer to a complex question, someone whose salary depends on that answer not being understood, will probably be able to prevent people from understanding it.
+The long version of this is in <a href="http://cscs.umich.edu/~crshalizi/weblog/523.html">Cosma Shalizi&rsquo;s authoritative takedown of <em>The Bell Curve</em> tomfoolery</a>, and the short version is in The Onion&rsquo;s <a href="http://www.theonion.com/articles/new-study-finds-blacks-more-likely,18552/">&ldquo;New Study Finds Blacks More Likely.&rdquo;</a></p>
 
-<p>This is part of why simplicity and elegance are hard.  We are surrounded with complex systems, and synthesizing something simple and useful requires taming complexity - which is a tremendous challenge.  Fortunately for us hackers, that&rsquo;s usually where the interesting problems are.</p>
+<p>This is part of why simplicity and elegance are hard.
+We are surrounded with complex systems, and synthesizing something simple and useful requires taming complexity - which is a tremendous challenge.
+Fortunately for us hackers, that&rsquo;s usually where the interesting problems are.</p>
 ]]></content>
   </entry>
   

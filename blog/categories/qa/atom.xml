@@ -4,7 +4,7 @@
   <title><![CDATA[Category: qa | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/qa/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2015-11-28T03:31:05-08:00</updated>
+  <updated>2016-07-20T17:15:07-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,64 +18,73 @@
     <link href="http://stronglyemergent.com//blog/2011/generating-vcards-in-python/"/>
     <updated>2011-05-02T08:21:10-07:00</updated>
     <id>http://stronglyemergent.com//blog/2011/generating-vcards-in-python</id>
-    <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.  Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.  My personal address book is nowhere near that big and I&rsquo;m not about to use it for testing - so I turned to Python.  <a href="http://en.wikipedia.org/wiki/VCard">The vCard format</a> is pretty much a special kind of text file, so it&rsquo;s easy to create new vCards, and a vCard can contain multiple contacts by just concatenating contacts.</p>
+    <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.
+Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
+My personal address book is nowhere near that big
+(and I&rsquo;m not about to use it for testing),
+so I turned to Python.
+[The vCard format][vcard-wiki] is pretty much a special kind of text file,
+so it&rsquo;s easy to create new vCards,
+and a vCard can contain multiple contacts by just concatenating contacts.</p>
 
-<p>I didn&rsquo;t find exactly what I needed already in existence, so I wrote up a basic script to do it, and in case anyone else needs it, here it is.  It is released under the Apache Software License 2.0, and I hope you find it useful.</p>
+<p>I didn&rsquo;t find exactly what I needed already in existence,
+so I wrote up a basic script to do it, and in case anyone else needs it, here it is.
+It is released under the Apache Software License 2.0,
+and I hope you find it useful.</p>
 
-<p>`</p>
+<p><noscript><pre>
+#!/usr/bin/python
 
-<pre><code>#!/usr/bin/python
-
-"""Generates an abitrary number of valid .vcf vCard contacts based on the
+&quot;&quot;&quot;Generates an abitrary number of valid .vcf vCard contacts based on the
 parameters set at the beginning of the file. See also:
 http://softwareas.com/vcard-for-developers
 http://en.wikipedia.org/wiki/VCard
-"""
+&quot;&quot;&quot;
 
 import random, sys
 
 ################################## Parameters ##################################
 
-# We'll use this data no matter what the user tells us.
+# We&#39;ll use this data no matter what the user tells us.
 
 # What fields shall be populated?
-target_fields = {"Name":True,
-                 "FullName":True,
-                 "Organization":True,
-                 "Address":True,
-                 "Title":True,
-                 "Phone":True,
-                 "Email":True,}
+target_fields = {&quot;Name&quot;:True,
+                 &quot;FullName&quot;:True,
+                 &quot;Organization&quot;:True,
+                 &quot;Address&quot;:True,
+                 &quot;Title&quot;:True,
+                 &quot;Phone&quot;:True,
+                 &quot;Email&quot;:True,}
 
-# Data that we'll use to populate the cards' fields.
-first_names = ["Alice", "Bob", "Carol", "David", "Elena", "Farquahd", "Gretel",
-               "Hans", "Iris", "Junichi", "Khalisha", "Lee", "Mina", "Nassif",
-               "Oba", "Prudha", "Hida", "Kaiu", "Aaron", "Sangamon",
-               "Ferdinand", "Sanjay", "Asok"]
-last_names = ["Smith", "Jones", "Smythe", "Jorgenson", "Kim", "Luxury-Yacht",
-              "Throatwarbler-Mangrove", "Cooper", "Black", "Ahmedinejad",
-              "al-Tikriti", "al-Bagram", "von Trapp", "von der Wallenheim",
-              "Gamgee", "Proudfoot", "Brewer", "Kagehiro", "Ng",
-              "Nguyen", "Salzmann", "Bear", "Powers","Kusanagi", "Dengo",
-              "Mukherjee","Balaam"]
+# Data that we&#39;ll use to populate the cards&#39; fields.
+first_names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;, &quot;Elena&quot;, &quot;Farquahd&quot;, &quot;Gretel&quot;,
+               &quot;Hans&quot;, &quot;Iris&quot;, &quot;Junichi&quot;, &quot;Khalisha&quot;, &quot;Lee&quot;, &quot;Mina&quot;, &quot;Nassif&quot;,
+               &quot;Oba&quot;, &quot;Prudha&quot;, &quot;Hida&quot;, &quot;Kaiu&quot;, &quot;Aaron&quot;, &quot;Sangamon&quot;,
+               &quot;Ferdinand&quot;, &quot;Sanjay&quot;, &quot;Asok&quot;]
+last_names = [&quot;Smith&quot;, &quot;Jones&quot;, &quot;Smythe&quot;, &quot;Jorgenson&quot;, &quot;Kim&quot;, &quot;Luxury-Yacht&quot;,
+              &quot;Throatwarbler-Mangrove&quot;, &quot;Cooper&quot;, &quot;Black&quot;, &quot;Ahmedinejad&quot;,
+              &quot;al-Tikriti&quot;, &quot;al-Bagram&quot;, &quot;von Trapp&quot;, &quot;von der Wallenheim&quot;,
+              &quot;Gamgee&quot;, &quot;Proudfoot&quot;, &quot;Brewer&quot;, &quot;Kagehiro&quot;, &quot;Ng&quot;,
+              &quot;Nguyen&quot;, &quot;Salzmann&quot;, &quot;Bear&quot;, &quot;Powers&quot;,&quot;Kusanagi&quot;, &quot;Dengo&quot;,
+              &quot;Mukherjee&quot;,&quot;Balaam&quot;]
 
 # Street numbers will be generated at random.  All addresses are
 # situated in Anytown, CA, ZIP 12345, United States of America.
 
-streets = ["Paper Street", "Fictional Lane", "Placid Avenue", "Blank Road",
-           "Suspicious Parkway"]
+streets = [&quot;Paper Street&quot;, &quot;Fictional Lane&quot;, &quot;Placid Avenue&quot;, &quot;Blank Road&quot;,
+           &quot;Suspicious Parkway&quot;]
 
-orgs = ["Monty Python's Flying Circus", "Golden Egg Bonus Company, LLC",
-        "Dewey Cheatham &amp; Howe, Tax and Family Law", "Improv Everywhere",
-        "Owl-Stretching Enthusiasts' Club", "International R. Mutt Fan Club",
-        "Paper Street Soap Company", "River City Pool Table Company",
-        "Desert Bus Runs", "Impossibilities Inc", "The X-Men"]
+orgs = [&quot;Monty Python&#39;s Flying Circus&quot;, &quot;Golden Egg Bonus Company, LLC&quot;,
+        &quot;Dewey Cheatham &amp; Howe, Tax and Family Law&quot;, &quot;Improv Everywhere&quot;,
+        &quot;Owl-Stretching Enthusiasts&#39; Club&quot;, &quot;International R. Mutt Fan Club&quot;,
+        &quot;Paper Street Soap Company&quot;, &quot;River City Pool Table Company&quot;,
+        &quot;Desert Bus Runs&quot;, &quot;Impossibilities Inc&quot;, &quot;The X-Men&quot;]
 
-titles = ["Mercenary", "Chief Tomfoolery Engineer", "Nonsense Supervisor",
-          "Skylark", "Isn't It About Time For Lunch", "Famous Author",
-          "Fictional Person", "Space Traveller", "Architect",
-          "International Person Of Mystery", "Sith Lord", "Sith Apprentice",
-          "Sith Intern", "Archaeologist", "Scout", "Heavy", "Sniper"]
+titles = [&quot;Mercenary&quot;, &quot;Chief Tomfoolery Engineer&quot;, &quot;Nonsense Supervisor&quot;,
+          &quot;Skylark&quot;, &quot;Isn&#39;t It About Time For Lunch&quot;, &quot;Famous Author&quot;,
+          &quot;Fictional Person&quot;, &quot;Space Traveller&quot;, &quot;Architect&quot;,
+          &quot;International Person Of Mystery&quot;, &quot;Sith Lord&quot;, &quot;Sith Apprentice&quot;,
+          &quot;Sith Intern&quot;, &quot;Archaeologist&quot;, &quot;Scout&quot;, &quot;Heavy&quot;, &quot;Sniper&quot;]
 
 # Phone numbers will be generated in the form 555-NNNN.
 # Email addresses will be generated in the form  firstname.lastname@example.com
@@ -83,8 +92,8 @@ titles = ["Mercenary", "Chief Tomfoolery Engineer", "Nonsense Supervisor",
 ################################## Actions ###################################
 
 class CardFiller:
-    """A class whose instances take the basic dataset we're working with,
-    shuffle it, and grind through generating VCard entries based on it. """
+    &quot;&quot;&quot;A class whose instances take the basic dataset we&#39;re working with,
+    shuffle it, and grind through generating VCard entries based on it. &quot;&quot;&quot;
     def __init__(self, first_names, last_names, streets, orgs, titles):
         self.first_names = first_names
         self.last_names = last_names
@@ -98,60 +107,60 @@ class CardFiller:
             random.shuffle(lst)
 
     def fill_card(self, target_fields, position):
-        """Takes data and fills in fields, then creates a list of formatted
+        &quot;&quot;&quot;Takes data and fills in fields, then creates a list of formatted
         lines that can be written into a .vcf file. Takes a position argument
-        that it basically interprets as modulo the length of the list."""
-        new_card = ["BEGIN:VCARD", "VERSION:2.1",]
+        that it basically interprets as modulo the length of the list.&quot;&quot;&quot;
+        new_card = [&quot;BEGIN:VCARD&quot;, &quot;VERSION:2.1&quot;,]
         # Fill the Name field.
-        if "Name" in target_fields:
-            namefield = "N:"
+        if &quot;Name&quot; in target_fields:
+            namefield = &quot;N:&quot;
             namefield += str(self.last_names[position % len(self.last_names)])
-            namefield +=";"
+            namefield +=&quot;;&quot;
             namefield += str(self.first_names[position % len(self.first_names)])
             new_card.append(namefield)
-        if "FullName" in target_fields:
-            fnamefield = "FN:"
+        if &quot;FullName&quot; in target_fields:
+            fnamefield = &quot;FN:&quot;
             fnamefield += str(self.first_names[position % len(self.first_names)])
-            fnamefield += " "
+            fnamefield += &quot; &quot;
             fnamefield += str(self.last_names[position % len(self.last_names)])
             new_card.append(fnamefield)
-        if "Organization" in target_fields:
-            orgfield = "ORG:"
+        if &quot;Organization&quot; in target_fields:
+            orgfield = &quot;ORG:&quot;
             orgfield += str(self.orgs[position % len(self.orgs)])
             new_card.append(orgfield)
-        if "Title" in target_fields:
-            titlefield = "TITLE:"
+        if &quot;Title&quot; in target_fields:
+            titlefield = &quot;TITLE:&quot;
             titlefield += str(self.titles[position % len(self.titles)])
             new_card.append(titlefield)
-        if "Phone" in target_fields:
-            phonefield = "TEL;WORK;VOICE:("
+        if &quot;Phone&quot; in target_fields:
+            phonefield = &quot;TEL;WORK;VOICE:(&quot;
             phonefield += str(random.randrange(100,999))
-            phonefield += ") 555-"
-            phonefield += "%04d" % random.randrange(0,9999)
+            phonefield += &quot;) 555-&quot;
+            phonefield += &quot;%04d&quot; % random.randrange(0,9999)
             new_card.append(phonefield)
-        if "Address" in target_fields:
-            addrfield = "ADR;WORK:;;"
+        if &quot;Address&quot; in target_fields:
+            addrfield = &quot;ADR;WORK:;;&quot;
             addrfield += str(random.randrange(1,18234))
-            addrfield += " "
+            addrfield += &quot; &quot;
             addrfield += str(self.streets[position % len(self.streets)])
-            addrfield += ";Anytown;CA;12345;United States of America"
+            addrfield += &quot;;Anytown;CA;12345;United States of America&quot;
             new_card.append(addrfield)
-        if "Email" in target_fields:
-            emailfield = "EMAIL;PREF;INTERNET:"
+        if &quot;Email&quot; in target_fields:
+            emailfield = &quot;EMAIL;PREF;INTERNET:&quot;
             emailfield += str.lower(self.first_names[position % len(self.first_names)])
             emailfield += str.lower(self.last_names[position % len(self.last_names)])
-            emailfield += "@example.com"
+            emailfield += &quot;@example.com&quot;
             new_card.append(emailfield)
-        new_card.append("REV:%d" % random.randrange(100,500))
-        new_card.append("END:VCARD")
+        new_card.append(&quot;REV:%d&quot; % random.randrange(100,500))
+        new_card.append(&quot;END:VCARD&quot;)
         return new_card
 
 
 def rolodex_engine(card_limit, target_fields):
-    """Iterates over a range to generate a list of strings that can be
+    &quot;&quot;&quot;Iterates over a range to generate a list of strings that can be
     sent to file or to stdout and which constitute a valid vcard file.
     Most programs that read vcards can accept a file that contains
-    multiple vcards - all you have to do is concatenate them."""
+    multiple vcards - all you have to do is concatenate them.&quot;&quot;&quot;
     card_engine = CardFiller(first_names, last_names, streets, orgs, titles)
     card_engine.prepare()
     rolodex = []
@@ -163,54 +172,54 @@ def rolodex_engine(card_limit, target_fields):
 
 ################################### Execution ##################################
 
-if __name__ == '__main__':
-    """Run a variety of sanity checks regarding the arguments to the
+if __name__ == &#39;__main__&#39;:
+    &quot;&quot;&quot;Run a variety of sanity checks regarding the arguments to the
     script.  If there are no command-line arguments, give the user a
     hint. If the arguments are weird, quit and ask them to try
     again. User input and the filesystem: two pain-in-the-butt parts
-    of software engineering."""
+    of software engineering.&quot;&quot;&quot;
     # Sanity checks.
     if len(sys.argv) != 3:
-        print "This script requires exactly two arguments: \n",
-        print "* The number of vCards to generate \n",
-        print  "* The name of the file to store them in. \n"
+        print &quot;This script requires exactly two arguments: \n&quot;,
+        print &quot;* The number of vCards to generate \n&quot;,
+        print  &quot;* The name of the file to store them in. \n&quot;
         sys.exit()
-    if type(sys.argv[2]) != type("string"):
-        print "The first argument must be a number, the second a name."
+    if type(sys.argv[2]) != type(&quot;string&quot;):
+        print &quot;The first argument must be a number, the second a name.&quot;
         sys.exit()
     try:
         int(sys.argv[1])
     except ValueError:
-        print "The first argument must be a number, the second a name."
+        print &quot;The first argument must be a number, the second a name.&quot;
         sys.exit()
     if int(sys.argv[1]) &gt; 2**16:
-        print "Try generating less than 65,000 cards."
+        print &quot;Try generating less than 65,000 cards.&quot;
         sys.exit()
     if len(sys.argv[2]) &gt; 128:
-        print "Try a shorter filename."
+        print &quot;Try a shorter filename.&quot;
         sys.exit()
     card_limit = int(sys.argv[1])
     card_export_file = sys.argv[2]
     # Writing to disk.
     try:
-        with open("./%s" % card_export_file, "r") as rolodex_file:
-            print "A file with that name already exists."
+        with open(&quot;./%s&quot; % card_export_file, &quot;r&quot;) as rolodex_file:
+            print &quot;A file with that name already exists.&quot;
             sys.exit()
     except IOError, ioerr_msg:
         try:
-            with open("./%s" % card_export_file, "w") as rolodex_file:
+            with open(&quot;./%s&quot; % card_export_file, &quot;w&quot;) as rolodex_file:
                 rolodex = rolodex_engine(card_limit, target_fields)
                 for c in rolodex:
                     rolodex_file.write(c)
-                    rolodex_file.write("\n")
+                    rolodex_file.write(&quot;\n&quot;)
         except IOError, ioerr_msg:
-            print "The script couldn't create a file for the vcards."
-            print "The specific problem was '%s'" % ioerr_msg
-</code></pre>
+            print &quot;The script couldn&#39;t create a file for the vcards.&quot;
+            print &quot;The specific problem was &#39;%s&#39;&quot; % ioerr_msg
+</pre></noscript><script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script></p>
 
-<p>`</p>
-
-<p>Writing this was basically like doing sit-ups in Python - not really challenging, but demanded, like all serious tasks, that you sit down and devote time and concentration to it. After that, results come easily.</p>
+<p>Writing this was basically like doing sit-ups in Python&mdash;not really challenging,
+but demanded like all serious tasks that you sit down and devote time and concentration to it.
+After that, results come easily.</p>
 ]]></content>
   </entry>
   

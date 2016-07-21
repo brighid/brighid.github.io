@@ -9,7 +9,7 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="System administration is about making hard decisions. This just amounts to saying that it&rsquo;s knowledge work. More specifically, it&rsquo;s about &hellip;">
+  <meta name="description" content="Nothing lasts forever, and everything is a trade-off. Paul Graham, in &ldquo;The Other Road Ahead,&rdquo; noted a risk of relying on software that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,64 +82,6 @@
       
   <header>
     
-      <h1 class="entry-title"> <a href="/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">I'll Build My Own Phone OS! With Blackjack! And Hookers!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-15T23:01:41-07:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>System administration is about making hard decisions.</p>
-
-<p>This just amounts to saying that it&rsquo;s knowledge work.  More specifically, it&rsquo;s about making annoying, difficult decisions about computers and networks.  What parts of the system are trustworthy, and what can enter the system that I shouldn&rsquo;t trust?  What does the current state of the system tell me about what&rsquo;s likely to break?  What looks urgent but can be safely ignored? What is the tradeoff curve of time and money that solutions to my current problem offer?  System administration requires a specific body of technical knowledge and experience to answer questions like that.  That&rsquo;s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.  The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we&rsquo;re going to need that for the whole of the foreseeable future.</p>
-
-<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don&rsquo;t have the expertise necessary to make good decisions in the given area.  I believe that the open source movement consistently blurs together those kinds of people.</p>
-
-<p>Now, I should make it clear up front that I love the open source community.  I am writing this post on a machine whose OS descends from open-source BSD, sending it to a machine that runs an open-source web server on another open-source OS, I spend umpty-ump hours a day staring at emacs, and my plans for the future include contributing both code and dollars to the open-source movement. I acknowledge that the world would be tremendously impoverished if open-source software either stopped existing or never had existed, and I want a future in which more of the world runs on open-source software.  I feel the same way about open-source software that I feel about America: its flaws frustrate me mostly because it could be <strong>so awesome</strong> if they were solved.</p>
-
-<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you&rsquo;re willing to scale a learning curve.  That&rsquo;s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.  That&rsquo;s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.  The other bargain that software can offer is that basic functionality can be yours quickly, and who knows whether Great Power is available or not.  Often it isn&rsquo;t.</p>
-
-<p>People don&rsquo;t take that second bargain because they&rsquo;re stupid.  They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they&rsquo;ve been burned before in the process of trying to use the Great Power of complicated tools.  I&rsquo;m fine with that: not everyone should be obliged to be a sysadmin.  As both a sysadmin and a developer, it&rsquo;s my job to make hard decisions that save other people from making hard decisions for just this reason.  If I just pass along hard decisions, then I probably haven&rsquo;t done well by the users.  The problem isn&rsquo;t even the hard decisions, really - it&rsquo;s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
-
-<p>Yes, a computer is a complicated general-purpose tool.  It is built of a huge assembly of spectacularly fiddly little parts, both physical and logical.  It is a wonder of the modern age -but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.  Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you&rsquo;re probably a developer, a sysadmin, or an enthusiast.  More likely, you sat down at a computer because you have a task that you want to do.  You want to send email, play Farmville, or do your taxes.  You want to use the tools to do that task, not to fiddle with the tools themselves.</p>
-
-<p>Software for a general audience is a failure if it asks everyone to be their own sysadmin. <a href="http://www.amazon.com/gp/product/0789723107?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0789723107">Whole books have been written about this.</a> And this is where we, finally, arrive at iOS, Android, and the title of this post.  The extent to which Android has become a <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/StartMyOwn">Build My Own</a> OS bothers me.  Android is a good OS - but it is at its worst when it asks people to become the sysadmins of their own phones.  The promise of Great Power in phone form is compelling, and there&rsquo;s a chunk of the market that needs it badly (hello, mobile system administration!).  But that&rsquo;s not the whole market - and that&rsquo;s why iOS, which offers a different bargain, is doing so well.</p>
-
-<p>Not everyone wants to make hard decisions about their computer - and they shouldn&rsquo;t have those decisions forced onto them unless and until it&rsquo;s absolutely necessary.  I think that part of why desktop OSes have gotten away with doing as much of that as they have is that they can take advantage of the existing number of people who have some expertise and are willing to be free support for their friends, family, and neighbor.  A bigger part, though, is that you can walk away from a desktop computer that&rsquo;s giving you issues.  Press &ldquo;cancel&rdquo; until whatever it is goes away. That&rsquo;s much less of an option with a phone - if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.  If it starts making your life harder instead of easier, you have to deal with that all of the time.</p>
-
-<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users' hands.  The iPhone and descendants have made Apple several zillion dollars. Here also we have the Blackberry, which prospered by offering a phone that could do email, and delivering on that promise very well.  And here finally we have the Android OS, which promises to be like an iPhone only &ldquo;more open&rdquo; and with multitasking and on other carriers.  Unfortunately, the tradeoff there is that to a significant extent, Android devices ask you to make harder decisions, and to have to sysadmin your phone.</p>
-
-<p>Android is offering a different bargain.  There are a lot of times the Android bargain sounds really good to me: I&rsquo;ve already made that bargain a lot of times, and it doesn&rsquo;t frighten me.  But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android&rsquo;s promises (for example, bundled un-removable applications and UI badness).  When we developers think of Apple, we probably don&rsquo;t think of them with great fondness because of their iron-fisted control over the App Store. But Apple hasn&rsquo;t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.  Android, on the other hand - sometimes you can barely tell what it&rsquo;s promising, and its identity is fragmented and conflicting.</p>
-
-<p>The future is getting brighter, though.  Android devices are getting better at not forcing users to make hard decisions they didn&rsquo;t sign up for.  iOS devices are getting <a href="http://www.apple.com/ipad">magical</a>.  Everyone else is gradually catching up with those two, because the hard decisions in question are getting easier as we as a society learn how to cope with them.  Of course there will always be more and newer hard decisions - but that&rsquo;s what your sysadmins are here for.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"> <a href="/blog/2010/everyone-turns-into-microsoft/">Everyone Turns Into Microsoft</a></h1>
     
     
@@ -167,21 +109,45 @@
 
 <p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">&ldquo;The Other Road Ahead,&rdquo;</a> noted a risk of relying on software that other people control:</p>
 
-<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun. If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS. And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
+<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun.
+If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS.
+And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
 
-<p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening. Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
+<p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening.
+Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
 
-<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.  The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.  They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.  Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
+<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.
+The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.
+They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.
+Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
 
-<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.  However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.  Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.  So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
+<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.
+However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.
+Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.
+So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
 
-<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.  They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.  This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.  Eventually, there will be something new.  Hostfiles were supplanted by DNS.  Yahoo was replaced by Google in search.  Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm. Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
+<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.
+They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.
+This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.
+Eventually, there will be something new.
+Hostfiles were supplanted by DNS.
+Yahoo was replaced by Google in search.
+Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm.
+Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
 
-<p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft. I admire Microsoft&rsquo;s commitment to backward compatibility.  Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>. It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.  But nothing lasts forever, and everything is a trade-off. Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
+<p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft.
+I admire Microsoft&rsquo;s commitment to backward compatibility.
+Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>.
+It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.
+But nothing lasts forever, and everything is a trade-off.
+Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
 
-<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.  Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from. That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
+<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.
+Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from.
+That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
 
-<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.  I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
+<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.
+I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
 </div>
   
   
@@ -217,21 +183,40 @@
   </header>
 
 
-  <div class="entry-content"><p>People are <a href="http://en.wikipedia.org/wiki/Craigslist_controversies_and_illegal_activities_by_users">suing Craigslist</a> again, and again I have to hide my face in my hands.  Suing Craigslist because people post problematic material there is like the kids in <em>Scream</em> suing AT&T; because the killer used a telephone.</p>
+  <div class="entry-content"><p>People are <a href="http://en.wikipedia.org/wiki/Craigslist_controversies_and_illegal_activities_by_users">suing Craigslist</a> again, and again I have to hide my face in my hands.
+Suing Craigslist because people post problematic material there is like the kids in <em>Scream</em> suing AT&amp;T because the killer used a telephone.</p>
 
-<p>I have to wonder what the plaintiffs' thought process is, considering how long Craigslist has been working on foiling the people who try to cheat its system in a variety of ways.  A <a href="http://www.wired.com/entertainment/theweb/magazine/17-09/ff_craigslist?currentPage=all">Wired article from this time last year</a> is a far more educational look at the matter.  Craigslist is an astonishing <em>rara avis</em> in the business world - not just a company with a commitment to not being evil that makes Google look like pikers, but with a business model that gives them a proper interest in being good stewards of their classified-ad content.</p>
+<p>I have to wonder what the plaintiffs' thought process is, considering how long Craigslist has been working on foiling the people who try to cheat its system in a variety of ways.
+A <a href="http://www.wired.com/entertainment/theweb/magazine/17-09/ff_craigslist?currentPage=all">Wired article from this time last year</a> is a far more educational look at the matter.
+Craigslist is an astonishing <em>rara avis</em> in the business world - not just a company with a commitment to not being evil that makes Google look like pikers, but with a business model that gives them a proper interest in being good stewards of their classified-ad content.</p>
 
-<p>I haven&rsquo;t yet seen an accusation against Craigslist that seemed to be remotely grounded in fact - they&rsquo;re a great example of how successful Silicon Valley businesses seem to be lightning rods for nuisance lawsuits.  Generally libertarianism is for prats, but I can&rsquo;t blame startup folks for finding it appealing in the face of an appalling level of Not Getting It from the establishment business world and certain segments of the general public.  No-one likes being beholden to fools.</p>
+<p>I haven&rsquo;t yet seen an accusation against Craigslist that seemed to be remotely grounded in fact - they&rsquo;re a great example of how successful Silicon Valley businesses seem to be lightning rods for nuisance lawsuits.
+Generally libertarianism is for prats, but I can&rsquo;t blame startup folks for finding it appealing in the face of an appalling level of Not Getting It from the establishment business world and certain segments of the general public.
+No-one likes being beholden to fools.</p>
 
-<p>That said, you have to keep in mind that generally power makes fools out of people.  This is part of why I respect Craigslist: they&rsquo;ve taken big steps to avoid becoming idiots with power.  The difference between them and the established business world is sharp.  Look at <a href="http://www.lettersofnote.com/2010/08/tiger-oil-memos.html">these memoranda from a 1970s executive</a>, for example - anyone who&rsquo;s worked in the business world probably recognizes that that attitude hasn&rsquo;t gone away at all.</p>
+<p>That said, you have to keep in mind that generally power makes fools out of people.
+This is part of why I respect Craigslist: they&rsquo;ve taken big steps to avoid becoming idiots with power.
+The difference between them and the established business world is sharp.
+Look at <a href="http://www.lettersofnote.com/2010/08/tiger-oil-memos.html">these memoranda from a 1970s executive</a>, for example - anyone who&rsquo;s worked in the business world probably recognizes that that attitude hasn&rsquo;t gone away at all.</p>
 
-<p>Those memoranda lead to another point, too: people are rarely as foolish as they are when they&rsquo;re seeking complete control over others.  Complete control over pretty much anything, especially other people, is a chimera, and in pursuing it, you will only harm yourself and others.  Craigslist accepts that there are limits to that control, and in that acceptance, show that they&rsquo;re smarter than pretty much anyone suing them.</p>
+<p>Those memoranda lead to another point, too: people are rarely as foolish as they are when they&rsquo;re seeking complete control over others.
+Complete control over pretty much anything, especially other people, is a chimera, and in pursuing it, you will only harm yourself and others.
+Craigslist accepts that there are limits to that control, and in that acceptance, show that they&rsquo;re smarter than pretty much anyone suing them.</p>
 
-<p>Lawsuits actually make another good example of this: what is a suit but an attempt to control - change - another&rsquo;s behavior?  Yet part of the reason lawsuits are so difficult is that rarely do the plaintiffs understand what produced the behavior they seek to change.  It&rsquo;s not an easy task - usually the defendants don&rsquo;t understand what they&rsquo;re doing either, they just understand that someone is trying to <em>make</em> them change, and so they resist coercion with all their might, no matter whether the change is good for them or not.  A cease-and-desist letter can quite reliably turn respectable businesspeople into petulant children screaming the adult equivalent of &ldquo;<em>you can&rsquo;t MAKE me do anything!</em>&rdquo;</p>
+<p>Lawsuits actually make another good example of this: what is a suit but an attempt to control - change - another&rsquo;s behavior?
+Yet part of the reason lawsuits are so difficult is that rarely do the plaintiffs understand what produced the behavior they seek to change.
+It&rsquo;s not an easy task - usually the defendants don&rsquo;t understand what they&rsquo;re doing either, they just understand that someone is trying to <em>make</em> them change, and so they resist coercion with all their might, no matter whether the change is good for them or not.
+A cease-and-desist letter can quite reliably turn respectable businesspeople into petulant children screaming the adult equivalent of &ldquo;<em>you can&rsquo;t MAKE me do anything!</em>&rdquo;</p>
 
-<p>So pursuing control with a blunt instrument like a lawsuit is inefficient - and so is using a blunt instrument like a law or a word-filtering software utility.  What do we have that can do the job? Human social constructs and cultural constructs - and it&rsquo;s not a coincidence that part of why Craigslist works well is that it has welcomed those as ways to control its community, and accepted that it can&rsquo;t completely control the social and cultural norms around its site.  Craigslist has cultivated a community, invested in creating a trustworthy community, and is reaping its just rewards for a long-term investment in human decency.</p>
+<p>So pursuing control with a blunt instrument like a lawsuit is inefficient - and so is using a blunt instrument like a law or a word-filtering software utility.
+What do we have that can do the job? Human social constructs and cultural constructs - and it&rsquo;s not a coincidence that part of why Craigslist works well is that it has welcomed those as ways to control its community, and accepted that it can&rsquo;t completely control the social and cultural norms around its site.
+Craigslist has cultivated a community, invested in creating a trustworthy community, and is reaping its just rewards for a long-term investment in human decency.</p>
 
-<p>The lesson here for sysadmins and developers is this: programmatic limits on human behavior have harsh diminishing-returns curves.  You need to know when it&rsquo;s not worth your effort to implement more programmatic control, and at that point turn to social and cultural measures.  Social and cultural measures remove some control from the owners of a system, but can reward them with a better system.  You also need to know whether you want to work for someone who insists on chasing complete control of a system they own - they may not all be as bad as the &lsquo;70s executive, but they&rsquo;re definitely out there.  I hope that when you and I find them, we have enough control over our own lives to walk away instead of uselessly burning resources trying to control the uncontrollable.</p>
+<p>The lesson here for sysadmins and developers is this: programmatic limits on human behavior have harsh diminishing-returns curves.
+You need to know when it&rsquo;s not worth your effort to implement more programmatic control, and at that point turn to social and cultural measures.
+Social and cultural measures remove some control from the owners of a system, but can reward them with a better system.
+You also need to know whether you want to work for someone who insists on chasing complete control of a system they own - they may not all be as bad as the &lsquo;70s executive, but they&rsquo;re definitely out there.
+I hope that when you and I find them, we have enough control over our own lives to walk away instead of uselessly burning resources trying to control the uncontrollable.</p>
 </div>
   
   
@@ -682,6 +667,58 @@ Even if you only use it for syntax highlighting, tabbed multiple-file handling, 
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2010/summer-of-python-2010/">Summer of Python 2010</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-10T14:54:13-08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m watching the <a href="http://socghop.appspot.com/">2010 Google Summer of Code</a> page pretty closely.
+Ever since I found out that it existed, last year, I&rsquo;ve wanted to go for it, and my progress with Python has picked up again recently.
+My school schedule has currently changed in such a way that I have nearly three hours of quiet, uninterrupted time that it&rsquo;s easy to spend in front of a terminal session.
+It will not surprise the coders in the audience to learn that this has done wonders for my productivity.
+I&rsquo;m making progress on my current Pylons project and researching contributors to the Summer of Code, considering projects that I could contribute to.</p>
+
+<p>One thing that I like a great deal about the program is that it emphasizes a couple of virtues that our current economic arrangement has nearly downsized out of existence: community contribution and mentorship.
+I love that it connects students to their professional community, that it gives them - us, I hope! - a place to start, someplace to begin a career doing what they love.
+I have heard the complaint far too many times - and made it far too many times - to be unsympathetic to &ldquo;how do I get into this business, it seems like there&rsquo;s no room at all for a beginner.&rdquo;
+With the squeezing-out of apprenticeships and other transitions from student to professional, it&rsquo;s definitely harder for a lot of us to get into careers doing what we love.
+I&rsquo;m sad about that, and I think that it&rsquo;s a major bug in the current way that we run our affairs.</p>
+
+<p>But it&rsquo;s fixable.</p>
+
+<p>I particularly like the Google SOC fix because it also encourages community contribution, giving of oneself in order to make the community better.
+Sure, there&rsquo;s a selfish angle - but I think that productive selfishness like this can get a whole lot done, and it&rsquo;s pretty easy to encourage people to do it.
+Cautiously and prudently directed, selfishness can accomplish very positive things, especially when your definition of selfishness is as broad as mine.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="5">&larr; Older</a>
@@ -711,7 +748,7 @@ Even if you only use it for syntax highlighting, tabbed multiple-file handling, 
       </li>
     
       <li class="post">
-        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
       </li>
     
       <li class="post">
@@ -761,7 +798,7 @@ Even if you only use it for syntax highlighting, tabbed multiple-file handling, 
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Strongly Emergent Systems -
+  Copyright &copy; 2016 - Strongly Emergent Systems -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

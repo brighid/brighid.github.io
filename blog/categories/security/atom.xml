@@ -4,7 +4,7 @@
   <title><![CDATA[Category: security | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/security/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2015-11-28T03:31:05-08:00</updated>
+  <updated>2016-07-20T17:15:07-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,11 +18,18 @@
     <link href="http://stronglyemergent.com//blog/2010/politicos-problematic-incentives-harm-craigslist/"/>
     <updated>2010-08-31T23:01:46-07:00</updated>
     <id>http://stronglyemergent.com//blog/2010/politicos-problematic-incentives-harm-craigslist</id>
-    <content type="html"><![CDATA[<p>So there&rsquo;s <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2010/08/29/BUGI1F4F9K.DTL">even more noise</a> about suing Craigslist, and I wish I could grab the attorneys general of 18 states by one giant pair of pinstriped lapels and shout &ldquo;You are making this problem <strong>WORSE</strong>, you buncha maroons!&rdquo;  There&rsquo;s still some space to write about this after <a href="http://stronglyemergent.com/blog/2010/the-many-forms-of-not-getting-it/">last time</a>, and I&rsquo;m gonna go ahead and fill that space.</p>
+    <content type="html"><![CDATA[<p>So there&rsquo;s <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2010/08/29/BUGI1F4F9K.DTL">even more noise</a> about suing Craigslist,
+and I wish I could grab the attorneys general of 18 states by one giant pair of pinstriped lapels and shout &ldquo;You are making this problem <strong>WORSE</strong>, you buncha maroons!&rdquo;
+There&rsquo;s still some space to write about this after <a href="http://stronglyemergent.com/blog/2010/the-many-forms-of-not-getting-it/">last time</a>, and I&rsquo;m gonna go ahead and fill that space.</p>
 
-<p>The problem here is a toxic incentive structure, just like <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">the reason the TSA reduces security</a>. The various political folk who are inveighing against Craigslist have no idea what they&rsquo;re talking about and are going to make Craigslist less useful for everyone and cost their taxpayers a lot of money in the process - and yet, for them personally, there is no downside to attacking Craigslist. Attacking Craigslist makes them look &ldquo;tough on crime,&rdquo; look like vigorous, active advocates of the public good, and look like paragons of conventional morality.</p>
+<p>The problem here is a toxic incentive structure, just like <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">the reason the TSA reduces security</a>.
+The various political folk who are inveighing against Craigslist have no idea what they&rsquo;re talking about and are going to make Craigslist less useful for everyone and cost their taxpayers a lot of money in the process - and yet, for them personally, there is no downside to attacking Craigslist.
+Attacking Craigslist makes them look &ldquo;tough on crime,&rdquo; look like vigorous, active advocates of the public good, and look like paragons of conventional morality.</p>
 
-<p>The most effective things you can do to increase airline security and reduce sex trafficking are the most boring ones, and the current structure of incentives all but guarantees that those measures will not be taken, and instead countermeasures will be taken that will make the problem worse.  This underscores again the importance of narrative.  Software providers and other technical people are in danger because of these toxic incentives - people who don&rsquo;t know how your business works could have an incentive to mess with you, and are quite likely to be immune to consequences in the practical sense.  This is why we developers and sysadmins need to be aware of the social, political, and cultural context of our professional actions - the less aware we are, the more likely that we&rsquo;ll find ourselves out of a job, at the helm of a foundering company, or forced to implement asinine requirements because of forces beyond our control.</p>
+<p>The most effective things you can do to increase airline security and reduce sex trafficking are the most boring ones, and the current structure of incentives all but guarantees that those measures will not be taken, and instead countermeasures will be taken that will make the problem worse.
+This underscores again the importance of narrative.
+Software providers and other technical people are in danger because of these toxic incentives - people who don&rsquo;t know how your business works could have an incentive to mess with you, and are quite likely to be immune to consequences in the practical sense.
+This is why we developers and sysadmins need to be aware of the social, political, and cultural context of our professional actions - the less aware we are, the more likely that we&rsquo;ll find ourselves out of a job, at the helm of a foundering company, or forced to implement asinine requirements because of forces beyond our control.</p>
 ]]></content>
   </entry>
   
@@ -31,11 +38,18 @@
     <link href="http://stronglyemergent.com//blog/2010/me-or-your-lying-eyes/"/>
     <updated>2010-08-19T23:01:02-07:00</updated>
     <id>http://stronglyemergent.com//blog/2010/me-or-your-lying-eyes</id>
-    <content type="html"><![CDATA[<p>First there was <a href="http://thechive.com/2010/08/10/girl-quits-her-job-on-dry-erase-board-emails-entire-office-33-photos/">the big show</a>, and then <a href="http://techcrunch.com/2010/08/11/elyse-porterfield/">Toto pulled the curtain back</a> and <a href="http://techcrunch.com/2010/08/14/internet-must-be-true/">revealed the Wizard</a>.  I love the arc of this story - it&rsquo;s such a great demonstration of how much narrative matters.  The &ldquo;Jenny&rdquo; story had great, great narrative power.  It was entertaining, easy to believe, and easy to understand.  The storytellers got millions of pageviews off of it, and earned them.</p>
+    <content type="html"><![CDATA[<p>First there was <a href="http://thechive.com/2010/08/10/girl-quits-her-job-on-dry-erase-board-emails-entire-office-33-photos/">the big show</a>, and then <a href="http://techcrunch.com/2010/08/11/elyse-porterfield/">Toto pulled the curtain back</a> and <a href="http://techcrunch.com/2010/08/14/internet-must-be-true/">revealed the Wizard</a>.
+I love the arc of this story - it&rsquo;s such a great demonstration of how much narrative matters.
+The &ldquo;Jenny&rdquo; story had great, great narrative power.
+It was entertaining, easy to believe, and easy to understand.
+The storytellers got millions of pageviews off of it, and earned them.</p>
 
-<p>Unfortunately, that&rsquo;s also millions of demonstrations that the weakest part of computer security is humans, not computers or anything in them.  We <em>want to believe</em>, we look for excuses to believe good narratives, and we usually find them. Because of how we behave when someone hands us a beautiful narrative like that, the storytellers behind &ldquo;Jenny&rdquo; earned quite a bit of money - and because of the same things, scammers continue to exploit us.</p>
+<p>Unfortunately, that&rsquo;s also millions of demonstrations that the weakest part of computer security is humans, not computers or anything in them.
+We <em>want to believe</em>, we look for excuses to believe good narratives, and we usually find them.
+Because of how we behave when someone hands us a beautiful narrative like that, the storytellers behind &ldquo;Jenny&rdquo; earned quite a bit of money - and because of the same things, scammers continue to exploit us.</p>
 
-<p>We all need to sharpen our narrative skills, because if we just go right along with narratives that seem appealing, we will be exploited by people who can craft enjoyably fraudulent narratives.  More importantly, developers and sysadmins need narrative skills - we have to tell our users a story, and it has to be a compelling story.</p>
+<p>We all need to sharpen our narrative skills, because if we just go right along with narratives that seem appealing, we will be exploited by people who can craft enjoyably fraudulent narratives.
+More importantly, developers and sysadmins need narrative skills - we have to tell our users a story, and it has to be a compelling story.</p>
 ]]></content>
   </entry>
   

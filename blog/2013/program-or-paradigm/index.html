@@ -9,7 +9,8 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="I&rsquo;m an emacs girl: emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs &hellip;">
+  <meta name="description" content="I&rsquo;m an emacs girl:
+emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -102,19 +103,63 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m an emacs girl: emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is, in Neal Stephenson&rsquo;s memorable phrase, &ldquo;the thermonuclear text editor.&rdquo; Like everyone else who&rsquo;s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
+<div class="entry-content"><p>I&rsquo;m an emacs girl:
+emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson&rsquo;s memorable phrase
+&ldquo;the thermonuclear text editor.&rdquo;
+Like everyone else who&rsquo;s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
 
-<p>Let&rsquo;s talk about interfaces. In 1976, using computers was harder &mdash; not because people were dumber or worse at design, but because there were fewer giants on whose shoulders to stand and because the computers themselves were incapable of working as hard. That meant, in turn, that the 1976 OS couldn&rsquo;t be as generous to user-space programs as the 2013 OS can be. In 2013, the OS can step up and be the primary answerer of the question, &ldquo;how do I use this computer?&rdquo; In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell&rsquo;s direction. This has considerable downsides for programs: they have to do everything themselves. But they have one important freedom: they get to answer the user&rsquo;s fundamental &ldquo;how do I use this computer?&rdquo; question <em>any way they want.</em></p>
+<p>Let&rsquo;s talk about interfaces.
+In 1976, using computers was harder&mdash;
+not because people were dumber or worse at design, but because there were fewer giants on whose shoulders to stand and because the computers themselves were incapable of working as hard.
+That meant, in turn, that the 1976 OS couldn&rsquo;t be as generous to user-space programs as the 2013 OS can be.
+In 2013, the OS can step up and be the primary answerer of the question, &ldquo;how do I use this computer?&rdquo;
+In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell&rsquo;s direction.
+This has considerable downsides for programs: they have to do everything themselves.
+But they have one important freedom:
+they get to answer the user&rsquo;s fundamental &ldquo;how do I use this computer?&rdquo; question <em>any way they want.</em></p>
 
-<p>In 2013, the OS has an answer to this question, more or less opinionated according to the OS. Because it is easier to let the OS answer the question, that&rsquo;s what most programs do: they use the OS&rsquo;s chrome, file management, and other facilities. There are many good things about this: there are many more useful programs in the world than when programs had to do everything themselves. But it is a tradeoff: a program that comes from the world where the OS provides easy answers is almost completely unable to provide its own answers.</p>
+<p>In 2013, the OS has an answer to this question, more or less opinionated according to the OS.
+Because it is easier to let the OS answer the question, that&rsquo;s what most programs do:
+they use the OS&rsquo;s chrome, file management, and other facilities.
+There are many good things about this: there are many more useful programs in the world than when programs had to do everything themselves.
+But it is a tradeoff:
+a program that comes from the world where the OS provides easy answers is almost completely unable to provide its own answers.</p>
 
-<p>This is where we come back to emacs: the reason that emacs can look so strange in 2013 is that it has its own opinions, strong ones, about how to relate to files, displays, and text. Emacs is a <em>paradigm for how to interact with text.</em> It has stronger opinions than modern programs because it comes from a time when programs had the ability to answer those questions themselves. A program from the strong-OS era - for example, Eclipse - or which adapted itself to strong OSes - for example, Microsoft Word - is restricted by being situated within the boundaries established the by the OS' answer to &ldquo;how do I use this computer?&rdquo; Eclipse and Word are <em>programs</em> that edit text. Emacs is a <em>language</em> for editing text.</p>
+<p>This is where we come back to emacs:
+the reason that emacs can look so strange in 2013 is that it has its own opinions, strong ones, about how to relate to files, displays, and text.
+Emacs is a <em>paradigm for how to interact with text.</em>
+It has stronger opinions than modern programs because it comes from a time when programs had the ability to answer those questions themselves.
+A program from the strong-OS era&mdash;
+for example, Eclipse&mdash;
+or which adapted itself to strong OSes&mdash;
+for example, Microsoft Word&mdash;
+is restricted by being situated within the boundaries established the by the OS' answer to &ldquo;how do I use this computer?&rdquo;
+Eclipse and Word are <em>programs</em> that edit text.
+Emacs is a <em>language</em> for editing text.</p>
 
-<p>One of the clearest ways to see this is to compare emacs to something that&rsquo;s more similar to it than Eclipse or Word: <code>vi</code>. With its movement-operation-modifier syntax for commands, vi has its own answer to the question &ldquo;how do I use this computer?&rdquo; that&rsquo;s every bit as thorny for us 2013 folks as emacs' answer &mdash; and that&rsquo;s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>. In the context of their 1976 roots, you can see that the creators of both vi and emacs embarked on the tremendously ambitious project of giving users a language in which to edit text. The existence and popularity of software that&rsquo;s pushing 40 years old and still being actively used and extended, is strong evidence that both did well (though we should check our <a href="http://en.wikipedia.org/wiki/Survivorship_bias">survivorship bias</a> and note that most programs from that era did not survive in the same way).</p>
+<p>One of the clearest ways to see this is to compare emacs to something that&rsquo;s more similar to it than Eclipse or Word: <code>vi</code>.
+With its movement-operation-modifier syntax for commands, vi has its own answer to the question
+&ldquo;how do I use this computer?&rdquo;
+that&rsquo;s every bit as thorny for us 2013 folks as emacs' answer&mdash;
+and that&rsquo;s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
+In the context of their 1976 roots, you can see that the creators of both vi and emacs embarked on the tremendously ambitious project of giving users a language in which to edit text.
+The existence and popularity of software that&rsquo;s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
+(though we should check our <a href="http://en.wikipedia.org/wiki/Survivorship_bias">survivorship bias</a> and note that most programs from that era did not survive in the same way).</p>
 
-<p>If you are someone who spends a lot of time with text, especially if you&rsquo;re a hacker, you should be using emacs or vi. There are many <a href="http://notepad-plus-plus.org/">okay</a> and <a href="http://www.sublimetext.com/">good</a> <a href="http://www.barebones.com/products/bbedit/">tools</a> for <a href="http://www.chocolatapp.com/">editing</a> <a href="http://macromates.com/">text</a> and <a href="http://panic.com/coda/">producing</a> <a href="http://www.jetbrains.com/idea/">code</a>, especially for <a href="https://developer.apple.com/xcode/">specific</a> <a href="http://www.microsoft.com/visualstudio/eng">domains</a>, but emacs and vi are the only <em>great</em> general-purpose editors. A program that wants to take advantage of the benefits that a modern OS offers could possibly be great - but it would have to be a <a href="http://www.lighttable.com/">different route</a> to greatness than emacs and vi took.</p>
+<p>If you are someone who spends a lot of time with text, especially if you&rsquo;re a hacker, you should be using emacs or vi.
+There are many <a href="http://notepad-plus-plus.org/">okay</a> and <a href="http://www.sublimetext.com/">good</a> <a href="http://www.barebones.com/products/bbedit/">tools</a> for <a href="http://www.chocolatapp.com/">editing</a> <a href="http://macromates.com/">text</a> and <a href="http://panic.com/coda/">producing</a> <a href="http://www.jetbrains.com/idea/">code</a>, especially for <a href="https://developer.apple.com/xcode/">specific</a> <a href="http://www.microsoft.com/visualstudio/eng">domains</a>, but emacs and vi are the only <em>great</em> general-purpose editors.
+A program that wants to take advantage of the benefits that a modern OS offers could possibly be great&mdash;
+but it would have to be a <a href="http://www.lighttable.com/">different route</a> to greatness than emacs and vi took.</p>
 
-<p>I spend a tremendous amount of time with prose and code, and emacs is a great match for me. For a large class of problems, my response to encountering them starts with <code>M-:</code>. I routinely try to use emacs' keyboard shortcuts in other contexts (e.g. switching tabs in Firefox with <code>C-x o</code>). I was actively excited when I found out that emacs had integrated a unit testing framework. When I tell you that you should use emacs, you should know that that&rsquo;s the kind of relationship I have with emacs. I think you should use emacs anyhow, because I think that when a task is important to you, you should use a great tool for it, not just the first good one you find. &ldquo;How will I use this computer to produce prose and code for the next 20 years?&rdquo; is a very, <em>very</em> important question to me.</p>
+<p>I spend a tremendous amount of time with prose and code, and emacs is a great match for me.
+For a large class of problems, my response to encountering them starts with <code>M-:</code>.
+I routinely try to use emacs' keyboard shortcuts in other contexts (e.g.
+switching tabs in Firefox with <code>C-x o</code>).
+I was actively excited when I found out that emacs had integrated a unit testing framework.
+When I tell you that you should use emacs, you should know that that&rsquo;s the kind of relationship I have with emacs.
+I think you should use emacs anyhow, because I think that when a task is important to you, you should use a great tool for it, not just the first good one you find.
+&ldquo;How will I use this computer to produce prose and code for the next 20 years?&rdquo;
+is a very, <em>very</em> important question to me.</p>
 
 <p>The answer is emacs.</p>
 </div>
@@ -125,7 +170,7 @@
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">brighid</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Strongly Emergent Systems</span></span>
 
       
 
@@ -190,7 +235,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
       </li>
     
       <li class="post">
@@ -241,7 +286,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Strongly Emergent Systems -
+  Copyright &copy; 2016 - Strongly Emergent Systems -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

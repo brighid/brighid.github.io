@@ -1,724 +1,698 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/an-innovative-business-model/</loc>
-    <lastmod>2013-07-05T20:57:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/two-traps/</loc>
-    <lastmod>2013-07-02T14:25:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/negative-100-points/</loc>
-    <lastmod>2013-06-28T20:07:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/the-prisoner-of-zend-duh/</loc>
-    <lastmod>2013-06-18T23:30:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/first-date-with-ruby/</loc>
-    <lastmod>2013-06-15T08:57:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/dont-let-survivorship-bias-lie-to-you/</loc>
-    <lastmod>2013-06-03T19:25:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/a-real-thing-that-exists/</loc>
-    <lastmod>2013-05-31T13:01:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/stories-mattering/</loc>
-    <lastmod>2013-05-31T09:53:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb/</loc>
-    <lastmod>2013-03-24T09:15:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/weekend-project-affiliate-dot-el/</loc>
-    <lastmod>2013-03-21T20:16:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/on-hammers/</loc>
-    <lastmod>2013-03-13T12:37:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/challenged/</loc>
-    <lastmod>2013-03-07T15:17:00-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/twitters-bickering-design/</loc>
-    <lastmod>2013-03-06T12:17:00-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/the-bittersweet-rise-of-tumblr/</loc>
-    <lastmod>2013-03-05T13:18:00-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience/</loc>
-    <lastmod>2013-03-05T08:04:00-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/program-or-paradigm/</loc>
-    <lastmod>2013-03-03T17:08:00-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2013/the-past-is-a-foreign-country/</loc>
-    <lastmod>2013-03-02T16:00:00-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp/</loc>
-    <lastmod>2011-10-25T14:48:46-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error/</loc>
-    <lastmod>2011-09-14T06:57:38-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2011/a-recommendation-i-cant-get-from-linkedin/</loc>
-    <lastmod>2011-05-11T14:27:28-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2011/generating-vcards-in-python/</loc>
-    <lastmod>2011-05-02T08:21:10-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2011/externalities-are-relevant/</loc>
-    <lastmod>2011-02-15T23:01:17-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/it-only-looks-easy/</loc>
-    <lastmod>2010-12-07T23:01:34-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/kipple-piling-up/</loc>
-    <lastmod>2010-12-05T23:01:01-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/sherlock-holmes-search-engine-optimizer/</loc>
-    <lastmod>2010-12-02T22:01:55-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/can-your-system-account-for-space-aliens/</loc>
-    <lastmod>2010-11-30T23:01:34-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/politicos-problematic-incentives-harm-craigslist/</loc>
-    <lastmod>2010-08-31T23:01:46-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/joel-on-making-choices/</loc>
-    <lastmod>2010-08-29T23:01:44-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/me-or-your-lying-eyes/</loc>
-    <lastmod>2010-08-19T23:01:02-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/turning-into-microsoft-on-net-neutrality/</loc>
-    <lastmod>2010-08-17T23:01:32-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/</loc>
-    <lastmod>2010-08-15T23:01:41-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/everyone-turns-into-microsoft/</loc>
-    <lastmod>2010-08-12T23:01:23-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/the-many-forms-of-not-getting-it/</loc>
-    <lastmod>2010-08-10T23:01:22-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/able-to-build-this-in-a-cave/</loc>
-    <lastmod>2010-08-06T14:00:02-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/dont-shelve-it/</loc>
-    <lastmod>2010-08-03T23:01:19-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/creating-and-refining/</loc>
-    <lastmod>2010-03-25T23:01:17-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/</loc>
-    <lastmod>2010-03-23T23:01:12-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/sharpening-my-saw-version-control/</loc>
-    <lastmod>2010-03-16T23:01:10-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning/</loc>
-    <lastmod>2010-03-14T23:01:10-07:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/sharpening-my-saw-emacs/</loc>
-    <lastmod>2010-03-11T22:01:13-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/summer-of-python-2010/</loc>
-    <lastmod>2010-03-10T14:54:13-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/the-os-were-all-running/</loc>
-    <lastmod>2010-03-05T14:05:16-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/matters-of-ethics/</loc>
-    <lastmod>2010-03-02T22:01:07-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/monthly-metapost-2/</loc>
-    <lastmod>2010-02-28T22:01:33-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/facebook-gap/</loc>
-    <lastmod>2010-02-25T22:01:45-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/buzz-gap/</loc>
-    <lastmod>2010-02-23T22:01:09-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/perception-gap/</loc>
-    <lastmod>2010-02-21T22:01:06-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/you-can-learn-to-be-lucky/</loc>
-    <lastmod>2010-02-18T22:01:57-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/windows-xp-closure/</loc>
-    <lastmod>2010-02-16T22:01:23-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/men-of-vision/</loc>
-    <lastmod>2010-02-14T22:01:10-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/my-back-of-the-envelope-time-budget-for-2010/</loc>
-    <lastmod>2010-02-11T22:01:34-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/home-territory/</loc>
-    <lastmod>2010-02-09T22:01:48-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/textbook-overview-2/</loc>
-    <lastmod>2010-02-07T22:01:54-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/microsoft-curriculum-narrative/</loc>
-    <lastmod>2010-02-04T22:01:41-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/tablet-signal-tablet-noise/</loc>
-    <lastmod>2010-02-02T22:01:26-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/monthly-metapost-1/</loc>
-    <lastmod>2010-01-31T22:01:47-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/proposed-course-pylons/</loc>
-    <lastmod>2010-01-28T22:01:57-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/what-i-learn-in-this-school/</loc>
-    <lastmod>2010-01-26T22:01:56-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/fizz-and-buzz/</loc>
-    <lastmod>2010-01-24T22:01:56-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/meaningful-work-in-my-future/</loc>
-    <lastmod>2010-01-21T22:01:29-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/textbook-economics/</loc>
-    <lastmod>2010-01-19T22:01:23-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/dont-bother-with-dreamweaver/</loc>
-    <lastmod>2010-01-17T22:01:36-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/the-price-of-specialization/</loc>
-    <lastmod>2010-01-14T22:01:06-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/the-worst-software-made-by-the-best-software-developer-youve-never-heard-of/</loc>
-    <lastmod>2010-01-12T22:01:40-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/the-best-software-developer-youve-never-heard-of/</loc>
-    <lastmod>2010-01-10T22:01:08-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/two-paths/</loc>
-    <lastmod>2010-01-07T22:01:48-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/adobe-flash-is-circling-the-drain/</loc>
-    <lastmod>2010-01-05T22:01:48-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2010/why-is-this-blog/</loc>
-    <lastmod>2010-01-03T16:01:27-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/2009/growing-up-with-windows-xp/</loc>
-    <lastmod>2009-12-31T16:01:14-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/archives/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//about/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/microsoft/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/personal/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/windows/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/xp/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/meta/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/adobe/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/flash/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/rage/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/ux/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/learning/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/magic/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/programming/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/qa/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/professionalism/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/dreamweaver/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/books/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/school/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/pylons/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/python/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/apple/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/marketing/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/server-2003/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/hardware/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/math/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/design/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/certification/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/communication/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/google/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/privacy/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/facebook/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/ethics/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/security/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/emacs/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/saw-sharpening/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/git/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/mercurial/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/svn/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/version-control/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/sysadmin/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/leadership/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/craigslist/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/android/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/open-source/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/elegance/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/seo/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/magento/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/php/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/wordpress/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/location/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/social-media/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/yelp/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/ruby/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/octopress/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/lisp/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/javascript-rehab/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/tumblr/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/the-future/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/twitter/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/frivolity/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/hire-me/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/startups/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/narrative/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/linkblog/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/san-francisco/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/lol/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/writing/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/wtf/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/www/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/business/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//blog/categories/color/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//posts/2/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//posts/3/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//posts/4/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//posts/5/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//posts/6/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//posts/7/</loc>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//growing-up-with-windows-xp/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//why-is-this-blog/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//adobe-flash-is-circling-the-drain/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//two-paths/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//the-best-software-developer-youve-never-heard-of/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//the-worst-software-made-by-the-best-software-developer-youve-never-heard-of/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//the-price-of-specialization/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//dont-bother-with-dreamweaver/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//textbook-economics/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//meaningful-work-in-my-future/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//fizz-and-buzz/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//what-i-learn-in-this-school/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//proposed-course-pylons/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//monthly-metapost-1/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//tablet-signal-tablet-noise/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//microsoft-curriculum-narrative/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//textbook-overview-2/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//home-territory/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//my-back-of-the-envelope-time-budget-for-2010/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//men-of-vision/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//windows-xp-closure/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//you-can-learn-to-be-lucky/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//perception-gap/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//buzz-gap/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//facebook-gap/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//monthly-metapost-2/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//matters-of-ethics/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//the-os-were-all-running/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//summer-of-python-2010/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//sharpening-my-saw-emacs/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//pylons-field-scheduler-planning/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//sharpening-my-saw-version-control/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//creating-and-refining/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//dont-shelve-it/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//able-to-build-this-in-a-cave/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//the-many-forms-of-not-getting-it/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//everyone-turns-into-microsoft/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//ill-build-my-own-phone-os-with-blackjack-and-hookers/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//turning-into-microsoft-on-net-neutrality/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//me-or-your-lying-eyes/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//joel-on-making-choices/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//politicos-problematic-incentives-harm-craigslist/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//can-your-system-account-for-space-aliens/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//sherlock-holmes-search-engine-optimizer/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//kipple-piling-up/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//it-only-looks-easy/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//externalities-are-relevant/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//generating-vcards-in-python/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//a-recommendation-i-cant-get-from-linkedin/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//wordpress-magento-integration-error/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://stronglyemergent.com//locating-design-in-latitude-find-my-friends-and-yelp/index.html</loc>
-    <lastmod>2015-11-28T03:31:05-08:00</lastmod>
-  </url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/an-innovative-business-model/</loc>
+<lastmod>2013-07-05T20:57:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/two-traps/</loc>
+<lastmod>2013-07-02T14:25:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/negative-100-points/</loc>
+<lastmod>2013-06-28T20:07:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/the-prisoner-of-zend-dot-php/</loc>
+<lastmod>2013-06-18T23:30:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/first-date-with-ruby/</loc>
+<lastmod>2013-06-15T08:57:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/dont-let-survivorship-bias-lie-to-you/</loc>
+<lastmod>2013-06-03T19:25:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/a-real-thing-that-exists/</loc>
+<lastmod>2013-05-31T13:01:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/stories-mattering/</loc>
+<lastmod>2013-05-31T09:53:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb/</loc>
+<lastmod>2013-03-24T09:15:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/weekend-project-affiliate-dot-el/</loc>
+<lastmod>2013-03-21T20:16:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/on-hammers/</loc>
+<lastmod>2013-03-13T12:37:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/challenged/</loc>
+<lastmod>2013-03-07T15:17:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/twitters-bickering-design/</loc>
+<lastmod>2013-03-06T12:17:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/the-bittersweet-rise-of-tumblr/</loc>
+<lastmod>2013-03-05T13:18:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience/</loc>
+<lastmod>2013-03-05T08:04:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/program-or-paradigm/</loc>
+<lastmod>2013-03-03T17:08:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2013/the-past-is-a-foreign-country/</loc>
+<lastmod>2013-03-02T16:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp/</loc>
+<lastmod>2011-10-25T14:48:46-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error/</loc>
+<lastmod>2011-09-14T06:57:38-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2011/generating-vcards-in-python/</loc>
+<lastmod>2011-05-02T08:21:10-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2011/externalities-are-relevant/</loc>
+<lastmod>2011-02-15T23:01:17-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/it-only-looks-easy/</loc>
+<lastmod>2010-12-07T23:01:34-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/kipple-piling-up/</loc>
+<lastmod>2010-12-05T23:01:01-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/sherlock-holmes-search-engine-optimizer/</loc>
+<lastmod>2010-12-02T22:01:55-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/can-your-system-account-for-space-aliens/</loc>
+<lastmod>2010-11-30T23:01:34-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/politicos-problematic-incentives-harm-craigslist/</loc>
+<lastmod>2010-08-31T23:01:46-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/joel-on-making-choices/</loc>
+<lastmod>2010-08-29T23:01:44-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/me-or-your-lying-eyes/</loc>
+<lastmod>2010-08-19T23:01:02-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/turning-into-microsoft-on-net-neutrality/</loc>
+<lastmod>2010-08-17T23:01:32-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/</loc>
+<lastmod>2010-08-15T23:01:41-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/everyone-turns-into-microsoft/</loc>
+<lastmod>2010-08-12T23:01:23-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/the-many-forms-of-not-getting-it/</loc>
+<lastmod>2010-08-10T23:01:22-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/able-to-build-this-in-a-cave/</loc>
+<lastmod>2010-08-06T14:00:02-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/dont-shelve-it/</loc>
+<lastmod>2010-08-03T23:01:19-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/creating-and-refining/</loc>
+<lastmod>2010-03-25T23:01:17-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/</loc>
+<lastmod>2010-03-23T23:01:12-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/sharpening-my-saw-version-control/</loc>
+<lastmod>2010-03-16T23:01:10-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning/</loc>
+<lastmod>2010-03-14T23:01:10-07:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/sharpening-my-saw-emacs/</loc>
+<lastmod>2010-03-11T22:01:13-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/summer-of-python-2010/</loc>
+<lastmod>2010-03-10T14:54:13-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/the-os-were-all-running/</loc>
+<lastmod>2010-03-05T14:05:16-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/matters-of-ethics/</loc>
+<lastmod>2010-03-02T22:01:07-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/monthly-metapost-2/</loc>
+<lastmod>2010-02-28T22:01:33-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/facebook-gap/</loc>
+<lastmod>2010-02-25T22:01:45-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/buzz-gap/</loc>
+<lastmod>2010-02-23T22:01:09-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/perception-gap/</loc>
+<lastmod>2010-02-21T22:01:06-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/you-can-learn-to-be-lucky/</loc>
+<lastmod>2010-02-18T22:01:57-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/windows-xp-closure/</loc>
+<lastmod>2010-02-16T22:01:23-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/men-of-vision/</loc>
+<lastmod>2010-02-14T22:01:10-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/my-back-of-the-envelope-time-budget-for-2010/</loc>
+<lastmod>2010-02-11T22:01:34-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/home-territory/</loc>
+<lastmod>2010-02-09T22:01:48-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/textbook-overview-2/</loc>
+<lastmod>2010-02-07T22:01:54-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/microsoft-curriculum-narrative/</loc>
+<lastmod>2010-02-04T22:01:41-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/tablet-signal-tablet-noise/</loc>
+<lastmod>2010-02-02T22:01:26-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/monthly-metapost-1/</loc>
+<lastmod>2010-01-31T22:01:47-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/proposed-course-pylons/</loc>
+<lastmod>2010-01-28T22:01:57-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/what-i-learn-in-this-school/</loc>
+<lastmod>2010-01-26T22:01:56-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/fizz-and-buzz/</loc>
+<lastmod>2010-01-24T22:01:56-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/meaningful-work-in-my-future/</loc>
+<lastmod>2010-01-21T22:01:29-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/textbook-economics/</loc>
+<lastmod>2010-01-19T22:01:23-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/dont-bother-with-dreamweaver/</loc>
+<lastmod>2010-01-17T22:01:36-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/the-price-of-specialization/</loc>
+<lastmod>2010-01-14T22:01:06-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/the-worst-software-made-by-the-best-software-developer-youve-never-heard-of/</loc>
+<lastmod>2010-01-12T22:01:40-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/the-best-software-developer-youve-never-heard-of/</loc>
+<lastmod>2010-01-10T22:01:08-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/two-paths/</loc>
+<lastmod>2010-01-07T22:01:48-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/adobe-flash-is-circling-the-drain/</loc>
+<lastmod>2010-01-05T22:01:48-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2010/why-is-this-blog/</loc>
+<lastmod>2010-01-03T16:01:27-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/2009/growing-up-with-windows-xp/</loc>
+<lastmod>2009-12-31T16:01:14-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/archives/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//about/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/microsoft/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/personal/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/windows/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/xp/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/meta/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/adobe/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/flash/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/rage/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/ux/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/learning/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/magic/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/programming/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/qa/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/professionalism/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/dreamweaver/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/books/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/school/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/pylons/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/python/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/apple/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/marketing/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/server-2003/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/hardware/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/math/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/design/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/certification/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/communication/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/google/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/privacy/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/facebook/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/ethics/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/security/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/emacs/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/saw-sharpening/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/git/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/mercurial/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/svn/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/version-control/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/sysadmin/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/leadership/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/craigslist/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/android/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/open-source/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/elegance/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/seo/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/magento/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/php/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/wordpress/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/location/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/social-media/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/yelp/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/ruby/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/octopress/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/lisp/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/javascript-rehab/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/tumblr/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/the-future/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/twitter/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/frivolity/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/hire-me/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/startups/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/narrative/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/linkblog/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/san-francisco/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/lol/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/writing/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/wtf/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/www/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/business/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//blog/categories/color/</loc>
+</url>
+<url>
+<loc>http://stronglyemergent.com//growing-up-with-windows-xp/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//why-is-this-blog/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//adobe-flash-is-circling-the-drain/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//two-paths/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//the-best-software-developer-youve-never-heard-of/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//the-worst-software-made-by-the-best-software-developer-youve-never-heard-of/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//the-price-of-specialization/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//dont-bother-with-dreamweaver/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//textbook-economics/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//meaningful-work-in-my-future/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//fizz-and-buzz/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//what-i-learn-in-this-school/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//proposed-course-pylons/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//monthly-metapost-1/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//tablet-signal-tablet-noise/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//microsoft-curriculum-narrative/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//textbook-overview-2/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//home-territory/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//my-back-of-the-envelope-time-budget-for-2010/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//men-of-vision/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//windows-xp-closure/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//you-can-learn-to-be-lucky/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//perception-gap/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//buzz-gap/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//facebook-gap/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//monthly-metapost-2/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//matters-of-ethics/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//the-os-were-all-running/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//summer-of-python-2010/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//sharpening-my-saw-emacs/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//pylons-field-scheduler-planning/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//sharpening-my-saw-version-control/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//creating-and-refining/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//dont-shelve-it/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//able-to-build-this-in-a-cave/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//the-many-forms-of-not-getting-it/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//everyone-turns-into-microsoft/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//ill-build-my-own-phone-os-with-blackjack-and-hookers/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//turning-into-microsoft-on-net-neutrality/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//me-or-your-lying-eyes/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//joel-on-making-choices/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//politicos-problematic-incentives-harm-craigslist/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//can-your-system-account-for-space-aliens/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//sherlock-holmes-search-engine-optimizer/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//kipple-piling-up/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//it-only-looks-easy/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//externalities-are-relevant/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//generating-vcards-in-python/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//wordpress-magento-integration-error/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://stronglyemergent.com//locating-design-in-latitude-find-my-friends-and-yelp/index.html</loc>
+<lastmod>1469-06-01T07:00:00-08:00</lastmod>
+</url>
 </urlset>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: apple | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/apple/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2015-11-28T03:31:05-08:00</updated>
+  <updated>2016-07-20T17:15:07-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,47 +18,167 @@
     <link href="http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp/"/>
     <updated>2011-10-25T14:48:46-07:00</updated>
     <id>http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp</id>
-    <content type="html"><![CDATA[<p>The conventional wisdom in computing is that the difference between Apple and its competitors, is design. This isn&rsquo;t wrong, but it&rsquo;s insufficiently specific: when people say that Apple focuses on &ldquo;design,&rdquo; they often mean that the visual, graphical, surface aspect of Apple products, is different. It is - but that is not a difference of &ldquo;design.&rdquo; Design is about fitting the designed artifact into human lives, and there are some crucially important non-visual aspects to design in this sense.</p>
+    <content type="html"><![CDATA[<p>The conventional wisdom in computing is that the difference between Apple and its competitors, is design.
+This isn&rsquo;t wrong, but it&rsquo;s insufficiently specific: when people say that Apple focuses on &ldquo;design,&rdquo; they often mean that the visual, graphical, surface aspect of Apple products, is different.
+It is - but that is not a difference of &ldquo;design.&rdquo;
+Design is about fitting the designed artifact into human lives, and there are some crucially important non-visual aspects to design in this sense.</p>
 
-<p>I&rsquo;m going to talk about one specific group of non-visual design choices here, comparing Apple&rsquo;s &ldquo;Find My Friends&rdquo; service to two similar services - Google&rsquo;s &ldquo;Latitude&rdquo; and Yelp&rsquo;s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla). All three share a core functionality: they advertise the user&rsquo;s location and allow them to discover the location of others. They differ in how they attempt to fit into users' lives, and in how they execute their attempts. I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple&rsquo;s service is different, and the difference is design.</p>
+<p>I&rsquo;m going to talk about one specific group of non-visual design choices here, comparing Apple&rsquo;s &ldquo;Find My Friends&rdquo; service to two similar services - Google&rsquo;s &ldquo;Latitude&rdquo; and Yelp&rsquo;s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
+All three share a core functionality: they advertise the user&rsquo;s location and allow them to discover the location of others.
+They differ in how they attempt to fit into users' lives, and in how they execute their attempts.
+I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple&rsquo;s service is different, and the difference is design.</p>
 
-<p>As phones have become mobile computing devices, they&rsquo;ve converged with desktop computing in some ways, and diverged in other ways. One of the convergences is the social experience: email, the original social experience in computing, was one of the first things that made smartphones smart. One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it&rsquo;s a single piece of information. With mobile computing, location is a stream of information instead of a single piece, and adding that stream to other streams of information, then distilling, is where many mobile companies have added value. One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say &ldquo;here I am!&rdquo; to your social circle. Google participated in an early wave of such services with Google Latitude&rsquo;s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple&rsquo;s offering appeared in late 2011. All of these services allow you to broadcast your location, to restrict who can hear that broadcast, and to view the broadcasts of others. Those functions are the core of any location-based social service: they are the same across all three services, even though these services all have different goals.</p>
+<p>As phones have become mobile computing devices, they&rsquo;ve converged with desktop computing in some ways, and diverged in other ways.
+One of the convergences is the social experience: email, the original social experience in computing, was one of the first things that made smartphones smart.
+One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it&rsquo;s a single piece of information.
+With mobile computing, location is a stream of information instead of a single piece, and adding that stream to other streams of information, then distilling, is where many mobile companies have added value.
+One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say &ldquo;here I am!&rdquo; to your social circle.
+Google participated in an early wave of such services with Google Latitude&rsquo;s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple&rsquo;s offering appeared in late 2011.
+All of these services allow you to broadcast your location, to restrict who can hear that broadcast, and to view the broadcasts of others.
+Those functions are the core of any location-based social service: they are the same across all three services, even though these services all have different goals.</p>
 
 <ul>
-<li><p>Apple, in characteristic fashion, makes the service&rsquo;s goal very, very obvious. Its name is &ldquo;Find My Friends.&rdquo; There isn&rsquo;t that much to say about the service - there&rsquo;s a map, other users of the service show up on the map, and you can find them. That&rsquo;s it.</p></li>
-<li><p>Yelp&rsquo;s service is slightly more complicated, but still straightforward. Yelp is all about restaurants, venues, and other businesses, so it lets you broadcast that you are at a specific business. It doesn&rsquo;t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you&rsquo;re at Candlestick Park, for example. It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they&rsquo;re doing at the place where they&rsquo;ve checked in.</p></li>
-<li><p>Google&rsquo;s service is open-ended. There&rsquo;s a map, other users of the service show up on the map, and you can find them. Latitude shares a lot of genetic material with Find My Friends - they&rsquo;re both implementing the most obvious thing you can do with social-plus-local. Google&rsquo;s service is goal-agnostic: for quite a while, the map was all it was, but recently, they&rsquo;ve added an API and a feature that tells users how much time they&rsquo;ve spent at home, at work, or out-and-about.</p></li>
+<li><p>Apple, in characteristic fashion, makes the service&rsquo;s goal very, very obvious.
+Its name is &ldquo;Find My Friends.&rdquo;
+There isn&rsquo;t that much to say about the service - there&rsquo;s a map, other users of the service show up on the map, and you can find them.
+That&rsquo;s it.</p></li>
+<li><p>Yelp&rsquo;s service is slightly more complicated, but still straightforward.
+Yelp is all about restaurants, venues, and other businesses, so it lets you broadcast that you are at a specific business.
+It doesn&rsquo;t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you&rsquo;re at Candlestick Park, for example.
+It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they&rsquo;re doing at the place where they&rsquo;ve checked in.</p></li>
+<li><p>Google&rsquo;s service is open-ended.
+There&rsquo;s a map, other users of the service show up on the map, and you can find them.
+Latitude shares a lot of genetic material with Find My Friends - they&rsquo;re both implementing the most obvious thing you can do with social-plus-local.
+Google&rsquo;s service is goal-agnostic: for quite a while, the map was all it was, but recently, they&rsquo;ve added an API and a feature that tells users how much time they&rsquo;ve spent at home, at work, or out-and-about.</p></li>
 </ul>
 
 
-<p>These summaries show one significant design difference between the services: Apple and Yelp have clearly defined goals for how their services should fit into human lives. Apple helps you find your friends. Yelp helps you evaluate venues. Google&rsquo;s service can do what Apple&rsquo;s does, but also shows you a history of where you&rsquo;ve been, has check-ins like Yelp&rsquo;s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface). Its public API also lets other services build on its data and provide further services. Now, &ldquo;you can&rsquo;t summarize what Google Latitude does for users in a concise sentence&rdquo; is not exactly a major flaw. It is, however, sloppy design by the criteria we&rsquo;re using right now. Not having a clear answer for &ldquo;how does this fit into users' lives?&rdquo; shows that you have a design problem. As long as that question goes without an answer, you will never have a well-designed product. Answering that question requires focus.</p>
+<p>These summaries show one significant design difference between the services: Apple and Yelp have clearly defined goals for how their services should fit into human lives.
+Apple helps you find your friends.
+Yelp helps you evaluate venues.
+Google&rsquo;s service can do what Apple&rsquo;s does, but also shows you a history of where you&rsquo;ve been, has check-ins like Yelp&rsquo;s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
+Its public API also lets other services build on its data and provide further services.
+Now, &ldquo;you can&rsquo;t summarize what Google Latitude does for users in a concise sentence&rdquo; is not exactly a major flaw.
+It is, however, sloppy design by the criteria we&rsquo;re using right now.
+Not having a clear answer for &ldquo;how does this fit into users' lives?&rdquo; shows that you have a design problem.
+As long as that question goes without an answer, you will never have a well-designed product.
+Answering that question requires focus.</p>
 
-<p>I&rsquo;m going to diverge for a moment: we humans have a complicated relationship with choice and focus. Of course we want both: it is good to keep your options open, and it&rsquo;s good to focus. But they&rsquo;re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open. The best example of this is a study that Dan Ariely <a href="http://duke.edu/~dandan/Papers/doors.pdf">performed on MIT students</a> and wrote about in <a href="http://www.amazon.com/gp/product/0061353248/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=stronemerg05-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0061353248">Predictably Irrational</a>: his study offered participants three doors on a computer screen, each of which offered varying rewards when clicked on. Participants were asked to maximize rewards with a limited number of clicks. They were easily able to do this in the first iteration - but in the second iteration, any door that went unclicked for a certain amount of time, closed permanently. At that point, participants' efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening. Participants &ldquo;couldn&rsquo;t tolerate the idea of the loss,&rdquo; Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias. Good design is about <a href="http://www.oreillynet.com/onlamp/blog/2004/08/say_no_by_default.html">fighting that bias</a>:</p>
+<p>I&rsquo;m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
+Of course we want both: it is good to keep your options open, and it&rsquo;s good to focus.
+But they&rsquo;re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
+The best example of this is a study that Dan Ariely <a href="http://duke.edu/~dandan/Papers/doors.pdf">performed on MIT students</a> and wrote about in <a href="http://www.amazon.com/gp/product/0061353248/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=stronemerg05-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0061353248">Predictably Irrational</a>: his study offered participants three doors on a computer screen, each of which offered varying rewards when clicked on.
+Participants were asked to maximize rewards with a limited number of clicks.
+They were easily able to do this in the first iteration - but in the second iteration, any door that went unclicked for a certain amount of time, closed permanently.
+At that point, participants' efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
+Participants &ldquo;couldn&rsquo;t tolerate the idea of the loss,&rdquo; Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
+Good design is about <a href="http://www.oreillynet.com/onlamp/blog/2004/08/say_no_by_default.html">fighting that bias</a>:</p>
 
-<blockquote><p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people. &hellip; people kept raising their hand saying, &ldquo;Does it do (x)?&rdquo;, &ldquo;Do you plan to add (y)?&rdquo;. Finally Jobs said, &ldquo;Wait wait - put your hands down. Listen: I know you have a thousand ideas for all the cool features iTunes <em>could</em> have. So do we. But we don&rsquo;t want a thousand features. That would be ugly. Innovation is not about saying yes to everything. It&rsquo;s about saying NO to all but the most crucial features.&rdquo;</p></blockquote>
+<blockquote><p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
+&hellip;
+people kept raising their hand saying, &ldquo;Does it do (x)?&rdquo;, &ldquo;Do you plan to add (y)?&rdquo;.
+Finally Jobs said, &ldquo;Wait wait - put your hands down.
+Listen: I know you have a thousand ideas for all the cool features iTunes <em>could</em> have.
+So do we.
+But we don&rsquo;t want a thousand features.
+That would be ugly.
+Innovation is not about saying yes to everything.
+It&rsquo;s about saying NO to all but the most crucial features.&rdquo;</p></blockquote>
 
-<p>Apple and Yelp&rsquo;s services have decided what they&rsquo;re going to say no to. As far as I can tell, Google&rsquo;s service hasn&rsquo;t. This is consistent with the general way that these three companies work with focus and choice. Yelp has it easy: it defines itself as being a company that is about evaluating venues. That can be a big job - but that definition also excludes many things. Yelp will never be a peer-to-peer file-sharing service, create an operating system, or manufacture a tablet computer. Apple, by contrast, is big enough and ambitious enough that it might do anything - and it is very, very selective about what it does do. The credo of &ldquo;say no to all but the most crucial features&rdquo; is one that&rsquo;s been reflected in every Apple product for the last decade. At this point, making a product that didn&rsquo;t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do. They say no to features all the time.</p>
+<p>Apple and Yelp&rsquo;s services have decided what they&rsquo;re going to say no to.
+As far as I can tell, Google&rsquo;s service hasn&rsquo;t.
+This is consistent with the general way that these three companies work with focus and choice.
+Yelp has it easy: it defines itself as being a company that is about evaluating venues.
+That can be a big job - but that definition also excludes many things.
+Yelp will never be a peer-to-peer file-sharing service, create an operating system, or manufacture a tablet computer.
+Apple, by contrast, is big enough and ambitious enough that it might do anything - and it is very, very selective about what it does do.
+The credo of &ldquo;say no to all but the most crucial features&rdquo; is one that&rsquo;s been reflected in every Apple product for the last decade.
+At this point, making a product that didn&rsquo;t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
+They say no to features all the time.</p>
 
-<p>Google is having trouble learning to say no. Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, &ldquo;how does this fit into users' lives,&rdquo; Google Wave brazenly defies the question and jeers at its premises. But Google did eventually say no to Wave - and perhaps its features will in time show up in contexts where they can give a satisfying answer to the question. Google&rsquo;s best products - for example, Search and Gmail - answer the question decisively. For that matter, Google&rsquo;s corporate goal of organizing and making useful the world&rsquo;s information, also is a good step towards answering that question of design.</p>
+<p>Google is having trouble learning to say no.
+Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, &ldquo;how does this fit into users' lives,&rdquo; Google Wave brazenly defies the question and jeers at its premises.
+But Google did eventually say no to Wave - and perhaps its features will in time show up in contexts where they can give a satisfying answer to the question.
+Google&rsquo;s best products - for example, Search and Gmail - answer the question decisively.
+For that matter, Google&rsquo;s corporate goal of organizing and making useful the world&rsquo;s information, also is a good step towards answering that question of design.</p>
 
-<p>Now, another piece of conventional wisdom in computing is that Google is bad at design. I think that that is true, but that it&rsquo;s true in ways that people usually don&rsquo;t consider. Just as Apple products' good design isn&rsquo;t just surface appearances, Google&rsquo;s bad design decisions don&rsquo;t happen in a vacuum. It&rsquo;s ridiculous to suggest that Google commits bad design because they&rsquo;re dumb or malicious. Nothing could be further from the truth about the Google employees of my acquaintance, and the company itself is only as dumb and malicious as Apple is - which is to say, many orders of magnitude less so than the average American corporation. I believe that Google&rsquo;s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
+<p>Now, another piece of conventional wisdom in computing is that Google is bad at design.
+I think that that is true, but that it&rsquo;s true in ways that people usually don&rsquo;t consider.
+Just as Apple products' good design isn&rsquo;t just surface appearances, Google&rsquo;s bad design decisions don&rsquo;t happen in a vacuum.
+It&rsquo;s ridiculous to suggest that Google commits bad design because they&rsquo;re dumb or malicious.
+Nothing could be further from the truth about the Google employees of my acquaintance, and the company itself is only as dumb and malicious as Apple is - which is to say, many orders of magnitude less so than the average American corporation.
+I believe that Google&rsquo;s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
 
 <ul>
-<li><p>Google&rsquo;s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>. This is a large part of why Google launched its social networking service, Google Plus - to protect its core business from Facebook. This is part of why Google launched its music product - to protect against Amazon and Apple trying to expand into its territory. This is part of why Google has Android - Google disrupts other businesses by being <a href="http://abovethecrowd.com/2009/10/29/google-redefines-disruption-the-%E2%80%9Cless-than-free%E2%80%9D-business-model/">cheaper than free</a>. What all of those have in common is that for them to succeed on a strategic level for Google, doesn&rsquo;t require that they be dominant or highly profitable. If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn&rsquo;t. When good design doesn&rsquo;t help your business towards its strategic goals, good design gets thrown overboard. So it goes.</p></li>
-<li><p>Google&rsquo;s corporate culture is rooted in engineering. This has many positive effects, because Google is also obsessed with hiring enormously smart engineers. They&rsquo;re very good at that. That means, however, that they inherit some of the cultural biases of computer engineering in general. One of these is the cognitive bias that the users must be similar to the programmers of software and devices. That causes problems for design, because the way that the &ldquo;unwilling to foreclose options&rdquo; bias operates in engineers, is that they don&rsquo;t want to give up configurability - don&rsquo;t want to give up control. As a result, if you&rsquo;re the sort of person who is willing to be the sysadmin of your phone, Android is great for you. The cost of that configurability, though, is paid by giving up focus.</p></li>
-<li><p>Finally, Google has taken on some enormously, enormously difficult design challenges. I think that this is a bigger factor than is usually acknowledged. With a shallower pool of design talent than Apple, and less time to nurture it, Google has taken on harder design problems. To see how hard they are, just contemplate that &ldquo;organizing the world&rsquo;s information&rdquo; goal - and then realize that <em>Google takes that seriously</em>. Apple tries many things, but few ever leave the black box in Cupertino. The number of things that Google has tried is enormous, and the amount of money that they have put towards them, even more enormous. Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you&rsquo;ll need to pause for breath again before you run out of recognizable Google properties. Further, they run many of them as public goods - the SPDY protocol, the public DNS servers, hiring on figures from the open-source world and essentially patronizing them to continue their work (e.g. Guido van Rossum). So with fewer design resources than Apple, they&rsquo;ve chosen tougher problems. Once you look at it that way, their design woes are entirely predictable.</p></li>
+<li><p>Google&rsquo;s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
+This is a large part of why Google launched its social networking service, Google Plus - to protect its core business from Facebook.
+This is part of why Google launched its music product - to protect against Amazon and Apple trying to expand into its territory.
+This is part of why Google has Android - Google disrupts other businesses by being <a href="http://abovethecrowd.com/2009/10/29/google-redefines-disruption-the-%E2%80%9Cless-than-free%E2%80%9D-business-model/">cheaper than free</a>.
+What all of those have in common is that for them to succeed on a strategic level for Google, doesn&rsquo;t require that they be dominant or highly profitable.
+If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn&rsquo;t.
+When good design doesn&rsquo;t help your business towards its strategic goals, good design gets thrown overboard.
+So it goes.</p></li>
+<li><p>Google&rsquo;s corporate culture is rooted in engineering.
+This has many positive effects, because Google is also obsessed with hiring enormously smart engineers.
+They&rsquo;re very good at that.
+That means, however, that they inherit some of the cultural biases of computer engineering in general.
+One of these is the cognitive bias that the users must be similar to the programmers of software and devices.
+That causes problems for design, because the way that the &ldquo;unwilling to foreclose options&rdquo; bias operates in engineers, is that they don&rsquo;t want to give up configurability - don&rsquo;t want to give up control.
+As a result, if you&rsquo;re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
+The cost of that configurability, though, is paid by giving up focus.</p></li>
+<li><p>Finally, Google has taken on some enormously, enormously difficult design challenges.
+I think that this is a bigger factor than is usually acknowledged.
+With a shallower pool of design talent than Apple, and less time to nurture it, Google has taken on harder design problems.
+To see how hard they are, just contemplate that &ldquo;organizing the world&rsquo;s information&rdquo; goal - and then realize that <em>Google takes that seriously</em>.
+Apple tries many things, but few ever leave the black box in Cupertino.
+The number of things that Google has tried is enormous, and the amount of money that they have put towards them, even more enormous.
+Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you&rsquo;ll need to pause for breath again before you run out of recognizable Google properties.
+Further, they run many of them as public goods - the SPDY protocol, the public DNS servers, hiring on figures from the open-source world and essentially patronizing them to continue their work (e.g. Guido van Rossum).
+So with fewer design resources than Apple, they&rsquo;ve chosen tougher problems.
+Once you look at it that way, their design woes are entirely predictable.</p></li>
 </ul>
 
 
-<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it&rsquo;s improving over time, it&rsquo;s unfocused and it&rsquo;s hard to gather its features into a coherent value proposition. If you&rsquo;re a developer and you&rsquo;re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude. Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you&rsquo;re programming and make friends with it. Apple provides a location services API, but that&rsquo;s not a Find My Friends API. Find My Friends is private property.</p>
+<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it&rsquo;s improving over time, it&rsquo;s unfocused and it&rsquo;s hard to gather its features into a coherent value proposition.
+If you&rsquo;re a developer and you&rsquo;re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
+Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you&rsquo;re programming and make friends with it.
+Apple provides a location services API, but that&rsquo;s not a Find My Friends API.
+Find My Friends is private property.</p>
 
-<p>Private property is a good thing in a location service, though - a service that lets you broadcast your location is a service that can be used to follow you and to gather information about you. The privacy controls in Apple, Google, and Yelp&rsquo;s services are very revealing: they show the differences in design clearly. Google Latitude maintains a list of people who are allowed to see your location. You can add and remote people from the list and tell Google whether they&rsquo;re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all. Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you&rsquo;ll still be part of the generally visible stream of checkins on Yelp, but you&rsquo;ll be lost in a crowd).</p>
+<p>Private property is a good thing in a location service, though - a service that lets you broadcast your location is a service that can be used to follow you and to gather information about you.
+The privacy controls in Apple, Google, and Yelp&rsquo;s services are very revealing: they show the differences in design clearly.
+Google Latitude maintains a list of people who are allowed to see your location.
+You can add and remote people from the list and tell Google whether they&rsquo;re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
+Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you&rsquo;ll still be part of the generally visible stream of checkins on Yelp, but you&rsquo;ll be lost in a crowd).</p>
 
-<p>Apple&rsquo;s Find My Friends adds one important privacy feature that Latitude doesn&rsquo;t have, and says no to one feature that Latitude does have. When you decide to share your location with someone on Find My Friends, you can also add &ldquo;for the next few hours&rdquo; - you can tell the service that your sharing is temporary. You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple&rsquo;s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done. I think that&rsquo;s an important symptom of the difference in design. Apple&rsquo;s design allows you to centralize decisions in time. Apple&rsquo;s design also avoids burdening you later: you don&rsquo;t need to go back to the service later and tell it to stop caring, after you already have. It fits into your life by not requiring that you take extra steps to stop doing something - you can just stop. Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude&rsquo;s 2009 launch.</p>
+<p>Apple&rsquo;s Find My Friends adds one important privacy feature that Latitude doesn&rsquo;t have, and says no to one feature that Latitude does have.
+When you decide to share your location with someone on Find My Friends, you can also add &ldquo;for the next few hours&rdquo; - you can tell the service that your sharing is temporary.
+You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple&rsquo;s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
+I think that&rsquo;s an important symptom of the difference in design.
+Apple&rsquo;s design allows you to centralize decisions in time.
+Apple&rsquo;s design also avoids burdening you later: you don&rsquo;t need to go back to the service later and tell it to stop caring, after you already have.
+It fits into your life by not requiring that you take extra steps to stop doing something - you can just stop.
+Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude&rsquo;s 2009 launch.</p>
 
-<p>On the flip side, Google Latitude lets you manually set your location in addition to simply switching automatically-detected location on and off. I call this a &ldquo;promised location.&rdquo; Find My Friends does not let you do this, and I think that&rsquo;s interesting. Why not? For one thing, I&rsquo;d guess, a promised location doesn&rsquo;t pull its own weight. You don&rsquo;t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location. So it&rsquo;s redundant, and redundancy is a thing that good designs usually eliminate. More subtly, you might not keep that promise about your location - so you could say that Latitude permits you to lie about your location. If you were to look up my location on Google Latitude, you&rsquo;d see me forever trapped in one Whole Foods market, never leaving it. You could also say that Google Latitude is less likely to <a href="http://gawker.com/5850321/did-iphones-find-my-friends-just-break-up-its-first-marriage">break up a relationship</a>. Yelp, for the record, <a href="http://blog.sfgate.com/techchron/2010/11/24/how-yelp-plans-to-curb-check-in-fraud/">uses location checking and other heuristics to check on your promised location</a>.</p>
+<p>On the flip side, Google Latitude lets you manually set your location in addition to simply switching automatically-detected location on and off.
+I call this a &ldquo;promised location.&rdquo; Find My Friends does not let you do this, and I think that&rsquo;s interesting.
+Why not? For one thing, I&rsquo;d guess, a promised location doesn&rsquo;t pull its own weight.
+You don&rsquo;t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
+So it&rsquo;s redundant, and redundancy is a thing that good designs usually eliminate.
+More subtly, you might not keep that promise about your location - so you could say that Latitude permits you to lie about your location.
+If you were to look up my location on Google Latitude, you&rsquo;d see me forever trapped in one Whole Foods market, never leaving it.
+You could also say that Google Latitude is less likely to <a href="http://gawker.com/5850321/did-iphones-find-my-friends-just-break-up-its-first-marriage">break up a relationship</a>.
+Yelp, for the record, <a href="http://blog.sfgate.com/techchron/2010/11/24/how-yelp-plans-to-curb-check-in-fraud/">uses location checking and other heuristics to check on your promised location</a>.</p>
 
-<p>So Apple&rsquo;s design is missing that feature. Is that good or bad? It is <em>opinionated</em> - and that&rsquo;s what good design fundamentally is. Design is about making decisions, and Apple&rsquo;s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom. Of course people differ - part of the challenge of design as a field of endeavor is that people differ so widely in their needs and desires, and nothing will satisfy all of us. So of course Apple&rsquo;s products don&rsquo;t satisfy everyone. But what makes their product well-defined is that they have renounced trying to make everyone happy. That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans' lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal. That is what it means that the difference between Apple and everyone else, is design.</p>
+<p>So Apple&rsquo;s design is missing that feature.
+Is that good or bad?
+It is <em>opinionated</em> - and that&rsquo;s what good design fundamentally is.
+Design is about making decisions, and Apple&rsquo;s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
+Of course people differ - part of the challenge of design as a field of endeavor is that people differ so widely in their needs and desires, and nothing will satisfy all of us.
+So of course Apple&rsquo;s products don&rsquo;t satisfy everyone.
+But what makes their product well-defined is that they have renounced trying to make everyone happy.
+That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans' lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
+That is what it means that the difference between Apple and everyone else, is design.</p>
 ]]></content>
   </entry>
   
@@ -67,19 +187,68 @@
     <link href="http://stronglyemergent.com//blog/2011/externalities-are-relevant/"/>
     <updated>2011-02-15T23:01:17-08:00</updated>
     <id>http://stronglyemergent.com//blog/2011/externalities-are-relevant</id>
-    <content type="html"><![CDATA[<p>The online economy is deeply weird and breaks many rules that guide the functioning of the physical economy.  However, there&rsquo;s one concept that&rsquo;s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.  We like to think that in any transaction, people are getting what they pay for - but that&rsquo;s not always true.  There are people who aren&rsquo;t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.  A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others' transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you. Externalities are &ldquo;external&rdquo; because the people actually involved in the transaction haven&rsquo;t captured all of the costs and benefits of the transaction; they happen all the time because there are some things it&rsquo;s impossible to keep internal to a transaction.</p>
+    <content type="html"><![CDATA[<p>The online economy is deeply weird and breaks many rules that guide the functioning of the physical economy.
+However, there&rsquo;s one concept that&rsquo;s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
+We like to think that in any transaction, people are getting what they pay for - but that&rsquo;s not always true.
+There are people who aren&rsquo;t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
+A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others' transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
+Externalities are &ldquo;external&rdquo; because the people actually involved in the transaction haven&rsquo;t captured all of the costs and benefits of the transaction;
+they happen all the time because there are some things it&rsquo;s impossible to keep internal to a transaction.</p>
 
-<p>Here&rsquo;s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.  Caltrain&rsquo;s funding, in large part, comes from sources beyond its control.  A little less than half comes from ticket sales - and the rest from local municipal governments.  The local governments collect no taxes dedicated to and aren&rsquo;t bound to pay for Caltrain: in years like this one, where tax revenues are shrinking, they can simply decrease their funding.  That&rsquo;s what&rsquo;s happening now.  That&rsquo;s a transaction between them and Caltrain.  I&rsquo;m just a Caltrain rider, I&rsquo;m not a party to the transaction - but it&rsquo;s going to affect me anyhow.  The service cuts that Caltrain has to make have major negative effects on riders who aren&rsquo;t part of the transaction between Caltrain and local governments: they are the subjects of a negative externality.  Similarly, if the service cuts go through, traffic on highways between San Francisco and San Jose will get significantly worse. Train service created a positive externality that benefited drivers - anyone who was taking the train was not driving, and congestion decreased.  There&rsquo;s also a positive externality that has to do with air quality: the train is a more efficient way of transporting large numbers of people than requiring each of them to drive their own car.</p>
+<p>Here&rsquo;s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
+Caltrain&rsquo;s funding, in large part, comes from sources beyond its control.
+A little less than half comes from ticket sales - and the rest from local municipal governments.
+The local governments collect no taxes dedicated to and aren&rsquo;t bound to pay for Caltrain:
+in years like this one, where tax revenues are shrinking, they can simply decrease their funding.
+That&rsquo;s what&rsquo;s happening now.
+That&rsquo;s a transaction between them and Caltrain.
+I&rsquo;m just a Caltrain rider, I&rsquo;m not a party to the transaction - but it&rsquo;s going to affect me anyhow.
+The service cuts that Caltrain has to make have major negative effects on riders who aren&rsquo;t part of the transaction between Caltrain and local governments:
+they are the subjects of a negative externality.
+Similarly, if the service cuts go through, traffic on highways between San Francisco and San Jose will get significantly worse.
+Train service created a positive externality that benefited drivers - anyone who was taking the train was not driving, and congestion decreased.
+There&rsquo;s also a positive externality that has to do with air quality:
+the train is a more efficient way of transporting large numbers of people than requiring each of them to drive their own car.</p>
 
-<p>The reason that externalities are relevant to the tech field is this: most startups entirely rely on them.  <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>, whatever its intentions, creates enormous positive externalities.  It&rsquo;s almost impossible to name a tech company that doesn&rsquo;t depend on some piece of free software. Further, most tech companies in turn create significant externalities because of their advertising-driven revenue models.  I dislike advertising-driven revenue models - but like everything else, they&rsquo;re a trade-off.  An advertising-driven revenue model - for example, Facebook&rsquo;s - means that all benefits to users are externalities on one level.  Of course you are still in a transaction with Facebook - but most of that transaction is invisible to the average user.  We users give Facebook data - the data that makes their vaunted social graph valuable and lets them <a href="http://www.youtube.com/watch?v=ce3P79ktpTk">produce creepy marketing videos</a>.  That tiny transaction, times hundreds of millions of users, gets refined into a product that Facebook can actually make money from.  Any other startup with the same revenue model is doing the same thing: they&rsquo;re purposefully creating positive externalities, because without those, they can&rsquo;t do the transactions (with advertisers) that they actually make money from.</p>
+<p>The reason that externalities are relevant to the tech field is this: most startups entirely rely on them.
+<a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>, whatever its intentions, creates enormous positive externalities.
+It&rsquo;s almost impossible to name a tech company that doesn&rsquo;t depend on some piece of free software.
+Further, most tech companies in turn create significant externalities because of their advertising-driven revenue models.
+I dislike advertising-driven revenue models - but like everything else, they&rsquo;re a trade-off.
+An advertising-driven revenue model - for example, Facebook&rsquo;s - means that all benefits to users are externalities on one level.
+Of course you are still in a transaction with Facebook - but most of that transaction is invisible to the average user.
+We users give Facebook data - the data that makes their vaunted social graph valuable and lets them <a href="http://www.youtube.com/watch?v=ce3P79ktpTk">produce creepy marketing videos</a>.
+That tiny transaction, times hundreds of millions of users, gets refined into a product that Facebook can actually make money from.
+Any other startup with the same revenue model is doing the same thing:
+they&rsquo;re purposefully creating positive externalities, because without those, they can&rsquo;t do the transactions (with advertisers) that they actually make money from.</p>
 
-<p>This is a highly interesting business model, and has created many interesting things.  I personally think that in evolutionary terms it&rsquo;s a loser: advertising as practiced in the modern world is a hostile, toxic, invasive species, and letting it into your ecosystem is a bad idea.  But what I want to talk about now is a company that <em>doesn&rsquo;t</em> share that revenue model, and about how it handles externalities.  It&rsquo;s time to talk, yet again, about Apple.</p>
+<p>This is a highly interesting business model, and has created many interesting things.
+I personally think that in evolutionary terms it&rsquo;s a loser:
+advertising as practiced in the modern world is a hostile, toxic, invasive species, and letting it into your ecosystem is a bad idea.
+But what I want to talk about now is a company that <em>doesn&rsquo;t</em> share that revenue model, and about how it handles externalities.
+It&rsquo;s time to talk, yet again, about Apple.</p>
 
-<p>Part of the reason that Apple&rsquo;s prices are what they are is that you are paying for things that you normally get for free as an externality.  When you buy Apple products, you are forgoing a price that&rsquo;s artificially low.  I like to think of it this way: you are paying something closer to the &lsquo;true&rsquo; price of the product.  The price in dollars to the users of Google products like web search, Gmail, and Google Reader, is low or nil because Google relies on selling user data to others for its revenue.  You get nice things for &lsquo;free&rsquo; because the actual price you&rsquo;re paying is invisible. Apple products, on the other hand, usually don&rsquo;t do that - you will pay dollars, and you will get your product or service from them, and that&rsquo;s that.  I think of it as paying for peace of mind. Free services usually involve a third party, an advertiser, who has an enormous, overwhelming, powerful incentive to attack my peace of mind.  That is what the modern business of advertising is: it is attacking people&rsquo;s mental health.</p>
+<p>Part of the reason that Apple&rsquo;s prices are what they are is that you are paying for things that you normally get for free as an externality.
+When you buy Apple products, you are forgoing a price that&rsquo;s artificially low.
+I like to think of it this way: you are paying something closer to the &lsquo;true&rsquo; price of the product.
+The price in dollars to the users of Google products like web search, Gmail, and Google Reader, is low or nil because Google relies on selling user data to others for its revenue.
+You get nice things for &lsquo;free&rsquo; because the actual price you&rsquo;re paying is invisible.
+Apple products, on the other hand, usually don&rsquo;t do that - you will pay dollars, and you will get your product or service from them, and that&rsquo;s that.
+I think of it as paying for peace of mind.
+Free services usually involve a third party, an advertiser, who has an enormous, overwhelming, powerful incentive to attack my peace of mind.
+That is what the modern business of advertising is: it is attacking people&rsquo;s mental health.</p>
 
-<p>Apple is in the tech news again because of externalities: <a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they&rsquo;re making are pissing off all kinds of people.  As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">&ldquo;if you own the infrastructure, you get to charge rent.&rdquo;</a> What interests me, though, is that Apple has chosen to create a positive externality for user experience here - and they have deliberately done it, risked money to do it, risked business partnerships to do it.  That&rsquo;s interesting - and, I think, good.  When the people who use your product are the people you make money from, you wind up focusing on keeping them happy.  If you make money otherwise, you risk turning into Adobe (Microsoft also has bouts of this): making mediocre products at exorbitant prices and squealing when someone exposes the flaws of your product line.</p>
+<p>Apple is in the tech news again because of externalities:
+<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they&rsquo;re making are pissing off all kinds of people.
+As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">&ldquo;if you own the infrastructure, you get to charge rent.&rdquo;</a>
+What interests me, though, is that Apple has chosen to create a positive externality for user experience here - and they have deliberately done it, risked money to do it, risked business partnerships to do it.
+That&rsquo;s interesting - and, I think, good.
+When the people who use your product are the people you make money from, you wind up focusing on keeping them happy.
+If you make money otherwise, you risk turning into Adobe (Microsoft also has bouts of this):
+making mediocre products at exorbitant prices and squealing when someone exposes the flaws of your product line.</p>
 
-<p>Whimsically, I think that Apple also creates a huge externality for the tech journalism corps. They are the largest company that actually takes risks, and so they help ensure that there&rsquo;s always something interesting to write about.</p>
+<p>Whimsically, I think that Apple also creates a huge externality for the tech journalism corps.
+They are the largest company that actually takes risks, and so they help ensure that there&rsquo;s always something interesting to write about.</p>
 ]]></content>
   </entry>
   
@@ -90,27 +259,76 @@
     <id>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers</id>
     <content type="html"><![CDATA[<p>System administration is about making hard decisions.</p>
 
-<p>This just amounts to saying that it&rsquo;s knowledge work.  More specifically, it&rsquo;s about making annoying, difficult decisions about computers and networks.  What parts of the system are trustworthy, and what can enter the system that I shouldn&rsquo;t trust?  What does the current state of the system tell me about what&rsquo;s likely to break?  What looks urgent but can be safely ignored? What is the tradeoff curve of time and money that solutions to my current problem offer?  System administration requires a specific body of technical knowledge and experience to answer questions like that.  That&rsquo;s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.  The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we&rsquo;re going to need that for the whole of the foreseeable future.</p>
+<p>This just amounts to saying that it&rsquo;s knowledge work.
+More specifically, it&rsquo;s about making annoying, difficult decisions about computers and networks.
+What parts of the system are trustworthy, and what can enter the system that I shouldn&rsquo;t trust?
+What does the current state of the system tell me about what&rsquo;s likely to break?
+What looks urgent but can be safely ignored? What is the tradeoff curve of time and money that solutions to my current problem offer?
+System administration requires a specific body of technical knowledge and experience to answer questions like that.
+That&rsquo;s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.
+The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we&rsquo;re going to need that for the whole of the foreseeable future.</p>
 
-<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don&rsquo;t have the expertise necessary to make good decisions in the given area.  I believe that the open source movement consistently blurs together those kinds of people.</p>
+<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don&rsquo;t have the expertise necessary to make good decisions in the given area.
+I believe that the open source movement consistently blurs together those kinds of people.</p>
 
-<p>Now, I should make it clear up front that I love the open source community.  I am writing this post on a machine whose OS descends from open-source BSD, sending it to a machine that runs an open-source web server on another open-source OS, I spend umpty-ump hours a day staring at emacs, and my plans for the future include contributing both code and dollars to the open-source movement. I acknowledge that the world would be tremendously impoverished if open-source software either stopped existing or never had existed, and I want a future in which more of the world runs on open-source software.  I feel the same way about open-source software that I feel about America: its flaws frustrate me mostly because it could be <strong>so awesome</strong> if they were solved.</p>
+<p>Now, I should make it clear up front that I love the open source community.
+I am writing this post on a machine whose OS descends from open-source BSD, sending it to a machine that runs an open-source web server on another open-source OS, I spend umpty-ump hours a day staring at emacs, and my plans for the future include contributing both code and dollars to the open-source movement.
+I acknowledge that the world would be tremendously impoverished if open-source software either stopped existing or never had existed, and I want a future in which more of the world runs on open-source software.
+I feel the same way about open-source software that I feel about America: its flaws frustrate me mostly because it could be <strong>so awesome</strong> if they were solved.</p>
 
-<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you&rsquo;re willing to scale a learning curve.  That&rsquo;s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.  That&rsquo;s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.  The other bargain that software can offer is that basic functionality can be yours quickly, and who knows whether Great Power is available or not.  Often it isn&rsquo;t.</p>
+<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you&rsquo;re willing to scale a learning curve.
+That&rsquo;s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.
+That&rsquo;s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.
+The other bargain that software can offer is that basic functionality can be yours quickly, and who knows whether Great Power is available or not.
+Often it isn&rsquo;t.</p>
 
-<p>People don&rsquo;t take that second bargain because they&rsquo;re stupid.  They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they&rsquo;ve been burned before in the process of trying to use the Great Power of complicated tools.  I&rsquo;m fine with that: not everyone should be obliged to be a sysadmin.  As both a sysadmin and a developer, it&rsquo;s my job to make hard decisions that save other people from making hard decisions for just this reason.  If I just pass along hard decisions, then I probably haven&rsquo;t done well by the users.  The problem isn&rsquo;t even the hard decisions, really - it&rsquo;s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
+<p>People don&rsquo;t take that second bargain because they&rsquo;re stupid.
+They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they&rsquo;ve been burned before in the process of trying to use the Great Power of complicated tools.
+I&rsquo;m fine with that: not everyone should be obliged to be a sysadmin.
+As both a sysadmin and a developer, it&rsquo;s my job to make hard decisions that save other people from making hard decisions for just this reason.
+If I just pass along hard decisions, then I probably haven&rsquo;t done well by the users.
+The problem isn&rsquo;t even the hard decisions, really - it&rsquo;s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
 
-<p>Yes, a computer is a complicated general-purpose tool.  It is built of a huge assembly of spectacularly fiddly little parts, both physical and logical.  It is a wonder of the modern age -but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.  Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you&rsquo;re probably a developer, a sysadmin, or an enthusiast.  More likely, you sat down at a computer because you have a task that you want to do.  You want to send email, play Farmville, or do your taxes.  You want to use the tools to do that task, not to fiddle with the tools themselves.</p>
+<p>Yes, a computer is a complicated general-purpose tool.
+It is built of a huge assembly of spectacularly fiddly little parts, both physical and logical.
+It is a wonder of the modern age&mdash;but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.
+Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you&rsquo;re probably a developer, a sysadmin, or an enthusiast.
+More likely, you sat down at a computer because you have a task that you want to do.
+You want to send email, play Farmville, or do your taxes.
+You want to use the tools to do that task, not to fiddle with the tools themselves.</p>
 
-<p>Software for a general audience is a failure if it asks everyone to be their own sysadmin. <a href="http://www.amazon.com/gp/product/0789723107?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0789723107">Whole books have been written about this.</a> And this is where we, finally, arrive at iOS, Android, and the title of this post.  The extent to which Android has become a <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/StartMyOwn">Build My Own</a> OS bothers me.  Android is a good OS - but it is at its worst when it asks people to become the sysadmins of their own phones.  The promise of Great Power in phone form is compelling, and there&rsquo;s a chunk of the market that needs it badly (hello, mobile system administration!).  But that&rsquo;s not the whole market - and that&rsquo;s why iOS, which offers a different bargain, is doing so well.</p>
+<p>Software for a general audience is a failure if it asks everyone to be their own sysadmin.
+<a href="http://www.amazon.com/gp/product/0789723107?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0789723107">Whole books have been written about this.</a> And this is where we, finally, arrive at iOS, Android, and the title of this post.
+The extent to which Android has become a <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/StartMyOwn">Build My Own</a> OS bothers me.
+Android is a good OS - but it is at its worst when it asks people to become the sysadmins of their own phones.
+The promise of Great Power in phone form is compelling, and there&rsquo;s a chunk of the market that needs it badly (hello, mobile system administration!).
+But that&rsquo;s not the whole market - and that&rsquo;s why iOS, which offers a different bargain, is doing so well.</p>
 
-<p>Not everyone wants to make hard decisions about their computer - and they shouldn&rsquo;t have those decisions forced onto them unless and until it&rsquo;s absolutely necessary.  I think that part of why desktop OSes have gotten away with doing as much of that as they have is that they can take advantage of the existing number of people who have some expertise and are willing to be free support for their friends, family, and neighbor.  A bigger part, though, is that you can walk away from a desktop computer that&rsquo;s giving you issues.  Press &ldquo;cancel&rdquo; until whatever it is goes away. That&rsquo;s much less of an option with a phone - if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.  If it starts making your life harder instead of easier, you have to deal with that all of the time.</p>
+<p>Not everyone wants to make hard decisions about their computer - and they shouldn&rsquo;t have those decisions forced onto them unless and until it&rsquo;s absolutely necessary.
+I think that part of why desktop OSes have gotten away with doing as much of that as they have is that they can take advantage of the existing number of people who have some expertise and are willing to be free support for their friends, family, and neighbor.
+A bigger part, though, is that you can walk away from a desktop computer that&rsquo;s giving you issues.
+Press &ldquo;cancel&rdquo; until whatever it is goes away.
+That&rsquo;s much less of an option with a phone&mdash;if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.
+If it starts making your life harder instead of easier, you have to deal with that all of the time.</p>
 
-<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users' hands.  The iPhone and descendants have made Apple several zillion dollars. Here also we have the Blackberry, which prospered by offering a phone that could do email, and delivering on that promise very well.  And here finally we have the Android OS, which promises to be like an iPhone only &ldquo;more open&rdquo; and with multitasking and on other carriers.  Unfortunately, the tradeoff there is that to a significant extent, Android devices ask you to make harder decisions, and to have to sysadmin your phone.</p>
+<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users' hands.
+The iPhone and descendants have made Apple several zillion dollars.
+Here also we have the Blackberry, which prospered by offering a phone that could do email, and delivering on that promise very well.
+And here finally we have the Android OS, which promises to be like an iPhone only &ldquo;more open&rdquo; and with multitasking and on other carriers.
+Unfortunately, the tradeoff there is that to a significant extent, Android devices ask you to make harder decisions, and to have to sysadmin your phone.</p>
 
-<p>Android is offering a different bargain.  There are a lot of times the Android bargain sounds really good to me: I&rsquo;ve already made that bargain a lot of times, and it doesn&rsquo;t frighten me.  But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android&rsquo;s promises (for example, bundled un-removable applications and UI badness).  When we developers think of Apple, we probably don&rsquo;t think of them with great fondness because of their iron-fisted control over the App Store. But Apple hasn&rsquo;t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.  Android, on the other hand - sometimes you can barely tell what it&rsquo;s promising, and its identity is fragmented and conflicting.</p>
+<p>Android is offering a different bargain.
+There are a lot of times the Android bargain sounds really good to me: I&rsquo;ve already made that bargain a lot of times, and it doesn&rsquo;t frighten me.
+But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android&rsquo;s promises (for example, bundled un-removable applications and UI badness).
+When we developers think of Apple, we probably don&rsquo;t think of them with great fondness because of their iron-fisted control over the App Store.
+But Apple hasn&rsquo;t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.
+Android, on the other hand - sometimes you can barely tell what it&rsquo;s promising, and its identity is fragmented and conflicting.</p>
 
-<p>The future is getting brighter, though.  Android devices are getting better at not forcing users to make hard decisions they didn&rsquo;t sign up for.  iOS devices are getting <a href="http://www.apple.com/ipad">magical</a>.  Everyone else is gradually catching up with those two, because the hard decisions in question are getting easier as we as a society learn how to cope with them.  Of course there will always be more and newer hard decisions - but that&rsquo;s what your sysadmins are here for.</p>
+<p>The future is getting brighter, though.
+Android devices are getting better at not forcing users to make hard decisions they didn&rsquo;t sign up for.
+iOS devices are getting <a href="http://www.apple.com/ipad">magical</a>.
+Everyone else is gradually catching up with those two, because the hard decisions in question are getting easier as we as a society learn how to cope with them.
+Of course there will always be more and newer hard decisions - but that&rsquo;s what your sysadmins are here for.</p>
 ]]></content>
   </entry>
   
@@ -123,21 +341,45 @@
 
 <p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">&ldquo;The Other Road Ahead,&rdquo;</a> noted a risk of relying on software that other people control:</p>
 
-<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun. If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS. And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
+<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun.
+If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS.
+And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
 
-<p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening. Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
+<p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening.
+Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
 
-<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.  The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.  They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.  Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
+<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.
+The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.
+They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.
+Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
 
-<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.  However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.  Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.  So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
+<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.
+However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.
+Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.
+So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
 
-<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.  They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.  This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.  Eventually, there will be something new.  Hostfiles were supplanted by DNS.  Yahoo was replaced by Google in search.  Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm. Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
+<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.
+They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.
+This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.
+Eventually, there will be something new.
+Hostfiles were supplanted by DNS.
+Yahoo was replaced by Google in search.
+Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm.
+Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
 
-<p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft. I admire Microsoft&rsquo;s commitment to backward compatibility.  Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>. It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.  But nothing lasts forever, and everything is a trade-off. Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
+<p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft.
+I admire Microsoft&rsquo;s commitment to backward compatibility.
+Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>.
+It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.
+But nothing lasts forever, and everything is a trade-off.
+Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
 
-<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.  Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from. That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
+<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.
+Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from.
+That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
 
-<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.  I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
+<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.
+I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
 ]]></content>
   </entry>
   

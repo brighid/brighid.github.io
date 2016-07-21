@@ -1,88 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: programming | Strongly Emergent]]></title>
-  <link href="http://stronglyemergent.com//blog/categories/programming/atom.xml" rel="self"/>
-  <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T17:15:07-07:00</updated>
-  <id>http://stronglyemergent.com//</id>
-  <author>
-    <name><![CDATA[Strongly Emergent Systems]]></name>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Prisoner Of Zend.php - Strongly Emergent</title>
+  <meta name="author" content="Strongly Emergent Systems">
+
+  
+  <meta name="description" content="It is surely not news to you that PHP is awful: there is a thriving sub-genre of tech blog posts about how very, very bad PHP is.
+It should tell you &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://stronglyemergent.com//blog/2013/the-prisoner-of-zend-dot-php/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="atom.xml" rel="alternate" title="Strongly Emergent" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24040277-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Strongly Emergent</a></h1>
+  
+    <h2>What comes from combining humans, computers, and narrative</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:stronglyemergent.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
     
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+      <h1 class="entry-title">The Prisoner of Zend.php</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
 
   
-  <entry>
-    <title type="html"><![CDATA[Two Traps]]></title>
-    <link href="http://stronglyemergent.com//blog/2013/two-traps/"/>
-    <updated>2013-07-02T14:25:00-07:00</updated>
-    <id>http://stronglyemergent.com//blog/2013/two-traps</id>
-    <content type="html"><![CDATA[<p>Joel Spolsky famously opined that you should look for two things when hiring a programmer: <a href="http://www.joelonsoftware.com/articles/GuerrillaInterviewing3.html">Smart, and Gets Things Done</a>.
-Now, there are a lot of smart people in the world
-(with a nod in the direction of <a href="http://en.wikipedia.org/wiki/Cattell%E2%80%93Horn%E2%80%93Carroll_theory">the fox/hedgehog debate</a>),
-and plenty of them spend some time programming.
-Even though there are also a great many people who think themselves smarter than they are, there is a thriving body of lore on filtering that demographic out.
-So most of the task of evaluating programmers is about evaluating how and if they Get Things Done.</p>
 
-<p>Evaluating yourself this way is a good skill to have;
-lately I&rsquo;ve been trying to build more and tinker more on account of being less-than-fully satisfied with what I see in my self-evaluation.
-I&rsquo;ve also noticed two failure modes that smart programmers may fall into
-(one of which I&rsquo;m doing my darndest to avoid),
-running parallel to the symbols-versus-understanding sides of the <a href="http://en.wikipedia.org/wiki/Chinese_room">Chinese Room Argument</a>.
-The argument, oversimplified, is about whether or not it&rsquo;s possible to infer that an unseen conversational partner who manipulates symbols correctly,
-<em>understands</em> the communication.</p>
 
-<p>A self-taught programmer is proficient in manipulating symbols, but is vulnerable to the failure mode of not <em>understanding</em> them,
-of having a <a href="http://me.veekun.com/blog/2011/04/16/architectural-fallacies/#the-xy-problem">myopia about methods and goals</a>.
-On the other hand, engineers who&rsquo;ve been involved in trying to hire from university computer science departments
-can attest that CS shops produce a certain proportion of people who understand why all of those symbol-manipulation rules are what they are,
-and who know a great deal about the rules and how they are implemented,
-but who are curiously unable to actually perform the manipulation of symbols and the latching-together of symbols into structures&mdash;
-no GitHub account, no projects of their own, no open-source contributions.</p>
+<time datetime="2013-06-18T23:30:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
-<p>I&rsquo;m nothing like the first person to notice these failure modes, but I think that identifying them as such
-(<em>not</em> as &ldquo;all self-taught programmers are flaky&rdquo; or &ldquo;a CS degree is superfluous&rdquo;) is helpful.
-Identifying a problem opens up the possibility of solving it.
-For me, it was humbling to stumble on the Chinese Room Argument and realize that while I&rsquo;m good at manipulating the symbols,
-that is not the same as fluency and I have a lot of work to do ahead of me.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Negative 100 Points]]></title>
-    <link href="http://stronglyemergent.com//blog/2013/negative-100-points/"/>
-    <updated>2013-06-28T20:07:00-07:00</updated>
-    <id>http://stronglyemergent.com//blog/2013/negative-100-points</id>
-    <content type="html"><![CDATA[<p>A <a href="http://blogs.msdn.com/b/ericgu/archive/2004/01/12/57985.aspx">short post by Eric Gunnerson</a> about designing C#, nearly a decade old now, has stuck with me for a long time.</p>
 
-<blockquote><p>[the question] implies that we started with an existing language (C++ and Java are the popular choices here),
-and then started removing features until we got to a point where we liked.
-That&rsquo;s not how the language got designed.
-One of the big reasons we didn&rsquo;t do this is that it&rsquo;s really hard to remove complexity when you take a subtractive approach,
-as removing a feature in one area may not allow you to revisit low-level design decisions,
-nor will it allow you to remove complexity elsewhere, in places where it support the now-removed feature.
-We decided on the additive approach instead, and worked hard to keep the complexity down.
-One way to do that is through the concept of &ldquo;minus 100 points.&rdquo;
-Every feature starts out in the hole by 100 points,
-which means that it has to have a significant net positive effect on the overall package for it to make it into the language.
-Some features are okay features for a language to have, they just aren&rsquo;t quite good enough to make it into the language.</p></blockquote>
-
-<p>If this sounds familiar, it should:
-this is another lens on the design philosophy, popularized in the developer community by Apple, that good design requires saying &ldquo;no.&rdquo;
-Saying &ldquo;no&rdquo; a <em>lot.</em>
-I applaud Apple for applying this philosophy so rigorously&mdash;
-but it&rsquo;s important to remember that they&rsquo;re <a href="http://technet.microsoft.com/en-us/magazine/dn167709.aspx">not the only people who use it</a>, and their way is not the only way.
-What you say &ldquo;no&rdquo; to, defines you.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Prisoner Of Zend.php]]></title>
-    <link href="http://stronglyemergent.com//blog/2013/the-prisoner-of-zend-dot-php/"/>
-    <updated>2013-06-18T23:30:00-07:00</updated>
-    <id>http://stronglyemergent.com//blog/2013/the-prisoner-of-zend-dot-php</id>
-    <content type="html"><![CDATA[<p>It is surely not news to you that PHP is awful: there is a thriving sub-genre of tech blog posts about how very, very bad PHP is.
+<div class="entry-content"><p>It is surely not news to you that PHP is awful: there is a thriving sub-genre of tech blog posts about how very, very bad PHP is.
 It should tell you something about what a horrid clown rodeo PHP is that even in the presence of Eevee&rsquo;s magisterial &ldquo;<a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP: A Fractal Of Bad Design</a>&rdquo; article, so many of us feel compelled to contribute to the vast body of PHP-criticizing literature anyhow.
 For my part, even after acknowledging excellent works (written by pals smarter than me) like <em>Fractal Of Bad Design</em>, man-of-mystery Pi&rsquo;s &ldquo;<a href="http://two-pi-r.livejournal.com/622760.html?format=light">PHP is a low-level programming language at the wrong level</a>,&rdquo; and Watts Martin&rsquo;s trenchant &ldquo;<a href="http://tracks.ranea.org/post/13908062333/php-is-not-an-acceptable-cobol">PHP is not an acceptable COBOL</a>,&rdquo; I still think there&rsquo;s more that needs saying.
 There are plenty of languages that one may dislike, and there are plenty of warts on any language one does like — and yet, PHP is <em>sui generis</em> in its terribleness.</p>
@@ -310,171 +331,146 @@ The technical problem is &ldquo;how do we build something better than PHP?&rdquo
 Now let&rsquo;s work on the social part.</p>
 
 <p><em>Note: this post was updated in summer 2016.</em></p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[First Date With Ruby]]></title>
-    <link href="http://stronglyemergent.com//blog/2013/first-date-with-ruby/"/>
-    <updated>2013-06-15T08:57:00-07:00</updated>
-    <id>http://stronglyemergent.com//blog/2013/first-date-with-ruby</id>
-    <content type="html"><![CDATA[<p>Last night I took a notion into my head and wound up spending a solid few hours with Ruby.
-I&rsquo;m happy with how that went! There&rsquo;s some first-time-with-a-new-language friction, but nothing out of the ordinary.
-Here&rsquo;s what I came up with, and afterwards, why I chose that and what I think it shows that I accomplished that.</p>
 
-<p><noscript><pre>require &#39;cgi&#39;
-require &#39;json&#39;
-require &#39;net/http&#39;
-require &#39;uri&#39;
+<span class="byline author vcard">Posted by <span class="fn">Strongly Emergent Systems</span></span>
 
-module Jekyll
-  class MusicLink &lt; Liquid::Tag
+      
 
-    def initialize(tag_name, contents, tokens)
-      super
-      @contents = contents
-    end
 
-    def render(context)
-      @affiliateCode = &#39;secret&#39; # Fill in yours!
-      page = context.environments.first[&#39;page&#39;]
-      if page[&#39;music-artist&#39;] &amp;&amp; page[&#39;music-track&#39;]
-        music_url, music_string = getMusic(page[&#39;music-artist&#39;], page[&#39;music-track&#39;])
-        return %(&lt;span class=&#39;music-box&#39;&gt;Music: &lt;a class=&#39;music-link&#39; href=&quot;#{music_url}&quot;&gt;#{music_string}&lt;/a&gt;&lt;/span&gt;)
-      else
-        return %()
-      end
-    end
 
-    def makeItunesTarget(artist, track)
-      iTunesURL = URI(&quot;https://itunes.apple.com/search&quot;)
-      iTunesParams = {
-        :country =&gt; &quot;us&quot;, :media =&gt; &quot;music&quot;,
-        :limit =&gt; &quot;5&quot;, :entity =&gt; &quot;musicTrack&quot;,
-        :term =&gt; artist + &quot; &quot; + track,
-      }
-      iTunesURL.query = URI.encode_www_form(iTunesParams)
-      return iTunesURL
-    end
 
-    def getFromItunes(iTunesURL)
-      http = Net::HTTP.new(iTunesURL.host, iTunesURL.port)
-      http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-      request = Net::HTTP::Get.new(iTunesURL.request_uri)
-      response = http.request(request)
-      if response.code == &quot;200&quot;
-        jsonResponse = JSON.load(response.body)
-        if jsonResponse[&#39;resultCount&#39;] == 0
-          jsonResponse = false
-        end
-      else
-        jsonResponse = false
-      end
-      return jsonResponse
-    end
 
-    def makeAnchorFromItunesData(iTunesJSON)
-      unless iTunesJSON
-        return iTunesJSON, iTunesJSON
-      end
 
-      primaryResult = iTunesJSON[&#39;results&#39;].first
-      if @affiliateCode
-        urlRegex = /(https:\/\/itunes\.apple\.com\/[^?]+\?[^&amp;]+).+/
-        urlReplacement = &#39;\1\2&amp;partnerId=30&amp;siteID=&#39; + @affiliateCode
-        affiliatedTrackUrl= primaryResult[&#39;trackViewUrl&#39;].sub(urlRegex, urlReplacement)
-        primaryResult[&#39;trackViewUrl&#39;] = affiliatedTrackUrl
-      end
 
-      anchorURL = primaryResult[&#39;trackViewUrl&#39;]
-      anchorString = CGI.escapeHTML(&quot;%s - %s&quot; % [primaryResult[&#39;artistName&#39;], primaryResult[&#39;trackName&#39;]])
-      return anchorURL, anchorString
-    end
-
-    def getMusic(artist_name, track_name)
-      music_url, music_string = makeAnchorFromItunesData(getFromItunes(makeItunesTarget(artist_name, track_name)))
-      return music_url, music_string
-    end
-
-  end
-end
-
-Liquid::Template.register_tag(&#39;music&#39;, Jekyll::MusicLink)
-</pre></noscript><script src="https://gist.github.com/brighid/c3d19f2c6749fbec30ed.js?file=itms_music_link.rb"> </script></p>
-
-<p>This creates a new Liquid tag, <code>{% music %}</code>, which can be inserted in page templates.
-I added it to my <code>footer.html</code> after the byline, timestamp, and categories.
-The tag checks whether the post&rsquo;s YAML front-matter has data for a musician and a track name.
-If the post has that data, the plugin attempts to create a link to the iTunes Store for the given track.
-With <code>makeItunesTarget()</code> it puts together a URL that is a query to the <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands off the response to the standard library&rsquo;s JSON parser, and with <code>makeAnchorFromItunesData()</code> it takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the tag&rsquo;s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it&rsquo;ll be inserted).
-Finally, there&rsquo;s a convenience function, <code>getMusic()</code>, that just composes the previous three.</p>
-
-<p>Part of why this worked well is that it&rsquo;s another project with limited scope: I had a specific objective in mind, so I was able to keep moving gradually towards it.
-However, that limited scope was a way of making progress towards the broad goal of &ldquo;learn Ruby&rdquo; and also took on the medium-scope goal of &ldquo;learn the iTunes Store Search API.&rdquo;
-As a practical matter, learning to work with other people&rsquo;s APIs, whether they&rsquo;re libraries, services, or daemons, is an important skill for a working programmer; toy projects that include cultivating that skill are good uses of my time.
-Learning new languages is also a career-long thing: for all the talk of Lisp being &ldquo;the hundred-year language,&rdquo; no-one now working as a programmer will be programming in just one language for the rest of their days.
-There are shell scripts and libraries and wrappers: there is a fragmented world that despite the friction of fragmentation, would not actually be better-served by a language monoculture.
-In addition, there are plenty of exciting things out there whose roots are in Ruby, so I was enthusiastic about picking up a smattering of Ruby.</p>
-
-<p>I&rsquo;m definitely fond of Ruby so far.
-Part of this is because I&rsquo;m getting to the point where I&rsquo;m seeing parallels with other languages and able to make good guesses about how a new language will behave.
-I was able to guess from reading source &ldquo;oh okay, Ruby is one of the languages where the return value of a function, if not explicit, is the value of the last statement evaluated in its body,&rdquo; was pleasantly surprised that it has the same tuple-packing return-multiple-values feature as Python, and noticed &ldquo;oh hey neat, there&rsquo;s a Scheme-like <code>function!()</code> naming convention for functions that mutate their parameters.&rdquo;
-So that&rsquo;s all good stuff.</p>
-
-<p>Part of choosing Ruby, too, is that I&rsquo;m currently blogulating via Octopress, which is built on Ruby.
-Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that I&rsquo;ve chosen it, I want to have a grasp of how it works.
-That means learning Ruby and tinkering&mdash;which I&rsquo;m looking forward to.</p>
-
-<p>As a supplemental note, if this stuff sounds to you like a good attitude for a programmer to have, you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</a>.</p>
-]]></content>
-  </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Weekend project: affiliate.el]]></title>
-    <link href="http://stronglyemergent.com//blog/2013/weekend-project-affiliate-dot-el/"/>
-    <updated>2013-03-21T20:16:00-07:00</updated>
-    <id>http://stronglyemergent.com//blog/2013/weekend-project-affiliate-dot-el</id>
-    <content type="html"><![CDATA[<p>Since I&rsquo;m searching for a new job (<a href="http://careers.stackoverflow.com/stronglyemergent">check out my CV on Stack Overflow Careers!</a>),
-I&rsquo;ve been trying to gin up little personal projects and to extract what publishable code I can from my work projects.
-The first result of this is <a href="https://github.com/brighid/affiliate.el">affiliate.el</a>.
-It&rsquo;s a small project - very small - but it has virtues that I think make it a good component of a GitHub portfolio.</p>
 
-<p>First, the smallness is advantage: it is a project with a <em>small, well-defined scope</em>.
-That&rsquo;s important.
-Projects with a large scope are prone to taking a long time, and projects with a poorly-defined scope are almost by definition a bad idea
-(making a note that fail-fast rapid-iteration work is a totally reasonable thing).
-The scope of this project
-is &ldquo;automatically turn Amazon/iTunes URLs in text into affiliate links by extending emacs.&rdquo;
-I chose that because I do the great majority of my writing (including this post) in emacs,
-and because I am involved in Amazon and Apple&rsquo;s affiliate-links programs (because I like extra coffee money once in a while just
-as well as the next person).
-Choosing scope carefully is important for projects that are intended to accomplish a goal
-(as opposed to projects where the point is to learn about the problem space, such as the Clojure thing I&rsquo;m messing with)&mdash;
-and in professional life, the norm is for projects to be goal-focused.</p>
 
-<p>The other reason that smallness is an advantage is that <code>affiliate.el</code> is small enough for someone else to sit down, read, and fully understand in one sitting.
-I want to make it easy for this hypothetical code reviewer to get a grasp on what I&rsquo;ve created.
-To that end, this project also demonstrates
-&ldquo;behold, I write friendly code: there are clear docstrings, there is an approachable readme, and the commit messages are concise and helpful.&rdquo;
-I think that this is an important skill for an engineer to have too, because coding work happens in a social context.
-Your ability to explain your work to other engineers&mdash;
-and to others in general&mdash;is crucial to its value being recognized.
-So I want to show with this project &ldquo;I can make my code accessible to others.&rdquo;</p>
+<time datetime="2013-06-18T23:30:00-07:00" pubdate data-updated="true"></time>
+      
 
-<p>Of course, those virtues only really shine in the context of good solid working code.
-This too I think the project demonstrates: concise, workmanlike, idiomatic elisp with a suite of unit tests.
-This code is well-formed for its environment:
-it uses built-in emacs features such as <code>customize</code> and <code>provide</code> like a good citizen of its ecosystem,
-it doesn&rsquo;t re-invent any wheels or require any esoteric libraries,
-and it uses unit tests to demonstrate and hew to the requirements for input and output.
-It is not heroic code, it&rsquo;s just solid, humble, functional code.</p>
-
-<p>There probably aren&rsquo;t very many people to whom this little emacs module is useful as executable code,
-but I&rsquo;m fine with that as long as it&rsquo;s useful for saying something about its creator.
-Especially if that thing is <a href="http://careers.stackoverflow.com/stronglyemergent">&ldquo;hire this person.&rdquo;</a></p>
-]]></content>
-  </entry>
+<span class="categories">
   
-</feed>
+    <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/programming/'>programming</a>, <a class='category' href='/blog/categories/wtf/'>wtf</a>, <a class='category' href='/blog/categories/www/'>www</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/first-date-with-ruby/" title="Previous Post: First Date With Ruby">&laquo; First Date With Ruby</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/negative-100-points/" title="Next Post: Negative 100 Points">Negative 100 Points &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/two-traps/">Two Traps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/brighid">@brighid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'brighid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Strongly Emergent Systems -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

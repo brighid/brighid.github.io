@@ -9,7 +9,9 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="Here&rsquo;s an antipattern that I see way too often: &ldquo;please enable JavaScript for this site.&rdquo; There are several levels of badness with &hellip;">
+  <meta name="description" content="Here&rsquo;s an antipattern that I see way too often:
+&ldquo;please enable JavaScript for this site.&rdquo;
+There are several levels of badness with &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -102,23 +104,40 @@
   </header>
 
 
-<div class="entry-content"><p>Here&rsquo;s an antipattern that I see way too often: &ldquo;please enable JavaScript for this site.&rdquo; There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
+<div class="entry-content"><p>Here&rsquo;s an antipattern that I see way too often:
+&ldquo;please enable JavaScript for this site.&rdquo;
+There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
 
-<p>JavaScript is actually pretty great: <a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>). You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
+<p>JavaScript is actually pretty great:
+<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
+(recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>).
+You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
 
 <p><strong>That&rsquo;s the problem!</strong></p>
 
-<p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it. <em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit. In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
+<p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it.
+<em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit.
+In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
 
 <p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
 
-<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right. This is deeply not the case. It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition! &ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness (or an admission that some pointy-haired boss is in charge).</p>
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right.
+This is deeply not the case.
+It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition!
+&ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness
+(or an admission that some pointy-haired boss is in charge).</p>
 
-<p>There are many things you can only do in JavaScript. Having JavaScript in your toolkit, as a web developer, is indispensable. But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it. If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
+<p>There are many things you can only do in JavaScript.
+Having JavaScript in your toolkit, as a web developer, is indispensable.
+But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it.
+If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
 
-<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives. I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information. If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
+<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives.
+I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information.
+If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
 
-<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit. I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
+<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
+I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
 </div>
 
 
@@ -192,7 +211,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2013/the-prisoner-of-zend-duh/">The Prisoner Of Zend, Duh</a>
+        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
       </li>
     
       <li class="post">
@@ -243,7 +262,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Strongly Emergent Systems -
+  Copyright &copy; 2016 - Strongly Emergent Systems -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
