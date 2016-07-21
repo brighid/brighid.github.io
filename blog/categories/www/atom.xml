@@ -4,7 +4,7 @@
   <title><![CDATA[Category: www | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/www/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T17:21:12-07:00</updated>
+  <updated>2016-07-20T19:23:06-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -136,7 +136,7 @@ More precisely, the fact that Wikipedia, Facebook, and WordPress all used PHP is
 <p>Wikipedia is the easiest example to pick on here, because they provide all the evidence themselves.
 Go and check out a copy of the MediaWiki source code (I&rsquo;m going to treat &ldquo;Wikipedia&rdquo; and &ldquo;MediaWiki&rdquo; as synonymous) and take a look at it.
 Reflect on how many engineer-hours it took to get the project to that state, and how many more hours are being requested.
-Reflect on the contents of their [&ldquo;Annoying Large Bugs&rdquo;][annoyinglarge] and [&ldquo;Annoying Little Bugs&rdquo;][annoyinglittle] pages.
+Reflect on the contents of their <a href="http://www.mediawiki.org/wiki/Annoying_large_bugs">&ldquo;Annoying Large Bugs&rdquo;</a> and <a href="https://www.mediawiki.org/wiki/Annoying_little_bugs">&ldquo;Annoying Little Bugs&rdquo;</a> pages.
 If you want to use Wikipedia as a role model, being blind to Wikipedia&rsquo;s flaws is a terrible idea.</p>
 
 <p>Because Wikipedia is such a high-profile target (huge PageRank points, huge repository of user-generated content, huge mindshare) there&rsquo;s a <a href="http://www.cvedetails.com/vendor/2360/Mediawiki.html">steady record of vulnerabilities</a> with MediaWiki.
