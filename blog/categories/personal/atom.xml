@@ -4,7 +4,7 @@
   <title><![CDATA[Category: personal | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/personal/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -26,25 +26,25 @@ Even though there are also a great many people who think themselves smarter than
 So most of the task of evaluating programmers is about evaluating how and if they Get Things Done.</p>
 
 <p>Evaluating yourself this way is a good skill to have;
-lately I&rsquo;ve been trying to build more and tinker more on account of being less-than-fully satisfied with what I see in my self-evaluation.
-I&rsquo;ve also noticed two failure modes that smart programmers may fall into
-(one of which I&rsquo;m doing my darndest to avoid),
+lately I’ve been trying to build more and tinker more on account of being less-than-fully satisfied with what I see in my self-evaluation.
+I’ve also noticed two failure modes that smart programmers may fall into
+(one of which I’m doing my darndest to avoid),
 running parallel to the symbols-versus-understanding sides of the <a href="http://en.wikipedia.org/wiki/Chinese_room">Chinese Room Argument</a>.
-The argument, oversimplified, is about whether or not it&rsquo;s possible to infer that an unseen conversational partner who manipulates symbols correctly,
+The argument, oversimplified, is about whether or not it’s possible to infer that an unseen conversational partner who manipulates symbols correctly,
 <em>understands</em> the communication.</p>
 
 <p>A self-taught programmer is proficient in manipulating symbols, but is vulnerable to the failure mode of not <em>understanding</em> them,
 of having a <a href="http://me.veekun.com/blog/2011/04/16/architectural-fallacies/#the-xy-problem">myopia about methods and goals</a>.
-On the other hand, engineers who&rsquo;ve been involved in trying to hire from university computer science departments
+On the other hand, engineers who’ve been involved in trying to hire from university computer science departments
 can attest that CS shops produce a certain proportion of people who understand why all of those symbol-manipulation rules are what they are,
 and who know a great deal about the rules and how they are implemented,
-but who are curiously unable to actually perform the manipulation of symbols and the latching-together of symbols into structures&mdash;
+but who are curiously unable to actually perform the manipulation of symbols and the latching-together of symbols into structures—
 no GitHub account, no projects of their own, no open-source contributions.</p>
 
-<p>I&rsquo;m nothing like the first person to notice these failure modes, but I think that identifying them as such
-(<em>not</em> as &ldquo;all self-taught programmers are flaky&rdquo; or &ldquo;a CS degree is superfluous&rdquo;) is helpful.
+<p>I’m nothing like the first person to notice these failure modes, but I think that identifying them as such
+(<em>not</em> as “all self-taught programmers are flaky” or “a CS degree is superfluous”) is helpful.
 Identifying a problem opens up the possibility of solving it.
-For me, it was humbling to stumble on the Chinese Room Argument and realize that while I&rsquo;m good at manipulating the symbols,
+For me, it was humbling to stumble on the Chinese Room Argument and realize that while I’m good at manipulating the symbols,
 that is not the same as fluency and I have a lot of work to do ahead of me.</p>
 ]]></content>
   </entry>
@@ -54,45 +54,50 @@ that is not the same as fluency and I have a lot of work to do ahead of me.</p>
     <link href="http://stronglyemergent.com//blog/2013/challenged/"/>
     <updated>2013-03-07T15:17:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/challenged</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m hunting for a new job right now: that&rsquo;s always a tricky thing, and it&rsquo;s easy for it to make me nervous.
-I&rsquo;m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world&mdash;
+    <content type="html"><![CDATA[<p>I’m hunting for a new job right now: that’s always a tricky thing, and it’s easy for it to make me nervous.
+I’m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world—
 I taught myself Python and then fell in love with Emacs Lisp, especially its overlap with Common Lisp;
-I&rsquo;m proficient with both of those and speak JavaScript at the high-school Spanish level.
-I&rsquo;m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
-<a href="https://github.com/brighid/">I have a GitHub profile</a> that I&rsquo;m gradually adding code to, and this blog where I&rsquo;m getting back into the habit of article-length writing.
+I’m proficient with both of those and speak JavaScript at the high-school Spanish level.
+I’m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
+<a href="https://github.com/brighid/">I have a GitHub profile</a> that I’m gradually adding code to, and this blog where I’m getting back into the habit of article-length writing.
 I am, in other words, an engineer entirely capable of finding their own ass with both hands.</p>
 
-<p>&ldquo;That&rsquo;s nice,&rdquo; said my management-track pal.
-&ldquo;What do you want to <em>do</em>?
-Where do you want to work in particular&mdash;what kind of work do you want to do&mdash;what are you doing to do for them?&rdquo;</p>
+<p>“That’s nice,” said my management-track pal.
+“What do you want to <em>do</em>?
+Where do you want to work in particular—what kind of work do you want to do—what are you doing to do for them?”</p>
 
 <p>That takes some more thought.
-I&rsquo;m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can&rsquo;t say something as facile as &ldquo;I want a Lisp job!&rdquo;;
-similarly, while I identify with Bay Area startup culture pretty strongly, &ldquo;I want to work at a startup!&rdquo; isn&rsquo;t going to cut it either.
+I’m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can’t say something as facile as “I want a Lisp job!”;
+similarly, while I identify with Bay Area startup culture pretty strongly, “I want to work at a startup!” isn’t going to cut it either.
 Those are <em>features</em> I want a job to have, not the job itself.</p>
 
-<p>So in response to my friend&rsquo;s challenge, here are three specific jobs I&rsquo;d like to do.</p>
+<p>So in response to my friend’s challenge, here are three specific jobs I’d like to do.</p>
 
 <ul>
-<li><p>Work on the Unix toolchain for Apple:
+  <li>
+    <p>Work on the Unix toolchain for Apple:
 new releases of OS X <a href="http://apple.blogoverflow.com/2012/07/interesting-new-unix-commandsbinaries-in-os-x-mountain-lion/">show up with new terminal utilities</a>,
-and the intersection of Unix beard and Apple fan makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on the API team at Stripe or Square:
+and the intersection of Unix beard and Apple fan makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on the API team at Stripe or Square:
 these are two of my favorite startups, and I think that payments are a hugely important place to apply the lever of technology.
-Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone&rsquo;s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
-I&rsquo;d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible&mdash;
-the intersection of mission and language-diversity makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay&rsquo;s other transit agencies.
-&ldquo;Which transit vehicles are where, and where will they be next?&rdquo;
+Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone’s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
+I’d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible—
+the intersection of mission and language-diversity makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay’s other transit agencies.
+“Which transit vehicles are where, and where will they be next?”
 is a question that people want answers to so badly that they more or less <em>inflicted</em> an API on MUNI.
-I&rsquo;m a cyclist and a public transit rider;
-I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I&rsquo;d love to do.</p></li>
+I’m a cyclist and a public transit rider;
+I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I’d love to do.</p>
+  </li>
 </ul>
 
-
-<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to &ldquo;software engineering jobs in the Bay Area.&rdquo;
-I&rsquo;m going to keep looking, but I&rsquo;m grateful to my friend for pushing me towards this exercise.
-Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
+<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to “software engineering jobs in the Bay Area.”
+I’m going to keep looking, but I’m grateful to my friend for pushing me towards this exercise.
+Meantime, if you’re reading this and you’re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
 ]]></content>
   </entry>
   
@@ -101,24 +106,24 @@ Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance
     <link href="http://stronglyemergent.com//blog/2013/program-or-paradigm/"/>
     <updated>2013-03-03T17:08:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/program-or-paradigm</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m an emacs girl:
-emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson&rsquo;s memorable phrase
-&ldquo;the thermonuclear text editor.&rdquo;
-Like everyone else who&rsquo;s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
+    <content type="html"><![CDATA[<p>I’m an emacs girl:
+emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson’s memorable phrase
+“the thermonuclear text editor.”
+Like everyone else who’s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
 
-<p>Let&rsquo;s talk about interfaces.
-In 1976, using computers was harder&mdash;
+<p>Let’s talk about interfaces.
+In 1976, using computers was harder—
 not because people were dumber or worse at design, but because there were fewer giants on whose shoulders to stand and because the computers themselves were incapable of working as hard.
-That meant, in turn, that the 1976 OS couldn&rsquo;t be as generous to user-space programs as the 2013 OS can be.
-In 2013, the OS can step up and be the primary answerer of the question, &ldquo;how do I use this computer?&rdquo;
-In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell&rsquo;s direction.
+That meant, in turn, that the 1976 OS couldn’t be as generous to user-space programs as the 2013 OS can be.
+In 2013, the OS can step up and be the primary answerer of the question, “how do I use this computer?”
+In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell’s direction.
 This has considerable downsides for programs: they have to do everything themselves.
 But they have one important freedom:
-they get to answer the user&rsquo;s fundamental &ldquo;how do I use this computer?&rdquo; question <em>any way they want.</em></p>
+they get to answer the user’s fundamental “how do I use this computer?” question <em>any way they want.</em></p>
 
 <p>In 2013, the OS has an answer to this question, more or less opinionated according to the OS.
-Because it is easier to let the OS answer the question, that&rsquo;s what most programs do:
-they use the OS&rsquo;s chrome, file management, and other facilities.
+Because it is easier to let the OS answer the question, that’s what most programs do:
+they use the OS’s chrome, file management, and other facilities.
 There are many good things about this: there are many more useful programs in the world than when programs had to do everything themselves.
 But it is a tradeoff:
 a program that comes from the world where the OS provides easy answers is almost completely unable to provide its own answers.</p>
@@ -127,36 +132,36 @@ a program that comes from the world where the OS provides easy answers is almost
 the reason that emacs can look so strange in 2013 is that it has its own opinions, strong ones, about how to relate to files, displays, and text.
 Emacs is a <em>paradigm for how to interact with text.</em>
 It has stronger opinions than modern programs because it comes from a time when programs had the ability to answer those questions themselves.
-A program from the strong-OS era&mdash;
-for example, Eclipse&mdash;
-or which adapted itself to strong OSes&mdash;
-for example, Microsoft Word&mdash;
-is restricted by being situated within the boundaries established the by the OS' answer to &ldquo;how do I use this computer?&rdquo;
+A program from the strong-OS era—
+for example, Eclipse—
+or which adapted itself to strong OSes—
+for example, Microsoft Word—
+is restricted by being situated within the boundaries established the by the OS’ answer to “how do I use this computer?”
 Eclipse and Word are <em>programs</em> that edit text.
 Emacs is a <em>language</em> for editing text.</p>
 
-<p>One of the clearest ways to see this is to compare emacs to something that&rsquo;s more similar to it than Eclipse or Word: <code>vi</code>.
+<p>One of the clearest ways to see this is to compare emacs to something that’s more similar to it than Eclipse or Word: <code>vi</code>.
 With its movement-operation-modifier syntax for commands, vi has its own answer to the question
-&ldquo;how do I use this computer?&rdquo;
-that&rsquo;s every bit as thorny for us 2013 folks as emacs' answer&mdash;
-and that&rsquo;s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
+“how do I use this computer?”
+that’s every bit as thorny for us 2013 folks as emacs’ answer—
+and that’s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
 In the context of their 1976 roots, you can see that the creators of both vi and emacs embarked on the tremendously ambitious project of giving users a language in which to edit text.
-The existence and popularity of software that&rsquo;s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
+The existence and popularity of software that’s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
 (though we should check our <a href="http://en.wikipedia.org/wiki/Survivorship_bias">survivorship bias</a> and note that most programs from that era did not survive in the same way).</p>
 
-<p>If you are someone who spends a lot of time with text, especially if you&rsquo;re a hacker, you should be using emacs or vi.
+<p>If you are someone who spends a lot of time with text, especially if you’re a hacker, you should be using emacs or vi.
 There are many <a href="http://notepad-plus-plus.org/">okay</a> and <a href="http://www.sublimetext.com/">good</a> <a href="http://www.barebones.com/products/bbedit/">tools</a> for <a href="http://www.chocolatapp.com/">editing</a> <a href="http://macromates.com/">text</a> and <a href="http://panic.com/coda/">producing</a> <a href="http://www.jetbrains.com/idea/">code</a>, especially for <a href="https://developer.apple.com/xcode/">specific</a> <a href="http://www.microsoft.com/visualstudio/eng">domains</a>, but emacs and vi are the only <em>great</em> general-purpose editors.
-A program that wants to take advantage of the benefits that a modern OS offers could possibly be great&mdash;
+A program that wants to take advantage of the benefits that a modern OS offers could possibly be great—
 but it would have to be a <a href="http://www.lighttable.com/">different route</a> to greatness than emacs and vi took.</p>
 
 <p>I spend a tremendous amount of time with prose and code, and emacs is a great match for me.
 For a large class of problems, my response to encountering them starts with <code>M-:</code>.
-I routinely try to use emacs' keyboard shortcuts in other contexts (e.g.
+I routinely try to use emacs’ keyboard shortcuts in other contexts (e.g.
 switching tabs in Firefox with <code>C-x o</code>).
 I was actively excited when I found out that emacs had integrated a unit testing framework.
-When I tell you that you should use emacs, you should know that that&rsquo;s the kind of relationship I have with emacs.
+When I tell you that you should use emacs, you should know that that’s the kind of relationship I have with emacs.
 I think you should use emacs anyhow, because I think that when a task is important to you, you should use a great tool for it, not just the first good one you find.
-&ldquo;How will I use this computer to produce prose and code for the next 20 years?&rdquo;
+“How will I use this computer to produce prose and code for the next 20 years?”
 is a very, <em>very</em> important question to me.</p>
 
 <p>The answer is emacs.</p>
@@ -171,18 +176,18 @@ is a very, <em>very</em> important question to me.</p>
     <content type="html"><![CDATA[<p>Communicating with your past self can be a little alarming.
 In the process of converting this blog to OctoPress
 (because <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP is a fractal of bad design</a> and WordPress has its own problems on top of being a huge PHP legacy system),
-I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid&rsquo;s way of saying &ldquo;you forgot to <em>start</em> that if-block, girl&rdquo;, I learned that my past self had very different priorities.</p>
+I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid’s way of saying “you forgot to <em>start</em> that if-block, girl”, I learned that my past self had very different priorities.</p>
 
-<p>Not that this is <a href="news:">news:</a> as I&rsquo;ve gotten older, I&rsquo;ve gotten better at forgiving my past self for her fuckups.
-It&rsquo;s still hard to forgive her eating habits, but bodies are complicated.
+<p>Not that this is news: as I’ve gotten older, I’ve gotten better at forgiving my past self for her fuckups.
+It’s still hard to forgive her eating habits, but bodies are complicated.
 I was surprised, though, to learn that she was conflicted about whether to be a developer or a sysadmin.
 Seriously?
-It&rsquo;s not a binary: pretty much the whole subfield of devops is people who&rsquo;re making interesting choices about &ldquo;what if I pick things from both skillsets?&rdquo;
+It’s not a binary: pretty much the whole subfield of devops is people who’re making interesting choices about “what if I pick things from both skillsets?”
 While I now think of myself as an engineer in general, not a sysadin or a developer, I am very happy that I am picking up bits and pieces of CS theory and that I can still read Apache config files, whip up basic Perl one-liners, and be on speaking terms with <code>vim</code>.</p>
 
 <p>I admire the dedicated systems team at my work, but their job is not the job I want to do.
 I want to <em>build things.</em>
-That&rsquo;s gotten more and more important to me over time &mdash; the thrill of green-field development, of Something from Nothing, is one I want, over and over.
+That’s gotten more and more important to me over time — the thrill of green-field development, of Something from Nothing, is one I want, over and over.
 Lucky me: I am getting better and better at producing that experience for myself and making useful things along the way.</p>
 ]]></content>
   </entry>
@@ -193,67 +198,67 @@ Lucky me: I am getting better and better at producing that experience for myself
     <updated>2011-02-15T23:01:17-08:00</updated>
     <id>http://stronglyemergent.com//blog/2011/externalities-are-relevant</id>
     <content type="html"><![CDATA[<p>The online economy is deeply weird and breaks many rules that guide the functioning of the physical economy.
-However, there&rsquo;s one concept that&rsquo;s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
-We like to think that in any transaction, people are getting what they pay for - but that&rsquo;s not always true.
-There are people who aren&rsquo;t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
-A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others' transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
-Externalities are &ldquo;external&rdquo; because the people actually involved in the transaction haven&rsquo;t captured all of the costs and benefits of the transaction;
-they happen all the time because there are some things it&rsquo;s impossible to keep internal to a transaction.</p>
+However, there’s one concept that’s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
+We like to think that in any transaction, people are getting what they pay for - but that’s not always true.
+There are people who aren’t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
+A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others’ transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
+Externalities are “external” because the people actually involved in the transaction haven’t captured all of the costs and benefits of the transaction;
+they happen all the time because there are some things it’s impossible to keep internal to a transaction.</p>
 
-<p>Here&rsquo;s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
-Caltrain&rsquo;s funding, in large part, comes from sources beyond its control.
+<p>Here’s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
+Caltrain’s funding, in large part, comes from sources beyond its control.
 A little less than half comes from ticket sales - and the rest from local municipal governments.
-The local governments collect no taxes dedicated to and aren&rsquo;t bound to pay for Caltrain:
+The local governments collect no taxes dedicated to and aren’t bound to pay for Caltrain:
 in years like this one, where tax revenues are shrinking, they can simply decrease their funding.
-That&rsquo;s what&rsquo;s happening now.
-That&rsquo;s a transaction between them and Caltrain.
-I&rsquo;m just a Caltrain rider, I&rsquo;m not a party to the transaction - but it&rsquo;s going to affect me anyhow.
-The service cuts that Caltrain has to make have major negative effects on riders who aren&rsquo;t part of the transaction between Caltrain and local governments:
+That’s what’s happening now.
+That’s a transaction between them and Caltrain.
+I’m just a Caltrain rider, I’m not a party to the transaction - but it’s going to affect me anyhow.
+The service cuts that Caltrain has to make have major negative effects on riders who aren’t part of the transaction between Caltrain and local governments:
 they are the subjects of a negative externality.
 Similarly, if the service cuts go through, traffic on highways between San Francisco and San Jose will get significantly worse.
 Train service created a positive externality that benefited drivers - anyone who was taking the train was not driving, and congestion decreased.
-There&rsquo;s also a positive externality that has to do with air quality:
+There’s also a positive externality that has to do with air quality:
 the train is a more efficient way of transporting large numbers of people than requiring each of them to drive their own car.</p>
 
 <p>The reason that externalities are relevant to the tech field is this: most startups entirely rely on them.
 <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>, whatever its intentions, creates enormous positive externalities.
-It&rsquo;s almost impossible to name a tech company that doesn&rsquo;t depend on some piece of free software.
+It’s almost impossible to name a tech company that doesn’t depend on some piece of free software.
 Further, most tech companies in turn create significant externalities because of their advertising-driven revenue models.
-I dislike advertising-driven revenue models - but like everything else, they&rsquo;re a trade-off.
-An advertising-driven revenue model - for example, Facebook&rsquo;s - means that all benefits to users are externalities on one level.
+I dislike advertising-driven revenue models - but like everything else, they’re a trade-off.
+An advertising-driven revenue model - for example, Facebook’s - means that all benefits to users are externalities on one level.
 Of course you are still in a transaction with Facebook - but most of that transaction is invisible to the average user.
 We users give Facebook data - the data that makes their vaunted social graph valuable and lets them <a href="http://www.youtube.com/watch?v=ce3P79ktpTk">produce creepy marketing videos</a>.
 That tiny transaction, times hundreds of millions of users, gets refined into a product that Facebook can actually make money from.
 Any other startup with the same revenue model is doing the same thing:
-they&rsquo;re purposefully creating positive externalities, because without those, they can&rsquo;t do the transactions (with advertisers) that they actually make money from.</p>
+they’re purposefully creating positive externalities, because without those, they can’t do the transactions (with advertisers) that they actually make money from.</p>
 
 <p>This is a highly interesting business model, and has created many interesting things.
-I personally think that in evolutionary terms it&rsquo;s a loser:
+I personally think that in evolutionary terms it’s a loser:
 advertising as practiced in the modern world is a hostile, toxic, invasive species, and letting it into your ecosystem is a bad idea.
-But what I want to talk about now is a company that <em>doesn&rsquo;t</em> share that revenue model, and about how it handles externalities.
-It&rsquo;s time to talk, yet again, about Apple.</p>
+But what I want to talk about now is a company that <em>doesn’t</em> share that revenue model, and about how it handles externalities.
+It’s time to talk, yet again, about Apple.</p>
 
-<p>Part of the reason that Apple&rsquo;s prices are what they are is that you are paying for things that you normally get for free as an externality.
-When you buy Apple products, you are forgoing a price that&rsquo;s artificially low.
-I like to think of it this way: you are paying something closer to the &lsquo;true&rsquo; price of the product.
+<p>Part of the reason that Apple’s prices are what they are is that you are paying for things that you normally get for free as an externality.
+When you buy Apple products, you are forgoing a price that’s artificially low.
+I like to think of it this way: you are paying something closer to the ‘true’ price of the product.
 The price in dollars to the users of Google products like web search, Gmail, and Google Reader, is low or nil because Google relies on selling user data to others for its revenue.
-You get nice things for &lsquo;free&rsquo; because the actual price you&rsquo;re paying is invisible.
-Apple products, on the other hand, usually don&rsquo;t do that - you will pay dollars, and you will get your product or service from them, and that&rsquo;s that.
+You get nice things for ‘free’ because the actual price you’re paying is invisible.
+Apple products, on the other hand, usually don’t do that - you will pay dollars, and you will get your product or service from them, and that’s that.
 I think of it as paying for peace of mind.
 Free services usually involve a third party, an advertiser, who has an enormous, overwhelming, powerful incentive to attack my peace of mind.
-That is what the modern business of advertising is: it is attacking people&rsquo;s mental health.</p>
+That is what the modern business of advertising is: it is attacking people’s mental health.</p>
 
 <p>Apple is in the tech news again because of externalities:
-<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they&rsquo;re making are pissing off all kinds of people.
-As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">&ldquo;if you own the infrastructure, you get to charge rent.&rdquo;</a>
+<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they’re making are pissing off all kinds of people.
+As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">“if you own the infrastructure, you get to charge rent.”</a>
 What interests me, though, is that Apple has chosen to create a positive externality for user experience here - and they have deliberately done it, risked money to do it, risked business partnerships to do it.
-That&rsquo;s interesting - and, I think, good.
+That’s interesting - and, I think, good.
 When the people who use your product are the people you make money from, you wind up focusing on keeping them happy.
 If you make money otherwise, you risk turning into Adobe (Microsoft also has bouts of this):
 making mediocre products at exorbitant prices and squealing when someone exposes the flaws of your product line.</p>
 
 <p>Whimsically, I think that Apple also creates a huge externality for the tech journalism corps.
-They are the largest company that actually takes risks, and so they help ensure that there&rsquo;s always something interesting to write about.</p>
+They are the largest company that actually takes risks, and so they help ensure that there’s always something interesting to write about.</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: qa | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/qa/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -21,13 +21,13 @@
     <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.
 Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
 My personal address book is nowhere near that big
-(and I&rsquo;m not about to use it for testing),
+(and I’m not about to use it for testing),
 so I turned to Python.
 [The vCard format][vcard-wiki] is pretty much a special kind of text file,
-so it&rsquo;s easy to create new vCards,
+so it’s easy to create new vCards,
 and a vCard can contain multiple contacts by just concatenating contacts.</p>
 
-<p>I didn&rsquo;t find exactly what I needed already in existence,
+<p>I didn’t find exactly what I needed already in existence,
 so I wrote up a basic script to do it, and in case anyone else needs it, here it is.
 It is released under the Apache Software License 2.0,
 and I hope you find it useful.</p>
@@ -217,7 +217,7 @@ if __name__ == &#39;__main__&#39;:
             print &quot;The specific problem was &#39;%s&#39;&quot; % ioerr_msg
 </pre></noscript><script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script></p>
 
-<p>Writing this was basically like doing sit-ups in Python&mdash;not really challenging,
+<p>Writing this was basically like doing sit-ups in Python—not really challenging,
 but demanded like all serious tasks that you sit down and devote time and concentration to it.
 After that, results come easily.</p>
 ]]></content>
@@ -230,28 +230,28 @@ After that, results come easily.</p>
     <id>http://stronglyemergent.com//blog/2010/the-worst-software-made-by-the-best-software-developer-youve-never-heard-of</id>
     <content type="html"><![CDATA[<p>My last post, about the lessons that Wizards of the Coast has for software developers, had many oversimplifications.
 One of them is this: Wizards of the Coast actually is a software developer.
-They have an online version of their product (clearly labeled as &ldquo;Magic: The Gathering Online&rdquo;) that they develop in-house.
+They have an online version of their product (clearly labeled as “Magic: The Gathering Online”) that they develop in-house.
 MTGO is pretty terrible.
-It&rsquo;s a passable program that spent years being a crappy program.
+It’s a passable program that spent years being a crappy program.
 It was a perfect example of how monopolies produce shitty products.
-It&rsquo;s still the only remotely serious product in its specific market (part of how the monopoly exists is that they can offer value-adds that no one else can).</p>
+It’s still the only remotely serious product in its specific market (part of how the monopoly exists is that they can offer value-adds that no one else can).</p>
 
-<p>This shouldn&rsquo;t be surprising, though.
+<p>This shouldn’t be surprising, though.
 One thing that makes it unsurprising is that, as Nathan Bowers likes to say, <a href="http://uxhero.com/ux-theory/quality-is-fractal/">Quality Is Fractal</a>.
 Look at the <a href="http://www.magicthegathering.com/">Magic: The Gathering web site</a>.
-It survives and thrives because there&rsquo;s good content in there, but in many ways it&rsquo;s a design trainwreck.
+It survives and thrives because there’s good content in there, but in many ways it’s a design trainwreck.
 Similarly, you could look at Magic itself.
-Another thing that I omitted in the last post is Magic&rsquo;s bugs.
-Magic&rsquo;s creators are making a game that is played by humans against humans, so the game needs to be fair.
+Another thing that I omitted in the last post is Magic’s bugs.
+Magic’s creators are making a game that is played by humans against humans, so the game needs to be fair.
 To that end, Wizards maintains a list of banned and restricted cards that have to be treated differently so that the game remains fair.
 The game contains over 10,000 cards as of this writing, and a bit over 100 have ever been on the banned/restricted list (which grows and shrinks over time).
-Any card that creates enough problems to go on the list can be considered roughly equivalent to a showstopper bug in your average software program - and making it onto the list means that the &ldquo;bug&rdquo; made it into the wild instead of being caught during QA.
-So despite Magic&rsquo;s impressive QA operation, bugs still get by them.</p>
+Any card that creates enough problems to go on the list can be considered roughly equivalent to a showstopper bug in your average software program - and making it onto the list means that the “bug” made it into the wild instead of being caught during QA.
+So despite Magic’s impressive QA operation, bugs still get by them.</p>
 
-<p>Making complex products - like Magic or a piece of software - isn&rsquo;t easy.
+<p>Making complex products - like Magic or a piece of software - isn’t easy.
 We have a whole industry built on top of our tradition of telling other people how to do things, and still the complexity of the world stymies us.
-To our great benefit, we&rsquo;ve advanced to the point where we can actually solve some problems by throwing lots of computing resources at them.
-Other problems, however, still need a lot of human thought and creativity put into them before they&rsquo;re soluble, and the best that we can hope for is that we can add computing resources that will let us most efficiently allocate our human thought and creativity.</p>
+To our great benefit, we’ve advanced to the point where we can actually solve some problems by throwing lots of computing resources at them.
+Other problems, however, still need a lot of human thought and creativity put into them before they’re soluble, and the best that we can hope for is that we can add computing resources that will let us most efficiently allocate our human thought and creativity.</p>
 ]]></content>
   </entry>
   
@@ -260,9 +260,9 @@ Other problems, however, still need a lot of human thought and creativity put in
     <link href="http://stronglyemergent.com//blog/2010/the-best-software-developer-youve-never-heard-of/"/>
     <updated>2010-01-10T22:01:08-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/the-best-software-developer-youve-never-heard-of</id>
-    <content type="html"><![CDATA[<p>Wizards of the Coast is a great software developer, and you&rsquo;ve probably never thought of them that way because they don&rsquo;t make software.
+    <content type="html"><![CDATA[<p>Wizards of the Coast is a great software developer, and you’ve probably never thought of them that way because they don’t make software.
 They make a card game - <a href="http://en.wikipedia.org/wiki/Magic:_The_Gathering">Magic: the Gathering</a> was a 1990s phenomenon and is one of the only card games of its time to survive.
-At this point, it&rsquo;s not competing with other card games: it&rsquo;s really competing with World of Warcraft and tabletop roleplaying games.
+At this point, it’s not competing with other card games: it’s really competing with World of Warcraft and tabletop roleplaying games.
 They are successful in a way that software developers can learn from: they gather huge amounts of testing data, they release regularly, and they make sure that their developers are in frequent contact with their users.</p>
 
 <p>Skip this paragraph if you already know how Magic works.
@@ -276,26 +276,26 @@ Wizards of the Coast runs a series of high-profile high-prize events, and enteri
 
 <p>Wizards of the Coast has been making Magic for seventeen years, and they have gathered more and more testing data as time goes on.
 They gather a ridiculous amount of data about how their game is used through their Organized Play initiative, representing the usage patterns of millions of worldwide users.
-All of the most intensive users of their product are sending big streams of feedback data - and not just opinion, they&rsquo;re sending behavioral data, speaking through action.
-Every Magic user has a goal in mind when they use the &ldquo;software,&rdquo; and Wizards has set up a huge dragnet to gather data about how users tried to get to that goal and how successful they were.
-This isn&rsquo;t all the data, either.
+All of the most intensive users of their product are sending big streams of feedback data - and not just opinion, they’re sending behavioral data, speaking through action.
+Every Magic user has a goal in mind when they use the “software,” and Wizards has set up a huge dragnet to gather data about how users tried to get to that goal and how successful they were.
+This isn’t all the data, either.
 As any given version of Magic ships, internally, the company is testing the next two versions.
 This gives them a great way of testing the accuracy of their internal testing: they have a lot of external usage data to compare to the predictions that internal testing made when they were developing a given version.
-If you were developing a web app, this is the kind of performance and usage data you&rsquo;d really want: a huge corpus of data about what people wanted, what they tried doing in order to get it, and whether or not they got it.</p>
+If you were developing a web app, this is the kind of performance and usage data you’d really want: a huge corpus of data about what people wanted, what they tried doing in order to get it, and whether or not they got it.</p>
 
-<p>The data-gathering that Magic&rsquo;s creators do synergizes with their release schedule: they release a new version four times a year without fail.
-Their business model requires this - it&rsquo;s a model that should sound familiar.
-They have an entertainment product that doesn&rsquo;t depreciate in value when it gets into consumers' hands, that people form emotional attachments to, and that can be easily transferred from one consumer to another.
+<p>The data-gathering that Magic’s creators do synergizes with their release schedule: they release a new version four times a year without fail.
+Their business model requires this - it’s a model that should sound familiar.
+They have an entertainment product that doesn’t depreciate in value when it gets into consumers’ hands, that people form emotional attachments to, and that can be easily transferred from one consumer to another.
 Wizards of the Coast has demonstrated a lesson that the RIAA, MPAA, and publishing houses could learn from.
 Instead of evilly and stupidly punishing their consumers for liking their product, they are <em>constantly adding value</em>.
 They have gathered into their company the best damn card-game designers around: because of the economics of collectible card games, in the long run a competent CCG designer is overwhelmingly likely to be either employed by Wizards of the Coast or not employed as a CCG designer at all.
 They have hired smart, they realize the limitations of their core product, and they are constantly innovating.
 They sell accessories of all kinds.
 They sell ancillary goods of all kinds.
-They translate their product into other media with abandon, seeing what works and what doesn&rsquo;t.
+They translate their product into other media with abandon, seeing what works and what doesn’t.
 They do not, it is important to note, sue their customers.
-Magic isn&rsquo;t a perfect parallel to music, movies, or books, but I believe it demonstrates that it&rsquo;s possible to make money without also making your customers hate you.
-If your customers hate you, they will flee as soon as an appealing alternative presents itself - a phenomenon we&rsquo;ve seen numerous times in the last decade and change.
+Magic isn’t a perfect parallel to music, movies, or books, but I believe it demonstrates that it’s possible to make money without also making your customers hate you.
+If your customers hate you, they will flee as soon as an appealing alternative presents itself - a phenomenon we’ve seen numerous times in the last decade and change.
 By behaving evilly, the previous generations of media companies are ensuring that newer media companies will out-compete them.
 Wizards, instead, is choosing to actually remain competitive.</p>
 
@@ -303,15 +303,15 @@ Wizards, instead, is choosing to actually remain competitive.</p>
 Wizards has avoided that very deftly.
 They <a href="http://www.wizards.com/Magic/Magazine/Default.aspx">publish lots of material for their community</a>, and the designers of the game solicit feedback directly.
 If you write to Mark Rosewater, the man who currently has more power over the direction of Magic than any other human, you will get a reply.
-If you go to a major Magic tournament, you will find delegates from Wizards' development team.
-Sometimes they will be observing, but quite often they&rsquo;ll be &ldquo;gunslinging,&rdquo; playing the game against anyone who wants to take them on.
-Magic&rsquo;s creators <a href="http://en.wikipedia.org/wiki/Eating_one%27s_own_dog_food">eat their own dogfood</a> and are highly exposed to the public.
+If you go to a major Magic tournament, you will find delegates from Wizards’ development team.
+Sometimes they will be observing, but quite often they’ll be “gunslinging,” playing the game against anyone who wants to take them on.
+Magic’s creators <a href="http://en.wikipedia.org/wiki/Eating_one%27s_own_dog_food">eat their own dogfood</a> and are highly exposed to the public.
 They are not losing touch with their customers or regarding them as just numbers.
 They are exposed, directly, to issues with their product - and they respond to those issues.</p>
 
-<p>Wizards of the Coast gathers enormous amounts of data about their users' experience with their product, they are constantly adding value to their product, and they don&rsquo;t hide from their users.
-When you look at software companies that are doing well, and especially at the ones that have become universally recognized names, I believe that you&rsquo;ll find them doing the same things.
-These strategies work everywhere: there&rsquo;s no excuse for screwing them up.</p>
+<p>Wizards of the Coast gathers enormous amounts of data about their users’ experience with their product, they are constantly adding value to their product, and they don’t hide from their users.
+When you look at software companies that are doing well, and especially at the ones that have become universally recognized names, I believe that you’ll find them doing the same things.
+These strategies work everywhere: there’s no excuse for screwing them up.</p>
 ]]></content>
   </entry>
   

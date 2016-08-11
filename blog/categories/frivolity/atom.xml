@@ -4,7 +4,7 @@
   <title><![CDATA[Category: frivolity | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/frivolity/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -20,11 +20,11 @@
     <id>http://stronglyemergent.com//blog/2013/stories-mattering</id>
     <content type="html"><![CDATA[<p>One of the things that a startup needs is a story.
 Trust me (and Seth Godin), you desperately need a story.
-The fact that you need a story is a whole genre of blog post, but right now I&rsquo;m here to share a very short anecdote about it.</p>
+The fact that you need a story is a whole genre of blog post, but right now I’m here to share a very short anecdote about it.</p>
 
-<p>Here is how you can tell that stories get into people&rsquo;s heads:
-if you ask people, &ldquo;Are vampires real?&rdquo; they will answer No.
-But if you ask those same people &ldquo;Can vampires can be killed with a wooden stake?&rdquo; they will answer Yes.
+<p>Here is how you can tell that stories get into people’s heads:
+if you ask people, “Are vampires real?” they will answer No.
+But if you ask those same people “Can vampires can be killed with a wooden stake?” they will answer Yes.
 <em>That</em> is why stories matter.</p>
 
 <p>(<a href="http://www.patheos.com/blogs/slacktivist/2008/10/08/false-witnesses-2/">h/t to Fred Clark</a> for the vampire question)</p>
@@ -39,9 +39,9 @@ But if you ask those same people &ldquo;Can vampires can be killed with a wooden
     <content type="html"><![CDATA[<p>Part of why I ended up buying more into developer-oriented skills and tasks than sysadmin-oriented ones,
 and especially why I want to stay away from the Windows world,
 is that running large networks and/or systems sucks.
-It&rsquo;s terrible.
-Mind you, the problems I&rsquo;ve chosen are also terrible, but they&rsquo;re a flavor of terrible that&rsquo;s more palatable to me.
-I can deal with the kind of terrible that I&rsquo;ve chosen.</p>
+It’s terrible.
+Mind you, the problems I’ve chosen are also terrible, but they’re a flavor of terrible that’s more palatable to me.
+I can deal with the kind of terrible that I’ve chosen.</p>
 
 <p>In contrast, running an Active Directory domain with a thousand users is the kind of terrible that is like hitting yourself in the forehead with a hammer.</p>
 
@@ -50,12 +50,12 @@ and their entire business model is finding people who are running large networks
 Then you have Active Directory/Exchange consultants,
 whose business is to solemnly tell people to hit themselves with the blunt side of the hammer, not the claw side.</p>
 
-<p>Over in the open-source world things are <em>much better</em> &mdash; which is to say, you can choose for yourself which side of the hammer to hit yourself with.
+<p>Over in the open-source world things are <em>much better</em> — which is to say, you can choose for yourself which side of the hammer to hit yourself with.
 You could even choose to hit yourself with the handle!
 Oh, and you have to worry about compatibility issues between the head, the handle, and the grip,
 but you can set up your own Red Hat-certified forge to make sure that you always have compatible heads.</p>
 
-<p>Also, I hear Microsoft just introduced a new licensing system where you&rsquo;re charged by the foot-pound.</p>
+<p>Also, I hear Microsoft just introduced a new licensing system where you’re charged by the foot-pound.</p>
 ]]></content>
   </entry>
   

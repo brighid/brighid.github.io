@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/python/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -14,49 +14,297 @@
 
   
   <entry>
+    <title type="html"><![CDATA[How to make SQLAlchemy pass connection flags to a SQLite database via file:// URI query parameters]]></title>
+    <link href="http://stronglyemergent.com//blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite/"/>
+    <updated>2016-08-10T15:53:00-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite</id>
+    <content type="html"><![CDATA[<p>(<em>for just the code promised by the title, see <a href="https://gist.github.com/brighid/42ed997016973e16bd04df22bfd638f7">this GitHub gist</a>.</em>)</p>
+
+<p>Making software is more work than just sitting down and writing code.
+For the code you’ve written to matter, you have to make it available to others.
+Like prose or visual art, there is no “done” with software projects: there is only Good Enough.
+Unlike prose or visual art, a software project can raise its standard of Good Enough over time by releasing new versions of the code with bug-fixes and new features.
+This is where the “make it available to others” part starts being very difficult.
+Active projects, by releasing new versions, always end up in a state of heterogeneity where not all of the project’s users are using the same version of the project.
+When active projects are incorporated into larger projects, it exacerbates the problem.
+It’s very common for active projects to advance very far as a standalone project, but to lag very far behind that advancement as part of a larger project.
+Sometimes this is very difficult for users.
+But it is not any one person’s fault: it is, overwhelmingly, the emergent result of how projects interact with each other.
+Today I’m going to show how this process leads to the preëminent database/ORM library in the Python world, <a href="http://www.sqlalchemy.org/">SQLAlchemy</a>, being unable to take advantage of a nearly decade-old feature of <a href="https://www.sqlite.org/">SQLite</a>, a widely-used database.</p>
+
+<p>Let’s start with SQLite.
+Like most database systems, SQLite lets you provide connection flags (extra information) when you connect to a database.
+By sending connection flags (e.g. <code>SQLITE_OPEN_READONLY</code> or <code>SQLITE_OPEN_CREATE</code>) you can have the database itself enforce restrictions on your interactions with it.
+Being able to send connection flags is very helpful for programmers.
+Having the database enforce the restrictions that the connection flags signify means you don’t need to write your own enforcement code.
+It also eliminates the chance of making mistakes while writing enforcement code.
+You gain productivity because the time that writing and checking enforcement code would take, you can instead spend on writing other code.</p>
+
+<p>SQLite added connection flags in version 3.5.0 (Fall 2007).
+However, SQLite is a C project, not a Python project.
+The connection flags are concepts that exist in SQLite’s C code.
+For them to exist in other languages, those languages (or their ecosystems) must provide a way of interacting with SQLite that permits specifying “please send the following connection flags when you connect to the SQLite database.”</p>
+
+<p>Plenty of other languages already had tools for interacting with SQLite in 2007, based on a function named <code>sqlite3_open()</code>.
+Because there was already plenty of software using <code>sqlite3_open()</code> and relying on its existing behavior (SQLite’s first public release was Spring 2000), SQLite 3.5.0 also introduced a new function, <code>sqlite3_open_v2()</code>, that understood connection flags.
+This allowed users to keep using <code>sqlite3_open()</code> until they were ready to change their code to use <code>sqlite3_open_v2()</code>.
+Once they began using the new function, they’d be able to use the new features.
+In <a href="https://www.sqlite.org/releaselog/3_7_7.html">version 3.7.7</a> (Summer 2011), SQLite made it easier still to use the new features by teaching both the old and new versions of <code>sqlite3_open()</code> to, with a little coaxing, understand <code>file://</code> URLs<sup id="fnref:uri"><a href="#fn:uri" class="footnote">1</a></sup> as well as file paths.
+File paths are specific to a particular operating system or family of them, but <code>file://</code> URLs are OS-independent.
+This made life slightly easier in general, but using <code>file://</code> URLs had a more important benefit as well.
+Using them made it much easier to send connection flags, because SQLite permitted users to put connection flags in the <code>file://</code> URL.
+Effectively, both versions of <code>sqlite3_open()</code> could now understand connection flags.
+SQLite also added some <a href="https://www.sqlite.org/c3ref/open.html#urifilenamesinsqlite3open">connection flags that could <em>only</em> be used by embedding them in a <code>file://</code> URL</a>.</p>
+
+<p>If you were writing Python instead of C, though, you couldn’t count on having access to SQLite’s improvements.
+Python’s support for SQLite comes from periodically incorporating code from the independent <code>pysqlite</code> project.
+The <code>sqlite3</code> module in Python’s standard library (introduced with Python 2.5’s release, Fall 2006) is a lightly modified version of <code>pysqlite</code>.
+Python 2.7 (Summer 2010) <a href="https://github.com/python/cpython/commit/b53996dead8c6a602d3f4f6c73bdd4573d0e49sef">contained version 2.6.0 of <code>pysqlite</code></a> (Spring 2010).
+This version remains the core of <code>sqlite3</code> as of Python 2.7.11 (Winter 2015) and Python 3.5.2 (Summer 2016).
+There does not yet exist a version of Python where the following code works<sup id="fnref:sqlite3-conn-err"><a href="#fn:sqlite3-conn-err" class="footnote">2</a></sup>:</p>
+
+<pre><code>import sqlite3
+sqlite3.connect("file:///path/to/my/database.db")
+</code></pre>
+
+<p>There <em>are</em> workarounds, but they show how challenging it can be to get new versions of software projects into users’ hands.
+Fundamentally, the Python code above fails because SQLite, in the process of teaching the <code>sqlite3_open()</code> functions to understand <code>file://</code> URLs, chose to make the new feature opt-in (similar to how they distinguished between <code>sqlite3_open()</code> and <code>sqlite_v2_open</code>).
+There are three times when you can opt into having SQLite understand <code>file://</code> URIs: during its compilation, when it launches, and when you call it.
+The <code>sqlite3</code> module, in its <code>pysqlite</code> version 2.6.0 incarnation, avails itself of none of them.
+It also provides no way for users to opt in.<sup id="fnref:opt-in"><a href="#fn:opt-in" class="footnote">3</a></sup>
+As an independent project, <code>pysqlite</code> released version 2.8.2 (Spring 2015), which <a href="https://github.com/ghaering/pysqlite/commit/46d999e5302fb58d9636759ff36e0875c0c1eeb2">added a way for users to send any connection flags</a> SQLite understands.<sup id="fnref:switch-sqlite-open"><a href="#fn:switch-sqlite-open" class="footnote">4</a></sup>
+This version is not part of Python, however, and is only available for use as a standalone module when using 2.x versions of Python.
+Early versions of Python 3 were also stuck with the no-URIs behavior.
+Python 3.4 (Spring 2014) introduced a way to tell <code>sqlite3.connect()</code> that it should treat its input as a URL.<sup id="fnref:switch-sqlite-open-2"><a href="#fn:switch-sqlite-open-2" class="footnote">5</a></sup>
+Unlike <code>pysqlite</code>’s improved version, the Python 3.4 change didn’t add a general way to send flags (though it did open up the “send flags as part of a <code>file://</code> URL” path).
+Still, by mid-2015, if you were using <code>sqlite3</code>, you had a fairly good chance of being able to use connection flags.</p>
+
+<p>There are a lot of people using SQLite who <em>aren’t</em> using <code>sqlite3</code>, though, at least not directly.
+Because of how easy it is to create bugs, some of which will be disastrous security holes, and because of how tedious it can be to write raw SQL queries, the overwhelming (and correct) consensus of the Python community is that you should use SQLAlchemy to interact with your database.
+SQLAlchemy also connects to databases via URLs, but given that its decision to use URLs predates SQLite’s by years (<a href="https://github.com/zzzeek/sqlalchemy/commit/0f42441edd8269308ec1b3c9936759a289dee826">SQLAlchemy version 0.1.0</a>, Winter 2005-06), it should be unsurprising that the two usages clash.
+SQLAlchemy wants users to identify databases by URLs with the database name as the schema.
+So the database in our example above would be <code>sqlite:///path/to/my/database.db</code>.
+SQLAlchemy’s database-URL schemas can have extra information (query parameters) in them, like SQLite’s <code>file://</code> URLs, which tell it how to connect to the database.
+The connection isn’t done by SQLAlchemy, though, it’s done by an external library.
+SQLAlchemy is a layer on top of modules like <code>sqlite3</code> that understand how to directly interact with databases.
+Under the hood, SQLAlchemy extracts a file path from the database URL and hands that file path to the underlying database module.
+This structure, though, eliminates the possibility of asking SQLite to open a <code>file://</code> URI!
+It can only send file paths to SQLite, and so the extra capabilities that SQLite activates when it sees the right prompts in a <code>file://</code> URL cannot be activated through SQLite.
+SQLAlchemy does try to pass on extra arguments that it finds in the database URL, but it passes those on to underlying database modules like frozen-in-amber-since-2010 <code>sqlite3</code>.<sup id="fnref:sqla-connargs"><a href="#fn:sqla-connargs" class="footnote">6</a></sup>
+Such extra arguments change the details of <code>sqlite3</code>’s behavior, but do not change the way it tries to connect to SQLite.
+On older Python versions, <code>pysqlite</code> 2.8.2 or later can be substituted for the built-in <code>sqlite3</code>, but because <code>pysqlite</code> is not available on modern Python versions, this is not a satisfactory solution.</p>
+
+<p>We are in a situation, nearly 10 years after SQLite introduced its connection flags and <code>file://</code> URLs, where taking advantage of those features from Python code is impossible to accomplish with the tools provided by the latest version of Python’s best database library, running on the latest version of Python itself.
+It’s important to note that none of this is malfeasance or incompetence on the part of library or language maintainers.
+Projects like the Python language, SQLAlchemy, and SQLite, prize stability very, very highly.
+They are <em>infrastructure</em> projects: they want to build durably and to provide durable materials for others to build atop, and they are not wrong in how often they value this above convenience.
+The power of defaults is very important here, too: although many OSes ship with Python and/or SQLite built in, those projects in turn have their own release cycles and their own stability concerns.
+The first version of <a href="http://robservatory.com/behind-os-xs-modern-face-lies-an-aging-collection-of-unix-tools/">OS X that shipped with a SQLite version</a> able to understand <code>file://</code> URIs was summer 2012’s OS X 10.8 “Mountain Lion” (Summer 2012).
+Debian-stable didn’t ship with such a SQLite until midway through <code>wheezy</code>’s patch sequence (2014).
+Ubuntu picked it up faster, incorporating SQLite 3.7.7 in their Oneiric Ocelot release (Fall 2011).
+All of these infrastructure projects, reasonably enough, tend to defer building support for any particular thing until they are sure that their users <em>can</em> and <em>want to</em> use it.
+Frustratingly, they can unintentionally enable each other in delaying support.
+But there is no archfiend actively obstructing the uptake of new versions, just a collection of overworked engineers trying to build things that won’t fall apart too easily.</p>
+
+<p>Fortunately, individual programmers writing brand-new projects have no old versions to be bound to.
+We can, by investing a little work, make different decisions about stability than project maintainers.
+This brings us around to the promise in this post’s title.
+Python, <code>sqlite3</code>, and SQLAlchemy were all written by clever people with an interest in flexibility.
+The tools that they’re eager to give us, the defaults, are not the only tools they can give us: there are others.
+Let’s use those others.</p>
+
+<p>The code below follows a fairly straightforward strategy.
+Given a file path and some arguments to pass to SQLite, it begins with some basic plausibility checks.
+It ignores the arguments and uses only the path if the caller has an ancient version of SQLite or wants SQLite’s <code>:memory:</code> database.
+Otherwise, it turns the file path and the arguments into a <code>file://</code> URL, then tries to connect to that URL.
+First it tries in the way that Python 3.4+ allows, with a <code>uri=True</code> parameter.
+If trying to connect that way is met with “I know no such parameter as <code>uri</code>”, we know we’re on an earlier version of Python.
+But since we know that SQLite and <code>sqlite3</code> are available, we use <code>ctypes</code> to reach into the Python/C communication channel that the <code>sqlite3</code> library has already set up.
+We prod the variable in C code that tells SQLite we’re opting into our input being treated as a URL, then connect again with our URL.
+Finally, we create a SQLAlchemy engine.
+We tell it that we’re connecting to an empty URL<sup id="fnref:sqlite-empty-url"><a href="#fn:sqlite-empty-url" class="footnote">7</a></sup>, but we also tell it “when you go to connect to that URL, use this object we’re handing you in order to establish that connection.”
+The object we hand it is the SQLite connection we just established, which SQLAlchemy doesn’t know how to create by itself.</p>
+
+<p>This strategy has some limitations: it definitely won’t work as-is on PyPy or Jython, and it’s superfluous if you know your project will run only on Python 3.4+.
+However, if you want your project to run on multiple versions of Python and to have access to nice SQLite features on all of them, this function will, I hope, get you to that point.
+I should also note that I drew inspiration from <a href="https://github.com/pudo/dataset/issues/136">this GitHub issue</a> and <a href="https://gist.github.com/achimnol/3021995">this Gist</a>: the digging is all me, however, as is the unit test.
+I’m firmly of the opinion that if you tell someone you have code that can solve their problem, the code you provide should be tested.</p>
+
+<p><noscript><pre>import os.path
+import re
+import sqlite3
+from sqlalchemy import create_engine
+
+def create_sqlite_engine(sqlite_path,
+                         read_only=None, create_db=None, **kwargs):
+    &quot;&quot;&quot;
+    Open SQLite with appropriate use of connection flags.
+
+    This is harder than it sounds.
+    &quot;&quot;&quot;
+    # Requirements: sqlite_path must be either &#39;:memory:&#39; or the output of
+    # os.path.abspath(). In this context, the SQLitePathType class handles that
+    # for us.
+    log.info(&quot;Trying to connect to SQLite ({!r})&quot;.format(sqlite_path))
+
+    sqlite_prefix = &#39;sqlite:///&#39;
+
+    # For an in-memory DB, ignore the flags
+    if sqlite_path == &#39;:memory:&#39;:
+        log.info(&quot;Fallback: :memory: DB.&quot;)
+        return sqlalchemy.engine.create_engine(sqlite_prefix)
+
+    # For atrociously old versions of SQLite, ignore the flags
+    if (sqlite3.sqlite_version_info &lt; (3, 7, 7)):
+        log.warning((&quot;Found old SQLite version: &quot;
+                     &quot;using it, but have to ignore {!r}&quot;).format(kwargs))
+        return sqlalchemy.engine.create_engine(sqlite_prefix + sqlite_path)
+
+    kwargs.pop(&#39;mode&#39;, None)
+    if create_db:
+        kwargs[&#39;mode&#39;] = &#39;rwc&#39;
+    else:
+        kwargs[&#39;mode&#39;] = &#39;rw&#39;
+    # Because the read_only and create_db modes are mutually exclusive, we give
+    # priority to the more restrictive mode.
+    if read_only:
+        kwargs[&#39;mode&#39;] = &#39;ro&#39;
+
+    # Normalize sqlite_path from a platform-bound file path to a
+    # platform-agnostic file:// URI (see https://www.sqlite.org/uri.html for
+    # details of SQLite&#39;s file:// URI requirements).
+    sqlite_path = re.sub(r&#39;\?&#39;, r&#39;%3f&#39;, sqlite_path)
+    sqlite_path = re.sub(&#39;#&#39;, r&#39;%23&#39;, sqlite_path)
+    drive, sqlite_path = os.path.splitdrive(sqlite_path)
+
+    path_segments = []
+    path_head, path_tail = os.path.split(sqlite_path)
+    while path_tail != &#39;&#39;:
+        path_segments = [path_tail] + path_segments
+        path_head, path_tail = os.path.split(path_head)
+    if drive != &#39;&#39;:
+        path_segments = [drive] + path_segments
+
+    try:
+        # Python 3
+        query_string = urlparse.urlencode(kwargs)
+    except AttributeError:
+        # Python 2
+        query_string = urllib.urlencode(kwargs)
+
+    file_uri = urlparse.urlunparse(
+        (&quot;file&quot;,  # Scheme
+         &#39;&#39;,  # Netloc (localhost)
+         &#39;/&#39;.join(path_segments),  # Path
+         &quot;&quot;,  # Params
+         query_string,  # Query
+         &quot;&quot;,  # Fragment
+         ))
+
+    log.debug(&quot;Database URI: {!r}&quot;.format(file_uri))
+
+    def _sqlite_conn_creator():
+        try:
+            log.debug(&quot;Trying the easy way...&quot;)
+            # In Python 3.4+, we can do this the easy way.
+            conn = sqlite3.connect(file_uri, uri=True)
+        except TypeError:
+            log.debug(&quot;Trying ctypes hackage...&quot;)
+            # The ctypes way is not the easy way (nor is it the &quot;compatible
+            # with anything but CPython&quot; way).
+            import ctypes
+            import ctypes.util
+            sqlite = ctypes.CDLL(ctypes.util.find_library(&#39;sqlite3&#39;))
+
+            # https://www.sqlite.org/c3ref/c_config_covering_index_scan.html
+            SQLITE_CONFIG_URI = 17
+            sqlite.sqlite3_config(SQLITE_CONFIG_URI, 1)
+            conn = sqlite3.connect(file_uri)
+
+        return conn
+
+    # Dust our hands off, give the caller what they asked for, pretend we
+    # didn&#39;t do anything disreputable just now.
+    return sqlalchemy.engine.create_engine(sqlite_prefix,
+                                           creator=_sqlite_conn_creator)
+</pre></noscript><script src="https://gist.github.com/brighid/42ed997016973e16bd04df22bfd638f7.js"> </script></p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:uri">
+      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:sqlite3-conn-err">
+      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:opt-in">
+      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:switch-sqlite-open">
+      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:switch-sqlite-open-2">
+      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:sqla-connargs">
+      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:sqlite-empty-url">
+      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Challenged]]></title>
     <link href="http://stronglyemergent.com//blog/2013/challenged/"/>
     <updated>2013-03-07T15:17:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/challenged</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m hunting for a new job right now: that&rsquo;s always a tricky thing, and it&rsquo;s easy for it to make me nervous.
-I&rsquo;m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world&mdash;
+    <content type="html"><![CDATA[<p>I’m hunting for a new job right now: that’s always a tricky thing, and it’s easy for it to make me nervous.
+I’m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world—
 I taught myself Python and then fell in love with Emacs Lisp, especially its overlap with Common Lisp;
-I&rsquo;m proficient with both of those and speak JavaScript at the high-school Spanish level.
-I&rsquo;m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
-<a href="https://github.com/brighid/">I have a GitHub profile</a> that I&rsquo;m gradually adding code to, and this blog where I&rsquo;m getting back into the habit of article-length writing.
+I’m proficient with both of those and speak JavaScript at the high-school Spanish level.
+I’m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
+<a href="https://github.com/brighid/">I have a GitHub profile</a> that I’m gradually adding code to, and this blog where I’m getting back into the habit of article-length writing.
 I am, in other words, an engineer entirely capable of finding their own ass with both hands.</p>
 
-<p>&ldquo;That&rsquo;s nice,&rdquo; said my management-track pal.
-&ldquo;What do you want to <em>do</em>?
-Where do you want to work in particular&mdash;what kind of work do you want to do&mdash;what are you doing to do for them?&rdquo;</p>
+<p>“That’s nice,” said my management-track pal.
+“What do you want to <em>do</em>?
+Where do you want to work in particular—what kind of work do you want to do—what are you doing to do for them?”</p>
 
 <p>That takes some more thought.
-I&rsquo;m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can&rsquo;t say something as facile as &ldquo;I want a Lisp job!&rdquo;;
-similarly, while I identify with Bay Area startup culture pretty strongly, &ldquo;I want to work at a startup!&rdquo; isn&rsquo;t going to cut it either.
+I’m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can’t say something as facile as “I want a Lisp job!”;
+similarly, while I identify with Bay Area startup culture pretty strongly, “I want to work at a startup!” isn’t going to cut it either.
 Those are <em>features</em> I want a job to have, not the job itself.</p>
 
-<p>So in response to my friend&rsquo;s challenge, here are three specific jobs I&rsquo;d like to do.</p>
+<p>So in response to my friend’s challenge, here are three specific jobs I’d like to do.</p>
 
 <ul>
-<li><p>Work on the Unix toolchain for Apple:
+  <li>
+    <p>Work on the Unix toolchain for Apple:
 new releases of OS X <a href="http://apple.blogoverflow.com/2012/07/interesting-new-unix-commandsbinaries-in-os-x-mountain-lion/">show up with new terminal utilities</a>,
-and the intersection of Unix beard and Apple fan makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on the API team at Stripe or Square:
+and the intersection of Unix beard and Apple fan makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on the API team at Stripe or Square:
 these are two of my favorite startups, and I think that payments are a hugely important place to apply the lever of technology.
-Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone&rsquo;s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
-I&rsquo;d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible&mdash;
-the intersection of mission and language-diversity makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay&rsquo;s other transit agencies.
-&ldquo;Which transit vehicles are where, and where will they be next?&rdquo;
+Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone’s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
+I’d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible—
+the intersection of mission and language-diversity makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay’s other transit agencies.
+“Which transit vehicles are where, and where will they be next?”
 is a question that people want answers to so badly that they more or less <em>inflicted</em> an API on MUNI.
-I&rsquo;m a cyclist and a public transit rider;
-I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I&rsquo;d love to do.</p></li>
+I’m a cyclist and a public transit rider;
+I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I’d love to do.</p>
+  </li>
 </ul>
 
-
-<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to &ldquo;software engineering jobs in the Bay Area.&rdquo;
-I&rsquo;m going to keep looking, but I&rsquo;m grateful to my friend for pushing me towards this exercise.
-Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
+<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to “software engineering jobs in the Bay Area.”
+I’m going to keep looking, but I’m grateful to my friend for pushing me towards this exercise.
+Meantime, if you’re reading this and you’re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
 ]]></content>
   </entry>
   
@@ -68,13 +316,13 @@ Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance
     <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.
 Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
 My personal address book is nowhere near that big
-(and I&rsquo;m not about to use it for testing),
+(and I’m not about to use it for testing),
 so I turned to Python.
 [The vCard format][vcard-wiki] is pretty much a special kind of text file,
-so it&rsquo;s easy to create new vCards,
+so it’s easy to create new vCards,
 and a vCard can contain multiple contacts by just concatenating contacts.</p>
 
-<p>I didn&rsquo;t find exactly what I needed already in existence,
+<p>I didn’t find exactly what I needed already in existence,
 so I wrote up a basic script to do it, and in case anyone else needs it, here it is.
 It is released under the Apache Software License 2.0,
 and I hope you find it useful.</p>
@@ -264,7 +512,7 @@ if __name__ == &#39;__main__&#39;:
             print &quot;The specific problem was &#39;%s&#39;&quot; % ioerr_msg
 </pre></noscript><script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script></p>
 
-<p>Writing this was basically like doing sit-ups in Python&mdash;not really challenging,
+<p>Writing this was basically like doing sit-ups in Python—not really challenging,
 but demanded like all serious tasks that you sit down and devote time and concentration to it.
 After that, results come easily.</p>
 ]]></content>
@@ -275,35 +523,35 @@ After that, results come easily.</p>
     <link href="http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning/"/>
     <updated>2010-03-14T23:01:10-07:00</updated>
     <id>http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning</id>
-    <content type="html"><![CDATA[<p>I&rsquo;d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
-I&rsquo;m jazzed about that: having another form for that data is going to be useful for me.
-With that in hand, I&rsquo;m starting on another Pylons project.
-This may evolve into my project for the Pylons course that I&rsquo;m trying to get my school to approve, but I&rsquo;m going to do it even if I don&rsquo;t get the class approved, because it&rsquo;s interesting and if I do it well it&rsquo;ll be useful to someone I care about.</p>
+    <content type="html"><![CDATA[<p>I’d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
+I’m jazzed about that: having another form for that data is going to be useful for me.
+With that in hand, I’m starting on another Pylons project.
+This may evolve into my project for the Pylons course that I’m trying to get my school to approve, but I’m going to do it even if I don’t get the class approved, because it’s interesting and if I do it well it’ll be useful to someone I care about.</p>
 
-<p>This is a trivial project overall, but that&rsquo;s what you do as part of the learning curve.
+<p>This is a trivial project overall, but that’s what you do as part of the learning curve.
 This project will create a web site for scheduling the use of sports fields.
-Users will be able to visit the site and easily see what&rsquo;s currently scheduled and create requests for field usage.
+Users will be able to visit the site and easily see what’s currently scheduled and create requests for field usage.
 Fields will show up as available at a given time, booked, or request-pending.
 Requests go to field coordinators, who resolve conflicts and approve requests for field usage.
 They should be able to do this as quickly as possible - current mechanism envisions that field requests generate an email to the coordinator or coordinators, who can click on a generated link in the URL and approve the request just by that click.
 Non-response is the same as declining approval.
-So the coordinators have a bit of a workload, but that&rsquo;s what it means to be a coordinator anyhow.</p>
+So the coordinators have a bit of a workload, but that’s what it means to be a coordinator anyhow.</p>
 
 <p>Expect more posts to show up with notes towards this project.
-I&rsquo;ve got a catchy name for it, too.
-&ldquo;Field Availability and Scheduling Tool.&rdquo;
-FAST - that&rsquo;s a good acronym, not worsened by the number of projects that have already used it.</p>
+I’ve got a catchy name for it, too.
+“Field Availability and Scheduling Tool.”
+FAST - that’s a good acronym, not worsened by the number of projects that have already used it.</p>
 
-<p>What I&rsquo;ll be trying to consciously think of during this project is data structures.
+<p>What I’ll be trying to consciously think of during this project is data structures.
 What do I need to provide?
-What kind of database structure is best for sitting under this, even if I&rsquo;m only going to interact with it through SQLAlchemy?
+What kind of database structure is best for sitting under this, even if I’m only going to interact with it through SQLAlchemy?
 How can I keep the system open to further use with minimal overhead?</p>
 
-<p>My ambition - we&rsquo;ll see if I can actually pull it off - is to follow this up with an app that creates a schedule for students and teachers given a set of constraints (working on <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem">3SAT problems</a>, basically, and trying to figure out what the difficulty class of this one is).
-After that, I&rsquo;d like to write a recommendation engine.
-Neither of these are trivial projects, and there&rsquo;s a pretty good chance that I won&rsquo;t get them done before graduation.
-That&rsquo;s okay.
-The journey is the important thing; and if I make it through the journey to get them working (nevermind working at a high level of optimization), I&rsquo;ll be willing to call myself pretty handy with Python.</p>
+<p>My ambition - we’ll see if I can actually pull it off - is to follow this up with an app that creates a schedule for students and teachers given a set of constraints (working on <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem">3SAT problems</a>, basically, and trying to figure out what the difficulty class of this one is).
+After that, I’d like to write a recommendation engine.
+Neither of these are trivial projects, and there’s a pretty good chance that I won’t get them done before graduation.
+That’s okay.
+The journey is the important thing; and if I make it through the journey to get them working (nevermind working at a high level of optimization), I’ll be willing to call myself pretty handy with Python.</p>
 ]]></content>
   </entry>
   
@@ -312,55 +560,23 @@ The journey is the important thing; and if I make it through the journey to get 
     <link href="http://stronglyemergent.com//blog/2010/summer-of-python-2010/"/>
     <updated>2010-03-10T14:54:13-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/summer-of-python-2010</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m watching the <a href="http://socghop.appspot.com/">2010 Google Summer of Code</a> page pretty closely.
-Ever since I found out that it existed, last year, I&rsquo;ve wanted to go for it, and my progress with Python has picked up again recently.
-My school schedule has currently changed in such a way that I have nearly three hours of quiet, uninterrupted time that it&rsquo;s easy to spend in front of a terminal session.
+    <content type="html"><![CDATA[<p>I’m watching the <a href="http://socghop.appspot.com/">2010 Google Summer of Code</a> page pretty closely.
+Ever since I found out that it existed, last year, I’ve wanted to go for it, and my progress with Python has picked up again recently.
+My school schedule has currently changed in such a way that I have nearly three hours of quiet, uninterrupted time that it’s easy to spend in front of a terminal session.
 It will not surprise the coders in the audience to learn that this has done wonders for my productivity.
-I&rsquo;m making progress on my current Pylons project and researching contributors to the Summer of Code, considering projects that I could contribute to.</p>
+I’m making progress on my current Pylons project and researching contributors to the Summer of Code, considering projects that I could contribute to.</p>
 
 <p>One thing that I like a great deal about the program is that it emphasizes a couple of virtues that our current economic arrangement has nearly downsized out of existence: community contribution and mentorship.
 I love that it connects students to their professional community, that it gives them - us, I hope! - a place to start, someplace to begin a career doing what they love.
-I have heard the complaint far too many times - and made it far too many times - to be unsympathetic to &ldquo;how do I get into this business, it seems like there&rsquo;s no room at all for a beginner.&rdquo;
-With the squeezing-out of apprenticeships and other transitions from student to professional, it&rsquo;s definitely harder for a lot of us to get into careers doing what we love.
-I&rsquo;m sad about that, and I think that it&rsquo;s a major bug in the current way that we run our affairs.</p>
+I have heard the complaint far too many times - and made it far too many times - to be unsympathetic to “how do I get into this business, it seems like there’s no room at all for a beginner.”
+With the squeezing-out of apprenticeships and other transitions from student to professional, it’s definitely harder for a lot of us to get into careers doing what we love.
+I’m sad about that, and I think that it’s a major bug in the current way that we run our affairs.</p>
 
-<p>But it&rsquo;s fixable.</p>
+<p>But it’s fixable.</p>
 
 <p>I particularly like the Google SOC fix because it also encourages community contribution, giving of oneself in order to make the community better.
-Sure, there&rsquo;s a selfish angle - but I think that productive selfishness like this can get a whole lot done, and it&rsquo;s pretty easy to encourage people to do it.
+Sure, there’s a selfish angle - but I think that productive selfishness like this can get a whole lot done, and it’s pretty easy to encourage people to do it.
 Cautiously and prudently directed, selfishness can accomplish very positive things, especially when your definition of selfishness is as broad as mine.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The OS We're All Running]]></title>
-    <link href="http://stronglyemergent.com//blog/2010/the-os-were-all-running/"/>
-    <updated>2010-03-05T14:05:16-08:00</updated>
-    <id>http://stronglyemergent.com//blog/2010/the-os-were-all-running</id>
-    <content type="html"><![CDATA[<p>Core Security Labs, in <a href="http://www.darkreading.com/story/showArticle.jhtml?articleID=223101626">an announcement to the press at the 2010 RSA Security conference</a>, has released a tool that makes it easier to perform attacks on users of the social network Twitter.
-Recently, a subspecies of phishing attacks has arisen, called &ldquo;spearphishing,&rdquo; and it&rsquo;s this type of attack that the Core Security Labs tool facilitates.
-Most phishing attacks, in which the attacker impersonates a legitimate organization and persuades the victim to give the attacker their credentials, are spammed out, sent to everyone available.
-Spearphishing attacks are targeted to smaller groups, to organizations or individuals, and are often more effective because they are tailored to decieve that group specifically by including persuasive details related to the group or person.
-As social networks continue to grow in popularity, the information that people share publicly on such networks enable spearphishing attacks.</p>
-
-<p>The CSL tool specifically uses Twitter to perform spearphishing attacks.
-A CSL researcher, Pedro Varangot, said that their tool is a framework that can be extended to use other social networks in the attack.
-The attack tool framework is built on the open-source programming language Python, a favorite language for projects in the open-source world.
-The researchers have not discovered any new software vulnerability - they&rsquo;ve just found another vector by which to deliver phishing attacks, which are basically social attacks instead of technical attacks.</p>
-
-<p>These attacks are very relevant because they affect Windows users, Mac users, and Linux users.
-Phishing attacks try to fool the user much more than they try to fool the computer.
-That means that no matter what operating system you use, you&rsquo;re vulnerable to phishing attacks because you&rsquo;re still using a human brain.
-Most phishing attacks, to IT people, look ludicrously simple to avoid - but there are a lot of them, and the attacker has the advantage that they only need to succeed once to win big.
-We defenders need to succeed all of the time just to keep a status quo that&rsquo;s favorable to us.</p>
-
-<p>Further, this illustrates one of Linux&rsquo;s major roles in the security world: many major security tools, especially penetration-testing tools like the CSL tool and the Metasploit framework (which some of us saw in action at the RSA conference) are built on Linux.
-Linux&rsquo;s modification-friendliness means that it&rsquo;s a superior platform for performing attacks.
-It&rsquo;s easier to modify Linux into an attack platform than it is to twist Windows into that role.
-Regardless of platform, though, it&rsquo;s very important for us as IT people to keep in mind that we&rsquo;ve progressed in security to the point where we humans are the weakest part of the security fence - and so there are more and more attacks that target the weaknesses in human brains instead of in software.
-Going forward as IT professionals, all of us will need to be educators about those weakness - and about how to compensate for them.</p>
-
-<p>At least until we have clients and IT users who are not human, which will bring its own set of problems.</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,8 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="Jeff Atwood made a Twitter post recently that looped back to his three-years-ago post about &ldquo;The FizzBuzz Problem.&rdquo;
-I read the post, and &hellip;">
+  <meta name="description" content="Jeff Atwood made a Twitter post recently that looped back to his three-years-ago post about “The FizzBuzz Problem.”
+I read the post, and I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,13 +103,13 @@ I read the post, and &hellip;">
   </header>
 
 
-<div class="entry-content"><p>Jeff Atwood <a href="http://twitter.com/codinghorror/status/7896822753">made a Twitter post recently</a> that looped back to his three-years-ago post about <a href="http://www.codinghorror.com/blog/archives/000781.html">&ldquo;The FizzBuzz Problem.&rdquo;</a>
+<div class="entry-content"><p>Jeff Atwood <a href="http://twitter.com/codinghorror/status/7896822753">made a Twitter post recently</a> that looped back to his three-years-ago post about <a href="http://www.codinghorror.com/blog/archives/000781.html">“The FizzBuzz Problem.”</a>
 I read the post, and I experienced a distinct need to self-check.
 I spent 10-20 minutes and came up with this:</p>
 
-<blockquote><h1>!/usr/bin/python</h1>
-
-<pre><code>import sys
+<blockquote>
+  <h1 id="usrbinpython">!/usr/bin/python</h1>
+  <pre><code>import sys
 ournumbers = range(1, 101)
 def fizzer (x):
         if (x % 3):
@@ -132,14 +132,15 @@ for x in ournumbers:
                         sys.stdout.write(buzzer(x))
                         continue
                 sys.stdout.write("%d, " % x)
-</code></pre></blockquote>
+</code></pre>
+</blockquote>
 
-<p>Now, as Atwood&rsquo;s <a href="http://www.codinghorror.com/blog/archives/000804.html">immediate follow-up post</a> points out, this is nothing to be particularly proud of.
-It&rsquo;s a <em>minimal</em> test of competency.
-Still, I&rsquo;m heartened by the fact that I straightaway knew how to do it, I just had to look up a couple of things (I confused <code>next</code> for <code>continue,</code> forgot the %-for-modulo syntax, and used <code>print</code> instead of <code>sys.stdout.write</code>) to make it behave properly.
-I have a very long way to go before I&rsquo;m as good at this stuff as I want to be.
-But I&rsquo;m confident that I can get there.
-A quick exercise like this also helps me work on my &ldquo;real&rdquo; projects, which are not so huge, but feel intimidating to me because they&rsquo;re bigger than I&rsquo;m currently competent for.
+<p>Now, as Atwood’s <a href="http://www.codinghorror.com/blog/archives/000804.html">immediate follow-up post</a> points out, this is nothing to be particularly proud of.
+It’s a <em>minimal</em> test of competency.
+Still, I’m heartened by the fact that I straightaway knew how to do it, I just had to look up a couple of things (I confused <code>next</code> for <code>continue,</code> forgot the %-for-modulo syntax, and used <code>print</code> instead of <code>sys.stdout.write</code>) to make it behave properly.
+I have a very long way to go before I’m as good at this stuff as I want to be.
+But I’m confident that I can get there.
+A quick exercise like this also helps me work on my “real” projects, which are not so huge, but feel intimidating to me because they’re bigger than I’m currently competent for.
 The goal of those projects, of course, is to grow into that competency, so I have to keep going.</p>
 </div>
 
@@ -202,6 +203,10 @@ The goal of those projects, of course, is to grow into that competency, so I hav
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite/">How to make SQLAlchemy pass connection flags to a SQLite database via file:// URI query parameters</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
       </li>
     
@@ -215,10 +220,6 @@ The goal of those projects, of course, is to grow into that competency, so I hav
     
       <li class="post">
         <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -12,6 +12,255 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+      
+      <title type="html"><![CDATA[How to make SQLAlchemy pass connection flags to a SQLite database via file:// URI query parameters]]></title>
+      <link href="http://stronglyemergent.com//blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite/"/>
+      
+    <updated>2016-08-10T15:53:00-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite</id>
+    
+    <content type="html"><![CDATA[<p>(<em>for just the code promised by the title, see <a href="https://gist.github.com/brighid/42ed997016973e16bd04df22bfd638f7">this GitHub gist</a>.</em>)</p>
+
+<p>Making software is more work than just sitting down and writing code.
+For the code you’ve written to matter, you have to make it available to others.
+Like prose or visual art, there is no “done” with software projects: there is only Good Enough.
+Unlike prose or visual art, a software project can raise its standard of Good Enough over time by releasing new versions of the code with bug-fixes and new features.
+This is where the “make it available to others” part starts being very difficult.
+Active projects, by releasing new versions, always end up in a state of heterogeneity where not all of the project’s users are using the same version of the project.
+When active projects are incorporated into larger projects, it exacerbates the problem.
+It’s very common for active projects to advance very far as a standalone project, but to lag very far behind that advancement as part of a larger project.
+Sometimes this is very difficult for users.
+But it is not any one person’s fault: it is, overwhelmingly, the emergent result of how projects interact with each other.
+Today I’m going to show how this process leads to the preëminent database/ORM library in the Python world, <a href="http://www.sqlalchemy.org/">SQLAlchemy</a>, being unable to take advantage of a nearly decade-old feature of <a href="https://www.sqlite.org/">SQLite</a>, a widely-used database.</p>
+
+<p>Let’s start with SQLite.
+Like most database systems, SQLite lets you provide connection flags (extra information) when you connect to a database.
+By sending connection flags (e.g. <code>SQLITE_OPEN_READONLY</code> or <code>SQLITE_OPEN_CREATE</code>) you can have the database itself enforce restrictions on your interactions with it.
+Being able to send connection flags is very helpful for programmers.
+Having the database enforce the restrictions that the connection flags signify means you don’t need to write your own enforcement code.
+It also eliminates the chance of making mistakes while writing enforcement code.
+You gain productivity because the time that writing and checking enforcement code would take, you can instead spend on writing other code.</p>
+
+<p>SQLite added connection flags in version 3.5.0 (Fall 2007).
+However, SQLite is a C project, not a Python project.
+The connection flags are concepts that exist in SQLite’s C code.
+For them to exist in other languages, those languages (or their ecosystems) must provide a way of interacting with SQLite that permits specifying “please send the following connection flags when you connect to the SQLite database.”</p>
+
+<p>Plenty of other languages already had tools for interacting with SQLite in 2007, based on a function named <code>sqlite3_open()</code>.
+Because there was already plenty of software using <code>sqlite3_open()</code> and relying on its existing behavior (SQLite’s first public release was Spring 2000), SQLite 3.5.0 also introduced a new function, <code>sqlite3_open_v2()</code>, that understood connection flags.
+This allowed users to keep using <code>sqlite3_open()</code> until they were ready to change their code to use <code>sqlite3_open_v2()</code>.
+Once they began using the new function, they’d be able to use the new features.
+In <a href="https://www.sqlite.org/releaselog/3_7_7.html">version 3.7.7</a> (Summer 2011), SQLite made it easier still to use the new features by teaching both the old and new versions of <code>sqlite3_open()</code> to, with a little coaxing, understand <code>file://</code> URLs<sup id="fnref:uri"><a href="#fn:uri" class="footnote">1</a></sup> as well as file paths.
+File paths are specific to a particular operating system or family of them, but <code>file://</code> URLs are OS-independent.
+This made life slightly easier in general, but using <code>file://</code> URLs had a more important benefit as well.
+Using them made it much easier to send connection flags, because SQLite permitted users to put connection flags in the <code>file://</code> URL.
+Effectively, both versions of <code>sqlite3_open()</code> could now understand connection flags.
+SQLite also added some <a href="https://www.sqlite.org/c3ref/open.html#urifilenamesinsqlite3open">connection flags that could <em>only</em> be used by embedding them in a <code>file://</code> URL</a>.</p>
+
+<p>If you were writing Python instead of C, though, you couldn’t count on having access to SQLite’s improvements.
+Python’s support for SQLite comes from periodically incorporating code from the independent <code>pysqlite</code> project.
+The <code>sqlite3</code> module in Python’s standard library (introduced with Python 2.5’s release, Fall 2006) is a lightly modified version of <code>pysqlite</code>.
+Python 2.7 (Summer 2010) <a href="https://github.com/python/cpython/commit/b53996dead8c6a602d3f4f6c73bdd4573d0e49sef">contained version 2.6.0 of <code>pysqlite</code></a> (Spring 2010).
+This version remains the core of <code>sqlite3</code> as of Python 2.7.11 (Winter 2015) and Python 3.5.2 (Summer 2016).
+There does not yet exist a version of Python where the following code works<sup id="fnref:sqlite3-conn-err"><a href="#fn:sqlite3-conn-err" class="footnote">2</a></sup>:</p>
+
+<pre><code>import sqlite3
+sqlite3.connect("file:///path/to/my/database.db")
+</code></pre>
+
+<p>There <em>are</em> workarounds, but they show how challenging it can be to get new versions of software projects into users’ hands.
+Fundamentally, the Python code above fails because SQLite, in the process of teaching the <code>sqlite3_open()</code> functions to understand <code>file://</code> URLs, chose to make the new feature opt-in (similar to how they distinguished between <code>sqlite3_open()</code> and <code>sqlite_v2_open</code>).
+There are three times when you can opt into having SQLite understand <code>file://</code> URIs: during its compilation, when it launches, and when you call it.
+The <code>sqlite3</code> module, in its <code>pysqlite</code> version 2.6.0 incarnation, avails itself of none of them.
+It also provides no way for users to opt in.<sup id="fnref:opt-in"><a href="#fn:opt-in" class="footnote">3</a></sup>
+As an independent project, <code>pysqlite</code> released version 2.8.2 (Spring 2015), which <a href="https://github.com/ghaering/pysqlite/commit/46d999e5302fb58d9636759ff36e0875c0c1eeb2">added a way for users to send any connection flags</a> SQLite understands.<sup id="fnref:switch-sqlite-open"><a href="#fn:switch-sqlite-open" class="footnote">4</a></sup>
+This version is not part of Python, however, and is only available for use as a standalone module when using 2.x versions of Python.
+Early versions of Python 3 were also stuck with the no-URIs behavior.
+Python 3.4 (Spring 2014) introduced a way to tell <code>sqlite3.connect()</code> that it should treat its input as a URL.<sup id="fnref:switch-sqlite-open-2"><a href="#fn:switch-sqlite-open-2" class="footnote">5</a></sup>
+Unlike <code>pysqlite</code>’s improved version, the Python 3.4 change didn’t add a general way to send flags (though it did open up the “send flags as part of a <code>file://</code> URL” path).
+Still, by mid-2015, if you were using <code>sqlite3</code>, you had a fairly good chance of being able to use connection flags.</p>
+
+<p>There are a lot of people using SQLite who <em>aren’t</em> using <code>sqlite3</code>, though, at least not directly.
+Because of how easy it is to create bugs, some of which will be disastrous security holes, and because of how tedious it can be to write raw SQL queries, the overwhelming (and correct) consensus of the Python community is that you should use SQLAlchemy to interact with your database.
+SQLAlchemy also connects to databases via URLs, but given that its decision to use URLs predates SQLite’s by years (<a href="https://github.com/zzzeek/sqlalchemy/commit/0f42441edd8269308ec1b3c9936759a289dee826">SQLAlchemy version 0.1.0</a>, Winter 2005-06), it should be unsurprising that the two usages clash.
+SQLAlchemy wants users to identify databases by URLs with the database name as the schema.
+So the database in our example above would be <code>sqlite:///path/to/my/database.db</code>.
+SQLAlchemy’s database-URL schemas can have extra information (query parameters) in them, like SQLite’s <code>file://</code> URLs, which tell it how to connect to the database.
+The connection isn’t done by SQLAlchemy, though, it’s done by an external library.
+SQLAlchemy is a layer on top of modules like <code>sqlite3</code> that understand how to directly interact with databases.
+Under the hood, SQLAlchemy extracts a file path from the database URL and hands that file path to the underlying database module.
+This structure, though, eliminates the possibility of asking SQLite to open a <code>file://</code> URI!
+It can only send file paths to SQLite, and so the extra capabilities that SQLite activates when it sees the right prompts in a <code>file://</code> URL cannot be activated through SQLite.
+SQLAlchemy does try to pass on extra arguments that it finds in the database URL, but it passes those on to underlying database modules like frozen-in-amber-since-2010 <code>sqlite3</code>.<sup id="fnref:sqla-connargs"><a href="#fn:sqla-connargs" class="footnote">6</a></sup>
+Such extra arguments change the details of <code>sqlite3</code>’s behavior, but do not change the way it tries to connect to SQLite.
+On older Python versions, <code>pysqlite</code> 2.8.2 or later can be substituted for the built-in <code>sqlite3</code>, but because <code>pysqlite</code> is not available on modern Python versions, this is not a satisfactory solution.</p>
+
+<p>We are in a situation, nearly 10 years after SQLite introduced its connection flags and <code>file://</code> URLs, where taking advantage of those features from Python code is impossible to accomplish with the tools provided by the latest version of Python’s best database library, running on the latest version of Python itself.
+It’s important to note that none of this is malfeasance or incompetence on the part of library or language maintainers.
+Projects like the Python language, SQLAlchemy, and SQLite, prize stability very, very highly.
+They are <em>infrastructure</em> projects: they want to build durably and to provide durable materials for others to build atop, and they are not wrong in how often they value this above convenience.
+The power of defaults is very important here, too: although many OSes ship with Python and/or SQLite built in, those projects in turn have their own release cycles and their own stability concerns.
+The first version of <a href="http://robservatory.com/behind-os-xs-modern-face-lies-an-aging-collection-of-unix-tools/">OS X that shipped with a SQLite version</a> able to understand <code>file://</code> URIs was summer 2012’s OS X 10.8 “Mountain Lion” (Summer 2012).
+Debian-stable didn’t ship with such a SQLite until midway through <code>wheezy</code>’s patch sequence (2014).
+Ubuntu picked it up faster, incorporating SQLite 3.7.7 in their Oneiric Ocelot release (Fall 2011).
+All of these infrastructure projects, reasonably enough, tend to defer building support for any particular thing until they are sure that their users <em>can</em> and <em>want to</em> use it.
+Frustratingly, they can unintentionally enable each other in delaying support.
+But there is no archfiend actively obstructing the uptake of new versions, just a collection of overworked engineers trying to build things that won’t fall apart too easily.</p>
+
+<p>Fortunately, individual programmers writing brand-new projects have no old versions to be bound to.
+We can, by investing a little work, make different decisions about stability than project maintainers.
+This brings us around to the promise in this post’s title.
+Python, <code>sqlite3</code>, and SQLAlchemy were all written by clever people with an interest in flexibility.
+The tools that they’re eager to give us, the defaults, are not the only tools they can give us: there are others.
+Let’s use those others.</p>
+
+<p>The code below follows a fairly straightforward strategy.
+Given a file path and some arguments to pass to SQLite, it begins with some basic plausibility checks.
+It ignores the arguments and uses only the path if the caller has an ancient version of SQLite or wants SQLite’s <code>:memory:</code> database.
+Otherwise, it turns the file path and the arguments into a <code>file://</code> URL, then tries to connect to that URL.
+First it tries in the way that Python 3.4+ allows, with a <code>uri=True</code> parameter.
+If trying to connect that way is met with “I know no such parameter as <code>uri</code>”, we know we’re on an earlier version of Python.
+But since we know that SQLite and <code>sqlite3</code> are available, we use <code>ctypes</code> to reach into the Python/C communication channel that the <code>sqlite3</code> library has already set up.
+We prod the variable in C code that tells SQLite we’re opting into our input being treated as a URL, then connect again with our URL.
+Finally, we create a SQLAlchemy engine.
+We tell it that we’re connecting to an empty URL<sup id="fnref:sqlite-empty-url"><a href="#fn:sqlite-empty-url" class="footnote">7</a></sup>, but we also tell it “when you go to connect to that URL, use this object we’re handing you in order to establish that connection.”
+The object we hand it is the SQLite connection we just established, which SQLAlchemy doesn’t know how to create by itself.</p>
+
+<p>This strategy has some limitations: it definitely won’t work as-is on PyPy or Jython, and it’s superfluous if you know your project will run only on Python 3.4+.
+However, if you want your project to run on multiple versions of Python and to have access to nice SQLite features on all of them, this function will, I hope, get you to that point.
+I should also note that I drew inspiration from <a href="https://github.com/pudo/dataset/issues/136">this GitHub issue</a> and <a href="https://gist.github.com/achimnol/3021995">this Gist</a>: the digging is all me, however, as is the unit test.
+I’m firmly of the opinion that if you tell someone you have code that can solve their problem, the code you provide should be tested.</p>
+
+<noscript><pre>import os.path
+import re
+import sqlite3
+from sqlalchemy import create_engine
+
+def create_sqlite_engine(sqlite_path,
+                         read_only=None, create_db=None, **kwargs):
+    &quot;&quot;&quot;
+    Open SQLite with appropriate use of connection flags.
+
+    This is harder than it sounds.
+    &quot;&quot;&quot;
+    # Requirements: sqlite_path must be either &#39;:memory:&#39; or the output of
+    # os.path.abspath(). In this context, the SQLitePathType class handles that
+    # for us.
+    log.info(&quot;Trying to connect to SQLite ({!r})&quot;.format(sqlite_path))
+
+    sqlite_prefix = &#39;sqlite:///&#39;
+
+    # For an in-memory DB, ignore the flags
+    if sqlite_path == &#39;:memory:&#39;:
+        log.info(&quot;Fallback: :memory: DB.&quot;)
+        return sqlalchemy.engine.create_engine(sqlite_prefix)
+
+    # For atrociously old versions of SQLite, ignore the flags
+    if (sqlite3.sqlite_version_info &lt; (3, 7, 7)):
+        log.warning((&quot;Found old SQLite version: &quot;
+                     &quot;using it, but have to ignore {!r}&quot;).format(kwargs))
+        return sqlalchemy.engine.create_engine(sqlite_prefix + sqlite_path)
+
+    kwargs.pop(&#39;mode&#39;, None)
+    if create_db:
+        kwargs[&#39;mode&#39;] = &#39;rwc&#39;
+    else:
+        kwargs[&#39;mode&#39;] = &#39;rw&#39;
+    # Because the read_only and create_db modes are mutually exclusive, we give
+    # priority to the more restrictive mode.
+    if read_only:
+        kwargs[&#39;mode&#39;] = &#39;ro&#39;
+
+    # Normalize sqlite_path from a platform-bound file path to a
+    # platform-agnostic file:// URI (see https://www.sqlite.org/uri.html for
+    # details of SQLite&#39;s file:// URI requirements).
+    sqlite_path = re.sub(r&#39;\?&#39;, r&#39;%3f&#39;, sqlite_path)
+    sqlite_path = re.sub(&#39;#&#39;, r&#39;%23&#39;, sqlite_path)
+    drive, sqlite_path = os.path.splitdrive(sqlite_path)
+
+    path_segments = []
+    path_head, path_tail = os.path.split(sqlite_path)
+    while path_tail != &#39;&#39;:
+        path_segments = [path_tail] + path_segments
+        path_head, path_tail = os.path.split(path_head)
+    if drive != &#39;&#39;:
+        path_segments = [drive] + path_segments
+
+    try:
+        # Python 3
+        query_string = urlparse.urlencode(kwargs)
+    except AttributeError:
+        # Python 2
+        query_string = urllib.urlencode(kwargs)
+
+    file_uri = urlparse.urlunparse(
+        (&quot;file&quot;,  # Scheme
+         &#39;&#39;,  # Netloc (localhost)
+         &#39;/&#39;.join(path_segments),  # Path
+         &quot;&quot;,  # Params
+         query_string,  # Query
+         &quot;&quot;,  # Fragment
+         ))
+
+    log.debug(&quot;Database URI: {!r}&quot;.format(file_uri))
+
+    def _sqlite_conn_creator():
+        try:
+            log.debug(&quot;Trying the easy way...&quot;)
+            # In Python 3.4+, we can do this the easy way.
+            conn = sqlite3.connect(file_uri, uri=True)
+        except TypeError:
+            log.debug(&quot;Trying ctypes hackage...&quot;)
+            # The ctypes way is not the easy way (nor is it the &quot;compatible
+            # with anything but CPython&quot; way).
+            import ctypes
+            import ctypes.util
+            sqlite = ctypes.CDLL(ctypes.util.find_library(&#39;sqlite3&#39;))
+
+            # https://www.sqlite.org/c3ref/c_config_covering_index_scan.html
+            SQLITE_CONFIG_URI = 17
+            sqlite.sqlite3_config(SQLITE_CONFIG_URI, 1)
+            conn = sqlite3.connect(file_uri)
+
+        return conn
+
+    # Dust our hands off, give the caller what they asked for, pretend we
+    # didn&#39;t do anything disreputable just now.
+    return sqlalchemy.engine.create_engine(sqlite_prefix,
+                                           creator=_sqlite_conn_creator)
+</pre></noscript>
+<script src="https://gist.github.com/brighid/42ed997016973e16bd04df22bfd638f7.js"> </script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:uri">
+      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:sqlite3-conn-err">
+      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:opt-in">
+      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:switch-sqlite-open">
+      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:switch-sqlite-open-2">
+      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:sqla-connargs">
+      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:sqlite-empty-url">
+      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></content>
+    
+  </entry>
   
   <entry>
       
@@ -23,22 +272,23 @@
     
     <content type="html">
         <![CDATA[<p>Every so often Pantone blows my mind.
-Their business model is that they <em>sell colors</em>&mdash;not that they sell paint or ink or dye, no, they sell <em>colors!</em>
-It&rsquo;s a little unbelievable.
+Their business model is that they <em>sell colors</em>—not that they sell paint or ink or dye, no, they sell <em>colors!</em>
+It’s a little unbelievable.
 Of course if you venture into the world of printing, publishing, and large-scale content creation in general,
 color is just one of many important details that have to not only be right, but right in a way that you can talk to others sensibly about.
-So Pantone can be thought of as a standards body like ISO&mdash;
-and like ISO, they aren&rsquo;t cheap, and they look rather surreal from the outside.</p>
+So Pantone can be thought of as a standards body like ISO—
+and like ISO, they aren’t cheap, and they look rather surreal from the outside.</p>
 
-<p>They&rsquo;re a great lesson in that way, though:
+<p>They’re a great lesson in that way, though:
 sometimes to understand odd things, you have to meet them on their own terms, not on yours.
-Otherwise you&rsquo;ll be looking at <a href="http://www.pantone.com/pages/index.aspx?pg=21055">&ldquo;Emerald is the color of the year!&rdquo;</a> and be staring at your monitor mouthing
-&ldquo;what the devil does that mean, who decided that, how the heck is a color &lsquo;lush&rsquo;?&rdquo;
+Otherwise you’ll be looking at <a href="http://www.pantone.com/pages/index.aspx?pg=21055">“Emerald is the color of the year!”</a> and be staring at your monitor mouthing
+“what the devil does that mean, who decided that, how the heck is a color ‘lush’?”
 But it makes perfect sense on its own terms.
 Like many other things in the world, it exists for itself and those who know it, not for strangers.</p>
 
 <p>Of course, you may want to treat my opinion on the matter with skepticism
-since I&rsquo;m the kind of person who finds the <a href="http://www.pantone.com/pages/products/product.aspx?pid=1376&amp;ca=33">Emerald Pantone iPhone Case</a> mildly fetching.</p>
+since I’m the kind of person who finds the <a href="http://www.pantone.com/pages/products/product.aspx?pid=1376&amp;ca=33">Emerald Pantone iPhone Case</a> mildly fetching.</p>
+
 <a rel="full-article" href="http://stronglyemergent.com//blog/2013/an-innovative-business-model/">Permalink</a>]]>
     </content>
     
@@ -60,25 +310,25 @@ Even though there are also a great many people who think themselves smarter than
 So most of the task of evaluating programmers is about evaluating how and if they Get Things Done.</p>
 
 <p>Evaluating yourself this way is a good skill to have;
-lately I&rsquo;ve been trying to build more and tinker more on account of being less-than-fully satisfied with what I see in my self-evaluation.
-I&rsquo;ve also noticed two failure modes that smart programmers may fall into
-(one of which I&rsquo;m doing my darndest to avoid),
+lately I’ve been trying to build more and tinker more on account of being less-than-fully satisfied with what I see in my self-evaluation.
+I’ve also noticed two failure modes that smart programmers may fall into
+(one of which I’m doing my darndest to avoid),
 running parallel to the symbols-versus-understanding sides of the <a href="http://en.wikipedia.org/wiki/Chinese_room">Chinese Room Argument</a>.
-The argument, oversimplified, is about whether or not it&rsquo;s possible to infer that an unseen conversational partner who manipulates symbols correctly,
+The argument, oversimplified, is about whether or not it’s possible to infer that an unseen conversational partner who manipulates symbols correctly,
 <em>understands</em> the communication.</p>
 
 <p>A self-taught programmer is proficient in manipulating symbols, but is vulnerable to the failure mode of not <em>understanding</em> them,
 of having a <a href="http://me.veekun.com/blog/2011/04/16/architectural-fallacies/#the-xy-problem">myopia about methods and goals</a>.
-On the other hand, engineers who&rsquo;ve been involved in trying to hire from university computer science departments
+On the other hand, engineers who’ve been involved in trying to hire from university computer science departments
 can attest that CS shops produce a certain proportion of people who understand why all of those symbol-manipulation rules are what they are,
 and who know a great deal about the rules and how they are implemented,
-but who are curiously unable to actually perform the manipulation of symbols and the latching-together of symbols into structures&mdash;
+but who are curiously unable to actually perform the manipulation of symbols and the latching-together of symbols into structures—
 no GitHub account, no projects of their own, no open-source contributions.</p>
 
-<p>I&rsquo;m nothing like the first person to notice these failure modes, but I think that identifying them as such
-(<em>not</em> as &ldquo;all self-taught programmers are flaky&rdquo; or &ldquo;a CS degree is superfluous&rdquo;) is helpful.
+<p>I’m nothing like the first person to notice these failure modes, but I think that identifying them as such
+(<em>not</em> as “all self-taught programmers are flaky” or “a CS degree is superfluous”) is helpful.
 Identifying a problem opens up the possibility of solving it.
-For me, it was humbling to stumble on the Chinese Room Argument and realize that while I&rsquo;m good at manipulating the symbols,
+For me, it was humbling to stumble on the Chinese Room Argument and realize that while I’m good at manipulating the symbols,
 that is not the same as fluency and I have a lot of work to do ahead of me.</p>
 ]]></content>
     
@@ -95,24 +345,27 @@ that is not the same as fluency and I have a lot of work to do ahead of me.</p>
     <content type="html">
         <![CDATA[<p>A <a href="http://blogs.msdn.com/b/ericgu/archive/2004/01/12/57985.aspx">short post by Eric Gunnerson</a> about designing C#, nearly a decade old now, has stuck with me for a long time.</p>
 
-<blockquote><p>[the question] implies that we started with an existing language (C++ and Java are the popular choices here),
+<blockquote>
+  <p>[the question] implies that we started with an existing language (C++ and Java are the popular choices here),
 and then started removing features until we got to a point where we liked.
-That&rsquo;s not how the language got designed.
-One of the big reasons we didn&rsquo;t do this is that it&rsquo;s really hard to remove complexity when you take a subtractive approach,
+That’s not how the language got designed.
+One of the big reasons we didn’t do this is that it’s really hard to remove complexity when you take a subtractive approach,
 as removing a feature in one area may not allow you to revisit low-level design decisions,
 nor will it allow you to remove complexity elsewhere, in places where it support the now-removed feature.
 We decided on the additive approach instead, and worked hard to keep the complexity down.
-One way to do that is through the concept of &ldquo;minus 100 points.&rdquo;
+One way to do that is through the concept of “minus 100 points.”
 Every feature starts out in the hole by 100 points,
 which means that it has to have a significant net positive effect on the overall package for it to make it into the language.
-Some features are okay features for a language to have, they just aren&rsquo;t quite good enough to make it into the language.</p></blockquote>
+Some features are okay features for a language to have, they just aren’t quite good enough to make it into the language.</p>
+</blockquote>
 
 <p>If this sounds familiar, it should:
-this is another lens on the design philosophy, popularized in the developer community by Apple, that good design requires saying &ldquo;no.&rdquo;
-Saying &ldquo;no&rdquo; a <em>lot.</em>
-I applaud Apple for applying this philosophy so rigorously&mdash;
-but it&rsquo;s important to remember that they&rsquo;re <a href="http://technet.microsoft.com/en-us/magazine/dn167709.aspx">not the only people who use it</a>, and their way is not the only way.
-What you say &ldquo;no&rdquo; to, defines you.</p>
+this is another lens on the design philosophy, popularized in the developer community by Apple, that good design requires saying “no.”
+Saying “no” a <em>lot.</em>
+I applaud Apple for applying this philosophy so rigorously—
+but it’s important to remember that they’re <a href="http://technet.microsoft.com/en-us/magazine/dn167709.aspx">not the only people who use it</a>, and their way is not the only way.
+What you say “no” to, defines you.</p>
+
 <a rel="full-article" href="http://stronglyemergent.com//blog/2013/negative-100-points/">Permalink</a>]]>
     </content>
     
@@ -127,231 +380,223 @@ What you say &ldquo;no&rdquo; to, defines you.</p>
     <id>http://stronglyemergent.com//blog/2013/the-prisoner-of-zend-dot-php</id>
     
     <content type="html"><![CDATA[<p>It is surely not news to you that PHP is awful: there is a thriving sub-genre of tech blog posts about how very, very bad PHP is.
-It should tell you something about what a horrid clown rodeo PHP is that even in the presence of Eevee&rsquo;s magisterial &ldquo;<a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP: A Fractal Of Bad Design</a>&rdquo; article, so many of us feel compelled to contribute to the vast body of PHP-criticizing literature anyhow.
-For my part, even after acknowledging excellent works (written by pals smarter than me) like <em>Fractal Of Bad Design</em>, man-of-mystery Pi&rsquo;s &ldquo;<a href="http://two-pi-r.livejournal.com/622760.html?format=light">PHP is a low-level programming language at the wrong level</a>,&rdquo; and Watts Martin&rsquo;s trenchant &ldquo;<a href="http://tracks.ranea.org/post/13908062333/php-is-not-an-acceptable-cobol">PHP is not an acceptable COBOL</a>,&rdquo; I still think there&rsquo;s more that needs saying.
+It should tell you something about what a horrid clown rodeo PHP is that even in the presence of Eevee’s magisterial “<a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP: A Fractal Of Bad Design</a>” article, so many of us feel compelled to contribute to the vast body of PHP-criticizing literature anyhow.
+For my part, even after acknowledging excellent works (written by pals smarter than me) like <em>Fractal Of Bad Design</em>, man-of-mystery Pi’s “<a href="http://two-pi-r.livejournal.com/622760.html?format=light">PHP is a low-level programming language at the wrong level</a>,” and Watts Martin’s trenchant “<a href="http://tracks.ranea.org/post/13908062333/php-is-not-an-acceptable-cobol">PHP is not an acceptable COBOL</a>,” I still think there’s more that needs saying.
 There are plenty of languages that one may dislike, and there are plenty of warts on any language one does like — and yet, PHP is <em>sui generis</em> in its terribleness.</p>
 
-<p>Before starting in on my own complaints, I&rsquo;m going to cite a rant from outside the programming world.
-During Leonard Pierce&rsquo;s <a href="http://ludickid.livejournal.com/914741.html?format=light">massively acerbic chronicle of hating Billy Joel</a> there is an aside that I&rsquo;m gonna use to answer the question
-&ldquo;why do people hate PHP in a way that people almost never hate JavaScript, C++, or Visual Basic, deeply flawed languages all?&rdquo;</p>
+<p>Before starting in on my own complaints, I’m going to cite a rant from outside the programming world.
+During Leonard Pierce’s <a href="http://ludickid.livejournal.com/914741.html?format=light">massively acerbic chronicle of hating Billy Joel</a> there is an aside that I’m gonna use to answer the question
+“why do people hate PHP in a way that people almost never hate JavaScript, C++, or Visual Basic, deeply flawed languages all?”</p>
 
-<blockquote><p>Just as one can argue that there were better World Series teams than the 1927 New York Yankees,
+<blockquote>
+  <p>Just as one can argue that there were better World Series teams than the 1927 New York Yankees,
 one can argue that various performers have written worse songs than those produced from the depressingly fertile mind of Billy Joel.
-[&hellip;]
-But while there are those who can honestly contend that the &lsquo;27 Bronx Bombers were not the greatest of all World Series teams, no one —
+[…]
+But while there are those who can honestly contend that the ‘27 Bronx Bombers were not the greatest of all World Series teams, no one —
 not even those who hate the Yankees with a soul-scorching fire, as do all right-thinking humans —
 can argue that they are not the best baseball franchise ever.
 The numbers simply speak for themselves.
 No other team has even remotely come close to topping their total number of world championships.
 Similarly, no other performer or group has ever had so many horrible songs become so successful on the charts as has Billy Joel.
 <strong>Others have been worse; others have been bigger.
-But no one has been bigger and badder at the same time than Billy Joel.</strong></p></blockquote>
+But no one has been bigger and badder at the same time than Billy Joel.</strong></p>
+</blockquote>
 
 <p>No one has been bigger and badder at the same time than PHP.
-That&rsquo;s why.</p>
+That’s why.</p>
 
 <p>To expand lightly on the criteria <em>Fractal</em> uses, <strong>a programming language is a tool for thinking about a problem space and for expressing solutions to particular problems in that space.</strong>
-The writeups that I&rsquo;ve cited do great work on talking about this, but I think there&rsquo;s a little more that needs to be said.
+The writeups that I’ve cited do great work on talking about this, but I think there’s a little more that needs to be said.
 We usually take this for granted, but a tool for task X should, as the very least, most basic requirement, help you accomplish X more often than it hinders you in trying to accomplish X.
 PHP fails at this.
 Additionally, software engineering does not happen in a vacuum.
 Choices we engineers make affect others, including our future selves.
 Software inherently has a social context, and how it interacts with that context, matters (this is where I think <a href="http://www.codinghorror.com/blog/2008/05/php-sucks-but-it-doesnt-matter.html">Jeff Atwood deeply misjudged PHP</a>).
-So here&rsquo;s what I want to add to the conversation:</p>
+So here’s what I want to add to the conversation:</p>
 
 <ul>
-<li>PHP is not just a sub-optimal or distasteful tool, it&rsquo;s a <strong>treacherous</strong> one</li>
-<li>In addition to being treacherous for those writing it, PHP <strong>pollutes the commons</strong></li>
-<li>Because PHP is a treacherous tool whose use pollutes the commons, it <strong>should be torn out and demolished</strong> like an unsafe bridge or building</li>
+  <li>PHP is not just a sub-optimal or distasteful tool, it’s a <strong>treacherous</strong> one</li>
+  <li>In addition to being treacherous for those writing it, PHP <strong>pollutes the commons</strong></li>
+  <li>Because PHP is a treacherous tool whose use pollutes the commons, it <strong>should be torn out and demolished</strong> like an unsafe bridge or building</li>
 </ul>
 
-
-<h3>A Tool That Fits No Hand</h3>
-
+<h3 id="a-tool-that-fits-no-hand">A Tool That Fits No Hand</h3>
 <!-- A treacherous tool -->
 
-
-<p>Part of why &ldquo;Fractal Of Bad Design&rdquo; commands attention is the sheer volume of issues with PHP it collects and contextualizes.
+<p>Part of why “Fractal Of Bad Design” commands attention is the sheer volume of issues with PHP it collects and contextualizes.
 The gotchas, pitfalls, and boilerplate-chunks in PHP combine to produce an environment where simple, easy-to-read code is often <em>wrong</em>.
 In turn, this means that code written with diligence and caution in PHP, is harder to give a close reading to.
-You don&rsquo;t need to intensely scrutinize code every time you read it, but when you pick up your own code that you haven&rsquo;t worked with for a while, when you&rsquo;re reviewing code in a security-focused state of mind, or when you&rsquo;re deciding whether external changes require altering the code in front of you, giving the code a close reading is extremely important.
+You don’t need to intensely scrutinize code every time you read it, but when you pick up your own code that you haven’t worked with for a while, when you’re reviewing code in a security-focused state of mind, or when you’re deciding whether external changes require altering the code in front of you, giving the code a close reading is extremely important.
 But when the simple way is often wrong, a close reading is far harder than it should be.
 You will ask yourself many questions, individually small and not particularly difficult, but enormous in number and potential consequences.</p>
 
 <ul>
-<li>Which specific major, minor, and patch version of PHP was this file written against?</li>
-<li>Does this function require a particular <code>ini_set()</code> invocation that could be clobbered elsewhere?</li>
-<li>Does this if-block behave correctly when the result of an expression is <code>0</code> instead of <code>FALSE</code>?</li>
-<li>Does all the code use <code>===</code> instead of <code>==</code>?</li>
-<li>Does this function behave acceptably if one of its variables gets clobbered by a global?</li>
-<li>Does this block handle <code>sleep()</code>&rsquo;s <a href="http://php.net/manual/en/function.sleep.php#refsect1-function.sleep-returnvalues">many possible return values</a> correctly?</li>
-<li>Does this library <a href="http://software-gunslinger.tumblr.com/post/47131406821/php-is-meant-to-die">perpetrate asynchronous atrocities</a> behind my back?</li>
+  <li>Which specific major, minor, and patch version of PHP was this file written against?</li>
+  <li>Does this function require a particular <code>ini_set()</code> invocation that could be clobbered elsewhere?</li>
+  <li>Does this if-block behave correctly when the result of an expression is <code>0</code> instead of <code>FALSE</code>?</li>
+  <li>Does all the code use <code>===</code> instead of <code>==</code>?</li>
+  <li>Does this function behave acceptably if one of its variables gets clobbered by a global?</li>
+  <li>Does this block handle <code>sleep()</code>’s <a href="http://php.net/manual/en/function.sleep.php#refsect1-function.sleep-returnvalues">many possible return values</a> correctly?</li>
+  <li>Does this library <a href="http://software-gunslinger.tumblr.com/post/47131406821/php-is-meant-to-die">perpetrate asynchronous atrocities</a> behind my back?</li>
 </ul>
-
 
 <p>The burden of dealing with these questions means that PHP does not just make it possible write bad code, but that its quirks actively make it <em>harder to write good code</em> and more likely that you will write bad code.
 You <em>can</em> write good code in PHP, but the path is a fearful one.
-Compared to other languages, you will write more lines code to do the same tasks, it&rsquo;s harder to know or prove that the code you&rsquo;ve written is good, and the language ecosystem is so burdened with dubious code that good code cannot be quickly brought into projects of any significant age.
-One of Perl&rsquo;s design goals is to &ldquo;make easy things easy and hard things possible.&rdquo;
+Compared to other languages, you will write more lines code to do the same tasks, it’s harder to know or prove that the code you’ve written is good, and the language ecosystem is so burdened with dubious code that good code cannot be quickly brought into projects of any significant age.
+One of Perl’s design goals is to “make easy things easy and hard things possible.”
 PHP, as though coming from a mirror universe with a sinister goatee,
 <a href="http://phpsadness.com/sad/52">makes easy things hard</a> and <a href="http://software-gunslinger.tumblr.com/post/48215406921/php-is-meant-to-die-continued">hard things impossible</a>
 In a total inversion of good language design, a concise and readable piece of PHP is more likely to have bugs, not less.
-This is what pushes PHP from &ldquo;a tool that I have distaste for&rdquo; to &ldquo;a tool that is <strong>bad</strong>&rdquo; — when I say that it is &ldquo;treacherous,&rdquo; I&rsquo;m talking about this property where simple code is prone not just to being wrong, but to being wrong in a way that tends to <a href="https://phpmanualmasterpieces.tumblr.com/post/66426423275/">fail silently</a> and to fail with <a href="https://bugs.php.net/bug.php?id=55439">extremely dangerous effects</a>.</p>
+This is what pushes PHP from “a tool that I have distaste for” to “a tool that is <strong>bad</strong>” — when I say that it is “treacherous,” I’m talking about this property where simple code is prone not just to being wrong, but to being wrong in a way that tends to <a href="https://phpmanualmasterpieces.tumblr.com/post/66426423275/">fail silently</a> and to fail with <a href="https://bugs.php.net/bug.php?id=55439">extremely dangerous effects</a>.</p>
 
-<p>We have a specific term for &ldquo;past technical decisions are making it harder to make the right technical decisions in the present&rdquo;: <a href="http://c2.com/cgi/wiki?TechnicalDebt">technical debt</a>.
+<p>We have a specific term for “past technical decisions are making it harder to make the right technical decisions in the present”: <a href="http://c2.com/cgi/wiki?TechnicalDebt">technical debt</a>.
 Languages change over time.
 Production environments often achieve stability specifically by slowing down their update cycle.
 This much is normal.
-However, the volume of PHP&rsquo;s technical debt makes updates much more of a problem for PHP than in the general case.
-Because something like Python&rsquo;s <code>virtualenv</code> or Ruby&rsquo;s <code>rbenv</code> <a href="http://stackoverflow.com/questions/7182176/does-php-have-an-equivalent-to-pythons-virtualenv-or-rubys-sandbox">doesn&rsquo;t exist in the PHP world as of 2013</a>, incremental updates (either of PHP itself or of any library or C module you may happen to be using) are very difficult: the difficulty of using new versions of PHP is dominated by the most out-of-date libraries or language features a project uses.
+However, the volume of PHP’s technical debt makes updates much more of a problem for PHP than in the general case.
+Because something like Python’s <code>virtualenv</code> or Ruby’s <code>rbenv</code> <a href="http://stackoverflow.com/questions/7182176/does-php-have-an-equivalent-to-pythons-virtualenv-or-rubys-sandbox">doesn’t exist in the PHP world as of 2013</a>, incremental updates (either of PHP itself or of any library or C module you may happen to be using) are very difficult: the difficulty of using new versions of PHP is dominated by the most out-of-date libraries or language features a project uses.
 Because of how hard it is to make them incremental, updates are risky: it is extremely difficult to fully understand and accurately predict their effects, especially in judging security and stability issues.
 One of the ways that PHP fails as a tool is that when improvements in the language or in libraries come along, it makes it hard to take advantage of those improvements.</p>
 
-<p>When the question of PHP&rsquo;s quality comes up, inevitably someone tries to use Wikipedia, Facebook, and WordPress as examples of PHP&rsquo;s success.
-Even if you leave aside how that&rsquo;s like saying that most American universities are Harvard, it ignores that Wikipedia, Facebook, and WordPress all have significant problems that are directly attributable to their decision to use PHP!
+<p>When the question of PHP’s quality comes up, inevitably someone tries to use Wikipedia, Facebook, and WordPress as examples of PHP’s success.
+Even if you leave aside how that’s like saying that most American universities are Harvard, it ignores that Wikipedia, Facebook, and WordPress all have significant problems that are directly attributable to their decision to use PHP!
 If you are not prepared to deal with those problems, then you had better not use PHP.
 To argue that PHP is a good tool because these large, successful projects have been built with PHP while ignoring that all of these projects had to make extraordinary investments in technical infrastructure, is to advocate that other people waste tremendous quantities of time and money.
-More precisely, the fact that Wikipedia, Facebook, and WordPress all used PHP is <em>insufficient</em> to demonstrate that you personally should use PHP for anything: you must know how those projects work and what tradeoffs they made in order to to know whether their use of PHP means it&rsquo;s a good idea to use PHP for your application.</p>
+More precisely, the fact that Wikipedia, Facebook, and WordPress all used PHP is <em>insufficient</em> to demonstrate that you personally should use PHP for anything: you must know how those projects work and what tradeoffs they made in order to to know whether their use of PHP means it’s a good idea to use PHP for your application.</p>
 
 <!-- Spoilers: It's not. -->
 
-
 <p>Wikipedia is the easiest example to pick on here, because they provide all the evidence themselves.
-Go and check out a copy of the MediaWiki source code (I&rsquo;m going to treat &ldquo;Wikipedia&rdquo; and &ldquo;MediaWiki&rdquo; as synonymous) and take a look at it.
+Go and check out a copy of the MediaWiki source code (I’m going to treat “Wikipedia” and “MediaWiki” as synonymous) and take a look at it.
 Reflect on how many engineer-hours it took to get the project to that state, and how many more hours are being requested.
-Reflect on the contents of their <a href="http://www.mediawiki.org/wiki/Annoying_large_bugs">&ldquo;Annoying Large Bugs&rdquo;</a> and <a href="https://www.mediawiki.org/wiki/Annoying_little_bugs">&ldquo;Annoying Little Bugs&rdquo;</a> pages.
-If you want to use Wikipedia as a role model, being blind to Wikipedia&rsquo;s flaws is a terrible idea.</p>
+Reflect on the contents of their <a href="http://www.mediawiki.org/wiki/Annoying_large_bugs">“Annoying Large Bugs”</a> and <a href="https://www.mediawiki.org/wiki/Annoying_little_bugs">“Annoying Little Bugs”</a> pages.
+If you want to use Wikipedia as a role model, being blind to Wikipedia’s flaws is a terrible idea.</p>
 
-<p>Because Wikipedia is such a high-profile target (huge PageRank points, huge repository of user-generated content, huge mindshare) there&rsquo;s a <a href="http://www.cvedetails.com/vendor/2360/Mediawiki.html">steady record of vulnerabilities</a> with MediaWiki.
-If you get into the plumbing of Wikipedia, get under the layer that just presents pages to visitors, get familiar with the greasy-handed wiki-gnomes, you&rsquo;ll find all kinds of interesting infrastructure designed to cope with this.
-As a social project, Wikipedia is not a bad project: it&rsquo;s an amazingly good one.
-It&rsquo;s a triumph of the cooperative open-source ethos and an incalculably valuable community resource.
+<p>Because Wikipedia is such a high-profile target (huge PageRank points, huge repository of user-generated content, huge mindshare) there’s a <a href="http://www.cvedetails.com/vendor/2360/Mediawiki.html">steady record of vulnerabilities</a> with MediaWiki.
+If you get into the plumbing of Wikipedia, get under the layer that just presents pages to visitors, get familiar with the greasy-handed wiki-gnomes, you’ll find all kinds of interesting infrastructure designed to cope with this.
+As a social project, Wikipedia is not a bad project: it’s an amazingly good one.
+It’s a triumph of the cooperative open-source ethos and an incalculably valuable community resource.
 But as an engineering project, you should be very careful about emulating it.
 You should make sure that you can invest proportionate engineer-hours into security and maintenance — and that you account for how a PHP-based project needs far more of those hours than other kinds of project.</p>
 
-<p>Speaking of gigantic quantities of engineer-hours, there&rsquo;s Facebook.
-Facebook is an even worse choice as an example of PHP&rsquo;s success, because Facebook has effectively re-built PHP from the ground up.
-Look at their <a href="https://github.com/facebook/hiphop-php">HipHop PHP</a> project: it&rsquo;s replacing the default PHP interpreter wholesale and replacing Apache&rsquo;s <code>mod_php</code> as well.
-You shouldn&rsquo;t use Facebook as evidence that your project should use PHP, because the way you use PHP is not like the way that Facebook uses PHP.
+<p>Speaking of gigantic quantities of engineer-hours, there’s Facebook.
+Facebook is an even worse choice as an example of PHP’s success, because Facebook has effectively re-built PHP from the ground up.
+Look at their <a href="https://github.com/facebook/hiphop-php">HipHop PHP</a> project: it’s replacing the default PHP interpreter wholesale and replacing Apache’s <code>mod_php</code> as well.
+You shouldn’t use Facebook as evidence that your project should use PHP, because the way you use PHP is not like the way that Facebook uses PHP.
 Facebook ended up writing not just their own PHP toolchain, but their own entire PHP runtime.
-This is probably not the way you want to go for your project: it&rsquo;s expensive and optimizes for solving problems that you don&rsquo;t have.</p>
+This is probably not the way you want to go for your project: it’s expensive and optimizes for solving problems that you don’t have.</p>
 
-<p>On top of that, there are ways in which Facebook&rsquo;s usage of PHP is dubious, or at least suggests that they would rather not be using PHP.
+<p>On top of that, there are ways in which Facebook’s usage of PHP is dubious, or at least suggests that they would rather not be using PHP.
 Before the current version of HipHop, which is a VM that executes PHP, they were cross-compiling to C++.
-When &ldquo;cross-compile to C++&rdquo; makes your project <em>less</em> painful, that&rsquo;s a bad sign.
+When “cross-compile to C++” makes your project <em>less</em> painful, that’s a bad sign.
 This emphasizes the earlier point about technical debt: Facebook at this point is trapped in PHP and making the best of it.
-They&rsquo;re up to the point where they&rsquo;re custom-compiling PHP and doing static-analysis optimization on it — which is to say, they are doing <a href="http://www.research.ibm.com/trl/people/mich/pub/200901_popl2009phpsem.pdf">original compsci research</a>, because PHP&rsquo;s internals are that much of a mess.</p>
+They’re up to the point where they’re custom-compiling PHP and doing static-analysis optimization on it — which is to say, they are doing <a href="http://www.research.ibm.com/trl/people/mich/pub/200901_popl2009phpsem.pdf">original compsci research</a>, because PHP’s internals are that much of a mess.</p>
 
 <p>Nor is WordPress a good PHP role model.
-It&rsquo;s gotten better over time, but the direction of its evolution is away from &ldquo;blog&rdquo; and towards &ldquo;maximalist content management system,&rdquo; which massively expands the number of things that can possibly go wrong.
+It’s gotten better over time, but the direction of its evolution is away from “blog” and towards “maximalist content management system,” which massively expands the number of things that can possibly go wrong.
 WordPress has a huge difference from Wikipedia and Facebook: rather than being a giant application hosted and administered by someone else, WordPress is a PHP application that you can download, install, and investigate for yourself.
-They&rsquo;ve invested a lot of effort in making that part easy.
-Unfortunately, &ldquo;easy PHP&rdquo; is pretty much always &ldquo;insecure PHP.&rdquo;
+They’ve invested a lot of effort in making that part easy.
+Unfortunately, “easy PHP” is pretty much always “insecure PHP.”
 So WordPress has a <a href="http://osvdb.org/search?search[vuln_title]=wordpress&amp;search[text_type]=alltext">long track record of nasty vulnerabilities</a>.
 It also has a well-earned reputation as a tool spammers love.
-Because it&rsquo;s a platform that you can set up yourself with no gatekeeper (compare to Movable Type, professionally hosted WordPress installations, or Blogger instances), it&rsquo;s become the best choice for spammers (who want to programmatically deploy large numbers of WordPress instances).
-Then there&rsquo;s the architecture matter: maybe this is just taste, but I find things like <code>rewind_posts()</code> inherently suspect (and there are <a href="http://www.reddit.com/r/lolphp/comments/1etq3n/wordpress_will_automatically_convert_foo_to_foo/">unproven allegations</a> of grotesque features lurking in the codebase).
-More substantially, there&rsquo;s mutable global state lurking all over the place (on top of the distressing action-at-a-distance issues PHP inherently has — see Eevee&rsquo;s writeup for more about that), the app buys into <a href="http://www.reddit.com/r/lolphp/comments/1dzvjk/wordpress_core_is_secure_stop_telling_people/c9vlcpi">the &ldquo;sanitize input&rdquo; voodoo</a>, and like most PHP apps, it requires a bunch of read-and-write access to its environment that other language ecosystems .
-Wordpress' engineering problems lead to persistent and near-intractable security problems, and those problems affect more than just the people running WordPress blogs.</p>
+Because it’s a platform that you can set up yourself with no gatekeeper (compare to Movable Type, professionally hosted WordPress installations, or Blogger instances), it’s become the best choice for spammers (who want to programmatically deploy large numbers of WordPress instances).
+Then there’s the architecture matter: maybe this is just taste, but I find things like <code>rewind_posts()</code> inherently suspect (and there are <a href="http://www.reddit.com/r/lolphp/comments/1etq3n/wordpress_will_automatically_convert_foo_to_foo/">unproven allegations</a> of grotesque features lurking in the codebase).
+More substantially, there’s mutable global state lurking all over the place (on top of the distressing action-at-a-distance issues PHP inherently has — see Eevee’s writeup for more about that), the app buys into <a href="http://www.reddit.com/r/lolphp/comments/1dzvjk/wordpress_core_is_secure_stop_telling_people/c9vlcpi">the “sanitize input” voodoo</a>, and like most PHP apps, it requires a bunch of read-and-write access to its environment that other language ecosystems .
+Wordpress’ engineering problems lead to persistent and near-intractable security problems, and those problems affect more than just the people running WordPress blogs.</p>
 
-<h3>The Superfund Site Of Programming Languages</h3>
-
+<h3 id="the-superfund-site-of-programming-languages">The Superfund Site Of Programming Languages</h3>
 <!-- Polluting the commons -->
 
-
-<p>Because of the friction discussed earlier, problems fixed or mitigated in new versions of PHP (tremendous improvements on versions like PHP4) have a very long half-life before they&rsquo;re no longer found in the wild.
-Obstacles to upgrading software don&rsquo;t have to be insurmountable to keep users on old versions, they just have to exist.
-There&rsquo;s a big difference between &ldquo;easy enough that people <em>can</em> do it&rdquo; and &ldquo;easy enough that people <em>actually</em> do it,&rdquo; and PHP is on the wrong side of that difference.
+<p>Because of the friction discussed earlier, problems fixed or mitigated in new versions of PHP (tremendous improvements on versions like PHP4) have a very long half-life before they’re no longer found in the wild.
+Obstacles to upgrading software don’t have to be insurmountable to keep users on old versions, they just have to exist.
+There’s a big difference between “easy enough that people <em>can</em> do it” and “easy enough that people <em>actually</em> do it,” and PHP is on the wrong side of that difference.
 The design &amp; usability world has known for a long time that if the right thing and the easy thing are different, your users will almost never do the right thing.
-PHP&rsquo;s legacy of technical debt means that maintaining PHP code has far too much friction for maintainers to always do the right thing.
-I throw the epithet &ldquo;avatar of technical debt&rdquo; at PHP sometimes, because this dynamic means that to use PHP at all is to incur a wallop of technical debt.
-Worse, this technical debt is almost always an <a href="http://en.wikipedia.org/wiki/Externality#Negative">externality</a>, a cost that the person writing the code doesn&rsquo;t have to pay.
+PHP’s legacy of technical debt means that maintaining PHP code has far too much friction for maintainers to always do the right thing.
+I throw the epithet “avatar of technical debt” at PHP sometimes, because this dynamic means that to use PHP at all is to incur a wallop of technical debt.
+Worse, this technical debt is almost always an <a href="http://en.wikipedia.org/wiki/Externality#Negative">externality</a>, a cost that the person writing the code doesn’t have to pay.
 Instead, <a href="https://phpmanualmasterpieces.tumblr.com/post/78455397098/nothing-is-deprecated-everything-is-permitted">the cost is borne by unknown future engineers and users</a>.
 Beware of externalities!
 If you are not paying the real, full costs of your decisions, <a href="http://en.wikipedia.org/wiki/Moral_hazard">you will be led to make worse decisions</a>.
-Because PHP fails so hugely at making the right thing easy, it tends to make the wrong thing the default — and the costs of dealing with the wrong thing are all too often externalized, whether that&rsquo;s from today&rsquo;s coder to the same person tomorrow, from an engineer to a sysadmin, or from the vendor to the users of a piece of software.</p>
+Because PHP fails so hugely at making the right thing easy, it tends to make the wrong thing the default — and the costs of dealing with the wrong thing are all too often externalized, whether that’s from today’s coder to the same person tomorrow, from an engineer to a sysadmin, or from the vendor to the users of a piece of software.</p>
 
-<p>That it&rsquo;s hard to update PHP projects wouldn&rsquo;t matter if those projects were only relevant to their creators and users.
+<p>That it’s hard to update PHP projects wouldn’t matter if those projects were only relevant to their creators and users.
 This is not the case: those projects are relevant to the public good.
 As programmers, do not create, modify, or use software in isolation.
 We interact with software in a social context, in a technological context, and in a networked context.
-Similar to how herd immunity in medicine means that the chance of catching a particular disease is unevenly distributed, software vulnerabilities are dangerous even to people who aren&rsquo;t running the affected software.
+Similar to how herd immunity in medicine means that the chance of catching a particular disease is unevenly distributed, software vulnerabilities are dangerous even to people who aren’t running the affected software.
 The most common thing that an attacker might do with a compromised machine is suborn its resources, using it to propagate further attacks (e.g. having it join a botnet).
-This is why it matters that PHP is so big and so bad: even if I don&rsquo;t write any PHP code and don&rsquo;t operate anything based on PHP (or on MySQL, its <a href="http://grimoire.ca/mysql/choose-something-else">co-conspirator in suckitude</a>), PHP is still a severe and frequent problem for me!</p>
+This is why it matters that PHP is so big and so bad: even if I don’t write any PHP code and don’t operate anything based on PHP (or on MySQL, its <a href="http://grimoire.ca/mysql/choose-something-else">co-conspirator in suckitude</a>), PHP is still a severe and frequent problem for me!</p>
 
 <p>In the recent past:</p>
 
 <ul>
-<li>A security researcher finds that of sites vulnerable to password dumps, <a href="http://blog.passwordresearch.com/2013/02/passwords-found-in-wild-for-january-2013.html">most are built on PHP</a>.</li>
-<li>A remote-code-execution vulnerability in two of the most popular WordPress plugins is discovered — and the subsequent patches have an <a href="http://hackertarget.com/running-wordpress-patch-your-plugins/">utterly dismal uptake rate</a>.</li>
-<li>There are a multitude of PHP-based server control panels that have deeply <a href="http://seclists.org/fulldisclosure/2013/Apr/139">disturbing security problems</a> of <a href="http://www.reddit.com/r/programming/comments/1gfve8/how_not_to_handle_a_critical_security/">grave severity</a>.</li>
-<li>A search on GitHub reveals a multitude of PHP projects open to a <a href="https://github.com/search?p=1&amp;q=extension%3Aphp+mysql_query+%24_GET&amp;ref=searchresults&amp;type=Code">trivial SQL injection</a> attack.</li>
-<li>A bug in parsing URLs — surely an action that should be a core competency for a &ldquo;web language&rdquo;! — turns out to be <a href="https://www.idontplaydarts.com/2013/06/http-parameter-pollution-with-cookies-in-php/">implemented in the shoddiest way</a>.</li>
+  <li>A security researcher finds that of sites vulnerable to password dumps, <a href="http://blog.passwordresearch.com/2013/02/passwords-found-in-wild-for-january-2013.html">most are built on PHP</a>.</li>
+  <li>A remote-code-execution vulnerability in two of the most popular WordPress plugins is discovered — and the subsequent patches have an <a href="http://hackertarget.com/running-wordpress-patch-your-plugins/">utterly dismal uptake rate</a>.</li>
+  <li>There are a multitude of PHP-based server control panels that have deeply <a href="http://seclists.org/fulldisclosure/2013/Apr/139">disturbing security problems</a> of <a href="http://www.reddit.com/r/programming/comments/1gfve8/how_not_to_handle_a_critical_security/">grave severity</a>.</li>
+  <li>A search on GitHub reveals a multitude of PHP projects open to a <a href="https://github.com/search?p=1&amp;q=extension%3Aphp+mysql_query+%24_GET&amp;ref=searchresults&amp;type=Code">trivial SQL injection</a> attack.</li>
+  <li>A bug in parsing URLs — surely an action that should be a core competency for a “web language”! — turns out to be <a href="https://www.idontplaydarts.com/2013/06/http-parameter-pollution-with-cookies-in-php/">implemented in the shoddiest way</a>.</li>
 </ul>
 
-
-<p>Returning to WordPress in particular, WordPress' popularity exacerbates these security problems: WordPress has become a platform as much as it is an app.
+<p>Returning to WordPress in particular, WordPress’ popularity exacerbates these security problems: WordPress has become a platform as much as it is an app.
 Going from app to platform is both difficult in general and difficult particularly in the security context.
-A WordPress setup&rsquo;s susceptibility to attack comes not just from problems in code its users write nor just from problems in code that WordPress' creators write, but by those potential problems multiplied by <a href="http://thedailywtf.com/Articles/Pot-o-Gold.aspx">the worst code</a> in any plugin or theme being used.
+A WordPress setup’s susceptibility to attack comes not just from problems in code its users write nor just from problems in code that WordPress’ creators write, but by those potential problems multiplied by <a href="http://thedailywtf.com/Articles/Pot-o-Gold.aspx">the worst code</a> in any plugin or theme being used.
 There are a huge number of WordPress themes and plugins, and they can do anything they like.
-For example, there&rsquo;s <a href="http://wordpress.org/plugins/repress/">RePress</a>, which staples a web proxy onto the side of your blog for the use of folks in locales where services like Google and Wikipedia are blocked.
-Whatever one thinks of RePress, it&rsquo;s only possible for it to exist because WordPress just picks up plugin code and lets it do whatever it asks.
+For example, there’s <a href="http://wordpress.org/plugins/repress/">RePress</a>, which staples a web proxy onto the side of your blog for the use of folks in locales where services like Google and Wikipedia are blocked.
+Whatever one thinks of RePress, it’s only possible for it to exist because WordPress just picks up plugin code and lets it do whatever it asks.
 WordPress is a particularly acute example because its target audience is non-engineering users.
 Someone who sets up an instance of MediaWiki, Joomla, or Drupal faces a higher barrier to entry than a WordPress user, who is the beneficiary of vigorous and successful efforts to make WordPress accessible to a wide audience.
-Unfortunately, that experience of easy-to-install software ends up re-enacting the Windows 9x era: it&rsquo;s very easy to install things that create opportunities for attackers, and almost impossible to tell ahead of time which things are safe to install.
-In WordPress' case, some of its most high-profile plugins, like the <a href="http://www.hyphenet.com/blog/2013/02/01/hackers-still-scanning-for-vulnerable-timthumb-scripts/">TimThumb image resizer</a> and the popular caching plugins, have seen remote-code-execution vulnerabilities that can be exploited at scale, by botnets — and which are particularly likely to succeed against users of WordPress whose blogs and their upkeep are not an every-waking-moment concern.</p>
+Unfortunately, that experience of easy-to-install software ends up re-enacting the Windows 9x era: it’s very easy to install things that create opportunities for attackers, and almost impossible to tell ahead of time which things are safe to install.
+In WordPress’ case, some of its most high-profile plugins, like the <a href="http://www.hyphenet.com/blog/2013/02/01/hackers-still-scanning-for-vulnerable-timthumb-scripts/">TimThumb image resizer</a> and the popular caching plugins, have seen remote-code-execution vulnerabilities that can be exploited at scale, by botnets — and which are particularly likely to succeed against users of WordPress whose blogs and their upkeep are not an every-waking-moment concern.</p>
 
-<p>I worked with <a href="http://seclists.org/fulldisclosure/2009/Feb/255">Magento</a> professionally for a while, and one thing that gave me massive creepy-crawlies about it was that it has the same kind of wild and problematic plugin ecosystem as WordPress, but centered around an app that&rsquo;s meant to be handling people&rsquo;s credit-card information.
-&ldquo;All the security of WordPress, also people use it to handle money!&rdquo; does not inspire confidence (though with eBay now running the show, there&rsquo;s a good chance that Magento will have the budget to shape up security-wise).</p>
+<p>I worked with <a href="http://seclists.org/fulldisclosure/2009/Feb/255">Magento</a> professionally for a while, and one thing that gave me massive creepy-crawlies about it was that it has the same kind of wild and problematic plugin ecosystem as WordPress, but centered around an app that’s meant to be handling people’s credit-card information.
+“All the security of WordPress, also people use it to handle money!” does not inspire confidence (though with eBay now running the show, there’s a good chance that Magento will have the budget to shape up security-wise).</p>
 
-<p>If the problems I&rsquo;ve been talking about only affected the people actually running that software, I&rsquo;d care far less.
-It&rsquo;s important for people have to the right to make their own dang mistakes.
-But these things don&rsquo;t happen in a vacuum.
+<p>If the problems I’ve been talking about only affected the people actually running that software, I’d care far less.
+It’s important for people have to the right to make their own dang mistakes.
+But these things don’t happen in a vacuum.
 Facebook is the ultimate example: <a href="http://insecure.org/search.html?q=facebook">a steady trickle of facebook vulnerabilities</a> make their way to light over time, and there are over a billion Facebook users who can be very directly affected by them.
 Every unpatched MediaWiki install sitting around, every forgotten WordPress instance, every homebrew app quietly chugging away, is susceptible to becoming part of a botnet and worsening the state of the entire Internet.
-Every machine that gets rooted, is another machine conducting attacks of one kind or another — and even all of <em>my</em> own servers run on an imaginary free-ponies-with-awesome-sparkles-and-no-security-vulnerabilities-ever language, a legion of zombie PHP-running boxes can still just throw denial-of-service attacks my way until it doesn&rsquo;t matter what I&rsquo;m running.</p>
+Every machine that gets rooted, is another machine conducting attacks of one kind or another — and even all of <em>my</em> own servers run on an imaginary free-ponies-with-awesome-sparkles-and-no-security-vulnerabilities-ever language, a legion of zombie PHP-running boxes can still just throw denial-of-service attacks my way until it doesn’t matter what I’m running.</p>
 
 <p>This is why it <em>matters</em> that PHP is both big and bad: by being both ubiquitous and insecure, it pollutes the commons.
-It adds unncessary cost and friction to any project we undertake that&rsquo;s connected to the Internet — which is to say, to everything.
-Every server that connects to the Internet has its attack surface artificially enlarged because PHP&rsquo;s own attack surface is so vast.
-Programming doesn&rsquo;t happen in a vacuum, it happens in an ecosystem — an ecosystem that PHP-based systems have a long and terrifying track record of dumping nuclear waste into.</p>
+It adds unncessary cost and friction to any project we undertake that’s connected to the Internet — which is to say, to everything.
+Every server that connects to the Internet has its attack surface artificially enlarged because PHP’s own attack surface is so vast.
+Programming doesn’t happen in a vacuum, it happens in an ecosystem — an ecosystem that PHP-based systems have a long and terrifying track record of dumping nuclear waste into.</p>
 
-<h3>Public Hazard</h3>
-
+<h3 id="public-hazard">Public Hazard</h3>
 <!-- PHP is a public hazard -->
 
-
-<p>Its being sub-optimal, distateful to me, or outright poorly designed, wouldn&rsquo;t <em>remotely</em> justify my spending time and heartache on telling people not to use PHP.
-Likewise, I don&rsquo;t think that PHP will make you a worse programmer except in the extremely boring sense that it&rsquo;ll waste a lot of your time and thus make it harder to rack up the quantities of deliberate-focused-practice time that one needs for mastery, which is absolutely not a sense worth picking a fight over: everyone has a right to their own yak-shaving.
-There are plenty of people out there being total jackasses &ldquo;in defense of&rdquo; PHP, but those people are freely deciding to be jackasses: their social deficiencies are very much separate from their choice of programming language (plus, Ruby is an amazing language and its community has no shortage of tremendous jackasses).
-As a programmer who cares about craft and tools, I think other languages will reward your time &amp; effort far better than PHP, but if you don&rsquo;t use those, oh well.
+<p>Its being sub-optimal, distateful to me, or outright poorly designed, wouldn’t <em>remotely</em> justify my spending time and heartache on telling people not to use PHP.
+Likewise, I don’t think that PHP will make you a worse programmer except in the extremely boring sense that it’ll waste a lot of your time and thus make it harder to rack up the quantities of deliberate-focused-practice time that one needs for mastery, which is absolutely not a sense worth picking a fight over: everyone has a right to their own yak-shaving.
+There are plenty of people out there being total jackasses “in defense of” PHP, but those people are freely deciding to be jackasses: their social deficiencies are very much separate from their choice of programming language (plus, Ruby is an amazing language and its community has no shortage of tremendous jackasses).
+As a programmer who cares about craft and tools, I think other languages will reward your time &amp; effort far better than PHP, but if you don’t use those, oh well.
 I have zero interest in picking a fight over PHP on that basis.
 As someone who cares about the Internet being safe and functional enough for me to buy music, check my credit card balance, and communicate with my friends, I want you to stop using PHP and replace existing PHP code — like, <strong>yesterday</strong> — and I think you should be restrained from using PHP for new projects.
-I&rsquo;m willing to pick a fight about PHP on the basis of of its decade-and-counting track record of design problems that cause security problems that cause &ldquo;you don&rsquo;t write or use PHP but this is going to mess up your day anyhow!&rdquo; problems.</p>
+I’m willing to pick a fight about PHP on the basis of of its decade-and-counting track record of design problems that cause security problems that cause “you don’t write or use PHP but this is going to mess up your day anyhow!” problems.</p>
 
-<p>Software can&rsquo;t be isolated from its social context any more than it can be isolated from its technological context.
+<p>Software can’t be isolated from its social context any more than it can be isolated from its technological context.
 The social and technological context of modern software is the Internet.
 With a large enough userbase, any software project is <em>de facto</em> infrastructure (especially if it participates in the Internet).
 As builders of infrastructure, we have a moral responsibility to not build hazardous, shoddy infrastructure because doing so hurts everyone who uses or depends on that infrastructure, even indirectly.
-PHP&rsquo;s track record demonstrates that it is a grossly deficient tool for building infrastructure.
+PHP’s track record demonstrates that it is a grossly deficient tool for building infrastructure.
 When you undertake to build or maintain infrastructure, you take on a responsibility to everyone affected by the quality &amp; functionality of that infrastructure.
-Choosing to use grossly deficient tools like PHP is irresponsible and unethical for builders of infrastructure, especially if it&rsquo;s justified in terms of ease or of being able to build a thing swiftly.
+Choosing to use grossly deficient tools like PHP is irresponsible and unethical for builders of infrastructure, especially if it’s justified in terms of ease or of being able to build a thing swiftly.
 By definition, infrastructure projects require that you prioritize durability and certainty over ease and swiftness!
-Nor is there an argument to be had on a &ldquo;the other tools are also flawed&rdquo; basis: none of the other tools have PHP&rsquo;s decade-long track record of massive deficiency, nor do their maintainers have the indifference towards fixing deficiencies that PHP&rsquo;s maintainers display.
-It is only by combining its track record of problems with the long reach that those problems have, that PHP crosses the threshold of &ldquo;should people be restrained from using this tool?&rdquo;
+Nor is there an argument to be had on a “the other tools are also flawed” basis: none of the other tools have PHP’s decade-long track record of massive deficiency, nor do their maintainers have the indifference towards fixing deficiencies that PHP’s maintainers display.
+It is only by combining its track record of problems with the long reach that those problems have, that PHP crosses the threshold of “should people be restrained from using this tool?”
 No-one should lower the requirements for that kind of thing: we should be very, very wary of doing so.
-PHP has met those requirements: there are no other tools in such wide use whose problems are so many, are inflicted on so many people beyond the tool&rsquo;s users, have gone unfixed for so long, have so few virtues to excuse them, and are the responsibility of maintainers who have done so little to fix them.
-Nothing short of that should prompt the programming community to say &ldquo;no, this tool is not okay to use, stop.&rdquo;</p>
+PHP has met those requirements: there are no other tools in such wide use whose problems are so many, are inflicted on so many people beyond the tool’s users, have gone unfixed for so long, have so few virtues to excuse them, and are the responsibility of maintainers who have done so little to fix them.
+Nothing short of that should prompt the programming community to say “no, this tool is not okay to use, stop.”</p>
 
-<p>How to attain the elimination of PHP is a question I don&rsquo;t have a good answer for, and it&rsquo;s obvious that the programming community as a whole hasn&rsquo;t yet come up with a good answer.
-It&rsquo;s especially important to demand that a scheme for reducing &amp; eliminating PHP not make it more difficult to get into programming.
-PHP offers &ldquo;you can just write code and see it work!&rdquo; and that&rsquo;s a hugely, hugely important feature for making programming accessible — the problem is that PHP offers this feature at a ruinously high cost and smudges the ink on the metaphorical price tag.
-I also think it&rsquo;s going to be very difficult in general: I&rsquo;ve been comparing PHP to pollution-causing industrial tactics here, but America has not done at all a good job of holding people who cause pollution responsible for its harmful effects.</p>
+<p>How to attain the elimination of PHP is a question I don’t have a good answer for, and it’s obvious that the programming community as a whole hasn’t yet come up with a good answer.
+It’s especially important to demand that a scheme for reducing &amp; eliminating PHP not make it more difficult to get into programming.
+PHP offers “you can just write code and see it work!” and that’s a hugely, hugely important feature for making programming accessible — the problem is that PHP offers this feature at a ruinously high cost and smudges the ink on the metaphorical price tag.
+I also think it’s going to be very difficult in general: I’ve been comparing PHP to pollution-causing industrial tactics here, but America has not done at all a good job of holding people who cause pollution responsible for its harmful effects.</p>
 
-<p>I look forward to a future where we&rsquo;ve invested the collective effort in building tools that fit our hands gracefully and that don&rsquo;t sabotage our efforts to build durable, predictable, world-improving infrastructure.
+<p>I look forward to a future where we’ve invested the collective effort in building tools that fit our hands gracefully and that don’t sabotage our efforts to build durable, predictable, world-improving infrastructure.
 Software has both a social and a technological context: this means that the apparently-social problem of eliminating PHP also is a technical problem.
-The technical problem is &ldquo;how do we build something better than PHP?&rdquo; and the tremendous numbers of beautiful &amp; useful solutions we&rsquo;ve already come up with for that problem, give me every confidence that we can handle that part.
-Now let&rsquo;s work on the social part.</p>
+The technical problem is “how do we build something better than PHP?” and the tremendous numbers of beautiful &amp; useful solutions we’ve already come up with for that problem, give me every confidence that we can handle that part.
+Now let’s work on the social part.</p>
 
 <p><em>Note: this post was updated in summer 2016.</em></p>
 ]]></content>
@@ -367,114 +612,114 @@ Now let&rsquo;s work on the social part.</p>
     <id>http://stronglyemergent.com//blog/2013/first-date-with-ruby</id>
     
     <content type="html"><![CDATA[<p>Last night I took a notion into my head and wound up spending a solid few hours with Ruby.
-I&rsquo;m happy with how that went! There&rsquo;s some first-time-with-a-new-language friction, but nothing out of the ordinary.
-Here&rsquo;s what I came up with, and afterwards, why I chose that and what I think it shows that I accomplished that.</p>
+I’m happy with how that went! There’s some first-time-with-a-new-language friction, but nothing out of the ordinary.
+Here’s what I came up with, and afterwards, why I chose that and what I think it shows that I accomplished that.</p>
 
-<p><noscript><pre>require &#39;cgi&#39;
+<noscript><pre>require &#39;cgi&#39;
 require &#39;json&#39;
 require &#39;net/http&#39;
-require &#39;uri&#39;</p>
+require &#39;uri&#39;
 
-<p>module Jekyll
-  class MusicLink &lt; Liquid::Tag</p>
+module Jekyll
+  class MusicLink &lt; Liquid::Tag
 
-<pre><code>def initialize(tag_name, contents, tokens)
-  super
-  @contents = contents
-end
-
-def render(context)
-  @affiliateCode = &amp;#39;secret&amp;#39; # Fill in yours!
-  page = context.environments.first[&amp;#39;page&amp;#39;]
-  if page[&amp;#39;music-artist&amp;#39;] &amp;amp;&amp;amp; page[&amp;#39;music-track&amp;#39;]
-    music_url, music_string = getMusic(page[&amp;#39;music-artist&amp;#39;], page[&amp;#39;music-track&amp;#39;])
-    return %(&amp;lt;span class=&amp;#39;music-box&amp;#39;&amp;gt;Music: &amp;lt;a class=&amp;#39;music-link&amp;#39; href=&amp;quot;#{music_url}&amp;quot;&amp;gt;#{music_string}&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;)
-  else
-    return %()
-  end
-end
-
-def makeItunesTarget(artist, track)
-  iTunesURL = URI(&amp;quot;https://itunes.apple.com/search&amp;quot;)
-  iTunesParams = {
-    :country =&amp;gt; &amp;quot;us&amp;quot;, :media =&amp;gt; &amp;quot;music&amp;quot;,
-    :limit =&amp;gt; &amp;quot;5&amp;quot;, :entity =&amp;gt; &amp;quot;musicTrack&amp;quot;,
-    :term =&amp;gt; artist + &amp;quot; &amp;quot; + track,
-  }
-  iTunesURL.query = URI.encode_www_form(iTunesParams)
-  return iTunesURL
-end
-
-def getFromItunes(iTunesURL)
-  http = Net::HTTP.new(iTunesURL.host, iTunesURL.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-
-  request = Net::HTTP::Get.new(iTunesURL.request_uri)
-  response = http.request(request)
-  if response.code == &amp;quot;200&amp;quot;
-    jsonResponse = JSON.load(response.body)
-    if jsonResponse[&amp;#39;resultCount&amp;#39;] == 0
-      jsonResponse = false
+    def initialize(tag_name, contents, tokens)
+      super
+      @contents = contents
     end
-  else
-    jsonResponse = false
+
+    def render(context)
+      @affiliateCode = &#39;secret&#39; # Fill in yours!
+      page = context.environments.first[&#39;page&#39;]
+      if page[&#39;music-artist&#39;] &amp;&amp; page[&#39;music-track&#39;]
+        music_url, music_string = getMusic(page[&#39;music-artist&#39;], page[&#39;music-track&#39;])
+        return %(&lt;span class=&#39;music-box&#39;&gt;Music: &lt;a class=&#39;music-link&#39; href=&quot;#{music_url}&quot;&gt;#{music_string}&lt;/a&gt;&lt;/span&gt;)
+      else
+        return %()
+      end
+    end
+
+    def makeItunesTarget(artist, track)
+      iTunesURL = URI(&quot;https://itunes.apple.com/search&quot;)
+      iTunesParams = {
+        :country =&gt; &quot;us&quot;, :media =&gt; &quot;music&quot;,
+        :limit =&gt; &quot;5&quot;, :entity =&gt; &quot;musicTrack&quot;,
+        :term =&gt; artist + &quot; &quot; + track,
+      }
+      iTunesURL.query = URI.encode_www_form(iTunesParams)
+      return iTunesURL
+    end
+
+    def getFromItunes(iTunesURL)
+      http = Net::HTTP.new(iTunesURL.host, iTunesURL.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+
+      request = Net::HTTP::Get.new(iTunesURL.request_uri)
+      response = http.request(request)
+      if response.code == &quot;200&quot;
+        jsonResponse = JSON.load(response.body)
+        if jsonResponse[&#39;resultCount&#39;] == 0
+          jsonResponse = false
+        end
+      else
+        jsonResponse = false
+      end
+      return jsonResponse
+    end
+
+    def makeAnchorFromItunesData(iTunesJSON)
+      unless iTunesJSON
+        return iTunesJSON, iTunesJSON
+      end
+
+      primaryResult = iTunesJSON[&#39;results&#39;].first
+      if @affiliateCode
+        urlRegex = /(https:\/\/itunes\.apple\.com\/[^?]+\?[^&amp;]+).+/
+        urlReplacement = &#39;\1\2&amp;partnerId=30&amp;siteID=&#39; + @affiliateCode
+        affiliatedTrackUrl= primaryResult[&#39;trackViewUrl&#39;].sub(urlRegex, urlReplacement)
+        primaryResult[&#39;trackViewUrl&#39;] = affiliatedTrackUrl
+      end
+
+      anchorURL = primaryResult[&#39;trackViewUrl&#39;]
+      anchorString = CGI.escapeHTML(&quot;%s - %s&quot; % [primaryResult[&#39;artistName&#39;], primaryResult[&#39;trackName&#39;]])
+      return anchorURL, anchorString
+    end
+
+    def getMusic(artist_name, track_name)
+      music_url, music_string = makeAnchorFromItunesData(getFromItunes(makeItunesTarget(artist_name, track_name)))
+      return music_url, music_string
+    end
+
   end
-  return jsonResponse
 end
 
-def makeAnchorFromItunesData(iTunesJSON)
-  unless iTunesJSON
-    return iTunesJSON, iTunesJSON
-  end
-
-  primaryResult = iTunesJSON[&amp;#39;results&amp;#39;].first
-  if @affiliateCode
-    urlRegex = /(https:\/\/itunes\.apple\.com\/[^?]+\?[^&amp;amp;]+).+/
-    urlReplacement = &amp;#39;\1\2&amp;amp;partnerId=30&amp;amp;siteID=&amp;#39; + @affiliateCode
-    affiliatedTrackUrl= primaryResult[&amp;#39;trackViewUrl&amp;#39;].sub(urlRegex, urlReplacement)
-    primaryResult[&amp;#39;trackViewUrl&amp;#39;] = affiliatedTrackUrl
-  end
-
-  anchorURL = primaryResult[&amp;#39;trackViewUrl&amp;#39;]
-  anchorString = CGI.escapeHTML(&amp;quot;%s - %s&amp;quot; % [primaryResult[&amp;#39;artistName&amp;#39;], primaryResult[&amp;#39;trackName&amp;#39;]])
-  return anchorURL, anchorString
-end
-
-def getMusic(artist_name, track_name)
-  music_url, music_string = makeAnchorFromItunesData(getFromItunes(makeItunesTarget(artist_name, track_name)))
-  return music_url, music_string
-end
-</code></pre>
-
-<p>  end
-end</p>
-
-<p>Liquid::Template.register_tag(&#39;music&#39;, Jekyll::MusicLink)
-</pre></noscript><script src="https://gist.github.com/brighid/c3d19f2c6749fbec30ed.js?file=itms_music_link.rb"> </script></p>
+Liquid::Template.register_tag(&#39;music&#39;, Jekyll::MusicLink)
+</pre></noscript>
+<script src="https://gist.github.com/brighid/c3d19f2c6749fbec30ed.js?file=itms_music_link.rb"> </script>
 
 <p>This creates a new Liquid tag, <code>{% music %}</code>, which can be inserted in page templates.
 I added it to my <code>footer.html</code> after the byline, timestamp, and categories.
-The tag checks whether the post&rsquo;s YAML front-matter has data for a musician and a track name.
+The tag checks whether the post’s YAML front-matter has data for a musician and a track name.
 If the post has that data, the plugin attempts to create a link to the iTunes Store for the given track.
-With <code>makeItunesTarget()</code> it puts together a URL that is a query to the <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands off the response to the standard library&rsquo;s JSON parser, and with <code>makeAnchorFromItunesData()</code> it takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the tag&rsquo;s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it&rsquo;ll be inserted).
-Finally, there&rsquo;s a convenience function, <code>getMusic()</code>, that just composes the previous three.</p>
+With <code>makeItunesTarget()</code> it puts together a URL that is a query to the <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands off the response to the standard library’s JSON parser, and with <code>makeAnchorFromItunesData()</code> it takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the tag’s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it’ll be inserted).
+Finally, there’s a convenience function, <code>getMusic()</code>, that just composes the previous three.</p>
 
-<p>Part of why this worked well is that it&rsquo;s another project with limited scope: I had a specific objective in mind, so I was able to keep moving gradually towards it.
-However, that limited scope was a way of making progress towards the broad goal of &ldquo;learn Ruby&rdquo; and also took on the medium-scope goal of &ldquo;learn the iTunes Store Search API.&rdquo;
-As a practical matter, learning to work with other people&rsquo;s APIs, whether they&rsquo;re libraries, services, or daemons, is an important skill for a working programmer; toy projects that include cultivating that skill are good uses of my time.
-Learning new languages is also a career-long thing: for all the talk of Lisp being &ldquo;the hundred-year language,&rdquo; no-one now working as a programmer will be programming in just one language for the rest of their days.
+<p>Part of why this worked well is that it’s another project with limited scope: I had a specific objective in mind, so I was able to keep moving gradually towards it.
+However, that limited scope was a way of making progress towards the broad goal of “learn Ruby” and also took on the medium-scope goal of “learn the iTunes Store Search API.”
+As a practical matter, learning to work with other people’s APIs, whether they’re libraries, services, or daemons, is an important skill for a working programmer; toy projects that include cultivating that skill are good uses of my time.
+Learning new languages is also a career-long thing: for all the talk of Lisp being “the hundred-year language,” no-one now working as a programmer will be programming in just one language for the rest of their days.
 There are shell scripts and libraries and wrappers: there is a fragmented world that despite the friction of fragmentation, would not actually be better-served by a language monoculture.
 In addition, there are plenty of exciting things out there whose roots are in Ruby, so I was enthusiastic about picking up a smattering of Ruby.</p>
 
-<p>I&rsquo;m definitely fond of Ruby so far.
-Part of this is because I&rsquo;m getting to the point where I&rsquo;m seeing parallels with other languages and able to make good guesses about how a new language will behave.
-I was able to guess from reading source &ldquo;oh okay, Ruby is one of the languages where the return value of a function, if not explicit, is the value of the last statement evaluated in its body,&rdquo; was pleasantly surprised that it has the same tuple-packing return-multiple-values feature as Python, and noticed &ldquo;oh hey neat, there&rsquo;s a Scheme-like <code>function!()</code> naming convention for functions that mutate their parameters.&rdquo;
-So that&rsquo;s all good stuff.</p>
+<p>I’m definitely fond of Ruby so far.
+Part of this is because I’m getting to the point where I’m seeing parallels with other languages and able to make good guesses about how a new language will behave.
+I was able to guess from reading source “oh okay, Ruby is one of the languages where the return value of a function, if not explicit, is the value of the last statement evaluated in its body,” was pleasantly surprised that it has the same tuple-packing return-multiple-values feature as Python, and noticed “oh hey neat, there’s a Scheme-like <code>function!()</code> naming convention for functions that mutate their parameters.”
+So that’s all good stuff.</p>
 
-<p>Part of choosing Ruby, too, is that I&rsquo;m currently blogulating via Octopress, which is built on Ruby.
-Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that I&rsquo;ve chosen it, I want to have a grasp of how it works.
-That means learning Ruby and tinkering&mdash;which I&rsquo;m looking forward to.</p>
+<p>Part of choosing Ruby, too, is that I’m currently blogulating via Octopress, which is built on Ruby.
+Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that I’ve chosen it, I want to have a grasp of how it works.
+That means learning Ruby and tinkering—which I’m looking forward to.</p>
 
 <p>As a supplemental note, if this stuff sounds to you like a good attitude for a programmer to have, you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</a>.</p>
 ]]></content>
@@ -490,19 +735,21 @@ That means learning Ruby and tinkering&mdash;which I&rsquo;m looking forward to.
     <id>http://stronglyemergent.com//blog/2013/dont-let-survivorship-bias-lie-to-you</id>
     
     <content type="html">
-        <![CDATA[<blockquote><p>In an interview recently,
-David Kirtley pointed out that in business school there&rsquo;s this point  made that if you interview rich people who have won the lottery,
+        <![CDATA[<blockquote>
+  <p>In an interview recently,
+David Kirtley pointed out that in business school there’s this point  made that if you interview rich people who have won the lottery,
 you might come to believe that playing the lottery is the only way to become rich.
 I thought that was interesting.
-One of the things I&rsquo;m constantly trying to point out is that we&rsquo;re not doing nearly enough to highlight both median and failure modes,
-because that&rsquo;s where the real lessons lie.
+One of the things I’m constantly trying to point out is that we’re not doing nearly enough to highlight both median and failure modes,
+because that’s where the real lessons lie.
 As for myself, I find message boards where new writers struggle to sell more than a few copies interesting,
-and where I harvest data about the low end.</p></blockquote>
+and where I harvest data about the low end.</p>
+</blockquote>
 
-<p>Tobias Buckell is writing for writers&mdash;
+<p>Tobias Buckell is writing for writers—
 but as someone with both a writer-brain and an engineer-brain, I read him as someone talking about startups as well.
 Looking at the home-run billion-dollar-valuation startups will certainly tell you some things worth knowing,
-but it won&rsquo;t and can&rsquo;t tell you <em>all</em> the things worth knowing.
+but it won’t and can’t tell you <em>all</em> the things worth knowing.
 There are also a lot of things worth knowing that you will only find out by becoming a student of failure.</p>
 
 <p>This is part of what calls to me about Lean Startup stuff,
@@ -523,7 +770,7 @@ Life is not all success, and one of the things that you have to do to set yourse
     <id>http://stronglyemergent.com//blog/2013/a-real-thing-that-exists</id>
     
     <content type="html">
-        <![CDATA[<p>An Afro-Celtic fusion cusine food truck named &ldquo;ÉireTrea.&rdquo; Oh, San Francisco. &hearts;</p>
+        <![CDATA[<p>An Afro-Celtic fusion cusine food truck named “ÉireTrea.” Oh, San Francisco. ♥</p>
 <a rel="full-article" href="http://stronglyemergent.com//blog/2013/a-real-thing-that-exists/">Permalink</a>]]>
     </content>
     
@@ -539,11 +786,11 @@ Life is not all success, and one of the things that you have to do to set yourse
     
     <content type="html"><![CDATA[<p>One of the things that a startup needs is a story.
 Trust me (and Seth Godin), you desperately need a story.
-The fact that you need a story is a whole genre of blog post, but right now I&rsquo;m here to share a very short anecdote about it.</p>
+The fact that you need a story is a whole genre of blog post, but right now I’m here to share a very short anecdote about it.</p>
 
-<p>Here is how you can tell that stories get into people&rsquo;s heads:
-if you ask people, &ldquo;Are vampires real?&rdquo; they will answer No.
-But if you ask those same people &ldquo;Can vampires can be killed with a wooden stake?&rdquo; they will answer Yes.
+<p>Here is how you can tell that stories get into people’s heads:
+if you ask people, “Are vampires real?” they will answer No.
+But if you ask those same people “Can vampires can be killed with a wooden stake?” they will answer Yes.
 <em>That</em> is why stories matter.</p>
 
 <p>(<a href="http://www.patheos.com/blogs/slacktivist/2008/10/08/false-witnesses-2/">h/t to Fred Clark</a> for the vampire question)</p>
@@ -559,46 +806,46 @@ But if you ask those same people &ldquo;Can vampires can be killed with a wooden
     <updated>2013-03-24T09:15:00-07:00</updated>
     <id>http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb</id>
     
-    <content type="html"><![CDATA[<p>Today&rsquo;s JavaScript Rehab patient is the GardenWeb forum.
-I&rsquo;m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
-At the time of writing, here&rsquo;s what it looks like:</p>
+    <content type="html"><![CDATA[<p>Today’s JavaScript Rehab patient is the GardenWeb forum.
+I’m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
+At the time of writing, here’s what it looks like:</p>
 
-<p><img class="center" src="http://stronglyemergent.com//images/screenshot_gardenweb.png" title="&#34;A screenshot of a thread on the GardenWeb forum.&#34;" alt="&#34;A screenshot of a thread on the GardenWeb forum.&#34;"></p>
+<p><img class="center" src="http://stronglyemergent.com//images/screenshot_gardenweb.png" title="&#34;A screenshot of a thread on the GardenWeb forum.&#34;" alt="&#34;A screenshot of a thread on the GardenWeb forum.&#34;" /></p>
 
 <p>My problem with this starts with their <code>&lt;noscript&gt;</code> block:
-it says &ldquo;JavaScript must be enabled for the correct page display&rdquo; and that&rsquo;s a bad sign.
+it says “JavaScript must be enabled for the correct page display” and that’s a bad sign.
 It indicates that the people who wrote this code have grasped the wrong end of the stick.
 If your page does not display correctly without JavaScript, you have already failed.
-You might need to adjust your definition of &ldquo;correctly&rdquo;&mdash;
-for example, it&rsquo;s difficult to define what it&rsquo;s &ldquo;correct&rdquo; for Google Maps to do without JavaScript.
-But it&rsquo;s not difficult for this site: it&rsquo;s a dang discussion forum.
+You might need to adjust your definition of “correctly”—
+for example, it’s difficult to define what it’s “correct” for Google Maps to do without JavaScript.
+But it’s not difficult for this site: it’s a dang discussion forum.
 Its purpose is to <em>display text.</em>
-This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich&rsquo;s eye.</p>
+This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich’s eye.</p>
 
 <p>I end up saying this a lot in the JavaScript Rehab context:
-if you can&rsquo;t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
+if you can’t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
 also your keyboard should be taken away.</p>
 
-<p>I won&rsquo;t get too exercised over the clumsy prose of the message (<em>&ldquo;for the correct page display&rdquo;</em>? Ugh.):
-it just merits mentioning that if you&rsquo;re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
-What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner&rsquo;s attention to detail.
-A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it&rsquo;s not like they just didn&rsquo;t have time to get around to it
-(and judging by how often I see <code>cgi-bin</code> in their URLs, I&rsquo;m betting that there&rsquo;s a strong continuity between the 1995 version of the site and the 2013 version).</p>
+<p>I won’t get too exercised over the clumsy prose of the message (<em>“for the correct page display”</em>? Ugh.):
+it just merits mentioning that if you’re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
+What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner’s attention to detail.
+A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it’s not like they just didn’t have time to get around to it
+(and judging by how often I see <code>cgi-bin</code> in their URLs, I’m betting that there’s a strong continuity between the 1995 version of the site and the 2013 version).</p>
 
-<p>What really gets me cranky, though, is that by and large the site <em>does</em> &ldquo;the correct page display&rdquo; without JavaScript enabled.
-What it <em>doesn&rsquo;t</em> correctly display is advertising.
+<p>What really gets me cranky, though, is that by and large the site <em>does</em> “the correct page display” without JavaScript enabled.
+What it <em>doesn’t</em> correctly display is advertising.
 In the screenshot above, a little poking at the page source reveals that the big blank space on the right is intended as space for advertising.
 So what the message at the top of the page is actually saying, is
-&ldquo;we&rsquo;re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.&rdquo;
+“we’re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.”
 Fuck that.</p>
 
 <p>GardenWeb, you are JavaScript addicts.
 Go to rehab.</p>
 
-<p><br>
-<br></p>
+<p><br />
+<br /></p>
 
-<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>&mdash;
+<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>—
 please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-whose-convenience/">the first JavaScript Rehab post</a> to see why I get so cranky about JavaScript.</p>
 ]]></content>
     
@@ -612,44 +859,44 @@ please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-
     <updated>2013-03-21T20:16:00-07:00</updated>
     <id>http://stronglyemergent.com//blog/2013/weekend-project-affiliate-dot-el</id>
     
-    <content type="html"><![CDATA[<p>Since I&rsquo;m searching for a new job (<a href="http://careers.stackoverflow.com/stronglyemergent">check out my CV on Stack Overflow Careers!</a>),
-I&rsquo;ve been trying to gin up little personal projects and to extract what publishable code I can from my work projects.
+    <content type="html"><![CDATA[<p>Since I’m searching for a new job (<a href="http://careers.stackoverflow.com/stronglyemergent">check out my CV on Stack Overflow Careers!</a>),
+I’ve been trying to gin up little personal projects and to extract what publishable code I can from my work projects.
 The first result of this is <a href="https://github.com/brighid/affiliate.el">affiliate.el</a>.
-It&rsquo;s a small project - very small - but it has virtues that I think make it a good component of a GitHub portfolio.</p>
+It’s a small project - very small - but it has virtues that I think make it a good component of a GitHub portfolio.</p>
 
 <p>First, the smallness is advantage: it is a project with a <em>small, well-defined scope</em>.
-That&rsquo;s important.
+That’s important.
 Projects with a large scope are prone to taking a long time, and projects with a poorly-defined scope are almost by definition a bad idea
 (making a note that fail-fast rapid-iteration work is a totally reasonable thing).
 The scope of this project
-is &ldquo;automatically turn Amazon/iTunes URLs in text into affiliate links by extending emacs.&rdquo;
+is “automatically turn Amazon/iTunes URLs in text into affiliate links by extending emacs.”
 I chose that because I do the great majority of my writing (including this post) in emacs,
-and because I am involved in Amazon and Apple&rsquo;s affiliate-links programs (because I like extra coffee money once in a while just
+and because I am involved in Amazon and Apple’s affiliate-links programs (because I like extra coffee money once in a while just
 as well as the next person).
 Choosing scope carefully is important for projects that are intended to accomplish a goal
-(as opposed to projects where the point is to learn about the problem space, such as the Clojure thing I&rsquo;m messing with)&mdash;
+(as opposed to projects where the point is to learn about the problem space, such as the Clojure thing I’m messing with)—
 and in professional life, the norm is for projects to be goal-focused.</p>
 
 <p>The other reason that smallness is an advantage is that <code>affiliate.el</code> is small enough for someone else to sit down, read, and fully understand in one sitting.
-I want to make it easy for this hypothetical code reviewer to get a grasp on what I&rsquo;ve created.
+I want to make it easy for this hypothetical code reviewer to get a grasp on what I’ve created.
 To that end, this project also demonstrates
-&ldquo;behold, I write friendly code: there are clear docstrings, there is an approachable readme, and the commit messages are concise and helpful.&rdquo;
+“behold, I write friendly code: there are clear docstrings, there is an approachable readme, and the commit messages are concise and helpful.”
 I think that this is an important skill for an engineer to have too, because coding work happens in a social context.
-Your ability to explain your work to other engineers&mdash;
-and to others in general&mdash;is crucial to its value being recognized.
-So I want to show with this project &ldquo;I can make my code accessible to others.&rdquo;</p>
+Your ability to explain your work to other engineers—
+and to others in general—is crucial to its value being recognized.
+So I want to show with this project “I can make my code accessible to others.”</p>
 
 <p>Of course, those virtues only really shine in the context of good solid working code.
 This too I think the project demonstrates: concise, workmanlike, idiomatic elisp with a suite of unit tests.
 This code is well-formed for its environment:
 it uses built-in emacs features such as <code>customize</code> and <code>provide</code> like a good citizen of its ecosystem,
-it doesn&rsquo;t re-invent any wheels or require any esoteric libraries,
+it doesn’t re-invent any wheels or require any esoteric libraries,
 and it uses unit tests to demonstrate and hew to the requirements for input and output.
-It is not heroic code, it&rsquo;s just solid, humble, functional code.</p>
+It is not heroic code, it’s just solid, humble, functional code.</p>
 
-<p>There probably aren&rsquo;t very many people to whom this little emacs module is useful as executable code,
-but I&rsquo;m fine with that as long as it&rsquo;s useful for saying something about its creator.
-Especially if that thing is <a href="http://careers.stackoverflow.com/stronglyemergent">&ldquo;hire this person.&rdquo;</a></p>
+<p>There probably aren’t very many people to whom this little emacs module is useful as executable code,
+but I’m fine with that as long as it’s useful for saying something about its creator.
+Especially if that thing is <a href="http://careers.stackoverflow.com/stronglyemergent">“hire this person.”</a></p>
 ]]></content>
     
   </entry>
@@ -665,9 +912,9 @@ Especially if that thing is <a href="http://careers.stackoverflow.com/stronglyem
     <content type="html"><![CDATA[<p>Part of why I ended up buying more into developer-oriented skills and tasks than sysadmin-oriented ones,
 and especially why I want to stay away from the Windows world,
 is that running large networks and/or systems sucks.
-It&rsquo;s terrible.
-Mind you, the problems I&rsquo;ve chosen are also terrible, but they&rsquo;re a flavor of terrible that&rsquo;s more palatable to me.
-I can deal with the kind of terrible that I&rsquo;ve chosen.</p>
+It’s terrible.
+Mind you, the problems I’ve chosen are also terrible, but they’re a flavor of terrible that’s more palatable to me.
+I can deal with the kind of terrible that I’ve chosen.</p>
 
 <p>In contrast, running an Active Directory domain with a thousand users is the kind of terrible that is like hitting yourself in the forehead with a hammer.</p>
 
@@ -676,12 +923,12 @@ and their entire business model is finding people who are running large networks
 Then you have Active Directory/Exchange consultants,
 whose business is to solemnly tell people to hit themselves with the blunt side of the hammer, not the claw side.</p>
 
-<p>Over in the open-source world things are <em>much better</em> &mdash; which is to say, you can choose for yourself which side of the hammer to hit yourself with.
+<p>Over in the open-source world things are <em>much better</em> — which is to say, you can choose for yourself which side of the hammer to hit yourself with.
 You could even choose to hit yourself with the handle!
 Oh, and you have to worry about compatibility issues between the head, the handle, and the grip,
 but you can set up your own Red Hat-certified forge to make sure that you always have compatible heads.</p>
 
-<p>Also, I hear Microsoft just introduced a new licensing system where you&rsquo;re charged by the foot-pound.</p>
+<p>Also, I hear Microsoft just introduced a new licensing system where you’re charged by the foot-pound.</p>
 ]]></content>
     
   </entry>
@@ -694,45 +941,50 @@ but you can set up your own Red Hat-certified forge to make sure that you always
     <updated>2013-03-07T15:17:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/challenged</id>
     
-    <content type="html"><![CDATA[<p>I&rsquo;m hunting for a new job right now: that&rsquo;s always a tricky thing, and it&rsquo;s easy for it to make me nervous.
-I&rsquo;m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world&mdash;
+    <content type="html"><![CDATA[<p>I’m hunting for a new job right now: that’s always a tricky thing, and it’s easy for it to make me nervous.
+I’m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world—
 I taught myself Python and then fell in love with Emacs Lisp, especially its overlap with Common Lisp;
-I&rsquo;m proficient with both of those and speak JavaScript at the high-school Spanish level.
-I&rsquo;m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
-<a href="https://github.com/brighid/">I have a GitHub profile</a> that I&rsquo;m gradually adding code to, and this blog where I&rsquo;m getting back into the habit of article-length writing.
+I’m proficient with both of those and speak JavaScript at the high-school Spanish level.
+I’m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
+<a href="https://github.com/brighid/">I have a GitHub profile</a> that I’m gradually adding code to, and this blog where I’m getting back into the habit of article-length writing.
 I am, in other words, an engineer entirely capable of finding their own ass with both hands.</p>
 
-<p>&ldquo;That&rsquo;s nice,&rdquo; said my management-track pal.
-&ldquo;What do you want to <em>do</em>?
-Where do you want to work in particular&mdash;what kind of work do you want to do&mdash;what are you doing to do for them?&rdquo;</p>
+<p>“That’s nice,” said my management-track pal.
+“What do you want to <em>do</em>?
+Where do you want to work in particular—what kind of work do you want to do—what are you doing to do for them?”</p>
 
 <p>That takes some more thought.
-I&rsquo;m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can&rsquo;t say something as facile as &ldquo;I want a Lisp job!&rdquo;;
-similarly, while I identify with Bay Area startup culture pretty strongly, &ldquo;I want to work at a startup!&rdquo; isn&rsquo;t going to cut it either.
+I’m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can’t say something as facile as “I want a Lisp job!”;
+similarly, while I identify with Bay Area startup culture pretty strongly, “I want to work at a startup!” isn’t going to cut it either.
 Those are <em>features</em> I want a job to have, not the job itself.</p>
 
-<p>So in response to my friend&rsquo;s challenge, here are three specific jobs I&rsquo;d like to do.</p>
+<p>So in response to my friend’s challenge, here are three specific jobs I’d like to do.</p>
 
 <ul>
-<li><p>Work on the Unix toolchain for Apple:
+  <li>
+    <p>Work on the Unix toolchain for Apple:
 new releases of OS X <a href="http://apple.blogoverflow.com/2012/07/interesting-new-unix-commandsbinaries-in-os-x-mountain-lion/">show up with new terminal utilities</a>,
-and the intersection of Unix beard and Apple fan makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on the API team at Stripe or Square:
+and the intersection of Unix beard and Apple fan makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on the API team at Stripe or Square:
 these are two of my favorite startups, and I think that payments are a hugely important place to apply the lever of technology.
-Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone&rsquo;s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
-I&rsquo;d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible&mdash;
-the intersection of mission and language-diversity makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay&rsquo;s other transit agencies.
-&ldquo;Which transit vehicles are where, and where will they be next?&rdquo;
+Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone’s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
+I’d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible—
+the intersection of mission and language-diversity makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay’s other transit agencies.
+“Which transit vehicles are where, and where will they be next?”
 is a question that people want answers to so badly that they more or less <em>inflicted</em> an API on MUNI.
-I&rsquo;m a cyclist and a public transit rider;
-I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I&rsquo;d love to do.</p></li>
+I’m a cyclist and a public transit rider;
+I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I’d love to do.</p>
+  </li>
 </ul>
 
-
-<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to &ldquo;software engineering jobs in the Bay Area.&rdquo;
-I&rsquo;m going to keep looking, but I&rsquo;m grateful to my friend for pushing me towards this exercise.
-Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
+<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to “software engineering jobs in the Bay Area.”
+I’m going to keep looking, but I’m grateful to my friend for pushing me towards this exercise.
+Meantime, if you’re reading this and you’re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
 ]]></content>
     
   </entry>
@@ -746,30 +998,30 @@ Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance
     <id>http://stronglyemergent.com//blog/2013/twitters-bickering-design</id>
     
     <content type="html">
-        <![CDATA[<p>Today I was reminded of Mike Monteiro&rsquo;s <a href="http://muledesign.com/2011/07/density-and-difference/">note on Twitter vs. Google+ stream design</a> via MG Siegler&rsquo;s <a href="http://parislemon.com/post/7296339468/mike-monteiro-on-the-stream-design-of-google-vs">response</a>.
-They gave me words for something that bothers me about Twitter&rsquo;s interaction design&mdash;
+        <![CDATA[<p>Today I was reminded of Mike Monteiro’s <a href="http://muledesign.com/2011/07/density-and-difference/">note on Twitter vs. Google+ stream design</a> via MG Siegler’s <a href="http://parislemon.com/post/7296339468/mike-monteiro-on-the-stream-design-of-google-vs">response</a>.
+They gave me words for something that bothers me about Twitter’s interaction design—
 or rather, a feature of Twitter that I think leads people to make dumb choices.
 <strong>Statements all look the same.</strong>
 My <a href="http://i.imgur.com/qXiKbp4.gif">link to an adorable kitty</a> has the same visual weight as my serious summary of a political position, my off-the-cuff oversimplification of something I earnestly believe, or my cranky nitpicking reply to something you said.</p>
 
 <p>Now, this is not to say that users should be able to control that visual weight.
 Part of why MySpace sucked is that people could present their stuff any old way, which led to a <em>de facto</em> shouting contest.
-Similarly, the &ldquo;urgent&rdquo; flag in email is useless because very few people have the same rubric about when to apply it and it&rsquo;s trivial for a few antisocial idiots to make the signal impossible to rely on.</p>
+Similarly, the “urgent” flag in email is useless because very few people have the same rubric about when to apply it and it’s trivial for a few antisocial idiots to make the signal impossible to rely on.</p>
 
-<p>However, we also&mdash;everyone is subject to this&mdash;tend to read everything on Twitter in the same register, because it&rsquo;s visually alike.
-Normally &ldquo;oh, you can&rsquo;t read tone on the Internet&rdquo; is a canard.
+<p>However, we also—everyone is subject to this—tend to read everything on Twitter in the same register, because it’s visually alike.
+Normally “oh, you can’t read tone on the Internet” is a canard.
 You can read tone just fine when someone who can actually write tone is trying to convey is, and conveying it is a learnable skill.
 Twitter, though, has a combination of constraints (length and visual weight) that makes it very easy for readers to read
-&ldquo;I disagree with this portion of your argument and here&rsquo;s a link about why&rdquo; as
-&ldquo;you are so wrong, you&rsquo;re an awful person and also you smell funny.&rdquo;</p>
+“I disagree with this portion of your argument and here’s a link about why” as
+“you are so wrong, you’re an awful person and also you smell funny.”</p>
 
 <p>I try to use this to keep myself from getting into arguments on Twitter.
 It is a great medium for some things.
-Longform conversations &mdash; nope!
-I&rsquo;m jazzed about my Branch invite, I hope that that or Medium builds something interesting on top of Twitter
+Longform conversations — nope!
+I’m jazzed about my Branch invite, I hope that that or Medium builds something interesting on top of Twitter
 (assuming that Twitter consents to let someone build; lately they seem to be more interested in killing off all the good things about the service).</p>
 
-<p>Postscript: the image in Monteiro&rsquo;s post is a dead link, but I grabbed it from archive.org and <a href="http://i.imgur.com/Sf0BkYH.jpg">here it is on imgur</a>.</p>
+<p>Postscript: the image in Monteiro’s post is a dead link, but I grabbed it from archive.org and <a href="http://i.imgur.com/Sf0BkYH.jpg">here it is on imgur</a>.</p>
 <a rel="full-article" href="http://stronglyemergent.com//blog/2013/twitters-bickering-design/">Permalink</a>]]>
     </content>
     
@@ -785,25 +1037,26 @@ I&rsquo;m jazzed about my Branch invite, I hope that that or Medium builds somet
     
     <content type="html">
         <![CDATA[<p>I knew in an abstract sense that Tumblr was big:
-this many millions of users, that many millions of unique impressions, a polished mobile app, a path to &mdash; holy blap! &mdash; actually making money.
-This isn&rsquo;t the same as getting a visceral impression of Tumblr being big, which is what happened to me recently.
+this many millions of users, that many millions of unique impressions, a polished mobile app, a path to — holy blap! — actually making money.
+This isn’t the same as getting a visceral impression of Tumblr being big, which is what happened to me recently.
 I learned all of these things in the space of a day or two:</p>
 
 <ul>
-<li>Professional despicable person <a href="http://qz.com/58690/rupert-murdoch-is-on-tumblr-and-the-photos-are-kind-of-amazing/">Rupert Murdoch has a Tumblr</a> now - I guess it&rsquo;s to complement his Twitter account.</li>
-<li><p>You can just wander into the middle of a week-long argument in which two to four participants are quarreling,
+  <li>Professional despicable person <a href="http://qz.com/58690/rupert-murdoch-is-on-tumblr-and-the-photos-are-kind-of-amazing/">Rupert Murdoch has a Tumblr</a> now - I guess it’s to complement his Twitter account.</li>
+  <li>
+    <p>You can just wander into the middle of a week-long argument in which two to four participants are quarreling,
 at that interesting register of polite people debating firmly-held beliefs energetically,
-about Marx, Žižek, and the efficacy of Lacanian psychoanalysis in enacting the revolutionary program.</p></li>
-<li><p>Tumblr&rsquo;s <a href="http://techcrunch.com/2013/02/18/tumblr-is-not-what-you-think/">robust support for animated GIFs is a critical competitive advantage</a>, and its privacy controls are &ldquo;worse&rdquo; than Facebook&rsquo;s, but make its users much happier.</p></li>
+about Marx, Žižek, and the efficacy of Lacanian psychoanalysis in enacting the revolutionary program.</p>
+  </li>
+  <li>Tumblr’s <a href="http://techcrunch.com/2013/02/18/tumblr-is-not-what-you-think/">robust support for animated GIFs is a critical competitive advantage</a>, and its privacy controls are “worse” than Facebook’s, but make its users much happier.</li>
 </ul>
-
 
 <p>I am nothing remotely resembling an early observer of Tumblr.
 I know it through things like <a href="http://tragedyseries.tumblr.com/">the Tragedy Series</a> and <a href="http://this-plt-life.tumblr.com">industry-specific reaction gif blogs</a>.
-It&rsquo;s fascinating, though, to have the sudden realization of &ldquo;wow, this is kinda big.&rdquo;
+It’s fascinating, though, to have the sudden realization of “wow, this is kinda big.”
 A particular interest for me is the way Tumblr enables fandom and the particular brand of subversive-here, disappointingly-banal-there, remix culture that fandom loves.
 There are infinite Homestuck fanblogs, there are animated gifs from virtually all the good TV of the past decade, and there are enough Texts From Last Night mash-ups to <a href="http://texts-from-ponyville.tumblr.com/">choke a horse</a>.
-It reminds me very strongly of LiveJournal in LJ&rsquo;s own days in the sun, going from being this weird little thing that was very personal and fandom-oriented to suddenly being Big.
+It reminds me very strongly of LiveJournal in LJ’s own days in the sun, going from being this weird little thing that was very personal and fandom-oriented to suddenly being Big.
 I have no idea where things are going, but considering how deeply vile Facebook is and how deeply determined Dick Costolo to make Twitter suck, I have to hope that Tumblr makes both of them eat dirt.</p>
 <a rel="full-article" href="http://stronglyemergent.com//blog/2013/the-bittersweet-rise-of-tumblr/">Permalink</a>]]>
     </content>
@@ -818,39 +1071,39 @@ I have no idea where things are going, but considering how deeply vile Facebook 
     <updated>2013-03-05T08:04:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience</id>
     
-    <content type="html"><![CDATA[<p>Here&rsquo;s an antipattern that I see way too often:
-&ldquo;please enable JavaScript for this site.&rdquo;
-There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
+    <content type="html"><![CDATA[<p>Here’s an antipattern that I see way too often:
+“please enable JavaScript for this site.”
+There are several levels of badness with this — I’m going to start with JavaScript itself.</p>
 
 <p>JavaScript is actually pretty great:
-<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
+<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich’s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
 (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>).
 You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
 
-<p><strong>That&rsquo;s the problem!</strong></p>
+<p><strong>That’s the problem!</strong></p>
 
 <p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it.
-<em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit.
-In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
+<em>That’s a bad thing.</em> That gave us the 90s and the Bush years’ legacy of viruses and botnets, of exploit after exploit.
+In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I’ve ever seen.</p>
 
-<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
+<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser’s equivalent.</p>
 
-<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right.
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user’s machine as their natural-born right.
 This is deeply not the case.
-It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition!
-&ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness
+It’s not hard to earn the privilege of running JS - you just have to make a value proposition!
+“Please enable JavaScript” is not a value proposition, it’s an admission of laziness
 (or an admission that some pointy-haired boss is in charge).</p>
 
 <p>There are many things you can only do in JavaScript.
 Having JavaScript in your toolkit, as a web developer, is indispensable.
-But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it.
-If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
+But you also must know when you <em>don’t</em> need JavaScript, and to go without it when you don’t need it.
+If you can’t <em>display text</em> without JavaScript, if you can’t <em>construct hyperlinks</em> without JavaScript, if you can’t <em>display images</em> without JavaScript, you’re a bad person and you should feel bad.</p>
 
-<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives.
-I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information.
-If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
+<p>On top of this, there’s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users — you know, the sort of thing that makes Richard Stallman break out in hives.
+I am not <em>against</em> analytics — I am against users being simply mugged for that information.
+If the information has value, you don’t get it for free, analytics companies.</p>
 
-<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
+<p>“JavaScript Rehab” is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
 I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
 ]]></content>
     
@@ -864,24 +1117,24 @@ I will also insult them, because over-using JavaScript is easy to avoid and the 
     <updated>2013-03-03T17:08:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/program-or-paradigm</id>
     
-    <content type="html"><![CDATA[<p>I&rsquo;m an emacs girl:
-emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson&rsquo;s memorable phrase
-&ldquo;the thermonuclear text editor.&rdquo;
-Like everyone else who&rsquo;s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
+    <content type="html"><![CDATA[<p>I’m an emacs girl:
+emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson’s memorable phrase
+“the thermonuclear text editor.”
+Like everyone else who’s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
 
-<p>Let&rsquo;s talk about interfaces.
-In 1976, using computers was harder&mdash;
+<p>Let’s talk about interfaces.
+In 1976, using computers was harder—
 not because people were dumber or worse at design, but because there were fewer giants on whose shoulders to stand and because the computers themselves were incapable of working as hard.
-That meant, in turn, that the 1976 OS couldn&rsquo;t be as generous to user-space programs as the 2013 OS can be.
-In 2013, the OS can step up and be the primary answerer of the question, &ldquo;how do I use this computer?&rdquo;
-In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell&rsquo;s direction.
+That meant, in turn, that the 1976 OS couldn’t be as generous to user-space programs as the 2013 OS can be.
+In 2013, the OS can step up and be the primary answerer of the question, “how do I use this computer?”
+In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell’s direction.
 This has considerable downsides for programs: they have to do everything themselves.
 But they have one important freedom:
-they get to answer the user&rsquo;s fundamental &ldquo;how do I use this computer?&rdquo; question <em>any way they want.</em></p>
+they get to answer the user’s fundamental “how do I use this computer?” question <em>any way they want.</em></p>
 
 <p>In 2013, the OS has an answer to this question, more or less opinionated according to the OS.
-Because it is easier to let the OS answer the question, that&rsquo;s what most programs do:
-they use the OS&rsquo;s chrome, file management, and other facilities.
+Because it is easier to let the OS answer the question, that’s what most programs do:
+they use the OS’s chrome, file management, and other facilities.
 There are many good things about this: there are many more useful programs in the world than when programs had to do everything themselves.
 But it is a tradeoff:
 a program that comes from the world where the OS provides easy answers is almost completely unable to provide its own answers.</p>
@@ -890,36 +1143,36 @@ a program that comes from the world where the OS provides easy answers is almost
 the reason that emacs can look so strange in 2013 is that it has its own opinions, strong ones, about how to relate to files, displays, and text.
 Emacs is a <em>paradigm for how to interact with text.</em>
 It has stronger opinions than modern programs because it comes from a time when programs had the ability to answer those questions themselves.
-A program from the strong-OS era&mdash;
-for example, Eclipse&mdash;
-or which adapted itself to strong OSes&mdash;
-for example, Microsoft Word&mdash;
-is restricted by being situated within the boundaries established the by the OS' answer to &ldquo;how do I use this computer?&rdquo;
+A program from the strong-OS era—
+for example, Eclipse—
+or which adapted itself to strong OSes—
+for example, Microsoft Word—
+is restricted by being situated within the boundaries established the by the OS’ answer to “how do I use this computer?”
 Eclipse and Word are <em>programs</em> that edit text.
 Emacs is a <em>language</em> for editing text.</p>
 
-<p>One of the clearest ways to see this is to compare emacs to something that&rsquo;s more similar to it than Eclipse or Word: <code>vi</code>.
+<p>One of the clearest ways to see this is to compare emacs to something that’s more similar to it than Eclipse or Word: <code>vi</code>.
 With its movement-operation-modifier syntax for commands, vi has its own answer to the question
-&ldquo;how do I use this computer?&rdquo;
-that&rsquo;s every bit as thorny for us 2013 folks as emacs' answer&mdash;
-and that&rsquo;s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
+“how do I use this computer?”
+that’s every bit as thorny for us 2013 folks as emacs’ answer—
+and that’s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
 In the context of their 1976 roots, you can see that the creators of both vi and emacs embarked on the tremendously ambitious project of giving users a language in which to edit text.
-The existence and popularity of software that&rsquo;s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
+The existence and popularity of software that’s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
 (though we should check our <a href="http://en.wikipedia.org/wiki/Survivorship_bias">survivorship bias</a> and note that most programs from that era did not survive in the same way).</p>
 
-<p>If you are someone who spends a lot of time with text, especially if you&rsquo;re a hacker, you should be using emacs or vi.
+<p>If you are someone who spends a lot of time with text, especially if you’re a hacker, you should be using emacs or vi.
 There are many <a href="http://notepad-plus-plus.org/">okay</a> and <a href="http://www.sublimetext.com/">good</a> <a href="http://www.barebones.com/products/bbedit/">tools</a> for <a href="http://www.chocolatapp.com/">editing</a> <a href="http://macromates.com/">text</a> and <a href="http://panic.com/coda/">producing</a> <a href="http://www.jetbrains.com/idea/">code</a>, especially for <a href="https://developer.apple.com/xcode/">specific</a> <a href="http://www.microsoft.com/visualstudio/eng">domains</a>, but emacs and vi are the only <em>great</em> general-purpose editors.
-A program that wants to take advantage of the benefits that a modern OS offers could possibly be great&mdash;
+A program that wants to take advantage of the benefits that a modern OS offers could possibly be great—
 but it would have to be a <a href="http://www.lighttable.com/">different route</a> to greatness than emacs and vi took.</p>
 
 <p>I spend a tremendous amount of time with prose and code, and emacs is a great match for me.
 For a large class of problems, my response to encountering them starts with <code>M-:</code>.
-I routinely try to use emacs' keyboard shortcuts in other contexts (e.g.
+I routinely try to use emacs’ keyboard shortcuts in other contexts (e.g.
 switching tabs in Firefox with <code>C-x o</code>).
 I was actively excited when I found out that emacs had integrated a unit testing framework.
-When I tell you that you should use emacs, you should know that that&rsquo;s the kind of relationship I have with emacs.
+When I tell you that you should use emacs, you should know that that’s the kind of relationship I have with emacs.
 I think you should use emacs anyhow, because I think that when a task is important to you, you should use a great tool for it, not just the first good one you find.
-&ldquo;How will I use this computer to produce prose and code for the next 20 years?&rdquo;
+“How will I use this computer to produce prose and code for the next 20 years?”
 is a very, <em>very</em> important question to me.</p>
 
 <p>The answer is emacs.</p>
@@ -938,18 +1191,18 @@ is a very, <em>very</em> important question to me.</p>
     <content type="html"><![CDATA[<p>Communicating with your past self can be a little alarming.
 In the process of converting this blog to OctoPress
 (because <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP is a fractal of bad design</a> and WordPress has its own problems on top of being a huge PHP legacy system),
-I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid&rsquo;s way of saying &ldquo;you forgot to <em>start</em> that if-block, girl&rdquo;, I learned that my past self had very different priorities.</p>
+I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid’s way of saying “you forgot to <em>start</em> that if-block, girl”, I learned that my past self had very different priorities.</p>
 
-<p>Not that this is <a href="news:">news:</a> as I&rsquo;ve gotten older, I&rsquo;ve gotten better at forgiving my past self for her fuckups.
-It&rsquo;s still hard to forgive her eating habits, but bodies are complicated.
+<p>Not that this is news: as I’ve gotten older, I’ve gotten better at forgiving my past self for her fuckups.
+It’s still hard to forgive her eating habits, but bodies are complicated.
 I was surprised, though, to learn that she was conflicted about whether to be a developer or a sysadmin.
 Seriously?
-It&rsquo;s not a binary: pretty much the whole subfield of devops is people who&rsquo;re making interesting choices about &ldquo;what if I pick things from both skillsets?&rdquo;
+It’s not a binary: pretty much the whole subfield of devops is people who’re making interesting choices about “what if I pick things from both skillsets?”
 While I now think of myself as an engineer in general, not a sysadin or a developer, I am very happy that I am picking up bits and pieces of CS theory and that I can still read Apache config files, whip up basic Perl one-liners, and be on speaking terms with <code>vim</code>.</p>
 
 <p>I admire the dedicated systems team at my work, but their job is not the job I want to do.
 I want to <em>build things.</em>
-That&rsquo;s gotten more and more important to me over time &mdash; the thrill of green-field development, of Something from Nothing, is one I want, over and over.
+That’s gotten more and more important to me over time — the thrill of green-field development, of Something from Nothing, is one I want, over and over.
 Lucky me: I am getting better and better at producing that experience for myself and making useful things along the way.</p>
 ]]></content>
     
@@ -964,165 +1217,177 @@ Lucky me: I am getting better and better at producing that experience for myself
     <id>http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp</id>
     
     <content type="html"><![CDATA[<p>The conventional wisdom in computing is that the difference between Apple and its competitors, is design.
-This isn&rsquo;t wrong, but it&rsquo;s insufficiently specific: when people say that Apple focuses on &ldquo;design,&rdquo; they often mean that the visual, graphical, surface aspect of Apple products, is different.
-It is - but that is not a difference of &ldquo;design.&rdquo;
+This isn’t wrong, but it’s insufficiently specific: when people say that Apple focuses on “design,” they often mean that the visual, graphical, surface aspect of Apple products, is different.
+It is - but that is not a difference of “design.”
 Design is about fitting the designed artifact into human lives, and there are some crucially important non-visual aspects to design in this sense.</p>
 
-<p>I&rsquo;m going to talk about one specific group of non-visual design choices here, comparing Apple&rsquo;s &ldquo;Find My Friends&rdquo; service to two similar services - Google&rsquo;s &ldquo;Latitude&rdquo; and Yelp&rsquo;s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
-All three share a core functionality: they advertise the user&rsquo;s location and allow them to discover the location of others.
-They differ in how they attempt to fit into users' lives, and in how they execute their attempts.
-I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple&rsquo;s service is different, and the difference is design.</p>
+<p>I’m going to talk about one specific group of non-visual design choices here, comparing Apple’s “Find My Friends” service to two similar services - Google’s “Latitude” and Yelp’s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
+All three share a core functionality: they advertise the user’s location and allow them to discover the location of others.
+They differ in how they attempt to fit into users’ lives, and in how they execute their attempts.
+I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple’s service is different, and the difference is design.</p>
 
-<p>As phones have become mobile computing devices, they&rsquo;ve converged with desktop computing in some ways, and diverged in other ways.
+<p>As phones have become mobile computing devices, they’ve converged with desktop computing in some ways, and diverged in other ways.
 One of the convergences is the social experience: email, the original social experience in computing, was one of the first things that made smartphones smart.
-One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it&rsquo;s a single piece of information.
+One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it’s a single piece of information.
 With mobile computing, location is a stream of information instead of a single piece, and adding that stream to other streams of information, then distilling, is where many mobile companies have added value.
-One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say &ldquo;here I am!&rdquo; to your social circle.
-Google participated in an early wave of such services with Google Latitude&rsquo;s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple&rsquo;s offering appeared in late 2011.
+One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say “here I am!” to your social circle.
+Google participated in an early wave of such services with Google Latitude’s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple’s offering appeared in late 2011.
 All of these services allow you to broadcast your location, to restrict who can hear that broadcast, and to view the broadcasts of others.
 Those functions are the core of any location-based social service: they are the same across all three services, even though these services all have different goals.</p>
 
 <ul>
-<li><p>Apple, in characteristic fashion, makes the service&rsquo;s goal very, very obvious.
-Its name is &ldquo;Find My Friends.&rdquo;
-There isn&rsquo;t that much to say about the service - there&rsquo;s a map, other users of the service show up on the map, and you can find them.
-That&rsquo;s it.</p></li>
-<li><p>Yelp&rsquo;s service is slightly more complicated, but still straightforward.
+  <li>
+    <p>Apple, in characteristic fashion, makes the service’s goal very, very obvious.
+Its name is “Find My Friends.”
+There isn’t that much to say about the service - there’s a map, other users of the service show up on the map, and you can find them.
+That’s it.</p>
+  </li>
+  <li>
+    <p>Yelp’s service is slightly more complicated, but still straightforward.
 Yelp is all about restaurants, venues, and other businesses, so it lets you broadcast that you are at a specific business.
-It doesn&rsquo;t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you&rsquo;re at Candlestick Park, for example.
-It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they&rsquo;re doing at the place where they&rsquo;ve checked in.</p></li>
-<li><p>Google&rsquo;s service is open-ended.
-There&rsquo;s a map, other users of the service show up on the map, and you can find them.
-Latitude shares a lot of genetic material with Find My Friends - they&rsquo;re both implementing the most obvious thing you can do with social-plus-local.
-Google&rsquo;s service is goal-agnostic: for quite a while, the map was all it was, but recently, they&rsquo;ve added an API and a feature that tells users how much time they&rsquo;ve spent at home, at work, or out-and-about.</p></li>
+It doesn’t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you’re at Candlestick Park, for example.
+It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they’re doing at the place where they’ve checked in.</p>
+  </li>
+  <li>
+    <p>Google’s service is open-ended.
+There’s a map, other users of the service show up on the map, and you can find them.
+Latitude shares a lot of genetic material with Find My Friends - they’re both implementing the most obvious thing you can do with social-plus-local.
+Google’s service is goal-agnostic: for quite a while, the map was all it was, but recently, they’ve added an API and a feature that tells users how much time they’ve spent at home, at work, or out-and-about.</p>
+  </li>
 </ul>
-
 
 <p>These summaries show one significant design difference between the services: Apple and Yelp have clearly defined goals for how their services should fit into human lives.
 Apple helps you find your friends.
 Yelp helps you evaluate venues.
-Google&rsquo;s service can do what Apple&rsquo;s does, but also shows you a history of where you&rsquo;ve been, has check-ins like Yelp&rsquo;s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
+Google’s service can do what Apple’s does, but also shows you a history of where you’ve been, has check-ins like Yelp’s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
 Its public API also lets other services build on its data and provide further services.
-Now, &ldquo;you can&rsquo;t summarize what Google Latitude does for users in a concise sentence&rdquo; is not exactly a major flaw.
-It is, however, sloppy design by the criteria we&rsquo;re using right now.
-Not having a clear answer for &ldquo;how does this fit into users' lives?&rdquo; shows that you have a design problem.
+Now, “you can’t summarize what Google Latitude does for users in a concise sentence” is not exactly a major flaw.
+It is, however, sloppy design by the criteria we’re using right now.
+Not having a clear answer for “how does this fit into users’ lives?” shows that you have a design problem.
 As long as that question goes without an answer, you will never have a well-designed product.
 Answering that question requires focus.</p>
 
-<p>I&rsquo;m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
-Of course we want both: it is good to keep your options open, and it&rsquo;s good to focus.
-But they&rsquo;re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
+<p>I’m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
+Of course we want both: it is good to keep your options open, and it’s good to focus.
+But they’re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
 The best example of this is a study that Dan Ariely <a href="http://duke.edu/~dandan/Papers/doors.pdf">performed on MIT students</a> and wrote about in <a href="http://www.amazon.com/gp/product/0061353248/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=stronemerg05-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0061353248">Predictably Irrational</a>: his study offered participants three doors on a computer screen, each of which offered varying rewards when clicked on.
 Participants were asked to maximize rewards with a limited number of clicks.
 They were easily able to do this in the first iteration - but in the second iteration, any door that went unclicked for a certain amount of time, closed permanently.
-At that point, participants' efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
-Participants &ldquo;couldn&rsquo;t tolerate the idea of the loss,&rdquo; Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
+At that point, participants’ efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
+Participants “couldn’t tolerate the idea of the loss,” Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
 Good design is about <a href="http://www.oreillynet.com/onlamp/blog/2004/08/say_no_by_default.html">fighting that bias</a>:</p>
 
-<blockquote><p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
-&hellip;
-people kept raising their hand saying, &ldquo;Does it do (x)?&rdquo;, &ldquo;Do you plan to add (y)?&rdquo;.
-Finally Jobs said, &ldquo;Wait wait - put your hands down.
+<blockquote>
+  <p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
+…
+people kept raising their hand saying, “Does it do (x)?”, “Do you plan to add (y)?”.
+Finally Jobs said, “Wait wait - put your hands down.
 Listen: I know you have a thousand ideas for all the cool features iTunes <em>could</em> have.
 So do we.
-But we don&rsquo;t want a thousand features.
+But we don’t want a thousand features.
 That would be ugly.
 Innovation is not about saying yes to everything.
-It&rsquo;s about saying NO to all but the most crucial features.&rdquo;</p></blockquote>
+It’s about saying NO to all but the most crucial features.”</p>
+</blockquote>
 
-<p>Apple and Yelp&rsquo;s services have decided what they&rsquo;re going to say no to.
-As far as I can tell, Google&rsquo;s service hasn&rsquo;t.
+<p>Apple and Yelp’s services have decided what they’re going to say no to.
+As far as I can tell, Google’s service hasn’t.
 This is consistent with the general way that these three companies work with focus and choice.
 Yelp has it easy: it defines itself as being a company that is about evaluating venues.
 That can be a big job - but that definition also excludes many things.
 Yelp will never be a peer-to-peer file-sharing service, create an operating system, or manufacture a tablet computer.
 Apple, by contrast, is big enough and ambitious enough that it might do anything - and it is very, very selective about what it does do.
-The credo of &ldquo;say no to all but the most crucial features&rdquo; is one that&rsquo;s been reflected in every Apple product for the last decade.
-At this point, making a product that didn&rsquo;t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
+The credo of “say no to all but the most crucial features” is one that’s been reflected in every Apple product for the last decade.
+At this point, making a product that didn’t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
 They say no to features all the time.</p>
 
 <p>Google is having trouble learning to say no.
-Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, &ldquo;how does this fit into users' lives,&rdquo; Google Wave brazenly defies the question and jeers at its premises.
+Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, “how does this fit into users’ lives,” Google Wave brazenly defies the question and jeers at its premises.
 But Google did eventually say no to Wave - and perhaps its features will in time show up in contexts where they can give a satisfying answer to the question.
-Google&rsquo;s best products - for example, Search and Gmail - answer the question decisively.
-For that matter, Google&rsquo;s corporate goal of organizing and making useful the world&rsquo;s information, also is a good step towards answering that question of design.</p>
+Google’s best products - for example, Search and Gmail - answer the question decisively.
+For that matter, Google’s corporate goal of organizing and making useful the world’s information, also is a good step towards answering that question of design.</p>
 
 <p>Now, another piece of conventional wisdom in computing is that Google is bad at design.
-I think that that is true, but that it&rsquo;s true in ways that people usually don&rsquo;t consider.
-Just as Apple products' good design isn&rsquo;t just surface appearances, Google&rsquo;s bad design decisions don&rsquo;t happen in a vacuum.
-It&rsquo;s ridiculous to suggest that Google commits bad design because they&rsquo;re dumb or malicious.
+I think that that is true, but that it’s true in ways that people usually don’t consider.
+Just as Apple products’ good design isn’t just surface appearances, Google’s bad design decisions don’t happen in a vacuum.
+It’s ridiculous to suggest that Google commits bad design because they’re dumb or malicious.
 Nothing could be further from the truth about the Google employees of my acquaintance, and the company itself is only as dumb and malicious as Apple is - which is to say, many orders of magnitude less so than the average American corporation.
-I believe that Google&rsquo;s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
+I believe that Google’s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
 
 <ul>
-<li><p>Google&rsquo;s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
+  <li>
+    <p>Google’s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
 This is a large part of why Google launched its social networking service, Google Plus - to protect its core business from Facebook.
 This is part of why Google launched its music product - to protect against Amazon and Apple trying to expand into its territory.
 This is part of why Google has Android - Google disrupts other businesses by being <a href="http://abovethecrowd.com/2009/10/29/google-redefines-disruption-the-%E2%80%9Cless-than-free%E2%80%9D-business-model/">cheaper than free</a>.
-What all of those have in common is that for them to succeed on a strategic level for Google, doesn&rsquo;t require that they be dominant or highly profitable.
-If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn&rsquo;t.
-When good design doesn&rsquo;t help your business towards its strategic goals, good design gets thrown overboard.
-So it goes.</p></li>
-<li><p>Google&rsquo;s corporate culture is rooted in engineering.
+What all of those have in common is that for them to succeed on a strategic level for Google, doesn’t require that they be dominant or highly profitable.
+If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn’t.
+When good design doesn’t help your business towards its strategic goals, good design gets thrown overboard.
+So it goes.</p>
+  </li>
+  <li>
+    <p>Google’s corporate culture is rooted in engineering.
 This has many positive effects, because Google is also obsessed with hiring enormously smart engineers.
-They&rsquo;re very good at that.
+They’re very good at that.
 That means, however, that they inherit some of the cultural biases of computer engineering in general.
 One of these is the cognitive bias that the users must be similar to the programmers of software and devices.
-That causes problems for design, because the way that the &ldquo;unwilling to foreclose options&rdquo; bias operates in engineers, is that they don&rsquo;t want to give up configurability - don&rsquo;t want to give up control.
-As a result, if you&rsquo;re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
-The cost of that configurability, though, is paid by giving up focus.</p></li>
-<li><p>Finally, Google has taken on some enormously, enormously difficult design challenges.
+That causes problems for design, because the way that the “unwilling to foreclose options” bias operates in engineers, is that they don’t want to give up configurability - don’t want to give up control.
+As a result, if you’re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
+The cost of that configurability, though, is paid by giving up focus.</p>
+  </li>
+  <li>
+    <p>Finally, Google has taken on some enormously, enormously difficult design challenges.
 I think that this is a bigger factor than is usually acknowledged.
 With a shallower pool of design talent than Apple, and less time to nurture it, Google has taken on harder design problems.
-To see how hard they are, just contemplate that &ldquo;organizing the world&rsquo;s information&rdquo; goal - and then realize that <em>Google takes that seriously</em>.
+To see how hard they are, just contemplate that “organizing the world’s information” goal - and then realize that <em>Google takes that seriously</em>.
 Apple tries many things, but few ever leave the black box in Cupertino.
 The number of things that Google has tried is enormous, and the amount of money that they have put towards them, even more enormous.
-Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you&rsquo;ll need to pause for breath again before you run out of recognizable Google properties.
+Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you’ll need to pause for breath again before you run out of recognizable Google properties.
 Further, they run many of them as public goods - the SPDY protocol, the public DNS servers, hiring on figures from the open-source world and essentially patronizing them to continue their work (e.g. Guido van Rossum).
-So with fewer design resources than Apple, they&rsquo;ve chosen tougher problems.
-Once you look at it that way, their design woes are entirely predictable.</p></li>
+So with fewer design resources than Apple, they’ve chosen tougher problems.
+Once you look at it that way, their design woes are entirely predictable.</p>
+  </li>
 </ul>
 
-
-<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it&rsquo;s improving over time, it&rsquo;s unfocused and it&rsquo;s hard to gather its features into a coherent value proposition.
-If you&rsquo;re a developer and you&rsquo;re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
-Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you&rsquo;re programming and make friends with it.
-Apple provides a location services API, but that&rsquo;s not a Find My Friends API.
+<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it’s improving over time, it’s unfocused and it’s hard to gather its features into a coherent value proposition.
+If you’re a developer and you’re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
+Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you’re programming and make friends with it.
+Apple provides a location services API, but that’s not a Find My Friends API.
 Find My Friends is private property.</p>
 
 <p>Private property is a good thing in a location service, though - a service that lets you broadcast your location is a service that can be used to follow you and to gather information about you.
-The privacy controls in Apple, Google, and Yelp&rsquo;s services are very revealing: they show the differences in design clearly.
+The privacy controls in Apple, Google, and Yelp’s services are very revealing: they show the differences in design clearly.
 Google Latitude maintains a list of people who are allowed to see your location.
-You can add and remote people from the list and tell Google whether they&rsquo;re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
-Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you&rsquo;ll still be part of the generally visible stream of checkins on Yelp, but you&rsquo;ll be lost in a crowd).</p>
+You can add and remote people from the list and tell Google whether they’re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
+Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you’ll still be part of the generally visible stream of checkins on Yelp, but you’ll be lost in a crowd).</p>
 
-<p>Apple&rsquo;s Find My Friends adds one important privacy feature that Latitude doesn&rsquo;t have, and says no to one feature that Latitude does have.
-When you decide to share your location with someone on Find My Friends, you can also add &ldquo;for the next few hours&rdquo; - you can tell the service that your sharing is temporary.
-You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple&rsquo;s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
-I think that&rsquo;s an important symptom of the difference in design.
-Apple&rsquo;s design allows you to centralize decisions in time.
-Apple&rsquo;s design also avoids burdening you later: you don&rsquo;t need to go back to the service later and tell it to stop caring, after you already have.
+<p>Apple’s Find My Friends adds one important privacy feature that Latitude doesn’t have, and says no to one feature that Latitude does have.
+When you decide to share your location with someone on Find My Friends, you can also add “for the next few hours” - you can tell the service that your sharing is temporary.
+You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple’s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
+I think that’s an important symptom of the difference in design.
+Apple’s design allows you to centralize decisions in time.
+Apple’s design also avoids burdening you later: you don’t need to go back to the service later and tell it to stop caring, after you already have.
 It fits into your life by not requiring that you take extra steps to stop doing something - you can just stop.
-Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude&rsquo;s 2009 launch.</p>
+Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude’s 2009 launch.</p>
 
 <p>On the flip side, Google Latitude lets you manually set your location in addition to simply switching automatically-detected location on and off.
-I call this a &ldquo;promised location.&rdquo; Find My Friends does not let you do this, and I think that&rsquo;s interesting.
-Why not? For one thing, I&rsquo;d guess, a promised location doesn&rsquo;t pull its own weight.
-You don&rsquo;t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
-So it&rsquo;s redundant, and redundancy is a thing that good designs usually eliminate.
+I call this a “promised location.” Find My Friends does not let you do this, and I think that’s interesting.
+Why not? For one thing, I’d guess, a promised location doesn’t pull its own weight.
+You don’t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
+So it’s redundant, and redundancy is a thing that good designs usually eliminate.
 More subtly, you might not keep that promise about your location - so you could say that Latitude permits you to lie about your location.
-If you were to look up my location on Google Latitude, you&rsquo;d see me forever trapped in one Whole Foods market, never leaving it.
+If you were to look up my location on Google Latitude, you’d see me forever trapped in one Whole Foods market, never leaving it.
 You could also say that Google Latitude is less likely to <a href="http://gawker.com/5850321/did-iphones-find-my-friends-just-break-up-its-first-marriage">break up a relationship</a>.
 Yelp, for the record, <a href="http://blog.sfgate.com/techchron/2010/11/24/how-yelp-plans-to-curb-check-in-fraud/">uses location checking and other heuristics to check on your promised location</a>.</p>
 
-<p>So Apple&rsquo;s design is missing that feature.
+<p>So Apple’s design is missing that feature.
 Is that good or bad?
-It is <em>opinionated</em> - and that&rsquo;s what good design fundamentally is.
-Design is about making decisions, and Apple&rsquo;s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
+It is <em>opinionated</em> - and that’s what good design fundamentally is.
+Design is about making decisions, and Apple’s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
 Of course people differ - part of the challenge of design as a field of endeavor is that people differ so widely in their needs and desires, and nothing will satisfy all of us.
-So of course Apple&rsquo;s products don&rsquo;t satisfy everyone.
+So of course Apple’s products don’t satisfy everyone.
 But what makes their product well-defined is that they have renounced trying to make everyone happy.
-That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans' lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
+That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans’ lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
 That is what it means that the difference between Apple and everyone else, is design.</p>
 ]]></content>
     
@@ -1136,266 +1401,47 @@ That is what it means that the difference between Apple and everyone else, is de
     <updated>2011-09-14T06:57:38-07:00</updated>
     <id>http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error</id>
     
-    <content type="html"><![CDATA[<p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come up with anything.
-I think it&rsquo;s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
+    <content type="html"><![CDATA[<p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up with anything.
+I think it’s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
 
 <p>So:
-you&rsquo;re running a Magento site, and you&rsquo;re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
+you’re running a Magento site, and you’re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
 You might end up in a nasty situation where the integration settings page in Magento is telling you that
-&ldquo;Your blog URL (site address) matches your install URL (WordPress address).
-Please change your blog route or move WordPress to a different sub-directory&rdquo;
-and that that&rsquo;s a problem.
+“Your blog URL (site address) matches your install URL (WordPress address).
+Please change your blog route or move WordPress to a different sub-directory”
+and that that’s a problem.
 It is.
-Things will 404 as long as that&rsquo;s true.
-However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you&rsquo;ll find to help</a> on the FishPig site is deeply obscure.</p>
+Things will 404 as long as that’s true.
+However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you’ll find to help</a> on the FishPig site is deeply obscure.</p>
 
 <p>[<img src="http://stronglyemergent.com//images/mangeto-fishpig-error.jpg" alt="An error that can happen when trying to integrate Magento and WordPress" />]
 <em>The problem might look like this.</em></p>
 
 <p>The basic problem is one of terminology.
 WordPress is designed to play well with others, and to be highly configurable.
-So it cares about two URLs (URIs if you&rsquo;re picky).
+So it cares about two URLs (URIs if you’re picky).
 It cares about
-&ldquo;the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)&rdquo;,
-and it cares about &ldquo;the public URL that I will respond to.&rdquo;
-In the database, these are &lsquo;siteurl&rsquo; and &lsquo;home&rsquo;, respectively, in the wp_options table.
+“the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)”,
+and it cares about “the public URL that I will respond to.”
+In the database, these are ‘siteurl’ and ‘home’, respectively, in the wp_options table.
 It can be tricky to disentangle these two URLs, but for many WordPress installs, setting them both to the same URL is good enough and gets everything working.</p>
 
-<p>However, that&rsquo;s not the case when you need to integrate a WordPress blog into Magento.
-For the FishPig plugin&rsquo;s &ldquo;fully integrated&rdquo; level of operation&mdash;
-which is good stuff, the best way to run that plugin&mdash;
+<p>However, that’s not the case when you need to integrate a WordPress blog into Magento.
+For the FishPig plugin’s “fully integrated” level of operation—
+which is good stuff, the best way to run that plugin—
 the WordPress PHP files need to live in the same site as the Magento files
-(when using Apache, they need to both be in the tree that starts at the site&rsquo;s DocumentRoot),
-and, contrary to the usual WordPress setup, the &lsquo;siteurl&rsquo; and &lsquo;home&rsquo; values <em>must not</em> be set to the same URL.
+(when using Apache, they need to both be in the tree that starts at the site’s DocumentRoot),
+and, contrary to the usual WordPress setup, the ‘siteurl’ and ‘home’ values <em>must not</em> be set to the same URL.
 This is where we run into problems.
-The WordPress control panel refers to the &lsquo;siteurl&rsquo; value as the &ldquo;WordPress address (URL)&rdquo; and the &lsquo;home&rsquo; value as &ldquo;Site address (URL)&rdquo;.
-The FishPig plugin&rsquo;s error messages, as seen above, will tell you that they can&rsquo;t be the same, and will tell you that the &lsquo;home&rsquo;/&ldquo;Site address&rdquo; value has to match the &ldquo;blog route&rdquo; variable" in Magento.
-However, you have to fill in the third part of the syllogism yourself, and remember to set the &lsquo;siteurl&rsquo;/&ldquo;WordPress address&rdquo; to the same value as the &ldquo;WordPress path&rdquo; variable in Magento.</p>
+The WordPress control panel refers to the ‘siteurl’ value as the “WordPress address (URL)” and the ‘home’ value as “Site address (URL)”.
+The FishPig plugin’s error messages, as seen above, will tell you that they can’t be the same, and will tell you that the ‘home’/”Site address” value has to match the “blog route” variable” in Magento.
+However, you have to fill in the third part of the syllogism yourself, and remember to set the ‘siteurl’/”WordPress address” to the same value as the “WordPress path” variable in Magento.</p>
 
 <p>The final puzzle-piece is URL rewriting - most WordPress installs try to do a little .htaccess magic, and it can be tricky to keep it straight.
-If it&rsquo;s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you&rsquo;ve got to move down a layer and throw queries directly at the database to figure out what&rsquo;s going on.</p>
+If it’s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you’ve got to move down a layer and throw queries directly at the database to figure out what’s going on.</p>
 
 <p>I imagine that this is obvious if you know WordPress better than I do, and it probably seemed obvious to the FishPig folks.
-However, if you&rsquo;re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
-]]></content>
-    
-  </entry>
-  
-  <entry>
-      
-      <title type="html"><![CDATA[Generating vCards In Python]]></title>
-      <link href="http://stronglyemergent.com//blog/2011/generating-vcards-in-python/"/>
-      
-    <updated>2011-05-02T08:21:10-07:00</updated>
-    <id>http://stronglyemergent.com//blog/2011/generating-vcards-in-python</id>
-    
-    <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.
-Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
-My personal address book is nowhere near that big
-(and I&rsquo;m not about to use it for testing),
-so I turned to Python.
-[The vCard format][vcard-wiki] is pretty much a special kind of text file,
-so it&rsquo;s easy to create new vCards,
-and a vCard can contain multiple contacts by just concatenating contacts.</p>
-
-<p>I didn&rsquo;t find exactly what I needed already in existence,
-so I wrote up a basic script to do it, and in case anyone else needs it, here it is.
-It is released under the Apache Software License 2.0,
-and I hope you find it useful.</p>
-
-<p><noscript><pre></p>
-
-<h1>!/usr/bin/python</h1>
-
-<p>&quot;&quot;&quot;Generates an abitrary number of valid .vcf vCard contacts based on the
-parameters set at the beginning of the file. See also:
-<a href="http://softwareas.com/vcard-for-developers">http://softwareas.com/vcard-for-developers</a>
-<a href="http://en.wikipedia.org/wiki/VCard">http://en.wikipedia.org/wiki/VCard</a>
-&quot;&quot;&quot;</p>
-
-<p>import random, sys</p>
-
-<h6>############################ Parameters</h6>
-
-<h1>We&#39;ll use this data no matter what the user tells us.</h1>
-
-<h1>What fields shall be populated?</h1>
-
-<p>target_fields = {&quot;Name&quot;:True,
-                 &quot;FullName&quot;:True,
-                 &quot;Organization&quot;:True,
-                 &quot;Address&quot;:True,
-                 &quot;Title&quot;:True,
-                 &quot;Phone&quot;:True,
-                 &quot;Email&quot;:True,}</p>
-
-<h1>Data that we&#39;ll use to populate the cards&#39; fields.</h1>
-
-<p>first_names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;, &quot;Elena&quot;, &quot;Farquahd&quot;, &quot;Gretel&quot;,
-               &quot;Hans&quot;, &quot;Iris&quot;, &quot;Junichi&quot;, &quot;Khalisha&quot;, &quot;Lee&quot;, &quot;Mina&quot;, &quot;Nassif&quot;,
-               &quot;Oba&quot;, &quot;Prudha&quot;, &quot;Hida&quot;, &quot;Kaiu&quot;, &quot;Aaron&quot;, &quot;Sangamon&quot;,
-               &quot;Ferdinand&quot;, &quot;Sanjay&quot;, &quot;Asok&quot;]
-last_names = [&quot;Smith&quot;, &quot;Jones&quot;, &quot;Smythe&quot;, &quot;Jorgenson&quot;, &quot;Kim&quot;, &quot;Luxury-Yacht&quot;,
-              &quot;Throatwarbler-Mangrove&quot;, &quot;Cooper&quot;, &quot;Black&quot;, &quot;Ahmedinejad&quot;,
-              &quot;al-Tikriti&quot;, &quot;al-Bagram&quot;, &quot;von Trapp&quot;, &quot;von der Wallenheim&quot;,
-              &quot;Gamgee&quot;, &quot;Proudfoot&quot;, &quot;Brewer&quot;, &quot;Kagehiro&quot;, &quot;Ng&quot;,
-              &quot;Nguyen&quot;, &quot;Salzmann&quot;, &quot;Bear&quot;, &quot;Powers&quot;,&quot;Kusanagi&quot;, &quot;Dengo&quot;,
-              &quot;Mukherjee&quot;,&quot;Balaam&quot;]</p>
-
-<h1>Street numbers will be generated at random.  All addresses are</h1>
-
-<h1>situated in Anytown, CA, ZIP 12345, United States of America.</h1>
-
-<p>streets = [&quot;Paper Street&quot;, &quot;Fictional Lane&quot;, &quot;Placid Avenue&quot;, &quot;Blank Road&quot;,
-           &quot;Suspicious Parkway&quot;]</p>
-
-<p>orgs = [&quot;Monty Python&#39;s Flying Circus&quot;, &quot;Golden Egg Bonus Company, LLC&quot;,
-        &quot;Dewey Cheatham &amp; Howe, Tax and Family Law&quot;, &quot;Improv Everywhere&quot;,
-        &quot;Owl-Stretching Enthusiasts&#39; Club&quot;, &quot;International R. Mutt Fan Club&quot;,
-        &quot;Paper Street Soap Company&quot;, &quot;River City Pool Table Company&quot;,
-        &quot;Desert Bus Runs&quot;, &quot;Impossibilities Inc&quot;, &quot;The X-Men&quot;]</p>
-
-<p>titles = [&quot;Mercenary&quot;, &quot;Chief Tomfoolery Engineer&quot;, &quot;Nonsense Supervisor&quot;,
-          &quot;Skylark&quot;, &quot;Isn&#39;t It About Time For Lunch&quot;, &quot;Famous Author&quot;,
-          &quot;Fictional Person&quot;, &quot;Space Traveller&quot;, &quot;Architect&quot;,
-          &quot;International Person Of Mystery&quot;, &quot;Sith Lord&quot;, &quot;Sith Apprentice&quot;,
-          &quot;Sith Intern&quot;, &quot;Archaeologist&quot;, &quot;Scout&quot;, &quot;Heavy&quot;, &quot;Sniper&quot;]</p>
-
-<h1>Phone numbers will be generated in the form 555-NNNN.</h1>
-
-<h1>Email addresses will be generated in the form  <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x66;&#105;&#114;&#115;&#x74;&#x6e;&#x61;&#109;&#x65;&#x2e;&#108;&#x61;&#x73;&#x74;&#110;&#97;&#x6d;&#x65;&#x40;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#102;&#105;&#114;&#115;&#x74;&#110;&#97;&#109;&#101;&#x2e;&#108;&#x61;&#115;&#x74;&#110;&#97;&#x6d;&#101;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a></h1>
-
-<h6>############################ Actions</h6>
-
-<p>class CardFiller:
-    &quot;&quot;&quot;A class whose instances take the basic dataset we&#39;re working with,
-    shuffle it, and grind through generating VCard entries based on it. &quot;&quot;&quot;
-    def <strong>init</strong>(self, first_names, last_names, streets, orgs, titles):
-        self.first_names = first_names
-        self.last_names = last_names
-        self.streets = streets
-        self.orgs = orgs
-        self.titles = titles</p>
-
-<pre><code>def prepare(self):
-    for lst in [self.first_names, self.last_names,
-                self.streets, self.orgs, self.titles]:
-        random.shuffle(lst)
-
-def fill_card(self, target_fields, position):
-    &amp;quot;&amp;quot;&amp;quot;Takes data and fills in fields, then creates a list of formatted
-    lines that can be written into a .vcf file. Takes a position argument
-    that it basically interprets as modulo the length of the list.&amp;quot;&amp;quot;&amp;quot;
-    new_card = [&amp;quot;BEGIN:VCARD&amp;quot;, &amp;quot;VERSION:2.1&amp;quot;,]
-    # Fill the Name field.
-    if &amp;quot;Name&amp;quot; in target_fields:
-        namefield = &amp;quot;N:&amp;quot;
-        namefield += str(self.last_names[position % len(self.last_names)])
-        namefield +=&amp;quot;;&amp;quot;
-        namefield += str(self.first_names[position % len(self.first_names)])
-        new_card.append(namefield)
-    if &amp;quot;FullName&amp;quot; in target_fields:
-        fnamefield = &amp;quot;FN:&amp;quot;
-        fnamefield += str(self.first_names[position % len(self.first_names)])
-        fnamefield += &amp;quot; &amp;quot;
-        fnamefield += str(self.last_names[position % len(self.last_names)])
-        new_card.append(fnamefield)
-    if &amp;quot;Organization&amp;quot; in target_fields:
-        orgfield = &amp;quot;ORG:&amp;quot;
-        orgfield += str(self.orgs[position % len(self.orgs)])
-        new_card.append(orgfield)
-    if &amp;quot;Title&amp;quot; in target_fields:
-        titlefield = &amp;quot;TITLE:&amp;quot;
-        titlefield += str(self.titles[position % len(self.titles)])
-        new_card.append(titlefield)
-    if &amp;quot;Phone&amp;quot; in target_fields:
-        phonefield = &amp;quot;TEL;WORK;VOICE:(&amp;quot;
-        phonefield += str(random.randrange(100,999))
-        phonefield += &amp;quot;) 555-&amp;quot;
-        phonefield += &amp;quot;%04d&amp;quot; % random.randrange(0,9999)
-        new_card.append(phonefield)
-    if &amp;quot;Address&amp;quot; in target_fields:
-        addrfield = &amp;quot;ADR;WORK:;;&amp;quot;
-        addrfield += str(random.randrange(1,18234))
-        addrfield += &amp;quot; &amp;quot;
-        addrfield += str(self.streets[position % len(self.streets)])
-        addrfield += &amp;quot;;Anytown;CA;12345;United States of America&amp;quot;
-        new_card.append(addrfield)
-    if &amp;quot;Email&amp;quot; in target_fields:
-        emailfield = &amp;quot;EMAIL;PREF;INTERNET:&amp;quot;
-        emailfield += str.lower(self.first_names[position % len(self.first_names)])
-        emailfield += str.lower(self.last_names[position % len(self.last_names)])
-        emailfield += &amp;quot;@example.com&amp;quot;
-        new_card.append(emailfield)
-    new_card.append(&amp;quot;REV:%d&amp;quot; % random.randrange(100,500))
-    new_card.append(&amp;quot;END:VCARD&amp;quot;)
-    return new_card
-</code></pre>
-
-<p>def rolodex_engine(card_limit, target_fields):
-    &quot;&quot;&quot;Iterates over a range to generate a list of strings that can be
-    sent to file or to stdout and which constitute a valid vcard file.
-    Most programs that read vcards can accept a file that contains
-    multiple vcards - all you have to do is concatenate them.&quot;&quot;&quot;
-    card_engine = CardFiller(first_names, last_names, streets, orgs, titles)
-    card_engine.prepare()
-    rolodex = []
-    for i in range(1, card_limit+1):
-        new_card = card_engine.fill_card(target_fields, i)
-        for line in new_card:
-            rolodex.append(line)
-    return rolodex</p>
-
-<h6>############################# Execution</h6>
-
-<p>if <strong>name</strong> == &#39;<strong>main</strong>&#39;:
-    &quot;&quot;&quot;Run a variety of sanity checks regarding the arguments to the
-    script.  If there are no command-line arguments, give the user a
-    hint. If the arguments are weird, quit and ask them to try
-    again. User input and the filesystem: two pain-in-the-butt parts
-    of software engineering.&quot;&quot;&quot;
-    # Sanity checks.
-    if len(sys.argv) != 3:
-        print &quot;This script requires exactly two arguments: \n&quot;,
-        print &quot;<em> The number of vCards to generate \n&quot;,
-        print  &quot;</em> The name of the file to store them in. \n&quot;
-        sys.exit()
-    if type(sys.argv[2]) != type(&quot;string&quot;):
-        print &quot;The first argument must be a number, the second a name.&quot;
-        sys.exit()
-    try:
-        int(sys.argv[1])
-    except ValueError:
-        print &quot;The first argument must be a number, the second a name.&quot;
-        sys.exit()
-    if int(sys.argv[1]) &gt; 2**16:
-        print &quot;Try generating less than 65,000 cards.&quot;
-        sys.exit()
-    if len(sys.argv[2]) &gt; 128:
-        print &quot;Try a shorter filename.&quot;
-        sys.exit()
-    card_limit = int(sys.argv[1])
-    card_export_file = sys.argv[2]
-    # Writing to disk.
-    try:
-        with open(&quot;./%s&quot; % card_export_file, &quot;r&quot;) as rolodex_file:
-            print &quot;A file with that name already exists.&quot;
-            sys.exit()
-    except IOError, ioerr_msg:
-        try:
-            with open(&quot;./%s&quot; % card_export_file, &quot;w&quot;) as rolodex_file:
-                rolodex = rolodex_engine(card_limit, target_fields)
-                for c in rolodex:
-                    rolodex_file.write&copy;
-                    rolodex_file.write(&quot;\n&quot;)
-        except IOError, ioerr_msg:
-            print &quot;The script couldn&#39;t create a file for the vcards.&quot;
-            print &quot;The specific problem was &#39;%s&#39;&quot; % ioerr_msg
-</pre></noscript><script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script></p>
-
-<p>Writing this was basically like doing sit-ups in Python&mdash;not really challenging,
-but demanded like all serious tasks that you sit down and devote time and concentration to it.
-After that, results come easily.</p>
+However, if you’re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
 ]]></content>
     
   </entry>

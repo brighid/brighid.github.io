@@ -4,7 +4,7 @@
   <title><![CDATA[Category: microsoft | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/microsoft/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -20,24 +20,27 @@
     <id>http://stronglyemergent.com//blog/2013/negative-100-points</id>
     <content type="html"><![CDATA[<p>A <a href="http://blogs.msdn.com/b/ericgu/archive/2004/01/12/57985.aspx">short post by Eric Gunnerson</a> about designing C#, nearly a decade old now, has stuck with me for a long time.</p>
 
-<blockquote><p>[the question] implies that we started with an existing language (C++ and Java are the popular choices here),
+<blockquote>
+  <p>[the question] implies that we started with an existing language (C++ and Java are the popular choices here),
 and then started removing features until we got to a point where we liked.
-That&rsquo;s not how the language got designed.
-One of the big reasons we didn&rsquo;t do this is that it&rsquo;s really hard to remove complexity when you take a subtractive approach,
+That’s not how the language got designed.
+One of the big reasons we didn’t do this is that it’s really hard to remove complexity when you take a subtractive approach,
 as removing a feature in one area may not allow you to revisit low-level design decisions,
 nor will it allow you to remove complexity elsewhere, in places where it support the now-removed feature.
 We decided on the additive approach instead, and worked hard to keep the complexity down.
-One way to do that is through the concept of &ldquo;minus 100 points.&rdquo;
+One way to do that is through the concept of “minus 100 points.”
 Every feature starts out in the hole by 100 points,
 which means that it has to have a significant net positive effect on the overall package for it to make it into the language.
-Some features are okay features for a language to have, they just aren&rsquo;t quite good enough to make it into the language.</p></blockquote>
+Some features are okay features for a language to have, they just aren’t quite good enough to make it into the language.</p>
+</blockquote>
 
 <p>If this sounds familiar, it should:
-this is another lens on the design philosophy, popularized in the developer community by Apple, that good design requires saying &ldquo;no.&rdquo;
-Saying &ldquo;no&rdquo; a <em>lot.</em>
-I applaud Apple for applying this philosophy so rigorously&mdash;
-but it&rsquo;s important to remember that they&rsquo;re <a href="http://technet.microsoft.com/en-us/magazine/dn167709.aspx">not the only people who use it</a>, and their way is not the only way.
-What you say &ldquo;no&rdquo; to, defines you.</p>
+this is another lens on the design philosophy, popularized in the developer community by Apple, that good design requires saying “no.”
+Saying “no” a <em>lot.</em>
+I applaud Apple for applying this philosophy so rigorously—
+but it’s important to remember that they’re <a href="http://technet.microsoft.com/en-us/magazine/dn167709.aspx">not the only people who use it</a>, and their way is not the only way.
+What you say “no” to, defines you.</p>
+
 ]]></content>
   </entry>
   
@@ -46,28 +49,28 @@ What you say &ldquo;no&rdquo; to, defines you.</p>
     <link href="http://stronglyemergent.com//blog/2010/turning-into-microsoft-on-net-neutrality/"/>
     <updated>2010-08-17T23:01:32-07:00</updated>
     <id>http://stronglyemergent.com//blog/2010/turning-into-microsoft-on-net-neutrality</id>
-    <content type="html"><![CDATA[<p>So the Internet is abuzz with the news that Google has decided that the famous &ldquo;Don&rsquo;t be evil&rdquo; motto <a href="http://gigaom.com/2010/08/09/tech-companies-google-sold-you-out/">doesn&rsquo;t apply to Net Neutrality</a>, a <a href="http://arstechnica.com/telecom/news/2010/08/a-paper-trail-of-betrayal-googles-net-neutrality-collapse.ars">reversal of their previous position</a>.
+    <content type="html"><![CDATA[<p>So the Internet is abuzz with the news that Google has decided that the famous “Don’t be evil” motto <a href="http://gigaom.com/2010/08/09/tech-companies-google-sold-you-out/">doesn’t apply to Net Neutrality</a>, a <a href="http://arstechnica.com/telecom/news/2010/08/a-paper-trail-of-betrayal-googles-net-neutrality-collapse.ars">reversal of their previous position</a>.
 To me, this is moderately surprising, but only moderately.
-I take it as more evidence that they&rsquo;re <a href="http://stronglyemergent.com/blog/2010/everyone-turns-into-microsoft/">turning into Microsoft</a>.
-They probably don&rsquo;t like to think that about themselves, and clearly don&rsquo;t like to hear it, but I think that it&rsquo;s pretty easy to see that that&rsquo;s happening.</p>
+I take it as more evidence that they’re <a href="http://stronglyemergent.com/blog/2010/everyone-turns-into-microsoft/">turning into Microsoft</a>.
+They probably don’t like to think that about themselves, and clearly don’t like to hear it, but I think that it’s pretty easy to see that that’s happening.</p>
 
-<p>Growth isn&rsquo;t always good for companies: Google is, I think, still struggling with the challenges of being enormous.
-With one failed product after another, they&rsquo;re acting startup-ish - but they&rsquo;re not getting the full benefit of those mistakes the way a startup-sized company would.
-They&rsquo;re flailing.
-I expect that they&rsquo;ll stabilize - but the alliance with Darth Verizon makes it pretty clear that they&rsquo;re not going to create a new way of being a big company.
-The most likely thing is that they&rsquo;re going to be just as evil as every other company their size.</p>
+<p>Growth isn’t always good for companies: Google is, I think, still struggling with the challenges of being enormous.
+With one failed product after another, they’re acting startup-ish - but they’re not getting the full benefit of those mistakes the way a startup-sized company would.
+They’re flailing.
+I expect that they’ll stabilize - but the alliance with Darth Verizon makes it pretty clear that they’re not going to create a new way of being a big company.
+The most likely thing is that they’re going to be just as evil as every other company their size.</p>
 
-<p>What&rsquo;s much more interesting to me is the form of the agreement.
-It&rsquo;s another step towards the equivalency of governments and corporations - it&rsquo;s an American commonplace that corporations <em>de facto</em> write legislation to favor themselves, but rarely is it practiced as openly as Verizon and Google are now doing.
+<p>What’s much more interesting to me is the form of the agreement.
+It’s another step towards the equivalency of governments and corporations - it’s an American commonplace that corporations <em>de facto</em> write legislation to favor themselves, but rarely is it practiced as openly as Verizon and Google are now doing.
 It interests me because it makes me think of the Declaration of Independence:
-&ldquo;<em>[G]overnments are instituted among men, deriving their just powers from the consent of the governed.
-[When] any form of government becomes destructive to these ends, it is the right of the people to alter or to abolish it, and to institute new government.</em>&rdquo;
-As a private citizen and a single human being of extremely modest means, it&rsquo;s extraordinarily difficult for me to meaningfully withdraw my consent to be governed.
-There are lots of guys with guns that can come to me and say &ldquo;you&rsquo;re gonna be governed whether you like it or not.&rdquo;
+“<em>[G]overnments are instituted among men, deriving their just powers from the consent of the governed.
+[When] any form of government becomes destructive to these ends, it is the right of the people to alter or to abolish it, and to institute new government.</em>”
+As a private citizen and a single human being of extremely modest means, it’s extraordinarily difficult for me to meaningfully withdraw my consent to be governed.
+There are lots of guys with guns that can come to me and say “you’re gonna be governed whether you like it or not.”
 But Google and Verizon here are making themselves part of a trend of corporations who refuse to be governed, and are getting away with it - they are actively participating in the writing of the rules that will govern them.
 Individual citizens have nothing like that level of autonomy.</p>
 
-<p>Politics isn&rsquo;t the point of this blog, so I&rsquo;ll just say that when corporations have walked further down this road, compatibility issues will probably be even more of a headache than they are already - I don&rsquo;t envy the people whose job is is now or will be in the future to make one government&rsquo;s systems talk to another&rsquo;s.</p>
+<p>Politics isn’t the point of this blog, so I’ll just say that when corporations have walked further down this road, compatibility issues will probably be even more of a headache than they are already - I don’t envy the people whose job is is now or will be in the future to make one government’s systems talk to another’s.</p>
 ]]></content>
   </entry>
   
@@ -78,47 +81,49 @@ Individual citizens have nothing like that level of autonomy.</p>
     <id>http://stronglyemergent.com//blog/2010/everyone-turns-into-microsoft</id>
     <content type="html"><![CDATA[<p>Nothing lasts forever, and everything is a trade-off.</p>
 
-<p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">&ldquo;The Other Road Ahead,&rdquo;</a> noted a risk of relying on software that other people control:</p>
+<p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">“The Other Road Ahead,”</a> noted a risk of relying on software that other people control:</p>
 
-<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun.
-If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS.
-And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
+<blockquote>
+  <p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun.
+If you want to write desktop software now you do it on Microsoft’s terms, calling their APIs and working around their buggy OS.
+And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p>
+</blockquote>
 
 <p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening.
 Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
 
-<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.
-The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.
-They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.
-Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
+<p>I think that Graham’s warning is still apropos: when you build on Apple’s foundation, you risk Apple pulling the rug out from under you.
+The scare from the patent filing caught hold of developers’ imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.
+They’re unlikely to do so - but they <em>can</em>, and that’s what worries iOS developers.
+Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn’t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
 
-<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.
+<p>Android has its own problems - frankly, I think it’s an inferior OS and that its median application quality is inferior.
 However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.
 Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.
 So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
 
-<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.
-They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.
+<p>It’s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn’t unique to them.
+They’re all pursuing control, trying to push the useful lifespan of their platforms to its limits.
 This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.
 Eventually, there will be something new.
 Hostfiles were supplanted by DNS.
 Yahoo was replaced by Google in search.
 Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm.
-Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
+Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they’ve grown.</p>
 
 <p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft.
-I admire Microsoft&rsquo;s commitment to backward compatibility.
+I admire Microsoft’s commitment to backward compatibility.
 Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>.
-It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.
+It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that’s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.
 But nothing lasts forever, and everything is a trade-off.
 Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
 
-<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.
-Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from.
-That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
+<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they’re still willing to bet the company on new things.
+Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn’t willing to shoulder, and that Google has been shying away from.
+That too is a tradeoff, though, and when I think about the long term, I’m pretty confident that Apple too will turn into Microsoft.</p>
 
-<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.
-I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
+<p>I’m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.
+I’m not a venture capitalist, so the only way I’ll get to bet on one of those companies is by working for them - and that’s a bet that I’m looking forward to placing.</p>
 ]]></content>
   </entry>
   
@@ -127,23 +132,23 @@ I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one
     <link href="http://stronglyemergent.com//blog/2010/windows-xp-closure/"/>
     <updated>2010-02-16T22:01:23-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/windows-xp-closure</id>
-    <content type="html"><![CDATA[<p>Today I&rsquo;m going to be taking Microsoft&rsquo;s 70-270 exam: &ldquo;Installing, Configuring, and Administering Windows XP Professional.&rdquo;
-Over the weekend, I said goodbye to the XP install that I&rsquo;d been continuously using for the last five years or so and upgraded to Windows 7.
-It&rsquo;s an interesting transition.
-I expect, of course, to pass the test - but even if I don&rsquo;t, it&rsquo;s interesting that it lines up with XP bowing out of my personal life.
-I&rsquo;m slated to take a lot of certification tests over the course of 2010.
-So far, I&rsquo;m passing 100% of them, so I feel good about that.
-There are questions about how worthwhile certification tests are, and I&rsquo;m definitely skeptical, but I know that they are worthwhile.
+    <content type="html"><![CDATA[<p>Today I’m going to be taking Microsoft’s 70-270 exam: “Installing, Configuring, and Administering Windows XP Professional.”
+Over the weekend, I said goodbye to the XP install that I’d been continuously using for the last five years or so and upgraded to Windows 7.
+It’s an interesting transition.
+I expect, of course, to pass the test - but even if I don’t, it’s interesting that it lines up with XP bowing out of my personal life.
+I’m slated to take a lot of certification tests over the course of 2010.
+So far, I’m passing 100% of them, so I feel good about that.
+There are questions about how worthwhile certification tests are, and I’m definitely skeptical, but I know that they are worthwhile.
 My plan for certification is to say: behold!
 My track record is that I took a dozen certifications on a coherent but diverse body of knowledge over the course of the year.
 This demonstrates that I can assimilate a body of knowledge fast and apply it.
-That&rsquo;s a valuable thing.</p>
+That’s a valuable thing.</p>
 
-<p>What I wish I knew about certifications is mostly this: why in the heck did Microsoft move away from the MCSE branding and its very high name recognition to &ldquo;MCITP&rdquo; and &ldquo;MCTS&rdquo;?
-It&rsquo;s very strange - I have to conclude that the MCSE brand somehow became poisoned.
+<p>What I wish I knew about certifications is mostly this: why in the heck did Microsoft move away from the MCSE branding and its very high name recognition to “MCITP” and “MCTS”?
+It’s very strange - I have to conclude that the MCSE brand somehow became poisoned.
 Otherwise, the decision seems irrational.
-And with the continued life of Server 2003, people are still looking for MCSEs and MCSAs even when they&rsquo;re also planning on upgrading to Server 2008.
-I&rsquo;m baffled.</p>
+And with the continued life of Server 2003, people are still looking for MCSEs and MCSAs even when they’re also planning on upgrading to Server 2008.
+I’m baffled.</p>
 ]]></content>
   </entry>
   
@@ -152,23 +157,23 @@ I&rsquo;m baffled.</p>
     <link href="http://stronglyemergent.com//blog/2010/men-of-vision/"/>
     <updated>2010-02-14T22:01:10-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/men-of-vision</id>
-    <content type="html"><![CDATA[<p>Over the weekend, I installed Windows 7 - only months behind the bleeding edge, but it&rsquo;s still the New Windows, which carries a certain risk and inconvenience.
-I&rsquo;ll get into that in another post.
+    <content type="html"><![CDATA[<p>Over the weekend, I installed Windows 7 - only months behind the bleeding edge, but it’s still the New Windows, which carries a certain risk and inconvenience.
+I’ll get into that in another post.
 Right now, what the existence of Windows 7 means to me is this: there are only two OSes in the world.
-There&rsquo;s NT, and there&rsquo;s the *NIX family.
+There’s NT, and there’s the *NIX family.
 Apple dropped its old OS, and its in-house next-generation OS never got off the ground.
 Be, Amiga, and OS/2 are all basically pushing up daisies, their user and developer communities enthusiastic but statistically insignificant.
-I learned this through Jeff Atwood&rsquo;s post about <a href="http://www.codinghorror.com/blog/2004/08/showstopper.html">David Cutler</a>, a man I&rsquo;m coming to admire.
-I think it&rsquo;s entirely possible that Cutler - irascible, enigmatic, and visionary - is the real Microsoft counterpart to Steve Jobs, not Bill Gates.
-Gates and Jobs are both the faces of their computing domains, and have stepped into that role, but in terms of capital-V Vision, it seems to me that Cutler is at the very least the Wozniak to Gates' Jobs, if not the Jobs himself.</p>
+I learned this through Jeff Atwood’s post about <a href="http://www.codinghorror.com/blog/2004/08/showstopper.html">David Cutler</a>, a man I’m coming to admire.
+I think it’s entirely possible that Cutler - irascible, enigmatic, and visionary - is the real Microsoft counterpart to Steve Jobs, not Bill Gates.
+Gates and Jobs are both the faces of their computing domains, and have stepped into that role, but in terms of capital-V Vision, it seems to me that Cutler is at the very least the Wozniak to Gates’ Jobs, if not the Jobs himself.</p>
 
-<p>It also makes me think of the Be bug report, &ldquo;BeOS missing megalomaniacal figurehead to harness and focus developer rage,&rdquo; now a digital artifact available only through quotation, like Roman-era documents.
+<p>It also makes me think of the Be bug report, “BeOS missing megalomaniacal figurehead to harness and focus developer rage,” now a digital artifact available only through quotation, like Roman-era documents.
 I wonder how much a figure like Cutler or Jobs is necessary - and whether the community of developers produces these people, or simply provides a place in which their talents can be productive.
-Considering how many such people, in greater or lesser degree, the open-source community has produced, I think it&rsquo;s entirely possible that there has to be a charismatic, polarizing figure just to get the social dynamics to line up properly to produce good software.</p>
+Considering how many such people, in greater or lesser degree, the open-source community has produced, I think it’s entirely possible that there has to be a charismatic, polarizing figure just to get the social dynamics to line up properly to produce good software.</p>
 
-<p>If that&rsquo;s true, look around you.
+<p>If that’s true, look around you.
 Can you spot that person at your software company?
-Do you need such a person - and if you do need one and you don&rsquo;t have one, what can be done about that?</p>
+Do you need such a person - and if you do need one and you don’t have one, what can be done about that?</p>
 ]]></content>
   </entry>
   

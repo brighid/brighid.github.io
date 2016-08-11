@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -19,8 +19,8 @@
     <updated>2013-06-15T08:57:00-07:00</updated>
     <id>http://stronglyemergent.com//blog/2013/first-date-with-ruby</id>
     <content type="html"><![CDATA[<p>Last night I took a notion into my head and wound up spending a solid few hours with Ruby.
-I&rsquo;m happy with how that went! There&rsquo;s some first-time-with-a-new-language friction, but nothing out of the ordinary.
-Here&rsquo;s what I came up with, and afterwards, why I chose that and what I think it shows that I accomplished that.</p>
+I’m happy with how that went! There’s some first-time-with-a-new-language friction, but nothing out of the ordinary.
+Here’s what I came up with, and afterwards, why I chose that and what I think it shows that I accomplished that.</p>
 
 <p><noscript><pre>require &#39;cgi&#39;
 require &#39;json&#39;
@@ -106,26 +106,26 @@ Liquid::Template.register_tag(&#39;music&#39;, Jekyll::MusicLink)
 
 <p>This creates a new Liquid tag, <code>{% music %}</code>, which can be inserted in page templates.
 I added it to my <code>footer.html</code> after the byline, timestamp, and categories.
-The tag checks whether the post&rsquo;s YAML front-matter has data for a musician and a track name.
+The tag checks whether the post’s YAML front-matter has data for a musician and a track name.
 If the post has that data, the plugin attempts to create a link to the iTunes Store for the given track.
-With <code>makeItunesTarget()</code> it puts together a URL that is a query to the <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands off the response to the standard library&rsquo;s JSON parser, and with <code>makeAnchorFromItunesData()</code> it takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the tag&rsquo;s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it&rsquo;ll be inserted).
-Finally, there&rsquo;s a convenience function, <code>getMusic()</code>, that just composes the previous three.</p>
+With <code>makeItunesTarget()</code> it puts together a URL that is a query to the <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html">iTunes Store Search API</a>, with <code>getFromItunes()</code> it loads the query URL and hands off the response to the standard library’s JSON parser, and with <code>makeAnchorFromItunesData()</code> it takes the first search result and generates text to use for an <code>&lt;a&gt;</code> tag and a URL to use for the tag’s <code>href</code> attribute (if you have an affiliate code for the iTunes store, it’ll be inserted).
+Finally, there’s a convenience function, <code>getMusic()</code>, that just composes the previous three.</p>
 
-<p>Part of why this worked well is that it&rsquo;s another project with limited scope: I had a specific objective in mind, so I was able to keep moving gradually towards it.
-However, that limited scope was a way of making progress towards the broad goal of &ldquo;learn Ruby&rdquo; and also took on the medium-scope goal of &ldquo;learn the iTunes Store Search API.&rdquo;
-As a practical matter, learning to work with other people&rsquo;s APIs, whether they&rsquo;re libraries, services, or daemons, is an important skill for a working programmer; toy projects that include cultivating that skill are good uses of my time.
-Learning new languages is also a career-long thing: for all the talk of Lisp being &ldquo;the hundred-year language,&rdquo; no-one now working as a programmer will be programming in just one language for the rest of their days.
+<p>Part of why this worked well is that it’s another project with limited scope: I had a specific objective in mind, so I was able to keep moving gradually towards it.
+However, that limited scope was a way of making progress towards the broad goal of “learn Ruby” and also took on the medium-scope goal of “learn the iTunes Store Search API.”
+As a practical matter, learning to work with other people’s APIs, whether they’re libraries, services, or daemons, is an important skill for a working programmer; toy projects that include cultivating that skill are good uses of my time.
+Learning new languages is also a career-long thing: for all the talk of Lisp being “the hundred-year language,” no-one now working as a programmer will be programming in just one language for the rest of their days.
 There are shell scripts and libraries and wrappers: there is a fragmented world that despite the friction of fragmentation, would not actually be better-served by a language monoculture.
 In addition, there are plenty of exciting things out there whose roots are in Ruby, so I was enthusiastic about picking up a smattering of Ruby.</p>
 
-<p>I&rsquo;m definitely fond of Ruby so far.
-Part of this is because I&rsquo;m getting to the point where I&rsquo;m seeing parallels with other languages and able to make good guesses about how a new language will behave.
-I was able to guess from reading source &ldquo;oh okay, Ruby is one of the languages where the return value of a function, if not explicit, is the value of the last statement evaluated in its body,&rdquo; was pleasantly surprised that it has the same tuple-packing return-multiple-values feature as Python, and noticed &ldquo;oh hey neat, there&rsquo;s a Scheme-like <code>function!()</code> naming convention for functions that mutate their parameters.&rdquo;
-So that&rsquo;s all good stuff.</p>
+<p>I’m definitely fond of Ruby so far.
+Part of this is because I’m getting to the point where I’m seeing parallels with other languages and able to make good guesses about how a new language will behave.
+I was able to guess from reading source “oh okay, Ruby is one of the languages where the return value of a function, if not explicit, is the value of the last statement evaluated in its body,” was pleasantly surprised that it has the same tuple-packing return-multiple-values feature as Python, and noticed “oh hey neat, there’s a Scheme-like <code>function!()</code> naming convention for functions that mutate their parameters.”
+So that’s all good stuff.</p>
 
-<p>Part of choosing Ruby, too, is that I&rsquo;m currently blogulating via Octopress, which is built on Ruby.
-Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that I&rsquo;ve chosen it, I want to have a grasp of how it works.
-That means learning Ruby and tinkering&mdash;which I&rsquo;m looking forward to.</p>
+<p>Part of choosing Ruby, too, is that I’m currently blogulating via Octopress, which is built on Ruby.
+Most of why I chose it is that Wordpress is awful (on the axes I care about), but now that I’ve chosen it, I want to have a grasp of how it works.
+That means learning Ruby and tinkering—which I’m looking forward to.</p>
 
 <p>As a supplemental note, if this stuff sounds to you like a good attitude for a programmer to have, you should <a href="http://careers.stackoverflow.com/stronglyemergent">hire me</a>.</p>
 ]]></content>
@@ -139,18 +139,18 @@ That means learning Ruby and tinkering&mdash;which I&rsquo;m looking forward to.
     <content type="html"><![CDATA[<p>Communicating with your past self can be a little alarming.
 In the process of converting this blog to OctoPress
 (because <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP is a fractal of bad design</a> and WordPress has its own problems on top of being a huge PHP legacy system),
-I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid&rsquo;s way of saying &ldquo;you forgot to <em>start</em> that if-block, girl&rdquo;, I learned that my past self had very different priorities.</p>
+I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid’s way of saying “you forgot to <em>start</em> that if-block, girl”, I learned that my past self had very different priorities.</p>
 
-<p>Not that this is <a href="news:">news:</a> as I&rsquo;ve gotten older, I&rsquo;ve gotten better at forgiving my past self for her fuckups.
-It&rsquo;s still hard to forgive her eating habits, but bodies are complicated.
+<p>Not that this is news: as I’ve gotten older, I’ve gotten better at forgiving my past self for her fuckups.
+It’s still hard to forgive her eating habits, but bodies are complicated.
 I was surprised, though, to learn that she was conflicted about whether to be a developer or a sysadmin.
 Seriously?
-It&rsquo;s not a binary: pretty much the whole subfield of devops is people who&rsquo;re making interesting choices about &ldquo;what if I pick things from both skillsets?&rdquo;
+It’s not a binary: pretty much the whole subfield of devops is people who’re making interesting choices about “what if I pick things from both skillsets?”
 While I now think of myself as an engineer in general, not a sysadin or a developer, I am very happy that I am picking up bits and pieces of CS theory and that I can still read Apache config files, whip up basic Perl one-liners, and be on speaking terms with <code>vim</code>.</p>
 
 <p>I admire the dedicated systems team at my work, but their job is not the job I want to do.
 I want to <em>build things.</em>
-That&rsquo;s gotten more and more important to me over time &mdash; the thrill of green-field development, of Something from Nothing, is one I want, over and over.
+That’s gotten more and more important to me over time — the thrill of green-field development, of Something from Nothing, is one I want, over and over.
 Lucky me: I am getting better and better at producing that experience for myself and making useful things along the way.</p>
 ]]></content>
   </entry>

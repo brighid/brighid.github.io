@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rage | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/rage/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,46 +18,46 @@
     <link href="http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb/"/>
     <updated>2013-03-24T09:15:00-07:00</updated>
     <id>http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb</id>
-    <content type="html"><![CDATA[<p>Today&rsquo;s JavaScript Rehab patient is the GardenWeb forum.
-I&rsquo;m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
-At the time of writing, here&rsquo;s what it looks like:</p>
+    <content type="html"><![CDATA[<p>Today’s JavaScript Rehab patient is the GardenWeb forum.
+I’m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
+At the time of writing, here’s what it looks like:</p>
 
-<p><img class="center" src="/images/screenshot_gardenweb.png" title="&ldquo;A screenshot of a thread on the GardenWeb forum.&rdquo;" ></p>
+<p><img class="center" src="/images/screenshot_gardenweb.png" title="“A screenshot of a thread on the GardenWeb forum.”" ></p>
 
 <p>My problem with this starts with their <code>&lt;noscript&gt;</code> block:
-it says &ldquo;JavaScript must be enabled for the correct page display&rdquo; and that&rsquo;s a bad sign.
+it says “JavaScript must be enabled for the correct page display” and that’s a bad sign.
 It indicates that the people who wrote this code have grasped the wrong end of the stick.
 If your page does not display correctly without JavaScript, you have already failed.
-You might need to adjust your definition of &ldquo;correctly&rdquo;&mdash;
-for example, it&rsquo;s difficult to define what it&rsquo;s &ldquo;correct&rdquo; for Google Maps to do without JavaScript.
-But it&rsquo;s not difficult for this site: it&rsquo;s a dang discussion forum.
+You might need to adjust your definition of “correctly”—
+for example, it’s difficult to define what it’s “correct” for Google Maps to do without JavaScript.
+But it’s not difficult for this site: it’s a dang discussion forum.
 Its purpose is to <em>display text.</em>
-This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich&rsquo;s eye.</p>
+This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich’s eye.</p>
 
 <p>I end up saying this a lot in the JavaScript Rehab context:
-if you can&rsquo;t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
+if you can’t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
 also your keyboard should be taken away.</p>
 
-<p>I won&rsquo;t get too exercised over the clumsy prose of the message (<em>&ldquo;for the correct page display&rdquo;</em>? Ugh.):
-it just merits mentioning that if you&rsquo;re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
-What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner&rsquo;s attention to detail.
-A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it&rsquo;s not like they just didn&rsquo;t have time to get around to it
-(and judging by how often I see <code>cgi-bin</code> in their URLs, I&rsquo;m betting that there&rsquo;s a strong continuity between the 1995 version of the site and the 2013 version).</p>
+<p>I won’t get too exercised over the clumsy prose of the message (<em>“for the correct page display”</em>? Ugh.):
+it just merits mentioning that if you’re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
+What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner’s attention to detail.
+A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it’s not like they just didn’t have time to get around to it
+(and judging by how often I see <code>cgi-bin</code> in their URLs, I’m betting that there’s a strong continuity between the 1995 version of the site and the 2013 version).</p>
 
-<p>What really gets me cranky, though, is that by and large the site <em>does</em> &ldquo;the correct page display&rdquo; without JavaScript enabled.
-What it <em>doesn&rsquo;t</em> correctly display is advertising.
+<p>What really gets me cranky, though, is that by and large the site <em>does</em> “the correct page display” without JavaScript enabled.
+What it <em>doesn’t</em> correctly display is advertising.
 In the screenshot above, a little poking at the page source reveals that the big blank space on the right is intended as space for advertising.
 So what the message at the top of the page is actually saying, is
-&ldquo;we&rsquo;re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.&rdquo;
+“we’re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.”
 Fuck that.</p>
 
 <p>GardenWeb, you are JavaScript addicts.
 Go to rehab.</p>
 
-<p><br>
-<br></p>
+<p><br />
+<br /></p>
 
-<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>&mdash;
+<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>—
 please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-whose-convenience/">the first JavaScript Rehab post</a> to see why I get so cranky about JavaScript.</p>
 ]]></content>
   </entry>
@@ -67,39 +67,39 @@ please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-
     <link href="http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience/"/>
     <updated>2013-03-05T08:04:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s an antipattern that I see way too often:
-&ldquo;please enable JavaScript for this site.&rdquo;
-There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
+    <content type="html"><![CDATA[<p>Here’s an antipattern that I see way too often:
+“please enable JavaScript for this site.”
+There are several levels of badness with this — I’m going to start with JavaScript itself.</p>
 
 <p>JavaScript is actually pretty great:
-<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
+<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich’s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
 (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>).
 You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
 
-<p><strong>That&rsquo;s the problem!</strong></p>
+<p><strong>That’s the problem!</strong></p>
 
 <p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it.
-<em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit.
-In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
+<em>That’s a bad thing.</em> That gave us the 90s and the Bush years’ legacy of viruses and botnets, of exploit after exploit.
+In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I’ve ever seen.</p>
 
-<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
+<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser’s equivalent.</p>
 
-<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right.
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user’s machine as their natural-born right.
 This is deeply not the case.
-It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition!
-&ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness
+It’s not hard to earn the privilege of running JS - you just have to make a value proposition!
+“Please enable JavaScript” is not a value proposition, it’s an admission of laziness
 (or an admission that some pointy-haired boss is in charge).</p>
 
 <p>There are many things you can only do in JavaScript.
 Having JavaScript in your toolkit, as a web developer, is indispensable.
-But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it.
-If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
+But you also must know when you <em>don’t</em> need JavaScript, and to go without it when you don’t need it.
+If you can’t <em>display text</em> without JavaScript, if you can’t <em>construct hyperlinks</em> without JavaScript, if you can’t <em>display images</em> without JavaScript, you’re a bad person and you should feel bad.</p>
 
-<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives.
-I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information.
-If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
+<p>On top of this, there’s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users — you know, the sort of thing that makes Richard Stallman break out in hives.
+I am not <em>against</em> analytics — I am against users being simply mugged for that information.
+If the information has value, you don’t get it for free, analytics companies.</p>
 
-<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
+<p>“JavaScript Rehab” is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
 I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
 ]]></content>
   </entry>
@@ -109,18 +109,18 @@ I will also insult them, because over-using JavaScript is easy to avoid and the 
     <link href="http://stronglyemergent.com//blog/2010/politicos-problematic-incentives-harm-craigslist/"/>
     <updated>2010-08-31T23:01:46-07:00</updated>
     <id>http://stronglyemergent.com//blog/2010/politicos-problematic-incentives-harm-craigslist</id>
-    <content type="html"><![CDATA[<p>So there&rsquo;s <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2010/08/29/BUGI1F4F9K.DTL">even more noise</a> about suing Craigslist,
-and I wish I could grab the attorneys general of 18 states by one giant pair of pinstriped lapels and shout &ldquo;You are making this problem <strong>WORSE</strong>, you buncha maroons!&rdquo;
-There&rsquo;s still some space to write about this after <a href="http://stronglyemergent.com/blog/2010/the-many-forms-of-not-getting-it/">last time</a>, and I&rsquo;m gonna go ahead and fill that space.</p>
+    <content type="html"><![CDATA[<p>So there’s <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2010/08/29/BUGI1F4F9K.DTL">even more noise</a> about suing Craigslist,
+and I wish I could grab the attorneys general of 18 states by one giant pair of pinstriped lapels and shout “You are making this problem <strong>WORSE</strong>, you buncha maroons!”
+There’s still some space to write about this after <a href="http://stronglyemergent.com/blog/2010/the-many-forms-of-not-getting-it/">last time</a>, and I’m gonna go ahead and fill that space.</p>
 
 <p>The problem here is a toxic incentive structure, just like <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">the reason the TSA reduces security</a>.
-The various political folk who are inveighing against Craigslist have no idea what they&rsquo;re talking about and are going to make Craigslist less useful for everyone and cost their taxpayers a lot of money in the process - and yet, for them personally, there is no downside to attacking Craigslist.
-Attacking Craigslist makes them look &ldquo;tough on crime,&rdquo; look like vigorous, active advocates of the public good, and look like paragons of conventional morality.</p>
+The various political folk who are inveighing against Craigslist have no idea what they’re talking about and are going to make Craigslist less useful for everyone and cost their taxpayers a lot of money in the process - and yet, for them personally, there is no downside to attacking Craigslist.
+Attacking Craigslist makes them look “tough on crime,” look like vigorous, active advocates of the public good, and look like paragons of conventional morality.</p>
 
 <p>The most effective things you can do to increase airline security and reduce sex trafficking are the most boring ones, and the current structure of incentives all but guarantees that those measures will not be taken, and instead countermeasures will be taken that will make the problem worse.
 This underscores again the importance of narrative.
-Software providers and other technical people are in danger because of these toxic incentives - people who don&rsquo;t know how your business works could have an incentive to mess with you, and are quite likely to be immune to consequences in the practical sense.
-This is why we developers and sysadmins need to be aware of the social, political, and cultural context of our professional actions - the less aware we are, the more likely that we&rsquo;ll find ourselves out of a job, at the helm of a foundering company, or forced to implement asinine requirements because of forces beyond our control.</p>
+Software providers and other technical people are in danger because of these toxic incentives - people who don’t know how your business works could have an incentive to mess with you, and are quite likely to be immune to consequences in the practical sense.
+This is why we developers and sysadmins need to be aware of the social, political, and cultural context of our professional actions - the less aware we are, the more likely that we’ll find ourselves out of a job, at the helm of a foundering company, or forced to implement asinine requirements because of forces beyond our control.</p>
 ]]></content>
   </entry>
   
@@ -129,54 +129,54 @@ This is why we developers and sysadmins need to be aware of the social, politica
     <link href="http://stronglyemergent.com//blog/2010/microsoft-curriculum-narrative/"/>
     <updated>2010-02-04T22:01:41-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/microsoft-curriculum-narrative</id>
-    <content type="html"><![CDATA[<p>Of course, having bloviated to the tune of 2000+ words about Apple and narrative, I can&rsquo;t avoid thinking about Microsoft and narrative.
-Microsoft&rsquo;s narratives are particularly annoying to me right now because I&rsquo;m spending a lot of time with my nose in Microsoft Press books and grinding through practice tests for Microsoft certifications.
+    <content type="html"><![CDATA[<p>Of course, having bloviated to the tune of 2000+ words about Apple and narrative, I can’t avoid thinking about Microsoft and narrative.
+Microsoft’s narratives are particularly annoying to me right now because I’m spending a lot of time with my nose in Microsoft Press books and grinding through practice tests for Microsoft certifications.
 Microsoft has narrative problems in these books.</p>
 
-<p>The main thing is that reading the books feels like reading a bad help file on the computer: the help isn&rsquo;t helpful.
-It doesn&rsquo;t tell a story well - and, crucially, it doesn&rsquo;t tell you what matters.
-In a reference work, this would be halfway forgivable, but I&rsquo;m reading tutorial works, books that are intended to take you from near-zero to competence with a given Microsoft product, and they&rsquo;re falling down on that.
+<p>The main thing is that reading the books feels like reading a bad help file on the computer: the help isn’t helpful.
+It doesn’t tell a story well - and, crucially, it doesn’t tell you what matters.
+In a reference work, this would be halfway forgivable, but I’m reading tutorial works, books that are intended to take you from near-zero to competence with a given Microsoft product, and they’re falling down on that.
 They are basically giant for-each loops that go through most of the features of the product.
-They take a stance that&rsquo;s both egotistical and careless - that <em>everything</em> is important.</p>
+They take a stance that’s both egotistical and careless - that <em>everything</em> is important.</p>
 
 <p>Wrong, wrong, wrong!
-If you&rsquo;ve ever gotten emails from someone who puts URGENT in the subject line of everything that they send you, you already have experienced how this is wrong.
+If you’ve ever gotten emails from someone who puts URGENT in the subject line of everything that they send you, you already have experienced how this is wrong.
 Good narrative requires that important things look important, and that there be a clear spectrum of importance.
-You don&rsquo;t need to say that &ldquo;it&rsquo;s all important.&rdquo;
-When someone picks up the book, they are implicitly assuming that everything in it is important or you wouldn&rsquo;t have printed it.
-They are counting on you, the writer and publisher and editor, to make sure that everything past the threshold of &ldquo;important enough to be in the book&rdquo; is spread out into an easily visible sub-spectrum of importance.</p>
+You don’t need to say that “it’s all important.”
+When someone picks up the book, they are implicitly assuming that everything in it is important or you wouldn’t have printed it.
+They are counting on you, the writer and publisher and editor, to make sure that everything past the threshold of “important enough to be in the book” is spread out into an easily visible sub-spectrum of importance.</p>
 
-<p>It&rsquo;s even more obnoxious that things lack this narrative structure when you consider that the books I&rsquo;m working with are class textbooks with accompanying lab manuals, tests, and review questions.
+<p>It’s even more obnoxious that things lack this narrative structure when you consider that the books I’m working with are class textbooks with accompanying lab manuals, tests, and review questions.
 The tests are perfect opportunities to reinforce and remind students of the relative importance of things.
-But the books are so flat, so determinedly agnostic about what&rsquo;s important, that the tests and review questions are the only way to tease out information about that hierarchy of importance - and their helpfulness is severely undermined by the way that they contrast with the book.
+But the books are so flat, so determinedly agnostic about what’s important, that the tests and review questions are the only way to tease out information about that hierarchy of importance - and their helpfulness is severely undermined by the way that they contrast with the book.
 It is an uphill battle to extract a hierarchy of importance from the tests and homework.
-It also creates a sense that there&rsquo;s mere memorization to be done and that the tests are loaded with trick questions.</p>
+It also creates a sense that there’s mere memorization to be done and that the tests are loaded with trick questions.</p>
 
-<p>That&rsquo;s very, very bad.
-I don&rsquo;t argue for the tests being artificially easy - but right now the material is artificially hard because it doesn&rsquo;t clue you in to what&rsquo;s important.
-As a result, when I go through practice exams, it feels like they&rsquo;re asking for trivia.
-They want me to memorize which tab of which control panel a given setting is in, instead of knowing what that setting does and when I&rsquo;d need it.
-They&rsquo;re also trapped by the need to demonstrate how much you can do with Microsoft products, and so it&rsquo;s common for them to contrive situations in which various features are necessary.
-I&rsquo;m down with that, but it has a very high risk of adding to the sense of &ldquo;there is no organizing principle going on here.&rdquo;</p>
+<p>That’s very, very bad.
+I don’t argue for the tests being artificially easy - but right now the material is artificially hard because it doesn’t clue you in to what’s important.
+As a result, when I go through practice exams, it feels like they’re asking for trivia.
+They want me to memorize which tab of which control panel a given setting is in, instead of knowing what that setting does and when I’d need it.
+They’re also trapped by the need to demonstrate how much you can do with Microsoft products, and so it’s common for them to contrive situations in which various features are necessary.
+I’m down with that, but it has a very high risk of adding to the sense of “there is no organizing principle going on here.”</p>
 
-<p>Frustratingly, it&rsquo;s not like Microsoft doesn&rsquo;t have usage data.
-They&rsquo;ve got oodles.
+<p>Frustratingly, it’s not like Microsoft doesn’t have usage data.
+They’ve got oodles.
 They keep a close eye on this stuff - or they should.
-So it shouldn&rsquo;t be spectacularly difficult for them to identify good candidates for emphasis.
+So it shouldn’t be spectacularly difficult for them to identify good candidates for emphasis.
 Their tutorial materials, training the people who will run Microsoft-based facilities in the future, need to be clear and pitch a story - a story about what happens when you run Microsoft clients, Microsoft servers, Microsoft infrastructure.
 I want to give them a chance to tell a compelling story about the features of their product.
-You&rsquo;ll use this every day.
-You&rsquo;ll use this every week if you&rsquo;re in such-and-such kind of network, and otherwise never.
-You&rsquo;ll use this once every 18 months, and that one time it will save your ass.
+You’ll use this every day.
+You’ll use this every week if you’re in such-and-such kind of network, and otherwise never.
+You’ll use this once every 18 months, and that one time it will save your ass.
 That kind of lore should be spread around.</p>
 
-<p>Right now, I&rsquo;m actually pulling for Microsoft when I read these guides.
+<p>Right now, I’m actually pulling for Microsoft when I read these guides.
 I realize that their products can do some pretty compelling and astonishing things.
 Yet it still feels like listening to someone with a stammer trying to read the <em>I Have A Dream</em> speech - great content, but the delivery, oy.
 Microsoft Official Academic Courses should be better than this: they should, even if they have to invent one, impose a narrative onto a collection of facts so that those facts can easily enter and remain in the human brains of sysadmins-in-training.
 They should reinforce that narrative with tests, labs, and review questions that are all in sync, emphasizing the same hierarchy of importance.
 Finally, for bonus points, they should tie into an existing body of community lore about how to run an IT infrastructure the Microsoft Way.
-Microsoft&rsquo;s company-wide ability to do this <em>kind</em> of thing hasn&rsquo;t penetrated the Microsoft Official Academic Courses that I&rsquo;ve read, and I really hope that their later crops are better.</p>
+Microsoft’s company-wide ability to do this <em>kind</em> of thing hasn’t penetrated the Microsoft Official Academic Courses that I’ve read, and I really hope that their later crops are better.</p>
 ]]></content>
   </entry>
   
@@ -185,26 +185,26 @@ Microsoft&rsquo;s company-wide ability to do this <em>kind</em> of thing hasn&rs
     <link href="http://stronglyemergent.com//blog/2010/what-i-learn-in-this-school/"/>
     <updated>2010-01-26T22:01:56-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/what-i-learn-in-this-school</id>
-    <content type="html"><![CDATA[<p>Right now I&rsquo;m studying at a career college, and I&rsquo;m bumping up against the limits of that.
+    <content type="html"><![CDATA[<p>Right now I’m studying at a career college, and I’m bumping up against the limits of that.
 I feel like I should be in a computer-science program somewhere, but my track record excludes that.
 Fine.
-I can build towards that goal - and in the meantime, I&rsquo;m going to build as much of a computer-science curriculum as I can out of the sysadmin curriculum on offer here.
-I hope that I&rsquo;ll end up with some interesting hybrid, and that&rsquo;s useful to strive for.</p>
+I can build towards that goal - and in the meantime, I’m going to build as much of a computer-science curriculum as I can out of the sysadmin curriculum on offer here.
+I hope that I’ll end up with some interesting hybrid, and that’s useful to strive for.</p>
 
 <p>The actual sysadmin track here is interesting to me, and looks useful.
 It covers a lot of things that are very interesting to me: how to actually run a for-serious network, both in the Microsoft Way and in one iteration of the Unix Ways.
-That&rsquo;s totally interesting to me.
+That’s totally interesting to me.
 I feel like it shies away from some things that I feel are necessities of really proficient sysadmin work, though.
-One teacher told me recently that &ldquo;we&rsquo;re trying not to get into programming courses.&rdquo;
-Well, that&rsquo;s an interesting goal, but being a good sysadmin means knowing when to automate so you can spend your time most efficiently.
-You&rsquo;re not going to be a good sysadmin unless you can spend your time very efficiently, and that means that you&rsquo;re going to need to automate at least sometimes, and that means perl, that means PowerShell, that means bash scripting, that may even mean Python, Ruby, PHP, AppleScript, and VBA.</p>
+One teacher told me recently that “we’re trying not to get into programming courses.”
+Well, that’s an interesting goal, but being a good sysadmin means knowing when to automate so you can spend your time most efficiently.
+You’re not going to be a good sysadmin unless you can spend your time very efficiently, and that means that you’re going to need to automate at least sometimes, and that means perl, that means PowerShell, that means bash scripting, that may even mean Python, Ruby, PHP, AppleScript, and VBA.</p>
 
 <p>To fill this need, the college currently assigns a teeny little slice of the later Windows Server classes, a little slice of the Linux classes, and a dedicated class based on Windows 9x/NT/XP batch files.
 This is not satisfying.
-While it&rsquo;s much better than nothing, and it&rsquo;s great for introducing the concept that as much of a server as possible should be scriptable, it seems very lacking to me.
-It doesn&rsquo;t expose the full scope of the problem domain that scripting can address, and it binds students into a crippled environment with ugly syntax, the MS-DOS command line.
+While it’s much better than nothing, and it’s great for introducing the concept that as much of a server as possible should be scriptable, it seems very lacking to me.
+It doesn’t expose the full scope of the problem domain that scripting can address, and it binds students into a crippled environment with ugly syntax, the MS-DOS command line.
 Either bash scripting or PowerShell should be incorporated - PowerShell is built into Windows 2008 and seems to have plenty of life in it, and the corpus of existing bash lore is very large.
-Both of these would serve students better than the minimal scripting knowledge that&rsquo;s currently being imparted by the school&rsquo;s curriculum.</p>
+Both of these would serve students better than the minimal scripting knowledge that’s currently being imparted by the school’s curriculum.</p>
 ]]></content>
   </entry>
   

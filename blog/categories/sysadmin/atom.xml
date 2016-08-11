@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sysadmin | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/sysadmin/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -19,55 +19,55 @@
     <updated>2010-08-29T23:01:44-07:00</updated>
     <id>http://stronglyemergent.com//blog/2010/joel-on-making-choices</id>
     <content type="html"><![CDATA[<p>I have a few idea-bubbles that are always hanging around my head like the Moon around the Earth, and one of them is this: <em>everything is a trade-off</em>.
-Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you&rsquo;re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
+Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you’re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
 A few days after I wrote about that, Joel Spolsky <a href="http://www.joelonsoftware.com/items/2010/08/19.html">posted his talk from Business of Software 2009</a>.
-He&rsquo;s a great coder, a great writer, and a smokin' public speaker, you should watch it.</p>
+He’s a great coder, a great writer, and a smokin’ public speaker, you should watch it.</p>
 
 <p>I think that Mr. Spolsky oversimplifies in one aspect of his talk.
-So I&rsquo;m going to jump off from there:
+So I’m going to jump off from there:
 he says that thinking that you must choose between simplicity and power on a one-dimensional axis is a trap and that you have to construct something else to usefully think about what features software should have.
 So he talks about elegance and about good features and bad features.
-I&rsquo;m going to say it a slightly different way.
+I’m going to say it a slightly different way.
 I just say that you do have to choose between simplicity and power - but it is possible to make good choices and bad choices.
 Not every choice gives up 1 Simplon of simplicity for 1 Pill of power.
 There are a lot of choices you can make that trade 2 Simplons for 4 Pills, or sometimes 1 Pill for 87 Simplons.
-You&rsquo;d much rather make those than 1:1 trades, and you should spend a lot of time avoiding trades where you give up 1 Simplon and gain 0.005 Pills.</p>
+You’d much rather make those than 1:1 trades, and you should spend a lot of time avoiding trades where you give up 1 Simplon and gain 0.005 Pills.</p>
 
 <p><img src="/images/tradeoff-curves.png" alt="two plotted curves, one strictly linear and the other with a constant distance from the origin of the graph." /></p>
 
-<p>Too often, we act like the curve on the right is what we&rsquo;re stuck with - the best we can do is those 1:1 trades.
+<p>Too often, we act like the curve on the right is what we’re stuck with - the best we can do is those 1:1 trades.
 It should be obvious, though, that we can do better.
 The problem is that to do better, generally we need to make those hard decisions.
-Achieving trade-offs that are better than 1:1 is hard, and it&rsquo;s easy to construct (purposefully or not) incentive structures that absolutely destroy the chances of making good trade-offs.
-My favorite example of this is in airline security - we&rsquo;re trading security and convenience instead of simplicity and power, but the two problems map onto one another extremely well.
-The Transportation Security Administration is living proof that 1:1 tradeoffs aren&rsquo;t the only kind - they demonstrate, every day, that you can make <em>far</em> worse trade-offs.
-They&rsquo;re the <a href="http://www.schneier.com/blog/archives/2009/06/fixing_airport.html">pathologically bad case</a>, where you make so many trade-offs that are so bad that you with up far less security and far less convenience.</p>
+Achieving trade-offs that are better than 1:1 is hard, and it’s easy to construct (purposefully or not) incentive structures that absolutely destroy the chances of making good trade-offs.
+My favorite example of this is in airline security - we’re trading security and convenience instead of simplicity and power, but the two problems map onto one another extremely well.
+The Transportation Security Administration is living proof that 1:1 tradeoffs aren’t the only kind - they demonstrate, every day, that you can make <em>far</em> worse trade-offs.
+They’re the <a href="http://www.schneier.com/blog/archives/2009/06/fixing_airport.html">pathologically bad case</a>, where you make so many trade-offs that are so bad that you with up far less security and far less convenience.</p>
 
 <p>But why is that?
-It&rsquo;s not because the TSA is filled with evil moustache-twirling types who want travellers to be inconvenienced.
+It’s not because the TSA is filled with evil moustache-twirling types who want travellers to be inconvenienced.
 I believe that the TSA is full of perfectly average humans who act according to their incentives, overseen and directed by perfectly average humans (who happen to be politicians) acting according to <em>their</em> incentives.
-Those incentives produce the pathology, because they&rsquo;re not &ldquo;produce better security&rdquo; incentives, they&rsquo;re <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">&ldquo;avoid punishment&rdquo;</a> incentives.
-There are few rewards for actually improving security, and tremendous punishments for <em>letting people think security has been degraded</em> &mdash; and because we laypeople assess security pretty badly, a perverse cycle of incentives produces pretty bad security.</p>
+Those incentives produce the pathology, because they’re not “produce better security” incentives, they’re <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">“avoid punishment”</a> incentives.
+There are few rewards for actually improving security, and tremendous punishments for <em>letting people think security has been degraded</em> — and because we laypeople assess security pretty badly, a perverse cycle of incentives produces pretty bad security.</p>
 
 <p>This maps directly onto producing software and wrangling production servers:
 even though it is harder, we need to seek out those better trade-offs, and that means both difficult work and setting up good incentive systems.
 That also means that the managerial professions need to be very careful about the incentive structures that they set up - the intent of an incentive structure is almost never the only outcome that that structure can produce.
-When you&rsquo;re creating systems, if you refuse to take responsibility for better trade-offs, bad ones will creep in.
+When you’re creating systems, if you refuse to take responsibility for better trade-offs, bad ones will creep in.
 One of my favorite examples in software is stealing focus - when the window that you thought you were working in gets shoved behind something else that decides that it needs your attention.
-Stealing focus is, I&rsquo;m convinced, the sort of sin that means you should never be allowed to touch a compiler again, and furthermore you should probably lose your right pinky, the one that you tap Enter with.
-Every time I&rsquo;ve seen a window stealing focus, it&rsquo;s been at the intersection of the worst programmer habits - hubris in thinking that your program, right now, needs to be the most important thing in my computing world, and bad laziness in that the program is always asking me to make some decision that I don&rsquo;t actually need to make right now.
+Stealing focus is, I’m convinced, the sort of sin that means you should never be allowed to touch a compiler again, and furthermore you should probably lose your right pinky, the one that you tap Enter with.
+Every time I’ve seen a window stealing focus, it’s been at the intersection of the worst programmer habits - hubris in thinking that your program, right now, needs to be the most important thing in my computing world, and bad laziness in that the program is always asking me to make some decision that I don’t actually need to make right now.
 Of course, the existence of this capability also means that it can be used for malicious purposes in a nasty trifecta of bad UX.
 Far better to use alternate notification methods
 (the <a href="http://blogs.msdn.com/b/oldnewthing/archive/2003/09/10/54831.aspx">Notification Area <em>nee</em> system tray</a> in Windows, and bouncing Dock icons or Growl messages in OS X)
 to convey such information.</p>
 
-<p>Like the security/convenience example, this doesn&rsquo;t happen because we programmers are finger-steepling connivers of inconvenience.
+<p>Like the security/convenience example, this doesn’t happen because we programmers are finger-steepling connivers of inconvenience.
 Rather, it happens because too often  our incentive structure is disconnected from what actually happens to users of our software.
 This is part of why startups are a good thing to have in the world:
 by necessity, a startup deals much more closely with its customers, and developers routinely talk to people who actually use the software.</p>
 
 <p>So the challenge to us is to recognize good trade-offs, and work to make those trade-offs instead of 1:1 or sub-par tradeoffs.
-This involves making difficult decisions for your users - and it involves respecting that they&rsquo;re busy making their own difficult decisions, and getting out of their way.</p>
+This involves making difficult decisions for your users - and it involves respecting that they’re busy making their own difficult decisions, and getting out of their way.</p>
 ]]></content>
   </entry>
   
@@ -78,16 +78,16 @@ This involves making difficult decisions for your users - and it involves respec
     <id>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers</id>
     <content type="html"><![CDATA[<p>System administration is about making hard decisions.</p>
 
-<p>This just amounts to saying that it&rsquo;s knowledge work.
-More specifically, it&rsquo;s about making annoying, difficult decisions about computers and networks.
-What parts of the system are trustworthy, and what can enter the system that I shouldn&rsquo;t trust?
-What does the current state of the system tell me about what&rsquo;s likely to break?
+<p>This just amounts to saying that it’s knowledge work.
+More specifically, it’s about making annoying, difficult decisions about computers and networks.
+What parts of the system are trustworthy, and what can enter the system that I shouldn’t trust?
+What does the current state of the system tell me about what’s likely to break?
 What looks urgent but can be safely ignored? What is the tradeoff curve of time and money that solutions to my current problem offer?
 System administration requires a specific body of technical knowledge and experience to answer questions like that.
-That&rsquo;s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.
-The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we&rsquo;re going to need that for the whole of the foreseeable future.</p>
+That’s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.
+The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we’re going to need that for the whole of the foreseeable future.</p>
 
-<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don&rsquo;t have the expertise necessary to make good decisions in the given area.
+<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don’t have the expertise necessary to make good decisions in the given area.
 I believe that the open source movement consistently blurs together those kinds of people.</p>
 
 <p>Now, I should make it clear up front that I love the open source community.
@@ -95,23 +95,23 @@ I am writing this post on a machine whose OS descends from open-source BSD, send
 I acknowledge that the world would be tremendously impoverished if open-source software either stopped existing or never had existed, and I want a future in which more of the world runs on open-source software.
 I feel the same way about open-source software that I feel about America: its flaws frustrate me mostly because it could be <strong>so awesome</strong> if they were solved.</p>
 
-<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you&rsquo;re willing to scale a learning curve.
-That&rsquo;s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.
-That&rsquo;s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.
+<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you’re willing to scale a learning curve.
+That’s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.
+That’s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.
 The other bargain that software can offer is that basic functionality can be yours quickly, and who knows whether Great Power is available or not.
-Often it isn&rsquo;t.</p>
+Often it isn’t.</p>
 
-<p>People don&rsquo;t take that second bargain because they&rsquo;re stupid.
-They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they&rsquo;ve been burned before in the process of trying to use the Great Power of complicated tools.
-I&rsquo;m fine with that: not everyone should be obliged to be a sysadmin.
-As both a sysadmin and a developer, it&rsquo;s my job to make hard decisions that save other people from making hard decisions for just this reason.
-If I just pass along hard decisions, then I probably haven&rsquo;t done well by the users.
-The problem isn&rsquo;t even the hard decisions, really - it&rsquo;s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
+<p>People don’t take that second bargain because they’re stupid.
+They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they’ve been burned before in the process of trying to use the Great Power of complicated tools.
+I’m fine with that: not everyone should be obliged to be a sysadmin.
+As both a sysadmin and a developer, it’s my job to make hard decisions that save other people from making hard decisions for just this reason.
+If I just pass along hard decisions, then I probably haven’t done well by the users.
+The problem isn’t even the hard decisions, really - it’s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
 
 <p>Yes, a computer is a complicated general-purpose tool.
 It is built of a huge assembly of spectacularly fiddly little parts, both physical and logical.
-It is a wonder of the modern age&mdash;but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.
-Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you&rsquo;re probably a developer, a sysadmin, or an enthusiast.
+It is a wonder of the modern age—but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.
+Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you’re probably a developer, a sysadmin, or an enthusiast.
 More likely, you sat down at a computer because you have a task that you want to do.
 You want to send email, play Farmville, or do your taxes.
 You want to use the tools to do that task, not to fiddle with the tools themselves.</p>
@@ -120,34 +120,34 @@ You want to use the tools to do that task, not to fiddle with the tools themselv
 <a href="http://www.amazon.com/gp/product/0789723107?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0789723107">Whole books have been written about this.</a> And this is where we, finally, arrive at iOS, Android, and the title of this post.
 The extent to which Android has become a <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/StartMyOwn">Build My Own</a> OS bothers me.
 Android is a good OS - but it is at its worst when it asks people to become the sysadmins of their own phones.
-The promise of Great Power in phone form is compelling, and there&rsquo;s a chunk of the market that needs it badly (hello, mobile system administration!).
-But that&rsquo;s not the whole market - and that&rsquo;s why iOS, which offers a different bargain, is doing so well.</p>
+The promise of Great Power in phone form is compelling, and there’s a chunk of the market that needs it badly (hello, mobile system administration!).
+But that’s not the whole market - and that’s why iOS, which offers a different bargain, is doing so well.</p>
 
-<p>Not everyone wants to make hard decisions about their computer - and they shouldn&rsquo;t have those decisions forced onto them unless and until it&rsquo;s absolutely necessary.
+<p>Not everyone wants to make hard decisions about their computer - and they shouldn’t have those decisions forced onto them unless and until it’s absolutely necessary.
 I think that part of why desktop OSes have gotten away with doing as much of that as they have is that they can take advantage of the existing number of people who have some expertise and are willing to be free support for their friends, family, and neighbor.
-A bigger part, though, is that you can walk away from a desktop computer that&rsquo;s giving you issues.
-Press &ldquo;cancel&rdquo; until whatever it is goes away.
-That&rsquo;s much less of an option with a phone&mdash;if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.
+A bigger part, though, is that you can walk away from a desktop computer that’s giving you issues.
+Press “cancel” until whatever it is goes away.
+That’s much less of an option with a phone—if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.
 If it starts making your life harder instead of easier, you have to deal with that all of the time.</p>
 
-<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users' hands.
+<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users’ hands.
 The iPhone and descendants have made Apple several zillion dollars.
 Here also we have the Blackberry, which prospered by offering a phone that could do email, and delivering on that promise very well.
-And here finally we have the Android OS, which promises to be like an iPhone only &ldquo;more open&rdquo; and with multitasking and on other carriers.
+And here finally we have the Android OS, which promises to be like an iPhone only “more open” and with multitasking and on other carriers.
 Unfortunately, the tradeoff there is that to a significant extent, Android devices ask you to make harder decisions, and to have to sysadmin your phone.</p>
 
 <p>Android is offering a different bargain.
-There are a lot of times the Android bargain sounds really good to me: I&rsquo;ve already made that bargain a lot of times, and it doesn&rsquo;t frighten me.
-But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android&rsquo;s promises (for example, bundled un-removable applications and UI badness).
-When we developers think of Apple, we probably don&rsquo;t think of them with great fondness because of their iron-fisted control over the App Store.
-But Apple hasn&rsquo;t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.
-Android, on the other hand - sometimes you can barely tell what it&rsquo;s promising, and its identity is fragmented and conflicting.</p>
+There are a lot of times the Android bargain sounds really good to me: I’ve already made that bargain a lot of times, and it doesn’t frighten me.
+But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android’s promises (for example, bundled un-removable applications and UI badness).
+When we developers think of Apple, we probably don’t think of them with great fondness because of their iron-fisted control over the App Store.
+But Apple hasn’t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.
+Android, on the other hand - sometimes you can barely tell what it’s promising, and its identity is fragmented and conflicting.</p>
 
 <p>The future is getting brighter, though.
-Android devices are getting better at not forcing users to make hard decisions they didn&rsquo;t sign up for.
+Android devices are getting better at not forcing users to make hard decisions they didn’t sign up for.
 iOS devices are getting <a href="http://www.apple.com/ipad">magical</a>.
 Everyone else is gradually catching up with those two, because the hard decisions in question are getting easier as we as a society learn how to cope with them.
-Of course there will always be more and newer hard decisions - but that&rsquo;s what your sysadmins are here for.</p>
+Of course there will always be more and newer hard decisions - but that’s what your sysadmins are here for.</p>
 ]]></content>
   </entry>
   
@@ -159,27 +159,27 @@ Of course there will always be more and newer hard decisions - but that&rsquo;s 
     <content type="html"><![CDATA[<p>One of my ongoing questions is whether I need to be more of a system administrator or more of a developer.
 The differences between them make for an interesting thought exercise - not the differences in activity, but the difference in the mental demands that the job makes.
 Right now, I picture them as part of the same spectrum, but at different points on it.
-Similar to the <a href="http://stronglyemergent.com/blog/2010/textbook-overview-2/">dilemma of teaching</a>, with its tension between reference material and narrative, there&rsquo;s a tension between creative activity and refining activity.</p>
+Similar to the <a href="http://stronglyemergent.com/blog/2010/textbook-overview-2/">dilemma of teaching</a>, with its tension between reference material and narrative, there’s a tension between creative activity and refining activity.</p>
 
-<p>The fundamental posture of system administration is conservative: we have a system that&rsquo;s working, and priority one is to make sure that it keeps working.
-We of course want to improve it, but that&rsquo;s what we have test networks and deployment procedures for, and sometimes keeping everything moving so smoothly that it&rsquo;s invisible to end users takes up more than 40 hours a week.
+<p>The fundamental posture of system administration is conservative: we have a system that’s working, and priority one is to make sure that it keeps working.
+We of course want to improve it, but that’s what we have test networks and deployment procedures for, and sometimes keeping everything moving so smoothly that it’s invisible to end users takes up more than 40 hours a week.
 We think about wires that might break, hard drives that might fail, email that might disappear into the yawning maw of /dev/null, ACLs that might expose data to the wrong people, and in general about a million things that could go wrong.</p>
 
-<p>This is not to say that developers don&rsquo;t think about that - but the fundamental posture of developers is creative.
-While maintenance programming is a real thing and a noble pursuit if it&rsquo;s what you&rsquo;re called to, more often we crave the luxury of starting from scratch.
-Necessarily, that means that our programs will spend a lot of time in a state of &ldquo;not working yet,&rdquo; and that&rsquo;s okay.
-We are a lot more likely to deliberately break something on our way to a solution that we&rsquo;re satisfied with.
-While we spend time debugging and engineering robustness, which require thinking about how things could fail, it&rsquo;s much more pleasant for your average developer to think about the awesome things this program will do when it&rsquo;s working right.</p>
+<p>This is not to say that developers don’t think about that - but the fundamental posture of developers is creative.
+While maintenance programming is a real thing and a noble pursuit if it’s what you’re called to, more often we crave the luxury of starting from scratch.
+Necessarily, that means that our programs will spend a lot of time in a state of “not working yet,” and that’s okay.
+We are a lot more likely to deliberately break something on our way to a solution that we’re satisfied with.
+While we spend time debugging and engineering robustness, which require thinking about how things could fail, it’s much more pleasant for your average developer to think about the awesome things this program will do when it’s working right.</p>
 
 <p>I feel called to both of these courses: the shared activity of finding a way to make a system work is very, very satisfying to me.
 It is a puzzle-solving activity - what can I fiddle with to get this to come together elegantly?
 How does this system actually work?
 What do I need this system to do?
-These are questions that it&rsquo;s interesting to investigate and answer.</p>
+These are questions that it’s interesting to investigate and answer.</p>
 
 <p>My biggest disappointment with my college is related to this - my college is interested in teaching sysadmins, and not at all interested in cultivating hackers and developers.
-I&rsquo;m very sad about that because there&rsquo;s an important part of me that school doesn&rsquo;t care about.
-Fortunately, the huge corpus of hacker lore on the Internet is one big playground for someone who&rsquo;s inclined to self-education.
+I’m very sad about that because there’s an important part of me that school doesn’t care about.
+Fortunately, the huge corpus of hacker lore on the Internet is one big playground for someone who’s inclined to self-education.
 <a href="http://stackoverflow.com/">Stack Overflow</a>, for example, has been very good to me, and the Internet in general is my textbook.
 So I take comfort in knowing that no matter which path I give more of my time to, the ability to efficiently soak up the professional lore from the Internet will stay useful.</p>
 ]]></content>

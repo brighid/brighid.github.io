@@ -4,7 +4,7 @@
   <title><![CDATA[Category: location | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/location/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -19,165 +19,177 @@
     <updated>2011-10-25T14:48:46-07:00</updated>
     <id>http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp</id>
     <content type="html"><![CDATA[<p>The conventional wisdom in computing is that the difference between Apple and its competitors, is design.
-This isn&rsquo;t wrong, but it&rsquo;s insufficiently specific: when people say that Apple focuses on &ldquo;design,&rdquo; they often mean that the visual, graphical, surface aspect of Apple products, is different.
-It is - but that is not a difference of &ldquo;design.&rdquo;
+This isn’t wrong, but it’s insufficiently specific: when people say that Apple focuses on “design,” they often mean that the visual, graphical, surface aspect of Apple products, is different.
+It is - but that is not a difference of “design.”
 Design is about fitting the designed artifact into human lives, and there are some crucially important non-visual aspects to design in this sense.</p>
 
-<p>I&rsquo;m going to talk about one specific group of non-visual design choices here, comparing Apple&rsquo;s &ldquo;Find My Friends&rdquo; service to two similar services - Google&rsquo;s &ldquo;Latitude&rdquo; and Yelp&rsquo;s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
-All three share a core functionality: they advertise the user&rsquo;s location and allow them to discover the location of others.
-They differ in how they attempt to fit into users' lives, and in how they execute their attempts.
-I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple&rsquo;s service is different, and the difference is design.</p>
+<p>I’m going to talk about one specific group of non-visual design choices here, comparing Apple’s “Find My Friends” service to two similar services - Google’s “Latitude” and Yelp’s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
+All three share a core functionality: they advertise the user’s location and allow them to discover the location of others.
+They differ in how they attempt to fit into users’ lives, and in how they execute their attempts.
+I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple’s service is different, and the difference is design.</p>
 
-<p>As phones have become mobile computing devices, they&rsquo;ve converged with desktop computing in some ways, and diverged in other ways.
+<p>As phones have become mobile computing devices, they’ve converged with desktop computing in some ways, and diverged in other ways.
 One of the convergences is the social experience: email, the original social experience in computing, was one of the first things that made smartphones smart.
-One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it&rsquo;s a single piece of information.
+One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it’s a single piece of information.
 With mobile computing, location is a stream of information instead of a single piece, and adding that stream to other streams of information, then distilling, is where many mobile companies have added value.
-One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say &ldquo;here I am!&rdquo; to your social circle.
-Google participated in an early wave of such services with Google Latitude&rsquo;s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple&rsquo;s offering appeared in late 2011.
+One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say “here I am!” to your social circle.
+Google participated in an early wave of such services with Google Latitude’s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple’s offering appeared in late 2011.
 All of these services allow you to broadcast your location, to restrict who can hear that broadcast, and to view the broadcasts of others.
 Those functions are the core of any location-based social service: they are the same across all three services, even though these services all have different goals.</p>
 
 <ul>
-<li><p>Apple, in characteristic fashion, makes the service&rsquo;s goal very, very obvious.
-Its name is &ldquo;Find My Friends.&rdquo;
-There isn&rsquo;t that much to say about the service - there&rsquo;s a map, other users of the service show up on the map, and you can find them.
-That&rsquo;s it.</p></li>
-<li><p>Yelp&rsquo;s service is slightly more complicated, but still straightforward.
+  <li>
+    <p>Apple, in characteristic fashion, makes the service’s goal very, very obvious.
+Its name is “Find My Friends.”
+There isn’t that much to say about the service - there’s a map, other users of the service show up on the map, and you can find them.
+That’s it.</p>
+  </li>
+  <li>
+    <p>Yelp’s service is slightly more complicated, but still straightforward.
 Yelp is all about restaurants, venues, and other businesses, so it lets you broadcast that you are at a specific business.
-It doesn&rsquo;t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you&rsquo;re at Candlestick Park, for example.
-It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they&rsquo;re doing at the place where they&rsquo;ve checked in.</p></li>
-<li><p>Google&rsquo;s service is open-ended.
-There&rsquo;s a map, other users of the service show up on the map, and you can find them.
-Latitude shares a lot of genetic material with Find My Friends - they&rsquo;re both implementing the most obvious thing you can do with social-plus-local.
-Google&rsquo;s service is goal-agnostic: for quite a while, the map was all it was, but recently, they&rsquo;ve added an API and a feature that tells users how much time they&rsquo;ve spent at home, at work, or out-and-about.</p></li>
+It doesn’t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you’re at Candlestick Park, for example.
+It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they’re doing at the place where they’ve checked in.</p>
+  </li>
+  <li>
+    <p>Google’s service is open-ended.
+There’s a map, other users of the service show up on the map, and you can find them.
+Latitude shares a lot of genetic material with Find My Friends - they’re both implementing the most obvious thing you can do with social-plus-local.
+Google’s service is goal-agnostic: for quite a while, the map was all it was, but recently, they’ve added an API and a feature that tells users how much time they’ve spent at home, at work, or out-and-about.</p>
+  </li>
 </ul>
-
 
 <p>These summaries show one significant design difference between the services: Apple and Yelp have clearly defined goals for how their services should fit into human lives.
 Apple helps you find your friends.
 Yelp helps you evaluate venues.
-Google&rsquo;s service can do what Apple&rsquo;s does, but also shows you a history of where you&rsquo;ve been, has check-ins like Yelp&rsquo;s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
+Google’s service can do what Apple’s does, but also shows you a history of where you’ve been, has check-ins like Yelp’s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
 Its public API also lets other services build on its data and provide further services.
-Now, &ldquo;you can&rsquo;t summarize what Google Latitude does for users in a concise sentence&rdquo; is not exactly a major flaw.
-It is, however, sloppy design by the criteria we&rsquo;re using right now.
-Not having a clear answer for &ldquo;how does this fit into users' lives?&rdquo; shows that you have a design problem.
+Now, “you can’t summarize what Google Latitude does for users in a concise sentence” is not exactly a major flaw.
+It is, however, sloppy design by the criteria we’re using right now.
+Not having a clear answer for “how does this fit into users’ lives?” shows that you have a design problem.
 As long as that question goes without an answer, you will never have a well-designed product.
 Answering that question requires focus.</p>
 
-<p>I&rsquo;m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
-Of course we want both: it is good to keep your options open, and it&rsquo;s good to focus.
-But they&rsquo;re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
+<p>I’m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
+Of course we want both: it is good to keep your options open, and it’s good to focus.
+But they’re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
 The best example of this is a study that Dan Ariely <a href="http://duke.edu/~dandan/Papers/doors.pdf">performed on MIT students</a> and wrote about in <a href="http://www.amazon.com/gp/product/0061353248/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=stronemerg05-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0061353248">Predictably Irrational</a>: his study offered participants three doors on a computer screen, each of which offered varying rewards when clicked on.
 Participants were asked to maximize rewards with a limited number of clicks.
 They were easily able to do this in the first iteration - but in the second iteration, any door that went unclicked for a certain amount of time, closed permanently.
-At that point, participants' efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
-Participants &ldquo;couldn&rsquo;t tolerate the idea of the loss,&rdquo; Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
+At that point, participants’ efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
+Participants “couldn’t tolerate the idea of the loss,” Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
 Good design is about <a href="http://www.oreillynet.com/onlamp/blog/2004/08/say_no_by_default.html">fighting that bias</a>:</p>
 
-<blockquote><p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
-&hellip;
-people kept raising their hand saying, &ldquo;Does it do (x)?&rdquo;, &ldquo;Do you plan to add (y)?&rdquo;.
-Finally Jobs said, &ldquo;Wait wait - put your hands down.
+<blockquote>
+  <p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
+…
+people kept raising their hand saying, “Does it do (x)?”, “Do you plan to add (y)?”.
+Finally Jobs said, “Wait wait - put your hands down.
 Listen: I know you have a thousand ideas for all the cool features iTunes <em>could</em> have.
 So do we.
-But we don&rsquo;t want a thousand features.
+But we don’t want a thousand features.
 That would be ugly.
 Innovation is not about saying yes to everything.
-It&rsquo;s about saying NO to all but the most crucial features.&rdquo;</p></blockquote>
+It’s about saying NO to all but the most crucial features.”</p>
+</blockquote>
 
-<p>Apple and Yelp&rsquo;s services have decided what they&rsquo;re going to say no to.
-As far as I can tell, Google&rsquo;s service hasn&rsquo;t.
+<p>Apple and Yelp’s services have decided what they’re going to say no to.
+As far as I can tell, Google’s service hasn’t.
 This is consistent with the general way that these three companies work with focus and choice.
 Yelp has it easy: it defines itself as being a company that is about evaluating venues.
 That can be a big job - but that definition also excludes many things.
 Yelp will never be a peer-to-peer file-sharing service, create an operating system, or manufacture a tablet computer.
 Apple, by contrast, is big enough and ambitious enough that it might do anything - and it is very, very selective about what it does do.
-The credo of &ldquo;say no to all but the most crucial features&rdquo; is one that&rsquo;s been reflected in every Apple product for the last decade.
-At this point, making a product that didn&rsquo;t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
+The credo of “say no to all but the most crucial features” is one that’s been reflected in every Apple product for the last decade.
+At this point, making a product that didn’t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
 They say no to features all the time.</p>
 
 <p>Google is having trouble learning to say no.
-Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, &ldquo;how does this fit into users' lives,&rdquo; Google Wave brazenly defies the question and jeers at its premises.
+Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, “how does this fit into users’ lives,” Google Wave brazenly defies the question and jeers at its premises.
 But Google did eventually say no to Wave - and perhaps its features will in time show up in contexts where they can give a satisfying answer to the question.
-Google&rsquo;s best products - for example, Search and Gmail - answer the question decisively.
-For that matter, Google&rsquo;s corporate goal of organizing and making useful the world&rsquo;s information, also is a good step towards answering that question of design.</p>
+Google’s best products - for example, Search and Gmail - answer the question decisively.
+For that matter, Google’s corporate goal of organizing and making useful the world’s information, also is a good step towards answering that question of design.</p>
 
 <p>Now, another piece of conventional wisdom in computing is that Google is bad at design.
-I think that that is true, but that it&rsquo;s true in ways that people usually don&rsquo;t consider.
-Just as Apple products' good design isn&rsquo;t just surface appearances, Google&rsquo;s bad design decisions don&rsquo;t happen in a vacuum.
-It&rsquo;s ridiculous to suggest that Google commits bad design because they&rsquo;re dumb or malicious.
+I think that that is true, but that it’s true in ways that people usually don’t consider.
+Just as Apple products’ good design isn’t just surface appearances, Google’s bad design decisions don’t happen in a vacuum.
+It’s ridiculous to suggest that Google commits bad design because they’re dumb or malicious.
 Nothing could be further from the truth about the Google employees of my acquaintance, and the company itself is only as dumb and malicious as Apple is - which is to say, many orders of magnitude less so than the average American corporation.
-I believe that Google&rsquo;s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
+I believe that Google’s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
 
 <ul>
-<li><p>Google&rsquo;s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
+  <li>
+    <p>Google’s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
 This is a large part of why Google launched its social networking service, Google Plus - to protect its core business from Facebook.
 This is part of why Google launched its music product - to protect against Amazon and Apple trying to expand into its territory.
 This is part of why Google has Android - Google disrupts other businesses by being <a href="http://abovethecrowd.com/2009/10/29/google-redefines-disruption-the-%E2%80%9Cless-than-free%E2%80%9D-business-model/">cheaper than free</a>.
-What all of those have in common is that for them to succeed on a strategic level for Google, doesn&rsquo;t require that they be dominant or highly profitable.
-If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn&rsquo;t.
-When good design doesn&rsquo;t help your business towards its strategic goals, good design gets thrown overboard.
-So it goes.</p></li>
-<li><p>Google&rsquo;s corporate culture is rooted in engineering.
+What all of those have in common is that for them to succeed on a strategic level for Google, doesn’t require that they be dominant or highly profitable.
+If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn’t.
+When good design doesn’t help your business towards its strategic goals, good design gets thrown overboard.
+So it goes.</p>
+  </li>
+  <li>
+    <p>Google’s corporate culture is rooted in engineering.
 This has many positive effects, because Google is also obsessed with hiring enormously smart engineers.
-They&rsquo;re very good at that.
+They’re very good at that.
 That means, however, that they inherit some of the cultural biases of computer engineering in general.
 One of these is the cognitive bias that the users must be similar to the programmers of software and devices.
-That causes problems for design, because the way that the &ldquo;unwilling to foreclose options&rdquo; bias operates in engineers, is that they don&rsquo;t want to give up configurability - don&rsquo;t want to give up control.
-As a result, if you&rsquo;re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
-The cost of that configurability, though, is paid by giving up focus.</p></li>
-<li><p>Finally, Google has taken on some enormously, enormously difficult design challenges.
+That causes problems for design, because the way that the “unwilling to foreclose options” bias operates in engineers, is that they don’t want to give up configurability - don’t want to give up control.
+As a result, if you’re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
+The cost of that configurability, though, is paid by giving up focus.</p>
+  </li>
+  <li>
+    <p>Finally, Google has taken on some enormously, enormously difficult design challenges.
 I think that this is a bigger factor than is usually acknowledged.
 With a shallower pool of design talent than Apple, and less time to nurture it, Google has taken on harder design problems.
-To see how hard they are, just contemplate that &ldquo;organizing the world&rsquo;s information&rdquo; goal - and then realize that <em>Google takes that seriously</em>.
+To see how hard they are, just contemplate that “organizing the world’s information” goal - and then realize that <em>Google takes that seriously</em>.
 Apple tries many things, but few ever leave the black box in Cupertino.
 The number of things that Google has tried is enormous, and the amount of money that they have put towards them, even more enormous.
-Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you&rsquo;ll need to pause for breath again before you run out of recognizable Google properties.
+Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you’ll need to pause for breath again before you run out of recognizable Google properties.
 Further, they run many of them as public goods - the SPDY protocol, the public DNS servers, hiring on figures from the open-source world and essentially patronizing them to continue their work (e.g. Guido van Rossum).
-So with fewer design resources than Apple, they&rsquo;ve chosen tougher problems.
-Once you look at it that way, their design woes are entirely predictable.</p></li>
+So with fewer design resources than Apple, they’ve chosen tougher problems.
+Once you look at it that way, their design woes are entirely predictable.</p>
+  </li>
 </ul>
 
-
-<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it&rsquo;s improving over time, it&rsquo;s unfocused and it&rsquo;s hard to gather its features into a coherent value proposition.
-If you&rsquo;re a developer and you&rsquo;re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
-Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you&rsquo;re programming and make friends with it.
-Apple provides a location services API, but that&rsquo;s not a Find My Friends API.
+<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it’s improving over time, it’s unfocused and it’s hard to gather its features into a coherent value proposition.
+If you’re a developer and you’re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
+Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you’re programming and make friends with it.
+Apple provides a location services API, but that’s not a Find My Friends API.
 Find My Friends is private property.</p>
 
 <p>Private property is a good thing in a location service, though - a service that lets you broadcast your location is a service that can be used to follow you and to gather information about you.
-The privacy controls in Apple, Google, and Yelp&rsquo;s services are very revealing: they show the differences in design clearly.
+The privacy controls in Apple, Google, and Yelp’s services are very revealing: they show the differences in design clearly.
 Google Latitude maintains a list of people who are allowed to see your location.
-You can add and remote people from the list and tell Google whether they&rsquo;re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
-Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you&rsquo;ll still be part of the generally visible stream of checkins on Yelp, but you&rsquo;ll be lost in a crowd).</p>
+You can add and remote people from the list and tell Google whether they’re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
+Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you’ll still be part of the generally visible stream of checkins on Yelp, but you’ll be lost in a crowd).</p>
 
-<p>Apple&rsquo;s Find My Friends adds one important privacy feature that Latitude doesn&rsquo;t have, and says no to one feature that Latitude does have.
-When you decide to share your location with someone on Find My Friends, you can also add &ldquo;for the next few hours&rdquo; - you can tell the service that your sharing is temporary.
-You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple&rsquo;s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
-I think that&rsquo;s an important symptom of the difference in design.
-Apple&rsquo;s design allows you to centralize decisions in time.
-Apple&rsquo;s design also avoids burdening you later: you don&rsquo;t need to go back to the service later and tell it to stop caring, after you already have.
+<p>Apple’s Find My Friends adds one important privacy feature that Latitude doesn’t have, and says no to one feature that Latitude does have.
+When you decide to share your location with someone on Find My Friends, you can also add “for the next few hours” - you can tell the service that your sharing is temporary.
+You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple’s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
+I think that’s an important symptom of the difference in design.
+Apple’s design allows you to centralize decisions in time.
+Apple’s design also avoids burdening you later: you don’t need to go back to the service later and tell it to stop caring, after you already have.
 It fits into your life by not requiring that you take extra steps to stop doing something - you can just stop.
-Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude&rsquo;s 2009 launch.</p>
+Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude’s 2009 launch.</p>
 
 <p>On the flip side, Google Latitude lets you manually set your location in addition to simply switching automatically-detected location on and off.
-I call this a &ldquo;promised location.&rdquo; Find My Friends does not let you do this, and I think that&rsquo;s interesting.
-Why not? For one thing, I&rsquo;d guess, a promised location doesn&rsquo;t pull its own weight.
-You don&rsquo;t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
-So it&rsquo;s redundant, and redundancy is a thing that good designs usually eliminate.
+I call this a “promised location.” Find My Friends does not let you do this, and I think that’s interesting.
+Why not? For one thing, I’d guess, a promised location doesn’t pull its own weight.
+You don’t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
+So it’s redundant, and redundancy is a thing that good designs usually eliminate.
 More subtly, you might not keep that promise about your location - so you could say that Latitude permits you to lie about your location.
-If you were to look up my location on Google Latitude, you&rsquo;d see me forever trapped in one Whole Foods market, never leaving it.
+If you were to look up my location on Google Latitude, you’d see me forever trapped in one Whole Foods market, never leaving it.
 You could also say that Google Latitude is less likely to <a href="http://gawker.com/5850321/did-iphones-find-my-friends-just-break-up-its-first-marriage">break up a relationship</a>.
 Yelp, for the record, <a href="http://blog.sfgate.com/techchron/2010/11/24/how-yelp-plans-to-curb-check-in-fraud/">uses location checking and other heuristics to check on your promised location</a>.</p>
 
-<p>So Apple&rsquo;s design is missing that feature.
+<p>So Apple’s design is missing that feature.
 Is that good or bad?
-It is <em>opinionated</em> - and that&rsquo;s what good design fundamentally is.
-Design is about making decisions, and Apple&rsquo;s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
+It is <em>opinionated</em> - and that’s what good design fundamentally is.
+Design is about making decisions, and Apple’s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
 Of course people differ - part of the challenge of design as a field of endeavor is that people differ so widely in their needs and desires, and nothing will satisfy all of us.
-So of course Apple&rsquo;s products don&rsquo;t satisfy everyone.
+So of course Apple’s products don’t satisfy everyone.
 But what makes their product well-defined is that they have renounced trying to make everyone happy.
-That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans' lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
+That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans’ lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
 That is what it means that the difference between Apple and everyone else, is design.</p>
 ]]></content>
   </entry>

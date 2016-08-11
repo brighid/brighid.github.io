@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hardware | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/hardware/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-07-20T19:23:06-07:00</updated>
+  <updated>2016-08-10T20:59:44-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -19,33 +19,33 @@
     <updated>2010-02-21T22:01:06-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/perception-gap</id>
     <content type="html"><![CDATA[<p>In <a href="http://stronglyemergent.com/blog/2010/you-can-learn-to-be-lucky/">my last post</a>, I touched on the perception differences between lucky people and unlucky people, comparing them to the perception differences between IT people and regular users.
-The differences in thought patterns are very different, and today I&rsquo;m going to discuss that in more detail.</p>
+The differences in thought patterns are very different, and today I’m going to discuss that in more detail.</p>
 
 <p>The first thing I want to discuss is the <a href="http://www.apple.com/ipad/">iPad</a>.
 <a href="http://stronglyemergent.com/blog/2010/tablet-signal-tablet-noise/">Yes, again.</a>
-The iPad is a great lens for talking about differences between computer professionals and non-professionals, and part of what makes it a great opportunity to talk about that is that this time, it&rsquo;s the professionals that Don&rsquo;t Get It.
-Usually we&rsquo;re egotistical, prone to falling into stories about how those proles, those peasants, those <em>users</em>, don&rsquo;t get what we&rsquo;re trying to do here.
+The iPad is a great lens for talking about differences between computer professionals and non-professionals, and part of what makes it a great opportunity to talk about that is that this time, it’s the professionals that Don’t Get It.
+Usually we’re egotistical, prone to falling into stories about how those proles, those peasants, those <em>users</em>, don’t get what we’re trying to do here.
 But that story completely falls apart here.</p>
 
 <p>The iPad is about making the computer vanish.
-I&rsquo;ve said for quite a while that the computer revolution has already happened - it&rsquo;s just that most of the computer that affect your life aren&rsquo;t things that you think of as a &ldquo;computer.&rdquo;
-They&rsquo;re in cars, in industry, in stores, in restaurants - and in iPods.
+I’ve said for quite a while that the computer revolution has already happened - it’s just that most of the computer that affect your life aren’t things that you think of as a “computer.”
+They’re in cars, in industry, in stores, in restaurants - and in iPods.
 <a href="http://mattgemmell.com/2010/02/05/how-to-compete-with-ipad">Matt Gemmell has a great piece about this.</a>
-The iPad doesn&rsquo;t want to be a &ldquo;computer.&rdquo;
+The iPad doesn’t want to be a “computer.”
 It wants to be a tablet.
 Something that you use to get the Internet and play some games and use some apps.
-It abstracts away a lot of what we&rsquo;ve come to think of as &ldquo;computer.&rdquo;
-That&rsquo;s a good thing - for its market.
-I&rsquo;m gratified that Gemmell is on the same page that I am: Apple isn&rsquo;t competing with most of the people we think it&rsquo;s competing with.</p>
+It abstracts away a lot of what we’ve come to think of as “computer.”
+That’s a good thing - for its market.
+I’m gratified that Gemmell is on the same page that I am: Apple isn’t competing with most of the people we think it’s competing with.</p>
 
 <p>The thing to notice here is the difference between Computer Professionals and users.
 We IT people get hung up on computers because we like them - and we make them an end in themselves.
-That&rsquo;s great for us in our professional roles, but we can&rsquo;t lose sight of the fact that we&rsquo;re abnormal in that regard.
-For most people, the computer is just a means to an end, and it&rsquo;s a finicky, mysterious, frustrating means.
+That’s great for us in our professional roles, but we can’t lose sight of the fact that we’re abnormal in that regard.
+For most people, the computer is just a means to an end, and it’s a finicky, mysterious, frustrating means.
 Many of the things that Computer Professionals complain about regarding the iPad just <em>do not matter</em> to the actual users that the iPad is targeting.</p>
 
 <p>This is in contrast to the other example I want to talk about, <a href="http://counternotions.com/2010/02/12/buzz/">Google Buzz</a>.
-I&rsquo;ll talk about that on Wednesday, and then on Friday talk about the <a href="http://www.readwriteweb.com/archives/facebook_wants_to_be_your_one_true_login.php">Facebook/ReadWriteWeb</a> deal.
+I’ll talk about that on Wednesday, and then on Friday talk about the <a href="http://www.readwriteweb.com/archives/facebook_wants_to_be_your_one_true_login.php">Facebook/ReadWriteWeb</a> deal.
 All of these tie into this theme of perception differences - and I think that all of them point to how we IT people can better be part of the interface between humans and technology.</p>
 ]]></content>
   </entry>
@@ -55,18 +55,18 @@ All of these tie into this theme of perception differences - and I think that al
     <link href="http://stronglyemergent.com//blog/2010/home-territory/"/>
     <updated>2010-02-09T22:01:48-08:00</updated>
     <id>http://stronglyemergent.com//blog/2010/home-territory</id>
-    <content type="html"><![CDATA[<p>This is basically the sysadmin equivalent of posting pictures of your cat - but hey, I&rsquo;m happy with how things are turning out.
-This is what my home network is going to look like soon - I have to do a few OS installs to get there, that&rsquo;s all.
-I&rsquo;m glad I have MSDN AA access so that I can do all of this legally - having to deal with licensing requirements is something I&rsquo;m not looking forward to about the Professional World.</p>
+    <content type="html"><![CDATA[<p>This is basically the sysadmin equivalent of posting pictures of your cat - but hey, I’m happy with how things are turning out.
+This is what my home network is going to look like soon - I have to do a few OS installs to get there, that’s all.
+I’m glad I have MSDN AA access so that I can do all of this legally - having to deal with licensing requirements is something I’m not looking forward to about the Professional World.</p>
 
 <p><img src="/images/brighid_network.jpg" alt="" /></p>
 
 <p>I figure that with judicious use of virtualization, I can simulate a rather larger network.
-I&rsquo;ll definitely need to simulate a larger network in the course of working with Active Directory and its constellation of interesting features.
-If so, I&rsquo;ll have to go back to <a href="http://www.gliffy.com/">Gliffy</a>, where I made this, and redo it.
-Already I&rsquo;m recalling that I omitted a printer in there - it&rsquo;s attached to the Ubuntu server, shared with CUPS/Samba, which was not as painful to set up as it might have been.</p>
+I’ll definitely need to simulate a larger network in the course of working with Active Directory and its constellation of interesting features.
+If so, I’ll have to go back to <a href="http://www.gliffy.com/">Gliffy</a>, where I made this, and redo it.
+Already I’m recalling that I omitted a printer in there - it’s attached to the Ubuntu server, shared with CUPS/Samba, which was not as painful to set up as it might have been.</p>
 
-<p>I&rsquo;ll know I&rsquo;m serious about this when I take it to Visio.
+<p>I’ll know I’m serious about this when I take it to Visio.
 Visio diagrams make everything serious.</p>
 ]]></content>
   </entry>

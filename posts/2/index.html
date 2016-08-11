@@ -9,8 +9,8 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="Part of why I ended up buying more into developer-oriented skills and tasks than sysadmin-oriented ones,
-and especially why I want to stay away from &hellip;">
+  <meta name="description" content="Since I’m searching for a new job (check out my CV on Stack Overflow Careers!),
+I’ve been trying to gin up little personal projects and to extract &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,79 @@ and especially why I want to stay away from &hellip;">
       
   <header>
     
+      <h1 class="entry-title"> <a href="/blog/2013/weekend-project-affiliate-dot-el/">Weekend Project: affiliate.el</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-21T20:16:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Since I’m searching for a new job (<a href="http://careers.stackoverflow.com/stronglyemergent">check out my CV on Stack Overflow Careers!</a>),
+I’ve been trying to gin up little personal projects and to extract what publishable code I can from my work projects.
+The first result of this is <a href="https://github.com/brighid/affiliate.el">affiliate.el</a>.
+It’s a small project - very small - but it has virtues that I think make it a good component of a GitHub portfolio.</p>
+
+<p>First, the smallness is advantage: it is a project with a <em>small, well-defined scope</em>.
+That’s important.
+Projects with a large scope are prone to taking a long time, and projects with a poorly-defined scope are almost by definition a bad idea
+(making a note that fail-fast rapid-iteration work is a totally reasonable thing).
+The scope of this project
+is “automatically turn Amazon/iTunes URLs in text into affiliate links by extending emacs.”
+I chose that because I do the great majority of my writing (including this post) in emacs,
+and because I am involved in Amazon and Apple’s affiliate-links programs (because I like extra coffee money once in a while just
+as well as the next person).
+Choosing scope carefully is important for projects that are intended to accomplish a goal
+(as opposed to projects where the point is to learn about the problem space, such as the Clojure thing I’m messing with)—
+and in professional life, the norm is for projects to be goal-focused.</p>
+
+<p>The other reason that smallness is an advantage is that <code>affiliate.el</code> is small enough for someone else to sit down, read, and fully understand in one sitting.
+I want to make it easy for this hypothetical code reviewer to get a grasp on what I’ve created.
+To that end, this project also demonstrates
+“behold, I write friendly code: there are clear docstrings, there is an approachable readme, and the commit messages are concise and helpful.”
+I think that this is an important skill for an engineer to have too, because coding work happens in a social context.
+Your ability to explain your work to other engineers—
+and to others in general—is crucial to its value being recognized.
+So I want to show with this project “I can make my code accessible to others.”</p>
+
+<p>Of course, those virtues only really shine in the context of good solid working code.
+This too I think the project demonstrates: concise, workmanlike, idiomatic elisp with a suite of unit tests.
+This code is well-formed for its environment:
+it uses built-in emacs features such as <code>customize</code> and <code>provide</code> like a good citizen of its ecosystem,
+it doesn’t re-invent any wheels or require any esoteric libraries,
+and it uses unit tests to demonstrate and hew to the requirements for input and output.
+It is not heroic code, it’s just solid, humble, functional code.</p>
+
+<p>There probably aren’t very many people to whom this little emacs module is useful as executable code,
+but I’m fine with that as long as it’s useful for saying something about its creator.
+Especially if that thing is <a href="http://careers.stackoverflow.com/stronglyemergent">“hire this person.”</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"> <a href="/blog/2013/on-hammers/">On Hammers</a></h1>
     
     
@@ -109,9 +182,9 @@ and especially why I want to stay away from &hellip;">
   <div class="entry-content"><p>Part of why I ended up buying more into developer-oriented skills and tasks than sysadmin-oriented ones,
 and especially why I want to stay away from the Windows world,
 is that running large networks and/or systems sucks.
-It&rsquo;s terrible.
-Mind you, the problems I&rsquo;ve chosen are also terrible, but they&rsquo;re a flavor of terrible that&rsquo;s more palatable to me.
-I can deal with the kind of terrible that I&rsquo;ve chosen.</p>
+It’s terrible.
+Mind you, the problems I’ve chosen are also terrible, but they’re a flavor of terrible that’s more palatable to me.
+I can deal with the kind of terrible that I’ve chosen.</p>
 
 <p>In contrast, running an Active Directory domain with a thousand users is the kind of terrible that is like hitting yourself in the forehead with a hammer.</p>
 
@@ -120,12 +193,12 @@ and their entire business model is finding people who are running large networks
 Then you have Active Directory/Exchange consultants,
 whose business is to solemnly tell people to hit themselves with the blunt side of the hammer, not the claw side.</p>
 
-<p>Over in the open-source world things are <em>much better</em> &mdash; which is to say, you can choose for yourself which side of the hammer to hit yourself with.
+<p>Over in the open-source world things are <em>much better</em> — which is to say, you can choose for yourself which side of the hammer to hit yourself with.
 You could even choose to hit yourself with the handle!
 Oh, and you have to worry about compatibility issues between the head, the handle, and the grip,
 but you can set up your own Red Hat-certified forge to make sure that you always have compatible heads.</p>
 
-<p>Also, I hear Microsoft just introduced a new licensing system where you&rsquo;re charged by the foot-pound.</p>
+<p>Also, I hear Microsoft just introduced a new licensing system where you’re charged by the foot-pound.</p>
 </div>
   
   
@@ -161,45 +234,50 @@ but you can set up your own Red Hat-certified forge to make sure that you always
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m hunting for a new job right now: that&rsquo;s always a tricky thing, and it&rsquo;s easy for it to make me nervous.
-I&rsquo;m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world&mdash;
+  <div class="entry-content"><p>I’m hunting for a new job right now: that’s always a tricky thing, and it’s easy for it to make me nervous.
+I’m in that bootstrapped/self-taught bind where my skillset and résumé look weird to the corporate world—
 I taught myself Python and then fell in love with Emacs Lisp, especially its overlap with Common Lisp;
-I&rsquo;m proficient with both of those and speak JavaScript at the high-school Spanish level.
-I&rsquo;m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
-<a href="https://github.com/brighid/">I have a GitHub profile</a> that I&rsquo;m gradually adding code to, and this blog where I&rsquo;m getting back into the habit of article-length writing.
+I’m proficient with both of those and speak JavaScript at the high-school Spanish level.
+I’m also reading up on Objective-C, have brushed up against Ruby a few times, grasp the basics of Perl, have put together a cohesive LaTeX document, think of Git as a basic requirement of any remotely serious project, and can run basic SQL queries.
+<a href="https://github.com/brighid/">I have a GitHub profile</a> that I’m gradually adding code to, and this blog where I’m getting back into the habit of article-length writing.
 I am, in other words, an engineer entirely capable of finding their own ass with both hands.</p>
 
-<p>&ldquo;That&rsquo;s nice,&rdquo; said my management-track pal.
-&ldquo;What do you want to <em>do</em>?
-Where do you want to work in particular&mdash;what kind of work do you want to do&mdash;what are you doing to do for them?&rdquo;</p>
+<p>“That’s nice,” said my management-track pal.
+“What do you want to <em>do</em>?
+Where do you want to work in particular—what kind of work do you want to do—what are you doing to do for them?”</p>
 
 <p>That takes some more thought.
-I&rsquo;m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can&rsquo;t say something as facile as &ldquo;I want a Lisp job!&rdquo;;
-similarly, while I identify with Bay Area startup culture pretty strongly, &ldquo;I want to work at a startup!&rdquo; isn&rsquo;t going to cut it either.
+I’m just far enough along to be conscious of the green-engineer fallacy of wanting to work with a language instead of wanting to work on a project, so I can’t say something as facile as “I want a Lisp job!”;
+similarly, while I identify with Bay Area startup culture pretty strongly, “I want to work at a startup!” isn’t going to cut it either.
 Those are <em>features</em> I want a job to have, not the job itself.</p>
 
-<p>So in response to my friend&rsquo;s challenge, here are three specific jobs I&rsquo;d like to do.</p>
+<p>So in response to my friend’s challenge, here are three specific jobs I’d like to do.</p>
 
 <ul>
-<li><p>Work on the Unix toolchain for Apple:
+  <li>
+    <p>Work on the Unix toolchain for Apple:
 new releases of OS X <a href="http://apple.blogoverflow.com/2012/07/interesting-new-unix-commandsbinaries-in-os-x-mountain-lion/">show up with new terminal utilities</a>,
-and the intersection of Unix beard and Apple fan makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on the API team at Stripe or Square:
+and the intersection of Unix beard and Apple fan makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on the API team at Stripe or Square:
 these are two of my favorite startups, and I think that payments are a hugely important place to apply the lever of technology.
-Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone&rsquo;s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
-I&rsquo;d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible&mdash;
-the intersection of mission and language-diversity makes this a job I&rsquo;d love to do.</p></li>
-<li><p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay&rsquo;s other transit agencies.
-&ldquo;Which transit vehicles are where, and where will they be next?&rdquo;
+Unevenly distributed information and bad liquidity are two longstanding problems: with a smartphone in everyone’s pocket, radical improvements in our solutions to these problems are possible, and Square and Stripe are doing awesome work on that.
+I’d want to work on the API team to make the services that Stripe and Square provide as language-agnostic as possible—
+the intersection of mission and language-diversity makes this a job I’d love to do.</p>
+  </li>
+  <li>
+    <p>Work on open data and developer relations for CalTrain, Golden Gate Transit, MUNI, and the Bay’s other transit agencies.
+“Which transit vehicles are where, and where will they be next?”
 is a question that people want answers to so badly that they more or less <em>inflicted</em> an API on MUNI.
-I&rsquo;m a cyclist and a public transit rider;
-I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I&rsquo;d love to do.</p></li>
+I’m a cyclist and a public transit rider;
+I think that better mass-transit is good for everyone, and the interesting benefits that the transit agencies themselves could derive from good data, make this a job I’d love to do.</p>
+  </li>
 </ul>
 
-
-<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to &ldquo;software engineering jobs in the Bay Area.&rdquo;
-I&rsquo;m going to keep looking, but I&rsquo;m grateful to my friend for pushing me towards this exercise.
-Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
+<p>The nice thing about this exercise is that it reveals that there are a lot of interesting challenges in the world, even when you filter it down to “software engineering jobs in the Bay Area.”
+I’m going to keep looking, but I’m grateful to my friend for pushing me towards this exercise.
+Meantime, if you’re reading this and you’re willing to take a chance on a bootstrapped afficionado-of-weird-languages hacker who wants to help change the world, <a href="http://careers.stackoverflow.com/stronglyemergent">you should check out my résumé</a>.</p>
 </div>
   
   
@@ -235,30 +313,30 @@ Meantime, if you&rsquo;re reading this and you&rsquo;re willing to take a chance
   </header>
 
 
-  <div class="entry-content"><p>Today I was reminded of Mike Monteiro&rsquo;s <a href="http://muledesign.com/2011/07/density-and-difference/">note on Twitter vs. Google+ stream design</a> via MG Siegler&rsquo;s <a href="http://parislemon.com/post/7296339468/mike-monteiro-on-the-stream-design-of-google-vs">response</a>.
-They gave me words for something that bothers me about Twitter&rsquo;s interaction design&mdash;
+  <div class="entry-content"><p>Today I was reminded of Mike Monteiro’s <a href="http://muledesign.com/2011/07/density-and-difference/">note on Twitter vs. Google+ stream design</a> via MG Siegler’s <a href="http://parislemon.com/post/7296339468/mike-monteiro-on-the-stream-design-of-google-vs">response</a>.
+They gave me words for something that bothers me about Twitter’s interaction design—
 or rather, a feature of Twitter that I think leads people to make dumb choices.
 <strong>Statements all look the same.</strong>
 My <a href="http://i.imgur.com/qXiKbp4.gif">link to an adorable kitty</a> has the same visual weight as my serious summary of a political position, my off-the-cuff oversimplification of something I earnestly believe, or my cranky nitpicking reply to something you said.</p>
 
 <p>Now, this is not to say that users should be able to control that visual weight.
 Part of why MySpace sucked is that people could present their stuff any old way, which led to a <em>de facto</em> shouting contest.
-Similarly, the &ldquo;urgent&rdquo; flag in email is useless because very few people have the same rubric about when to apply it and it&rsquo;s trivial for a few antisocial idiots to make the signal impossible to rely on.</p>
+Similarly, the “urgent” flag in email is useless because very few people have the same rubric about when to apply it and it’s trivial for a few antisocial idiots to make the signal impossible to rely on.</p>
 
-<p>However, we also&mdash;everyone is subject to this&mdash;tend to read everything on Twitter in the same register, because it&rsquo;s visually alike.
-Normally &ldquo;oh, you can&rsquo;t read tone on the Internet&rdquo; is a canard.
+<p>However, we also—everyone is subject to this—tend to read everything on Twitter in the same register, because it’s visually alike.
+Normally “oh, you can’t read tone on the Internet” is a canard.
 You can read tone just fine when someone who can actually write tone is trying to convey is, and conveying it is a learnable skill.
 Twitter, though, has a combination of constraints (length and visual weight) that makes it very easy for readers to read
-&ldquo;I disagree with this portion of your argument and here&rsquo;s a link about why&rdquo; as
-&ldquo;you are so wrong, you&rsquo;re an awful person and also you smell funny.&rdquo;</p>
+“I disagree with this portion of your argument and here’s a link about why” as
+“you are so wrong, you’re an awful person and also you smell funny.”</p>
 
 <p>I try to use this to keep myself from getting into arguments on Twitter.
 It is a great medium for some things.
-Longform conversations &mdash; nope!
-I&rsquo;m jazzed about my Branch invite, I hope that that or Medium builds something interesting on top of Twitter
+Longform conversations — nope!
+I’m jazzed about my Branch invite, I hope that that or Medium builds something interesting on top of Twitter
 (assuming that Twitter consents to let someone build; lately they seem to be more interested in killing off all the good things about the service).</p>
 
-<p>Postscript: the image in Monteiro&rsquo;s post is a dead link, but I grabbed it from archive.org and <a href="http://i.imgur.com/Sf0BkYH.jpg">here it is on imgur</a>.</p>
+<p>Postscript: the image in Monteiro’s post is a dead link, but I grabbed it from archive.org and <a href="http://i.imgur.com/Sf0BkYH.jpg">here it is on imgur</a>.</p>
 </div>
   
   
@@ -295,25 +373,26 @@ I&rsquo;m jazzed about my Branch invite, I hope that that or Medium builds somet
 
 
   <div class="entry-content"><p>I knew in an abstract sense that Tumblr was big:
-this many millions of users, that many millions of unique impressions, a polished mobile app, a path to &mdash; holy blap! &mdash; actually making money.
-This isn&rsquo;t the same as getting a visceral impression of Tumblr being big, which is what happened to me recently.
+this many millions of users, that many millions of unique impressions, a polished mobile app, a path to — holy blap! — actually making money.
+This isn’t the same as getting a visceral impression of Tumblr being big, which is what happened to me recently.
 I learned all of these things in the space of a day or two:</p>
 
 <ul>
-<li>Professional despicable person <a href="http://qz.com/58690/rupert-murdoch-is-on-tumblr-and-the-photos-are-kind-of-amazing/">Rupert Murdoch has a Tumblr</a> now - I guess it&rsquo;s to complement his Twitter account.</li>
-<li><p>You can just wander into the middle of a week-long argument in which two to four participants are quarreling,
+  <li>Professional despicable person <a href="http://qz.com/58690/rupert-murdoch-is-on-tumblr-and-the-photos-are-kind-of-amazing/">Rupert Murdoch has a Tumblr</a> now - I guess it’s to complement his Twitter account.</li>
+  <li>
+    <p>You can just wander into the middle of a week-long argument in which two to four participants are quarreling,
 at that interesting register of polite people debating firmly-held beliefs energetically,
-about Marx, Žižek, and the efficacy of Lacanian psychoanalysis in enacting the revolutionary program.</p></li>
-<li><p>Tumblr&rsquo;s <a href="http://techcrunch.com/2013/02/18/tumblr-is-not-what-you-think/">robust support for animated GIFs is a critical competitive advantage</a>, and its privacy controls are &ldquo;worse&rdquo; than Facebook&rsquo;s, but make its users much happier.</p></li>
+about Marx, Žižek, and the efficacy of Lacanian psychoanalysis in enacting the revolutionary program.</p>
+  </li>
+  <li>Tumblr’s <a href="http://techcrunch.com/2013/02/18/tumblr-is-not-what-you-think/">robust support for animated GIFs is a critical competitive advantage</a>, and its privacy controls are “worse” than Facebook’s, but make its users much happier.</li>
 </ul>
-
 
 <p>I am nothing remotely resembling an early observer of Tumblr.
 I know it through things like <a href="http://tragedyseries.tumblr.com/">the Tragedy Series</a> and <a href="http://this-plt-life.tumblr.com">industry-specific reaction gif blogs</a>.
-It&rsquo;s fascinating, though, to have the sudden realization of &ldquo;wow, this is kinda big.&rdquo;
+It’s fascinating, though, to have the sudden realization of “wow, this is kinda big.”
 A particular interest for me is the way Tumblr enables fandom and the particular brand of subversive-here, disappointingly-banal-there, remix culture that fandom loves.
 There are infinite Homestuck fanblogs, there are animated gifs from virtually all the good TV of the past decade, and there are enough Texts From Last Night mash-ups to <a href="http://texts-from-ponyville.tumblr.com/">choke a horse</a>.
-It reminds me very strongly of LiveJournal in LJ&rsquo;s own days in the sun, going from being this weird little thing that was very personal and fandom-oriented to suddenly being Big.
+It reminds me very strongly of LiveJournal in LJ’s own days in the sun, going from being this weird little thing that was very personal and fandom-oriented to suddenly being Big.
 I have no idea where things are going, but considering how deeply vile Facebook is and how deeply determined Dick Costolo to make Twitter suck, I have to hope that Tumblr makes both of them eat dirt.</p>
 </div>
   
@@ -350,39 +429,39 @@ I have no idea where things are going, but considering how deeply vile Facebook 
   </header>
 
 
-  <div class="entry-content"><p>Here&rsquo;s an antipattern that I see way too often:
-&ldquo;please enable JavaScript for this site.&rdquo;
-There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
+  <div class="entry-content"><p>Here’s an antipattern that I see way too often:
+“please enable JavaScript for this site.”
+There are several levels of badness with this — I’m going to start with JavaScript itself.</p>
 
 <p>JavaScript is actually pretty great:
-<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
+<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich’s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
 (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>).
 You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
 
-<p><strong>That&rsquo;s the problem!</strong></p>
+<p><strong>That’s the problem!</strong></p>
 
 <p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it.
-<em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit.
-In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
+<em>That’s a bad thing.</em> That gave us the 90s and the Bush years’ legacy of viruses and botnets, of exploit after exploit.
+In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I’ve ever seen.</p>
 
-<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
+<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser’s equivalent.</p>
 
-<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right.
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user’s machine as their natural-born right.
 This is deeply not the case.
-It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition!
-&ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness
+It’s not hard to earn the privilege of running JS - you just have to make a value proposition!
+“Please enable JavaScript” is not a value proposition, it’s an admission of laziness
 (or an admission that some pointy-haired boss is in charge).</p>
 
 <p>There are many things you can only do in JavaScript.
 Having JavaScript in your toolkit, as a web developer, is indispensable.
-But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it.
-If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
+But you also must know when you <em>don’t</em> need JavaScript, and to go without it when you don’t need it.
+If you can’t <em>display text</em> without JavaScript, if you can’t <em>construct hyperlinks</em> without JavaScript, if you can’t <em>display images</em> without JavaScript, you’re a bad person and you should feel bad.</p>
 
-<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives.
-I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information.
-If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
+<p>On top of this, there’s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users — you know, the sort of thing that makes Richard Stallman break out in hives.
+I am not <em>against</em> analytics — I am against users being simply mugged for that information.
+If the information has value, you don’t get it for free, analytics companies.</p>
 
-<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
+<p>“JavaScript Rehab” is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
 I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
 </div>
   
@@ -419,24 +498,24 @@ I will also insult them, because over-using JavaScript is easy to avoid and the 
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m an emacs girl:
-emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson&rsquo;s memorable phrase
-&ldquo;the thermonuclear text editor.&rdquo;
-Like everyone else who&rsquo;s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
+  <div class="entry-content"><p>I’m an emacs girl:
+emacs is the environment that taught me to love Lisp, emacs is most of the way to becoming an extension of my desires, emacs is in Neal Stephenson’s memorable phrase
+“the thermonuclear text editor.”
+Like everyone else who’s smitten with it, I have a theory about What Makes Emacs Different: emacs is a paradigm, not a program.</p>
 
-<p>Let&rsquo;s talk about interfaces.
-In 1976, using computers was harder&mdash;
+<p>Let’s talk about interfaces.
+In 1976, using computers was harder—
 not because people were dumber or worse at design, but because there were fewer giants on whose shoulders to stand and because the computers themselves were incapable of working as hard.
-That meant, in turn, that the 1976 OS couldn&rsquo;t be as generous to user-space programs as the 2013 OS can be.
-In 2013, the OS can step up and be the primary answerer of the question, &ldquo;how do I use this computer?&rdquo;
-In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell&rsquo;s direction.
+That meant, in turn, that the 1976 OS couldn’t be as generous to user-space programs as the 2013 OS can be.
+In 2013, the OS can step up and be the primary answerer of the question, “how do I use this computer?”
+In 1976, the OS is too busy running the computer to do more than nod in the Bourne shell’s direction.
 This has considerable downsides for programs: they have to do everything themselves.
 But they have one important freedom:
-they get to answer the user&rsquo;s fundamental &ldquo;how do I use this computer?&rdquo; question <em>any way they want.</em></p>
+they get to answer the user’s fundamental “how do I use this computer?” question <em>any way they want.</em></p>
 
 <p>In 2013, the OS has an answer to this question, more or less opinionated according to the OS.
-Because it is easier to let the OS answer the question, that&rsquo;s what most programs do:
-they use the OS&rsquo;s chrome, file management, and other facilities.
+Because it is easier to let the OS answer the question, that’s what most programs do:
+they use the OS’s chrome, file management, and other facilities.
 There are many good things about this: there are many more useful programs in the world than when programs had to do everything themselves.
 But it is a tradeoff:
 a program that comes from the world where the OS provides easy answers is almost completely unable to provide its own answers.</p>
@@ -445,36 +524,36 @@ a program that comes from the world where the OS provides easy answers is almost
 the reason that emacs can look so strange in 2013 is that it has its own opinions, strong ones, about how to relate to files, displays, and text.
 Emacs is a <em>paradigm for how to interact with text.</em>
 It has stronger opinions than modern programs because it comes from a time when programs had the ability to answer those questions themselves.
-A program from the strong-OS era&mdash;
-for example, Eclipse&mdash;
-or which adapted itself to strong OSes&mdash;
-for example, Microsoft Word&mdash;
-is restricted by being situated within the boundaries established the by the OS' answer to &ldquo;how do I use this computer?&rdquo;
+A program from the strong-OS era—
+for example, Eclipse—
+or which adapted itself to strong OSes—
+for example, Microsoft Word—
+is restricted by being situated within the boundaries established the by the OS’ answer to “how do I use this computer?”
 Eclipse and Word are <em>programs</em> that edit text.
 Emacs is a <em>language</em> for editing text.</p>
 
-<p>One of the clearest ways to see this is to compare emacs to something that&rsquo;s more similar to it than Eclipse or Word: <code>vi</code>.
+<p>One of the clearest ways to see this is to compare emacs to something that’s more similar to it than Eclipse or Word: <code>vi</code>.
 With its movement-operation-modifier syntax for commands, vi has its own answer to the question
-&ldquo;how do I use this computer?&rdquo;
-that&rsquo;s every bit as thorny for us 2013 folks as emacs' answer&mdash;
-and that&rsquo;s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
+“how do I use this computer?”
+that’s every bit as thorny for us 2013 folks as emacs’ answer—
+and that’s <a href="http://stackoverflow.com/a/1220118/">just as powerful when you grok it deeply</a>.
 In the context of their 1976 roots, you can see that the creators of both vi and emacs embarked on the tremendously ambitious project of giving users a language in which to edit text.
-The existence and popularity of software that&rsquo;s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
+The existence and popularity of software that’s pushing 40 years old and still being actively used and extended, is strong evidence that both did well
 (though we should check our <a href="http://en.wikipedia.org/wiki/Survivorship_bias">survivorship bias</a> and note that most programs from that era did not survive in the same way).</p>
 
-<p>If you are someone who spends a lot of time with text, especially if you&rsquo;re a hacker, you should be using emacs or vi.
+<p>If you are someone who spends a lot of time with text, especially if you’re a hacker, you should be using emacs or vi.
 There are many <a href="http://notepad-plus-plus.org/">okay</a> and <a href="http://www.sublimetext.com/">good</a> <a href="http://www.barebones.com/products/bbedit/">tools</a> for <a href="http://www.chocolatapp.com/">editing</a> <a href="http://macromates.com/">text</a> and <a href="http://panic.com/coda/">producing</a> <a href="http://www.jetbrains.com/idea/">code</a>, especially for <a href="https://developer.apple.com/xcode/">specific</a> <a href="http://www.microsoft.com/visualstudio/eng">domains</a>, but emacs and vi are the only <em>great</em> general-purpose editors.
-A program that wants to take advantage of the benefits that a modern OS offers could possibly be great&mdash;
+A program that wants to take advantage of the benefits that a modern OS offers could possibly be great—
 but it would have to be a <a href="http://www.lighttable.com/">different route</a> to greatness than emacs and vi took.</p>
 
 <p>I spend a tremendous amount of time with prose and code, and emacs is a great match for me.
 For a large class of problems, my response to encountering them starts with <code>M-:</code>.
-I routinely try to use emacs' keyboard shortcuts in other contexts (e.g.
+I routinely try to use emacs’ keyboard shortcuts in other contexts (e.g.
 switching tabs in Firefox with <code>C-x o</code>).
 I was actively excited when I found out that emacs had integrated a unit testing framework.
-When I tell you that you should use emacs, you should know that that&rsquo;s the kind of relationship I have with emacs.
+When I tell you that you should use emacs, you should know that that’s the kind of relationship I have with emacs.
 I think you should use emacs anyhow, because I think that when a task is important to you, you should use a great tool for it, not just the first good one you find.
-&ldquo;How will I use this computer to produce prose and code for the next 20 years?&rdquo;
+“How will I use this computer to produce prose and code for the next 20 years?”
 is a very, <em>very</em> important question to me.</p>
 
 <p>The answer is emacs.</p>
@@ -516,18 +595,18 @@ is a very, <em>very</em> important question to me.</p>
   <div class="entry-content"><p>Communicating with your past self can be a little alarming.
 In the process of converting this blog to OctoPress
 (because <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP is a fractal of bad design</a> and WordPress has its own problems on top of being a huge PHP legacy system),
-I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid&rsquo;s way of saying &ldquo;you forgot to <em>start</em> that if-block, girl&rdquo;, I learned that my past self had very different priorities.</p>
+I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid’s way of saying “you forgot to <em>start</em> that if-block, girl”, I learned that my past self had very different priorities.</p>
 
-<p>Not that this is <a href="news:">news:</a> as I&rsquo;ve gotten older, I&rsquo;ve gotten better at forgiving my past self for her fuckups.
-It&rsquo;s still hard to forgive her eating habits, but bodies are complicated.
+<p>Not that this is news: as I’ve gotten older, I’ve gotten better at forgiving my past self for her fuckups.
+It’s still hard to forgive her eating habits, but bodies are complicated.
 I was surprised, though, to learn that she was conflicted about whether to be a developer or a sysadmin.
 Seriously?
-It&rsquo;s not a binary: pretty much the whole subfield of devops is people who&rsquo;re making interesting choices about &ldquo;what if I pick things from both skillsets?&rdquo;
+It’s not a binary: pretty much the whole subfield of devops is people who’re making interesting choices about “what if I pick things from both skillsets?”
 While I now think of myself as an engineer in general, not a sysadin or a developer, I am very happy that I am picking up bits and pieces of CS theory and that I can still read Apache config files, whip up basic Perl one-liners, and be on speaking terms with <code>vim</code>.</p>
 
 <p>I admire the dedicated systems team at my work, but their job is not the job I want to do.
 I want to <em>build things.</em>
-That&rsquo;s gotten more and more important to me over time &mdash; the thrill of green-field development, of Something from Nothing, is one I want, over and over.
+That’s gotten more and more important to me over time — the thrill of green-field development, of Something from Nothing, is one I want, over and over.
 Lucky me: I am getting better and better at producing that experience for myself and making useful things along the way.</p>
 </div>
   
@@ -565,165 +644,177 @@ Lucky me: I am getting better and better at producing that experience for myself
 
 
   <div class="entry-content"><p>The conventional wisdom in computing is that the difference between Apple and its competitors, is design.
-This isn&rsquo;t wrong, but it&rsquo;s insufficiently specific: when people say that Apple focuses on &ldquo;design,&rdquo; they often mean that the visual, graphical, surface aspect of Apple products, is different.
-It is - but that is not a difference of &ldquo;design.&rdquo;
+This isn’t wrong, but it’s insufficiently specific: when people say that Apple focuses on “design,” they often mean that the visual, graphical, surface aspect of Apple products, is different.
+It is - but that is not a difference of “design.”
 Design is about fitting the designed artifact into human lives, and there are some crucially important non-visual aspects to design in this sense.</p>
 
-<p>I&rsquo;m going to talk about one specific group of non-visual design choices here, comparing Apple&rsquo;s &ldquo;Find My Friends&rdquo; service to two similar services - Google&rsquo;s &ldquo;Latitude&rdquo; and Yelp&rsquo;s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
-All three share a core functionality: they advertise the user&rsquo;s location and allow them to discover the location of others.
-They differ in how they attempt to fit into users' lives, and in how they execute their attempts.
-I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple&rsquo;s service is different, and the difference is design.</p>
+<p>I’m going to talk about one specific group of non-visual design choices here, comparing Apple’s “Find My Friends” service to two similar services - Google’s “Latitude” and Yelp’s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
+All three share a core functionality: they advertise the user’s location and allow them to discover the location of others.
+They differ in how they attempt to fit into users’ lives, and in how they execute their attempts.
+I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple’s service is different, and the difference is design.</p>
 
-<p>As phones have become mobile computing devices, they&rsquo;ve converged with desktop computing in some ways, and diverged in other ways.
+<p>As phones have become mobile computing devices, they’ve converged with desktop computing in some ways, and diverged in other ways.
 One of the convergences is the social experience: email, the original social experience in computing, was one of the first things that made smartphones smart.
-One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it&rsquo;s a single piece of information.
+One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it’s a single piece of information.
 With mobile computing, location is a stream of information instead of a single piece, and adding that stream to other streams of information, then distilling, is where many mobile companies have added value.
-One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say &ldquo;here I am!&rdquo; to your social circle.
-Google participated in an early wave of such services with Google Latitude&rsquo;s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple&rsquo;s offering appeared in late 2011.
+One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say “here I am!” to your social circle.
+Google participated in an early wave of such services with Google Latitude’s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple’s offering appeared in late 2011.
 All of these services allow you to broadcast your location, to restrict who can hear that broadcast, and to view the broadcasts of others.
 Those functions are the core of any location-based social service: they are the same across all three services, even though these services all have different goals.</p>
 
 <ul>
-<li><p>Apple, in characteristic fashion, makes the service&rsquo;s goal very, very obvious.
-Its name is &ldquo;Find My Friends.&rdquo;
-There isn&rsquo;t that much to say about the service - there&rsquo;s a map, other users of the service show up on the map, and you can find them.
-That&rsquo;s it.</p></li>
-<li><p>Yelp&rsquo;s service is slightly more complicated, but still straightforward.
+  <li>
+    <p>Apple, in characteristic fashion, makes the service’s goal very, very obvious.
+Its name is “Find My Friends.”
+There isn’t that much to say about the service - there’s a map, other users of the service show up on the map, and you can find them.
+That’s it.</p>
+  </li>
+  <li>
+    <p>Yelp’s service is slightly more complicated, but still straightforward.
 Yelp is all about restaurants, venues, and other businesses, so it lets you broadcast that you are at a specific business.
-It doesn&rsquo;t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you&rsquo;re at Candlestick Park, for example.
-It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they&rsquo;re doing at the place where they&rsquo;ve checked in.</p></li>
-<li><p>Google&rsquo;s service is open-ended.
-There&rsquo;s a map, other users of the service show up on the map, and you can find them.
-Latitude shares a lot of genetic material with Find My Friends - they&rsquo;re both implementing the most obvious thing you can do with social-plus-local.
-Google&rsquo;s service is goal-agnostic: for quite a while, the map was all it was, but recently, they&rsquo;ve added an API and a feature that tells users how much time they&rsquo;ve spent at home, at work, or out-and-about.</p></li>
+It doesn’t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you’re at Candlestick Park, for example.
+It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they’re doing at the place where they’ve checked in.</p>
+  </li>
+  <li>
+    <p>Google’s service is open-ended.
+There’s a map, other users of the service show up on the map, and you can find them.
+Latitude shares a lot of genetic material with Find My Friends - they’re both implementing the most obvious thing you can do with social-plus-local.
+Google’s service is goal-agnostic: for quite a while, the map was all it was, but recently, they’ve added an API and a feature that tells users how much time they’ve spent at home, at work, or out-and-about.</p>
+  </li>
 </ul>
-
 
 <p>These summaries show one significant design difference between the services: Apple and Yelp have clearly defined goals for how their services should fit into human lives.
 Apple helps you find your friends.
 Yelp helps you evaluate venues.
-Google&rsquo;s service can do what Apple&rsquo;s does, but also shows you a history of where you&rsquo;ve been, has check-ins like Yelp&rsquo;s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
+Google’s service can do what Apple’s does, but also shows you a history of where you’ve been, has check-ins like Yelp’s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
 Its public API also lets other services build on its data and provide further services.
-Now, &ldquo;you can&rsquo;t summarize what Google Latitude does for users in a concise sentence&rdquo; is not exactly a major flaw.
-It is, however, sloppy design by the criteria we&rsquo;re using right now.
-Not having a clear answer for &ldquo;how does this fit into users' lives?&rdquo; shows that you have a design problem.
+Now, “you can’t summarize what Google Latitude does for users in a concise sentence” is not exactly a major flaw.
+It is, however, sloppy design by the criteria we’re using right now.
+Not having a clear answer for “how does this fit into users’ lives?” shows that you have a design problem.
 As long as that question goes without an answer, you will never have a well-designed product.
 Answering that question requires focus.</p>
 
-<p>I&rsquo;m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
-Of course we want both: it is good to keep your options open, and it&rsquo;s good to focus.
-But they&rsquo;re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
+<p>I’m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
+Of course we want both: it is good to keep your options open, and it’s good to focus.
+But they’re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
 The best example of this is a study that Dan Ariely <a href="http://duke.edu/~dandan/Papers/doors.pdf">performed on MIT students</a> and wrote about in <a href="http://www.amazon.com/gp/product/0061353248/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=stronemerg05-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0061353248">Predictably Irrational</a>: his study offered participants three doors on a computer screen, each of which offered varying rewards when clicked on.
 Participants were asked to maximize rewards with a limited number of clicks.
 They were easily able to do this in the first iteration - but in the second iteration, any door that went unclicked for a certain amount of time, closed permanently.
-At that point, participants' efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
-Participants &ldquo;couldn&rsquo;t tolerate the idea of the loss,&rdquo; Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
+At that point, participants’ efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
+Participants “couldn’t tolerate the idea of the loss,” Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
 Good design is about <a href="http://www.oreillynet.com/onlamp/blog/2004/08/say_no_by_default.html">fighting that bias</a>:</p>
 
-<blockquote><p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
-&hellip;
-people kept raising their hand saying, &ldquo;Does it do (x)?&rdquo;, &ldquo;Do you plan to add (y)?&rdquo;.
-Finally Jobs said, &ldquo;Wait wait - put your hands down.
+<blockquote>
+  <p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
+…
+people kept raising their hand saying, “Does it do (x)?”, “Do you plan to add (y)?”.
+Finally Jobs said, “Wait wait - put your hands down.
 Listen: I know you have a thousand ideas for all the cool features iTunes <em>could</em> have.
 So do we.
-But we don&rsquo;t want a thousand features.
+But we don’t want a thousand features.
 That would be ugly.
 Innovation is not about saying yes to everything.
-It&rsquo;s about saying NO to all but the most crucial features.&rdquo;</p></blockquote>
+It’s about saying NO to all but the most crucial features.”</p>
+</blockquote>
 
-<p>Apple and Yelp&rsquo;s services have decided what they&rsquo;re going to say no to.
-As far as I can tell, Google&rsquo;s service hasn&rsquo;t.
+<p>Apple and Yelp’s services have decided what they’re going to say no to.
+As far as I can tell, Google’s service hasn’t.
 This is consistent with the general way that these three companies work with focus and choice.
 Yelp has it easy: it defines itself as being a company that is about evaluating venues.
 That can be a big job - but that definition also excludes many things.
 Yelp will never be a peer-to-peer file-sharing service, create an operating system, or manufacture a tablet computer.
 Apple, by contrast, is big enough and ambitious enough that it might do anything - and it is very, very selective about what it does do.
-The credo of &ldquo;say no to all but the most crucial features&rdquo; is one that&rsquo;s been reflected in every Apple product for the last decade.
-At this point, making a product that didn&rsquo;t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
+The credo of “say no to all but the most crucial features” is one that’s been reflected in every Apple product for the last decade.
+At this point, making a product that didn’t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
 They say no to features all the time.</p>
 
 <p>Google is having trouble learning to say no.
-Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, &ldquo;how does this fit into users' lives,&rdquo; Google Wave brazenly defies the question and jeers at its premises.
+Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, “how does this fit into users’ lives,” Google Wave brazenly defies the question and jeers at its premises.
 But Google did eventually say no to Wave - and perhaps its features will in time show up in contexts where they can give a satisfying answer to the question.
-Google&rsquo;s best products - for example, Search and Gmail - answer the question decisively.
-For that matter, Google&rsquo;s corporate goal of organizing and making useful the world&rsquo;s information, also is a good step towards answering that question of design.</p>
+Google’s best products - for example, Search and Gmail - answer the question decisively.
+For that matter, Google’s corporate goal of organizing and making useful the world’s information, also is a good step towards answering that question of design.</p>
 
 <p>Now, another piece of conventional wisdom in computing is that Google is bad at design.
-I think that that is true, but that it&rsquo;s true in ways that people usually don&rsquo;t consider.
-Just as Apple products' good design isn&rsquo;t just surface appearances, Google&rsquo;s bad design decisions don&rsquo;t happen in a vacuum.
-It&rsquo;s ridiculous to suggest that Google commits bad design because they&rsquo;re dumb or malicious.
+I think that that is true, but that it’s true in ways that people usually don’t consider.
+Just as Apple products’ good design isn’t just surface appearances, Google’s bad design decisions don’t happen in a vacuum.
+It’s ridiculous to suggest that Google commits bad design because they’re dumb or malicious.
 Nothing could be further from the truth about the Google employees of my acquaintance, and the company itself is only as dumb and malicious as Apple is - which is to say, many orders of magnitude less so than the average American corporation.
-I believe that Google&rsquo;s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
+I believe that Google’s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
 
 <ul>
-<li><p>Google&rsquo;s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
+  <li>
+    <p>Google’s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
 This is a large part of why Google launched its social networking service, Google Plus - to protect its core business from Facebook.
 This is part of why Google launched its music product - to protect against Amazon and Apple trying to expand into its territory.
 This is part of why Google has Android - Google disrupts other businesses by being <a href="http://abovethecrowd.com/2009/10/29/google-redefines-disruption-the-%E2%80%9Cless-than-free%E2%80%9D-business-model/">cheaper than free</a>.
-What all of those have in common is that for them to succeed on a strategic level for Google, doesn&rsquo;t require that they be dominant or highly profitable.
-If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn&rsquo;t.
-When good design doesn&rsquo;t help your business towards its strategic goals, good design gets thrown overboard.
-So it goes.</p></li>
-<li><p>Google&rsquo;s corporate culture is rooted in engineering.
+What all of those have in common is that for them to succeed on a strategic level for Google, doesn’t require that they be dominant or highly profitable.
+If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn’t.
+When good design doesn’t help your business towards its strategic goals, good design gets thrown overboard.
+So it goes.</p>
+  </li>
+  <li>
+    <p>Google’s corporate culture is rooted in engineering.
 This has many positive effects, because Google is also obsessed with hiring enormously smart engineers.
-They&rsquo;re very good at that.
+They’re very good at that.
 That means, however, that they inherit some of the cultural biases of computer engineering in general.
 One of these is the cognitive bias that the users must be similar to the programmers of software and devices.
-That causes problems for design, because the way that the &ldquo;unwilling to foreclose options&rdquo; bias operates in engineers, is that they don&rsquo;t want to give up configurability - don&rsquo;t want to give up control.
-As a result, if you&rsquo;re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
-The cost of that configurability, though, is paid by giving up focus.</p></li>
-<li><p>Finally, Google has taken on some enormously, enormously difficult design challenges.
+That causes problems for design, because the way that the “unwilling to foreclose options” bias operates in engineers, is that they don’t want to give up configurability - don’t want to give up control.
+As a result, if you’re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
+The cost of that configurability, though, is paid by giving up focus.</p>
+  </li>
+  <li>
+    <p>Finally, Google has taken on some enormously, enormously difficult design challenges.
 I think that this is a bigger factor than is usually acknowledged.
 With a shallower pool of design talent than Apple, and less time to nurture it, Google has taken on harder design problems.
-To see how hard they are, just contemplate that &ldquo;organizing the world&rsquo;s information&rdquo; goal - and then realize that <em>Google takes that seriously</em>.
+To see how hard they are, just contemplate that “organizing the world’s information” goal - and then realize that <em>Google takes that seriously</em>.
 Apple tries many things, but few ever leave the black box in Cupertino.
 The number of things that Google has tried is enormous, and the amount of money that they have put towards them, even more enormous.
-Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you&rsquo;ll need to pause for breath again before you run out of recognizable Google properties.
+Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you’ll need to pause for breath again before you run out of recognizable Google properties.
 Further, they run many of them as public goods - the SPDY protocol, the public DNS servers, hiring on figures from the open-source world and essentially patronizing them to continue their work (e.g. Guido van Rossum).
-So with fewer design resources than Apple, they&rsquo;ve chosen tougher problems.
-Once you look at it that way, their design woes are entirely predictable.</p></li>
+So with fewer design resources than Apple, they’ve chosen tougher problems.
+Once you look at it that way, their design woes are entirely predictable.</p>
+  </li>
 </ul>
 
-
-<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it&rsquo;s improving over time, it&rsquo;s unfocused and it&rsquo;s hard to gather its features into a coherent value proposition.
-If you&rsquo;re a developer and you&rsquo;re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
-Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you&rsquo;re programming and make friends with it.
-Apple provides a location services API, but that&rsquo;s not a Find My Friends API.
+<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it’s improving over time, it’s unfocused and it’s hard to gather its features into a coherent value proposition.
+If you’re a developer and you’re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
+Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you’re programming and make friends with it.
+Apple provides a location services API, but that’s not a Find My Friends API.
 Find My Friends is private property.</p>
 
 <p>Private property is a good thing in a location service, though - a service that lets you broadcast your location is a service that can be used to follow you and to gather information about you.
-The privacy controls in Apple, Google, and Yelp&rsquo;s services are very revealing: they show the differences in design clearly.
+The privacy controls in Apple, Google, and Yelp’s services are very revealing: they show the differences in design clearly.
 Google Latitude maintains a list of people who are allowed to see your location.
-You can add and remote people from the list and tell Google whether they&rsquo;re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
-Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you&rsquo;ll still be part of the generally visible stream of checkins on Yelp, but you&rsquo;ll be lost in a crowd).</p>
+You can add and remote people from the list and tell Google whether they’re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
+Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you’ll still be part of the generally visible stream of checkins on Yelp, but you’ll be lost in a crowd).</p>
 
-<p>Apple&rsquo;s Find My Friends adds one important privacy feature that Latitude doesn&rsquo;t have, and says no to one feature that Latitude does have.
-When you decide to share your location with someone on Find My Friends, you can also add &ldquo;for the next few hours&rdquo; - you can tell the service that your sharing is temporary.
-You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple&rsquo;s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
-I think that&rsquo;s an important symptom of the difference in design.
-Apple&rsquo;s design allows you to centralize decisions in time.
-Apple&rsquo;s design also avoids burdening you later: you don&rsquo;t need to go back to the service later and tell it to stop caring, after you already have.
+<p>Apple’s Find My Friends adds one important privacy feature that Latitude doesn’t have, and says no to one feature that Latitude does have.
+When you decide to share your location with someone on Find My Friends, you can also add “for the next few hours” - you can tell the service that your sharing is temporary.
+You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple’s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
+I think that’s an important symptom of the difference in design.
+Apple’s design allows you to centralize decisions in time.
+Apple’s design also avoids burdening you later: you don’t need to go back to the service later and tell it to stop caring, after you already have.
 It fits into your life by not requiring that you take extra steps to stop doing something - you can just stop.
-Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude&rsquo;s 2009 launch.</p>
+Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude’s 2009 launch.</p>
 
 <p>On the flip side, Google Latitude lets you manually set your location in addition to simply switching automatically-detected location on and off.
-I call this a &ldquo;promised location.&rdquo; Find My Friends does not let you do this, and I think that&rsquo;s interesting.
-Why not? For one thing, I&rsquo;d guess, a promised location doesn&rsquo;t pull its own weight.
-You don&rsquo;t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
-So it&rsquo;s redundant, and redundancy is a thing that good designs usually eliminate.
+I call this a “promised location.” Find My Friends does not let you do this, and I think that’s interesting.
+Why not? For one thing, I’d guess, a promised location doesn’t pull its own weight.
+You don’t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
+So it’s redundant, and redundancy is a thing that good designs usually eliminate.
 More subtly, you might not keep that promise about your location - so you could say that Latitude permits you to lie about your location.
-If you were to look up my location on Google Latitude, you&rsquo;d see me forever trapped in one Whole Foods market, never leaving it.
+If you were to look up my location on Google Latitude, you’d see me forever trapped in one Whole Foods market, never leaving it.
 You could also say that Google Latitude is less likely to <a href="http://gawker.com/5850321/did-iphones-find-my-friends-just-break-up-its-first-marriage">break up a relationship</a>.
 Yelp, for the record, <a href="http://blog.sfgate.com/techchron/2010/11/24/how-yelp-plans-to-curb-check-in-fraud/">uses location checking and other heuristics to check on your promised location</a>.</p>
 
-<p>So Apple&rsquo;s design is missing that feature.
+<p>So Apple’s design is missing that feature.
 Is that good or bad?
-It is <em>opinionated</em> - and that&rsquo;s what good design fundamentally is.
-Design is about making decisions, and Apple&rsquo;s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
+It is <em>opinionated</em> - and that’s what good design fundamentally is.
+Design is about making decisions, and Apple’s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
 Of course people differ - part of the challenge of design as a field of endeavor is that people differ so widely in their needs and desires, and nothing will satisfy all of us.
-So of course Apple&rsquo;s products don&rsquo;t satisfy everyone.
+So of course Apple’s products don’t satisfy everyone.
 But what makes their product well-defined is that they have renounced trying to make everyone happy.
-That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans' lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
+That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans’ lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
 That is what it means that the difference between Apple and everyone else, is design.</p>
 </div>
   
@@ -760,289 +851,47 @@ That is what it means that the difference between Apple and everyone else, is de
   </header>
 
 
-  <div class="entry-content"><p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come up with anything.
-I think it&rsquo;s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
+  <div class="entry-content"><p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up with anything.
+I think it’s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
 
 <p>So:
-you&rsquo;re running a Magento site, and you&rsquo;re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
+you’re running a Magento site, and you’re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
 You might end up in a nasty situation where the integration settings page in Magento is telling you that
-&ldquo;Your blog URL (site address) matches your install URL (WordPress address).
-Please change your blog route or move WordPress to a different sub-directory&rdquo;
-and that that&rsquo;s a problem.
+“Your blog URL (site address) matches your install URL (WordPress address).
+Please change your blog route or move WordPress to a different sub-directory”
+and that that’s a problem.
 It is.
-Things will 404 as long as that&rsquo;s true.
-However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you&rsquo;ll find to help</a> on the FishPig site is deeply obscure.</p>
+Things will 404 as long as that’s true.
+However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you’ll find to help</a> on the FishPig site is deeply obscure.</p>
 
 <p>[<img src="/images/mangeto-fishpig-error.jpg" alt="An error that can happen when trying to integrate Magento and WordPress" />]
 <em>The problem might look like this.</em></p>
 
 <p>The basic problem is one of terminology.
 WordPress is designed to play well with others, and to be highly configurable.
-So it cares about two URLs (URIs if you&rsquo;re picky).
+So it cares about two URLs (URIs if you’re picky).
 It cares about
-&ldquo;the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)&rdquo;,
-and it cares about &ldquo;the public URL that I will respond to.&rdquo;
-In the database, these are &lsquo;siteurl&rsquo; and &lsquo;home&rsquo;, respectively, in the wp_options table.
+“the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)”,
+and it cares about “the public URL that I will respond to.”
+In the database, these are ‘siteurl’ and ‘home’, respectively, in the wp_options table.
 It can be tricky to disentangle these two URLs, but for many WordPress installs, setting them both to the same URL is good enough and gets everything working.</p>
 
-<p>However, that&rsquo;s not the case when you need to integrate a WordPress blog into Magento.
-For the FishPig plugin&rsquo;s &ldquo;fully integrated&rdquo; level of operation&mdash;
-which is good stuff, the best way to run that plugin&mdash;
+<p>However, that’s not the case when you need to integrate a WordPress blog into Magento.
+For the FishPig plugin’s “fully integrated” level of operation—
+which is good stuff, the best way to run that plugin—
 the WordPress PHP files need to live in the same site as the Magento files
-(when using Apache, they need to both be in the tree that starts at the site&rsquo;s DocumentRoot),
-and, contrary to the usual WordPress setup, the &lsquo;siteurl&rsquo; and &lsquo;home&rsquo; values <em>must not</em> be set to the same URL.
+(when using Apache, they need to both be in the tree that starts at the site’s DocumentRoot),
+and, contrary to the usual WordPress setup, the ‘siteurl’ and ‘home’ values <em>must not</em> be set to the same URL.
 This is where we run into problems.
-The WordPress control panel refers to the &lsquo;siteurl&rsquo; value as the &ldquo;WordPress address (URL)&rdquo; and the &lsquo;home&rsquo; value as &ldquo;Site address (URL)&rdquo;.
-The FishPig plugin&rsquo;s error messages, as seen above, will tell you that they can&rsquo;t be the same, and will tell you that the &lsquo;home&rsquo;/&ldquo;Site address&rdquo; value has to match the &ldquo;blog route&rdquo; variable" in Magento.
-However, you have to fill in the third part of the syllogism yourself, and remember to set the &lsquo;siteurl&rsquo;/&ldquo;WordPress address&rdquo; to the same value as the &ldquo;WordPress path&rdquo; variable in Magento.</p>
+The WordPress control panel refers to the ‘siteurl’ value as the “WordPress address (URL)” and the ‘home’ value as “Site address (URL)”.
+The FishPig plugin’s error messages, as seen above, will tell you that they can’t be the same, and will tell you that the ‘home’/”Site address” value has to match the “blog route” variable” in Magento.
+However, you have to fill in the third part of the syllogism yourself, and remember to set the ‘siteurl’/”WordPress address” to the same value as the “WordPress path” variable in Magento.</p>
 
 <p>The final puzzle-piece is URL rewriting - most WordPress installs try to do a little .htaccess magic, and it can be tricky to keep it straight.
-If it&rsquo;s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you&rsquo;ve got to move down a layer and throw queries directly at the database to figure out what&rsquo;s going on.</p>
+If it’s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you’ve got to move down a layer and throw queries directly at the database to figure out what’s going on.</p>
 
 <p>I imagine that this is obvious if you know WordPress better than I do, and it probably seemed obvious to the FishPig folks.
-However, if you&rsquo;re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"> <a href="/blog/2011/generating-vcards-in-python/">Generating vCards in Python</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-02T08:21:10-07:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>At work recently, I had to test an address book application.
-Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
-My personal address book is nowhere near that big
-(and I&rsquo;m not about to use it for testing),
-so I turned to Python.
-[The vCard format][vcard-wiki] is pretty much a special kind of text file,
-so it&rsquo;s easy to create new vCards,
-and a vCard can contain multiple contacts by just concatenating contacts.</p>
-
-<p>I didn&rsquo;t find exactly what I needed already in existence,
-so I wrote up a basic script to do it, and in case anyone else needs it, here it is.
-It is released under the Apache Software License 2.0,
-and I hope you find it useful.</p>
-
-<p><noscript><pre></p>
-
-<h1>!/usr/bin/python</h1>
-
-<p>&quot;&quot;&quot;Generates an abitrary number of valid .vcf vCard contacts based on the
-parameters set at the beginning of the file. See also:
-<a href="http://softwareas.com/vcard-for-developers">http://softwareas.com/vcard-for-developers</a>
-<a href="http://en.wikipedia.org/wiki/VCard">http://en.wikipedia.org/wiki/VCard</a>
-&quot;&quot;&quot;</p>
-
-<p>import random, sys</p>
-
-<h6>############################ Parameters</h6>
-
-<h1>We&#39;ll use this data no matter what the user tells us.</h1>
-
-<h1>What fields shall be populated?</h1>
-
-<p>target_fields = {&quot;Name&quot;:True,
-                 &quot;FullName&quot;:True,
-                 &quot;Organization&quot;:True,
-                 &quot;Address&quot;:True,
-                 &quot;Title&quot;:True,
-                 &quot;Phone&quot;:True,
-                 &quot;Email&quot;:True,}</p>
-
-<h1>Data that we&#39;ll use to populate the cards&#39; fields.</h1>
-
-<p>first_names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;, &quot;Elena&quot;, &quot;Farquahd&quot;, &quot;Gretel&quot;,
-               &quot;Hans&quot;, &quot;Iris&quot;, &quot;Junichi&quot;, &quot;Khalisha&quot;, &quot;Lee&quot;, &quot;Mina&quot;, &quot;Nassif&quot;,
-               &quot;Oba&quot;, &quot;Prudha&quot;, &quot;Hida&quot;, &quot;Kaiu&quot;, &quot;Aaron&quot;, &quot;Sangamon&quot;,
-               &quot;Ferdinand&quot;, &quot;Sanjay&quot;, &quot;Asok&quot;]
-last_names = [&quot;Smith&quot;, &quot;Jones&quot;, &quot;Smythe&quot;, &quot;Jorgenson&quot;, &quot;Kim&quot;, &quot;Luxury-Yacht&quot;,
-              &quot;Throatwarbler-Mangrove&quot;, &quot;Cooper&quot;, &quot;Black&quot;, &quot;Ahmedinejad&quot;,
-              &quot;al-Tikriti&quot;, &quot;al-Bagram&quot;, &quot;von Trapp&quot;, &quot;von der Wallenheim&quot;,
-              &quot;Gamgee&quot;, &quot;Proudfoot&quot;, &quot;Brewer&quot;, &quot;Kagehiro&quot;, &quot;Ng&quot;,
-              &quot;Nguyen&quot;, &quot;Salzmann&quot;, &quot;Bear&quot;, &quot;Powers&quot;,&quot;Kusanagi&quot;, &quot;Dengo&quot;,
-              &quot;Mukherjee&quot;,&quot;Balaam&quot;]</p>
-
-<h1>Street numbers will be generated at random.  All addresses are</h1>
-
-<h1>situated in Anytown, CA, ZIP 12345, United States of America.</h1>
-
-<p>streets = [&quot;Paper Street&quot;, &quot;Fictional Lane&quot;, &quot;Placid Avenue&quot;, &quot;Blank Road&quot;,
-           &quot;Suspicious Parkway&quot;]</p>
-
-<p>orgs = [&quot;Monty Python&#39;s Flying Circus&quot;, &quot;Golden Egg Bonus Company, LLC&quot;,
-        &quot;Dewey Cheatham &amp; Howe, Tax and Family Law&quot;, &quot;Improv Everywhere&quot;,
-        &quot;Owl-Stretching Enthusiasts&#39; Club&quot;, &quot;International R. Mutt Fan Club&quot;,
-        &quot;Paper Street Soap Company&quot;, &quot;River City Pool Table Company&quot;,
-        &quot;Desert Bus Runs&quot;, &quot;Impossibilities Inc&quot;, &quot;The X-Men&quot;]</p>
-
-<p>titles = [&quot;Mercenary&quot;, &quot;Chief Tomfoolery Engineer&quot;, &quot;Nonsense Supervisor&quot;,
-          &quot;Skylark&quot;, &quot;Isn&#39;t It About Time For Lunch&quot;, &quot;Famous Author&quot;,
-          &quot;Fictional Person&quot;, &quot;Space Traveller&quot;, &quot;Architect&quot;,
-          &quot;International Person Of Mystery&quot;, &quot;Sith Lord&quot;, &quot;Sith Apprentice&quot;,
-          &quot;Sith Intern&quot;, &quot;Archaeologist&quot;, &quot;Scout&quot;, &quot;Heavy&quot;, &quot;Sniper&quot;]</p>
-
-<h1>Phone numbers will be generated in the form 555-NNNN.</h1>
-
-<h1>Email addresses will be generated in the form  <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x66;&#105;&#114;&#115;&#x74;&#x6e;&#x61;&#109;&#x65;&#x2e;&#108;&#x61;&#x73;&#x74;&#110;&#97;&#x6d;&#x65;&#x40;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#102;&#105;&#114;&#115;&#x74;&#110;&#97;&#109;&#101;&#x2e;&#108;&#x61;&#115;&#x74;&#110;&#97;&#x6d;&#101;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a></h1>
-
-<h6>############################ Actions</h6>
-
-<p>class CardFiller:
-    &quot;&quot;&quot;A class whose instances take the basic dataset we&#39;re working with,
-    shuffle it, and grind through generating VCard entries based on it. &quot;&quot;&quot;
-    def <strong>init</strong>(self, first_names, last_names, streets, orgs, titles):
-        self.first_names = first_names
-        self.last_names = last_names
-        self.streets = streets
-        self.orgs = orgs
-        self.titles = titles</p>
-
-<pre><code>def prepare(self):
-    for lst in [self.first_names, self.last_names,
-                self.streets, self.orgs, self.titles]:
-        random.shuffle(lst)
-
-def fill_card(self, target_fields, position):
-    &amp;quot;&amp;quot;&amp;quot;Takes data and fills in fields, then creates a list of formatted
-    lines that can be written into a .vcf file. Takes a position argument
-    that it basically interprets as modulo the length of the list.&amp;quot;&amp;quot;&amp;quot;
-    new_card = [&amp;quot;BEGIN:VCARD&amp;quot;, &amp;quot;VERSION:2.1&amp;quot;,]
-    # Fill the Name field.
-    if &amp;quot;Name&amp;quot; in target_fields:
-        namefield = &amp;quot;N:&amp;quot;
-        namefield += str(self.last_names[position % len(self.last_names)])
-        namefield +=&amp;quot;;&amp;quot;
-        namefield += str(self.first_names[position % len(self.first_names)])
-        new_card.append(namefield)
-    if &amp;quot;FullName&amp;quot; in target_fields:
-        fnamefield = &amp;quot;FN:&amp;quot;
-        fnamefield += str(self.first_names[position % len(self.first_names)])
-        fnamefield += &amp;quot; &amp;quot;
-        fnamefield += str(self.last_names[position % len(self.last_names)])
-        new_card.append(fnamefield)
-    if &amp;quot;Organization&amp;quot; in target_fields:
-        orgfield = &amp;quot;ORG:&amp;quot;
-        orgfield += str(self.orgs[position % len(self.orgs)])
-        new_card.append(orgfield)
-    if &amp;quot;Title&amp;quot; in target_fields:
-        titlefield = &amp;quot;TITLE:&amp;quot;
-        titlefield += str(self.titles[position % len(self.titles)])
-        new_card.append(titlefield)
-    if &amp;quot;Phone&amp;quot; in target_fields:
-        phonefield = &amp;quot;TEL;WORK;VOICE:(&amp;quot;
-        phonefield += str(random.randrange(100,999))
-        phonefield += &amp;quot;) 555-&amp;quot;
-        phonefield += &amp;quot;%04d&amp;quot; % random.randrange(0,9999)
-        new_card.append(phonefield)
-    if &amp;quot;Address&amp;quot; in target_fields:
-        addrfield = &amp;quot;ADR;WORK:;;&amp;quot;
-        addrfield += str(random.randrange(1,18234))
-        addrfield += &amp;quot; &amp;quot;
-        addrfield += str(self.streets[position % len(self.streets)])
-        addrfield += &amp;quot;;Anytown;CA;12345;United States of America&amp;quot;
-        new_card.append(addrfield)
-    if &amp;quot;Email&amp;quot; in target_fields:
-        emailfield = &amp;quot;EMAIL;PREF;INTERNET:&amp;quot;
-        emailfield += str.lower(self.first_names[position % len(self.first_names)])
-        emailfield += str.lower(self.last_names[position % len(self.last_names)])
-        emailfield += &amp;quot;@example.com&amp;quot;
-        new_card.append(emailfield)
-    new_card.append(&amp;quot;REV:%d&amp;quot; % random.randrange(100,500))
-    new_card.append(&amp;quot;END:VCARD&amp;quot;)
-    return new_card
-</code></pre>
-
-<p>def rolodex_engine(card_limit, target_fields):
-    &quot;&quot;&quot;Iterates over a range to generate a list of strings that can be
-    sent to file or to stdout and which constitute a valid vcard file.
-    Most programs that read vcards can accept a file that contains
-    multiple vcards - all you have to do is concatenate them.&quot;&quot;&quot;
-    card_engine = CardFiller(first_names, last_names, streets, orgs, titles)
-    card_engine.prepare()
-    rolodex = []
-    for i in range(1, card_limit+1):
-        new_card = card_engine.fill_card(target_fields, i)
-        for line in new_card:
-            rolodex.append(line)
-    return rolodex</p>
-
-<h6>############################# Execution</h6>
-
-<p>if <strong>name</strong> == &#39;<strong>main</strong>&#39;:
-    &quot;&quot;&quot;Run a variety of sanity checks regarding the arguments to the
-    script.  If there are no command-line arguments, give the user a
-    hint. If the arguments are weird, quit and ask them to try
-    again. User input and the filesystem: two pain-in-the-butt parts
-    of software engineering.&quot;&quot;&quot;
-    # Sanity checks.
-    if len(sys.argv) != 3:
-        print &quot;This script requires exactly two arguments: \n&quot;,
-        print &quot;<em> The number of vCards to generate \n&quot;,
-        print  &quot;</em> The name of the file to store them in. \n&quot;
-        sys.exit()
-    if type(sys.argv[2]) != type(&quot;string&quot;):
-        print &quot;The first argument must be a number, the second a name.&quot;
-        sys.exit()
-    try:
-        int(sys.argv[1])
-    except ValueError:
-        print &quot;The first argument must be a number, the second a name.&quot;
-        sys.exit()
-    if int(sys.argv[1]) &gt; 2**16:
-        print &quot;Try generating less than 65,000 cards.&quot;
-        sys.exit()
-    if len(sys.argv[2]) &gt; 128:
-        print &quot;Try a shorter filename.&quot;
-        sys.exit()
-    card_limit = int(sys.argv[1])
-    card_export_file = sys.argv[2]
-    # Writing to disk.
-    try:
-        with open(&quot;./%s&quot; % card_export_file, &quot;r&quot;) as rolodex_file:
-            print &quot;A file with that name already exists.&quot;
-            sys.exit()
-    except IOError, ioerr_msg:
-        try:
-            with open(&quot;./%s&quot; % card_export_file, &quot;w&quot;) as rolodex_file:
-                rolodex = rolodex_engine(card_limit, target_fields)
-                for c in rolodex:
-                    rolodex_file.write&copy;
-                    rolodex_file.write(&quot;\n&quot;)
-        except IOError, ioerr_msg:
-            print &quot;The script couldn&#39;t create a file for the vcards.&quot;
-            print &quot;The specific problem was &#39;%s&#39;&quot; % ioerr_msg
-</pre></noscript><script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script></p>
-
-<p>Writing this was basically like doing sit-ups in Python&mdash;not really challenging,
-but demanded like all serious tasks that you sit down and devote time and concentration to it.
-After that, results come easily.</p>
+However, if you’re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
 </div>
   
   
@@ -1067,6 +916,10 @@ After that, results come easily.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite/">How to make SQLAlchemy pass connection flags to a SQLite database via file:// URI query parameters</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/an-innovative-business-model/">An Innovative Business Model</a>
       </li>
     
@@ -1080,10 +933,6 @@ After that, results come easily.</p>
     
       <li class="post">
         <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/first-date-with-ruby/">First Date With Ruby</a>
       </li>
     
   </ul>
