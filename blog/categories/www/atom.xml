@@ -4,7 +4,7 @@
   <title><![CDATA[Category: www | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/www/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-08-10T20:59:44-07:00</updated>
+  <updated>2016-08-11T14:07:18-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -110,7 +110,7 @@ You <em>can</em> write good code in PHP, but the path is a fearful one.
 Compared to other languages, you will write more lines code to do the same tasks, it’s harder to know or prove that the code you’ve written is good, and the language ecosystem is so burdened with dubious code that good code cannot be quickly brought into projects of any significant age.
 One of Perl’s design goals is to “make easy things easy and hard things possible.”
 PHP, as though coming from a mirror universe with a sinister goatee,
-<a href="http://phpsadness.com/sad/52">makes easy things hard</a> and <a href="http://software-gunslinger.tumblr.com/post/48215406921/php-is-meant-to-die-continued">hard things impossible</a>
+<a href="http://phpsadness.com/sad/52">makes easy things hard</a> and <a href="http://software-gunslinger.tumblr.com/post/48215406921/php-is-meant-to-die-continued">hard things impossible</a>.
 In a total inversion of good language design, a concise and readable piece of PHP is more likely to have bugs, not less.
 This is what pushes PHP from “a tool that I have distaste for” to “a tool that is <strong>bad</strong>” — when I say that it is “treacherous,” I’m talking about this property where simple code is prone not just to being wrong, but to being wrong in a way that tends to <a href="https://phpmanualmasterpieces.tumblr.com/post/66426423275/">fail silently</a> and to fail with <a href="https://bugs.php.net/bug.php?id=55439">extremely dangerous effects</a>.</p>
 
@@ -158,7 +158,7 @@ This emphasizes the earlier point about technical debt: Facebook at this point i
 They’re up to the point where they’re custom-compiling PHP and doing static-analysis optimization on it — which is to say, they are doing <a href="http://www.research.ibm.com/trl/people/mich/pub/200901_popl2009phpsem.pdf">original compsci research</a>, because PHP’s internals are that much of a mess.</p>
 
 <p>Nor is WordPress a good PHP role model.
-It’s gotten better over time, but the direction of its evolution is away from “blog” and towards “maximalist content management system,” which massively expands the number of things that can possibly go wrong.
+It’s gotten better over time, but the direction of its evolution is away from “blog” and towards “maximalist content management system,” which massively expands the number of things that can go wrong.
 WordPress has a huge difference from Wikipedia and Facebook: rather than being a giant application hosted and administered by someone else, WordPress is a PHP application that you can download, install, and investigate for yourself.
 They’ve invested a lot of effort in making that part easy.
 Unfortunately, “easy PHP” is pretty much always “insecure PHP.”
@@ -237,9 +237,9 @@ There are plenty of people out there being total jackasses “in defense of” P
 As a programmer who cares about craft and tools, I think other languages will reward your time &amp; effort far better than PHP, but if you don’t use those, oh well.
 I have zero interest in picking a fight over PHP on that basis.
 As someone who cares about the Internet being safe and functional enough for me to buy music, check my credit card balance, and communicate with my friends, I want you to stop using PHP and replace existing PHP code — like, <strong>yesterday</strong> — and I think you should be restrained from using PHP for new projects.
-I’m willing to pick a fight about PHP on the basis of of its decade-and-counting track record of design problems that cause security problems that cause “you don’t write or use PHP but this is going to mess up your day anyhow!” problems.</p>
+I’m willing to pick a fight about PHP on the basis of its decade-and-counting track record of design problems that cause security problems that cause “you don’t write or use PHP but this is going to mess up your day anyhow!” problems.</p>
 
-<p>Software can’t be isolated from its social context any more than it can be isolated from its technological context.
+<p><strong>Software can’t be isolated from its social context any more than it can be isolated from its technological context.</strong>
 The social and technological context of modern software is the Internet.
 With a large enough userbase, any software project is <em>de facto</em> infrastructure (especially if it participates in the Internet).
 As builders of infrastructure, we have a moral responsibility to not build hazardous, shoddy infrastructure because doing so hurts everyone who uses or depends on that infrastructure, even indirectly.
