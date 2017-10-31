@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emacs | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:40:03-07:00</updated>
+  <updated>2017-10-30T21:21:51-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -140,14 +140,14 @@ The <code>~/Library/Python/3.6/lib/python/site-packages</code> path for Sphinx
 tells me that I installed it via <code>pip install --user sphinx</code>.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>
 The <code>/private/tmp</code> entries in the module search path tell me that during installation,
 the configure script is sandboxed in a temporary directory and using that directory as <code>$HOME</code>.
-Invoked from the configure script, Python can only find packages that were installed system-wide, and Sphinx isn&rsquo;t one of them.
+When invoked from the configure script,
+Python can only find packages that were installed system-wide, and Sphinx isn&rsquo;t one of them.
 I took a quick trip into Homebrew&rsquo;s source code to look for sandboxing.
 Because it&rsquo;s written in Ruby,
 which makes it very easy to access environment variables like <code>$HOME</code>,
 it&rsquo;s very easy to search for idiomatic use of environment variables.
 A quick <code>cd $(brew --repository) &amp;&amp; git grep -E 'ENV\W{2}HOME\W{2}'</code>
-turned up an <code>old_home = ENV["HOME"]</code> assignment
-in the <a href="https://github.com/Homebrew/brew/blob/1.3.6/Library/Homebrew/formula.rb#L1887">stage() function</a>,
+turned up an <code>old_home = ENV["HOME"]</code> assignment in the <a href="https://github.com/Homebrew/brew/blob/1.3.6/Library/Homebrew/formula.rb#L1887">stage() function</a>,
 which does indeed assign a new <code>$HOME</code> during installs.</p>
 
 <p>As gratifying as it is to figure out why something failed,
@@ -161,24 +161,23 @@ tend to not be helpful to other people.
 With that in mind, here are some ways to address the problem I started with.</p>
 
 <ul>
-<li><p><strong>Roll my own</strong>:
+<li><strong>Roll my own</strong>:
 I already established that in my regular environment,
 the configure script can find Sphinx just fine,
 and <code>brew install</code> prints out the invocation it uses.
-It&rsquo;s only a few steps more to compile the manpages myself:</p>
-
-<pre><code>cd ~/projects/notmuch
-PYTHON=$(which python3) ./configure \\
-    --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
-    --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
-    --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
-make V=1 install-man
-brew unlink notmuch
-brew link notmuch
-</code></pre>
-
-<p>This is pretty much all the way out the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; axes:
-it isn&rsquo;t very reproducible and it doesn&rsquo;t do anything about the underlying issue.</p></li>
+It&rsquo;s only a few steps more to compile the manpages myself:
+   <code>
+    cd ~/projects/notmuch
+    PYTHON=$(which python3) ./configure \\
+        --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
+        --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
+        --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
+    make V=1 install-man
+    brew unlink notmuch
+    brew link notmuch
+   </code>
+This is pretty much all the way out the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; axes:
+it isn&rsquo;t very reproducible and it doesn&rsquo;t do anything about the underlying issue.</li>
 <li><strong>Interactive install</strong>:
 This is a tiny step further towards being reproducible:
 Homebrew&rsquo;s sandboxing of installs is turned off if you pass the <code>--interactive</code> flag,
@@ -199,20 +198,19 @@ For example, if you have both Python 2 and Python 3 installed, as many developer
 setting <code>$PYTHONPATH</code> will cause both versions of Python to look at the given path for modules.
 That&rsquo;s good when you&rsquo;re actively trying to develop against both versions of Python,
 but bad when you&rsquo;re trying to repair the site-packages path.</li>
-<li><p><strong>Eat the $PATH</strong>:
+<li><strong>Eat the $PATH</strong>:
 Another problem with changing <code>$PYTHONPATH</code> is that doing so only makes the Sphinx test halfway pass.
 As part of its sandboxing, Homebrew also <a href="https://github.com/Homebrew/brew/blob/1.3.6/docs/Formula-Cookbook.md#superenv-notes">drastically restricts $PATH</a>,
-leaving the <code>sphinx-build</code> executable unfindable during the installation<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>
+leaving the <code>sphinx-build</code> executable unfindable during the installation.<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>
 Homebrew <em>does</em> have an affordance, however, for turning off the <code>$PATH</code> restrictions.
 You can add <code>env :userpaths</code> to the formula or pass <code>--env=std</code> on the command line.
-Combining these two approaches gets us to something that approaches being a good workaround:</p>
-
-<pre><code>export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite --user-site)
-brew install --env=std notmuch
-export PYTHON='' &amp;&amp; export PYTHONPATH=''
-</code></pre>
-
-<p>This isn&rsquo;t perfect, but it&rsquo;s got good reproducibility, so it&rsquo;s what I ended up doing.</p></li>
+Combining these two approaches gets us to something that approaches being a good workaround:
+    <code>
+    export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite --user-site)
+    brew install --env=std notmuch
+    export PYTHON='' &amp;&amp; export PYTHONPATH=''
+   </code>
+This isn&rsquo;t perfect, but it&rsquo;s got good reproducibility, so it&rsquo;s what I ended up doing.</li>
 </ul>
 
 
@@ -239,7 +237,7 @@ but it should work for as long as <code>notmuch</code> can be built with both Py
 <li id="fn:1">
 <p>Per the genre conventions of debugging posts, I&rsquo;m eliding almost all of the dead ends and unproductive attempts from this and instead writing about how I would have solved the problem if I were staring out the window on a pleasant foggy morning with a tasty cup of coffee beside me and a good night&rsquo;s sleep behind me.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
 <li id="fn:2">
-<p>There have already been plenty of posts about this, so I&rsquo;ll say this very quickly: you should almost never <pre><code>sudo pip install</pre></code> anything; the right way to install in almost all circumstances is <pre><code>pip install &ndash;user</pre></code>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<p>There have already been plenty of posts about this, so I&rsquo;ll say this very quickly: you should almost never <pre>sudo pip install</pre> anything; the right way to install in almost all circumstances is <pre>pip install &ndash;user</pre>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 <li id="fn:3">
 <p>It would still be findable if Sphinx had been installed as a system-level module. Notice a theme?<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
 </ol>
