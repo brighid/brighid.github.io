@@ -4,7 +4,7 @@
   <title><![CDATA[Category: computers | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/computers/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T21:47:38-07:00</updated>
+  <updated>2017-10-31T10:50:08-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -61,10 +61,9 @@ It&rsquo;s part of a fairly complex <code>Makefile</code> infrastructure,
 but the two-part test it uses to search for Sphinx is easy to reproduce:
 <code>if command -v sphinx-build &gt; /dev/null &amp;&amp; ${python} -m sphinx.writers.manpage &gt; /dev/null 2&gt;&amp;1 ;</code>
 The first half reproduces with a quick copy and paste:
-<code>command -v</code> tells the shell to ignore shell builtins and functions
-when deciding how to run the next item;
-which in turn is a check for whether the system has a <code>sphinx-build</code> executable
-that can successfully do nothing.
+<code>command -v foo</code> is similar to <code>which foo</code>,
+but in addition to asking whether there&rsquo;s an executable file <code>foo</code> in <code>$PATH</code>
+(as <code>which</code> does), it also looks at builtins, shell functions, and aliases.
 To reproduce the second half, I need the value of <code>${python}</code>,
 which an earlier part of the script defines
 by looking for a Python interpreter under various names.
