@@ -4,7 +4,7 @@
   <title><![CDATA[Category: school | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/school/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -21,27 +21,27 @@
     <content type="html"><![CDATA[<p>One of my ongoing questions is whether I need to be more of a system administrator or more of a developer.
 The differences between them make for an interesting thought exercise - not the differences in activity, but the difference in the mental demands that the job makes.
 Right now, I picture them as part of the same spectrum, but at different points on it.
-Similar to the <a href="http://stronglyemergent.com/blog/2010/textbook-overview-2/">dilemma of teaching</a>, with its tension between reference material and narrative, there’s a tension between creative activity and refining activity.</p>
+Similar to the <a href="http://stronglyemergent.com/blog/2010/textbook-overview-2/">dilemma of teaching</a>, with its tension between reference material and narrative, there&rsquo;s a tension between creative activity and refining activity.</p>
 
-<p>The fundamental posture of system administration is conservative: we have a system that’s working, and priority one is to make sure that it keeps working.
-We of course want to improve it, but that’s what we have test networks and deployment procedures for, and sometimes keeping everything moving so smoothly that it’s invisible to end users takes up more than 40 hours a week.
+<p>The fundamental posture of system administration is conservative: we have a system that&rsquo;s working, and priority one is to make sure that it keeps working.
+We of course want to improve it, but that&rsquo;s what we have test networks and deployment procedures for, and sometimes keeping everything moving so smoothly that it&rsquo;s invisible to end users takes up more than 40 hours a week.
 We think about wires that might break, hard drives that might fail, email that might disappear into the yawning maw of /dev/null, ACLs that might expose data to the wrong people, and in general about a million things that could go wrong.</p>
 
-<p>This is not to say that developers don’t think about that - but the fundamental posture of developers is creative.
-While maintenance programming is a real thing and a noble pursuit if it’s what you’re called to, more often we crave the luxury of starting from scratch.
-Necessarily, that means that our programs will spend a lot of time in a state of “not working yet,” and that’s okay.
-We are a lot more likely to deliberately break something on our way to a solution that we’re satisfied with.
-While we spend time debugging and engineering robustness, which require thinking about how things could fail, it’s much more pleasant for your average developer to think about the awesome things this program will do when it’s working right.</p>
+<p>This is not to say that developers don&rsquo;t think about that - but the fundamental posture of developers is creative.
+While maintenance programming is a real thing and a noble pursuit if it&rsquo;s what you&rsquo;re called to, more often we crave the luxury of starting from scratch.
+Necessarily, that means that our programs will spend a lot of time in a state of &ldquo;not working yet,&rdquo; and that&rsquo;s okay.
+We are a lot more likely to deliberately break something on our way to a solution that we&rsquo;re satisfied with.
+While we spend time debugging and engineering robustness, which require thinking about how things could fail, it&rsquo;s much more pleasant for your average developer to think about the awesome things this program will do when it&rsquo;s working right.</p>
 
 <p>I feel called to both of these courses: the shared activity of finding a way to make a system work is very, very satisfying to me.
 It is a puzzle-solving activity - what can I fiddle with to get this to come together elegantly?
 How does this system actually work?
 What do I need this system to do?
-These are questions that it’s interesting to investigate and answer.</p>
+These are questions that it&rsquo;s interesting to investigate and answer.</p>
 
 <p>My biggest disappointment with my college is related to this - my college is interested in teaching sysadmins, and not at all interested in cultivating hackers and developers.
-I’m very sad about that because there’s an important part of me that school doesn’t care about.
-Fortunately, the huge corpus of hacker lore on the Internet is one big playground for someone who’s inclined to self-education.
+I&rsquo;m very sad about that because there&rsquo;s an important part of me that school doesn&rsquo;t care about.
+Fortunately, the huge corpus of hacker lore on the Internet is one big playground for someone who&rsquo;s inclined to self-education.
 <a href="http://stackoverflow.com/">Stack Overflow</a>, for example, has been very good to me, and the Internet in general is my textbook.
 So I take comfort in knowing that no matter which path I give more of my time to, the ability to efficiently soak up the professional lore from the Internet will stay useful.</p>
 ]]></content>
@@ -52,42 +52,40 @@ So I take comfort in knowing that no matter which path I give more of my time to
     <link href="http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/"/>
     <updated>2010-03-24T06:01:12+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers</id>
-    <content type="html"><![CDATA[<p>The trend that most worries me as I go through school isn’t technical: it’s social and cultural.
+    <content type="html"><![CDATA[<p>The trend that most worries me as I go through school isn&rsquo;t technical: it&rsquo;s social and cultural.
 That trend is contempt for the users.</p>
 
 <p>The school environment that produces IT professionals is like the farm-league system in professional sports: it mimics the environment that the participants, ideally, grow into.
-The way that IT is taught and learned closely mirrors the way that it’s practiced.
-That’s why it worries me so much that there is a tolerance for a culture of IT that’s predicated on contempt for ordinary users.
+The way that IT is taught and learned closely mirrors the way that it&rsquo;s practiced.
+That&rsquo;s why it worries me so much that there is a tolerance for a culture of IT that&rsquo;s predicated on contempt for ordinary users.
 That contempt is absolutely toxic to the relationship between IT professionals - a service profession! - and the users being served.
-Even if you’re someone like a data-center technician or a high-level system administrator, you and the phone support technicians need to keep in mind that you are dealing with actual people and their actual problems.
+Even if you&rsquo;re someone like a data-center technician or a high-level system administrator, you and the phone support technicians need to keep in mind that you are dealing with actual people and their actual problems.
 Compassion is a requirement of the job.
-I believe that if you don’t want to actually help people, you shouldn’t be in IT.</p>
+I believe that if you don&rsquo;t want to actually help people, you shouldn&rsquo;t be in IT.</p>
 
-<p>My biggest source of satisfaction, when I’m wearing my IT hat, is <em>making a difference</em> in someone’s day.
+<p>My biggest source of satisfaction, when I&rsquo;m wearing my IT hat, is <em>making a difference</em> in someone&rsquo;s day.
 I feel good about my profession and my work when I help people overcome their problems, and when I can share the joy that I feel over having wonderful tools available to me through computers.
 Of course I have to keep in mind the inherent trade-off in specializing in IT.
-It’s a specialization, which means that not everyone knows what I do.
+It&rsquo;s a specialization, which means that not everyone knows what I do.
 I do know more about computers.
 I am, in fact, an expert.
-But that’s not the whole picture.
-I am also a teacher: my expertise is no good if I’m not sharing it and helping people thereby.
+But that&rsquo;s not the whole picture.
+I am also a teacher: my expertise is no good if I&rsquo;m not sharing it and helping people thereby.
 It is not a scarce thing that I have to hoard and protect from the barbarians.
-It must be put to use in helping people - that’s when it becomes valuable.
+It must be put to use in helping people - that&rsquo;s when it becomes valuable.
 Like nearly any other feature a human can have, expertise becomes toxic when it is not an end in itself, but a means to playing tribal power games and to vanity.</p>
 
 <p><a href="http://steve-yegge.blogspot.com/">Steve Yegge</a>, a coder I admire, <a href="http://sites.google.com/site/steveyegge2/really-no-big-deal">has a great story from his father</a> about how service professionals affect the lives of those around them.
 His father wrote about his experiences in the hospital, and concluded with words that I believe in IT can learn from:</p>
 
-<blockquote>
-  <p>Within each step of these medical processes and procedures, the medical personnel that touch the lives of the patients, do so for only very brief periods of time - sometimes as little as a few minutes.
+<blockquote><p>Within each step of these medical processes and procedures, the medical personnel that touch the lives of the patients, do so for only very brief periods of time - sometimes as little as a few minutes.
 But, these patients are not simply cogs in the machinery of this well-oiled machine.
 They hurt and are tired and are very often frightened.
 Take care that you treat them with dignity and respect for their condition.
-Because, this really is a big deal.</p>
-</blockquote>
+Because, this really is a big deal.</p></blockquote>
 
 <p>I think that we can definitely learn from that - and that learning must be a holistic part of our learning, our teaching, and our practice as IT professionals.
-Making jokes that are only funny if you assume that users are deaf, mute, and stupid isn’t any more acceptable than sexist, racist, or other humor that’s predicated on some other group’s inferiority.
+Making jokes that are only funny if you assume that users are deaf, mute, and stupid isn&rsquo;t any more acceptable than sexist, racist, or other humor that&rsquo;s predicated on some other group&rsquo;s inferiority.
 We must retain the humility to anticipate that users come to our IT structures not with our priorities, but with their own, and be willing to meet them halfway, not to dismiss them or to think that they only cause trouble.
 Creating and running an IT infrastructure is a vast <em>collaboration</em> with users, and poisoning the well of that relationship not only damages your personal career in IT, it damages the prestige and the ability to do good works of the entire field</p>
 ]]></content>
@@ -99,7 +97,7 @@ Creating and running an IT infrastructure is a vast <em>collaboration</em> with 
     <updated>2010-03-05T22:05:16+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/the-os-were-all-running</id>
     <content type="html"><![CDATA[<p>Core Security Labs, in <a href="http://www.darkreading.com/story/showArticle.jhtml?articleID=223101626">an announcement to the press at the 2010 RSA Security conference</a>, has released a tool that makes it easier to perform attacks on users of the social network Twitter.
-Recently, a subspecies of phishing attacks has arisen, called “spearphishing,” and it’s this type of attack that the Core Security Labs tool facilitates.
+Recently, a subspecies of phishing attacks has arisen, called &ldquo;spearphishing,&rdquo; and it&rsquo;s this type of attack that the Core Security Labs tool facilitates.
 Most phishing attacks, in which the attacker impersonates a legitimate organization and persuades the victim to give the attacker their credentials, are spammed out, sent to everyone available.
 Spearphishing attacks are targeted to smaller groups, to organizations or individuals, and are often more effective because they are tailored to decieve that group specifically by including persuasive details related to the group or person.
 As social networks continue to grow in popularity, the information that people share publicly on such networks enable spearphishing attacks.</p>
@@ -107,18 +105,18 @@ As social networks continue to grow in popularity, the information that people s
 <p>The CSL tool specifically uses Twitter to perform spearphishing attacks.
 A CSL researcher, Pedro Varangot, said that their tool is a framework that can be extended to use other social networks in the attack.
 The attack tool framework is built on the open-source programming language Python, a favorite language for projects in the open-source world.
-The researchers have not discovered any new software vulnerability - they’ve just found another vector by which to deliver phishing attacks, which are basically social attacks instead of technical attacks.</p>
+The researchers have not discovered any new software vulnerability - they&rsquo;ve just found another vector by which to deliver phishing attacks, which are basically social attacks instead of technical attacks.</p>
 
 <p>These attacks are very relevant because they affect Windows users, Mac users, and Linux users.
 Phishing attacks try to fool the user much more than they try to fool the computer.
-That means that no matter what operating system you use, you’re vulnerable to phishing attacks because you’re still using a human brain.
+That means that no matter what operating system you use, you&rsquo;re vulnerable to phishing attacks because you&rsquo;re still using a human brain.
 Most phishing attacks, to IT people, look ludicrously simple to avoid - but there are a lot of them, and the attacker has the advantage that they only need to succeed once to win big.
-We defenders need to succeed all of the time just to keep a status quo that’s favorable to us.</p>
+We defenders need to succeed all of the time just to keep a status quo that&rsquo;s favorable to us.</p>
 
-<p>Further, this illustrates one of Linux’s major roles in the security world: many major security tools, especially penetration-testing tools like the CSL tool and the Metasploit framework (which some of us saw in action at the RSA conference) are built on Linux.
-Linux’s modification-friendliness means that it’s a superior platform for performing attacks.
-It’s easier to modify Linux into an attack platform than it is to twist Windows into that role.
-Regardless of platform, though, it’s very important for us as IT people to keep in mind that we’ve progressed in security to the point where we humans are the weakest part of the security fence - and so there are more and more attacks that target the weaknesses in human brains instead of in software.
+<p>Further, this illustrates one of Linux&rsquo;s major roles in the security world: many major security tools, especially penetration-testing tools like the CSL tool and the Metasploit framework (which some of us saw in action at the RSA conference) are built on Linux.
+Linux&rsquo;s modification-friendliness means that it&rsquo;s a superior platform for performing attacks.
+It&rsquo;s easier to modify Linux into an attack platform than it is to twist Windows into that role.
+Regardless of platform, though, it&rsquo;s very important for us as IT people to keep in mind that we&rsquo;ve progressed in security to the point where we humans are the weakest part of the security fence - and so there are more and more attacks that target the weaknesses in human brains instead of in software.
 Going forward as IT professionals, all of us will need to be educators about those weakness - and about how to compensate for them.</p>
 
 <p>At least until we have clients and IT users who are not human, which will bring its own set of problems.</p>
@@ -133,63 +131,57 @@ Going forward as IT professionals, all of us will need to be educators about tho
     <content type="html"><![CDATA[<p>I stumbled on <a href="http://www.telegraph.co.uk/technology/3304496/Be-lucky-its-an-easy-skill-to-learn.html">an article in the Telegraph by Richard Wiseman</a>.
 Wiseman ran a study for ten years, selecting both lucky and unlucky people, and looked for common traits among them.
 We think of luck as something outside of our control.
-Some of it is: there’s nothing you can do to improve your odds in matters of pure chance like the lottery.
+Some of it is: there&rsquo;s nothing you can do to improve your odds in matters of pure chance like the lottery.
 But what you <em>can</em> do is look for opportunity.</p>
 
 <p>Consider one experiment, of which Wiseman writes:</p>
 
-<blockquote>
-  <p>I gave both lucky and unlucky people a newspaper, and asked them to look through it and tell me how many photographs were inside.
+<blockquote><p>I gave both lucky and unlucky people a newspaper, and asked them to look through it and tell me how many photographs were inside.
 On average, the unlucky people took about two minutes to count the photographs, whereas the lucky people took just seconds.
-Why? Because the second page of the newspaper contained the message: “Stop counting. There are 43 photographs in this newspaper.”
+Why? Because the second page of the newspaper contained the message: &ldquo;Stop counting. There are 43 photographs in this newspaper.&rdquo;
 This message took up half of the page and was written in type that was more than 2 inches high.
-It was staring everyone straight in the face, but the unlucky people tended to miss it and the lucky people tended to spot it.</p>
-</blockquote>
+It was staring everyone straight in the face, but the unlucky people tended to miss it and the lucky people tended to spot it.</p></blockquote>
 
 <p>We are all human, and our brains all operate in similar ways.
-One of the things that our brains spend a lot of time doing is deciding what’s important and what’s not before we ever consciously think about it.
-That’s good, because you’d rather not spend much time thinking about how to breathe, walk, or eat.
+One of the things that our brains spend a lot of time doing is deciding what&rsquo;s important and what&rsquo;s not before we ever consciously think about it.
+That&rsquo;s good, because you&rsquo;d rather not spend much time thinking about how to breathe, walk, or eat.
 But since so many unconscious decisions are going on, your brain sometimes dismisses important things.
-I’m sure we’re all familiar with the opposite, where your brain makes a big deal out of something unimportant.
+I&rsquo;m sure we&rsquo;re all familiar with the opposite, where your brain makes a big deal out of something unimportant.
 The good news is that you can train your unconscious mind to be better at noticing the things that matter to you.</p>
 
-<p>Wiseman’s research ties into one of my favorite books: <a href="http://www.amazon.com/gp/product/0316172324?ie=UTF8&amp;tag=stronemerg-20">Blink: The Power of Thinking Without Thinking</a> by Malcolm Gladwell.
+<p>Wiseman&rsquo;s research ties into one of my favorite books: <a href="http://www.amazon.com/gp/product/0316172324?ie=UTF8&amp;tag=stronemerg-20">Blink: The Power of Thinking Without Thinking</a> by Malcolm Gladwell.
 Gladwell spends a lot of time going through different ways that our unconscious mind can, with training, with proper care and feeding, produce miraculous results.
 He and Wiseman also show how badly we can go astray when we abandon responsibility for what we feed our brains.</p>
 
-<p>I’d like to note one important implication this has for IT folks, both for sysadmins and for front-line support people.
+<p>I&rsquo;d like to note one important implication this has for IT folks, both for sysadmins and for front-line support people.
 A computer professional thinks differently from the people who rely on them.
-That’s good, because you need someone who thinks in the same framework that the creators of computer hardware and software do.
-However, that can’t be the only thing that an IT person knows how to do.
+That&rsquo;s good, because you need someone who thinks in the same framework that the creators of computer hardware and software do.
+However, that can&rsquo;t be the only thing that an IT person knows how to do.
 An IT person must be a translator: they must help messages get from the creators of software to the users.
-This is like being a lucky person around unlucky people: because you are thinking differently, you will see different opportunities, you will take different paths, and it may be a little frustrating that the “unlucky” users don’t seem to follow your logic and don’t understand your advice.
+This is like being a lucky person around unlucky people: because you are thinking differently, you will see different opportunities, you will take different paths, and it may be a little frustrating that the &ldquo;unlucky&rdquo; users don&rsquo;t seem to follow your logic and don&rsquo;t understand your advice.
 Be patient.
 In both cases, the skills can be learned.</p>
 
 <p>Learning how to communicate with users takes years.
 Learning how to be lucky is also time-consuming, but Wiseman provides us with some more compact advice.</p>
 
-<blockquote>
-  <p>Unlucky people often fail to follow their intuition when making a choice, whereas lucky people tend to respect hunches.
+<blockquote><p>Unlucky people often fail to follow their intuition when making a choice, whereas lucky people tend to respect hunches.
 Lucky people are interested in how they both think and feel about the various options, rather than simply looking at the rational side of the situation.
-[…] Unlucky people tend to be creatures of routine.
+[&hellip;] Unlucky people tend to be creatures of routine.
 They tend to take the same route to and from work and talk to the same types of people at parties.
 In contrast, many lucky people try to introduce variety into their lives.
 For example, one person described how he thought of a colour before arriving at a party and then introduced himself to people wearing that colour.
 This kind of behaviour boosts the likelihood of chance opportunities by introducing variety.
-[…] Lucky people tend to see the positive side of their ill fortune.
-They imagine how things could have been worse.</p>
-</blockquote>
+[&hellip;] Lucky people tend to see the positive side of their ill fortune.
+They imagine how things could have been worse.</p></blockquote>
 
 <p>None of these things are inherent to a person: you can learn to change your mind, and you should.
 Do these things work?  Wiseman claims that they do:</p>
 
-<blockquote>
-  <p>I asked a group of lucky and unlucky volunteers to spend a month carrying out exercises designed to help them think and behave like a lucky person.
+<blockquote><p>I asked a group of lucky and unlucky volunteers to spend a month carrying out exercises designed to help them think and behave like a lucky person.
 These exercises helped them spot chance opportunities, listen to their intuition, expect to be lucky, and be more resilient to bad luck.
 One month later, the volunteers returned and described what had happened.
-The results were dramatic: 80 per cent of people were now happier, more satisfied with their lives and, perhaps most important of all, luckier.</p>
-</blockquote>
+The results were dramatic: 80 per cent of people were now happier, more satisfied with their lives and, perhaps most important of all, luckier.</p></blockquote>
 ]]></content>
   </entry>
   
@@ -198,23 +190,23 @@ The results were dramatic: 80 per cent of people were now happier, more satisfie
     <link href="http://stronglyemergent.com//blog/2010/windows-xp-closure/"/>
     <updated>2010-02-17T06:01:23+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/windows-xp-closure</id>
-    <content type="html"><![CDATA[<p>Today I’m going to be taking Microsoft’s 70-270 exam: “Installing, Configuring, and Administering Windows XP Professional.”
-Over the weekend, I said goodbye to the XP install that I’d been continuously using for the last five years or so and upgraded to Windows 7.
-It’s an interesting transition.
-I expect, of course, to pass the test - but even if I don’t, it’s interesting that it lines up with XP bowing out of my personal life.
-I’m slated to take a lot of certification tests over the course of 2010.
-So far, I’m passing 100% of them, so I feel good about that.
-There are questions about how worthwhile certification tests are, and I’m definitely skeptical, but I know that they are worthwhile.
+    <content type="html"><![CDATA[<p>Today I&rsquo;m going to be taking Microsoft&rsquo;s 70-270 exam: &ldquo;Installing, Configuring, and Administering Windows XP Professional.&rdquo;
+Over the weekend, I said goodbye to the XP install that I&rsquo;d been continuously using for the last five years or so and upgraded to Windows 7.
+It&rsquo;s an interesting transition.
+I expect, of course, to pass the test - but even if I don&rsquo;t, it&rsquo;s interesting that it lines up with XP bowing out of my personal life.
+I&rsquo;m slated to take a lot of certification tests over the course of 2010.
+So far, I&rsquo;m passing 100% of them, so I feel good about that.
+There are questions about how worthwhile certification tests are, and I&rsquo;m definitely skeptical, but I know that they are worthwhile.
 My plan for certification is to say: behold!
 My track record is that I took a dozen certifications on a coherent but diverse body of knowledge over the course of the year.
 This demonstrates that I can assimilate a body of knowledge fast and apply it.
-That’s a valuable thing.</p>
+That&rsquo;s a valuable thing.</p>
 
-<p>What I wish I knew about certifications is mostly this: why in the heck did Microsoft move away from the MCSE branding and its very high name recognition to “MCITP” and “MCTS”?
-It’s very strange - I have to conclude that the MCSE brand somehow became poisoned.
+<p>What I wish I knew about certifications is mostly this: why in the heck did Microsoft move away from the MCSE branding and its very high name recognition to &ldquo;MCITP&rdquo; and &ldquo;MCTS&rdquo;?
+It&rsquo;s very strange - I have to conclude that the MCSE brand somehow became poisoned.
 Otherwise, the decision seems irrational.
-And with the continued life of Server 2003, people are still looking for MCSEs and MCSAs even when they’re also planning on upgrading to Server 2008.
-I’m baffled.</p>
+And with the continued life of Server 2003, people are still looking for MCSEs and MCSAs even when they&rsquo;re also planning on upgrading to Server 2008.
+I&rsquo;m baffled.</p>
 ]]></content>
   </entry>
   

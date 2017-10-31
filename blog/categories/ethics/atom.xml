@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ethics | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/ethics/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,53 +18,51 @@
     <link href="http://stronglyemergent.com//blog/2010/matters-of-ethics/"/>
     <updated>2010-03-03T06:01:07+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/matters-of-ethics</id>
-    <content type="html"><![CDATA[<p>One of the themes that I’m developing here is that technical skills aren’t everything.
+    <content type="html"><![CDATA[<p>One of the themes that I&rsquo;m developing here is that technical skills aren&rsquo;t everything.
 I blog at all because I believe that communications skills, especially the ability to craft narrative, are super-important.
-Today I’m going to write about something else non-technical: ethics.
-Ethics is a an ongoing philosophical brawl, really, so I’m only going to make one request of my fellow IT people: choose <strong>one</strong> (1) ethical system, make sure it’s <strong>internally consistent</strong>, and then <strong>stick with it</strong>.</p>
+Today I&rsquo;m going to write about something else non-technical: ethics.
+Ethics is a an ongoing philosophical brawl, really, so I&rsquo;m only going to make one request of my fellow IT people: choose <strong>one</strong> (1) ethical system, make sure it&rsquo;s <strong>internally consistent</strong>, and then <strong>stick with it</strong>.</p>
 
-<p>I urge you to do this because even if they seem preachy or nosy, most people don’t actually care about the specifics of your ethical system.
+<p>I urge you to do this because even if they seem preachy or nosy, most people don&rsquo;t actually care about the specifics of your ethical system.
 If your behavior - not what you say, your behavior - indicates that you <em>have</em> an ethical system and that your actions are predictable, generally people will be fine.
 Predictability equals safety.
-This is why, as a cynically pragmatic matter, I don’t advise deception.
-For one thing, it’s far too easy for others to mistake a deceptive answer to a technical question as being wrong.
+This is why, as a cynically pragmatic matter, I don&rsquo;t advise deception.
+For one thing, it&rsquo;s far too easy for others to mistake a deceptive answer to a technical question as being wrong.
 This is to be avoided.
-For another thing, a more important thing, if you give a deceptive answer, you commit to keeping that answer consistent with the world - and that’s an enormous task.
-You’re either going to have to adjust the world so that it conforms to your answer, or scale up your answer unsustainably.
+For another thing, a more important thing, if you give a deceptive answer, you commit to keeping that answer consistent with the world - and that&rsquo;s an enormous task.
+You&rsquo;re either going to have to adjust the world so that it conforms to your answer, or scale up your answer unsustainably.
 Deception is much, much harder than it seems.</p>
 
-<p>But take heart: you’re not alone in wrestling with ethical issues, and you may take some cheer in noticing that other people are massively screwing up in their answers to what should be easy ethical questions.
+<p>But take heart: you&rsquo;re not alone in wrestling with ethical issues, and you may take some cheer in noticing that other people are massively screwing up in their answers to what should be easy ethical questions.
 For instance, the system administrator of Harriton High School in Pennsylvania <a href="http://arstechnica.com/tech-policy/news/2010/02/fbi-grand-jury-now-probing-high-school-webcam-spying.ars">was spying on students via webcams</a>.
-That’s an easy one to avoid.
-Don’t do that.
+That&rsquo;s an easy one to avoid.
+Don&rsquo;t do that.
 Another individual was <a href="http://blogs.zdnet.com/BTL/?p=31024&amp;tag=col1;post-31024">advancing his career with a fictitious alter ego</a> who sold a bad software product and gave his other self exclusive interviews.
 Avoid that too.</p>
 
 <p>On an organizational level, <a href="http://computerworld.co.nz/news.nsf/news/leaked-acta-draft-treaty-reveals-plans-for-internet-clampdown">a treaty is currently being contemplated that would allow the RIAA/MPAA to veto virtually any content on the Internet</a>.
 I urge you not to do that either.
-Even if you don’t agree with me on that, <a href="http://techliberation.com/2010/02/11/the-government-can-monitor-your-location-all-day-every-day-without-implicating-your-fourth-amendment-rights/">the government is claiming massive surveillance powers through IT</a>, and it behooves you as an IT professional to know about these issues - and to care about them.</p>
+Even if you don&rsquo;t agree with me on that, <a href="http://techliberation.com/2010/02/11/the-government-can-monitor-your-location-all-day-every-day-without-implicating-your-fourth-amendment-rights/">the government is claiming massive surveillance powers through IT</a>, and it behooves you as an IT professional to know about these issues - and to care about them.</p>
 
 <p>As an IT professional, you will have to deal with these.
-When someone wants to use IT to serve the implementation of a <em>really bad</em> decision, you the IT professional will be called on to do that implementation - and you need to know, ahead of time, what you’re going to do in that situation.
-That’s why you need an internally consistent, reliable ethical model.
+When someone wants to use IT to serve the implementation of a <em>really bad</em> decision, you the IT professional will be called on to do that implementation - and you need to know, ahead of time, what you&rsquo;re going to do in that situation.
+That&rsquo;s why you need an internally consistent, reliable ethical model.
 If you improvise in a situation like that, the risk of Bad Things happening goes up by quite a lot.
 For your own safety, you want predictability.
-Don’t be caught flatfooted.</p>
+Don&rsquo;t be caught flatfooted.</p>
 
-<p><a href="http://sethgodin.typepad.com/seths_blog/2010/02/the-relentless-search-for-tell-me-what-to-do.html">Seth Godin has a comment</a> that I’d like to repeat - I think it speaks to a common failing that we may succumb to when we have to make decisions like this.
-It applies to far more decisions than the ones I’m talking about, but it’s highly relevant here too.</p>
+<p><a href="http://sethgodin.typepad.com/seths_blog/2010/02/the-relentless-search-for-tell-me-what-to-do.html">Seth Godin has a comment</a> that I&rsquo;d like to repeat - I think it speaks to a common failing that we may succumb to when we have to make decisions like this.
+It applies to far more decisions than the ones I&rsquo;m talking about, but it&rsquo;s highly relevant here too.</p>
 
-<blockquote>
-  <p>People are just begging to be told what to do.
+<blockquote><p>People are just begging to be told what to do.
 There are a lot of reasons for this, but I think the biggest one is:
-“If you tell me what to do, the responsibility for the outcome is yours, not mine.
-I’m safe.”</p>
+&ldquo;If you tell me what to do, the responsibility for the outcome is yours, not mine.
+I&rsquo;m safe.&rdquo;</p>
 
-  <p><strong>When asked, resist.</strong></p>
-</blockquote>
+<p><strong>When asked, resist.</strong></p></blockquote>
 
 <p>Go forth and accept responsibility.
-That’s what IT people do: we’re responsible for IT.</p>
+That&rsquo;s what IT people do: we&rsquo;re responsible for IT.</p>
 ]]></content>
   </entry>
   

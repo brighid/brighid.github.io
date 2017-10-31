@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ux | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/ux/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,46 +18,46 @@
     <link href="http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb/"/>
     <updated>2013-03-24T09:15:00-07:00</updated>
     <id>http://stronglyemergent.com//blog/2013/javascript-rehab-gardenweb</id>
-    <content type="html"><![CDATA[<p>Today’s JavaScript Rehab patient is the GardenWeb forum.
-I’m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
-At the time of writing, here’s what it looks like:</p>
+    <content type="html"><![CDATA[<p>Today&rsquo;s JavaScript Rehab patient is the GardenWeb forum.
+I&rsquo;m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
+At the time of writing, here&rsquo;s what it looks like:</p>
 
-<p><img class="center" src="/images/screenshot_gardenweb.png" title="“A screenshot of a thread on the GardenWeb forum.”" ></p>
+<p><img class="center" src="/images/screenshot_gardenweb.png" title="&ldquo;A screenshot of a thread on the GardenWeb forum.&rdquo;" ></p>
 
 <p>My problem with this starts with their <code>&lt;noscript&gt;</code> block:
-it says “JavaScript must be enabled for the correct page display” and that’s a bad sign.
+it says &ldquo;JavaScript must be enabled for the correct page display&rdquo; and that&rsquo;s a bad sign.
 It indicates that the people who wrote this code have grasped the wrong end of the stick.
 If your page does not display correctly without JavaScript, you have already failed.
-You might need to adjust your definition of “correctly”—
-for example, it’s difficult to define what it’s “correct” for Google Maps to do without JavaScript.
-But it’s not difficult for this site: it’s a dang discussion forum.
+You might need to adjust your definition of &ldquo;correctly&rdquo;&mdash;
+for example, it&rsquo;s difficult to define what it&rsquo;s &ldquo;correct&rdquo; for Google Maps to do without JavaScript.
+But it&rsquo;s not difficult for this site: it&rsquo;s a dang discussion forum.
 Its purpose is to <em>display text.</em>
-This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich’s eye.</p>
+This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich&rsquo;s eye.</p>
 
 <p>I end up saying this a lot in the JavaScript Rehab context:
-if you can’t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
+if you can&rsquo;t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
 also your keyboard should be taken away.</p>
 
-<p>I won’t get too exercised over the clumsy prose of the message (<em>“for the correct page display”</em>? Ugh.):
-it just merits mentioning that if you’re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
-What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner’s attention to detail.
-A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it’s not like they just didn’t have time to get around to it
-(and judging by how often I see <code>cgi-bin</code> in their URLs, I’m betting that there’s a strong continuity between the 1995 version of the site and the 2013 version).</p>
+<p>I won&rsquo;t get too exercised over the clumsy prose of the message (<em>&ldquo;for the correct page display&rdquo;</em>? Ugh.):
+it just merits mentioning that if you&rsquo;re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
+What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner&rsquo;s attention to detail.
+A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it&rsquo;s not like they just didn&rsquo;t have time to get around to it
+(and judging by how often I see <code>cgi-bin</code> in their URLs, I&rsquo;m betting that there&rsquo;s a strong continuity between the 1995 version of the site and the 2013 version).</p>
 
-<p>What really gets me cranky, though, is that by and large the site <em>does</em> “the correct page display” without JavaScript enabled.
-What it <em>doesn’t</em> correctly display is advertising.
+<p>What really gets me cranky, though, is that by and large the site <em>does</em> &ldquo;the correct page display&rdquo; without JavaScript enabled.
+What it <em>doesn&rsquo;t</em> correctly display is advertising.
 In the screenshot above, a little poking at the page source reveals that the big blank space on the right is intended as space for advertising.
 So what the message at the top of the page is actually saying, is
-“we’re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.”
+&ldquo;we&rsquo;re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.&rdquo;
 Fuck that.</p>
 
 <p>GardenWeb, you are JavaScript addicts.
 Go to rehab.</p>
 
-<p><br />
-<br /></p>
+<p><br>
+<br></p>
 
-<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>—
+<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>&mdash;
 please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-whose-convenience/">the first JavaScript Rehab post</a> to see why I get so cranky about JavaScript.</p>
 ]]></content>
   </entry>
@@ -67,30 +67,30 @@ please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-
     <link href="http://stronglyemergent.com//blog/2013/twitters-bickering-design/"/>
     <updated>2013-03-06T12:17:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/twitters-bickering-design</id>
-    <content type="html"><![CDATA[<p>Today I was reminded of Mike Monteiro’s <a href="http://muledesign.com/2011/07/density-and-difference/">note on Twitter vs. Google+ stream design</a> via MG Siegler’s <a href="http://parislemon.com/post/7296339468/mike-monteiro-on-the-stream-design-of-google-vs">response</a>.
-They gave me words for something that bothers me about Twitter’s interaction design—
+    <content type="html"><![CDATA[<p>Today I was reminded of Mike Monteiro&rsquo;s <a href="http://muledesign.com/2011/07/density-and-difference/">note on Twitter vs. Google+ stream design</a> via MG Siegler&rsquo;s <a href="http://parislemon.com/post/7296339468/mike-monteiro-on-the-stream-design-of-google-vs">response</a>.
+They gave me words for something that bothers me about Twitter&rsquo;s interaction design&mdash;
 or rather, a feature of Twitter that I think leads people to make dumb choices.
 <strong>Statements all look the same.</strong>
 My <a href="http://i.imgur.com/qXiKbp4.gif">link to an adorable kitty</a> has the same visual weight as my serious summary of a political position, my off-the-cuff oversimplification of something I earnestly believe, or my cranky nitpicking reply to something you said.</p>
 
 <p>Now, this is not to say that users should be able to control that visual weight.
 Part of why MySpace sucked is that people could present their stuff any old way, which led to a <em>de facto</em> shouting contest.
-Similarly, the “urgent” flag in email is useless because very few people have the same rubric about when to apply it and it’s trivial for a few antisocial idiots to make the signal impossible to rely on.</p>
+Similarly, the &ldquo;urgent&rdquo; flag in email is useless because very few people have the same rubric about when to apply it and it&rsquo;s trivial for a few antisocial idiots to make the signal impossible to rely on.</p>
 
-<p>However, we also—everyone is subject to this—tend to read everything on Twitter in the same register, because it’s visually alike.
-Normally “oh, you can’t read tone on the Internet” is a canard.
+<p>However, we also&mdash;everyone is subject to this&mdash;tend to read everything on Twitter in the same register, because it&rsquo;s visually alike.
+Normally &ldquo;oh, you can&rsquo;t read tone on the Internet&rdquo; is a canard.
 You can read tone just fine when someone who can actually write tone is trying to convey is, and conveying it is a learnable skill.
 Twitter, though, has a combination of constraints (length and visual weight) that makes it very easy for readers to read
-“I disagree with this portion of your argument and here’s a link about why” as
-“you are so wrong, you’re an awful person and also you smell funny.”</p>
+&ldquo;I disagree with this portion of your argument and here&rsquo;s a link about why&rdquo; as
+&ldquo;you are so wrong, you&rsquo;re an awful person and also you smell funny.&rdquo;</p>
 
 <p>I try to use this to keep myself from getting into arguments on Twitter.
 It is a great medium for some things.
-Longform conversations — nope!
-I’m jazzed about my Branch invite, I hope that that or Medium builds something interesting on top of Twitter
+Longform conversations &mdash; nope!
+I&rsquo;m jazzed about my Branch invite, I hope that that or Medium builds something interesting on top of Twitter
 (assuming that Twitter consents to let someone build; lately they seem to be more interested in killing off all the good things about the service).</p>
 
-<p>Postscript: the image in Monteiro’s post is a dead link, but I grabbed it from archive.org and <a href="http://i.imgur.com/Sf0BkYH.jpg">here it is on imgur</a>.</p>
+<p>Postscript: the image in Monteiro&rsquo;s post is a dead link, but I grabbed it from archive.org and <a href="http://i.imgur.com/Sf0BkYH.jpg">here it is on imgur</a>.</p>
 ]]></content>
   </entry>
   
@@ -99,39 +99,39 @@ I’m jazzed about my Branch invite, I hope that that or Medium builds something
     <link href="http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience/"/>
     <updated>2013-03-05T08:04:00-08:00</updated>
     <id>http://stronglyemergent.com//blog/2013/javascript-rehab-whose-convenience</id>
-    <content type="html"><![CDATA[<p>Here’s an antipattern that I see way too often:
-“please enable JavaScript for this site.”
-There are several levels of badness with this — I’m going to start with JavaScript itself.</p>
+    <content type="html"><![CDATA[<p>Here&rsquo;s an antipattern that I see way too often:
+&ldquo;please enable JavaScript for this site.&rdquo;
+There are several levels of badness with this &mdash; I&rsquo;m going to start with JavaScript itself.</p>
 
 <p>JavaScript is actually pretty great:
-<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich’s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
+<a href="https://brendaneich.com/2008/04/popularity/">Brendan Eich&rsquo;s problem child</a> has many <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596517742&amp;linkCode=as2&amp;tag=stronemerg05-20">good parts</a> and people are building genuinely astonishing things with it
 (recent favorite: <a href="http://static.echonest.com/InfiniteGangnamStyle/">Infinite Gangnam Style</a>).
 You can do anything in JavaScript, just like <a href="http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html">Atwood foretold</a>!</p>
 
-<p><strong>That’s the problem!</strong></p>
+<p><strong>That&rsquo;s the problem!</strong></p>
 
 <p>Despite the heroic efforts of browser-building folks, JavaScript is getting closer and closer to being equivalent to just downloading code and running it.
-<em>That’s a bad thing.</em> That gave us the 90s and the Bush years’ legacy of viruses and botnets, of exploit after exploit.
-In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I’ve ever seen.</p>
+<em>That&rsquo;s a bad thing.</em> That gave us the 90s and the Bush years' legacy of viruses and botnets, of exploit after exploit.
+In addition to its many wonderful properties, JavaScript is also a gift to malware authors everywhere, a category that includes 90% of the analytics companies I&rsquo;ve ever seen.</p>
 
-<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser’s equivalent.</p>
+<p>If running JS is not already equivalent to running arbitrary code on your machine, you would be prudent to treat it like it will soon become so and <a href="https://addons.mozilla.org/en-us/firefox/addon/noscript/">install NoScript</a> or your browser&rsquo;s equivalent.</p>
 
-<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user’s machine as their natural-born right.
+<p>Meantime, I see too many web developers who are drooling addicts to using JS for everything, who treat running JS on a user&rsquo;s machine as their natural-born right.
 This is deeply not the case.
-It’s not hard to earn the privilege of running JS - you just have to make a value proposition!
-“Please enable JavaScript” is not a value proposition, it’s an admission of laziness
+It&rsquo;s not hard to earn the privilege of running JS - you just have to make a value proposition!
+&ldquo;Please enable JavaScript&rdquo; is not a value proposition, it&rsquo;s an admission of laziness
 (or an admission that some pointy-haired boss is in charge).</p>
 
 <p>There are many things you can only do in JavaScript.
 Having JavaScript in your toolkit, as a web developer, is indispensable.
-But you also must know when you <em>don’t</em> need JavaScript, and to go without it when you don’t need it.
-If you can’t <em>display text</em> without JavaScript, if you can’t <em>construct hyperlinks</em> without JavaScript, if you can’t <em>display images</em> without JavaScript, you’re a bad person and you should feel bad.</p>
+But you also must know when you <em>don&rsquo;t</em> need JavaScript, and to go without it when you don&rsquo;t need it.
+If you can&rsquo;t <em>display text</em> without JavaScript, if you can&rsquo;t <em>construct hyperlinks</em> without JavaScript, if you can&rsquo;t <em>display images</em> without JavaScript, you&rsquo;re a bad person and you should feel bad.</p>
 
-<p>On top of this, there’s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users — you know, the sort of thing that makes Richard Stallman break out in hives.
-I am not <em>against</em> analytics — I am against users being simply mugged for that information.
-If the information has value, you don’t get it for free, analytics companies.</p>
+<p>On top of this, there&rsquo;s the fact that a great deal of the JavaScript out there is designed for tracking, analyzing, and identifying users &mdash; you know, the sort of thing that makes Richard Stallman break out in hives.
+I am not <em>against</em> analytics &mdash; I am against users being simply mugged for that information.
+If the information has value, you don&rsquo;t get it for free, analytics companies.</p>
 
-<p>“JavaScript Rehab” is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
+<p>&ldquo;JavaScript Rehab&rdquo; is going to be a series of notes, added to when I happen upon sites like this, that names people who are addicted to JavaScript and encourages them to break the habit.
 I will also insult them, because over-using JavaScript is easy to avoid and the messages that tell you to enable it are usually condescending and dishonest.</p>
 ]]></content>
   </entry>
@@ -142,67 +142,67 @@ I will also insult them, because over-using JavaScript is easy to avoid and the 
     <updated>2011-02-16T07:01:17+00:00</updated>
     <id>http://stronglyemergent.com//blog/2011/externalities-are-relevant</id>
     <content type="html"><![CDATA[<p>The online economy is deeply weird and breaks many rules that guide the functioning of the physical economy.
-However, there’s one concept that’s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
-We like to think that in any transaction, people are getting what they pay for - but that’s not always true.
-There are people who aren’t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
-A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others’ transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
-Externalities are “external” because the people actually involved in the transaction haven’t captured all of the costs and benefits of the transaction;
-they happen all the time because there are some things it’s impossible to keep internal to a transaction.</p>
+However, there&rsquo;s one concept that&rsquo;s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
+We like to think that in any transaction, people are getting what they pay for - but that&rsquo;s not always true.
+There are people who aren&rsquo;t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
+A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others' transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
+Externalities are &ldquo;external&rdquo; because the people actually involved in the transaction haven&rsquo;t captured all of the costs and benefits of the transaction;
+they happen all the time because there are some things it&rsquo;s impossible to keep internal to a transaction.</p>
 
-<p>Here’s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
-Caltrain’s funding, in large part, comes from sources beyond its control.
+<p>Here&rsquo;s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
+Caltrain&rsquo;s funding, in large part, comes from sources beyond its control.
 A little less than half comes from ticket sales - and the rest from local municipal governments.
-The local governments collect no taxes dedicated to and aren’t bound to pay for Caltrain:
+The local governments collect no taxes dedicated to and aren&rsquo;t bound to pay for Caltrain:
 in years like this one, where tax revenues are shrinking, they can simply decrease their funding.
-That’s what’s happening now.
-That’s a transaction between them and Caltrain.
-I’m just a Caltrain rider, I’m not a party to the transaction - but it’s going to affect me anyhow.
-The service cuts that Caltrain has to make have major negative effects on riders who aren’t part of the transaction between Caltrain and local governments:
+That&rsquo;s what&rsquo;s happening now.
+That&rsquo;s a transaction between them and Caltrain.
+I&rsquo;m just a Caltrain rider, I&rsquo;m not a party to the transaction - but it&rsquo;s going to affect me anyhow.
+The service cuts that Caltrain has to make have major negative effects on riders who aren&rsquo;t part of the transaction between Caltrain and local governments:
 they are the subjects of a negative externality.
 Similarly, if the service cuts go through, traffic on highways between San Francisco and San Jose will get significantly worse.
 Train service created a positive externality that benefited drivers - anyone who was taking the train was not driving, and congestion decreased.
-There’s also a positive externality that has to do with air quality:
+There&rsquo;s also a positive externality that has to do with air quality:
 the train is a more efficient way of transporting large numbers of people than requiring each of them to drive their own car.</p>
 
 <p>The reason that externalities are relevant to the tech field is this: most startups entirely rely on them.
 <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>, whatever its intentions, creates enormous positive externalities.
-It’s almost impossible to name a tech company that doesn’t depend on some piece of free software.
+It&rsquo;s almost impossible to name a tech company that doesn&rsquo;t depend on some piece of free software.
 Further, most tech companies in turn create significant externalities because of their advertising-driven revenue models.
-I dislike advertising-driven revenue models - but like everything else, they’re a trade-off.
-An advertising-driven revenue model - for example, Facebook’s - means that all benefits to users are externalities on one level.
+I dislike advertising-driven revenue models - but like everything else, they&rsquo;re a trade-off.
+An advertising-driven revenue model - for example, Facebook&rsquo;s - means that all benefits to users are externalities on one level.
 Of course you are still in a transaction with Facebook - but most of that transaction is invisible to the average user.
 We users give Facebook data - the data that makes their vaunted social graph valuable and lets them <a href="http://www.youtube.com/watch?v=ce3P79ktpTk">produce creepy marketing videos</a>.
 That tiny transaction, times hundreds of millions of users, gets refined into a product that Facebook can actually make money from.
 Any other startup with the same revenue model is doing the same thing:
-they’re purposefully creating positive externalities, because without those, they can’t do the transactions (with advertisers) that they actually make money from.</p>
+they&rsquo;re purposefully creating positive externalities, because without those, they can&rsquo;t do the transactions (with advertisers) that they actually make money from.</p>
 
 <p>This is a highly interesting business model, and has created many interesting things.
-I personally think that in evolutionary terms it’s a loser:
+I personally think that in evolutionary terms it&rsquo;s a loser:
 advertising as practiced in the modern world is a hostile, toxic, invasive species, and letting it into your ecosystem is a bad idea.
-But what I want to talk about now is a company that <em>doesn’t</em> share that revenue model, and about how it handles externalities.
-It’s time to talk, yet again, about Apple.</p>
+But what I want to talk about now is a company that <em>doesn&rsquo;t</em> share that revenue model, and about how it handles externalities.
+It&rsquo;s time to talk, yet again, about Apple.</p>
 
-<p>Part of the reason that Apple’s prices are what they are is that you are paying for things that you normally get for free as an externality.
-When you buy Apple products, you are forgoing a price that’s artificially low.
-I like to think of it this way: you are paying something closer to the ‘true’ price of the product.
+<p>Part of the reason that Apple&rsquo;s prices are what they are is that you are paying for things that you normally get for free as an externality.
+When you buy Apple products, you are forgoing a price that&rsquo;s artificially low.
+I like to think of it this way: you are paying something closer to the &lsquo;true&rsquo; price of the product.
 The price in dollars to the users of Google products like web search, Gmail, and Google Reader, is low or nil because Google relies on selling user data to others for its revenue.
-You get nice things for ‘free’ because the actual price you’re paying is invisible.
-Apple products, on the other hand, usually don’t do that - you will pay dollars, and you will get your product or service from them, and that’s that.
+You get nice things for &lsquo;free&rsquo; because the actual price you&rsquo;re paying is invisible.
+Apple products, on the other hand, usually don&rsquo;t do that - you will pay dollars, and you will get your product or service from them, and that&rsquo;s that.
 I think of it as paying for peace of mind.
 Free services usually involve a third party, an advertiser, who has an enormous, overwhelming, powerful incentive to attack my peace of mind.
-That is what the modern business of advertising is: it is attacking people’s mental health.</p>
+That is what the modern business of advertising is: it is attacking people&rsquo;s mental health.</p>
 
 <p>Apple is in the tech news again because of externalities:
-<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they’re making are pissing off all kinds of people.
-As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">“if you own the infrastructure, you get to charge rent.”</a>
+<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they&rsquo;re making are pissing off all kinds of people.
+As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">&ldquo;if you own the infrastructure, you get to charge rent.&rdquo;</a>
 What interests me, though, is that Apple has chosen to create a positive externality for user experience here - and they have deliberately done it, risked money to do it, risked business partnerships to do it.
-That’s interesting - and, I think, good.
+That&rsquo;s interesting - and, I think, good.
 When the people who use your product are the people you make money from, you wind up focusing on keeping them happy.
 If you make money otherwise, you risk turning into Adobe (Microsoft also has bouts of this):
 making mediocre products at exorbitant prices and squealing when someone exposes the flaws of your product line.</p>
 
 <p>Whimsically, I think that Apple also creates a huge externality for the tech journalism corps.
-They are the largest company that actually takes risks, and so they help ensure that there’s always something interesting to write about.</p>
+They are the largest company that actually takes risks, and so they help ensure that there&rsquo;s always something interesting to write about.</p>
 ]]></content>
   </entry>
   
@@ -212,55 +212,55 @@ They are the largest company that actually takes risks, and so they help ensure 
     <updated>2010-08-30T06:01:44+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/joel-on-making-choices</id>
     <content type="html"><![CDATA[<p>I have a few idea-bubbles that are always hanging around my head like the Moon around the Earth, and one of them is this: <em>everything is a trade-off</em>.
-Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you’re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
+Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you&rsquo;re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
 A few days after I wrote about that, Joel Spolsky <a href="http://www.joelonsoftware.com/items/2010/08/19.html">posted his talk from Business of Software 2009</a>.
-He’s a great coder, a great writer, and a smokin’ public speaker, you should watch it.</p>
+He&rsquo;s a great coder, a great writer, and a smokin' public speaker, you should watch it.</p>
 
 <p>I think that Mr. Spolsky oversimplifies in one aspect of his talk.
-So I’m going to jump off from there:
+So I&rsquo;m going to jump off from there:
 he says that thinking that you must choose between simplicity and power on a one-dimensional axis is a trap and that you have to construct something else to usefully think about what features software should have.
 So he talks about elegance and about good features and bad features.
-I’m going to say it a slightly different way.
+I&rsquo;m going to say it a slightly different way.
 I just say that you do have to choose between simplicity and power - but it is possible to make good choices and bad choices.
 Not every choice gives up 1 Simplon of simplicity for 1 Pill of power.
 There are a lot of choices you can make that trade 2 Simplons for 4 Pills, or sometimes 1 Pill for 87 Simplons.
-You’d much rather make those than 1:1 trades, and you should spend a lot of time avoiding trades where you give up 1 Simplon and gain 0.005 Pills.</p>
+You&rsquo;d much rather make those than 1:1 trades, and you should spend a lot of time avoiding trades where you give up 1 Simplon and gain 0.005 Pills.</p>
 
 <p><img src="/images/tradeoff-curves.png" alt="two plotted curves, one strictly linear and the other with a constant distance from the origin of the graph." /></p>
 
-<p>Too often, we act like the curve on the right is what we’re stuck with - the best we can do is those 1:1 trades.
+<p>Too often, we act like the curve on the right is what we&rsquo;re stuck with - the best we can do is those 1:1 trades.
 It should be obvious, though, that we can do better.
 The problem is that to do better, generally we need to make those hard decisions.
-Achieving trade-offs that are better than 1:1 is hard, and it’s easy to construct (purposefully or not) incentive structures that absolutely destroy the chances of making good trade-offs.
-My favorite example of this is in airline security - we’re trading security and convenience instead of simplicity and power, but the two problems map onto one another extremely well.
-The Transportation Security Administration is living proof that 1:1 tradeoffs aren’t the only kind - they demonstrate, every day, that you can make <em>far</em> worse trade-offs.
-They’re the <a href="http://www.schneier.com/blog/archives/2009/06/fixing_airport.html">pathologically bad case</a>, where you make so many trade-offs that are so bad that you with up far less security and far less convenience.</p>
+Achieving trade-offs that are better than 1:1 is hard, and it&rsquo;s easy to construct (purposefully or not) incentive structures that absolutely destroy the chances of making good trade-offs.
+My favorite example of this is in airline security - we&rsquo;re trading security and convenience instead of simplicity and power, but the two problems map onto one another extremely well.
+The Transportation Security Administration is living proof that 1:1 tradeoffs aren&rsquo;t the only kind - they demonstrate, every day, that you can make <em>far</em> worse trade-offs.
+They&rsquo;re the <a href="http://www.schneier.com/blog/archives/2009/06/fixing_airport.html">pathologically bad case</a>, where you make so many trade-offs that are so bad that you with up far less security and far less convenience.</p>
 
 <p>But why is that?
-It’s not because the TSA is filled with evil moustache-twirling types who want travellers to be inconvenienced.
+It&rsquo;s not because the TSA is filled with evil moustache-twirling types who want travellers to be inconvenienced.
 I believe that the TSA is full of perfectly average humans who act according to their incentives, overseen and directed by perfectly average humans (who happen to be politicians) acting according to <em>their</em> incentives.
-Those incentives produce the pathology, because they’re not “produce better security” incentives, they’re <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">“avoid punishment”</a> incentives.
-There are few rewards for actually improving security, and tremendous punishments for <em>letting people think security has been degraded</em> — and because we laypeople assess security pretty badly, a perverse cycle of incentives produces pretty bad security.</p>
+Those incentives produce the pathology, because they&rsquo;re not &ldquo;produce better security&rdquo; incentives, they&rsquo;re <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">&ldquo;avoid punishment&rdquo;</a> incentives.
+There are few rewards for actually improving security, and tremendous punishments for <em>letting people think security has been degraded</em> &mdash; and because we laypeople assess security pretty badly, a perverse cycle of incentives produces pretty bad security.</p>
 
 <p>This maps directly onto producing software and wrangling production servers:
 even though it is harder, we need to seek out those better trade-offs, and that means both difficult work and setting up good incentive systems.
 That also means that the managerial professions need to be very careful about the incentive structures that they set up - the intent of an incentive structure is almost never the only outcome that that structure can produce.
-When you’re creating systems, if you refuse to take responsibility for better trade-offs, bad ones will creep in.
+When you&rsquo;re creating systems, if you refuse to take responsibility for better trade-offs, bad ones will creep in.
 One of my favorite examples in software is stealing focus - when the window that you thought you were working in gets shoved behind something else that decides that it needs your attention.
-Stealing focus is, I’m convinced, the sort of sin that means you should never be allowed to touch a compiler again, and furthermore you should probably lose your right pinky, the one that you tap Enter with.
-Every time I’ve seen a window stealing focus, it’s been at the intersection of the worst programmer habits - hubris in thinking that your program, right now, needs to be the most important thing in my computing world, and bad laziness in that the program is always asking me to make some decision that I don’t actually need to make right now.
+Stealing focus is, I&rsquo;m convinced, the sort of sin that means you should never be allowed to touch a compiler again, and furthermore you should probably lose your right pinky, the one that you tap Enter with.
+Every time I&rsquo;ve seen a window stealing focus, it&rsquo;s been at the intersection of the worst programmer habits - hubris in thinking that your program, right now, needs to be the most important thing in my computing world, and bad laziness in that the program is always asking me to make some decision that I don&rsquo;t actually need to make right now.
 Of course, the existence of this capability also means that it can be used for malicious purposes in a nasty trifecta of bad UX.
 Far better to use alternate notification methods
 (the <a href="http://blogs.msdn.com/b/oldnewthing/archive/2003/09/10/54831.aspx">Notification Area <em>nee</em> system tray</a> in Windows, and bouncing Dock icons or Growl messages in OS X)
 to convey such information.</p>
 
-<p>Like the security/convenience example, this doesn’t happen because we programmers are finger-steepling connivers of inconvenience.
+<p>Like the security/convenience example, this doesn&rsquo;t happen because we programmers are finger-steepling connivers of inconvenience.
 Rather, it happens because too often  our incentive structure is disconnected from what actually happens to users of our software.
 This is part of why startups are a good thing to have in the world:
 by necessity, a startup deals much more closely with its customers, and developers routinely talk to people who actually use the software.</p>
 
 <p>So the challenge to us is to recognize good trade-offs, and work to make those trade-offs instead of 1:1 or sub-par tradeoffs.
-This involves making difficult decisions for your users - and it involves respecting that they’re busy making their own difficult decisions, and getting out of their way.</p>
+This involves making difficult decisions for your users - and it involves respecting that they&rsquo;re busy making their own difficult decisions, and getting out of their way.</p>
 ]]></content>
   </entry>
   

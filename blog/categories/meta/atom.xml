@@ -4,7 +4,7 @@
   <title><![CDATA[Category: meta | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/meta/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -21,18 +21,18 @@
     <content type="html"><![CDATA[<p>Communicating with your past self can be a little alarming.
 In the process of converting this blog to OctoPress
 (because <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP is a fractal of bad design</a> and WordPress has its own problems on top of being a huge PHP legacy system),
-I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid’s way of saying “you forgot to <em>start</em> that if-block, girl”, I learned that my past self had very different priorities.</p>
+I learned not only that <code>Liquid Exception: Unknown tag 'endif' in page</code> is Liquid&rsquo;s way of saying &ldquo;you forgot to <em>start</em> that if-block, girl&rdquo;, I learned that my past self had very different priorities.</p>
 
-<p>Not that this is news: as I’ve gotten older, I’ve gotten better at forgiving my past self for her fuckups.
-It’s still hard to forgive her eating habits, but bodies are complicated.
+<p>Not that this is <a href="news:">news:</a> as I&rsquo;ve gotten older, I&rsquo;ve gotten better at forgiving my past self for her fuckups.
+It&rsquo;s still hard to forgive her eating habits, but bodies are complicated.
 I was surprised, though, to learn that she was conflicted about whether to be a developer or a sysadmin.
 Seriously?
-It’s not a binary: pretty much the whole subfield of devops is people who’re making interesting choices about “what if I pick things from both skillsets?”
+It&rsquo;s not a binary: pretty much the whole subfield of devops is people who&rsquo;re making interesting choices about &ldquo;what if I pick things from both skillsets?&rdquo;
 While I now think of myself as an engineer in general, not a sysadin or a developer, I am very happy that I am picking up bits and pieces of CS theory and that I can still read Apache config files, whip up basic Perl one-liners, and be on speaking terms with <code>vim</code>.</p>
 
 <p>I admire the dedicated systems team at my work, but their job is not the job I want to do.
 I want to <em>build things.</em>
-That’s gotten more and more important to me over time — the thrill of green-field development, of Something from Nothing, is one I want, over and over.
+That&rsquo;s gotten more and more important to me over time &mdash; the thrill of green-field development, of Something from Nothing, is one I want, over and over.
 Lucky me: I am getting better and better at producing that experience for myself and making useful things along the way.</p>
 ]]></content>
   </entry>
@@ -48,116 +48,114 @@ I read his <a href="http://www.sfgate.com/columnists/carroll/">excellent column<
 I am also taking a liberty, but as a friend, and posting a big slice of one of his columns.
 I am urging you to <a href="http://www.amazon.com/gp/product/0811803074?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0811803074">buy his book</a>, because that is where I found it.</p>
 
-<blockquote>
-  <p>I have a friend who has a friend who believes that she is a space alien.
+<blockquote><p>I have a friend who has a friend who believes that she is a space alien.
 This is not the easiest burden in life to bear.
-Worrying about dental work is hard enough, being a space alien worrying about dental work can really get on a person’s nerves.
+Worrying about dental work is hard enough, being a space alien worrying about dental work can really get on a person&rsquo;s nerves.
 Understand, this is a person who leads a full, active earthling life.
 She holds a job, buys groceries, has relationships, drives a car, has opinions on popular movies, plays tennis, travels to Seattle to visit her sister.
 She is not under the care of a physician other than her family doctor, who wants her to cut down on cholesterol.</p>
 
-  <p>But she believes that she is a space alien.</p>
+<p>But she believes that she is a space alien.</p>
 
-  <p>She doesn’t tell many people that she is a space alien.
+<p>She doesn&rsquo;t tell many people that she is a space alien.
 Space aliens quickly learn that it is a bad idea to talk about it much.
-People don’t understand.
+People don&rsquo;t understand.
 They try to talk you out of it.
 They advise you to seek professional help.
-She doesn’t want professional help.
-She is entirely aware that people who think they’re space aliens are supposed to be crazy.
+She doesn&rsquo;t want professional help.
+She is entirely aware that people who think they&rsquo;re space aliens are supposed to be crazy.
 It is not an honorable job classification, being a space alien.</p>
 
-  <p>So, as a thinking adult, she has been forced to ask herself: Am I crazy?</p>
+<p>So, as a thinking adult, she has been forced to ask herself: Am I crazy?</p>
 
-  <p>She has considered the matter carefully; she has talked it over with a few trusted friends.
+<p>She has considered the matter carefully; she has talked it over with a few trusted friends.
 And her conclusion: I am not crazy.
 I am only a space alien.</p>
 
-  <p>Right now, she just wants to know what being a space alien is supposed to entail.
+<p>Right now, she just wants to know what being a space alien is supposed to entail.
 This differentiates her from many people who believe they are space aliens and are very busy following orders.
 But she is not one of those people.
 She does not exhibit the classic clinical symptoms.
 She does not believe people are following her; she does not believe in the existence of a gigantic conspiracy designed to drive her crazy.
 She does not believe that Henry Kissinger is stealing her ideas.
 If anything, she wishes the Mother Ship or whatever would be a little more forthcoming about its plans.
-She’s tried listening for messages.</p>
+She&rsquo;s tried listening for messages.</p>
 
-  <p>She does believe that earthlings are slowly poisoning their planet, an idea shared by many people who do not believe they are space aliens.</p>
+<p>She does believe that earthlings are slowly poisoning their planet, an idea shared by many people who do not believe they are space aliens.</p>
 
-  <p>The alien chain of command is definitely nonfunctional from her point of view.
-It’s sort of like being given an office and a desk and being told that you’re a corporate vice president, and then sitting there for years and years wondering what your job is and what the firm that employs you does.
-Plus, you can’t talk about it because people will think of you as some sort of <em>National Enquirer</em> fruitcake.</p>
+<p>The alien chain of command is definitely nonfunctional from her point of view.
+It&rsquo;s sort of like being given an office and a desk and being told that you&rsquo;re a corporate vice president, and then sitting there for years and years wondering what your job is and what the firm that employs you does.
+Plus, you can&rsquo;t talk about it because people will think of you as some sort of <em>National Enquirer</em> fruitcake.</p>
 
-  <p>The more I heard about my friend’s friend, the underemployed space alien, the more her plight sounded familiar.
+<p>The more I heard about my friend&rsquo;s friend, the underemployed space alien, the more her plight sounded familiar.
 We were none of us in class the day they passed out the secret of life; we all of us wander around listening for messages that never seem to arrive.
-The only people who really screw up are the ones who think they’ve gotten the message.
-All those guys over the years who were convinced they had the exact date when the world would end - they’re batting 0-for-eternity so far.</p>
+The only people who really screw up are the ones who think they&rsquo;ve gotten the message.
+All those guys over the years who were convinced they had the exact date when the world would end - they&rsquo;re batting 0-for-eternity so far.</p>
 
-  <p>So here we are spinning through the unutterable void without a road map, bolstered only by the evidence of things not seen, bookended by the mysteries of birth and death, bewildered by our own emotions …
-Talk about space aliens.</p>
-</blockquote>
+<p>So here we are spinning through the unutterable void without a road map, bolstered only by the evidence of things not seen, bookended by the mysteries of birth and death, bewildered by our own emotions &hellip;
+Talk about space aliens.</p></blockquote>
 
 <p>I am not posting this to convince you that Jon Carroll is a good writer (he is) or to buy his book (you should), but to note the experience of deviancy.
-The underemployed alien is experiencing deviancy in our culture—
+The underemployed alien is experiencing deviancy in our culture&mdash;
 and for all that we celebrate a certain kind of deviancy, the kind that can make money, we are remarkably intolerant of deviancy in general.
 It makes me sad.
-Like free speech, deviancy has benefits that outweigh its drawbacks—
-I promise you that you don’t want to live in a monoculture, and if you police deviancy, that’s where you’re headed.</p>
+Like free speech, deviancy has benefits that outweigh its drawbacks&mdash;
+I promise you that you don&rsquo;t want to live in a monoculture, and if you police deviancy, that&rsquo;s where you&rsquo;re headed.</p>
 
 <p>Monocultures die quick, well-deserved deaths.</p>
 
-<p>The problem is, it’s much easier to write software that serves a monoculture instead of software that serves a real culture.
-If you’re writing something enterprisey, you can probably get away with serving a monoculture—
+<p>The problem is, it&rsquo;s much easier to write software that serves a monoculture instead of software that serves a real culture.
+If you&rsquo;re writing something enterprisey, you can probably get away with serving a monoculture&mdash;
 but if you want to serve the general public, acting like the general public is a monoculture is a deadly poison for your application.
 The general public is infinitely diverse.
 You, writing your very important software product, may be tempted to say - well, so what?
 Eighty-twenty rule and all that.
-I don’t need to optimize that far.</p>
+I don&rsquo;t need to optimize that far.</p>
 
 <p>You kind of do, though.
-When you are writing for the general public, you can’t tell who the eighty percent are, you will lose data by not considering all cases, and importantly <strong>the eighty percent will change out from under you.</strong></p>
+When you are writing for the general public, you can&rsquo;t tell who the eighty percent are, you will lose data by not considering all cases, and importantly <strong>the eighty percent will change out from under you.</strong></p>
 
 <p>I want to say that again:
-the eighty percent case, if you’re writing software for the general public, will change out from under you—
+the eighty percent case, if you&rsquo;re writing software for the general public, will change out from under you&mdash;
 because people and culture are either changing or dying.
 You want to be able to pivot, as the startup crowd says:
 to be able to gracefully acknowledge that what people want and are willing to pay for is a bit different than what you are currently offering, and to be able change modes so that you can actually deliver what people want and are willing to pay for.
 By definition, you cannot know this information in advance: you must simply be able to react well to changing circumstances.</p>
 
 <p>You are damaging your ability to pivot if you dismiss the fullness of humanity and insist that humans should change to fit your data structures.
-Don’t gratuitously handicap yourself like that.
-As Paul Graham notes, you should have a keen interest in <a href="http://www.paulgraham.com/say.html">what you can’t say</a>.
-Don’t, in short, be like <a href="http://www.diaspora-news.net/2010/11/29/im-dropping-diaspora-this-site-is-now-closed/">this twerp Avery Morrow</a>, who sulks that people should fit his data structures better and that developers’ convenience should take precedence, in software for a general audience, over users receiving software that serves their actual needs in their actual lives.
+Don&rsquo;t gratuitously handicap yourself like that.
+As Paul Graham notes, you should have a keen interest in <a href="http://www.paulgraham.com/say.html">what you can&rsquo;t say</a>.
+Don&rsquo;t, in short, be like <a href="http://www.diaspora-news.net/2010/11/29/im-dropping-diaspora-this-site-is-now-closed/">this twerp Avery Morrow</a>, who sulks that people should fit his data structures better and that developers' convenience should take precedence, in software for a general audience, over users receiving software that serves their actual needs in their actual lives.
 Morrow has it exactly backwards!
 When you are a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">making difficult decisions</a> <strong>is your job.</strong>
 Shirking that job leads to bad software.
 So I think that Morrow is a bad developer and a twerp:
-it’s clear that <em>his</em> identity has never had to deal with software that denies his existence.
-If you want to know what privilege looks like, that’s it.</p>
+it&rsquo;s clear that <em>his</em> identity has never had to deal with software that denies his existence.
+If you want to know what privilege looks like, that&rsquo;s it.</p>
 
 <p>A good developer should <a href="http://slacktivist.typepad.com/slacktivist/2010/04/empathy-and-epistemic-closure.html">have empathy</a> instead of being like Morrow.
 Lacking empathy makes you stupid.
 Consider this:
-Morrow complains vociferously about “gender” being a free-form text field - and yet Metafilter, not a small site by anyone’s lights, has had that in place for years.
-<a href="http://stuff.metafilter.com/genders/genderfield.txt">Metafilter’s gender data</a> is instructive, too.
-By far the majority of users there simply don’t give a shit about the things Morrow complains about.
+Morrow complains vociferously about &ldquo;gender&rdquo; being a free-form text field - and yet Metafilter, not a small site by anyone&rsquo;s lights, has had that in place for years.
+<a href="http://stuff.metafilter.com/genders/genderfield.txt">Metafilter&rsquo;s gender data</a> is instructive, too.
+By far the majority of users there simply don&rsquo;t give a shit about the things Morrow complains about.
 They leave the field blank and go on their way.
 On the other side of the scale, here we find underemployed aliens.
-People have claimed as their gender “xx,” “xy,” and “xml.”
-People have claimed “m,” “f,” and “varies with proximity to scotland.”
+People have claimed as their gender &ldquo;xx,&rdquo; &ldquo;xy,&rdquo; and &ldquo;xml.&rdquo;
+People have claimed &ldquo;m,&rdquo; &ldquo;f,&rdquo; and &ldquo;varies with proximity to scotland.&rdquo;
 There are plenty of aliens here - and Morrow wants to throw them out.</p>
 
 <p>Here is someone with the right idea:
-Patrick McKenzie’s <a href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">“Falsehoods Programmers Believe About Names.”</a>
+Patrick McKenzie&rsquo;s <a href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">&ldquo;Falsehoods Programmers Believe About Names.&rdquo;</a>
 The human experience is massively diverse and, lucky you, you get to deal with it.
-When you’re a system or administrator or a developer, dealing with that diversity is an essential component of a job well done.
+When you&rsquo;re a system or administrator or a developer, dealing with that diversity is an essential component of a job well done.
 Especially as a developer, where your job is to make abstractions.
-Abstractions and aggregations and arrays are good - but you shouldn’t let them blind you to the fact that humans are not abstract.
-The abstractions that we developers describe humans with are convenient, but <a href="http://blog.jgc.org/2010/06/your-last-name-contains-invalid.html">they’re not free</a>.
+Abstractions and aggregations and arrays are good - but you shouldn&rsquo;t let them blind you to the fact that humans are not abstract.
+The abstractions that we developers describe humans with are convenient, but <a href="http://blog.jgc.org/2010/06/your-last-name-contains-invalid.html">they&rsquo;re not free</a>.
 The price is a reduced precision of representing the human experience.</p>
 
-<p>Embrace the diversity of the human experience - especially when you’re programming something that you want humans in general to use.
-The aliens are out there, and there is no good excuse for your program to break just because they’re aliens.</p>
+<p>Embrace the diversity of the human experience - especially when you&rsquo;re programming something that you want humans in general to use.
+The aliens are out there, and there is no good excuse for your program to break just because they&rsquo;re aliens.</p>
 ]]></content>
   </entry>
   
@@ -167,29 +165,30 @@ The aliens are out there, and there is no good excuse for your program to break 
     <updated>2010-03-01T06:01:33+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/monthly-metapost-2</id>
     <content type="html"><![CDATA[<p>Another month already.
-I’m happy with how the Monday-Wednesday-Friday schedule is working: it’s like writing to deadline.
-That’s part of the point of the exercise, of course - to make writing a discipline, a practice, and to spare myself from some of the paralysis of choice that comes from an open-ended schedule.
-I’m not good enough to just blog about whatever, whenever.
+I&rsquo;m happy with how the Monday-Wednesday-Friday schedule is working: it&rsquo;s like writing to deadline.
+That&rsquo;s part of the point of the exercise, of course - to make writing a discipline, a practice, and to spare myself from some of the paralysis of choice that comes from an open-ended schedule.
+I&rsquo;m not good enough to just blog about whatever, whenever.
 Yet.</p>
 
 <ol>
-  <li>Still haven’t finished customizing wordpress - I’m going to have to hit up <a href="http://stackoverflow.com/">Stack Overflow</a> for some of my questions, I think, but happily there’s a bunch of WordPress expertise floating around.</li>
-  <li>Best post last month: Definitely <a href="http://stronglyemergent.com/blog/2010/tablet-signal-tablet-noise/">Tablet Signal, Tablet Noise</a>.
-I can’t believe I end up writing about Apple this much - but the more I think about design, the more Apple fascinates me.</li>
-  <li>Worst post last month: Probably <a href="http://stronglyemergent.com/blog/2010/windows-xp-closure/">Windows XP Closure</a>.
+<li>Still haven&rsquo;t finished customizing wordpress - I&rsquo;m going to have to hit up <a href="http://stackoverflow.com/">Stack Overflow</a> for some of my questions, I think, but happily there&rsquo;s a bunch of WordPress expertise floating around.</li>
+<li>Best post last month: Definitely <a href="http://stronglyemergent.com/blog/2010/tablet-signal-tablet-noise/">Tablet Signal, Tablet Noise</a>.
+I can&rsquo;t believe I end up writing about Apple this much - but the more I think about design, the more Apple fascinates me.</li>
+<li>Worst post last month: Probably <a href="http://stronglyemergent.com/blog/2010/windows-xp-closure/">Windows XP Closure</a>.
 Stream-of-consciousness junk.
-There’s probably a good post in that material, but that wasn’t it.</li>
+There&rsquo;s probably a good post in that material, but that wasn&rsquo;t it.</li>
 </ol>
+
 
 <p>Only 25 posts in?
 It feels like more.
 But - step by step is the way.
 Practice is the way.
-This project is for the long term, and so I’m building the foundations now.
-Can’t take shortcuts when building foundations - it’s a bad, bad idea.
+This project is for the long term, and so I&rsquo;m building the foundations now.
+Can&rsquo;t take shortcuts when building foundations - it&rsquo;s a bad, bad idea.
 I at least have the security of previous writing experience telling me that it does get better and easier over time.
-Right now it’s definitely in the dues-paying stage.
-I’m also assuming a little extra workload by posting at my college’s blog - that’s interesting, and it makes a good exercise, to write for the audience there and the audience here.</p>
+Right now it&rsquo;s definitely in the dues-paying stage.
+I&rsquo;m also assuming a little extra workload by posting at my college&rsquo;s blog - that&rsquo;s interesting, and it makes a good exercise, to write for the audience there and the audience here.</p>
 ]]></content>
   </entry>
   
@@ -198,24 +197,25 @@ I’m also assuming a little extra workload by posting at my college’s blog - 
     <link href="http://stronglyemergent.com//blog/2010/monthly-metapost-1/"/>
     <updated>2010-02-01T06:01:47+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/monthly-metapost-1</id>
-    <content type="html"><![CDATA[<p>All right, that’s one month of blogging, all on schedule, all reasonable content.
+    <content type="html"><![CDATA[<p>All right, that&rsquo;s one month of blogging, all on schedule, all reasonable content.
 Here goes month two.
 I will make a little meta post like this at the beginning of the month, reviewing myself publicly.
 Right now, there are three meta issues that are on my mind.</p>
 
 <ol>
-  <li>I’m not done customizing WordPress.
-I need to add a few more static pages, tweak this theme more (that animated favicon isn’t working out as well as I’d hoped), and do some plugin management.
+<li>I&rsquo;m not done customizing WordPress.
+I need to add a few more static pages, tweak this theme more (that animated favicon isn&rsquo;t working out as well as I&rsquo;d hoped), and do some plugin management.
 Also figure out permalink structure so that I can write future-compatible posts and theme tweaks.</li>
-  <li>My best post last month was <a href="http://stronglyemergent.com/blog/2010/the-best-software-developer-youve-never-heard-of/">The Best Software Developer You’ve Never Heard Of</a>.
+<li>My best post last month was <a href="http://stronglyemergent.com/blog/2010/the-best-software-developer-youve-never-heard-of/">The Best Software Developer You&rsquo;ve Never Heard Of</a>.
 It was better than <a href="http://stronglyemergent.com/blog/2010/meaningful-work-in-my-future/">Meaningful Work In My Future</a>, my second favorite, because more of the content was original to me.</li>
-  <li>On the other hand, the post that I should have put through more thought and more drafts was definitely <a href="http://stronglyemergent.com/blog/2010/textbook-economics/">Textbook Economics</a>.
+<li>On the other hand, the post that I should have put through more thought and more drafts was definitely <a href="http://stronglyemergent.com/blog/2010/textbook-economics/">Textbook Economics</a>.
 Totally phoning it in there.</li>
 </ol>
 
-<p>In the future, the first post of each month will probably be a metapost like this, and will definitely have a best/worst review of what I’ve written over the previous month.
-I’m willing to call one full month a landmark, but it’s only one in a series.
-I’ll pat myself on the back again after a full quarter, a half-year, and a year.
+
+<p>In the future, the first post of each month will probably be a metapost like this, and will definitely have a best/worst review of what I&rsquo;ve written over the previous month.
+I&rsquo;m willing to call one full month a landmark, but it&rsquo;s only one in a series.
+I&rsquo;ll pat myself on the back again after a full quarter, a half-year, and a year.
 Getting there is going to be interesting.</p>
 ]]></content>
   </entry>
@@ -231,29 +231,29 @@ I could try to put in my <a href="http://en.wikipedia.org/wiki/Outliers_%28book%
 There are many, many, <em>many</em> awesome disciplines in the world.
 But these are the ones that speak to me.</p>
 
-<p>Sometimes the “here I am and here’s why I’m writing my blog” post comes first.
-I don’t want to do that.
+<p>Sometimes the &ldquo;here I am and here&rsquo;s why I&rsquo;m writing my blog&rdquo; post comes first.
+I don&rsquo;t want to do that.
 I want <em>content</em> to come first at this blog.
 Good content is the gold standard of the Internet, forgiving all other sins, and without it a blog is nothing.
 So this post and this blog are training me to put content first.
-Part of what makes content good is that it appears on a regular, predictable schedule - for example, this blog’s Monday-Wednesday-Friday posts.
-Good content comes before hearing about me, because while some of you are surely here for me (hi Uncle Brian!), most of you are here because something’s in it for you - that content.</p>
+Part of what makes content good is that it appears on a regular, predictable schedule - for example, this blog&rsquo;s Monday-Wednesday-Friday posts.
+Good content comes before hearing about me, because while some of you are surely here for me (hi Uncle Brian!), most of you are here because something&rsquo;s in it for you - that content.</p>
 
-<p>This blog is also here because without it, I don’t exist.
-I’m an apprentice as I write this in all of my competencies.
+<p>This blog is also here because without it, I don&rsquo;t exist.
+I&rsquo;m an apprentice as I write this in all of my competencies.
 I am listening, in this area, to <a href="http://www.codinghorror.com/">Jeff Atwood</a> and <a href="http://sethgodin.typepad.com/">Seth Godin</a> and <a href="http://nielsenhayden.com/makinglight/">Teresa and Patrick Nielsen Hayden</a>.</p>
 
-<p>I’m especially influenced by Godin’s <a href="http://sethgodin.typepad.com/seths_blog/2008/03/why-bother-havi.html">“Why bother having a résumé?”</a> post.
-Godin says that <em>“if you’re remarkable, amazing or just plain spectacular, you probably shouldn’t have a resume at all.”</em> I’m going to be remarkable, amazing, and spectacular eventually - but I’m not yet, and won’t become so without lots of work.
-I won’t get there without preparing the way.
+<p>I&rsquo;m especially influenced by Godin&rsquo;s <a href="http://sethgodin.typepad.com/seths_blog/2008/03/why-bother-havi.html">&ldquo;Why bother having a résumé?&rdquo;</a> post.
+Godin says that <em>&ldquo;if you&rsquo;re remarkable, amazing or just plain spectacular, you probably shouldn&rsquo;t have a resume at all.&rdquo;</em> I&rsquo;m going to be remarkable, amazing, and spectacular eventually - but I&rsquo;m not yet, and won&rsquo;t become so without lots of work.
+I won&rsquo;t get there without preparing the way.
 Preparing the way means writing and being present on the Internet - part of the big conversation going on.
-I’m not really writing this blog for today or tomorrow, I’m writing it for the next year and the next five years.
-I’m writing it so that in 2011, when someone searches for “brighid mcdonnell python,” my blog is the first thing that comes up, showing them who I am and what I’ve been thinking about for years.
+I&rsquo;m not really writing this blog for today or tomorrow, I&rsquo;m writing it for the next year and the next five years.
+I&rsquo;m writing it so that in 2011, when someone searches for &ldquo;brighid mcdonnell python,&rdquo; my blog is the first thing that comes up, showing them who I am and what I&rsquo;ve been thinking about for years.
 I want to show people the things that I want them to judge me by.
-If I am not putting things like that out on the Internet, people will judge me (it’s what people do) by things that I do <em>not</em> control, and I like that less.</p>
+If I am not putting things like that out on the Internet, people will judge me (it&rsquo;s what people do) by things that I do <em>not</em> control, and I like that less.</p>
 
 <p>Welcome to my blog.
-I promise two things: to talk about things that don’t bore me, and to talk about them in a way that doesn’t bore you.</p>
+I promise two things: to talk about things that don&rsquo;t bore me, and to talk about them in a way that doesn&rsquo;t bore you.</p>
 ]]></content>
   </entry>
   

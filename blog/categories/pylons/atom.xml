@@ -4,7 +4,7 @@
   <title><![CDATA[Category: pylons | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/pylons/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -18,35 +18,35 @@
     <link href="http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning/"/>
     <updated>2010-03-15T06:01:10+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning</id>
-    <content type="html"><![CDATA[<p>I’d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
-I’m jazzed about that: having another form for that data is going to be useful for me.
-With that in hand, I’m starting on another Pylons project.
-This may evolve into my project for the Pylons course that I’m trying to get my school to approve, but I’m going to do it even if I don’t get the class approved, because it’s interesting and if I do it well it’ll be useful to someone I care about.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
+I&rsquo;m jazzed about that: having another form for that data is going to be useful for me.
+With that in hand, I&rsquo;m starting on another Pylons project.
+This may evolve into my project for the Pylons course that I&rsquo;m trying to get my school to approve, but I&rsquo;m going to do it even if I don&rsquo;t get the class approved, because it&rsquo;s interesting and if I do it well it&rsquo;ll be useful to someone I care about.</p>
 
-<p>This is a trivial project overall, but that’s what you do as part of the learning curve.
+<p>This is a trivial project overall, but that&rsquo;s what you do as part of the learning curve.
 This project will create a web site for scheduling the use of sports fields.
-Users will be able to visit the site and easily see what’s currently scheduled and create requests for field usage.
+Users will be able to visit the site and easily see what&rsquo;s currently scheduled and create requests for field usage.
 Fields will show up as available at a given time, booked, or request-pending.
 Requests go to field coordinators, who resolve conflicts and approve requests for field usage.
 They should be able to do this as quickly as possible - current mechanism envisions that field requests generate an email to the coordinator or coordinators, who can click on a generated link in the URL and approve the request just by that click.
 Non-response is the same as declining approval.
-So the coordinators have a bit of a workload, but that’s what it means to be a coordinator anyhow.</p>
+So the coordinators have a bit of a workload, but that&rsquo;s what it means to be a coordinator anyhow.</p>
 
 <p>Expect more posts to show up with notes towards this project.
-I’ve got a catchy name for it, too.
-“Field Availability and Scheduling Tool.”
-FAST - that’s a good acronym, not worsened by the number of projects that have already used it.</p>
+I&rsquo;ve got a catchy name for it, too.
+&ldquo;Field Availability and Scheduling Tool.&rdquo;
+FAST - that&rsquo;s a good acronym, not worsened by the number of projects that have already used it.</p>
 
-<p>What I’ll be trying to consciously think of during this project is data structures.
+<p>What I&rsquo;ll be trying to consciously think of during this project is data structures.
 What do I need to provide?
-What kind of database structure is best for sitting under this, even if I’m only going to interact with it through SQLAlchemy?
+What kind of database structure is best for sitting under this, even if I&rsquo;m only going to interact with it through SQLAlchemy?
 How can I keep the system open to further use with minimal overhead?</p>
 
-<p>My ambition - we’ll see if I can actually pull it off - is to follow this up with an app that creates a schedule for students and teachers given a set of constraints (working on <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem">3SAT problems</a>, basically, and trying to figure out what the difficulty class of this one is).
-After that, I’d like to write a recommendation engine.
-Neither of these are trivial projects, and there’s a pretty good chance that I won’t get them done before graduation.
-That’s okay.
-The journey is the important thing; and if I make it through the journey to get them working (nevermind working at a high level of optimization), I’ll be willing to call myself pretty handy with Python.</p>
+<p>My ambition - we&rsquo;ll see if I can actually pull it off - is to follow this up with an app that creates a schedule for students and teachers given a set of constraints (working on <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem">3SAT problems</a>, basically, and trying to figure out what the difficulty class of this one is).
+After that, I&rsquo;d like to write a recommendation engine.
+Neither of these are trivial projects, and there&rsquo;s a pretty good chance that I won&rsquo;t get them done before graduation.
+That&rsquo;s okay.
+The journey is the important thing; and if I make it through the journey to get them working (nevermind working at a high level of optimization), I&rsquo;ll be willing to call myself pretty handy with Python.</p>
 ]]></content>
   </entry>
   
@@ -56,35 +56,35 @@ The journey is the important thing; and if I make it through the journey to get 
     <updated>2010-01-29T06:01:57+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/proposed-course-pylons</id>
     <content type="html"><![CDATA[<p>Of course, after spending most of 400 words complaining in my last post, an obvious question comes up: <em>well, what are you going to do about it?</em>
-What I’m doing about it is writing up a course - and more than one, if I get a positive reception - that will let me create the hybrid curriculum I want, and pitching it to the school’s administration.
-I’ve used Google Docs to <a href="http://docs.google.com/View?id=ddvszwtj_44hpttscd3">write up a course proposal</a> (which is going to keep being updated, it’s very much work-in-progress) for the first thing I have in mind.</p>
+What I&rsquo;m doing about it is writing up a course - and more than one, if I get a positive reception - that will let me create the hybrid curriculum I want, and pitching it to the school&rsquo;s administration.
+I&rsquo;ve used Google Docs to <a href="http://docs.google.com/View?id=ddvszwtj_44hpttscd3">write up a course proposal</a> (which is going to keep being updated, it&rsquo;s very much work-in-progress) for the first thing I have in mind.</p>
 
 <p>What I have in mind is using <a href="http://pylonshq.com">Pylons</a>.
 Pylons is an open-source web framework built on Python.
-I’ve been working on Python gradually on my own time, but I’m not happy with my progress.
-I haven’t been making progress because I haven’t been putting in enough time.
+I&rsquo;ve been working on Python gradually on my own time, but I&rsquo;m not happy with my progress.
+I haven&rsquo;t been making progress because I haven&rsquo;t been putting in enough time.
 Therefore, I want to create a school project in which I have to use Pylons because that will require me to put in more time on it, and give me a structure for using my time.
-That’s pretty much the most useful thing that I get from school: I could get most of the information from pure reference works freely available (appearances to the contrary, it’s not like Microsoft or Red Hat <em>want</em> to keep people from knowing how to run their servers well), but school gives it structure and enacts a framework for practice.
+That&rsquo;s pretty much the most useful thing that I get from school: I could get most of the information from pure reference works freely available (appearances to the contrary, it&rsquo;s not like Microsoft or Red Hat <em>want</em> to keep people from knowing how to run their servers well), but school gives it structure and enacts a framework for practice.
 Practice - that Gladwellian 10,000 hours - is essential.
-So when I have a structure for my time, it’s easier to put in the purposeful practice required to achieve proficiency (and after that, mastery).</p>
+So when I have a structure for my time, it&rsquo;s easier to put in the purposeful practice required to achieve proficiency (and after that, mastery).</p>
 
 <p>Fortunately, this project of creating a Pylons class has an excellent fallback position.
-Even if I don’t persuade the school to let me take my course - and it’s definitely not a sure thing - I can use that framework to structure my own time and make more progress.
-So I’m happy about that.
-I wouldn’t design the course if I had already done all of the work - as it is, I’m designing the course around what I need to learn, and it’s an interesting challenge to develop a plan for learning things that I don’t yet know.
-I definitely think that my path will be easier if I can save the school’s administration as much work as possible.
-I want to plop down a sheaf of paper for them and say - “here is <em>the whole course</em>, how about letting me do it?”
-I will give them a syllabus, quizzes and answer keys, homework assignments, a textbook, and a letter of recommendation from someone saying “yeah these are marketable skills.”
-I hope that they’ll find that persuasive.</p>
+Even if I don&rsquo;t persuade the school to let me take my course - and it&rsquo;s definitely not a sure thing - I can use that framework to structure my own time and make more progress.
+So I&rsquo;m happy about that.
+I wouldn&rsquo;t design the course if I had already done all of the work - as it is, I&rsquo;m designing the course around what I need to learn, and it&rsquo;s an interesting challenge to develop a plan for learning things that I don&rsquo;t yet know.
+I definitely think that my path will be easier if I can save the school&rsquo;s administration as much work as possible.
+I want to plop down a sheaf of paper for them and say - &ldquo;here is <em>the whole course</em>, how about letting me do it?&rdquo;
+I will give them a syllabus, quizzes and answer keys, homework assignments, a textbook, and a letter of recommendation from someone saying &ldquo;yeah these are marketable skills.&rdquo;
+I hope that they&rsquo;ll find that persuasive.</p>
 
-<p>There’s another reason to craft this course, though, that I should have covered in the last post.
+<p>There&rsquo;s another reason to craft this course, though, that I should have covered in the last post.
 I hope that it will replace some courses here that <em>suck</em>.
-Unless you’re getting into serious mojo and/or VBA, Word and Excel are not suitable subjects for technical college classes.
-Learning to use them up to a basic, everyday level is a long afternoon’s work.
+Unless you&rsquo;re getting into serious mojo and/or VBA, Word and Excel are not suitable subjects for technical college classes.
+Learning to use them up to a basic, everyday level is a long afternoon&rsquo;s work.
 The curriculum here feels padded with classes like that, that have no place in seriously preparing for a job in the IT world.
-I’m familiar with and sympathetic to the argument that peripheral skills are near in importance to technical skills, and that preparation for the professional world should be holistic, but come on.
+I&rsquo;m familiar with and sympathetic to the argument that peripheral skills are near in importance to technical skills, and that preparation for the professional world should be holistic, but come on.
 I feel like my tuition is not well spent when it is spent on content-free classes.
-So as far as I possibly can, I’m going to roll my own education, I’m going to pitch classes at the Administration that are <em>not</em> content-free, and use them to replace content-free classes.</p>
+So as far as I possibly can, I&rsquo;m going to roll my own education, I&rsquo;m going to pitch classes at the Administration that are <em>not</em> content-free, and use them to replace content-free classes.</p>
 
 <p>Setting a goal and working with a bureaucratic institution to get it, crafting a proposal, negotiating, accepting a higher work-load in order to have more gratifying work?  <em>Those</em> are career skills I want.</p>
 ]]></content>

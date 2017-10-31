@@ -4,7 +4,7 @@
   <title><![CDATA[Category: google | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/google/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -19,177 +19,165 @@
     <updated>2011-10-25T21:48:46+00:00</updated>
     <id>http://stronglyemergent.com//blog/2011/locating-design-in-latitude-find-my-friends-and-yelp</id>
     <content type="html"><![CDATA[<p>The conventional wisdom in computing is that the difference between Apple and its competitors, is design.
-This isn’t wrong, but it’s insufficiently specific: when people say that Apple focuses on “design,” they often mean that the visual, graphical, surface aspect of Apple products, is different.
-It is - but that is not a difference of “design.”
+This isn&rsquo;t wrong, but it&rsquo;s insufficiently specific: when people say that Apple focuses on &ldquo;design,&rdquo; they often mean that the visual, graphical, surface aspect of Apple products, is different.
+It is - but that is not a difference of &ldquo;design.&rdquo;
 Design is about fitting the designed artifact into human lives, and there are some crucially important non-visual aspects to design in this sense.</p>
 
-<p>I’m going to talk about one specific group of non-visual design choices here, comparing Apple’s “Find My Friends” service to two similar services - Google’s “Latitude” and Yelp’s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
-All three share a core functionality: they advertise the user’s location and allow them to discover the location of others.
-They differ in how they attempt to fit into users’ lives, and in how they execute their attempts.
-I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple’s service is different, and the difference is design.</p>
+<p>I&rsquo;m going to talk about one specific group of non-visual design choices here, comparing Apple&rsquo;s &ldquo;Find My Friends&rdquo; service to two similar services - Google&rsquo;s &ldquo;Latitude&rdquo; and Yelp&rsquo;s check-ins feature (used here as a stand-in for check-in services in general - e.g. Foursquare, Facebook Places, Gowalla).
+All three share a core functionality: they advertise the user&rsquo;s location and allow them to discover the location of others.
+They differ in how they attempt to fit into users' lives, and in how they execute their attempts.
+I want to illustrate how, in the areas where it is attempting to do the same thing as the other services, Apple&rsquo;s service is different, and the difference is design.</p>
 
-<p>As phones have become mobile computing devices, they’ve converged with desktop computing in some ways, and diverged in other ways.
+<p>As phones have become mobile computing devices, they&rsquo;ve converged with desktop computing in some ways, and diverged in other ways.
 One of the convergences is the social experience: email, the original social experience in computing, was one of the first things that made smartphones smart.
-One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it’s a single piece of information.
+One of the big divergences is location: it may be advantageous to know where a specific desktop computer is, but that location is unlikely to change - it&rsquo;s a single piece of information.
 With mobile computing, location is a stream of information instead of a single piece, and adding that stream to other streams of information, then distilling, is where many mobile companies have added value.
-One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say “here I am!” to your social circle.
-Google participated in an early wave of such services with Google Latitude’s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple’s offering appeared in late 2011.
+One of the obvious results of trying to put the social and local aspects of mobile together is check-in services: a way to say &ldquo;here I am!&rdquo; to your social circle.
+Google participated in an early wave of such services with Google Latitude&rsquo;s launch in early 2009, Yelp launched its check-ins feature in early 2010, and Apple&rsquo;s offering appeared in late 2011.
 All of these services allow you to broadcast your location, to restrict who can hear that broadcast, and to view the broadcasts of others.
 Those functions are the core of any location-based social service: they are the same across all three services, even though these services all have different goals.</p>
 
 <ul>
-  <li>
-    <p>Apple, in characteristic fashion, makes the service’s goal very, very obvious.
-Its name is “Find My Friends.”
-There isn’t that much to say about the service - there’s a map, other users of the service show up on the map, and you can find them.
-That’s it.</p>
-  </li>
-  <li>
-    <p>Yelp’s service is slightly more complicated, but still straightforward.
+<li><p>Apple, in characteristic fashion, makes the service&rsquo;s goal very, very obvious.
+Its name is &ldquo;Find My Friends.&rdquo;
+There isn&rsquo;t that much to say about the service - there&rsquo;s a map, other users of the service show up on the map, and you can find them.
+That&rsquo;s it.</p></li>
+<li><p>Yelp&rsquo;s service is slightly more complicated, but still straightforward.
 Yelp is all about restaurants, venues, and other businesses, so it lets you broadcast that you are at a specific business.
-It doesn’t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you’re at Candlestick Park, for example.
-It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they’re doing at the place where they’ve checked in.</p>
-  </li>
-  <li>
-    <p>Google’s service is open-ended.
-There’s a map, other users of the service show up on the map, and you can find them.
-Latitude shares a lot of genetic material with Find My Friends - they’re both implementing the most obvious thing you can do with social-plus-local.
-Google’s service is goal-agnostic: for quite a while, the map was all it was, but recently, they’ve added an API and a feature that tells users how much time they’ve spent at home, at work, or out-and-about.</p>
-  </li>
+It doesn&rsquo;t show you a map, but instead a list of places where others have checked in - which is not very much help in finding them if you&rsquo;re at Candlestick Park, for example.
+It also lets business interact with and reward patrons who visit frequently, and allows users to send short messages to Yelp, Facebook, or Twitter, about what they&rsquo;re doing at the place where they&rsquo;ve checked in.</p></li>
+<li><p>Google&rsquo;s service is open-ended.
+There&rsquo;s a map, other users of the service show up on the map, and you can find them.
+Latitude shares a lot of genetic material with Find My Friends - they&rsquo;re both implementing the most obvious thing you can do with social-plus-local.
+Google&rsquo;s service is goal-agnostic: for quite a while, the map was all it was, but recently, they&rsquo;ve added an API and a feature that tells users how much time they&rsquo;ve spent at home, at work, or out-and-about.</p></li>
 </ul>
+
 
 <p>These summaries show one significant design difference between the services: Apple and Yelp have clearly defined goals for how their services should fit into human lives.
 Apple helps you find your friends.
 Yelp helps you evaluate venues.
-Google’s service can do what Apple’s does, but also shows you a history of where you’ve been, has check-ins like Yelp’s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
+Google&rsquo;s service can do what Apple&rsquo;s does, but also shows you a history of where you&rsquo;ve been, has check-ins like Yelp&rsquo;s, and lets you broadcast your location through other Google properties (for example, you can have your Latitude location displayed as part of the Google Chat interface).
 Its public API also lets other services build on its data and provide further services.
-Now, “you can’t summarize what Google Latitude does for users in a concise sentence” is not exactly a major flaw.
-It is, however, sloppy design by the criteria we’re using right now.
-Not having a clear answer for “how does this fit into users’ lives?” shows that you have a design problem.
+Now, &ldquo;you can&rsquo;t summarize what Google Latitude does for users in a concise sentence&rdquo; is not exactly a major flaw.
+It is, however, sloppy design by the criteria we&rsquo;re using right now.
+Not having a clear answer for &ldquo;how does this fit into users' lives?&rdquo; shows that you have a design problem.
 As long as that question goes without an answer, you will never have a well-designed product.
 Answering that question requires focus.</p>
 
-<p>I’m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
-Of course we want both: it is good to keep your options open, and it’s good to focus.
-But they’re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
+<p>I&rsquo;m going to diverge for a moment: we humans have a complicated relationship with choice and focus.
+Of course we want both: it is good to keep your options open, and it&rsquo;s good to focus.
+But they&rsquo;re mutually exclusive goods - and when the chips are down, we have a very strong desire to keep our options open.
 The best example of this is a study that Dan Ariely <a href="http://duke.edu/~dandan/Papers/doors.pdf">performed on MIT students</a> and wrote about in <a href="http://www.amazon.com/gp/product/0061353248/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=stronemerg05-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0061353248">Predictably Irrational</a>: his study offered participants three doors on a computer screen, each of which offered varying rewards when clicked on.
 Participants were asked to maximize rewards with a limited number of clicks.
 They were easily able to do this in the first iteration - but in the second iteration, any door that went unclicked for a certain amount of time, closed permanently.
-At that point, participants’ efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
-Participants “couldn’t tolerate the idea of the loss,” Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
+At that point, participants' efficiency fell dramatically - they went to great lengths to keep all of the doors available for opening.
+Participants &ldquo;couldn&rsquo;t tolerate the idea of the loss,&rdquo; Ariely writes, claiming that we are all averse to foreclosing on possibilities in the same way - unless we consciously fight that bias.
 Good design is about <a href="http://www.oreillynet.com/onlamp/blog/2004/08/say_no_by_default.html">fighting that bias</a>:</p>
 
-<blockquote>
-  <p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
-…
-people kept raising their hand saying, “Does it do (x)?”, “Do you plan to add (y)?”.
-Finally Jobs said, “Wait wait - put your hands down.
+<blockquote><p>In June of 2003, Steve Jobs gave a small private presentation about the iTunes Music Store to some independent record label people.
+&hellip;
+people kept raising their hand saying, &ldquo;Does it do (x)?&rdquo;, &ldquo;Do you plan to add (y)?&rdquo;.
+Finally Jobs said, &ldquo;Wait wait - put your hands down.
 Listen: I know you have a thousand ideas for all the cool features iTunes <em>could</em> have.
 So do we.
-But we don’t want a thousand features.
+But we don&rsquo;t want a thousand features.
 That would be ugly.
 Innovation is not about saying yes to everything.
-It’s about saying NO to all but the most crucial features.”</p>
-</blockquote>
+It&rsquo;s about saying NO to all but the most crucial features.&rdquo;</p></blockquote>
 
-<p>Apple and Yelp’s services have decided what they’re going to say no to.
-As far as I can tell, Google’s service hasn’t.
+<p>Apple and Yelp&rsquo;s services have decided what they&rsquo;re going to say no to.
+As far as I can tell, Google&rsquo;s service hasn&rsquo;t.
 This is consistent with the general way that these three companies work with focus and choice.
 Yelp has it easy: it defines itself as being a company that is about evaluating venues.
 That can be a big job - but that definition also excludes many things.
 Yelp will never be a peer-to-peer file-sharing service, create an operating system, or manufacture a tablet computer.
 Apple, by contrast, is big enough and ambitious enough that it might do anything - and it is very, very selective about what it does do.
-The credo of “say no to all but the most crucial features” is one that’s been reflected in every Apple product for the last decade.
-At this point, making a product that didn’t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
+The credo of &ldquo;say no to all but the most crucial features&rdquo; is one that&rsquo;s been reflected in every Apple product for the last decade.
+At this point, making a product that didn&rsquo;t leave half of the technical press corps whiny and dyspeptic about missing features would be an astonishing thing for Apple to do.
 They say no to features all the time.</p>
 
 <p>Google is having trouble learning to say no.
-Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, “how does this fit into users’ lives,” Google Wave brazenly defies the question and jeers at its premises.
+Consider Google Wave - if Google Latitude has a half-hearted, lame answer to the question, &ldquo;how does this fit into users' lives,&rdquo; Google Wave brazenly defies the question and jeers at its premises.
 But Google did eventually say no to Wave - and perhaps its features will in time show up in contexts where they can give a satisfying answer to the question.
-Google’s best products - for example, Search and Gmail - answer the question decisively.
-For that matter, Google’s corporate goal of organizing and making useful the world’s information, also is a good step towards answering that question of design.</p>
+Google&rsquo;s best products - for example, Search and Gmail - answer the question decisively.
+For that matter, Google&rsquo;s corporate goal of organizing and making useful the world&rsquo;s information, also is a good step towards answering that question of design.</p>
 
 <p>Now, another piece of conventional wisdom in computing is that Google is bad at design.
-I think that that is true, but that it’s true in ways that people usually don’t consider.
-Just as Apple products’ good design isn’t just surface appearances, Google’s bad design decisions don’t happen in a vacuum.
-It’s ridiculous to suggest that Google commits bad design because they’re dumb or malicious.
+I think that that is true, but that it&rsquo;s true in ways that people usually don&rsquo;t consider.
+Just as Apple products' good design isn&rsquo;t just surface appearances, Google&rsquo;s bad design decisions don&rsquo;t happen in a vacuum.
+It&rsquo;s ridiculous to suggest that Google commits bad design because they&rsquo;re dumb or malicious.
 Nothing could be further from the truth about the Google employees of my acquaintance, and the company itself is only as dumb and malicious as Apple is - which is to say, many orders of magnitude less so than the average American corporation.
-I believe that Google’s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
+I believe that Google&rsquo;s design problems stem from business strategies in which design is irrelevant, from the cognitive bias of not wanting to foreclose possibilities, and, crucially, from having chosen extraordinarily difficult design challenges.</p>
 
 <ul>
-  <li>
-    <p>Google’s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
+<li><p>Google&rsquo;s business strategy centers around <a href="http://itsallabouttech.com/2011/03/business-strategy-of-google-the-google-moats/">widening its moat</a>.
 This is a large part of why Google launched its social networking service, Google Plus - to protect its core business from Facebook.
 This is part of why Google launched its music product - to protect against Amazon and Apple trying to expand into its territory.
 This is part of why Google has Android - Google disrupts other businesses by being <a href="http://abovethecrowd.com/2009/10/29/google-redefines-disruption-the-%E2%80%9Cless-than-free%E2%80%9D-business-model/">cheaper than free</a>.
-What all of those have in common is that for them to succeed on a strategic level for Google, doesn’t require that they be dominant or highly profitable.
-If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn’t.
-When good design doesn’t help your business towards its strategic goals, good design gets thrown overboard.
-So it goes.</p>
-  </li>
-  <li>
-    <p>Google’s corporate culture is rooted in engineering.
+What all of those have in common is that for them to succeed on a strategic level for Google, doesn&rsquo;t require that they be dominant or highly profitable.
+If they did need to be dominant or highly profitable, there would be an evolutionary pressure to design them well - but there isn&rsquo;t.
+When good design doesn&rsquo;t help your business towards its strategic goals, good design gets thrown overboard.
+So it goes.</p></li>
+<li><p>Google&rsquo;s corporate culture is rooted in engineering.
 This has many positive effects, because Google is also obsessed with hiring enormously smart engineers.
-They’re very good at that.
+They&rsquo;re very good at that.
 That means, however, that they inherit some of the cultural biases of computer engineering in general.
 One of these is the cognitive bias that the users must be similar to the programmers of software and devices.
-That causes problems for design, because the way that the “unwilling to foreclose options” bias operates in engineers, is that they don’t want to give up configurability - don’t want to give up control.
-As a result, if you’re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
-The cost of that configurability, though, is paid by giving up focus.</p>
-  </li>
-  <li>
-    <p>Finally, Google has taken on some enormously, enormously difficult design challenges.
+That causes problems for design, because the way that the &ldquo;unwilling to foreclose options&rdquo; bias operates in engineers, is that they don&rsquo;t want to give up configurability - don&rsquo;t want to give up control.
+As a result, if you&rsquo;re the sort of person who is willing to be the sysadmin of your phone, Android is great for you.
+The cost of that configurability, though, is paid by giving up focus.</p></li>
+<li><p>Finally, Google has taken on some enormously, enormously difficult design challenges.
 I think that this is a bigger factor than is usually acknowledged.
 With a shallower pool of design talent than Apple, and less time to nurture it, Google has taken on harder design problems.
-To see how hard they are, just contemplate that “organizing the world’s information” goal - and then realize that <em>Google takes that seriously</em>.
+To see how hard they are, just contemplate that &ldquo;organizing the world&rsquo;s information&rdquo; goal - and then realize that <em>Google takes that seriously</em>.
 Apple tries many things, but few ever leave the black box in Cupertino.
 The number of things that Google has tried is enormous, and the amount of money that they have put towards them, even more enormous.
-Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you’ll need to pause for breath again before you run out of recognizable Google properties.
+Google runs search, Gmail, YouTube, Blogger, Analytics, Adwords, Adsense, Calendar, Reader, Docs, Drive, Android, Chrome, ChromeOS, Voice, Translate, Earth, Groups, Latitude - and you&rsquo;ll need to pause for breath again before you run out of recognizable Google properties.
 Further, they run many of them as public goods - the SPDY protocol, the public DNS servers, hiring on figures from the open-source world and essentially patronizing them to continue their work (e.g. Guido van Rossum).
-So with fewer design resources than Apple, they’ve chosen tougher problems.
-Once you look at it that way, their design woes are entirely predictable.</p>
-  </li>
+So with fewer design resources than Apple, they&rsquo;ve chosen tougher problems.
+Once you look at it that way, their design woes are entirely predictable.</p></li>
 </ul>
 
-<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it’s improving over time, it’s unfocused and it’s hard to gather its features into a coherent value proposition.
-If you’re a developer and you’re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
-Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you’re programming and make friends with it.
-Apple provides a location services API, but that’s not a Find My Friends API.
+
+<p>As a result of these factors, Google Latitude is a typical Google service - while it does some interesting things, and it&rsquo;s improving over time, it&rsquo;s unfocused and it&rsquo;s hard to gather its features into a coherent value proposition.
+If you&rsquo;re a developer and you&rsquo;re interested in location services but not in Objective-C, you could do worse than to familiarize yourself with Google Latitude.
+Google has refrained from foreclosing on your options - you can reach out to Latitude from whatever you&rsquo;re programming and make friends with it.
+Apple provides a location services API, but that&rsquo;s not a Find My Friends API.
 Find My Friends is private property.</p>
 
 <p>Private property is a good thing in a location service, though - a service that lets you broadcast your location is a service that can be used to follow you and to gather information about you.
-The privacy controls in Apple, Google, and Yelp’s services are very revealing: they show the differences in design clearly.
+The privacy controls in Apple, Google, and Yelp&rsquo;s services are very revealing: they show the differences in design clearly.
 Google Latitude maintains a list of people who are allowed to see your location.
-You can add and remote people from the list and tell Google whether they’re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
-Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you’ll still be part of the generally visible stream of checkins on Yelp, but you’ll be lost in a crowd).</p>
+You can add and remote people from the list and tell Google whether they&rsquo;re allowed to see your precise location or a less specific version, and you can turn on and off broadcasting your location at all.
+Yelp allows you to decide who will see your broadcast every time you use the check-in feature - you can tell Twitter, Facebook, your Yelp friends, or nobody in particular (although in the last case, you&rsquo;ll still be part of the generally visible stream of checkins on Yelp, but you&rsquo;ll be lost in a crowd).</p>
 
-<p>Apple’s Find My Friends adds one important privacy feature that Latitude doesn’t have, and says no to one feature that Latitude does have.
-When you decide to share your location with someone on Find My Friends, you can also add “for the next few hours” - you can tell the service that your sharing is temporary.
-You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple’s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
-I think that’s an important symptom of the difference in design.
-Apple’s design allows you to centralize decisions in time.
-Apple’s design also avoids burdening you later: you don’t need to go back to the service later and tell it to stop caring, after you already have.
+<p>Apple&rsquo;s Find My Friends adds one important privacy feature that Latitude doesn&rsquo;t have, and says no to one feature that Latitude does have.
+When you decide to share your location with someone on Find My Friends, you can also add &ldquo;for the next few hours&rdquo; - you can tell the service that your sharing is temporary.
+You can also manually turn off sharing with that person later, as with Latitude - but if you have already made a decision about sharing your location, Apple&rsquo;s design lets you do all of your decisions at once, instead of requiring that you come back later and undo what you have done.
+I think that&rsquo;s an important symptom of the difference in design.
+Apple&rsquo;s design allows you to centralize decisions in time.
+Apple&rsquo;s design also avoids burdening you later: you don&rsquo;t need to go back to the service later and tell it to stop caring, after you already have.
 It fits into your life by not requiring that you take extra steps to stop doing something - you can just stop.
-Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude’s 2009 launch.</p>
+Google Latitude needs more work than that to fit into your life - and surely people have wanted a feature like this since Latitude&rsquo;s 2009 launch.</p>
 
 <p>On the flip side, Google Latitude lets you manually set your location in addition to simply switching automatically-detected location on and off.
-I call this a “promised location.” Find My Friends does not let you do this, and I think that’s interesting.
-Why not? For one thing, I’d guess, a promised location doesn’t pull its own weight.
-You don’t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
-So it’s redundant, and redundancy is a thing that good designs usually eliminate.
+I call this a &ldquo;promised location.&rdquo; Find My Friends does not let you do this, and I think that&rsquo;s interesting.
+Why not? For one thing, I&rsquo;d guess, a promised location doesn&rsquo;t pull its own weight.
+You don&rsquo;t need an app to make a promise about location to other people - if you have enough information about someone to share location on Find My Friends, you have enough information to use something else to make a promise about your location.
+So it&rsquo;s redundant, and redundancy is a thing that good designs usually eliminate.
 More subtly, you might not keep that promise about your location - so you could say that Latitude permits you to lie about your location.
-If you were to look up my location on Google Latitude, you’d see me forever trapped in one Whole Foods market, never leaving it.
+If you were to look up my location on Google Latitude, you&rsquo;d see me forever trapped in one Whole Foods market, never leaving it.
 You could also say that Google Latitude is less likely to <a href="http://gawker.com/5850321/did-iphones-find-my-friends-just-break-up-its-first-marriage">break up a relationship</a>.
 Yelp, for the record, <a href="http://blog.sfgate.com/techchron/2010/11/24/how-yelp-plans-to-curb-check-in-fraud/">uses location checking and other heuristics to check on your promised location</a>.</p>
 
-<p>So Apple’s design is missing that feature.
+<p>So Apple&rsquo;s design is missing that feature.
 Is that good or bad?
-It is <em>opinionated</em> - and that’s what good design fundamentally is.
-Design is about making decisions, and Apple’s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
+It is <em>opinionated</em> - and that&rsquo;s what good design fundamentally is.
+Design is about making decisions, and Apple&rsquo;s design here definitely expresses opinions about how it fits into your life, and those opinions are consistently expressed, top-to-bottom.
 Of course people differ - part of the challenge of design as a field of endeavor is that people differ so widely in their needs and desires, and nothing will satisfy all of us.
-So of course Apple’s products don’t satisfy everyone.
+So of course Apple&rsquo;s products don&rsquo;t satisfy everyone.
 But what makes their product well-defined is that they have renounced trying to make everyone happy.
-That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans’ lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
+That difference between Apple and the rest of the industry is visible in every Apple product: Apple has an opinion about how their products fit into humans' lives, and that opinion is focused, saying no to possibilities that are appealing, but in the end sub-optimal.
 That is what it means that the difference between Apple and everyone else, is design.</p>
 ]]></content>
   </entry>
@@ -199,47 +187,47 @@ That is what it means that the difference between Apple and everyone else, is de
     <link href="http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error/"/>
     <updated>2011-09-14T13:57:38+00:00</updated>
     <id>http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error</id>
-    <content type="html"><![CDATA[<p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up with anything.
-I think it’s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
+    <content type="html"><![CDATA[<p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come up with anything.
+I think it&rsquo;s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
 
 <p>So:
-you’re running a Magento site, and you’re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
+you&rsquo;re running a Magento site, and you&rsquo;re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
 You might end up in a nasty situation where the integration settings page in Magento is telling you that
-“Your blog URL (site address) matches your install URL (WordPress address).
-Please change your blog route or move WordPress to a different sub-directory”
-and that that’s a problem.
+&ldquo;Your blog URL (site address) matches your install URL (WordPress address).
+Please change your blog route or move WordPress to a different sub-directory&rdquo;
+and that that&rsquo;s a problem.
 It is.
-Things will 404 as long as that’s true.
-However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you’ll find to help</a> on the FishPig site is deeply obscure.</p>
+Things will 404 as long as that&rsquo;s true.
+However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you&rsquo;ll find to help</a> on the FishPig site is deeply obscure.</p>
 
 <p>[<img src="/images/mangeto-fishpig-error.jpg" alt="An error that can happen when trying to integrate Magento and WordPress" />]
 <em>The problem might look like this.</em></p>
 
 <p>The basic problem is one of terminology.
 WordPress is designed to play well with others, and to be highly configurable.
-So it cares about two URLs (URIs if you’re picky).
+So it cares about two URLs (URIs if you&rsquo;re picky).
 It cares about
-“the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)”,
-and it cares about “the public URL that I will respond to.”
-In the database, these are ‘siteurl’ and ‘home’, respectively, in the wp_options table.
+&ldquo;the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)&rdquo;,
+and it cares about &ldquo;the public URL that I will respond to.&rdquo;
+In the database, these are &lsquo;siteurl&rsquo; and &lsquo;home&rsquo;, respectively, in the wp_options table.
 It can be tricky to disentangle these two URLs, but for many WordPress installs, setting them both to the same URL is good enough and gets everything working.</p>
 
-<p>However, that’s not the case when you need to integrate a WordPress blog into Magento.
-For the FishPig plugin’s “fully integrated” level of operation—
-which is good stuff, the best way to run that plugin—
+<p>However, that&rsquo;s not the case when you need to integrate a WordPress blog into Magento.
+For the FishPig plugin&rsquo;s &ldquo;fully integrated&rdquo; level of operation&mdash;
+which is good stuff, the best way to run that plugin&mdash;
 the WordPress PHP files need to live in the same site as the Magento files
-(when using Apache, they need to both be in the tree that starts at the site’s DocumentRoot),
-and, contrary to the usual WordPress setup, the ‘siteurl’ and ‘home’ values <em>must not</em> be set to the same URL.
+(when using Apache, they need to both be in the tree that starts at the site&rsquo;s DocumentRoot),
+and, contrary to the usual WordPress setup, the &lsquo;siteurl&rsquo; and &lsquo;home&rsquo; values <em>must not</em> be set to the same URL.
 This is where we run into problems.
-The WordPress control panel refers to the ‘siteurl’ value as the “WordPress address (URL)” and the ‘home’ value as “Site address (URL)”.
-The FishPig plugin’s error messages, as seen above, will tell you that they can’t be the same, and will tell you that the ‘home’/”Site address” value has to match the “blog route” variable” in Magento.
-However, you have to fill in the third part of the syllogism yourself, and remember to set the ‘siteurl’/”WordPress address” to the same value as the “WordPress path” variable in Magento.</p>
+The WordPress control panel refers to the &lsquo;siteurl&rsquo; value as the &ldquo;WordPress address (URL)&rdquo; and the &lsquo;home&rsquo; value as &ldquo;Site address (URL)&rdquo;.
+The FishPig plugin&rsquo;s error messages, as seen above, will tell you that they can&rsquo;t be the same, and will tell you that the &lsquo;home&rsquo;/&ldquo;Site address&rdquo; value has to match the &ldquo;blog route&rdquo; variable" in Magento.
+However, you have to fill in the third part of the syllogism yourself, and remember to set the &lsquo;siteurl&rsquo;/&ldquo;WordPress address&rdquo; to the same value as the &ldquo;WordPress path&rdquo; variable in Magento.</p>
 
 <p>The final puzzle-piece is URL rewriting - most WordPress installs try to do a little .htaccess magic, and it can be tricky to keep it straight.
-If it’s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you’ve got to move down a layer and throw queries directly at the database to figure out what’s going on.</p>
+If it&rsquo;s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you&rsquo;ve got to move down a layer and throw queries directly at the database to figure out what&rsquo;s going on.</p>
 
 <p>I imagine that this is obvious if you know WordPress better than I do, and it probably seemed obvious to the FishPig folks.
-However, if you’re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
+However, if you&rsquo;re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
 ]]></content>
   </entry>
   
@@ -248,28 +236,28 @@ However, if you’re in the same position I was in, where the WordPress admin pa
     <link href="http://stronglyemergent.com//blog/2010/turning-into-microsoft-on-net-neutrality/"/>
     <updated>2010-08-18T06:01:32+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/turning-into-microsoft-on-net-neutrality</id>
-    <content type="html"><![CDATA[<p>So the Internet is abuzz with the news that Google has decided that the famous “Don’t be evil” motto <a href="http://gigaom.com/2010/08/09/tech-companies-google-sold-you-out/">doesn’t apply to Net Neutrality</a>, a <a href="http://arstechnica.com/telecom/news/2010/08/a-paper-trail-of-betrayal-googles-net-neutrality-collapse.ars">reversal of their previous position</a>.
+    <content type="html"><![CDATA[<p>So the Internet is abuzz with the news that Google has decided that the famous &ldquo;Don&rsquo;t be evil&rdquo; motto <a href="http://gigaom.com/2010/08/09/tech-companies-google-sold-you-out/">doesn&rsquo;t apply to Net Neutrality</a>, a <a href="http://arstechnica.com/telecom/news/2010/08/a-paper-trail-of-betrayal-googles-net-neutrality-collapse.ars">reversal of their previous position</a>.
 To me, this is moderately surprising, but only moderately.
-I take it as more evidence that they’re <a href="http://stronglyemergent.com/blog/2010/everyone-turns-into-microsoft/">turning into Microsoft</a>.
-They probably don’t like to think that about themselves, and clearly don’t like to hear it, but I think that it’s pretty easy to see that that’s happening.</p>
+I take it as more evidence that they&rsquo;re <a href="http://stronglyemergent.com/blog/2010/everyone-turns-into-microsoft/">turning into Microsoft</a>.
+They probably don&rsquo;t like to think that about themselves, and clearly don&rsquo;t like to hear it, but I think that it&rsquo;s pretty easy to see that that&rsquo;s happening.</p>
 
-<p>Growth isn’t always good for companies: Google is, I think, still struggling with the challenges of being enormous.
-With one failed product after another, they’re acting startup-ish - but they’re not getting the full benefit of those mistakes the way a startup-sized company would.
-They’re flailing.
-I expect that they’ll stabilize - but the alliance with Darth Verizon makes it pretty clear that they’re not going to create a new way of being a big company.
-The most likely thing is that they’re going to be just as evil as every other company their size.</p>
+<p>Growth isn&rsquo;t always good for companies: Google is, I think, still struggling with the challenges of being enormous.
+With one failed product after another, they&rsquo;re acting startup-ish - but they&rsquo;re not getting the full benefit of those mistakes the way a startup-sized company would.
+They&rsquo;re flailing.
+I expect that they&rsquo;ll stabilize - but the alliance with Darth Verizon makes it pretty clear that they&rsquo;re not going to create a new way of being a big company.
+The most likely thing is that they&rsquo;re going to be just as evil as every other company their size.</p>
 
-<p>What’s much more interesting to me is the form of the agreement.
-It’s another step towards the equivalency of governments and corporations - it’s an American commonplace that corporations <em>de facto</em> write legislation to favor themselves, but rarely is it practiced as openly as Verizon and Google are now doing.
+<p>What&rsquo;s much more interesting to me is the form of the agreement.
+It&rsquo;s another step towards the equivalency of governments and corporations - it&rsquo;s an American commonplace that corporations <em>de facto</em> write legislation to favor themselves, but rarely is it practiced as openly as Verizon and Google are now doing.
 It interests me because it makes me think of the Declaration of Independence:
-“<em>[G]overnments are instituted among men, deriving their just powers from the consent of the governed.
-[When] any form of government becomes destructive to these ends, it is the right of the people to alter or to abolish it, and to institute new government.</em>”
-As a private citizen and a single human being of extremely modest means, it’s extraordinarily difficult for me to meaningfully withdraw my consent to be governed.
-There are lots of guys with guns that can come to me and say “you’re gonna be governed whether you like it or not.”
+&ldquo;<em>[G]overnments are instituted among men, deriving their just powers from the consent of the governed.
+[When] any form of government becomes destructive to these ends, it is the right of the people to alter or to abolish it, and to institute new government.</em>&rdquo;
+As a private citizen and a single human being of extremely modest means, it&rsquo;s extraordinarily difficult for me to meaningfully withdraw my consent to be governed.
+There are lots of guys with guns that can come to me and say &ldquo;you&rsquo;re gonna be governed whether you like it or not.&rdquo;
 But Google and Verizon here are making themselves part of a trend of corporations who refuse to be governed, and are getting away with it - they are actively participating in the writing of the rules that will govern them.
 Individual citizens have nothing like that level of autonomy.</p>
 
-<p>Politics isn’t the point of this blog, so I’ll just say that when corporations have walked further down this road, compatibility issues will probably be even more of a headache than they are already - I don’t envy the people whose job is is now or will be in the future to make one government’s systems talk to another’s.</p>
+<p>Politics isn&rsquo;t the point of this blog, so I&rsquo;ll just say that when corporations have walked further down this road, compatibility issues will probably be even more of a headache than they are already - I don&rsquo;t envy the people whose job is is now or will be in the future to make one government&rsquo;s systems talk to another&rsquo;s.</p>
 ]]></content>
   </entry>
   
@@ -280,49 +268,47 @@ Individual citizens have nothing like that level of autonomy.</p>
     <id>http://stronglyemergent.com//blog/2010/everyone-turns-into-microsoft</id>
     <content type="html"><![CDATA[<p>Nothing lasts forever, and everything is a trade-off.</p>
 
-<p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">“The Other Road Ahead,”</a> noted a risk of relying on software that other people control:</p>
+<p>Paul Graham, in <a href="http://www.paulgraham.com/road.html">&ldquo;The Other Road Ahead,&rdquo;</a> noted a risk of relying on software that other people control:</p>
 
-<blockquote>
-  <p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun.
-If you want to write desktop software now you do it on Microsoft’s terms, calling their APIs and working around their buggy OS.
-And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p>
-</blockquote>
+<blockquote><p>There is all the more reason for startups to write Web-based software now, because writing desktop software has become a lot less fun.
+If you want to write desktop software now you do it on Microsoft&rsquo;s terms, calling their APIs and working around their buggy OS.
+And if you manage to write something that takes off, you may find that you were merely doing market research for Microsoft.</p></blockquote>
 
 <p>That was in 2001 - and here in 2010, startups are suddenly in fear of the same thing happening.
 Although the scare has died down a little, <a href="http://gigaom.com/2010/08/05/where-to-apple-patent/">the appearance of a non-Apple app in an Apple patent filing</a> briefly gave developers fits.</p>
 
-<p>I think that Graham’s warning is still apropos: when you build on Apple’s foundation, you risk Apple pulling the rug out from under you.
-The scare from the patent filing caught hold of developers’ imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.
-They’re unlikely to do so - but they <em>can</em>, and that’s what worries iOS developers.
-Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn’t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
+<p>I think that Graham&rsquo;s warning is still apropos: when you build on Apple&rsquo;s foundation, you risk Apple pulling the rug out from under you.
+The scare from the patent filing caught hold of developers' imaginations immediately because it was <em>plausible</em> - Apple has arrogated to themselves the right to do that kind of thing without compensating their developers.
+They&rsquo;re unlikely to do so - but they <em>can</em>, and that&rsquo;s what worries iOS developers.
+Like Microsoft, Apple controls a hugely lucrative platform and its APIs, and if push ever comes to shove, developers shouldn&rsquo;t doubt for a second that Apple will prioritize its own survival, control, and profitability over theirs.</p>
 
-<p>Android has its own problems - frankly, I think it’s an inferior OS and that its median application quality is inferior.
+<p>Android has its own problems - frankly, I think it&rsquo;s an inferior OS and that its median application quality is inferior.
 However, by making as much of the guts of Android available as they have, Google has willingly relinquished their ability to pull the rug out from under Android developers in that particular way.
 Both platforms, too, are competing to offer better and better service for Web-based apps, for well-sculpted sites with HTML5, JavaScript, and other buzzword-compliant foundations.
 So the case for startups using the Web as their platform, the platform that no one vendor controls, is more compelling than ever.</p>
 
-<p>It’s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn’t unique to them.
-They’re all pursuing control, trying to push the useful lifespan of their platforms to its limits.
+<p>It&rsquo;s important to note that the behavior that Microsoft, Google, and Apple reserve the right to exercise isn&rsquo;t unique to them.
+They&rsquo;re all pursuing control, trying to push the useful lifespan of their platforms to its limits.
 This has some very nice benefits, but as developers and IT folks we have to keep in mind that <em>all</em> of it has a finite lifespan.
 Eventually, there will be something new.
 Hostfiles were supplanted by DNS.
 Yahoo was replaced by Google in search.
 Apple redefined what a phone should be with the iPhone and pulled the rug out from under RIM, Nokia, and Palm.
-Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they’ve grown.</p>
+Even though both of them were strongly shaped by their opposition to the Microsoft of the 80s and 90s, Apple and Google have unavoidably become more Microsoftian as they&rsquo;ve grown.</p>
 
 <p>They have more to lose now - and when you have something to lose, you tend to turn into Microsoft.
-I admire Microsoft’s commitment to backward compatibility.
+I admire Microsoft&rsquo;s commitment to backward compatibility.
 Microsoft offers this: if you write your app according to best practices as we define them, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/03/01/82103.aspx">it will run for a long time</a>.
-It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that’s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.
+It took until <em>2007</em> for 16-bit support to start vanishing from Windows - that&rsquo;s nearly a 20-year lifespan, which is pretty ridiculous considering how much Windows and the hardware under it have changed and adapted in that time.
 But nothing lasts forever, and everything is a trade-off.
 Retaining backwards compatibility, with the attendant benefits, costs more and more as time goes on - the Android folks are learning this, somewhat painfully, with the differences between various versions of Android.</p>
 
-<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they’re still willing to bet the company on new things.
-Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn’t willing to shoulder, and that Google has been shying away from.
-That too is a tradeoff, though, and when I think about the long term, I’m pretty confident that Apple too will turn into Microsoft.</p>
+<p>This is part of what I think is so remarkable about Apple, too - as big as they are, they&rsquo;re still willing to bet the company on new things.
+Of course they make <a href="http://www.gladwell.com/pdf/surething.pdf">canny bets whose risks are lower than they seem</a>[pdf], but they are still willing to assume a flavor of risk that Microsoft isn&rsquo;t willing to shoulder, and that Google has been shying away from.
+That too is a tradeoff, though, and when I think about the long term, I&rsquo;m pretty confident that Apple too will turn into Microsoft.</p>
 
-<p>I’m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.
-I’m not a venture capitalist, so the only way I’ll get to bet on one of those companies is by working for them - and that’s a bet that I’m looking forward to placing.</p>
+<p>I&rsquo;m not worried about the next Apple and the next Google, either - the silver lining of becoming Microsoft is that a lot of the people who helped you get to the top will start their own companies and push the state of the art forward.
+I&rsquo;m not a venture capitalist, so the only way I&rsquo;ll get to bet on one of those companies is by working for them - and that&rsquo;s a bet that I&rsquo;m looking forward to placing.</p>
 ]]></content>
   </entry>
   
@@ -336,76 +322,73 @@ Before I tell you what the problem is, let me show you their response.
 <a href="http://www.readwriteweb.com/archives/facebook_wants_to_be_your_one_true_login.php">One blog post had the problem</a>.
 They found it necessary to add the following announcement to it.</p>
 
-<blockquote>
-  <p><em>Dear visitors from Google.</em>
+<blockquote><p><em>Dear visitors from Google.</em>
 This site is not Facebook.
 This is a website called ReadWriteWeb that reports on news about Facebook and other Internet services.
 You can however click here and become a Fan of ReadWriteWeb on Facebook, to receive our updates and learn more about the Internet.
 To access Facebook right now, click here.
-For future reference, type “facebook.com” into your browser address bar or enter “facebook” into Google and click on the first result.
-We recommend that you then save Facebook as a bookmark in your browser.</p>
-</blockquote>
+For future reference, type &ldquo;facebook.com&rdquo; into your browser address bar or enter &ldquo;facebook&rdquo; into Google and click on the first result.
+We recommend that you then save Facebook as a bookmark in your browser.</p></blockquote>
 
 <p>Who needs that?</p>
 
 <ul>
-  <li>Comment#3: ok cool now can I get to facebook</li>
-  <li>Comment#5: The new facebook sucks&gt; NOW LET ME IN.</li>
-  <li>Comment#6: when can we log in?</li>
-  <li>Comment#7: I WANT THE OLD FAFEBOOK BACK THIS SHIT IS WACK!!!!!</li>
-  <li>Comment#8: just want to get on facebook</li>
-  <li>Comment#9: please give me back the old facebook login this is crazy……………..</li>
-  <li>Comment#11: I just want to sign in…………</li>
-  <li>Comment#14: wtf is this bullshttttttttttt all about. can i get n plzzzzzzzzz</li>
-  <li>Comment#15: What is going on? You are totally confusing me. Knock-knock. Anybody there? Let me in. Katherine</li>
-  <li>Comment#17: All I want to do is log in, this sucks!!!!!!!!!!!!!!!!!1</li>
+<li>Comment#3: ok cool now can I get to facebook</li>
+<li>Comment#5: The new facebook sucks> NOW LET ME IN.</li>
+<li>Comment#6: when can we log in?</li>
+<li>Comment#7: I WANT THE OLD FAFEBOOK BACK THIS SHIT IS WACK!!!!!</li>
+<li>Comment#8: just want to get on facebook</li>
+<li>Comment#9: please give me back the old facebook login this is crazy&hellip;&hellip;&hellip;&hellip;&hellip;..</li>
+<li>Comment#11: I just want to sign in&hellip;&hellip;&hellip;&hellip;</li>
+<li>Comment#14: wtf is this bullshttttttttttt all about. can i get n plzzzzzzzzz</li>
+<li>Comment#15: What is going on? You are totally confusing me. Knock-knock. Anybody there? Let me in. Katherine</li>
+<li>Comment#17: All I want to do is log in, this sucks!!!!!!!!!!!!!!!!!1</li>
 </ul>
 
+
 <p>It goes on in that vein for a while.
-I hope that if you’ve read Monday and Wednesday’s posts, that you won’t say “oh for pity’s sake, how stupid can users get?” and instead look more closely at the matter.
+I hope that if you&rsquo;ve read Monday and Wednesday&rsquo;s posts, that you won&rsquo;t say &ldquo;oh for pity&rsquo;s sake, how stupid can users get?&rdquo; and instead look more closely at the matter.
 In this case, our best guess at what happened is this: RWW posted their article about Facebook.
 Google News considers RWW to be a news source - and in <a href="http://www.google.com/search?q=obama">searches where there are a lot of news results</a> in addition to web results, Google adds News results above the web results.
-It clearly labels them as “News results for <strong>Whatever</strong>” - but they are still the top results.
-And when your article with the words “Facebook” and “login” in the title is the top result for people who search for “facebook login,” a lot of them will click on it.
-You can see the comments they leave when they make the pretty rational assumption that if they Google for “facebook login” and click on the first result, they will be able to log in to Facebook there.</p>
+It clearly labels them as &ldquo;News results for <strong>Whatever</strong>&rdquo; - but they are still the top results.
+And when your article with the words &ldquo;Facebook&rdquo; and &ldquo;login&rdquo; in the title is the top result for people who search for &ldquo;facebook login,&rdquo; a lot of them will click on it.
+You can see the comments they leave when they make the pretty rational assumption that if they Google for &ldquo;facebook login&rdquo; and click on the first result, they will be able to log in to Facebook there.</p>
 
-<p>But if you’re reading this, that message that RWW posted probably baffled you.
+<p>But if you&rsquo;re reading this, that message that RWW posted probably baffled you.
 It baffled <em>them</em> - at first <a href="http://www.readwriteweb.com/archives/how_google_failed_internet_meme.php">they thought the comments were a joke</a>.
-You probably thought something like “how in the heck could people possibly think that this site is Facebook?”
-And that gap is exactly the gap in our perception as IT professionals that I’ve been talking about this week.
+You probably thought something like &ldquo;how in the heck could people possibly think that this site is Facebook?&rdquo;
+And that gap is exactly the gap in our perception as IT professionals that I&rsquo;ve been talking about this week.
 We as a community are great - really, really great! - at making tools for other IT professionals, for prosumers, for people who engage with computers for their own sake.
-But we still have big problems making tools for everyone else, and that’s basically why Apple kicks our butt again and again.</p>
+But we still have big problems making tools for everyone else, and that&rsquo;s basically why Apple kicks our butt again and again.</p>
 
-<p>The discussion about this has died down a bit, especially compared to the talk about Buzz and the iPad, but it’s lively enough.
+<p>The discussion about this has died down a bit, especially compared to the talk about Buzz and the iPad, but it&rsquo;s lively enough.
 It spawned lots of good talking points.
 <a href="http://funkatron.com/site/comments/were-the-stupid-ones-facebook-google-and-our-failure-as-developers/">Ed Finkler claims that</a>:</p>
 
-<blockquote>
-  <p>[most computer users] do not give a rat’s ass about how computers work.
+<blockquote><p>[most computer users] do not give a rat&rsquo;s ass about how computers work.
 They want to accomplish certain tasks, and will do this in the way that is most sensible and direct for them.
-And the way they end up accomplishing these tasks within the multitasking window motif is typically not the way <em>I</em> would do it.</p>
-</blockquote>
+And the way they end up accomplishing these tasks within the multitasking window motif is typically not the way <em>I</em> would do it.</p></blockquote>
 
 <p>Over at Quiet Babylonian, <a href="http://quietbabylon.posterous.com/i-have-some-opinions-about-the-rww-facebook-l">Tim Maly opines</a> that
-“If you are an interface designer, a brand manager or a security expert, your reaction to this incident should be one of deep humility.”
-I’m definitely with them.
+&ldquo;If you are an interface designer, a brand manager or a security expert, your reaction to this incident should be one of deep humility.&rdquo;
+I&rsquo;m definitely with them.
 We gatekeepers, wizards, and Wise Women of the computer world should definitely be more aware of who is using the computers and the network, and why and how.
 The posts that I just linked to are a great start.</p>
 
-<p>I’d be remiss, though, if I didn’t mention counterpoints.
-“It is okay to expect people to invest a little time to learn how stuff works and to retain an adequate portion of that education,” barks <a href="http://philcrissman.com/2010/02/16/no-were-not-the-stupid-ones">Phil Crissman</a>.
-I don’t think that he’s entirely right, but I definitely agree that one should reasonably expect people, once education has reached them, to stay reached.
+<p>I&rsquo;d be remiss, though, if I didn&rsquo;t mention counterpoints.
+&ldquo;It is okay to expect people to invest a little time to learn how stuff works and to retain an adequate portion of that education,&rdquo; barks <a href="http://philcrissman.com/2010/02/16/no-were-not-the-stupid-ones">Phil Crissman</a>.
+I don&rsquo;t think that he&rsquo;s entirely right, but I definitely agree that one should reasonably expect people, once education has reached them, to stay reached.
 He also points out very coherently that <a href="http://philcrissman.com/2010/02/17/why-its-not-a-google-failure">asking Google to solve the problem is asking too much</a>.
 There too I agree with him.
 This is not a technical problem.
-This is a problem with the interface between humans and machines, and it’s on the human side.
-That’s why I care about this as a student: I want to make sure that I and all my fellow students know that you can’t implement technical solutions to everything.
+This is a problem with the interface between humans and machines, and it&rsquo;s on the human side.
+That&rsquo;s why I care about this as a student: I want to make sure that I and all my fellow students know that you can&rsquo;t implement technical solutions to everything.
 People matter - and the way that people think is very unlike the way machines think.
 You need to take human factors into account, early, fundamentally, earnestly.</p>
 
-<p>That’s the message of this whole week of posts, really: your technical skills exist in service to the goal of bringing together human effort and technical tools.
-If you simply add power to the tools and make them capable of more things, you haven’t done useful work yet: you must ensure that the tools are useful to humans and usable by humans.
-Especially by humans who aren’t you.</p>
+<p>That&rsquo;s the message of this whole week of posts, really: your technical skills exist in service to the goal of bringing together human effort and technical tools.
+If you simply add power to the tools and make them capable of more things, you haven&rsquo;t done useful work yet: you must ensure that the tools are useful to humans and usable by humans.
+Especially by humans who aren&rsquo;t you.</p>
 ]]></content>
   </entry>
   

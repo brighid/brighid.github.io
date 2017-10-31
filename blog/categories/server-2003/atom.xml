@@ -4,7 +4,7 @@
   <title><![CDATA[Category: server-2003 | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/server-2003/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -22,37 +22,37 @@
 In a classroom environment, you are presented with a body of knowledge that you need to absorb.
 There are two primary things you need: knowledge and narrative.
 Textbooks, in a noble but doomed effort, usually try to present both.
-However, we know enough now about different learning styles that it’s easy to see how costly it is to try and stick just one narrative onto a body of information.
-Additionally, in a technical subject, it’s hard to strike a balance between comprehensiveness and relevance.</p>
+However, we know enough now about different learning styles that it&rsquo;s easy to see how costly it is to try and stick just one narrative onto a body of information.
+Additionally, in a technical subject, it&rsquo;s hard to strike a balance between comprehensiveness and relevance.</p>
 
 <p>Consider one of my current classes: Managing And Maintaining A Microsoft Windows Server 2003 Environment.
-The <a href="http://en.wikipedia.org/wiki/Pareto_principle">80-20 rule</a> is in full effect here: 80% of the users will only need about 20% of Server 2003’s features.
-The problem is that they’ll all need different 20% slices.
-A physical textbook, limited by space constraints, will contain a lot of material that’s irrelevant to a given sysadmin-in-training - and they won’t be able to tell what’s relevant and what’s not for quite some time.
-That’s a problem.
-There isn’t a single narrative that suits a datacenter worker, a helpdesk worker, and a small business’ Designated IT Person.
-So it’s unreasonable to ask a textbook writer to anticipate all that and organize information to somehow fit all of them.</p>
+The <a href="http://en.wikipedia.org/wiki/Pareto_principle">80-20 rule</a> is in full effect here: 80% of the users will only need about 20% of Server 2003&rsquo;s features.
+The problem is that they&rsquo;ll all need different 20% slices.
+A physical textbook, limited by space constraints, will contain a lot of material that&rsquo;s irrelevant to a given sysadmin-in-training - and they won&rsquo;t be able to tell what&rsquo;s relevant and what&rsquo;s not for quite some time.
+That&rsquo;s a problem.
+There isn&rsquo;t a single narrative that suits a datacenter worker, a helpdesk worker, and a small business' Designated IT Person.
+So it&rsquo;s unreasonable to ask a textbook writer to anticipate all that and organize information to somehow fit all of them.</p>
 
 <p>My preferred solution is to use reference works instead of textbooks.
-Have a human supplying the narrative: <em>that’s what humans are good at!</em>
-Don’t make textbook writers strive to do the impossible.
-Self-teaching textbooks can feel free to attempt it, but for a classroom environment, let humans do what humans are good at and let book/digital encoded information do what it’s good at.
-This won’t happen at my school, though, for reasons that are neither satisfying to me nor productive to elaborate on.</p>
+Have a human supplying the narrative: <em>that&rsquo;s what humans are good at!</em>
+Don&rsquo;t make textbook writers strive to do the impossible.
+Self-teaching textbooks can feel free to attempt it, but for a classroom environment, let humans do what humans are good at and let book/digital encoded information do what it&rsquo;s good at.
+This won&rsquo;t happen at my school, though, for reasons that are neither satisfying to me nor productive to elaborate on.</p>
 
-<p>The textbooks that I’m currently using are good examples of this.
+<p>The textbooks that I&rsquo;m currently using are good examples of this.
 I have two textbooks that are in the Teach Yourself Whatever mold.
 The better one is the Adobe Classroom in a Book: Photoshop one, and the one about the Win9x/NT/XP command-line environment is crappish.
 Part of this is their suitability to my needs.
-I like Photoshop - it’s still basically the best at what it does - and I’m enthused about finding out new tricks with it even when the book is tediously plodding through basic techniques that I already know.
+I like Photoshop - it&rsquo;s still basically the best at what it does - and I&rsquo;m enthused about finding out new tricks with it even when the book is tediously plodding through basic techniques that I already know.
 That contrasts with the command-line book.
-Despite that I’m learning some new tricks, the DOS command line, even with NT updates, feels like dealing with a Faulknerian idiot man-child after working with bash and PowerShell.
+Despite that I&rsquo;m learning some new tricks, the DOS command line, even with NT updates, feels like dealing with a Faulknerian idiot man-child after working with bash and PowerShell.
 I know that there are a lot of scriptable utilities that make Windows Server much more manageable, but those are not attracting my attention right now.
 What attracts my attention is how painful the DOS shell is to work with.
-I need more practice at it because it’s essential to managing a Windows Server environment well, but it’s one of those things that aggravates me because it feels like it’s actively sucking time away from useful things.
+I need more practice at it because it&rsquo;s essential to managing a Windows Server environment well, but it&rsquo;s one of those things that aggravates me because it feels like it&rsquo;s actively sucking time away from useful things.
 I want to enter the job market with minimal legacy skills, so my patience for Win9x/DOS lore presented as utility instead of history is pretty low.</p>
 
 <p>On the positive side, I can view this as an opportunity for me: creating useful narratives is one of My Things, so I should put that skill into practice by taking reference works in my own time and building narrative around them.
-Which is how I’m trying to learn programming/development skills.</p>
+Which is how I&rsquo;m trying to learn programming/development skills.</p>
 ]]></content>
   </entry>
   

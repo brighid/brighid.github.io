@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/android/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -20,16 +20,16 @@
     <id>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers</id>
     <content type="html"><![CDATA[<p>System administration is about making hard decisions.</p>
 
-<p>This just amounts to saying that it’s knowledge work.
-More specifically, it’s about making annoying, difficult decisions about computers and networks.
-What parts of the system are trustworthy, and what can enter the system that I shouldn’t trust?
-What does the current state of the system tell me about what’s likely to break?
+<p>This just amounts to saying that it&rsquo;s knowledge work.
+More specifically, it&rsquo;s about making annoying, difficult decisions about computers and networks.
+What parts of the system are trustworthy, and what can enter the system that I shouldn&rsquo;t trust?
+What does the current state of the system tell me about what&rsquo;s likely to break?
 What looks urgent but can be safely ignored? What is the tradeoff curve of time and money that solutions to my current problem offer?
 System administration requires a specific body of technical knowledge and experience to answer questions like that.
-That’s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.
-The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we’re going to need that for the whole of the foreseeable future.</p>
+That&rsquo;s why I think that, despite a certain amount of doomsaying, the world is going to need sysadmins for a good long time.
+The underlying body of technical knowledge will change, certainly, but sysadmins, like other knowledge workers, are people who can make hard decisions in a specific area of expertise, and I believe we&rsquo;re going to need that for the whole of the foreseeable future.</p>
 
-<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don’t have the expertise necessary to make good decisions in the given area.
+<p>One of the primary reasons that we need that is to spare other people from making hard decisions - both people who have better things to do than make those specific decisions, and people who don&rsquo;t have the expertise necessary to make good decisions in the given area.
 I believe that the open source movement consistently blurs together those kinds of people.</p>
 
 <p>Now, I should make it clear up front that I love the open source community.
@@ -37,23 +37,23 @@ I am writing this post on a machine whose OS descends from open-source BSD, send
 I acknowledge that the world would be tremendously impoverished if open-source software either stopped existing or never had existed, and I want a future in which more of the world runs on open-source software.
 I feel the same way about open-source software that I feel about America: its flaws frustrate me mostly because it could be <strong>so awesome</strong> if they were solved.</p>
 
-<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you’re willing to scale a learning curve.
-That’s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.
-That’s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.
+<p>That said - the fundamental bargain that open-source software offers, especially that which descends most directly from the UNIX tradition, is that Great Power can be yours if you&rsquo;re willing to scale a learning curve.
+That&rsquo;s a good bargain - but it requires that you take up the burden of making hard decisions at least for a little while.
+That&rsquo;s where we start to run into trouble, because the willingness to accept that bargain is not universal - people may be willing or unwilling to accept it at different times, and those times vary among people.
 The other bargain that software can offer is that basic functionality can be yours quickly, and who knows whether Great Power is available or not.
-Often it isn’t.</p>
+Often it isn&rsquo;t.</p>
 
-<p>People don’t take that second bargain because they’re stupid.
-They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they’ve been burned before in the process of trying to use the Great Power of complicated tools.
-I’m fine with that: not everyone should be obliged to be a sysadmin.
-As both a sysadmin and a developer, it’s my job to make hard decisions that save other people from making hard decisions for just this reason.
-If I just pass along hard decisions, then I probably haven’t done well by the users.
-The problem isn’t even the hard decisions, really - it’s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
+<p>People don&rsquo;t take that second bargain because they&rsquo;re stupid.
+They take it because they have better things to do with their time, because they need a specific task done instead of Great Power, or because they&rsquo;ve been burned before in the process of trying to use the Great Power of complicated tools.
+I&rsquo;m fine with that: not everyone should be obliged to be a sysadmin.
+As both a sysadmin and a developer, it&rsquo;s my job to make hard decisions that save other people from making hard decisions for just this reason.
+If I just pass along hard decisions, then I probably haven&rsquo;t done well by the users.
+The problem isn&rsquo;t even the hard decisions, really - it&rsquo;s when you force your users to make them, especially when you <em>surprise</em> them with having to make those decisions.</p>
 
 <p>Yes, a computer is a complicated general-purpose tool.
 It is built of a huge assembly of spectacularly fiddly little parts, both physical and logical.
-It is a wonder of the modern age—but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.
-Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you’re probably a developer, a sysadmin, or an enthusiast.
+It is a wonder of the modern age&mdash;but so is a 2010 Honda Civic, and most people want to use that to get from place to place, rather than to be impressed with the wonders of the era they live in.
+Just the same with computers: if you sit down at a computer and start thinking about the computer itself, you&rsquo;re probably a developer, a sysadmin, or an enthusiast.
 More likely, you sat down at a computer because you have a task that you want to do.
 You want to send email, play Farmville, or do your taxes.
 You want to use the tools to do that task, not to fiddle with the tools themselves.</p>
@@ -62,34 +62,34 @@ You want to use the tools to do that task, not to fiddle with the tools themselv
 <a href="http://www.amazon.com/gp/product/0789723107?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0789723107">Whole books have been written about this.</a> And this is where we, finally, arrive at iOS, Android, and the title of this post.
 The extent to which Android has become a <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/StartMyOwn">Build My Own</a> OS bothers me.
 Android is a good OS - but it is at its worst when it asks people to become the sysadmins of their own phones.
-The promise of Great Power in phone form is compelling, and there’s a chunk of the market that needs it badly (hello, mobile system administration!).
-But that’s not the whole market - and that’s why iOS, which offers a different bargain, is doing so well.</p>
+The promise of Great Power in phone form is compelling, and there&rsquo;s a chunk of the market that needs it badly (hello, mobile system administration!).
+But that&rsquo;s not the whole market - and that&rsquo;s why iOS, which offers a different bargain, is doing so well.</p>
 
-<p>Not everyone wants to make hard decisions about their computer - and they shouldn’t have those decisions forced onto them unless and until it’s absolutely necessary.
+<p>Not everyone wants to make hard decisions about their computer - and they shouldn&rsquo;t have those decisions forced onto them unless and until it&rsquo;s absolutely necessary.
 I think that part of why desktop OSes have gotten away with doing as much of that as they have is that they can take advantage of the existing number of people who have some expertise and are willing to be free support for their friends, family, and neighbor.
-A bigger part, though, is that you can walk away from a desktop computer that’s giving you issues.
-Press “cancel” until whatever it is goes away.
-That’s much less of an option with a phone—if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.
+A bigger part, though, is that you can walk away from a desktop computer that&rsquo;s giving you issues.
+Press &ldquo;cancel&rdquo; until whatever it is goes away.
+That&rsquo;s much less of an option with a phone&mdash;if you own an iPhone, an Android phone, or another modern smartphone, you probably have it with you during almost all of your waking hours.
 If it starts making your life harder instead of easier, you have to deal with that all of the time.</p>
 
-<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users’ hands.
+<p>So here we have the iPhone, which has been <a href="http://www.macworld.com/article/151235/2010/05/apple_rolls.html">gathering momentum</a> for years, which has a maniacal focus on user experience, and which is to a fault willing to take hard decisions out of users' hands.
 The iPhone and descendants have made Apple several zillion dollars.
 Here also we have the Blackberry, which prospered by offering a phone that could do email, and delivering on that promise very well.
-And here finally we have the Android OS, which promises to be like an iPhone only “more open” and with multitasking and on other carriers.
+And here finally we have the Android OS, which promises to be like an iPhone only &ldquo;more open&rdquo; and with multitasking and on other carriers.
 Unfortunately, the tradeoff there is that to a significant extent, Android devices ask you to make harder decisions, and to have to sysadmin your phone.</p>
 
 <p>Android is offering a different bargain.
-There are a lot of times the Android bargain sounds really good to me: I’ve already made that bargain a lot of times, and it doesn’t frighten me.
-But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android’s promises (for example, bundled un-removable applications and UI badness).
-When we developers think of Apple, we probably don’t think of them with great fondness because of their iron-fisted control over the App Store.
-But Apple hasn’t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.
-Android, on the other hand - sometimes you can barely tell what it’s promising, and its identity is fragmented and conflicting.</p>
+There are a lot of times the Android bargain sounds really good to me: I&rsquo;ve already made that bargain a lot of times, and it doesn&rsquo;t frighten me.
+But that bargain is not a recipe for mass-market success, and it makes the Android devices perilously prone to broken promises, especially when third parties can break Android&rsquo;s promises (for example, bundled un-removable applications and UI badness).
+When we developers think of Apple, we probably don&rsquo;t think of them with great fondness because of their iron-fisted control over the App Store.
+But Apple hasn&rsquo;t broken promises: they promised to be jerks about the App store and to focus on their vision of the iPhone.
+Android, on the other hand - sometimes you can barely tell what it&rsquo;s promising, and its identity is fragmented and conflicting.</p>
 
 <p>The future is getting brighter, though.
-Android devices are getting better at not forcing users to make hard decisions they didn’t sign up for.
+Android devices are getting better at not forcing users to make hard decisions they didn&rsquo;t sign up for.
 iOS devices are getting <a href="http://www.apple.com/ipad">magical</a>.
 Everyone else is gradually catching up with those two, because the hard decisions in question are getting easier as we as a society learn how to cope with them.
-Of course there will always be more and newer hard decisions - but that’s what your sysadmins are here for.</p>
+Of course there will always be more and newer hard decisions - but that&rsquo;s what your sysadmins are here for.</p>
 ]]></content>
   </entry>
   

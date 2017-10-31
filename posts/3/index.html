@@ -9,7 +9,7 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up &hellip;">
+  <meta name="description" content="This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,47 +105,47 @@
   </header>
 
 
-  <div class="entry-content"><p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up with anything.
-I think it’s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
+  <div class="entry-content"><p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn&rsquo;t come up with anything.
+I think it&rsquo;s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
 
 <p>So:
-you’re running a Magento site, and you’re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
+you&rsquo;re running a Magento site, and you&rsquo;re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
 You might end up in a nasty situation where the integration settings page in Magento is telling you that
-“Your blog URL (site address) matches your install URL (WordPress address).
-Please change your blog route or move WordPress to a different sub-directory”
-and that that’s a problem.
+&ldquo;Your blog URL (site address) matches your install URL (WordPress address).
+Please change your blog route or move WordPress to a different sub-directory&rdquo;
+and that that&rsquo;s a problem.
 It is.
-Things will 404 as long as that’s true.
-However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you’ll find to help</a> on the FishPig site is deeply obscure.</p>
+Things will 404 as long as that&rsquo;s true.
+However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you&rsquo;ll find to help</a> on the FishPig site is deeply obscure.</p>
 
 <p>[<img src="/images/mangeto-fishpig-error.jpg" alt="An error that can happen when trying to integrate Magento and WordPress" />]
 <em>The problem might look like this.</em></p>
 
 <p>The basic problem is one of terminology.
 WordPress is designed to play well with others, and to be highly configurable.
-So it cares about two URLs (URIs if you’re picky).
+So it cares about two URLs (URIs if you&rsquo;re picky).
 It cares about
-“the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)”,
-and it cares about “the public URL that I will respond to.”
-In the database, these are ‘siteurl’ and ‘home’, respectively, in the wp_options table.
+&ldquo;the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)&rdquo;,
+and it cares about &ldquo;the public URL that I will respond to.&rdquo;
+In the database, these are &lsquo;siteurl&rsquo; and &lsquo;home&rsquo;, respectively, in the wp_options table.
 It can be tricky to disentangle these two URLs, but for many WordPress installs, setting them both to the same URL is good enough and gets everything working.</p>
 
-<p>However, that’s not the case when you need to integrate a WordPress blog into Magento.
-For the FishPig plugin’s “fully integrated” level of operation—
-which is good stuff, the best way to run that plugin—
+<p>However, that&rsquo;s not the case when you need to integrate a WordPress blog into Magento.
+For the FishPig plugin&rsquo;s &ldquo;fully integrated&rdquo; level of operation&mdash;
+which is good stuff, the best way to run that plugin&mdash;
 the WordPress PHP files need to live in the same site as the Magento files
-(when using Apache, they need to both be in the tree that starts at the site’s DocumentRoot),
-and, contrary to the usual WordPress setup, the ‘siteurl’ and ‘home’ values <em>must not</em> be set to the same URL.
+(when using Apache, they need to both be in the tree that starts at the site&rsquo;s DocumentRoot),
+and, contrary to the usual WordPress setup, the &lsquo;siteurl&rsquo; and &lsquo;home&rsquo; values <em>must not</em> be set to the same URL.
 This is where we run into problems.
-The WordPress control panel refers to the ‘siteurl’ value as the “WordPress address (URL)” and the ‘home’ value as “Site address (URL)”.
-The FishPig plugin’s error messages, as seen above, will tell you that they can’t be the same, and will tell you that the ‘home’/”Site address” value has to match the “blog route” variable” in Magento.
-However, you have to fill in the third part of the syllogism yourself, and remember to set the ‘siteurl’/”WordPress address” to the same value as the “WordPress path” variable in Magento.</p>
+The WordPress control panel refers to the &lsquo;siteurl&rsquo; value as the &ldquo;WordPress address (URL)&rdquo; and the &lsquo;home&rsquo; value as &ldquo;Site address (URL)&rdquo;.
+The FishPig plugin&rsquo;s error messages, as seen above, will tell you that they can&rsquo;t be the same, and will tell you that the &lsquo;home&rsquo;/&ldquo;Site address&rdquo; value has to match the &ldquo;blog route&rdquo; variable" in Magento.
+However, you have to fill in the third part of the syllogism yourself, and remember to set the &lsquo;siteurl&rsquo;/&ldquo;WordPress address&rdquo; to the same value as the &ldquo;WordPress path&rdquo; variable in Magento.</p>
 
 <p>The final puzzle-piece is URL rewriting - most WordPress installs try to do a little .htaccess magic, and it can be tricky to keep it straight.
-If it’s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you’ve got to move down a layer and throw queries directly at the database to figure out what’s going on.</p>
+If it&rsquo;s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you&rsquo;ve got to move down a layer and throw queries directly at the database to figure out what&rsquo;s going on.</p>
 
 <p>I imagine that this is obvious if you know WordPress better than I do, and it probably seemed obvious to the FishPig folks.
-However, if you’re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
+However, if you&rsquo;re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
 </div>
   
   
@@ -184,43 +184,46 @@ However, if you’re in the same position I was in, where the WordPress admin pa
   <div class="entry-content"><p>At work recently, I had to test an address book application.
 Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
 My personal address book is nowhere near that big
-(and I’m not about to use it for testing),
+(and I&rsquo;m not about to use it for testing),
 so I turned to Python.
 [The vCard format][vcard-wiki] is pretty much a special kind of text file,
-so it’s easy to create new vCards,
+so it&rsquo;s easy to create new vCards,
 and a vCard can contain multiple contacts by just concatenating contacts.</p>
 
-<p>I didn’t find exactly what I needed already in existence,
+<p>I didn&rsquo;t find exactly what I needed already in existence,
 so I wrote up a basic script to do it, and in case anyone else needs it, here it is.
 It is released under the Apache Software License 2.0,
 and I hope you find it useful.</p>
 
-<noscript><pre>
-#!/usr/bin/python
+<p><noscript><pre></p>
 
-&quot;&quot;&quot;Generates an abitrary number of valid .vcf vCard contacts based on the
+<h1>!/usr/bin/python</h1>
+
+<p>&quot;&quot;&quot;Generates an abitrary number of valid .vcf vCard contacts based on the
 parameters set at the beginning of the file. See also:
-http://softwareas.com/vcard-for-developers
-http://en.wikipedia.org/wiki/VCard
-&quot;&quot;&quot;
+<a href="http://softwareas.com/vcard-for-developers">http://softwareas.com/vcard-for-developers</a>
+<a href="http://en.wikipedia.org/wiki/VCard">http://en.wikipedia.org/wiki/VCard</a>
+&quot;&quot;&quot;</p>
 
-import random, sys
+<p>import random, sys</p>
 
-################################## Parameters ##################################
+<h6>############################ Parameters</h6>
 
-# We&#39;ll use this data no matter what the user tells us.
+<h1>We&#39;ll use this data no matter what the user tells us.</h1>
 
-# What fields shall be populated?
-target_fields = {&quot;Name&quot;:True,
+<h1>What fields shall be populated?</h1>
+
+<p>target_fields = {&quot;Name&quot;:True,
                  &quot;FullName&quot;:True,
                  &quot;Organization&quot;:True,
                  &quot;Address&quot;:True,
                  &quot;Title&quot;:True,
                  &quot;Phone&quot;:True,
-                 &quot;Email&quot;:True,}
+                 &quot;Email&quot;:True,}</p>
 
-# Data that we&#39;ll use to populate the cards&#39; fields.
-first_names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;, &quot;Elena&quot;, &quot;Farquahd&quot;, &quot;Gretel&quot;,
+<h1>Data that we&#39;ll use to populate the cards&#39; fields.</h1>
+
+<p>first_names = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Carol&quot;, &quot;David&quot;, &quot;Elena&quot;, &quot;Farquahd&quot;, &quot;Gretel&quot;,
                &quot;Hans&quot;, &quot;Iris&quot;, &quot;Junichi&quot;, &quot;Khalisha&quot;, &quot;Lee&quot;, &quot;Mina&quot;, &quot;Nassif&quot;,
                &quot;Oba&quot;, &quot;Prudha&quot;, &quot;Hida&quot;, &quot;Kaiu&quot;, &quot;Aaron&quot;, &quot;Sangamon&quot;,
                &quot;Ferdinand&quot;, &quot;Sanjay&quot;, &quot;Asok&quot;]
@@ -229,97 +232,99 @@ last_names = [&quot;Smith&quot;, &quot;Jones&quot;, &quot;Smythe&quot;, &quot;Jo
               &quot;al-Tikriti&quot;, &quot;al-Bagram&quot;, &quot;von Trapp&quot;, &quot;von der Wallenheim&quot;,
               &quot;Gamgee&quot;, &quot;Proudfoot&quot;, &quot;Brewer&quot;, &quot;Kagehiro&quot;, &quot;Ng&quot;,
               &quot;Nguyen&quot;, &quot;Salzmann&quot;, &quot;Bear&quot;, &quot;Powers&quot;,&quot;Kusanagi&quot;, &quot;Dengo&quot;,
-              &quot;Mukherjee&quot;,&quot;Balaam&quot;]
+              &quot;Mukherjee&quot;,&quot;Balaam&quot;]</p>
 
-# Street numbers will be generated at random.  All addresses are
-# situated in Anytown, CA, ZIP 12345, United States of America.
+<h1>Street numbers will be generated at random.  All addresses are</h1>
 
-streets = [&quot;Paper Street&quot;, &quot;Fictional Lane&quot;, &quot;Placid Avenue&quot;, &quot;Blank Road&quot;,
-           &quot;Suspicious Parkway&quot;]
+<h1>situated in Anytown, CA, ZIP 12345, United States of America.</h1>
 
-orgs = [&quot;Monty Python&#39;s Flying Circus&quot;, &quot;Golden Egg Bonus Company, LLC&quot;,
+<p>streets = [&quot;Paper Street&quot;, &quot;Fictional Lane&quot;, &quot;Placid Avenue&quot;, &quot;Blank Road&quot;,
+           &quot;Suspicious Parkway&quot;]</p>
+
+<p>orgs = [&quot;Monty Python&#39;s Flying Circus&quot;, &quot;Golden Egg Bonus Company, LLC&quot;,
         &quot;Dewey Cheatham &amp; Howe, Tax and Family Law&quot;, &quot;Improv Everywhere&quot;,
         &quot;Owl-Stretching Enthusiasts&#39; Club&quot;, &quot;International R. Mutt Fan Club&quot;,
         &quot;Paper Street Soap Company&quot;, &quot;River City Pool Table Company&quot;,
-        &quot;Desert Bus Runs&quot;, &quot;Impossibilities Inc&quot;, &quot;The X-Men&quot;]
+        &quot;Desert Bus Runs&quot;, &quot;Impossibilities Inc&quot;, &quot;The X-Men&quot;]</p>
 
-titles = [&quot;Mercenary&quot;, &quot;Chief Tomfoolery Engineer&quot;, &quot;Nonsense Supervisor&quot;,
+<p>titles = [&quot;Mercenary&quot;, &quot;Chief Tomfoolery Engineer&quot;, &quot;Nonsense Supervisor&quot;,
           &quot;Skylark&quot;, &quot;Isn&#39;t It About Time For Lunch&quot;, &quot;Famous Author&quot;,
           &quot;Fictional Person&quot;, &quot;Space Traveller&quot;, &quot;Architect&quot;,
           &quot;International Person Of Mystery&quot;, &quot;Sith Lord&quot;, &quot;Sith Apprentice&quot;,
-          &quot;Sith Intern&quot;, &quot;Archaeologist&quot;, &quot;Scout&quot;, &quot;Heavy&quot;, &quot;Sniper&quot;]
+          &quot;Sith Intern&quot;, &quot;Archaeologist&quot;, &quot;Scout&quot;, &quot;Heavy&quot;, &quot;Sniper&quot;]</p>
 
-# Phone numbers will be generated in the form 555-NNNN.
-# Email addresses will be generated in the form  firstname.lastname@example.com
+<h1>Phone numbers will be generated in the form 555-NNNN.</h1>
 
-################################## Actions ###################################
+<h1>Email addresses will be generated in the form  <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x66;&#x69;&#x72;&#115;&#x74;&#110;&#x61;&#x6d;&#x65;&#x2e;&#x6c;&#97;&#115;&#x74;&#x6e;&#97;&#109;&#101;&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#105;&#114;&#115;&#116;&#x6e;&#97;&#x6d;&#101;&#x2e;&#108;&#97;&#x73;&#x74;&#x6e;&#97;&#x6d;&#x65;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;</a></h1>
 
-class CardFiller:
+<h6>############################ Actions</h6>
+
+<p>class CardFiller:
     &quot;&quot;&quot;A class whose instances take the basic dataset we&#39;re working with,
     shuffle it, and grind through generating VCard entries based on it. &quot;&quot;&quot;
-    def __init__(self, first_names, last_names, streets, orgs, titles):
+    def <strong>init</strong>(self, first_names, last_names, streets, orgs, titles):
         self.first_names = first_names
         self.last_names = last_names
         self.streets = streets
         self.orgs = orgs
-        self.titles = titles
+        self.titles = titles</p>
 
-    def prepare(self):
-        for lst in [self.first_names, self.last_names,
-                    self.streets, self.orgs, self.titles]:
-            random.shuffle(lst)
+<pre><code>def prepare(self):
+    for lst in [self.first_names, self.last_names,
+                self.streets, self.orgs, self.titles]:
+        random.shuffle(lst)
 
-    def fill_card(self, target_fields, position):
-        &quot;&quot;&quot;Takes data and fills in fields, then creates a list of formatted
-        lines that can be written into a .vcf file. Takes a position argument
-        that it basically interprets as modulo the length of the list.&quot;&quot;&quot;
-        new_card = [&quot;BEGIN:VCARD&quot;, &quot;VERSION:2.1&quot;,]
-        # Fill the Name field.
-        if &quot;Name&quot; in target_fields:
-            namefield = &quot;N:&quot;
-            namefield += str(self.last_names[position % len(self.last_names)])
-            namefield +=&quot;;&quot;
-            namefield += str(self.first_names[position % len(self.first_names)])
-            new_card.append(namefield)
-        if &quot;FullName&quot; in target_fields:
-            fnamefield = &quot;FN:&quot;
-            fnamefield += str(self.first_names[position % len(self.first_names)])
-            fnamefield += &quot; &quot;
-            fnamefield += str(self.last_names[position % len(self.last_names)])
-            new_card.append(fnamefield)
-        if &quot;Organization&quot; in target_fields:
-            orgfield = &quot;ORG:&quot;
-            orgfield += str(self.orgs[position % len(self.orgs)])
-            new_card.append(orgfield)
-        if &quot;Title&quot; in target_fields:
-            titlefield = &quot;TITLE:&quot;
-            titlefield += str(self.titles[position % len(self.titles)])
-            new_card.append(titlefield)
-        if &quot;Phone&quot; in target_fields:
-            phonefield = &quot;TEL;WORK;VOICE:(&quot;
-            phonefield += str(random.randrange(100,999))
-            phonefield += &quot;) 555-&quot;
-            phonefield += &quot;%04d&quot; % random.randrange(0,9999)
-            new_card.append(phonefield)
-        if &quot;Address&quot; in target_fields:
-            addrfield = &quot;ADR;WORK:;;&quot;
-            addrfield += str(random.randrange(1,18234))
-            addrfield += &quot; &quot;
-            addrfield += str(self.streets[position % len(self.streets)])
-            addrfield += &quot;;Anytown;CA;12345;United States of America&quot;
-            new_card.append(addrfield)
-        if &quot;Email&quot; in target_fields:
-            emailfield = &quot;EMAIL;PREF;INTERNET:&quot;
-            emailfield += str.lower(self.first_names[position % len(self.first_names)])
-            emailfield += str.lower(self.last_names[position % len(self.last_names)])
-            emailfield += &quot;@example.com&quot;
-            new_card.append(emailfield)
-        new_card.append(&quot;REV:%d&quot; % random.randrange(100,500))
-        new_card.append(&quot;END:VCARD&quot;)
-        return new_card
+def fill_card(self, target_fields, position):
+    &amp;quot;&amp;quot;&amp;quot;Takes data and fills in fields, then creates a list of formatted
+    lines that can be written into a .vcf file. Takes a position argument
+    that it basically interprets as modulo the length of the list.&amp;quot;&amp;quot;&amp;quot;
+    new_card = [&amp;quot;BEGIN:VCARD&amp;quot;, &amp;quot;VERSION:2.1&amp;quot;,]
+    # Fill the Name field.
+    if &amp;quot;Name&amp;quot; in target_fields:
+        namefield = &amp;quot;N:&amp;quot;
+        namefield += str(self.last_names[position % len(self.last_names)])
+        namefield +=&amp;quot;;&amp;quot;
+        namefield += str(self.first_names[position % len(self.first_names)])
+        new_card.append(namefield)
+    if &amp;quot;FullName&amp;quot; in target_fields:
+        fnamefield = &amp;quot;FN:&amp;quot;
+        fnamefield += str(self.first_names[position % len(self.first_names)])
+        fnamefield += &amp;quot; &amp;quot;
+        fnamefield += str(self.last_names[position % len(self.last_names)])
+        new_card.append(fnamefield)
+    if &amp;quot;Organization&amp;quot; in target_fields:
+        orgfield = &amp;quot;ORG:&amp;quot;
+        orgfield += str(self.orgs[position % len(self.orgs)])
+        new_card.append(orgfield)
+    if &amp;quot;Title&amp;quot; in target_fields:
+        titlefield = &amp;quot;TITLE:&amp;quot;
+        titlefield += str(self.titles[position % len(self.titles)])
+        new_card.append(titlefield)
+    if &amp;quot;Phone&amp;quot; in target_fields:
+        phonefield = &amp;quot;TEL;WORK;VOICE:(&amp;quot;
+        phonefield += str(random.randrange(100,999))
+        phonefield += &amp;quot;) 555-&amp;quot;
+        phonefield += &amp;quot;%04d&amp;quot; % random.randrange(0,9999)
+        new_card.append(phonefield)
+    if &amp;quot;Address&amp;quot; in target_fields:
+        addrfield = &amp;quot;ADR;WORK:;;&amp;quot;
+        addrfield += str(random.randrange(1,18234))
+        addrfield += &amp;quot; &amp;quot;
+        addrfield += str(self.streets[position % len(self.streets)])
+        addrfield += &amp;quot;;Anytown;CA;12345;United States of America&amp;quot;
+        new_card.append(addrfield)
+    if &amp;quot;Email&amp;quot; in target_fields:
+        emailfield = &amp;quot;EMAIL;PREF;INTERNET:&amp;quot;
+        emailfield += str.lower(self.first_names[position % len(self.first_names)])
+        emailfield += str.lower(self.last_names[position % len(self.last_names)])
+        emailfield += &amp;quot;@example.com&amp;quot;
+        new_card.append(emailfield)
+    new_card.append(&amp;quot;REV:%d&amp;quot; % random.randrange(100,500))
+    new_card.append(&amp;quot;END:VCARD&amp;quot;)
+    return new_card
+</code></pre>
 
-
-def rolodex_engine(card_limit, target_fields):
+<p>def rolodex_engine(card_limit, target_fields):
     &quot;&quot;&quot;Iterates over a range to generate a list of strings that can be
     sent to file or to stdout and which constitute a valid vcard file.
     Most programs that read vcards can accept a file that contains
@@ -331,11 +336,11 @@ def rolodex_engine(card_limit, target_fields):
         new_card = card_engine.fill_card(target_fields, i)
         for line in new_card:
             rolodex.append(line)
-    return rolodex
+    return rolodex</p>
 
-################################### Execution ##################################
+<h6>############################# Execution</h6>
 
-if __name__ == &#39;__main__&#39;:
+<p>if <strong>name</strong> == &#39;<strong>main</strong>&#39;:
     &quot;&quot;&quot;Run a variety of sanity checks regarding the arguments to the
     script.  If there are no command-line arguments, give the user a
     hint. If the arguments are weird, quit and ask them to try
@@ -344,8 +349,8 @@ if __name__ == &#39;__main__&#39;:
     # Sanity checks.
     if len(sys.argv) != 3:
         print &quot;This script requires exactly two arguments: \n&quot;,
-        print &quot;* The number of vCards to generate \n&quot;,
-        print  &quot;* The name of the file to store them in. \n&quot;
+        print &quot;<em> The number of vCards to generate \n&quot;,
+        print  &quot;</em> The name of the file to store them in. \n&quot;
         sys.exit()
     if type(sys.argv[2]) != type(&quot;string&quot;):
         print &quot;The first argument must be a number, the second a name.&quot;
@@ -373,15 +378,14 @@ if __name__ == &#39;__main__&#39;:
             with open(&quot;./%s&quot; % card_export_file, &quot;w&quot;) as rolodex_file:
                 rolodex = rolodex_engine(card_limit, target_fields)
                 for c in rolodex:
-                    rolodex_file.write(c)
+                    rolodex_file.write&copy;
                     rolodex_file.write(&quot;\n&quot;)
         except IOError, ioerr_msg:
             print &quot;The script couldn&#39;t create a file for the vcards.&quot;
             print &quot;The specific problem was &#39;%s&#39;&quot; % ioerr_msg
-</pre></noscript>
-<script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script>
+</pre></noscript><script src="https://gist.github.com/brighid/58519d5849701a1f4ec2.js?file=vcard_generator.py"> </script></p>
 
-<p>Writing this was basically like doing sit-ups in Python—not really challenging,
+<p>Writing this was basically like doing sit-ups in Python&mdash;not really challenging,
 but demanded like all serious tasks that you sit down and devote time and concentration to it.
 After that, results come easily.</p>
 </div>
@@ -420,67 +424,67 @@ After that, results come easily.</p>
 
 
   <div class="entry-content"><p>The online economy is deeply weird and breaks many rules that guide the functioning of the physical economy.
-However, there’s one concept that’s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
-We like to think that in any transaction, people are getting what they pay for - but that’s not always true.
-There are people who aren’t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
-A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others’ transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
-Externalities are “external” because the people actually involved in the transaction haven’t captured all of the costs and benefits of the transaction;
-they happen all the time because there are some things it’s impossible to keep internal to a transaction.</p>
+However, there&rsquo;s one concept that&rsquo;s highly relevant to the online economy that I need to talk about: <strong>externality</strong>.
+We like to think that in any transaction, people are getting what they pay for - but that&rsquo;s not always true.
+There are people who aren&rsquo;t part of the transaction, but who are affected by it anyhow: those people are the recipients of an externality.
+A <a href="http://en.wikipedia.org/wiki/Externality">positive externality</a> comes when you essentially get something for free that is the result of others' transactions, and a negative externality is visited upon you when others get to fob off some of the costs of their transaction on you.
+Externalities are &ldquo;external&rdquo; because the people actually involved in the transaction haven&rsquo;t captured all of the costs and benefits of the transaction;
+they happen all the time because there are some things it&rsquo;s impossible to keep internal to a transaction.</p>
 
-<p>Here’s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
-Caltrain’s funding, in large part, comes from sources beyond its control.
+<p>Here&rsquo;s an example: a major public transit agency near me, Caltrain, <a href="http://www.paloaltoonline.com/news/show_story.php?id=20038">is about to cut service</a>.
+Caltrain&rsquo;s funding, in large part, comes from sources beyond its control.
 A little less than half comes from ticket sales - and the rest from local municipal governments.
-The local governments collect no taxes dedicated to and aren’t bound to pay for Caltrain:
+The local governments collect no taxes dedicated to and aren&rsquo;t bound to pay for Caltrain:
 in years like this one, where tax revenues are shrinking, they can simply decrease their funding.
-That’s what’s happening now.
-That’s a transaction between them and Caltrain.
-I’m just a Caltrain rider, I’m not a party to the transaction - but it’s going to affect me anyhow.
-The service cuts that Caltrain has to make have major negative effects on riders who aren’t part of the transaction between Caltrain and local governments:
+That&rsquo;s what&rsquo;s happening now.
+That&rsquo;s a transaction between them and Caltrain.
+I&rsquo;m just a Caltrain rider, I&rsquo;m not a party to the transaction - but it&rsquo;s going to affect me anyhow.
+The service cuts that Caltrain has to make have major negative effects on riders who aren&rsquo;t part of the transaction between Caltrain and local governments:
 they are the subjects of a negative externality.
 Similarly, if the service cuts go through, traffic on highways between San Francisco and San Jose will get significantly worse.
 Train service created a positive externality that benefited drivers - anyone who was taking the train was not driving, and congestion decreased.
-There’s also a positive externality that has to do with air quality:
+There&rsquo;s also a positive externality that has to do with air quality:
 the train is a more efficient way of transporting large numbers of people than requiring each of them to drive their own car.</p>
 
 <p>The reason that externalities are relevant to the tech field is this: most startups entirely rely on them.
 <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a>, whatever its intentions, creates enormous positive externalities.
-It’s almost impossible to name a tech company that doesn’t depend on some piece of free software.
+It&rsquo;s almost impossible to name a tech company that doesn&rsquo;t depend on some piece of free software.
 Further, most tech companies in turn create significant externalities because of their advertising-driven revenue models.
-I dislike advertising-driven revenue models - but like everything else, they’re a trade-off.
-An advertising-driven revenue model - for example, Facebook’s - means that all benefits to users are externalities on one level.
+I dislike advertising-driven revenue models - but like everything else, they&rsquo;re a trade-off.
+An advertising-driven revenue model - for example, Facebook&rsquo;s - means that all benefits to users are externalities on one level.
 Of course you are still in a transaction with Facebook - but most of that transaction is invisible to the average user.
 We users give Facebook data - the data that makes their vaunted social graph valuable and lets them <a href="http://www.youtube.com/watch?v=ce3P79ktpTk">produce creepy marketing videos</a>.
 That tiny transaction, times hundreds of millions of users, gets refined into a product that Facebook can actually make money from.
 Any other startup with the same revenue model is doing the same thing:
-they’re purposefully creating positive externalities, because without those, they can’t do the transactions (with advertisers) that they actually make money from.</p>
+they&rsquo;re purposefully creating positive externalities, because without those, they can&rsquo;t do the transactions (with advertisers) that they actually make money from.</p>
 
 <p>This is a highly interesting business model, and has created many interesting things.
-I personally think that in evolutionary terms it’s a loser:
+I personally think that in evolutionary terms it&rsquo;s a loser:
 advertising as practiced in the modern world is a hostile, toxic, invasive species, and letting it into your ecosystem is a bad idea.
-But what I want to talk about now is a company that <em>doesn’t</em> share that revenue model, and about how it handles externalities.
-It’s time to talk, yet again, about Apple.</p>
+But what I want to talk about now is a company that <em>doesn&rsquo;t</em> share that revenue model, and about how it handles externalities.
+It&rsquo;s time to talk, yet again, about Apple.</p>
 
-<p>Part of the reason that Apple’s prices are what they are is that you are paying for things that you normally get for free as an externality.
-When you buy Apple products, you are forgoing a price that’s artificially low.
-I like to think of it this way: you are paying something closer to the ‘true’ price of the product.
+<p>Part of the reason that Apple&rsquo;s prices are what they are is that you are paying for things that you normally get for free as an externality.
+When you buy Apple products, you are forgoing a price that&rsquo;s artificially low.
+I like to think of it this way: you are paying something closer to the &lsquo;true&rsquo; price of the product.
 The price in dollars to the users of Google products like web search, Gmail, and Google Reader, is low or nil because Google relies on selling user data to others for its revenue.
-You get nice things for ‘free’ because the actual price you’re paying is invisible.
-Apple products, on the other hand, usually don’t do that - you will pay dollars, and you will get your product or service from them, and that’s that.
+You get nice things for &lsquo;free&rsquo; because the actual price you&rsquo;re paying is invisible.
+Apple products, on the other hand, usually don&rsquo;t do that - you will pay dollars, and you will get your product or service from them, and that&rsquo;s that.
 I think of it as paying for peace of mind.
 Free services usually involve a third party, an advertiser, who has an enormous, overwhelming, powerful incentive to attack my peace of mind.
-That is what the modern business of advertising is: it is attacking people’s mental health.</p>
+That is what the modern business of advertising is: it is attacking people&rsquo;s mental health.</p>
 
 <p>Apple is in the tech news again because of externalities:
-<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they’re making are pissing off all kinds of people.
-As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">“if you own the infrastructure, you get to charge rent.”</a>
+<a href="http://techcrunch.com/2011/02/15/apple-in-app-subscriptions/">they have allowed iOS apps to use a subscription-based revenue model</a>, and the changes that they&rsquo;re making are pissing off all kinds of people.
+As another economics-oriented blog post put it, <a href="http://garry.posterous.com/if-you-own-the-infrastructure-you-get-to-char">&ldquo;if you own the infrastructure, you get to charge rent.&rdquo;</a>
 What interests me, though, is that Apple has chosen to create a positive externality for user experience here - and they have deliberately done it, risked money to do it, risked business partnerships to do it.
-That’s interesting - and, I think, good.
+That&rsquo;s interesting - and, I think, good.
 When the people who use your product are the people you make money from, you wind up focusing on keeping them happy.
 If you make money otherwise, you risk turning into Adobe (Microsoft also has bouts of this):
 making mediocre products at exorbitant prices and squealing when someone exposes the flaws of your product line.</p>
 
 <p>Whimsically, I think that Apple also creates a huge externality for the tech journalism corps.
-They are the largest company that actually takes risks, and so they help ensure that there’s always something interesting to write about.</p>
+They are the largest company that actually takes risks, and so they help ensure that there&rsquo;s always something interesting to write about.</p>
 </div>
   
   
@@ -518,39 +522,39 @@ They are the largest company that actually takes risks, and so they help ensure 
 
   <div class="entry-content"><p>The Internal Revenue service has, as government agencies go, a pretty simple directive.
 Here is the tax code, which we can consider to be a big lump of business logic.
-Here are people’s statements of how much money they made and how much money they owe.
+Here are people&rsquo;s statements of how much money they made and how much money they owe.
 Using those two, make sure that people stated both halves accurately.</p>
 
-<p>It won’t surprise you to learn that that isn’t actually a simple task.</p>
+<p>It won&rsquo;t surprise you to learn that that isn&rsquo;t actually a simple task.</p>
 
-<p>I do expect it to surprise you that it’s even more complicated than that.
-Here’s something that betrays the complication, one little directive from <a href="http://www.irs.gov/publications/p17/ch12.html">IRS Publication 17, Chapter 12</a>:
-“If you receive a bribe, include it in your income.”</p>
+<p>I do expect it to surprise you that it&rsquo;s even more complicated than that.
+Here&rsquo;s something that betrays the complication, one little directive from <a href="http://www.irs.gov/publications/p17/ch12.html">IRS Publication 17, Chapter 12</a>:
+&ldquo;If you receive a bribe, include it in your income.&rdquo;</p>
 
 <p>Yes, the IRS has to tax you on illegal income.
-No, the IRS isn’t allowed to fully care that it’s illegal income - otherwise the whole agency is a walking 5th Amendment violation, something that <a href="http://www.irs.gov/businesses/small/article/0,,id=106500,00.html">people frequently get on their case about</a>.
-I am not the world’s biggest fan of the IRS - but I think that their position is a great illustration of how complicated systems work.
-Systems get complicated easily, and the ongoing task of “civilization” is to make complex systems manageable.
+No, the IRS isn&rsquo;t allowed to fully care that it&rsquo;s illegal income - otherwise the whole agency is a walking 5th Amendment violation, something that <a href="http://www.irs.gov/businesses/small/article/0,,id=106500,00.html">people frequently get on their case about</a>.
+I am not the world&rsquo;s biggest fan of the IRS - but I think that their position is a great illustration of how complicated systems work.
+Systems get complicated easily, and the ongoing task of &ldquo;civilization&rdquo; is to make complex systems manageable.
 This is difficult, and <a href="http://www.shirky.com/weblog/2010/04/the-collapse-of-complex-business-models/">the difficulty scales up unpleasantly late in the game</a>.
-It’s still worth thinking about.</p>
+It&rsquo;s still worth thinking about.</p>
 
-<p>My favorite exposé of this, especially in light of the California elections, is Steve Yegge’s <a href="http://steve-yegge.blogspot.com/2009/04/have-you-ever-legalized-marijuana.html">Have You Ever Legalized Marijuana?</a>
+<p>My favorite exposé of this, especially in light of the California elections, is Steve Yegge&rsquo;s <a href="http://steve-yegge.blogspot.com/2009/04/have-you-ever-legalized-marijuana.html">Have You Ever Legalized Marijuana?</a>
 He barely scratches the surface, but he very effectively demonstrates that legalizing marijuana, no matter how much you like the idea, is a huge and complicated thing.</p>
 
-<p>Taming complex systems is never easy - but that’s pretty much how we get advances in civilization.
+<p>Taming complex systems is never easy - but that&rsquo;s pretty much how we get advances in civilization.
 So we need to be good at it.
-I’m always happy to see evidence of this happening, especially when it’s in entertaining form.
+I&rsquo;m always happy to see evidence of this happening, especially when it&rsquo;s in entertaining form.
 Pac-Man comes to mind.
 Pac-Man is a great example of a complex system in this context - and a recent blogulator has <a href="http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior">given us all a fascinating look at the internals</a>.
-This is the sort of thing I love reading, because it shows how aspects of ordinary life that we don’t always look at directly, are full of complexity and reward investigation.</p>
+This is the sort of thing I love reading, because it shows how aspects of ordinary life that we don&rsquo;t always look at directly, are full of complexity and reward investigation.</p>
 
 <p>Unfortunately, that complexity also means endless debate.
 Even when there is an authoritative answer to a complex question, someone whose salary depends on that answer not being understood, will probably be able to prevent people from understanding it.
-The long version of this is in <a href="http://cscs.umich.edu/~crshalizi/weblog/523.html">Cosma Shalizi’s authoritative takedown of <em>The Bell Curve</em> tomfoolery</a>, and the short version is in The Onion’s <a href="http://www.theonion.com/articles/new-study-finds-blacks-more-likely,18552/">“New Study Finds Blacks More Likely.”</a></p>
+The long version of this is in <a href="http://cscs.umich.edu/~crshalizi/weblog/523.html">Cosma Shalizi&rsquo;s authoritative takedown of <em>The Bell Curve</em> tomfoolery</a>, and the short version is in The Onion&rsquo;s <a href="http://www.theonion.com/articles/new-study-finds-blacks-more-likely,18552/">&ldquo;New Study Finds Blacks More Likely.&rdquo;</a></p>
 
 <p>This is part of why simplicity and elegance are hard.
 We are surrounded with complex systems, and synthesizing something simple and useful requires taming complexity - which is a tremendous challenge.
-Fortunately for us hackers, that’s usually where the interesting problems are.</p>
+Fortunately for us hackers, that&rsquo;s usually where the interesting problems are.</p>
 </div>
   
   
@@ -587,33 +591,33 @@ Fortunately for us hackers, that’s usually where the interesting problems are.
 
 
   <div class="entry-content"><p>Philip K. Dick has contributed tremendously to the world around us, despite being dead for decades.
-Media inspired by Dick’s works has far-flung influence, has soaked into our discourse.
+Media inspired by Dick&rsquo;s works has far-flung influence, has soaked into our discourse.
 Right now I want to talk about a concept through the lens of a term that Dick came up with: <a href="http://www.technovelgy.com/ct/content.asp?Bnum=128">Kipple</a>.</p>
 
-<p>Kipple is junk, stuff, crap - but it’s the kind of crap that presses your “wait, I might need this someday!” button, that’s just barely worth keeping, that’s not quite crappy enough to pitch immediately.
+<p>Kipple is junk, stuff, crap - but it&rsquo;s the kind of crap that presses your &ldquo;wait, I might need this someday!&rdquo; button, that&rsquo;s just barely worth keeping, that&rsquo;s not quite crappy enough to pitch immediately.
 Kipple piles up, accumulates, metastasizes.
 I say that the main form of kipple nowadays is advertising.
 It is everywhere, and it is not adding value, really.
 It is more noise, in a world already plenty noisy enough.
 You can see it in the tendency to <a href="http://uxhero.com/ux-theory/logo-diarrhea/">plaster logos everywhere</a> especially.
-It is a pathological expression of corporate insecurity, trying to make up for a desperate gnawing sensation that your product isn’t actually useful or meaningful to people’s lives.
+It is a pathological expression of corporate insecurity, trying to make up for a desperate gnawing sensation that your product isn&rsquo;t actually useful or meaningful to people&rsquo;s lives.
 People make a good living producing kipple to soothe this corporate anxiety.</p>
 
-<p>I can’t stand it.</p>
+<p>I can&rsquo;t stand it.</p>
 
-<p>It probably won’t shock you to learn that I’m the kind of person who carefully regulates their media diet.
+<p>It probably won&rsquo;t shock you to learn that I&rsquo;m the kind of person who carefully regulates their media diet.
 One component that I welcome into my media diet is <a href="http://sethgodin.typepad.com/seths_blog/">Seth Godin</a>.
 I tend to read Seth Godin intensively for a week once every couple of months.
 This time, I found a concept that points to the harm of kipple - he posits, essentially, that <a href="http://sethgodin.typepad.com/seths_blog/2010/12/the-inevitable-decline-from-clutter.html">kipple is a bioaccumulative toxin</a>.</p>
 
-<p>Clutter trains our brains to disregard things - and it’s hard to undo that training.
+<p>Clutter trains our brains to disregard things - and it&rsquo;s hard to undo that training.
 Every attempt to break through the kipple becomes, in the end, more kipple.
 The attempts become sad after a while, too.</p>
 
 <p>In <a href="http://www.pbs.org/wgbh/pages/frontline/shows/cool/">Merchants of Cool</a> and <a href="http://www.pbs.org/wgbh/pages/frontline/shows/persuaders/">The Persuaders</a>, television programs that are essential for understanding television, we can see this process at work in its horrifying fullness.
 The corporations and people generally responsible for clutter and kipple have produced a self-reinforcing process.
 All the attempts to buy cool, purchase credibility, and make authenticity into a commodity, are self-defeating.
-Just as <a href="http://sethgodin.typepad.com/seths_blog/2010/11/your-noise-is-still-noise.html">Godin points out</a>, it’s all noise - and it all makes it harder to pay attention to things that matter.</p>
+Just as <a href="http://sethgodin.typepad.com/seths_blog/2010/11/your-noise-is-still-noise.html">Godin points out</a>, it&rsquo;s all noise - and it all makes it harder to pay attention to things that matter.</p>
 
 <p>Do us all a favor and make your next project not generate kipple (or alternatively, investigate forms of <a href="http://codeoffsets.com/Default.aspx">offsetting your kipple</a>).</p>
 </div>
@@ -654,7 +658,7 @@ Just as <a href="http://sethgodin.typepad.com/seths_blog/2010/11/your-noise-is-s
   <div class="entry-content"><p>A culture of <a href="http://en.wikipedia.org/wiki/Honour">honor</a> is a remarkably convenient thing for a writer.
 A writer needs characters to do stupid things on a regular basis, and nothing so dependably produces idiotic behavior as a character bound by honor.
 Importantly, it produces a very credible kind of idiocy:
-let a character clench his hand against his chest, grit his teeth, glower, and declare that he <em>must</em> undertake some course of action for his sacred honor—
+let a character clench his hand against his chest, grit his teeth, glower, and declare that he <em>must</em> undertake some course of action for his sacred honor&mdash;
 and other characters will easily nod along and agree, and readers who either live in or are passingly familiar with a culture of honor (which is nearly all of them) will understand what is going on without thinking, merely by this incident, that your character is a moron not worth reading about.</p>
 
 <p>Sir Arthur Conan Doyle used this device frequently, and to good effect.
@@ -674,16 +678,16 @@ the nobility and royalty of Europe resort to him, and reward him handsomely.</p>
 <p>Holmes eschews joining the official police or intelligence forces; he is an entrepreneur.
 He aims for a very specific market, and achieves his aims.
 He has the dual aims of sustaining his appetite for interesting problems, and of sustaining his appetite for a roof over his head, good food, and supplies for his various studies.
-This isn’t the most obvious layer of the stories - but quickly becomes apparent on a careful reading.
+This isn&rsquo;t the most obvious layer of the stories - but quickly becomes apparent on a careful reading.
 Sherlock Holmes is not just a great detective, he is a very proficient marketer.
 He knows where his services fetch the best price, markets there, and throws the rest to the winds.
-This is only obscured by the fact that there are two prices that may be paid for Sherlock Holmes’ involvement, and the more important one is that the problem be interesting.
-It takes - as in “The Adventure of the Priory School” - quite a tremendous amount of money to awaken anything like avarice in Holmes.
+This is only obscured by the fact that there are two prices that may be paid for Sherlock Holmes' involvement, and the more important one is that the problem be interesting.
+It takes - as in &ldquo;The Adventure of the Priory School&rdquo; - quite a tremendous amount of money to awaken anything like avarice in Holmes.
 Still it cannot be doubted, from the notes that his biographer gives us, that he is very efficient at making a comfortable living from himself.</p>
 
 <p>The lesson we can draw from Sherlock Holmes is basically one about optimization.
-Figure out what’s important to you, and optimize towards that - even if it looks strange to other people.
-Holmes has a way to achieve both money and a steady supply of interesting problems—
+Figure out what&rsquo;s important to you, and optimize towards that - even if it looks strange to other people.
+Holmes has a way to achieve both money and a steady supply of interesting problems&mdash;
 and troubles himself with nothing else, to the perennial puzzlement of Lestrade and the rest of the police forces.
 Go and do likewise: build a reputation where it matters for getting what you want, and pay the rest no mind.</p>
 </div>
@@ -727,116 +731,114 @@ I read his <a href="http://www.sfgate.com/columnists/carroll/">excellent column<
 I am also taking a liberty, but as a friend, and posting a big slice of one of his columns.
 I am urging you to <a href="http://www.amazon.com/gp/product/0811803074?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0811803074">buy his book</a>, because that is where I found it.</p>
 
-<blockquote>
-  <p>I have a friend who has a friend who believes that she is a space alien.
+<blockquote><p>I have a friend who has a friend who believes that she is a space alien.
 This is not the easiest burden in life to bear.
-Worrying about dental work is hard enough, being a space alien worrying about dental work can really get on a person’s nerves.
+Worrying about dental work is hard enough, being a space alien worrying about dental work can really get on a person&rsquo;s nerves.
 Understand, this is a person who leads a full, active earthling life.
 She holds a job, buys groceries, has relationships, drives a car, has opinions on popular movies, plays tennis, travels to Seattle to visit her sister.
 She is not under the care of a physician other than her family doctor, who wants her to cut down on cholesterol.</p>
 
-  <p>But she believes that she is a space alien.</p>
+<p>But she believes that she is a space alien.</p>
 
-  <p>She doesn’t tell many people that she is a space alien.
+<p>She doesn&rsquo;t tell many people that she is a space alien.
 Space aliens quickly learn that it is a bad idea to talk about it much.
-People don’t understand.
+People don&rsquo;t understand.
 They try to talk you out of it.
 They advise you to seek professional help.
-She doesn’t want professional help.
-She is entirely aware that people who think they’re space aliens are supposed to be crazy.
+She doesn&rsquo;t want professional help.
+She is entirely aware that people who think they&rsquo;re space aliens are supposed to be crazy.
 It is not an honorable job classification, being a space alien.</p>
 
-  <p>So, as a thinking adult, she has been forced to ask herself: Am I crazy?</p>
+<p>So, as a thinking adult, she has been forced to ask herself: Am I crazy?</p>
 
-  <p>She has considered the matter carefully; she has talked it over with a few trusted friends.
+<p>She has considered the matter carefully; she has talked it over with a few trusted friends.
 And her conclusion: I am not crazy.
 I am only a space alien.</p>
 
-  <p>Right now, she just wants to know what being a space alien is supposed to entail.
+<p>Right now, she just wants to know what being a space alien is supposed to entail.
 This differentiates her from many people who believe they are space aliens and are very busy following orders.
 But she is not one of those people.
 She does not exhibit the classic clinical symptoms.
 She does not believe people are following her; she does not believe in the existence of a gigantic conspiracy designed to drive her crazy.
 She does not believe that Henry Kissinger is stealing her ideas.
 If anything, she wishes the Mother Ship or whatever would be a little more forthcoming about its plans.
-She’s tried listening for messages.</p>
+She&rsquo;s tried listening for messages.</p>
 
-  <p>She does believe that earthlings are slowly poisoning their planet, an idea shared by many people who do not believe they are space aliens.</p>
+<p>She does believe that earthlings are slowly poisoning their planet, an idea shared by many people who do not believe they are space aliens.</p>
 
-  <p>The alien chain of command is definitely nonfunctional from her point of view.
-It’s sort of like being given an office and a desk and being told that you’re a corporate vice president, and then sitting there for years and years wondering what your job is and what the firm that employs you does.
-Plus, you can’t talk about it because people will think of you as some sort of <em>National Enquirer</em> fruitcake.</p>
+<p>The alien chain of command is definitely nonfunctional from her point of view.
+It&rsquo;s sort of like being given an office and a desk and being told that you&rsquo;re a corporate vice president, and then sitting there for years and years wondering what your job is and what the firm that employs you does.
+Plus, you can&rsquo;t talk about it because people will think of you as some sort of <em>National Enquirer</em> fruitcake.</p>
 
-  <p>The more I heard about my friend’s friend, the underemployed space alien, the more her plight sounded familiar.
+<p>The more I heard about my friend&rsquo;s friend, the underemployed space alien, the more her plight sounded familiar.
 We were none of us in class the day they passed out the secret of life; we all of us wander around listening for messages that never seem to arrive.
-The only people who really screw up are the ones who think they’ve gotten the message.
-All those guys over the years who were convinced they had the exact date when the world would end - they’re batting 0-for-eternity so far.</p>
+The only people who really screw up are the ones who think they&rsquo;ve gotten the message.
+All those guys over the years who were convinced they had the exact date when the world would end - they&rsquo;re batting 0-for-eternity so far.</p>
 
-  <p>So here we are spinning through the unutterable void without a road map, bolstered only by the evidence of things not seen, bookended by the mysteries of birth and death, bewildered by our own emotions …
-Talk about space aliens.</p>
-</blockquote>
+<p>So here we are spinning through the unutterable void without a road map, bolstered only by the evidence of things not seen, bookended by the mysteries of birth and death, bewildered by our own emotions &hellip;
+Talk about space aliens.</p></blockquote>
 
 <p>I am not posting this to convince you that Jon Carroll is a good writer (he is) or to buy his book (you should), but to note the experience of deviancy.
-The underemployed alien is experiencing deviancy in our culture—
+The underemployed alien is experiencing deviancy in our culture&mdash;
 and for all that we celebrate a certain kind of deviancy, the kind that can make money, we are remarkably intolerant of deviancy in general.
 It makes me sad.
-Like free speech, deviancy has benefits that outweigh its drawbacks—
-I promise you that you don’t want to live in a monoculture, and if you police deviancy, that’s where you’re headed.</p>
+Like free speech, deviancy has benefits that outweigh its drawbacks&mdash;
+I promise you that you don&rsquo;t want to live in a monoculture, and if you police deviancy, that&rsquo;s where you&rsquo;re headed.</p>
 
 <p>Monocultures die quick, well-deserved deaths.</p>
 
-<p>The problem is, it’s much easier to write software that serves a monoculture instead of software that serves a real culture.
-If you’re writing something enterprisey, you can probably get away with serving a monoculture—
+<p>The problem is, it&rsquo;s much easier to write software that serves a monoculture instead of software that serves a real culture.
+If you&rsquo;re writing something enterprisey, you can probably get away with serving a monoculture&mdash;
 but if you want to serve the general public, acting like the general public is a monoculture is a deadly poison for your application.
 The general public is infinitely diverse.
 You, writing your very important software product, may be tempted to say - well, so what?
 Eighty-twenty rule and all that.
-I don’t need to optimize that far.</p>
+I don&rsquo;t need to optimize that far.</p>
 
 <p>You kind of do, though.
-When you are writing for the general public, you can’t tell who the eighty percent are, you will lose data by not considering all cases, and importantly <strong>the eighty percent will change out from under you.</strong></p>
+When you are writing for the general public, you can&rsquo;t tell who the eighty percent are, you will lose data by not considering all cases, and importantly <strong>the eighty percent will change out from under you.</strong></p>
 
 <p>I want to say that again:
-the eighty percent case, if you’re writing software for the general public, will change out from under you—
+the eighty percent case, if you&rsquo;re writing software for the general public, will change out from under you&mdash;
 because people and culture are either changing or dying.
 You want to be able to pivot, as the startup crowd says:
 to be able to gracefully acknowledge that what people want and are willing to pay for is a bit different than what you are currently offering, and to be able change modes so that you can actually deliver what people want and are willing to pay for.
 By definition, you cannot know this information in advance: you must simply be able to react well to changing circumstances.</p>
 
 <p>You are damaging your ability to pivot if you dismiss the fullness of humanity and insist that humans should change to fit your data structures.
-Don’t gratuitously handicap yourself like that.
-As Paul Graham notes, you should have a keen interest in <a href="http://www.paulgraham.com/say.html">what you can’t say</a>.
-Don’t, in short, be like <a href="http://www.diaspora-news.net/2010/11/29/im-dropping-diaspora-this-site-is-now-closed/">this twerp Avery Morrow</a>, who sulks that people should fit his data structures better and that developers’ convenience should take precedence, in software for a general audience, over users receiving software that serves their actual needs in their actual lives.
+Don&rsquo;t gratuitously handicap yourself like that.
+As Paul Graham notes, you should have a keen interest in <a href="http://www.paulgraham.com/say.html">what you can&rsquo;t say</a>.
+Don&rsquo;t, in short, be like <a href="http://www.diaspora-news.net/2010/11/29/im-dropping-diaspora-this-site-is-now-closed/">this twerp Avery Morrow</a>, who sulks that people should fit his data structures better and that developers' convenience should take precedence, in software for a general audience, over users receiving software that serves their actual needs in their actual lives.
 Morrow has it exactly backwards!
 When you are a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">making difficult decisions</a> <strong>is your job.</strong>
 Shirking that job leads to bad software.
 So I think that Morrow is a bad developer and a twerp:
-it’s clear that <em>his</em> identity has never had to deal with software that denies his existence.
-If you want to know what privilege looks like, that’s it.</p>
+it&rsquo;s clear that <em>his</em> identity has never had to deal with software that denies his existence.
+If you want to know what privilege looks like, that&rsquo;s it.</p>
 
 <p>A good developer should <a href="http://slacktivist.typepad.com/slacktivist/2010/04/empathy-and-epistemic-closure.html">have empathy</a> instead of being like Morrow.
 Lacking empathy makes you stupid.
 Consider this:
-Morrow complains vociferously about “gender” being a free-form text field - and yet Metafilter, not a small site by anyone’s lights, has had that in place for years.
-<a href="http://stuff.metafilter.com/genders/genderfield.txt">Metafilter’s gender data</a> is instructive, too.
-By far the majority of users there simply don’t give a shit about the things Morrow complains about.
+Morrow complains vociferously about &ldquo;gender&rdquo; being a free-form text field - and yet Metafilter, not a small site by anyone&rsquo;s lights, has had that in place for years.
+<a href="http://stuff.metafilter.com/genders/genderfield.txt">Metafilter&rsquo;s gender data</a> is instructive, too.
+By far the majority of users there simply don&rsquo;t give a shit about the things Morrow complains about.
 They leave the field blank and go on their way.
 On the other side of the scale, here we find underemployed aliens.
-People have claimed as their gender “xx,” “xy,” and “xml.”
-People have claimed “m,” “f,” and “varies with proximity to scotland.”
+People have claimed as their gender &ldquo;xx,&rdquo; &ldquo;xy,&rdquo; and &ldquo;xml.&rdquo;
+People have claimed &ldquo;m,&rdquo; &ldquo;f,&rdquo; and &ldquo;varies with proximity to scotland.&rdquo;
 There are plenty of aliens here - and Morrow wants to throw them out.</p>
 
 <p>Here is someone with the right idea:
-Patrick McKenzie’s <a href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">“Falsehoods Programmers Believe About Names.”</a>
+Patrick McKenzie&rsquo;s <a href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">&ldquo;Falsehoods Programmers Believe About Names.&rdquo;</a>
 The human experience is massively diverse and, lucky you, you get to deal with it.
-When you’re a system or administrator or a developer, dealing with that diversity is an essential component of a job well done.
+When you&rsquo;re a system or administrator or a developer, dealing with that diversity is an essential component of a job well done.
 Especially as a developer, where your job is to make abstractions.
-Abstractions and aggregations and arrays are good - but you shouldn’t let them blind you to the fact that humans are not abstract.
-The abstractions that we developers describe humans with are convenient, but <a href="http://blog.jgc.org/2010/06/your-last-name-contains-invalid.html">they’re not free</a>.
+Abstractions and aggregations and arrays are good - but you shouldn&rsquo;t let them blind you to the fact that humans are not abstract.
+The abstractions that we developers describe humans with are convenient, but <a href="http://blog.jgc.org/2010/06/your-last-name-contains-invalid.html">they&rsquo;re not free</a>.
 The price is a reduced precision of representing the human experience.</p>
 
-<p>Embrace the diversity of the human experience - especially when you’re programming something that you want humans in general to use.
-The aliens are out there, and there is no good excuse for your program to break just because they’re aliens.</p>
+<p>Embrace the diversity of the human experience - especially when you&rsquo;re programming something that you want humans in general to use.
+The aliens are out there, and there is no good excuse for your program to break just because they&rsquo;re aliens.</p>
 </div>
   
   
@@ -872,18 +874,18 @@ The aliens are out there, and there is no good excuse for your program to break 
   </header>
 
 
-  <div class="entry-content"><p>So there’s <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2010/08/29/BUGI1F4F9K.DTL">even more noise</a> about suing Craigslist,
-and I wish I could grab the attorneys general of 18 states by one giant pair of pinstriped lapels and shout “You are making this problem <strong>WORSE</strong>, you buncha maroons!”
-There’s still some space to write about this after <a href="http://stronglyemergent.com/blog/2010/the-many-forms-of-not-getting-it/">last time</a>, and I’m gonna go ahead and fill that space.</p>
+  <div class="entry-content"><p>So there&rsquo;s <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2010/08/29/BUGI1F4F9K.DTL">even more noise</a> about suing Craigslist,
+and I wish I could grab the attorneys general of 18 states by one giant pair of pinstriped lapels and shout &ldquo;You are making this problem <strong>WORSE</strong>, you buncha maroons!&rdquo;
+There&rsquo;s still some space to write about this after <a href="http://stronglyemergent.com/blog/2010/the-many-forms-of-not-getting-it/">last time</a>, and I&rsquo;m gonna go ahead and fill that space.</p>
 
 <p>The problem here is a toxic incentive structure, just like <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">the reason the TSA reduces security</a>.
-The various political folk who are inveighing against Craigslist have no idea what they’re talking about and are going to make Craigslist less useful for everyone and cost their taxpayers a lot of money in the process - and yet, for them personally, there is no downside to attacking Craigslist.
-Attacking Craigslist makes them look “tough on crime,” look like vigorous, active advocates of the public good, and look like paragons of conventional morality.</p>
+The various political folk who are inveighing against Craigslist have no idea what they&rsquo;re talking about and are going to make Craigslist less useful for everyone and cost their taxpayers a lot of money in the process - and yet, for them personally, there is no downside to attacking Craigslist.
+Attacking Craigslist makes them look &ldquo;tough on crime,&rdquo; look like vigorous, active advocates of the public good, and look like paragons of conventional morality.</p>
 
 <p>The most effective things you can do to increase airline security and reduce sex trafficking are the most boring ones, and the current structure of incentives all but guarantees that those measures will not be taken, and instead countermeasures will be taken that will make the problem worse.
 This underscores again the importance of narrative.
-Software providers and other technical people are in danger because of these toxic incentives - people who don’t know how your business works could have an incentive to mess with you, and are quite likely to be immune to consequences in the practical sense.
-This is why we developers and sysadmins need to be aware of the social, political, and cultural context of our professional actions - the less aware we are, the more likely that we’ll find ourselves out of a job, at the helm of a foundering company, or forced to implement asinine requirements because of forces beyond our control.</p>
+Software providers and other technical people are in danger because of these toxic incentives - people who don&rsquo;t know how your business works could have an incentive to mess with you, and are quite likely to be immune to consequences in the practical sense.
+This is why we developers and sysadmins need to be aware of the social, political, and cultural context of our professional actions - the less aware we are, the more likely that we&rsquo;ll find ourselves out of a job, at the helm of a foundering company, or forced to implement asinine requirements because of forces beyond our control.</p>
 </div>
   
   
@@ -920,55 +922,55 @@ This is why we developers and sysadmins need to be aware of the social, politica
 
 
   <div class="entry-content"><p>I have a few idea-bubbles that are always hanging around my head like the Moon around the Earth, and one of them is this: <em>everything is a trade-off</em>.
-Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you’re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
+Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you&rsquo;re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
 A few days after I wrote about that, Joel Spolsky <a href="http://www.joelonsoftware.com/items/2010/08/19.html">posted his talk from Business of Software 2009</a>.
-He’s a great coder, a great writer, and a smokin’ public speaker, you should watch it.</p>
+He&rsquo;s a great coder, a great writer, and a smokin' public speaker, you should watch it.</p>
 
 <p>I think that Mr. Spolsky oversimplifies in one aspect of his talk.
-So I’m going to jump off from there:
+So I&rsquo;m going to jump off from there:
 he says that thinking that you must choose between simplicity and power on a one-dimensional axis is a trap and that you have to construct something else to usefully think about what features software should have.
 So he talks about elegance and about good features and bad features.
-I’m going to say it a slightly different way.
+I&rsquo;m going to say it a slightly different way.
 I just say that you do have to choose between simplicity and power - but it is possible to make good choices and bad choices.
 Not every choice gives up 1 Simplon of simplicity for 1 Pill of power.
 There are a lot of choices you can make that trade 2 Simplons for 4 Pills, or sometimes 1 Pill for 87 Simplons.
-You’d much rather make those than 1:1 trades, and you should spend a lot of time avoiding trades where you give up 1 Simplon and gain 0.005 Pills.</p>
+You&rsquo;d much rather make those than 1:1 trades, and you should spend a lot of time avoiding trades where you give up 1 Simplon and gain 0.005 Pills.</p>
 
 <p><img src="/images/tradeoff-curves.png" alt="two plotted curves, one strictly linear and the other with a constant distance from the origin of the graph." /></p>
 
-<p>Too often, we act like the curve on the right is what we’re stuck with - the best we can do is those 1:1 trades.
+<p>Too often, we act like the curve on the right is what we&rsquo;re stuck with - the best we can do is those 1:1 trades.
 It should be obvious, though, that we can do better.
 The problem is that to do better, generally we need to make those hard decisions.
-Achieving trade-offs that are better than 1:1 is hard, and it’s easy to construct (purposefully or not) incentive structures that absolutely destroy the chances of making good trade-offs.
-My favorite example of this is in airline security - we’re trading security and convenience instead of simplicity and power, but the two problems map onto one another extremely well.
-The Transportation Security Administration is living proof that 1:1 tradeoffs aren’t the only kind - they demonstrate, every day, that you can make <em>far</em> worse trade-offs.
-They’re the <a href="http://www.schneier.com/blog/archives/2009/06/fixing_airport.html">pathologically bad case</a>, where you make so many trade-offs that are so bad that you with up far less security and far less convenience.</p>
+Achieving trade-offs that are better than 1:1 is hard, and it&rsquo;s easy to construct (purposefully or not) incentive structures that absolutely destroy the chances of making good trade-offs.
+My favorite example of this is in airline security - we&rsquo;re trading security and convenience instead of simplicity and power, but the two problems map onto one another extremely well.
+The Transportation Security Administration is living proof that 1:1 tradeoffs aren&rsquo;t the only kind - they demonstrate, every day, that you can make <em>far</em> worse trade-offs.
+They&rsquo;re the <a href="http://www.schneier.com/blog/archives/2009/06/fixing_airport.html">pathologically bad case</a>, where you make so many trade-offs that are so bad that you with up far less security and far less convenience.</p>
 
 <p>But why is that?
-It’s not because the TSA is filled with evil moustache-twirling types who want travellers to be inconvenienced.
+It&rsquo;s not because the TSA is filled with evil moustache-twirling types who want travellers to be inconvenienced.
 I believe that the TSA is full of perfectly average humans who act according to their incentives, overseen and directed by perfectly average humans (who happen to be politicians) acting according to <em>their</em> incentives.
-Those incentives produce the pathology, because they’re not “produce better security” incentives, they’re <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">“avoid punishment”</a> incentives.
-There are few rewards for actually improving security, and tremendous punishments for <em>letting people think security has been degraded</em> — and because we laypeople assess security pretty badly, a perverse cycle of incentives produces pretty bad security.</p>
+Those incentives produce the pathology, because they&rsquo;re not &ldquo;produce better security&rdquo; incentives, they&rsquo;re <a href="http://www.schneier.com/blog/archives/2007/02/cya_security_1.html">&ldquo;avoid punishment&rdquo;</a> incentives.
+There are few rewards for actually improving security, and tremendous punishments for <em>letting people think security has been degraded</em> &mdash; and because we laypeople assess security pretty badly, a perverse cycle of incentives produces pretty bad security.</p>
 
 <p>This maps directly onto producing software and wrangling production servers:
 even though it is harder, we need to seek out those better trade-offs, and that means both difficult work and setting up good incentive systems.
 That also means that the managerial professions need to be very careful about the incentive structures that they set up - the intent of an incentive structure is almost never the only outcome that that structure can produce.
-When you’re creating systems, if you refuse to take responsibility for better trade-offs, bad ones will creep in.
+When you&rsquo;re creating systems, if you refuse to take responsibility for better trade-offs, bad ones will creep in.
 One of my favorite examples in software is stealing focus - when the window that you thought you were working in gets shoved behind something else that decides that it needs your attention.
-Stealing focus is, I’m convinced, the sort of sin that means you should never be allowed to touch a compiler again, and furthermore you should probably lose your right pinky, the one that you tap Enter with.
-Every time I’ve seen a window stealing focus, it’s been at the intersection of the worst programmer habits - hubris in thinking that your program, right now, needs to be the most important thing in my computing world, and bad laziness in that the program is always asking me to make some decision that I don’t actually need to make right now.
+Stealing focus is, I&rsquo;m convinced, the sort of sin that means you should never be allowed to touch a compiler again, and furthermore you should probably lose your right pinky, the one that you tap Enter with.
+Every time I&rsquo;ve seen a window stealing focus, it&rsquo;s been at the intersection of the worst programmer habits - hubris in thinking that your program, right now, needs to be the most important thing in my computing world, and bad laziness in that the program is always asking me to make some decision that I don&rsquo;t actually need to make right now.
 Of course, the existence of this capability also means that it can be used for malicious purposes in a nasty trifecta of bad UX.
 Far better to use alternate notification methods
 (the <a href="http://blogs.msdn.com/b/oldnewthing/archive/2003/09/10/54831.aspx">Notification Area <em>nee</em> system tray</a> in Windows, and bouncing Dock icons or Growl messages in OS X)
 to convey such information.</p>
 
-<p>Like the security/convenience example, this doesn’t happen because we programmers are finger-steepling connivers of inconvenience.
+<p>Like the security/convenience example, this doesn&rsquo;t happen because we programmers are finger-steepling connivers of inconvenience.
 Rather, it happens because too often  our incentive structure is disconnected from what actually happens to users of our software.
 This is part of why startups are a good thing to have in the world:
 by necessity, a startup deals much more closely with its customers, and developers routinely talk to people who actually use the software.</p>
 
 <p>So the challenge to us is to recognize good trade-offs, and work to make those trade-offs instead of 1:1 or sub-par tradeoffs.
-This involves making difficult decisions for your users - and it involves respecting that they’re busy making their own difficult decisions, and getting out of their way.</p>
+This involves making difficult decisions for your users - and it involves respecting that they&rsquo;re busy making their own difficult decisions, and getting out of their way.</p>
 </div>
   
   
@@ -1005,14 +1007,14 @@ This involves making difficult decisions for your users - and it involves respec
 
 
   <div class="entry-content"><p>First there was <a href="http://thechive.com/2010/08/10/girl-quits-her-job-on-dry-erase-board-emails-entire-office-33-photos/">the big show</a>, and then <a href="http://techcrunch.com/2010/08/11/elyse-porterfield/">Toto pulled the curtain back</a> and <a href="http://techcrunch.com/2010/08/14/internet-must-be-true/">revealed the Wizard</a>.
-I love the arc of this story - it’s such a great demonstration of how much narrative matters.
-The “Jenny” story had great, great narrative power.
+I love the arc of this story - it&rsquo;s such a great demonstration of how much narrative matters.
+The &ldquo;Jenny&rdquo; story had great, great narrative power.
 It was entertaining, easy to believe, and easy to understand.
 The storytellers got millions of pageviews off of it, and earned them.</p>
 
-<p>Unfortunately, that’s also millions of demonstrations that the weakest part of computer security is humans, not computers or anything in them.
+<p>Unfortunately, that&rsquo;s also millions of demonstrations that the weakest part of computer security is humans, not computers or anything in them.
 We <em>want to believe</em>, we look for excuses to believe good narratives, and we usually find them.
-Because of how we behave when someone hands us a beautiful narrative like that, the storytellers behind “Jenny” earned quite a bit of money - and because of the same things, scammers continue to exploit us.</p>
+Because of how we behave when someone hands us a beautiful narrative like that, the storytellers behind &ldquo;Jenny&rdquo; earned quite a bit of money - and because of the same things, scammers continue to exploit us.</p>
 
 <p>We all need to sharpen our narrative skills, because if we just go right along with narratives that seem appealing, we will be exploited by people who can craft enjoyably fraudulent narratives.
 More importantly, developers and sysadmins need narrative skills - we have to tell our users a story, and it has to be a compelling story.</p>

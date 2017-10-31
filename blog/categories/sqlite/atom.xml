@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sqlite | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/sqlite/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:29:01-07:00</updated>
+  <updated>2017-10-30T20:31:59-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -21,114 +21,114 @@
     <content type="html"><![CDATA[<p>(<em>for just the code promised by the title, see <a href="https://gist.github.com/brighid/42ed997016973e16bd04df22bfd638f7">this GitHub gist</a>.</em>)</p>
 
 <p>Making software is more work than just sitting down and writing code.
-For the code you’ve written to matter, you have to make it available to others.
-Like prose or visual art, there is no “done” with software projects: there is only Good Enough.
+For the code you&rsquo;ve written to matter, you have to make it available to others.
+Like prose or visual art, there is no &ldquo;done&rdquo; with software projects: there is only Good Enough.
 Unlike prose or visual art, a software project can raise its standard of Good Enough over time by releasing new versions of the code with bug-fixes and new features.
-This is where the “make it available to others” part starts being very difficult.
-Active projects, by releasing new versions, always end up in a state of heterogeneity where not all of the project’s users are using the same version of the project.
+This is where the &ldquo;make it available to others&rdquo; part starts being very difficult.
+Active projects, by releasing new versions, always end up in a state of heterogeneity where not all of the project&rsquo;s users are using the same version of the project.
 When active projects are incorporated into larger projects, it exacerbates the problem.
-It’s very common for active projects to advance very far as a standalone project, but to lag very far behind that advancement as part of a larger project.
+It&rsquo;s very common for active projects to advance very far as a standalone project, but to lag very far behind that advancement as part of a larger project.
 Sometimes this is very difficult for users.
-But it is not any one person’s fault: it is, overwhelmingly, the emergent result of how projects interact with each other.
-Today I’m going to show how this process leads to the preëminent database/ORM library in the Python world, <a href="http://www.sqlalchemy.org/">SQLAlchemy</a>, being unable to take advantage of a nearly decade-old feature of <a href="https://www.sqlite.org/">SQLite</a>, a widely-used database.</p>
+But it is not any one person&rsquo;s fault: it is, overwhelmingly, the emergent result of how projects interact with each other.
+Today I&rsquo;m going to show how this process leads to the preëminent database/ORM library in the Python world, <a href="http://www.sqlalchemy.org/">SQLAlchemy</a>, being unable to take advantage of a nearly decade-old feature of <a href="https://www.sqlite.org/">SQLite</a>, a widely-used database.</p>
 
-<p>Let’s start with SQLite.
+<p>Let&rsquo;s start with SQLite.
 Like most database systems, SQLite lets you provide connection flags (extra information) when you connect to a database.
 By sending connection flags (e.g. <code>SQLITE_OPEN_READONLY</code> or <code>SQLITE_OPEN_CREATE</code>) you can have the database itself enforce restrictions on your interactions with it.
 Being able to send connection flags is very helpful for programmers.
-Having the database enforce the restrictions that the connection flags signify means you don’t need to write your own enforcement code.
+Having the database enforce the restrictions that the connection flags signify means you don&rsquo;t need to write your own enforcement code.
 It also eliminates the chance of making mistakes while writing enforcement code.
 You gain productivity because the time that writing and checking enforcement code would take, you can instead spend on writing other code.</p>
 
 <p>SQLite added connection flags in version 3.5.0 (Fall 2007).
 However, SQLite is a C project, not a Python project.
-The connection flags are concepts that exist in SQLite’s C code.
-For them to exist in other languages, those languages (or their ecosystems) must provide a way of interacting with SQLite that permits specifying “please send the following connection flags when you connect to the SQLite database.”</p>
+The connection flags are concepts that exist in SQLite&rsquo;s C code.
+For them to exist in other languages, those languages (or their ecosystems) must provide a way of interacting with SQLite that permits specifying &ldquo;please send the following connection flags when you connect to the SQLite database.&rdquo;</p>
 
 <p>Plenty of other languages already had tools for interacting with SQLite in 2007, based on a function named <code>sqlite3_open()</code>.
-Because there was already plenty of software using <code>sqlite3_open()</code> and relying on its existing behavior (SQLite’s first public release was Spring 2000), SQLite 3.5.0 also introduced a new function, <code>sqlite3_open_v2()</code>, that understood connection flags.
+Because there was already plenty of software using <code>sqlite3_open()</code> and relying on its existing behavior (SQLite&rsquo;s first public release was Spring 2000), SQLite 3.5.0 also introduced a new function, <code>sqlite3_open_v2()</code>, that understood connection flags.
 This allowed users to keep using <code>sqlite3_open()</code> until they were ready to change their code to use <code>sqlite3_open_v2()</code>.
-Once they began using the new function, they’d be able to use the new features.
-In <a href="https://www.sqlite.org/releaselog/3_7_7.html">version 3.7.7</a> (Summer 2011), SQLite made it easier still to use the new features by teaching both the old and new versions of <code>sqlite3_open()</code> to, with a little coaxing, understand <code>file://</code> URLs<sup id="fnref:uri"><a href="#fn:uri" class="footnote">1</a></sup> as well as file paths.
+Once they began using the new function, they&rsquo;d be able to use the new features.
+In <a href="https://www.sqlite.org/releaselog/3_7_7.html">version 3.7.7</a> (Summer 2011), SQLite made it easier still to use the new features by teaching both the old and new versions of <code>sqlite3_open()</code> to, with a little coaxing, understand <code>file://</code> URLs<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> as well as file paths.
 File paths are specific to a particular operating system or family of them, but <code>file://</code> URLs are OS-independent.
 This made life slightly easier in general, but using <code>file://</code> URLs had a more important benefit as well.
 Using them made it much easier to send connection flags, because SQLite permitted users to put connection flags in the <code>file://</code> URL.
 Effectively, both versions of <code>sqlite3_open()</code> could now understand connection flags.
 SQLite also added some <a href="https://www.sqlite.org/c3ref/open.html#urifilenamesinsqlite3open">connection flags that could <em>only</em> be used by embedding them in a <code>file://</code> URL</a>.</p>
 
-<p>If you were writing Python instead of C, though, you couldn’t count on having access to SQLite’s improvements.
-Python’s support for SQLite comes from periodically incorporating code from the independent <code>pysqlite</code> project.
-The <code>sqlite3</code> module in Python’s standard library (introduced with Python 2.5’s release, Fall 2006) is a lightly modified version of <code>pysqlite</code>.
+<p>If you were writing Python instead of C, though, you couldn&rsquo;t count on having access to SQLite&rsquo;s improvements.
+Python&rsquo;s support for SQLite comes from periodically incorporating code from the independent <code>pysqlite</code> project.
+The <code>sqlite3</code> module in Python&rsquo;s standard library (introduced with Python 2.5&rsquo;s release, Fall 2006) is a lightly modified version of <code>pysqlite</code>.
 Python 2.7 (Summer 2010) <a href="https://github.com/python/cpython/commit/b53996dead8c6a602d3f4f6c73bdd4573d0e49sef">contained version 2.6.0 of <code>pysqlite</code></a> (Spring 2010).
 This version remains the core of <code>sqlite3</code> as of Python 2.7.11 (Winter 2015) and Python 3.5.2 (Summer 2016).
-There does not yet exist a version of Python where the following code works<sup id="fnref:sqlite3-conn-err"><a href="#fn:sqlite3-conn-err" class="footnote">2</a></sup>:</p>
+There does not yet exist a version of Python where the following code works<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>:</p>
 
 <pre><code>import sqlite3
 sqlite3.connect("file:///path/to/my/database.db")
 </code></pre>
 
-<p>There <em>are</em> workarounds, but they show how challenging it can be to get new versions of software projects into users’ hands.
+<p>There <em>are</em> workarounds, but they show how challenging it can be to get new versions of software projects into users' hands.
 Fundamentally, the Python code above fails because SQLite, in the process of teaching the <code>sqlite3_open()</code> functions to understand <code>file://</code> URLs, chose to make the new feature opt-in (similar to how they distinguished between <code>sqlite3_open()</code> and <code>sqlite_v2_open</code>).
 There are three times when you can opt into having SQLite understand <code>file://</code> URIs: during its compilation, when it launches, and when you call it.
 The <code>sqlite3</code> module, in its <code>pysqlite</code> version 2.6.0 incarnation, avails itself of none of them.
-It also provides no way for users to opt in.<sup id="fnref:opt-in"><a href="#fn:opt-in" class="footnote">3</a></sup>
-As an independent project, <code>pysqlite</code> released version 2.8.2 (Spring 2015), which <a href="https://github.com/ghaering/pysqlite/commit/46d999e5302fb58d9636759ff36e0875c0c1eeb2">added a way for users to send any connection flags</a> SQLite understands.<sup id="fnref:switch-sqlite-open"><a href="#fn:switch-sqlite-open" class="footnote">4</a></sup>
+It also provides no way for users to opt in.<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>
+As an independent project, <code>pysqlite</code> released version 2.8.2 (Spring 2015), which <a href="https://github.com/ghaering/pysqlite/commit/46d999e5302fb58d9636759ff36e0875c0c1eeb2">added a way for users to send any connection flags</a> SQLite understands.<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>
 This version is not part of Python, however, and is only available for use as a standalone module when using 2.x versions of Python.
 Early versions of Python 3 were also stuck with the no-URIs behavior.
-Python 3.4 (Spring 2014) introduced a way to tell <code>sqlite3.connect()</code> that it should treat its input as a URL.<sup id="fnref:switch-sqlite-open-2"><a href="#fn:switch-sqlite-open-2" class="footnote">5</a></sup>
-Unlike <code>pysqlite</code>’s improved version, the Python 3.4 change didn’t add a general way to send flags (though it did open up the “send flags as part of a <code>file://</code> URL” path).
+Python 3.4 (Spring 2014) introduced a way to tell <code>sqlite3.connect()</code> that it should treat its input as a URL.<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>
+Unlike <code>pysqlite</code>&rsquo;s improved version, the Python 3.4 change didn&rsquo;t add a general way to send flags (though it did open up the &ldquo;send flags as part of a <code>file://</code> URL&rdquo; path).
 Still, by mid-2015, if you were using <code>sqlite3</code>, you had a fairly good chance of being able to use connection flags.</p>
 
-<p>There are a lot of people using SQLite who <em>aren’t</em> using <code>sqlite3</code>, though, at least not directly.
+<p>There are a lot of people using SQLite who <em>aren&rsquo;t</em> using <code>sqlite3</code>, though, at least not directly.
 Because of how easy it is to create bugs, some of which will be disastrous security holes, and because of how tedious it can be to write raw SQL queries, the overwhelming (and correct) consensus of the Python community is that you should use SQLAlchemy to interact with your database.
-SQLAlchemy also connects to databases via URLs, but given that its decision to use URLs predates SQLite’s by years (<a href="https://github.com/zzzeek/sqlalchemy/commit/0f42441edd8269308ec1b3c9936759a289dee826">SQLAlchemy version 0.1.0</a>, Winter 2005-06), it should be unsurprising that the two usages clash.
+SQLAlchemy also connects to databases via URLs, but given that its decision to use URLs predates SQLite&rsquo;s by years (<a href="https://github.com/zzzeek/sqlalchemy/commit/0f42441edd8269308ec1b3c9936759a289dee826">SQLAlchemy version 0.1.0</a>, Winter 2005-06), it should be unsurprising that the two usages clash.
 SQLAlchemy wants users to identify databases by URLs with the database name as the schema.
 So the database in our example above would be <code>sqlite:///path/to/my/database.db</code>.
-SQLAlchemy’s database-URL schemas can have extra information (query parameters) in them, like SQLite’s <code>file://</code> URLs, which tell it how to connect to the database.
-The connection isn’t done by SQLAlchemy, though, it’s done by an external library.
+SQLAlchemy&rsquo;s database-URL schemas can have extra information (query parameters) in them, like SQLite&rsquo;s <code>file://</code> URLs, which tell it how to connect to the database.
+The connection isn&rsquo;t done by SQLAlchemy, though, it&rsquo;s done by an external library.
 SQLAlchemy is a layer on top of modules like <code>sqlite3</code> that understand how to directly interact with databases.
 Under the hood, SQLAlchemy extracts a file path from the database URL and hands that file path to the underlying database module.
 This structure, though, eliminates the possibility of asking SQLite to open a <code>file://</code> URI!
 It can only send file paths to SQLite, and so the extra capabilities that SQLite activates when it sees the right prompts in a <code>file://</code> URL cannot be activated through SQLite.
-SQLAlchemy does try to pass on extra arguments that it finds in the database URL, but it passes those on to underlying database modules like frozen-in-amber-since-2010 <code>sqlite3</code>.<sup id="fnref:sqla-connargs"><a href="#fn:sqla-connargs" class="footnote">6</a></sup>
-Such extra arguments change the details of <code>sqlite3</code>’s behavior, but do not change the way it tries to connect to SQLite.
+SQLAlchemy does try to pass on extra arguments that it finds in the database URL, but it passes those on to underlying database modules like frozen-in-amber-since-2010 <code>sqlite3</code>.<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup>
+Such extra arguments change the details of <code>sqlite3</code>&rsquo;s behavior, but do not change the way it tries to connect to SQLite.
 On older Python versions, <code>pysqlite</code> 2.8.2 or later can be substituted for the built-in <code>sqlite3</code>, but because <code>pysqlite</code> is not available on modern Python versions, this is not a satisfactory solution.</p>
 
-<p>We are in a situation, nearly 10 years after SQLite introduced its connection flags and <code>file://</code> URLs, where taking advantage of those features from Python code is impossible to accomplish with the tools provided by the latest version of Python’s best database library, running on the latest version of Python itself.
-It’s important to note that none of this is malfeasance or incompetence on the part of library or language maintainers.
+<p>We are in a situation, nearly 10 years after SQLite introduced its connection flags and <code>file://</code> URLs, where taking advantage of those features from Python code is impossible to accomplish with the tools provided by the latest version of Python&rsquo;s best database library, running on the latest version of Python itself.
+It&rsquo;s important to note that none of this is malfeasance or incompetence on the part of library or language maintainers.
 Projects like the Python language, SQLAlchemy, and SQLite, prize stability very, very highly.
 They are <em>infrastructure</em> projects: they want to build durably and to provide durable materials for others to build atop, and they are not wrong in how often they value this above convenience.
 The power of defaults is very important here, too: although many OSes ship with Python and/or SQLite built in, those projects in turn have their own release cycles and their own stability concerns.
-The first version of <a href="http://robservatory.com/behind-os-xs-modern-face-lies-an-aging-collection-of-unix-tools/">OS X that shipped with a SQLite version</a> able to understand <code>file://</code> URIs was summer 2012’s OS X 10.8 “Mountain Lion” (Summer 2012).
-Debian-stable didn’t ship with such a SQLite until midway through <code>wheezy</code>’s patch sequence (2014).
+The first version of <a href="http://robservatory.com/behind-os-xs-modern-face-lies-an-aging-collection-of-unix-tools/">OS X that shipped with a SQLite version</a> able to understand <code>file://</code> URIs was summer 2012&rsquo;s OS X 10.8 &ldquo;Mountain Lion&rdquo; (Summer 2012).
+Debian-stable didn&rsquo;t ship with such a SQLite until midway through <code>wheezy</code>&rsquo;s patch sequence (2014).
 Ubuntu picked it up faster, incorporating SQLite 3.7.7 in their Oneiric Ocelot release (Fall 2011).
 All of these infrastructure projects, reasonably enough, tend to defer building support for any particular thing until they are sure that their users <em>can</em> and <em>want to</em> use it.
 Frustratingly, they can unintentionally enable each other in delaying support.
-But there is no archfiend actively obstructing the uptake of new versions, just a collection of overworked engineers trying to build things that won’t fall apart too easily.</p>
+But there is no archfiend actively obstructing the uptake of new versions, just a collection of overworked engineers trying to build things that won&rsquo;t fall apart too easily.</p>
 
 <p>Fortunately, individual programmers writing brand-new projects have no old versions to be bound to.
 We can, by investing a little work, make different decisions about stability than project maintainers.
-This brings us around to the promise in this post’s title.
+This brings us around to the promise in this post&rsquo;s title.
 Python, <code>sqlite3</code>, and SQLAlchemy were all written by clever people with an interest in flexibility.
-The tools that they’re eager to give us, the defaults, are not the only tools they can give us: there are others.
-Let’s use those others.</p>
+The tools that they&rsquo;re eager to give us, the defaults, are not the only tools they can give us: there are others.
+Let&rsquo;s use those others.</p>
 
 <p>The code below follows a fairly straightforward strategy.
 Given a file path and some arguments to pass to SQLite, it begins with some basic plausibility checks.
-It ignores the arguments and uses only the path if the caller has an ancient version of SQLite or wants SQLite’s <code>:memory:</code> database.
+It ignores the arguments and uses only the path if the caller has an ancient version of SQLite or wants SQLite&rsquo;s <code>:memory:</code> database.
 Otherwise, it turns the file path and the arguments into a <code>file://</code> URL, then tries to connect to that URL.
 First it tries in the way that Python 3.4+ allows, with a <code>uri=True</code> parameter.
-If trying to connect that way is met with “I know no such parameter as <code>uri</code>”, we know we’re on an earlier version of Python.
+If trying to connect that way is met with &ldquo;I know no such parameter as <code>uri</code>&rdquo;, we know we&rsquo;re on an earlier version of Python.
 But since we know that SQLite and <code>sqlite3</code> are available, we use <code>ctypes</code> to reach into the Python/C communication channel that the <code>sqlite3</code> library has already set up.
-We prod the variable in C code that tells SQLite we’re opting into our input being treated as a URL, then connect again with our URL.
+We prod the variable in C code that tells SQLite we&rsquo;re opting into our input being treated as a URL, then connect again with our URL.
 Finally, we create a SQLAlchemy engine.
-We tell it that we’re connecting to an empty URL<sup id="fnref:sqlite-empty-url"><a href="#fn:sqlite-empty-url" class="footnote">7</a></sup>, but we also tell it “when you go to connect to that URL, use this object we’re handing you in order to establish that connection.”
-The object we hand it is the SQLite connection we just established, which SQLAlchemy doesn’t know how to create by itself.</p>
+We tell it that we&rsquo;re connecting to an empty URL<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>, but we also tell it &ldquo;when you go to connect to that URL, use this object we&rsquo;re handing you in order to establish that connection.&rdquo;
+The object we hand it is the SQLite connection we just established, which SQLAlchemy doesn&rsquo;t know how to create by itself.</p>
 
-<p>This strategy has some limitations: it definitely won’t work as-is on PyPy or Jython, and it’s superfluous if you know your project will run only on Python 3.4+.
+<p>This strategy has some limitations: it definitely won&rsquo;t work as-is on PyPy or Jython, and it&rsquo;s superfluous if you know your project will run only on Python 3.4+.
 However, if you want your project to run on multiple versions of Python and to have access to nice SQLite features on all of them, this function will, I hope, get you to that point.
 I should also note that I drew inspiration from <a href="https://github.com/pudo/dataset/issues/136">this GitHub issue</a> and <a href="https://gist.github.com/achimnol/3021995">this Gist</a>: the digging is all me, however, as is the unit test.
-I’m firmly of the opinion that if you tell someone you have code that can solve their problem, the code you provide should be tested.</p>
+I&rsquo;m firmly of the opinion that if you tell someone you have code that can solve their problem, the code you provide should be tested.</p>
 
 <p><noscript><pre>import os.path
 import re
@@ -229,30 +229,25 @@ def create_sqlite_engine(sqlite_path,
                                            creator=_sqlite_conn_creator)
 </pre></noscript><script src="https://gist.github.com/brighid/42ed997016973e16bd04df22bfd638f7.js"> </script></p>
 <div class="footnotes">
-  <ol>
-    <li id="fn:uri">
-      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:sqlite3-conn-err">
-      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:opt-in">
-      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:switch-sqlite-open">
-      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:switch-sqlite-open-2">
-      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:sqla-connargs">
-      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:sqlite-empty-url">
-      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
+<hr/>
+<ol>
+<li id="fn:1">
+<p>URIs, if you&rsquo;re picky.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Specifically, you&rsquo;ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>To be fair, Python <em>can&rsquo;t</em> (and <strong>shouldn&rsquo;t!</strong>) compile SQLite for you.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>.<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>.<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation.<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>Normally this gets you connected to the <code>:memory:</code> DB.<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+</ol>
 </div>
+
 ]]></content>
   </entry>
   
