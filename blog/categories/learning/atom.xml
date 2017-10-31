@@ -4,7 +4,7 @@
   <title><![CDATA[Category: learning | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/learning/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-08-11T14:07:18-07:00</updated>
+  <updated>2017-10-30T20:29:01-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[It Only Looks Easy]]></title>
     <link href="http://stronglyemergent.com//blog/2010/it-only-looks-easy/"/>
-    <updated>2010-12-07T23:01:34-08:00</updated>
+    <updated>2010-12-08T07:01:34+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/it-only-looks-easy</id>
     <content type="html"><![CDATA[<p>The Internal Revenue service has, as government agencies go, a pretty simple directive.
 Here is the tax code, which we can consider to be a big lump of business logic.
@@ -59,7 +59,7 @@ Fortunately for us hackers, that’s usually where the interesting problems are.
   <entry>
     <title type="html"><![CDATA[Don't Shelve It]]></title>
     <link href="http://stronglyemergent.com//blog/2010/dont-shelve-it/"/>
-    <updated>2010-08-03T23:01:19-07:00</updated>
+    <updated>2010-08-04T06:01:19+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/dont-shelve-it</id>
     <content type="html"><![CDATA[<p>Every time I read a Paul Graham essay, I find something new and relevant to my life as a coder and Computer Person.
 This time, it was in <a href="http://www.paulgraham.com/road.html">The Other Road Ahead</a>:</p>
@@ -95,7 +95,7 @@ So here’s to seeing our failures, and if not avoiding them, then learning from
   <entry>
     <title type="html"><![CDATA[Creating And Refining]]></title>
     <link href="http://stronglyemergent.com//blog/2010/creating-and-refining/"/>
-    <updated>2010-03-25T23:01:17-07:00</updated>
+    <updated>2010-03-26T06:01:17+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/creating-and-refining</id>
     <content type="html"><![CDATA[<p>One of my ongoing questions is whether I need to be more of a system administrator or more of a developer.
 The differences between them make for an interesting thought exercise - not the differences in activity, but the difference in the mental demands that the job makes.
@@ -129,7 +129,7 @@ So I take comfort in knowing that no matter which path I give more of my time to
   <entry>
     <title type="html"><![CDATA[Pitfalls of IT: This Job Would Be Great If It Weren't For The Customers]]></title>
     <link href="http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers/"/>
-    <updated>2010-03-23T23:01:12-07:00</updated>
+    <updated>2010-03-24T06:01:12+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/pitfalls-of-it-this-job-would-be-great-if-it-werent-for-the-customers</id>
     <content type="html"><![CDATA[<p>The trend that most worries me as I go through school isn’t technical: it’s social and cultural.
 That trend is contempt for the users.</p>
@@ -175,7 +175,7 @@ Creating and running an IT infrastructure is a vast <em>collaboration</em> with 
   <entry>
     <title type="html"><![CDATA[Sharpening My Saw: emacs]]></title>
     <link href="http://stronglyemergent.com//blog/2010/sharpening-my-saw-emacs/"/>
-    <updated>2010-03-11T22:01:13-08:00</updated>
+    <updated>2010-03-12T06:01:13+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/sharpening-my-saw-emacs</id>
     <content type="html"><![CDATA[<p>I recently re-read <a href="http://www.codinghorror.com/blog/2009/03/sharpening-the-saw.html">Jeff Atwood’s post about sharpening your saw</a>.
 It has me thinking about my personal work habits and my toolkit.

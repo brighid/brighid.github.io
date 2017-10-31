@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/php/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-08-11T14:07:18-07:00</updated>
+  <updated>2017-10-30T20:29:01-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -244,7 +244,7 @@ Now let’s work on the social part.</p>
   <entry>
     <title type="html"><![CDATA[WordPress-Magento Integration Error]]></title>
     <link href="http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error/"/>
-    <updated>2011-09-14T06:57:38-07:00</updated>
+    <updated>2011-09-14T13:57:38+00:00</updated>
     <id>http://stronglyemergent.com//blog/2011/wordpress-magento-integration-error</id>
     <content type="html"><![CDATA[<p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up with anything.
 I think it’s a bad thing when googling for the verbatim text of an error message produces nothing.</p>

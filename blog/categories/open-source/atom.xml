@@ -4,7 +4,7 @@
   <title><![CDATA[Category: open-source | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/open-source/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-08-11T14:07:18-07:00</updated>
+  <updated>2017-10-30T20:29:01-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Generating vCards In Python]]></title>
     <link href="http://stronglyemergent.com//blog/2011/generating-vcards-in-python/"/>
-    <updated>2011-05-02T08:21:10-07:00</updated>
+    <updated>2011-05-02T15:21:10+00:00</updated>
     <id>http://stronglyemergent.com//blog/2011/generating-vcards-in-python</id>
     <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.
 Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
@@ -226,7 +226,7 @@ After that, results come easily.</p>
   <entry>
     <title type="html"><![CDATA[I'll Build My Own Phone OS! With Blackjack! And Hookers!]]></title>
     <link href="http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/"/>
-    <updated>2010-08-15T23:01:41-07:00</updated>
+    <updated>2010-08-16T06:01:41+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers</id>
     <content type="html"><![CDATA[<p>System administration is about making hard decisions.</p>
 

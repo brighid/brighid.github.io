@@ -318,25 +318,25 @@ def create_sqlite_engine(sqlite_path,
 <div class="footnotes">
   <ol>
     <li id="fn:uri">
-      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
+      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:sqlite3-conn-err">
-      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
+      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:opt-in">
-      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
+      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:switch-sqlite-open">
-      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
+      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:switch-sqlite-open-2">
-      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
+      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:sqla-connargs">
-      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
+      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:sqlite-empty-url">
-      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
+      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -381,6 +381,8 @@ def create_sqlite_engine(sqlite_path,
         <a class="basic-alignment left" href="/blog/2013/an-innovative-business-model/" title="Previous Post: An Innovative Business Model">&laquo; An Innovative Business Model</a>
       
       
+        <a class="basic-alignment right" href="/blog/2017/homebrew-notmuch-missing-manpages/" title="Next Post: Debugging exercise: Homebrew, Notmuch, and the missing manpages">Debugging exercise: Homebrew, Notmuch, and the missing manpages &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -392,6 +394,10 @@ def create_sqlite_engine(sqlite_path,
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/homebrew-notmuch-missing-manpages/">Debugging exercise: Homebrew, Notmuch, and the missing manpages</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite/">How to make SQLAlchemy pass connection flags to a SQLite database via file:// URI query parameters</a>
@@ -407,10 +413,6 @@ def create_sqlite_engine(sqlite_path,
     
       <li class="post">
         <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
       </li>
     
   </ul>
@@ -457,7 +459,7 @@ def create_sqlite_engine(sqlite_path,
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Strongly Emergent Systems -
+  Copyright &copy; 2017 - Strongly Emergent Systems -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

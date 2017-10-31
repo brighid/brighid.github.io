@@ -9,8 +9,9 @@
   <meta name="author" content="Strongly Emergent Systems">
 
   
-  <meta name="description" content="Since I’m searching for a new job (check out my CV on Stack Overflow Careers!),
-I’ve been trying to gin up little personal projects and to extract &hellip;">
+  <meta name="description" content="Today’s JavaScript Rehab patient is the GardenWeb forum.
+I’m going to use a thread about cleaning grout as an example.
+At the time of writing, here’s &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +78,82 @@ I’ve been trying to gin up little personal projects and to extract &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"> <a href="/blog/2013/javascript-rehab-gardenweb/">JavaScript Rehab: GardenWeb</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T09:15:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today’s JavaScript Rehab patient is the GardenWeb forum.
+I’m going to use <a href="http://ths.gardenweb.com/forums/load/cleaning/msg1214005615506.html">a thread about cleaning grout</a> as an example.
+At the time of writing, here’s what it looks like:</p>
+
+<p><img class="center" src="/images/screenshot_gardenweb.png" title="&#34;A screenshot of a thread on the GardenWeb forum.&#34;" alt="&#34;A screenshot of a thread on the GardenWeb forum.&#34;" /></p>
+
+<p>My problem with this starts with their <code>&lt;noscript&gt;</code> block:
+it says “JavaScript must be enabled for the correct page display” and that’s a bad sign.
+It indicates that the people who wrote this code have grasped the wrong end of the stick.
+If your page does not display correctly without JavaScript, you have already failed.
+You might need to adjust your definition of “correctly”—
+for example, it’s difficult to define what it’s “correct” for Google Maps to do without JavaScript.
+But it’s not difficult for this site: it’s a dang discussion forum.
+Its purpose is to <em>display text.</em>
+This is something that the Web was able to do before JavaScript was even a twinkle in Brendan Eich’s eye.</p>
+
+<p>I end up saying this a lot in the JavaScript Rehab context:
+if you can’t <em>display text</em> without JavaScript, <strong>you are a bad person and you should feel bad;</strong>
+also your keyboard should be taken away.</p>
+
+<p>I won’t get too exercised over the clumsy prose of the message (<em>“for the correct page display”</em>? Ugh.):
+it just merits mentioning that if you’re going to run a forum, you should set a good example of prose and communication skills for your forum-dwellers.
+What I will say, is that the fact that the message is nearly unstyled, just a sentence that looks like it wandered in by accident, speaks poorly of the site owner’s attention to detail.
+A WHOIS query says that <code>gardenweb.com</code> has been registered since 1995, so it’s not like they just didn’t have time to get around to it
+(and judging by how often I see <code>cgi-bin</code> in their URLs, I’m betting that there’s a strong continuity between the 1995 version of the site and the 2013 version).</p>
+
+<p>What really gets me cranky, though, is that by and large the site <em>does</em> “the correct page display” without JavaScript enabled.
+What it <em>doesn’t</em> correctly display is advertising.
+In the screenshot above, a little poking at the page source reveals that the big blank space on the right is intended as space for advertising.
+So what the message at the top of the page is actually saying, is
+“we’re trying to BS you into enabling JavaScript because a page that gives you just the content that you actually want to see, is to us a broken page.”
+Fuck that.</p>
+
+<p>GardenWeb, you are JavaScript addicts.
+Go to rehab.</p>
+
+<p><br />
+<br /></p>
+
+<p>This post is part of an <a href="http://www.stronglyemergent.com/blog/categories/javascript-rehab/">ongoing series</a>—
+please read <a href="http://www.stronglyemergent.com/blog/2013/javascript-rehab-whose-convenience/">the first JavaScript Rehab post</a> to see why I get so cranky about JavaScript.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -636,7 +713,7 @@ Lucky me: I am getting better and better at producing that experience for myself
   
 
 
-<time datetime="2011-10-25T14:48:46-07:00" pubdate data-updated="true"></time>
+<time datetime="2011-10-25T21:48:46+00:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -823,82 +900,6 @@ That is what it means that the difference between Apple and everyone else, is de
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"> <a href="/blog/2011/wordpress-magento-integration-error/">WordPress-Magento Integration Error</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-14T06:57:38-07:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a quick pay-it-forward post to anyone else who was having the same problem, because when I searched Google for solutions, I didn’t come up with anything.
-I think it’s a bad thing when googling for the verbatim text of an error message produces nothing.</p>
-
-<p>So:
-you’re running a Magento site, and you’re using the <a href="http://fishpig.co.uk/wordpress-integration"> FishPig plugin to integrate WordPress</a> into your site.
-You might end up in a nasty situation where the integration settings page in Magento is telling you that
-“Your blog URL (site address) matches your install URL (WordPress address).
-Please change your blog route or move WordPress to a different sub-directory”
-and that that’s a problem.
-It is.
-Things will 404 as long as that’s true.
-However, <a href="http://fishpig.co.uk/wordpress-integration/choosing-the-right-integration-level/">the closest thing you’ll find to help</a> on the FishPig site is deeply obscure.</p>
-
-<p>[<img src="/images/mangeto-fishpig-error.jpg" alt="An error that can happen when trying to integrate Magento and WordPress" />]
-<em>The problem might look like this.</em></p>
-
-<p>The basic problem is one of terminology.
-WordPress is designed to play well with others, and to be highly configurable.
-So it cares about two URLs (URIs if you’re picky).
-It cares about
-“the file path that my PHP files live in on the server, relative to the root of whatever site I live in (e.g. in Apache, the DocumentRoot)”,
-and it cares about “the public URL that I will respond to.”
-In the database, these are ‘siteurl’ and ‘home’, respectively, in the wp_options table.
-It can be tricky to disentangle these two URLs, but for many WordPress installs, setting them both to the same URL is good enough and gets everything working.</p>
-
-<p>However, that’s not the case when you need to integrate a WordPress blog into Magento.
-For the FishPig plugin’s “fully integrated” level of operation—
-which is good stuff, the best way to run that plugin—
-the WordPress PHP files need to live in the same site as the Magento files
-(when using Apache, they need to both be in the tree that starts at the site’s DocumentRoot),
-and, contrary to the usual WordPress setup, the ‘siteurl’ and ‘home’ values <em>must not</em> be set to the same URL.
-This is where we run into problems.
-The WordPress control panel refers to the ‘siteurl’ value as the “WordPress address (URL)” and the ‘home’ value as “Site address (URL)”.
-The FishPig plugin’s error messages, as seen above, will tell you that they can’t be the same, and will tell you that the ‘home’/”Site address” value has to match the “blog route” variable” in Magento.
-However, you have to fill in the third part of the syllogism yourself, and remember to set the ‘siteurl’/”WordPress address” to the same value as the “WordPress path” variable in Magento.</p>
-
-<p>The final puzzle-piece is URL rewriting - most WordPress installs try to do a little .htaccess magic, and it can be tricky to keep it straight.
-If it’s not working correctly, you can end up in a state where the WordPress install, including admin pages, is completely inaccessible from the web and you’ve got to move down a layer and throw queries directly at the database to figure out what’s going on.</p>
-
-<p>I imagine that this is obvious if you know WordPress better than I do, and it probably seemed obvious to the FishPig folks.
-However, if you’re in the same position I was in, where the WordPress admin page has become inaccessible, and there are no changes you can make in the Magento admin page that can fix the problem, I hope that this helps you.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="3">&larr; Older</a>
@@ -916,6 +917,10 @@ However, if you’re in the same position I was in, where the WordPress admin pa
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/homebrew-notmuch-missing-manpages/">Debugging exercise: Homebrew, Notmuch, and the missing manpages</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/how-to-make-sqlalchemy-pass-connection-flags-to-sqlite/">How to make SQLAlchemy pass connection flags to a SQLite database via file:// URI query parameters</a>
       </li>
     
@@ -929,10 +934,6 @@ However, if you’re in the same position I was in, where the WordPress admin pa
     
       <li class="post">
         <a href="/blog/2013/negative-100-points/">Negative 100 Points</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/the-prisoner-of-zend-dot-php/">The Prisoner Of Zend.php</a>
       </li>
     
   </ul>
@@ -978,7 +979,7 @@ However, if you’re in the same position I was in, where the WordPress admin pa
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Strongly Emergent Systems -
+  Copyright &copy; 2017 - Strongly Emergent Systems -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

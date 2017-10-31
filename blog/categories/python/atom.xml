@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/python/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-08-11T14:07:18-07:00</updated>
+  <updated>2017-10-30T20:29:01-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -231,25 +231,25 @@ def create_sqlite_engine(sqlite_path,
 <div class="footnotes">
   <ol>
     <li id="fn:uri">
-      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
+      <p>URIs, if you’re picky. <a href="#fnref:uri" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:sqlite3-conn-err">
-      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
+      <p>Specifically, you’ll get a <code>sqlite3.OperationalError</code> that signifies a C-level <code>SQLITE_CANTOPEN</code> return code. <a href="#fnref:sqlite3-conn-err" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:opt-in">
-      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
+      <p>To be fair, Python <em>can’t</em> (and <strong>shouldn’t!</strong>) compile SQLite for you. <a href="#fnref:opt-in" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:switch-sqlite-open">
-      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
+      <p>Mostly by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:switch-sqlite-open-2">
-      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
+      <p>Also by switching from <code>sqlite3_open()</code> to <code>sqlite3_open_v2()</code>. <a href="#fnref:switch-sqlite-open-2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:sqla-connargs">
-      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
+      <p>See <code>sqlalchemy.dialects.pysqlite.SQLiteDialect_pysqlite.create_connect_args()</code> for the implementation. <a href="#fnref:sqla-connargs" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:sqlite-empty-url">
-      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
+      <p>Normally this gets you connected to the <code>:memory:</code> DB. <a href="#fnref:sqlite-empty-url" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -311,7 +311,7 @@ Meantime, if you’re reading this and you’re willing to take a chance on a bo
   <entry>
     <title type="html"><![CDATA[Generating vCards In Python]]></title>
     <link href="http://stronglyemergent.com//blog/2011/generating-vcards-in-python/"/>
-    <updated>2011-05-02T08:21:10-07:00</updated>
+    <updated>2011-05-02T15:21:10+00:00</updated>
     <id>http://stronglyemergent.com//blog/2011/generating-vcards-in-python</id>
     <content type="html"><![CDATA[<p>At work recently, I had to test an address book application.
 Part of the requirement for testing was that it handle large numbers of contacts gracefully - 100, 1000, 5000, or 10,000.
@@ -521,7 +521,7 @@ After that, results come easily.</p>
   <entry>
     <title type="html"><![CDATA[Pylons Field Scheduler: Planning]]></title>
     <link href="http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning/"/>
-    <updated>2010-03-14T23:01:10-07:00</updated>
+    <updated>2010-03-15T06:01:10+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/pylons-field-scheduler-planning</id>
     <content type="html"><![CDATA[<p>I’d been leaning on the digital version of <a href="http://pylonsbook.com">The Definitive Guide to Pylons</a>, but I was gifted <a href="http://www.amazon.com/gp/product/1590599349?ie=UTF8&amp;tag=stronemerg-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1590599349">the physical version</a> not too long ago.
 I’m jazzed about that: having another form for that data is going to be useful for me.
@@ -558,7 +558,7 @@ The journey is the important thing; and if I make it through the journey to get 
   <entry>
     <title type="html"><![CDATA[Summer of Python 2010]]></title>
     <link href="http://stronglyemergent.com//blog/2010/summer-of-python-2010/"/>
-    <updated>2010-03-10T14:54:13-08:00</updated>
+    <updated>2010-03-10T22:54:13+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/summer-of-python-2010</id>
     <content type="html"><![CDATA[<p>I’m watching the <a href="http://socghop.appspot.com/">2010 Google Summer of Code</a> page pretty closely.
 Ever since I found out that it existed, last year, I’ve wanted to go for it, and my progress with Python has picked up again recently.

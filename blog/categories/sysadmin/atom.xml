@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sysadmin | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/sysadmin/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2016-08-11T14:07:18-07:00</updated>
+  <updated>2017-10-30T20:29:01-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Joel on Making Choices]]></title>
     <link href="http://stronglyemergent.com//blog/2010/joel-on-making-choices/"/>
-    <updated>2010-08-29T23:01:44-07:00</updated>
+    <updated>2010-08-30T06:01:44+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/joel-on-making-choices</id>
     <content type="html"><![CDATA[<p>I have a few idea-bubbles that are always hanging around my head like the Moon around the Earth, and one of them is this: <em>everything is a trade-off</em>.
 Trade-offs are everywhere; the important ones are all hard in some way - congratulations, you’re a sysadmin or a developer, <a href="http://stronglyemergent.com/blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/">your job is to make hard decisions</a>.
@@ -74,7 +74,7 @@ This involves making difficult decisions for your users - and it involves respec
   <entry>
     <title type="html"><![CDATA[I'll Build My Own Phone OS! With Blackjack! And Hookers!]]></title>
     <link href="http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers/"/>
-    <updated>2010-08-15T23:01:41-07:00</updated>
+    <updated>2010-08-16T06:01:41+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/ill-build-my-own-phone-os-with-blackjack-and-hookers</id>
     <content type="html"><![CDATA[<p>System administration is about making hard decisions.</p>
 
@@ -154,7 +154,7 @@ Of course there will always be more and newer hard decisions - but that’s what
   <entry>
     <title type="html"><![CDATA[Creating And Refining]]></title>
     <link href="http://stronglyemergent.com//blog/2010/creating-and-refining/"/>
-    <updated>2010-03-25T23:01:17-07:00</updated>
+    <updated>2010-03-26T06:01:17+00:00</updated>
     <id>http://stronglyemergent.com//blog/2010/creating-and-refining</id>
     <content type="html"><![CDATA[<p>One of my ongoing questions is whether I need to be more of a system administrator or more of a developer.
 The differences between them make for an interesting thought exercise - not the differences in activity, but the difference in the mental demands that the job makes.
