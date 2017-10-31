@@ -255,9 +255,9 @@ It&rsquo;s only a few steps more to compile the manpages myself:
 <pre>
 cd ~/projects/notmuch
 PYTHON=$(which python3) ./configure \
-    &ndash;prefix=/usr/local/Cellar/notmuch/0.25.1 &ndash;with-emacs \
-    &ndash;emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \
-    &ndash;emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
+    --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \
+    --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \
+    --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
 make V=1 install-man
 brew unlink notmuch
 brew link notmuch</pre>
@@ -291,8 +291,8 @@ Homebrew <em>does</em> have an affordance, however, for turning off the <code>$P
 You can add <code>env :userpaths</code> to the formula or pass <code>--env=std</code> on the command line.
 Combining these two approaches gets us to something that approaches being a good workaround:
 <pre>
-export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite &ndash;user-site)
-brew install &ndash;env=std notmuch
+export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite --user-site)
+brew install --env=std notmuch
 export PYTHON=&lsquo;&rsquo; &amp;&amp; export PYTHONPATH=&lsquo;&rsquo;</pre>
 This isn&rsquo;t perfect, but it&rsquo;s got good reproducibility, so it&rsquo;s what I ended up doing.</li>
 </ul>
@@ -321,7 +321,7 @@ but it should work for as long as <code>notmuch</code> can be built with both Py
 <li id="fn:1">
 <p>Per the genre conventions of debugging posts, I&rsquo;m eliding almost all of the dead ends and unproductive attempts from this and instead writing about how I would have solved the problem if I were staring out the window on a pleasant foggy morning with a tasty cup of coffee beside me and a good night&rsquo;s sleep behind me.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
 <li id="fn:2">
-<p>There have already been plenty of posts about this, so I&rsquo;ll say this very quickly: you should almost never <code>sudo pip install</code> anything; the right way to install in almost all circumstances is <code>pip install &ndash;user</code>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<p>There have already been plenty of posts about this, so I&rsquo;ll say this very quickly: you should almost never <code>sudo pip install</code> anything; the right way to install in almost all circumstances is <code>pip install --user</code>.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
 <li id="fn:3">
 <p>It would still be findable if Sphinx had been installed as a system-level module. Notice a theme?<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
 </ol>
