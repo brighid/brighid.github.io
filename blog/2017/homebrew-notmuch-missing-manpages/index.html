@@ -252,16 +252,16 @@ I already established that in my regular environment,
 the configure script can find Sphinx just fine,
 and <code>brew install</code> prints out the invocation it uses.
 It&rsquo;s only a few steps more to compile the manpages myself:
-   <code>
-    cd ~/projects/notmuch
-    PYTHON=$(which python3) ./configure \\
-        --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
-        --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
-        --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
-    make V=1 install-man
-    brew unlink notmuch
-    brew link notmuch
-   </code>
+<code>
+cd ~/projects/notmuch
+PYTHON=$(which python3) ./configure \\
+    --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
+    --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
+    --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
+make V=1 install-man
+brew unlink notmuch
+brew link notmuch
+</code>
 This is pretty much all the way out the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; axes:
 it isn&rsquo;t very reproducible and it doesn&rsquo;t do anything about the underlying issue.</li>
 <li><strong>Interactive install</strong>:
@@ -291,11 +291,11 @@ leaving the <code>sphinx-build</code> executable unfindable during the installat
 Homebrew <em>does</em> have an affordance, however, for turning off the <code>$PATH</code> restrictions.
 You can add <code>env :userpaths</code> to the formula or pass <code>--env=std</code> on the command line.
 Combining these two approaches gets us to something that approaches being a good workaround:
-    <code>
-    export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite --user-site)
-    brew install --env=std notmuch
-    export PYTHON='' &amp;&amp; export PYTHONPATH=''
-   </code>
+<code>
+export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite --user-site)
+brew install --env=std notmuch
+export PYTHON='' &amp;&amp; export PYTHONPATH=''
+</code>
 This isn&rsquo;t perfect, but it&rsquo;s got good reproducibility, so it&rsquo;s what I ended up doing.</li>
 </ul>
 
