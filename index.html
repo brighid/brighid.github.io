@@ -254,7 +254,7 @@ With that in mind, here are some ways to address the problem I started with.</p>
 I already established that in my regular environment,
 the configure script can find Sphinx just fine,
 and <code>brew install</code> prints out the invocation it uses.
-It&rsquo;s only a few steps more to compile the manpages myself:<br>
+It&rsquo;s only a few steps more to compile the manpages myself:
 <pre>
 cd ~/projects/notmuch
 PYTHON=$(which python3) ./configure \
@@ -292,7 +292,7 @@ As part of its sandboxing, Homebrew also <a href="https://github.com/Homebrew/br
 leaving the <code>sphinx-build</code> executable unfindable during the installation.<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>
 Homebrew <em>does</em> have an affordance, however, for turning off the <code>$PATH</code> restrictions.
 You can add <code>env :userpaths</code> to the formula or pass <code>--env=std</code> on the command line.
-Combining these two approaches gets us to something that approaches being a good workaround:<br>
+Combining these two approaches gets us to something that approaches being a good workaround:
 <pre>
 export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite &ndash;user-site)
 brew install &ndash;env=std notmuch
