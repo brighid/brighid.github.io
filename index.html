@@ -257,9 +257,9 @@ and <code>brew install</code> prints out the invocation it uses.
 It&rsquo;s only a few steps more to compile the manpages myself:</p>
 
 <pre><code>  cd ~/projects/notmuch
-  PYTHON=$(which python3) ./configure \\
-      --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
-      --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
+  PYTHON=$(which python3) ./configure \
+      --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \
+      --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \
       --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
   make V=1 install-man
   brew unlink notmuch

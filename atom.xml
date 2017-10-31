@@ -4,7 +4,7 @@
   <title><![CDATA[Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T21:31:39-07:00</updated>
+  <updated>2017-10-30T21:33:13-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -171,9 +171,9 @@ and <code>brew install</code> prints out the invocation it uses.
 It&rsquo;s only a few steps more to compile the manpages myself:</p>
 
 <pre><code>  cd ~/projects/notmuch
-  PYTHON=$(which python3) ./configure \\
-      --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
-      --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
+  PYTHON=$(which python3) ./configure \
+      --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \
+      --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \
       --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
   make V=1 install-man
   brew unlink notmuch
