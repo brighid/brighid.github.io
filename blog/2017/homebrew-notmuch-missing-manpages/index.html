@@ -247,24 +247,23 @@ tend to not be helpful to other people.
 With that in mind, here are some ways to address the problem I started with.</p>
 
 <ul>
-<li><p><strong>Roll my own</strong>:
+<li><strong>Roll my own</strong>:
 I already established that in my regular environment,
 the configure script can find Sphinx just fine,
 and <code>brew install</code> prints out the invocation it uses.
-It&rsquo;s only a few steps more to compile the manpages myself:</p>
-
-<pre><code>  cd ~/projects/notmuch
-  PYTHON=$(which python3) ./configure \
-      --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \
-      --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \
-      --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
-  make V=1 install-man
-  brew unlink notmuch
-  brew link notmuch
-</code></pre>
-
-<p>This is pretty much all the way out the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; axes:
-it isn&rsquo;t very reproducible and it doesn&rsquo;t do anything about the underlying issue.</p></li>
+It&rsquo;s only a few steps more to compile the manpages myself:<br>
+<pre>
+      cd ~/projects/notmuch
+      PYTHON=$(which python3) ./configure \
+          &ndash;prefix=/usr/local/Cellar/notmuch/0.25.1 &ndash;with-emacs \
+          &ndash;emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \
+          &ndash;emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
+      make V=1 install-man
+      brew unlink notmuch
+      brew link notmuch
+</pre><br>
+This is pretty much all the way out the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; axes:
+it isn&rsquo;t very reproducible and it doesn&rsquo;t do anything about the underlying issue.</li>
 <li><strong>Interactive install</strong>:
 This is a tiny step further towards being reproducible:
 Homebrew&rsquo;s sandboxing of installs is turned off if you pass the <code>--interactive</code> flag,
