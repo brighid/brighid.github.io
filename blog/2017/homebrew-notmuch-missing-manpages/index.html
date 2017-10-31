@@ -145,7 +145,7 @@ git grep -l 'supports nroff output'
 <p>Looking for the error message led me to the <a href="https://git.notmuchmail.org/git?p=notmuch;a=blob;f=configure;h=c5e2ffed9e6705a9b16f5cf52f3c57235bc40044;hb=949c27144e0b9294267511993a109c29d319a23d#l631">configure</a> script.
 It&rsquo;s part of a fairly complex <code>Makefile</code> infrastructure,
 but the two-part test it uses to search for Sphinx is easy to reproduce:
-<code>if command -v sphinx-build &gt; /dev/null &amp;&amp; ${python} -m sphinx.writers.manpage &gt; /dev/null 2&gt;&amp;1 ; then</code>.
+<code>if command -v sphinx-build &gt; /dev/null &amp;&amp; ${python} -m sphinx.writers.manpage &gt; /dev/null 2&gt;&amp;1 ;</code>
 The first half reproduces with a quick copy and paste:
 <code>command -v</code> tells the shell to ignore shell builtins and functions
 when deciding how to run the next item;
@@ -338,6 +338,12 @@ but it should work for as long as <code>notmuch</code> can be built with both Py
 
 <time datetime="2017-10-27T02:20:00-07:00" pubdate data-updated="true"></time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/computers/'>computers</a>, <a class='category' href='/blog/categories/emacs/'>emacs</a>, <a class='category' href='/blog/categories/www/'>www</a>
+  
+</span>
 
 
     </p>

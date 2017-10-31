@@ -4,7 +4,7 @@
   <title><![CDATA[Category: www | Strongly Emergent]]></title>
   <link href="http://stronglyemergent.com//blog/categories/www/atom.xml" rel="self"/>
   <link href="http://stronglyemergent.com//"/>
-  <updated>2017-10-30T20:31:59-07:00</updated>
+  <updated>2017-10-30T20:37:03-07:00</updated>
   <id>http://stronglyemergent.com//</id>
   <author>
     <name><![CDATA[Strongly Emergent Systems]]></name>
@@ -12,6 +12,229 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Debugging exercise: Homebrew, Notmuch, and the missing manpages]]></title>
+    <link href="http://stronglyemergent.com//blog/2017/homebrew-notmuch-missing-manpages/"/>
+    <updated>2017-10-27T02:20:00-07:00</updated>
+    <id>http://stronglyemergent.com//blog/2017/homebrew-notmuch-missing-manpages</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve been tinkering with the email setup on my MBP.
+When I installed <a href="https://notmuchmail.org/">notmuch</a>, I encountered a bug.
+Notmuch is a project that sports a majestic Unix beard,
+so naturally among the forms of documentation they provide are manpages.
+A quick <code>brew install notmuch</code> gave me a working <code>notmuch</code>, but no manpages.
+Figuring out why the manpages didn&rsquo;t install was mildly tricky,
+so I&rsquo;m writing it down here in case anyone else (possibly Future Me) has the same problem.[^no-dead-ends]</p>
+
+<p>When you&rsquo;re looking at a problem with command-line tools,
+switching them to verbose mode is always a good place to start.
+<a href="https://docs.brew.sh/Manpage.html">Homebrew normally suppresses the output</a> of installer programs,
+but its <code>--verbose</code> flag makes that output visible.
+The average <code>Makefile</code> can produce a lot of output, though,
+so I used <code>grep</code> to see if there was any low-hanging fruit.
+There was:</p>
+
+<pre><code>brew install --verbose notmuch | egrep -i 'man.?page'
+# =&gt; Checking if sphinx is available and supports nroff output... No (so will not install man pages).
+</code></pre>
+
+<p>I was puzzled: <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> is a widely-used tool,
+my system <em>does</em> have it installed, and it <em>does</em> support <code>nroff</code> output.</p>
+
+<p>This is the point where the problem went from &ldquo;am I doing the right thing?&rdquo;
+to &ldquo;why did the right thing fail to happen?&rdquo;
+When problems come up, be sure to look at the possibility that the failure is your fault.
+We&rsquo;ve all made errors, and humility is an important life skill.
+The Sphinx error told me there was probably a bug in the code involved,
+rather than in my understanding of them.
+All of the code involved is freely available (thank you RMS)
+so I downloaded it and took a look:</p>
+
+<pre><code>git clone git://notmuchmail.org/git/notmuch
+cd notmuch
+git grep -l 'supports nroff output'
+# =&gt; configure
+</code></pre>
+
+<p>Looking for the error message led me to the <a href="https://git.notmuchmail.org/git?p=notmuch;a=blob;f=configure;h=c5e2ffed9e6705a9b16f5cf52f3c57235bc40044;hb=949c27144e0b9294267511993a109c29d319a23d#l631">configure</a> script.
+It&rsquo;s part of a fairly complex <code>Makefile</code> infrastructure,
+but the two-part test it uses to search for Sphinx is easy to reproduce:
+<code>if command -v sphinx-build &gt; /dev/null &amp;&amp; ${python} -m sphinx.writers.manpage &gt; /dev/null 2&gt;&amp;1 ;</code>
+The first half reproduces with a quick copy and paste:
+<code>command -v</code> tells the shell to ignore shell builtins and functions
+when deciding how to run the next item;
+which in turn is a check for whether the system has a <code>sphinx-build</code> executable
+that can successfully do nothing.
+To reproduce the second half, I need the value of <code>${python}</code>,
+which an earlier part of the script defines
+by looking for a Python interpreter under various names.
+Usually the value will be just <code>python</code>, so I used that.</p>
+
+<pre><code>command -v sphinx-build &gt; /dev/null
+echo "$?"
+# =&gt; 0
+python -m sphinx.writers.manpage &gt; /dev/null 2&gt;&amp;1
+echo "$?"
+# =&gt; 0
+</code></pre>
+
+<p>Running the configure script&rsquo;s test confirms that yes,
+I have a Sphinx install that&rsquo;s capable of generating manpages.
+The next question is, why is that Sphinx install not visible
+when the configure script is running during installation?
+Answering that question is what the <a href="https://docs.python.org/3/library/site.html">site module</a> is best at.
+It&rsquo;s imported by default when you run Python, and it&rsquo;s responsible for
+&ldquo;adding all the standard site-specific directories to the module search path,&rdquo;
+which in turn is a critical part of what makes the <code>import</code> statement work.</p>
+
+<p>I used <code>find $(brew --cache) -iname 'notmuch*'</code> and <code>brew formula notmuch</code>
+to find the install source and the install script, then started editing.
+First, I commented out the <code>sha256 "deadbeef0000"</code> lines in the install script.
+Homebrew checks the SHA256 hash of sources during a normal install,
+which is a good and correct security feature
+that needs to be turned off for this.
+Then I edited the <code>notmuch</code> configure script in the install source,
+added a <code>${python} -m site</code> invocation, saved it, and ran the installation again.</p>
+
+<pre><code>sys.path = [
+    '/private/tmp/notmuch-20171027-17288-bpiisc/notmuch-0.25.1',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python36.zip',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/lib-dynload',
+    '/usr/local/lib/python3.6/site-packages',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages',
+]
+USER_BASE: '/private/tmp/notmuch-20171027-17288-bpiisc/notmuch-0.25.1/.brew_home/Library/Python/3.6' (doesn't exist)
+USER_SITE: '/private/tmp/notmuch-20171027-17288-bpiisc/notmuch-0.25.1/.brew_home/Library/Python/3.6/lib/python/site-packages' (doesn't exist)
+</code></pre>
+
+<p>Success!
+Comparing this to the same invocation run from my terminal immediately points out a problem,
+further highlighted by <code>site</code> helpfully adding a little &ldquo;(doesn&rsquo;t exist)&rdquo; note.</p>
+
+<pre><code>sys.path = [
+    '~/projects/notmuch',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python36.zip',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/lib-dynload',
+    '~/Library/Python/3.6/lib/python/site-packages',
+    '/usr/local/lib/python3.6/site-packages',
+    '/usr/local/Cellar/python3/3.6.3/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages',
+]
+USER_BASE: '~/Library/Python/3.6' (exists)
+USER_SITE: '~/Library/Python/3.6/lib/python/site-packages' (exists)
+ENABLE_USER_SITE: True
+</code></pre>
+
+<p>To confirm that this mismatch is causing a problem, I asked the system where my Sphinx install is.</p>
+
+<pre><code>which -a sphinx-build
+# =&gt; ~/Library/Python/3.6/bin/sphinx-build
+pip3 show sphinx | grep -i 'location'
+# =&gt; Location: ~/Library/Python/3.6/lib/python/site-packages
+</code></pre>
+
+<p>This is progress:
+I have a narrow answer to the &ldquo;why did the right thing fail to happen?&rdquo; question.
+The <code>~/Library/Python/3.6/lib/python/site-packages</code> path for Sphinx
+tells me that I installed it via <code>pip install --user sphinx</code>.[^never-sudo-pip]
+The <code>/private/tmp</code> entries in the module search path tell me that during installation,
+the configure script is sandboxed in a temporary directory and using that directory as <code>$HOME</code>.
+Invoked from the configure script, Python can only find packages that were installed system-wide, and Sphinx isn&rsquo;t one of them.
+I took a quick trip into Homebrew&rsquo;s source code to look for sandboxing.
+Because it&rsquo;s written in Ruby,
+which makes it very easy to access environment variables like <code>$HOME</code>,
+it&rsquo;s very easy to search for idiomatic use of environment variables.
+A quick <code>cd $(brew --repository) &amp;&amp; git grep -E 'ENV\W{2}HOME\W{2}'</code>
+turned up an <code>old_home = ENV["HOME"]</code> assignment
+in the <a href="https://github.com/Homebrew/brew/blob/1.3.6/Library/Homebrew/formula.rb#L1887">stage() function</a>,
+which does indeed assign a new <code>$HOME</code> during installs.</p>
+
+<p>As gratifying as it is to figure out why something failed,
+there&rsquo;s still work to do.
+There are two main tradeoffs to make after characterizing a problem:
+specific versus general and workaround versus solution.
+Among other costs, things closer to the &ldquo;general&rdquo; and &ldquo;solution&rdquo; poles
+tend to require more control of the underlying elements
+and things closer to the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; poles
+tend to not be helpful to other people.
+With that in mind, here are some ways to address the problem I started with.</p>
+
+<ul>
+<li><p><strong>Roll my own</strong>:
+I already established that in my regular environment,
+the configure script can find Sphinx just fine,
+and <code>brew install</code> prints out the invocation it uses.
+It&rsquo;s only a few steps more to compile the manpages myself:</p>
+
+<pre><code>cd ~/projects/notmuch
+PYTHON=$(which python3) ./configure \\
+    --prefix=/usr/local/Cellar/notmuch/0.25.1 --with-emacs \\
+    --emacslispdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch \\
+    --emacsetcdir=/usr/local/Cellar/notmuch/0.25.1/share/emacs/site-lisp/notmuch
+make V=1 install-man
+brew unlink notmuch
+brew link notmuch
+</code></pre>
+
+<p>This is pretty much all the way out the &ldquo;specific&rdquo; and &ldquo;workaround&rdquo; axes:
+it isn&rsquo;t very reproducible and it doesn&rsquo;t do anything about the underlying issue.</p></li>
+<li><strong>Interactive install</strong>:
+This is a tiny step further towards being reproducible:
+Homebrew&rsquo;s sandboxing of installs is turned off if you pass the <code>--interactive</code> flag,
+so if I used <code>brew install --interactive notmuch</code>,
+I could run the same installation commands in my normal shell.
+This still requires doing work by hand, though, so it&rsquo;s not very appealing.</li>
+<li><strong>Do it live</strong>:
+I could install Sphinx as a system-scope package, rather than as a user-scope package.
+This is a solution that doesn&rsquo;t require doing things by hand and which might be helpful to others.
+Unfortunately, it requires messing with system-level packages,
+which is not something I want to do or recommend that others do.</li>
+<li><strong>Save the environment</strong>:
+In addition to importing <code>site</code>, Python uses the <code>$PYTHONPATH</code> environment variable to find modules.
+If I added <code>$HOME/Library/Python/3.6/lib/python/site-packages</code>,
+subsequent Python invocations should be able to find packages installed to that directory.
+I&rsquo;d like to avoid setting <code>$PYTHONPATH</code> if I can; it&rsquo;s prone to causing problems.
+For example, if you have both Python 2 and Python 3 installed, as many developers do,
+setting <code>$PYTHONPATH</code> will cause both versions of Python to look at the given path for modules.
+That&rsquo;s good when you&rsquo;re actively trying to develop against both versions of Python,
+but bad when you&rsquo;re trying to repair the site-packages path.</li>
+<li><p><strong>Eat the $PATH</strong>:
+Another problem with changing <code>$PYTHONPATH</code> is that doing so only makes the Sphinx test halfway pass.
+As part of its sandboxing, Homebrew also <a href="https://github.com/Homebrew/brew/blob/1.3.6/docs/Formula-Cookbook.md#superenv-notes">drastically restricts $PATH</a>,
+leaving the <code>sphinx-build</code> executable unfindable during the installation[^find-sphinx]
+Homebrew <em>does</em> have an affordance, however, for turning off the <code>$PATH</code> restrictions.
+You can add <code>env :userpaths</code> to the formula or pass <code>--env=std</code> on the command line.
+Combining these two approaches gets us to something that approaches being a good workaround:</p>
+
+<pre><code>export PYTHON=python3.6 &amp;&amp; export PYTHONPATH=$($PYTHON -msite --user-site)
+brew install --env=std notmuch
+export PYTHON='' &amp;&amp; export PYTHONPATH=''
+</code></pre>
+
+<p>This isn&rsquo;t perfect, but it&rsquo;s got good reproducibility, so it&rsquo;s what I ended up doing.</p></li>
+</ul>
+
+
+<p>At this point I&rsquo;m not entirely sure whether Homebrew&rsquo;s behavior here is a bug.
+I don&rsquo;t like that it discourages people from installing packages as <code>--user</code>,
+and it already has the <code>setup_home()</code> function (clumsily) patching the module search path.
+Needing to perpetrate <code>$PYTHONPATH</code> shenanigans is a bad sign.
+The superenv approach does make installs much easier and more reproducible,
+so it&rsquo;s a very good thing overall, but it could be improved.</p>
+
+<p>What <em>is</em> clearly a bug, though, is an issue in <code>notmuch</code> that I stumbled on while digging through all this.
+You can set the <code>$PYTHON</code> environment variable to tell the installation where your preferred Python install is.
+The installer ignores this information when it goes to run Sphinx:
+it instead takes the first <code>sphinx-build</code> it finds on your <code>$PATH</code>.
+Similar to the problems with <code>$PYTHONPATH</code>, this can lead to problems
+when you have both Python 3 Sphinx and Python 2 Sphinx installed.
+The workaround for this is to use <code>command -v sphinx-build</code>
+to check which version is first on your <code>$PATH</code> and to use that version.
+This won&rsquo;t work indefinitely,
+but it should work for as long as <code>notmuch</code> can be built with both Python 2 and Python 3.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[An Innovative Business Model]]></title>
